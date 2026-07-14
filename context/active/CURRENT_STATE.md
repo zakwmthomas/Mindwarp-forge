@@ -28,7 +28,7 @@ Owner-authorized reference research, disposable image inspection, rejection, and
 
 ## Exact next action
 
-Generate and pixel-check one revised bald, unclothed, featureless mature-adult front mannequin that preserves v1 proportions; reject sexual detail, hair, garments, identity drift, or anatomical defects before attempting side/back views.
+Consolidate the neutral-reference roles: Blender CC0 for the leading future form source, PolyOne only for featureless-surface and multi-view construction evidence, and v1 only for mature proportions/phone framing; keep H5 pending until one identity-stable side/back route is separately justified.
 
 ## Unresolved risks
 
@@ -40,4 +40,4 @@ Generate and pixel-check one revised bald, unclothed, featureless mature-adult f
 
 ## Resume after this package
 
-Continue autonomously with the neutral-front edit and actual-pixel inspection. Proceed to separate side/back fixtures only if it passes; ask the owner only if a genuine form choice remains unresolved.
+Use the recorded source-role synthesis. Do not repeat image generation or broad search; next assess whether an already-available, read-only Blender CC0 render route can be justified without installation or production import.

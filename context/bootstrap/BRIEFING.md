@@ -9,7 +9,7 @@
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
 - Related systems: asset-factory, procedural-animation, forge-reference-studio, forge-truth-kernel
 - Risk/research gate: **visual-reference-provenance-anatomy-quality-phone-legibility-and-creative-fit / Use authoritative or clearly licensed sources, inspect actual pixels rather than metadata, and keep the candidate set small. Do not download executable content, import a production asset, or treat popularity as quality.**
-- Exact next action: Generate and pixel-check one revised bald, unclothed, featureless mature-adult front mannequin that preserves v1 proportions; reject sexual detail, hair, garments, identity drift, or anatomical defects before attempting side/back views.
+- Exact next action: Consolidate the neutral-reference roles: Blender CC0 for the leading future form source, PolyOne only for featureless-surface and multi-view construction evidence, and v1 only for mature proportions/phone framing; keep H5 pending until one identity-stable side/back route is separately justified.
 
 ## Approved operating policies
 

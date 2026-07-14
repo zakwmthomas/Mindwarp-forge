@@ -26,6 +26,7 @@ are necessary evidence but do not establish visual fitness.
 | Blender Human Base Meshes v1.4.1 embedded previews | Official Blender download page identifies the Blender Studio/community bundle as CC0. The 50,643,039-byte archive from `https://download.blender.org/demo/asset-bundles/human-base-meshes/human-base-meshes-bundle-v1.4.1.zip` has SHA-256 `811f43accbb31a88266d932f8f5563b2d13586fca0ba2693aad1f5fe582b3515`. Its realistic and stylized male/female PNG previews were extracted to disposable storage and inspected at original scale. | Each body preview is only 256x256, single-view, and the subject is too small for reliable face, hand, foot, or subtle-anatomy judgment. The realistic pair is a credible source lead; the stylized pair has enlarged heads, eyes, hands, and feet beyond the mature target. | **Rejected** as the H5 baseline; source family retained. |
 | High-resolution renders of exact Blender CC0 body assets | Wikimedia file records identify Blender Studio and the named artists, link back to Blender's bundle, and retain CC0. Disposable 1280x960 renders inspected: female realistic SHA-256 `009b3cbc1f5885ed66dd966306815effaaf529f33b4309060f2c7fee34a8441c`; male realistic `b0c0383e49d6db5f1bdfaF993d441ed58350ba67f7a361eb6c802d0dc3bfe04b`; female stylized `963fc7422d06cbd0a4a5e2a1151cd78fb6ea599c02c76dfcc4194b0177ac4ed4`; male stylized `534496a66eeb2207ed1b5d4b6a01571df8e8b0e69ca37a43029ebcc0a08a4be6`. | The larger pixels make overall form, hands, and feet visible, but only one elevated three-quarter view is rendered. Back and true side silhouettes are absent, and visible hip/thigh mesh transitions interrupt anatomical comparison. The stylized bodies are deliberately more caricatured than the owner target. | **Rejected** as the complete H5 baseline; realistic bodies retained only as bounded anatomical-direction evidence. |
 | Generated mature-adult front direction v1 | Forge-requested generated preview retained at `evidence/visual-reference-intake/h5-mature-adult-front-direction-v1.png`; 1024x1536; SHA-256 `675e0d8c25d807501a588fd8a7567cc6931a94d95ebd8bd46d56a7f2af1ccbe2`; actual pixels inspected at original scale and on the phone-oriented single-subject layout | One coherent, clearly adult woman fills the frame in a neutral front A-pose. Head, eyes, hands, feet, and silhouette are legible. Its mature proportions remain useful direction evidence, but hair and training garments obscure and prematurely commit construction layers. It has no side/back view and proves no topology, shader, or cost. | **Rejected as the neutral construction baseline; retained as narrow mature-proportion evidence.** |
+| PolyOne Studio free female basemesh previews | Superhive product and CC licence pages identify PolyOne Studio's asset as CC-BY 4.0; `https://superhivemarket.com/products/free-pack---female-base-mesh`. Seven 1200x600 previews were downloaded to disposable storage and inspected. The smooth front/three-quarter/back sheet has SHA-256 `f3242d18b962103ec0b78fe424baf01db60c84d2c2a6f468c85d27818c145051`; the wireframe back/front/side sheet has `64ffcb5feeb1327ab937971b7433b5c4368b423c3b0601f42512a9fe12aa2e8b`. | Bald, unclothed, continuous surface; no visible genital or nipple detail; full front, side, back, three-quarter, smooth, and wireframe evidence. It proves the requested construction-layer separation is practical. However, the very narrow waist, wide hips, long legs, doll-like face, straight T-pose shoulders, and stylized breast volume are not a mature neutral anatomy target. The listing's “13 tris” claim contradicts the visible dense quad mesh, and the Fab mirror leaves its licence field blank. | **Rejected as anatomical authority or silent import; retained as a verified visual example of featureless-layer construction and multi-view presentation.** |
 
 ## Source-family assessment
 
@@ -82,6 +83,35 @@ neutral-base requirement. Shading is not part of the form gate. The next front
 fixture must use the featureless mannequin surface; H5 then needs separately
 legible side/back evidence. Generated view variants must preserve identity and
 proportions or be rejected rather than averaged into a fictitious human.
+
+Two attempts to generate that featureless mannequin were rejected by the image
+safety system at output moderation, even after changing from a realistic edit
+to an explicitly artificial gray sculpt. No image was produced or admitted.
+The repeated route is stopped rather than weakening the neutral-base rule.
+
+## Bounded web-search conclusion
+
+The web search added one useful construction reference but did not displace the
+existing source hierarchy:
+
+1. Blender Studio Human Base Meshes remains the strongest reusable source
+   family: official, CC0, mature realistic and stylized variants, and a complete
+   local archive already fingerprinted. Its public previews are insufficient to
+   close anatomy by themselves.
+2. PolyOne is the clearest visual proof of the exact featureless bald surface
+   and multi-view presentation requested by the owner. Its proportions are too
+   stylized to copy, and CC-BY plus cross-listing inconsistencies make it a
+   reference rather than the preferred foundation.
+3. MakeHuman remains useful for parametric age/body diversity and CC0 exports,
+   but the inspected public screenshots do not provide a complete comparison.
+4. Paid RenderHub, Fab, BlenderKit, Sketchfab, and work-in-progress community
+   leads were not admitted where licensing, provenance, topology, performance,
+   anatomy, or useful pixels were incomplete.
+
+The safe synthesis is therefore not to import the first visually matching
+marketplace asset. Use Blender's CC0 realistic form family as the leading future
+geometry source, PolyOne only as a featureless-surface and multi-view reference,
+and the retained v1 image only for mature proportion and phone-framing direction.
 
 The first generated three-panel fidelity sheet (SHA-256
 `049b8dc095fe8d92834a89aa4388d4f672da9ee246d7947a27c4308e7494ff52`,

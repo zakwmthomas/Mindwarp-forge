@@ -5,7 +5,7 @@
   "master_program_item": "F5",
   "state": "executing",
   "objective": "Complete a provenance-safe, pixel-inspected mature human form direction while keeping canonical organism form, material vocabulary, planet-selectable shader profiles, and fidelity tiers explicitly separate.",
-  "next_action": "Generate and pixel-check one revised bald, unclothed, featureless mature-adult front mannequin that preserves v1 proportions; reject sexual detail, hair, garments, identity drift, or anatomical defects before attempting side/back views.",
+  "next_action": "Consolidate the neutral-reference roles: Blender CC0 for the leading future form source, PolyOne only for featureless-surface and multi-view construction evidence, and v1 only for mature proportions/phone framing; keep H5 pending until one identity-stable side/back route is separately justified.",
   "substage_id": "H5-neutral-base-surface-intake",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
@@ -48,7 +48,9 @@
       "Canonical biological age continues independently; the adult-appearance lock affects only eligible post-adult presentation and unlocking reveals true age.",
       "One canonical organism must support coordinated presentation tiers from constrained phones to high-end PCs without changing gameplay identity.",
       "Generated front direction v1 is coherent, mature, and phone-legible at 1024x1536, but hair and garments disqualify it as the newly clarified neutral base.",
-      "The neutral construction target is bald and unclothed with a continuous non-sexual mannequin surface, no genital anatomy, and no female nipple detail; hair, garments, optional surface details, materials, and shaders derive later."
+      "The neutral construction target is bald and unclothed with a continuous non-sexual mannequin surface, no genital anatomy, and no female nipple detail; hair, garments, optional surface details, materials, and shaders derive later.",
+      "Seven 1200x600 PolyOne previews prove the requested featureless multi-view presentation is practical, but exaggerated proportions, T-pose shoulders, listing inconsistencies, and CC-BY status prevent anatomical authority or silent import.",
+      "Two neutral-mannequin image-generation attempts were output-moderation blocked; that route is stopped without weakening the requirement."
     ]
   },
   "visual_quality_gate": {
@@ -98,6 +100,20 @@
         "comparison_completeness": "rejected_for_neutral_base",
         "pose_view_lighting_fitness": "verified_for_phone_front_form_direction",
         "disposition": "rejected"
+      },
+      {
+        "content_sha256": "f3242d18b962103ec0b78fe424baf01db60c84d2c2a6f468c85d27818c145051",
+        "provenance": "PolyOne Studio Free Pack female basemesh; Superhive product page identifies CC-BY 4.0. Seven 1200x600 product previews were downloaded to disposable storage and pixel-inspected.",
+        "intended_comparison": "Bald featureless neutral surface, absence of baked hair/garments/sexual surface detail, and front/side/back construction presentation.",
+        "accuracy_limits": "Stylized hourglass proportions, doll-like face, T-pose, contradictory triangle-count text, CC-BY attribution obligation, and a Fab mirror with blank licence display.",
+        "pixel_inspection_performed": true,
+        "rendered_views_inspected": ["Smooth front/three-quarter/back 1200x600 sheet", "Wireframe back/front/side 1200x600 sheet", "Five additional smooth and topology previews"],
+        "visible_defects": ["Waist too narrow", "Hips and breast volume exaggerated", "Legs elongated", "Face doll-like", "T-pose shoulder bias", "Listing metadata contradiction"],
+        "human_subject": true,
+        "anatomical_credibility": "rejected_as_mature_neutral_authority",
+        "comparison_completeness": "verified_for_featureless_layer_and_views_only",
+        "pose_view_lighting_fitness": "verified_for_construction_reference_only",
+        "disposition": "rejected"
       }
     ]
   },
@@ -113,14 +129,19 @@
         "tier": "disposable_simulation",
         "result": "Original-pixel inspection rejected incomplete source candidates, then retained one 1024x1536 generated adult as narrow front-form evidence after owner clarification separated shader style from form acceptance.",
         "evidence": "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md"
+      },
+      {
+        "tier": "disposable_simulation",
+        "result": "A bounded web search and original-pixel inspection of seven PolyOne previews found a usable featureless-surface/multi-view reference while rejecting its stylized anatomy and import metadata.",
+        "evidence": "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md"
       }
     ],
     "expensive_execution_planned": false,
-    "unresolved_risk": "Removing hair and garments may cause the generator to add sexual detail, alter proportions, or introduce surface/anatomical defects before side/back consistency is tested.",
-    "expected_information_gain": "One constrained edit can cheaply prove whether the mature v1 direction survives construction-layer removal as a clean neutral mannequin.",
-    "estimated_cost": "One bounded generated edit plus actual-pixel comparison; no install, executable download, production import, or integrated PC run.",
+    "unresolved_risk": "No single inspected candidate combines mature neutral anatomy, featureless surface, identity-stable front/side/back views, clean provenance, and phone/game suitability.",
+    "expected_information_gain": "The bounded search has separated source roles; the next material gain would require a separately justified read-only render of the already fingerprinted Blender CC0 asset, not more broad browsing.",
+    "estimated_cost": "No further search cost. Any later Blender render requires an explicit bounded execution route and retained no-install/no-import safeguards.",
     "regression_guard": "Retain hashes, source URLs, visible defects, accuracy limits, and explicit rejected or verified-fit dispositions; do not mutate H2-H4 structural evidence.",
-    "stop_condition": "Stop after one neutral-front edit if it adds sexual detail, changes mature proportions, or introduces anatomy defects; reject it and reassess the fixture method before any side/back generation.",
+    "stop_condition": "Fired: two image-generation attempts were moderation-blocked and bounded web search reached diminishing returns. Stop image generation and broad browsing; retain source-role synthesis without claiming H5 closure.",
     "final_integration_gate": "After visual receipts and any necessary owner check, retain exact fingerprint binding, mutation-negative checks, and the complete Forge gate before H5 closure."
   },
   "unresolved_risks": [
@@ -143,12 +164,13 @@
     "completed: inspect actual pixels and reject incomplete or defective references before comparison",
     "retain source and visual-fitness receipts in the H5 canonical record",
     "completed: generate and pixel-check one large single-subject mature proportion fixture",
-    "edit v1 into one bald, unclothed, featureless non-sexual mannequin front while preserving proportions and framing",
-    "only after the neutral front passes, generate separate side and back fixtures with identity and proportion invariants",
+    "completed: attempt a neutral mannequin edit/generation; both attempts were moderation-blocked and produced no asset",
+    "completed: bounded web search and pixel inspection identified PolyOne as a featureless-surface reference but rejected it as anatomy/import authority",
+    "retain Blender CC0 as leading future form source and justify any identity-stable side/back rendering as a separate bounded route",
     "keep planet-selectable shader profiles outside anatomical acceptance and later test their material/readability contract independently",
     "run stage-quality, coherence, mutation-negative, and complete Forge gates before closure"
   ],
-  "resume_after": "Continue autonomously with the neutral-front edit and actual-pixel inspection. Proceed to separate side/back fixtures only if it passes; ask the owner only if a genuine form choice remains unresolved.",
+  "resume_after": "Use the recorded source-role synthesis. Do not repeat image generation or broad search; next assess whether an already-available, read-only Blender CC0 render route can be justified without installation or production import.",
   "evidence": [
     "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md",
     "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md",
@@ -169,6 +191,8 @@
     "generated mature-adult front direction v1 inspected at original 1024x1536 and retained as narrow phone-legible form evidence",
     "owner clarified realistic form, replaceable shader presentation, possible planet-specific shader profiles, and Forge-wide analogous cohesion",
     "owner clarified a bald unclothed neutral base with no genital anatomy or female nipple detail; hair and garments become modular derived layers",
+    "two neutral mannequin generation attempts were blocked by output moderation and produced no admitted asset",
+    "seven PolyOne 1200x600 previews were pixel-inspected; featureless multi-view construction passed narrowly while anatomy and silent import were rejected",
     "heartbeat remains PAUSED"
   ],
   "transition": "R0 accepted -> H1-H4 verified -> H5 source rejections -> N0-N3 natural-method wave complete -> K1 continuity intake hardened -> aging drift repaired -> H5 source and pixel intake resumed",
