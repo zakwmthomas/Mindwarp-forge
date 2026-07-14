@@ -84,7 +84,7 @@
     {
       "id": "representation-contract",
       "root": "crates/representation-contract",
-      "dependencies": [],
+      "dependencies": ["reference-intake", "reference-viewport"],
       "source_extensions": [".rs"],
       "forbidden_imports": [
         {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "representation proof cannot depend on protected Forge authority"},

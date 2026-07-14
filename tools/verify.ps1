@@ -15,6 +15,8 @@ if (!$?) { throw 'Canonical system registry validation failed.' }
 if (!$?) { throw 'Conversation compiler continuity validation failed.' }
 & (Join-Path $PSScriptRoot 'verify-h1-reference-intake.ps1')
 if (!$?) { throw 'H1 reference-intake validation failed.' }
+& (Join-Path $PSScriptRoot 'verify-h2-neutral-humanoid.ps1')
+if (!$?) { throw 'H2 neutral humanoid validation failed.' }
 & (Join-Path $PSScriptRoot 'verify-record-roles.ps1')
 if (!$?) { throw 'Forge record-role validation failed.' }
 & (Join-Path $PSScriptRoot 'verify-coherence.ps1')
@@ -33,6 +35,8 @@ if (!$?) { throw 'Worker batch-state fixtures failed.' }
 if (!$?) { throw 'Active-context projection fixtures failed.' }
 & (Join-Path $PSScriptRoot 'test-verify-bootstrap-read-only.ps1')
 if (!$?) { throw 'Read-only bootstrap fixtures failed.' }
+& (Join-Path $PSScriptRoot 'test-ensure-context-launch-paths.ps1')
+if (!$?) { throw 'Forge context launch-path fixtures failed.' }
 & (Join-Path $PSScriptRoot 'test-worker-selector.ps1')
 if (!$?) { throw 'Worker selector fixtures failed.' }
 & (Join-Path $PSScriptRoot 'test-worker-progress.ps1')

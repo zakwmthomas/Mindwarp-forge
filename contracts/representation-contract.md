@@ -40,3 +40,37 @@ review assertions are discriminating test data only. All Mind Warp vocabulary,
 weights, formats, algorithms, assets, art direction, thresholds, render tools,
 hardware classes, and runtime adaptation remain open and separately gated.
 
+## H2 neutral humanoid structural profile
+
+`NeutralHumanoidProfile` is the narrow adapter between this representation
+contract, the Forge-owned v3 reference scene, and the H1 reference suite. It
+does not replace the general P7a package and does not import recovered legacy
+content. It binds the H1 suite only by its validated canonical fingerprint.
+
+The v1 profile fixes these structural facts:
+
+- profile identity `forge-neutral-humanoid-structural-v1`;
+- right-handed fixture coordinates, with positive x anatomical-left, positive
+  y up, positive z forward, pelvis as the named origin, and explicitly
+  non-metric `fixture_unit_not_metric` lengths;
+- 17 stable named joints, 16 directed pelvis-rooted links, two bounded pose
+  frames, unique bilateral semantic roles, and retained link-role labels;
+- frame zero byte-for-byte joint positions as the structural rest pose; and
+- a bind rule limited to
+  `structural_rest_equals_frame_zero_no_inverse_bind_matrices`.
+
+That final rule is deliberately negative: H2 has no inverse-bind matrices,
+skin weights, surface topology, deformation system, engine mapping, visual
+quality threshold, perceptual approval, or production-readiness authority.
+Only stable identity, hierarchy, rest equality, bilateral role mapping,
+bounded wire topology, and deterministic serialization are admissible claims.
+
+The reference profile fingerprint is
+`c44adba610e2d70361d72cd9f78d1c3b7f56041a5574ef2f795570a72763d6e3`.
+Validation recomputes and binds the v3 scene fingerprint
+`f94ebe29d2d8a5b9abfcd906412db4ad0da0a2e8e0947de7a422f51274ddac82`
+and H1 suite fingerprint
+`1a4e25e81bc39327bc95975054846496b88c4510d378c0bef5f3ea1a5281939a`.
+Missing roles, duplicate identities or roles, multiple parents, cycles, rest
+drift, source or suite drift, unknown fields, noncanonical bytes, topology
+exhaustion, and claim-scope changes fail closed.

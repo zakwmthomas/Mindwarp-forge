@@ -1,10 +1,12 @@
 //! Capability-free P7a representation contract and lineage reference harness.
 
 mod model;
+mod neutral_humanoid;
 mod proof;
 mod validate;
 
 pub use model::*;
+pub use neutral_humanoid::*;
 pub use proof::*;
 pub use validate::*;
 
