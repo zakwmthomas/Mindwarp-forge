@@ -1,74 +1,62 @@
 {
   "schema_version": 2,
   "canonical_role": "sole-active-work-checkpoint",
-  "batch_id": "F5-H3-NEUTRAL-HUMANOID-GENERATION",
+  "batch_id": "F5-H4-HUMANOID-FUNCTIONAL-CONTROLS",
   "master_program_item": "F5",
   "state": "executing",
-  "objective": "Construct a deterministic engine-neutral candidate from declared Forge inputs bound to the verified H2 neutral humanoid profile, without external execution, hidden mutation, or authority escalation.",
-  "next_action": "Freeze the H3 input and candidate fingerprints, record the typed generation contract and result, verify exact H2 structural replay and no-mutation/capability limits, then run modularity and the complete Forge gate before H3 closure.",
-  "substage_id": "H3-typed-model-verification",
+  "objective": "Calibrate cheap deterministic structural metrics against the exact broken-connection, silhouette-collapse, and articulation-drift controls without inferring visual quality or owner judgement.",
+  "next_action": "Audit the existing reference and three negative-control snapshots, derive a minimal orthogonal integer metric matrix bound to the H3 candidate and exact scene fingerprints, then add in-memory adversarial fixtures for missing controls, cross-sensitivity, stale bindings, threshold drift, and overclaim before any integrated gate.",
+  "substage_id": "H4-control-metric-audit",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
     "milestone": "F5",
-    "systems": [
-      "asset-factory",
-      "procedural-animation",
-      "forge-reference-studio",
-      "forge-truth-kernel"
-    ]
+    "systems": ["asset-factory", "procedural-animation", "forge-reference-studio", "forge-truth-kernel"]
   },
-  "risk_level": "generation-input-authority-replay-and-hidden-mutation-drift",
-  "research_gate": "Use repository-owned H2 profile, semantic-construction contract, and deterministic fixtures first. External tools, model acquisition, runtime research, and executable content remain out of scope.",
-  "authority_lane": "Owner-authorized implementation of the approved master plan. H3 may produce only deterministic engine-neutral candidate data; no perceptual approval, production promotion, engine selection, external execution, or protected-Kernel mutation.",
-  "context_health": "Green after H2 focused and complete Forge gates. Forge capture is current and heartbeat remains paused; cold-start scanning of the large local session corpus remains slow.",
+  "risk_level": "control-metric-cross-sensitivity-threshold-and-visual-overclaim",
+  "research_gate": "Use the existing Forge-owned reference viewport, H3 receipt, and typed control snapshots. No external assets, human reference, renderer, engine, or runtime research is required for H4.",
+  "authority_lane": "Owner-authorized implementation of the approved master plan. H4 may calibrate deterministic structural metrics only; it cannot assert asset quality, human anatomy, perception, preference, approval, promotion, engine compatibility, or protected-Kernel mutation.",
+  "context_health": "Green after H3 focused and complete Forge gates. P13-P15 stage-quality enforcement is active; capture is current and heartbeat remains paused.",
   "stage_context": {
-    "stage_id": "H3-typed-model-verification",
+    "stage_id": "H4-control-metric-audit",
     "macro_sources": [
       "docs/canonical-system/MASTER_PLAN_V2.md",
       "docs/canonical-system/MASTER_PROGRAM.json",
       "docs/project-atlas/ROADMAP.md",
-      "governance/WORKING_COVENANT.md"
-    ],
-    "macro_findings": [
-      "F5 remains an engine-neutral proof milestone; G1 production and R1 runtime work remain gated.",
-      "H3 may create deterministic candidate data but cannot approve assets, select an engine, execute external content, or mutate the protected Kernel.",
-      "H3 must retain H1 provenance and H2 structural authority boundaries while preparing later H4 controls and H5 human observation."
-    ],
-    "micro_sources": [
-      "contracts/semantic-construction-contract.md",
-      "crates/semantic-construction/src/model.rs",
-      "crates/semantic-construction/src/validate.rs",
-      "contracts/representation-contract.md",
-      "crates/representation-contract/src/neutral_humanoid.rs",
-      "crates/humanoid-generation/src/lib.rs",
+      "governance/WORKING_COVENANT.md",
       "governance/STAGE_QUALITY_PROTOCOL.md"
     ],
+    "macro_findings": [
+      "H4 calibrates functional controls after H3 generation and before H5 visual observation.",
+      "F5 remains engine-neutral; G1 production and R1 runtime work remain gated.",
+      "Metric discrimination cannot establish a good-quality human, perceptual quality, player preference, approval, or promotion."
+    ],
+    "micro_sources": [
+      "crates/reference-viewport/src/lib.rs",
+      "contracts/reference-viewport-contract.md",
+      "crates/viewport-stimulus/src/lib.rs",
+      "contracts/viewport-stimulus-contract.md",
+      "crates/humanoid-generation/src/lib.rs",
+      "docs/canonical-system/H3_NEUTRAL_HUMANOID_GENERATION_RESULT.md"
+    ],
     "micro_findings": [
-      "P6 already owns ordered functional graph recipes and exact replay; H3 must bind its fingerprints rather than duplicate recipe semantics.",
-      "H2 owns named joints, hierarchy, coordinate convention, rest positions, structural limits, and exact negative claims.",
-      "The new humanoid-generation crate binds exact P6 package, semantic and recipe-result fingerprints to the exact H2 profile fingerprint.",
-      "Six in-memory tests prove deterministic replay, unchanged inputs, exact H2 joint/link copying, exhaustion-before-output, strict codecs, drift rejection, and authority-negative capability closure.",
-      "The reference input fingerprint is 5667d387e4f7a0159fee99bab584c9481cc42b549535eaaec78de3a7b5796adf and candidate fingerprint is 4d04df0dd58cdd8ecdb7c41e9dbde2dec1910b36b7d5643b2d254ef4b3c707fa."
+      "The existing controls are deterministic and distinct: one removes the right knee-ankle link, one narrows frame-zero front span, and one changes frame-one hand height while preserving segment length.",
+      "Edge deficit, rest front-span loss, and frame-one hand vertical displacement can form an orthogonal integer metric matrix without rendering pixels.",
+      "Every metric and control must bind exact reference/control fingerprints and declare non-detections rather than imply general quality."
     ]
   },
   "visual_quality_gate": {
     "asset_use_intent": false,
     "status": "not_applicable",
-    "rationale": "H3 verification uses only typed structural records and an in-memory candidate, not a rendered visual asset. Any later rendered human reference or candidate requires pixel-level fitness receipts before use.",
+    "rationale": "H4 reads typed point, edge, and frame coordinates and computes integer metrics in memory. It does not use a rendered image or human visual asset. H5 visual comparison remains separately gated by P13.",
     "receipts": []
   },
   "simulation_ladder": {
-    "cheapest_sufficient_tier": "in_memory_fixture",
+    "cheapest_sufficient_tier": "typed_model",
     "tiers_completed": [
       {
         "tier": "static_reasoning",
-        "result": "The existing P6 and H2 ownership boundaries reconcile through one-way fingerprint binding; a second recipe or geometry authority is unnecessary.",
-        "evidence": "contracts/semantic-construction-contract.md and docs/canonical-system/H2_NEUTRAL_HUMANOID_REPRESENTATION_RESULT.md"
-      },
-      {
-        "tier": "typed_model",
-        "result": "A capability-free one-way adapter can bind P6 and H2 without duplicating recipe, representation, or authority ownership.",
-        "evidence": "crates/humanoid-generation/src/lib.rs"
+        "result": "Three existing control mutations affect independent structural dimensions that can be measured with exact integer differences.",
+        "evidence": "crates/reference-viewport/src/lib.rs negative_control_snapshots"
       }
     ],
     "expensive_execution_planned": false,
@@ -77,63 +65,53 @@
     "estimated_cost": "",
     "regression_guard": "",
     "stop_condition": "",
-    "final_integration_gate": "After typed and in-memory H3 proofs pass, retain the complete Forge verification gate before H3 closure."
+    "final_integration_gate": "After typed and in-memory H4 calibration passes, retain modularity and the complete Forge gate before H4 closure."
   },
   "unresolved_risks": [
-    "Semantic-construction recipes and the H2 profile use different identity domains and need an explicit one-way binding.",
-    "A generator contract could accidentally duplicate P6 recipe authority or imply production geometry.",
-    "Replay and cache identity must bind all declared inputs without admitting locators, executables, plugins, or network content.",
-    "Surface topology, skinning, deformation, visual convergence, engine integration, and production promotion remain outside H3.",
-    "Forge capture cold start currently rescans roughly 113 MB of session logs and can take several minutes."
+    "A metric may respond to more than its named control and be falsely described as specific.",
+    "A threshold chosen after viewing controls would encode post-hoc acceptance rather than calibration.",
+    "Stale reference or control fingerprints could silently rebind old evidence.",
+    "Structural metric separation could be overclaimed as visual or anatomical quality.",
+    "The H2/H3 wire fixture remains not a verified good-quality visual human."
   ],
   "evidence_requirements": [
-    "explicit P6 recipe and H2 profile fingerprint bindings",
-    "strict declared construction inputs with no executable, path, plugin, or network authority",
-    "deterministic candidate bytes, identity, replay, and bounded resource counts",
-    "no hidden filesystem, process, network, clock, randomness, or protected-Kernel mutation",
-    "H1/H2 lineage retained without importing recovered content",
-    "adversarial input drift, replay drift, unknown-field, exhaustion, and overclaim fixtures"
+    "exact H3 candidate and reference/control fingerprint bindings",
+    "integer-only metric definitions with no learned or post-hoc threshold",
+    "complete metric-by-control detection and non-detection matrix",
+    "deterministic canonical calibration receipt",
+    "adversarial missing-control, stale-binding, cross-sensitivity, threshold-drift, and overclaim fixtures",
+    "explicit no-visual-quality and no-owner-judgement limits"
   ],
   "verification_plan": [
-    "inspect semantic-construction and H2 profile code and contracts",
-    "record identity, authority, replay, resource, and mutation-boundary gaps",
-    "implement the smallest capability-free H3 input/output adapter without duplicating P6 or H2 ownership",
-    "bind P6 and H2 fingerprints without recovered content or external locators",
-    "add deterministic replay and adversarial authority-negative tests",
+    "inspect exact reference/control mutations and existing stimulus bindings",
+    "derive the smallest orthogonal typed metric model",
+    "run in-memory reference and adversarial fixtures",
+    "freeze calibration fingerprints and record claim limits",
     "run modularity, focused, and complete Forge gates",
-    "advance automatically to H4 only after H3 is verified"
+    "advance automatically to H5 only after H4 is verified"
   ],
-  "resume_after": "Continue automatically after progress updates. Ask the owner only for a genuine authority boundary or irreducible design choice.",
+  "resume_after": "Continue automatically after progress updates. Ask the owner only when H5 presents a genuine visual-quality, accuracy, anatomy, or creative-intent uncertainty.",
   "evidence": [
-    "contracts/reference-intake-contract.md",
-    "docs/canonical-system/H1_REFERENCE_INTAKE_RESULT.md",
-    "docs/canonical-system/H2_NEUTRAL_HUMANOID_REPRESENTATION_RESULT.md",
-    "contracts/representation-contract.md",
+    "docs/canonical-system/H3_NEUTRAL_HUMANOID_GENERATION_RESULT.md",
+    "contracts/humanoid-generation-contract.md",
     "contracts/reference-viewport-contract.md",
-    "crates/representation-contract/src/neutral_humanoid.rs",
-    "contracts/semantic-construction-contract.md",
-    "crates/semantic-construction/src/lib.rs"
+    "contracts/viewport-stimulus-contract.md",
+    "crates/reference-viewport/src/lib.rs",
+    "crates/viewport-stimulus/src/lib.rs",
+    "governance/STAGE_QUALITY_PROTOCOL.md"
   ],
   "verification_receipts": [
-    "H1 archive fixity and duplicate provenance verified",
-    "H1 6 reference-intake tests pass",
-    "H1 complete Forge gate passes",
-    "H2 fixed profile, scene, and H1-suite fingerprints retained",
-    "H2 23 representation-contract tests pass",
-    "H2 complete Forge gate passes",
-    "Forge context launch discovery repaired and tested",
+    "H3 fixed input and candidate fingerprints retained",
+    "H3 6 humanoid-generation tests pass",
+    "H3 17-module boundary gate passes",
+    "H3 complete Forge gate passes",
+    "P13-P15 stage-quality fixtures pass",
     "primary Forge capture restored current",
     "heartbeat PAUSED"
   ],
-  "transition": "R0 accepted -> H1 intake verified -> H2 neutral representation verified -> H3 deterministic generation executing",
+  "transition": "R0 accepted -> H1 intake verified -> H2 representation verified -> H3 generation verified -> H4 functional controls executing",
   "metrics": {
-    "token_cost": {
-      "status": "unknown",
-      "value": null
-    },
-    "elapsed_time": {
-      "status": "unknown",
-      "value": null
-    }
+    "token_cost": {"status": "unknown", "value": null},
+    "elapsed_time": {"status": "unknown", "value": null}
   }
 }

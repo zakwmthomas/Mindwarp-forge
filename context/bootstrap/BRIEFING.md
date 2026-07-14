@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **F5-H3-NEUTRAL-HUMANOID-GENERATION**
-- Objective: Construct a deterministic engine-neutral candidate from declared Forge inputs bound to the verified H2 neutral humanoid profile, without external execution, hidden mutation, or authority escalation.
+- Work package: **F5-H4-HUMANOID-FUNCTIONAL-CONTROLS**
+- Objective: Calibrate cheap deterministic structural metrics against the exact broken-connection, silhouette-collapse, and articulation-drift controls without inferring visual quality or owner judgement.
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
 - Related systems: asset-factory, procedural-animation, forge-reference-studio, forge-truth-kernel
-- Risk/research gate: **generation-input-authority-replay-and-hidden-mutation-drift / Use repository-owned H2 profile, semantic-construction contract, and deterministic fixtures first. External tools, model acquisition, runtime research, and executable content remain out of scope.**
-- Exact next action: Freeze the H3 input and candidate fingerprints, record the typed generation contract and result, verify exact H2 structural replay and no-mutation/capability limits, then run modularity and the complete Forge gate before H3 closure.
+- Risk/research gate: **control-metric-cross-sensitivity-threshold-and-visual-overclaim / Use the existing Forge-owned reference viewport, H3 receipt, and typed control snapshots. No external assets, human reference, renderer, engine, or runtime research is required for H4.**
+- Exact next action: Audit the existing reference and three negative-control snapshots, derive a minimal orthogonal integer metric matrix bound to the H3 candidate and exact scene fingerprints, then add in-memory adversarial fixtures for missing controls, cross-sensitivity, stale bindings, threshold drift, and overclaim before any integrated gate.
 
 ## Approved operating policies
 
