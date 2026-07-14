@@ -9,6 +9,13 @@ alien creatures, and other living agents. The same organism identity must be
 able to present appropriately on a phone and on a high-end PC without forking
 gameplay truth or silently becoming a different creature.
 
+The owner subsequently narrowed lifecycle aging in
+`SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md`: ambient populations need stable age
+diversity, while only bred companions, children, and later explicitly tracked
+relationship entities require persistent growth. Baby-to-adult growth always
+continues; a setting controls optional adult-to-elder progression; old age does
+not cause death and the player character is outside this system.
+
 The intended visual direction is semi-realistic anatomy and proportions with a
 mature stylized treatment: simplified shapes and materials, deliberately
 graphic lighting, and a restrained toon/cel-like shader. It must avoid both
@@ -118,4 +125,5 @@ security domains and must never inherit authority from this document.
 - Clarify whether the owner's phrase "NNR" names a particular device or
   technology; current requirements conservatively interpret it as constrained
   phone-class hardware.
-
+- Prove the selective two-lane aging state model and species-authored
+  presentation profiles before any mesh, engine, or universal aging work.

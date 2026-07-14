@@ -133,6 +133,19 @@ Read in this order:
 51. `H1_REFERENCE_INTAKE_RESULT.md` - repository-local recovered/synthetic
     reference inventory, duplicate provenance, poison audit, minimal typed
     suite, and authority-negative H1 result.
+52. `H2_NEUTRAL_HUMANOID_REPRESENTATION_RESULT.md` - strict neutral structural
+    profile, hierarchy, coordinate, topology, and canonical-codec result.
+53. `H3_NEUTRAL_HUMANOID_GENERATION_RESULT.md` - deterministic capability-free
+    structural generation and replay result with explicit visual non-claims.
+54. `H4_HUMANOID_FUNCTIONAL_CONTROLS_RESULT.md` - orthogonal broken-connection,
+    silhouette-collapse, and articulation-drift calibration result.
+55. `H5_VISUAL_REFERENCE_INTAKE.md` - actual-pixel source receipts, rejections,
+    owner creative direction, and phone-legibility failure evidence.
+56. `ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md` - future organism
+    growth and coordinated phone-to-high-end fidelity obligations.
+57. `SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md` - ambient age diversity versus
+    relationship-tracked growth, optional elderly progression, no-old-age-death
+    boundary, presentation cues, and cheap proof plan.
 
 ## Status meaning
 

@@ -39,7 +39,7 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
 ## F5
 
 - **F5** - executing; gate: hard; depends on: F5-OWNER-GATE.
-  Next: Execute H5 mature-stylization comparison: preserve the owner's semi-realistic, restrained toon/cel direction and phone-to-high-end fidelity requirement; generate a bounded visual direction sheet, inspect its actual pixels, reject anatomy or tone failures, and route the useful alternatives to one owner observation without claiming topology, shader, growth, or runtime performance.
+  Next: Reframe H5 for phone-legible review after the first three-panel comparison failed owner discrimination at phone scale: use one large subject or stage per image, preserve the mature semi-realistic restrained toon/cel direction, and retain the selective-aging clarification as a later engine-neutral lifecycle proof obligation rather than visual or runtime implementation authority.
 - **F5-COHERENCE** - promoted; gate: hard; depends on: F4-CLOSEOUT.
   Next: Implement the owner-approved typed knowledge intake, canonical role registry, recoverability baseline, unified snapshot, and generated knowledge views without crossing the independent F5 owner-observation gate.
 

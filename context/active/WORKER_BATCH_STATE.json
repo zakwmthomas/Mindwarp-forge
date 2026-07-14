@@ -4,9 +4,9 @@
   "batch_id": "F5-H5-HUMANOID-VISUAL-REFERENCE-INTAKE",
   "master_program_item": "F5",
   "state": "executing",
-  "objective": "Calibrate a mature semi-realistic, restrained toon/cel visual direction that can later derive from one organism identity across phone and high-end PC fidelity tiers, without mistaking concept imagery for implementation or performance proof.",
-  "next_action": "Generate one bounded visual direction sheet spanning semi-realistic stylization and coordinated high-to-low fidelity, inspect its actual pixels for anatomy, completeness, tone, and comparison fitness, and retain it only as an owner-check concept candidate.",
-  "substage_id": "H5-stylized-scalable-direction-comparison",
+  "objective": "Reframe mature semi-realistic stylization review for phone-legible evidence after the first contact sheet failed, while preserving selective living-entity aging as an explicit later lifecycle proof obligation rather than a visual or runtime claim.",
+  "next_action": "Prepare any later H5 comparison as one large subject or stage per image with deliberately isolated visual differences; retain the two-lane ambient-diversity versus relationship-lifecycle aging design for a separately gated capability-free proof.",
+  "substage_id": "H5-phone-legible-direction-reframe",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
     "milestone": "F5",
@@ -15,23 +15,25 @@
   "risk_level": "stylization-anatomy-growth-generalization-and-cross-platform-fidelity",
   "research_gate": "Generated concepts may test visual direction only. Inspect actual pixels, reject anatomy and tone failures, and never infer mesh topology, shader feasibility, biological growth correctness, or device performance from an image.",
   "authority_lane": "Owner-authorized requirement recording and bounded concept comparison only. Growth, geometry, shader, runtime, device profiling, approval, promotion, engine selection, external execution, and protected-Kernel mutation remain unauthorized.",
-  "context_health": "Green after a two-scale refresh. The owner resolved the broad art direction and added organism growth plus phone-to-high-end fidelity requirements; these are recorded as unimplemented future system obligations. H5 dependent implementation remains blocked and heartbeat remains paused.",
+  "context_health": "Green after a two-scale refresh. Owner phone observation rejected the first contact sheet as insufficiently distinguishable and clarified selective aging. Both are recorded without implementation claims; H5 dependent implementation remains blocked and heartbeat remains paused.",
   "stage_context": {
-    "stage_id": "H5-stylized-scalable-direction-comparison",
+    "stage_id": "H5-phone-legible-direction-reframe",
     "macro_sources": [
       "docs/canonical-system/MASTER_PLAN_V2.md",
       "docs/canonical-system/MASTER_PROGRAM.json",
       "docs/project-atlas/ROADMAP.md",
       "governance/WORKING_COVENANT.md",
       "governance/STAGE_QUALITY_PROTOCOL.md",
-      "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md"
+      "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md",
+      "docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md"
     ],
     "macro_findings": [
       "H5 is the first visual-inspection stage; H6 recovery and H7 promotion remain later gates.",
       "F5 remains engine-neutral and cannot import a production asset or select a runtime.",
       "The owner requires good-quality accurate comparison targets and review whenever fitness or creative intent is uncertain.",
       "The verified humanoid chain is a smallest engine-neutral proof, not an in-game growth, creature, mesh, shader, or device-performance implementation.",
-      "Later organism growth must generalize beyond humanoids while one canonical identity drives coordinated phone-to-high-end presentation and simulation fidelity."
+      "Later organism growth must generalize beyond humanoids while one canonical identity drives coordinated phone-to-high-end presentation and simulation fidelity.",
+      "Selective aging has two lanes: stable ambient age diversity and persistent baby-to-adult growth for bred companions and children, with optional adult-to-elder progression and no old-age death."
     ],
     "micro_sources": [
       "artifacts/chat-screenshots/v2-pose-reference.png",
@@ -41,6 +43,7 @@
       "docs/canonical-system/H4_HUMANOID_FUNCTIONAL_CONTROLS_RESULT.md",
       "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md",
       "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md",
+      "docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md",
       "evidence/imported-chat/2026-07-14-gemini-fractal-matrix-engine.md"
     ],
     "micro_findings": [
@@ -51,7 +54,10 @@
       "MakeHuman remains a provenance- and license-promising source family, but no actual candidate asset is verified fit.",
       "The owner selected semi-realistic anatomy and proportions with mature economical stylization and a restrained toon/cel-like shader, explicitly avoiding childlike caricature.",
       "The owner requires growth across NPCs, humanoids, and creatures plus coordinated degradation from high-end PC to phone-class hardware.",
-      "The imported Gemini compendium is preserved as evidence only; useful hypotheses and unsupported performance, determinism, security, and scale claims are explicitly separated."
+      "The imported Gemini compendium is preserved as evidence only; useful hypotheses and unsupported performance, determinism, security, and scale claims are explicitly separated.",
+      "The 1717x916 three-panel fidelity sheet was technically clear at source scale but the owner reported all panels looked the same on a phone, so it is rejected as a phone review fixture.",
+      "Ambient entities need deterministic age-cohort diversity without continuous aging; bred companions and player children need tracked baby-to-adult growth, while a setting controls only optional elderly progression.",
+      "Old age does not cause death, the player character is outside this aging system, and species-authored age cues must replace a universal head/eye scaling rule."
     ]
   },
   "visual_quality_gate": {
@@ -115,6 +121,20 @@
         "comparison_completeness": "rejected_for_visual_comparison",
         "pose_view_lighting_fitness": "rejected_for_visual_comparison",
         "disposition": "rejected"
+      },
+      {
+        "content_sha256": "049b8dc095fe8d92834a89aa4388d4f672da9ee246d7947a27c4308e7494ff52",
+        "provenance": "Built-in generated preview from the owner-directed H5 mature stylization comparison; preview-only source retained in the captured chat and Codex generated-image store.",
+        "intended_comparison": "High-end, balanced, and phone-low-poly treatments of the same adult humanoid and quadrupedal creature.",
+        "accuracy_limits": "Concept image only; cannot prove topology, shaders, growth, animation, or performance. Three equal panels compress each treatment on a phone display.",
+        "pixel_inspection_performed": true,
+        "rendered_views_inspected": ["Original 1717x916 three-panel image", "Owner observation on phone display"],
+        "visible_defects": ["Panel differences insufficiently legible at phone scale", "Contact-sheet subjects too small for the target review context", "No biological age-stage comparison", "Concept rendering cannot establish runtime cost"],
+        "human_subject": true,
+        "anatomical_credibility": "plausible_concept_only",
+        "comparison_completeness": "rejected_for_phone_comparison",
+        "pose_view_lighting_fitness": "rejected_for_phone_comparison",
+        "disposition": "rejected"
       }
     ]
   },
@@ -148,7 +168,10 @@
     "Visual observation must not approve, promote, or overwrite structural evidence.",
     "A concept image may look attractive while hiding topology, deformation, shader-cost, or phone-performance failures.",
     "The exact meaning of the owner's term NNR is unresolved and is conservatively treated as constrained phone-class hardware.",
-    "Growth semantics for biological age, life stage, inherited morphology, acquired change, and creature diversity require a later bounded design package."
+    "Growth semantics for biological age, life stage, inherited morphology, acquired change, and creature diversity require a later bounded proof package.",
+    "The per-save extended-aging toggle pause/resume behavior is a reversible proposed default, not yet owner-tested gameplay behavior.",
+    "Age-cohort distributions and species-specific presentation curves remain uncalibrated.",
+    "Future H5 visual evidence must be legible on the owner's phone rather than relying on source resolution."
   ],
   "evidence_requirements": [
     "authoritative source identity, license or use authority, and content fingerprint per candidate",
@@ -167,11 +190,12 @@
     "run focused, mutation-negative, and complete Forge gates",
     "advance automatically to H6 only after H5 is verified"
   ],
-  "resume_after": "Present the bounded concept comparison in chat. Continue only after the owner's visual observation; do not infer preference or resume dependent implementation automatically.",
+  "resume_after": "The prior visual comparison is rejected. Resume H5 only with a phone-legible one-large-subject-per-image comparison; route selective aging to a later separately gated proof rather than implementing it inside H5.",
   "evidence": [
     "docs/canonical-system/H4_HUMANOID_FUNCTIONAL_CONTROLS_RESULT.md",
     "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md",
     "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md",
+    "docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md",
     "evidence/imported-chat/2026-07-14-gemini-fractal-matrix-engine.md",
     "contracts/control-calibration-contract.md",
     "artifacts/chat-screenshots/v2-pose-reference.png.manifest.json",
@@ -189,10 +213,12 @@
     "MakeHuman retained only as a license- and provenance-promising source family; no candidate admitted",
     "owner semi-realistic mature stylization, restrained toon/cel treatment, organism growth, and phone-to-high-end fidelity requirements recorded without implementation claims",
     "Gemini Fractal Matrix compendium stored verbatim as attributed evidence and explicitly not promoted",
+    "owner phone observation rejects generated fidelity contact sheet 049b8dc095fe8d92834a89aa4388d4f672da9ee246d7947a27c4308e7494ff52 as insufficiently distinguishable at target display scale",
+    "selective aging design records ambient cohort diversity, relationship-tracked baby-to-adult growth, optional elderly progression, and no old-age death without implementation claims",
     "primary Forge capture restored current",
     "heartbeat PAUSED"
   ],
-  "transition": "R0 accepted -> H1 intake verified -> H2 representation verified -> H3 generation verified -> H4 controls verified -> H5 source rejections retained -> H5 stylized scalable direction comparison executing",
+  "transition": "R0 accepted -> H1 intake verified -> H2 representation verified -> H3 generation verified -> H4 controls verified -> H5 source rejections retained -> H5 first stylized comparison rejected on phone -> H5 phone-legible direction reframe executing",
   "metrics": {
     "token_cost": {"status": "unknown", "value": null},
     "elapsed_time": {"status": "unknown", "value": null}

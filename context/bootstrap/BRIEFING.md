@@ -5,11 +5,11 @@
 ## Active route
 
 - Work package: **F5-H5-HUMANOID-VISUAL-REFERENCE-INTAKE**
-- Objective: Calibrate a mature semi-realistic, restrained toon/cel visual direction that can later derive from one organism identity across phone and high-end PC fidelity tiers, without mistaking concept imagery for implementation or performance proof.
+- Objective: Reframe mature semi-realistic stylization review for phone-legible evidence after the first contact sheet failed, while preserving selective living-entity aging as an explicit later lifecycle proof obligation rather than a visual or runtime claim.
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
 - Related systems: asset-factory, procedural-animation, forge-reference-studio, forge-truth-kernel
 - Risk/research gate: **stylization-anatomy-growth-generalization-and-cross-platform-fidelity / Generated concepts may test visual direction only. Inspect actual pixels, reject anatomy and tone failures, and never infer mesh topology, shader feasibility, biological growth correctness, or device performance from an image.**
-- Exact next action: Generate one bounded visual direction sheet spanning semi-realistic stylization and coordinated high-to-low fidelity, inspect its actual pixels for anatomy, completeness, tone, and comparison fitness, and retain it only as an owner-check concept candidate.
+- Exact next action: Prepare any later H5 comparison as one large subject or stage per image with deliberately isolated visual differences; retain the two-lane ambient-diversity versus relationship-lifecycle aging design for a separately gated capability-free proof.
 
 ## Approved operating policies
 

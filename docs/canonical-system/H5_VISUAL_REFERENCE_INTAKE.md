@@ -52,3 +52,11 @@ No candidate is yet `verified_fit`. A bounded generated comparison may now
 clarify *how much* geometric simplification and graphic shading fits this
 direction. Generated imagery remains visual-direction evidence only; it cannot
 prove topology, shader implementation, animation, growth, or device cost.
+
+The first generated three-panel fidelity sheet (SHA-256
+`049b8dc095fe8d92834a89aa4388d4f672da9ee246d7947a27c4308e7494ff52`,
+1717x916) was rejected after owner inspection on a phone: the three treatments
+read as effectively the same at that display scale. Future comparisons must
+show one large subject or stage per image and deliberately isolate material,
+silhouette, age, or fidelity changes. A desktop-legible contact sheet is not a
+valid phone review fixture merely because its source resolution is high.

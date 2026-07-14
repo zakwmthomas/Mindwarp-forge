@@ -125,6 +125,11 @@ high-end PCs; LOD may reduce geometry, materials, animation, AI, physics, and
 update cadence, but it may not fork gameplay truth. The detailed requirement
 and cheap proof order are retained in
 `ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md`.
+Selective aging is further bounded by
+`SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md`: ambient populations receive stable
+age diversity without continuous lifetime simulation; bred companions and
+children grow to adulthood, optional extended aging permits elderly states,
+and old age never causes death.
 
 ## Material-package receipt
 
