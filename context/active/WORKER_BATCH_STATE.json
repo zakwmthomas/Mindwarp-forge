@@ -3,10 +3,10 @@
   "canonical_role": "sole-active-work-checkpoint",
   "batch_id": "F5-H7-HUMANOID-PROMOTION-READINESS",
   "master_program_item": "F5",
-  "state": "executing",
+  "state": "checkpoint",
   "objective": "Audit whether H1-H6 form one coherent, correctly scoped canonical promotion candidate, or whether a missing bridge still separates the verified structural wire candidate from the owner-approved visual target.",
-  "next_action": "Build a claim-by-claim H7 promotion-readiness matrix across structural, functional, provenance, recovery, calibrated-observation, authority, rollback, and candidate-scope evidence; do not create, approve, or promote a candidate until every link is explicit.",
-  "substage_id": "H7-promotion-readiness-audit",
+  "next_action": "Implement the cheapest capability-free H7 proof inside humanoid-proof-chain: strict narrow candidate package plus a non-authoritative supersession lifecycle model and hostile scope/authority cases; do not modify the protected Kernel.",
+  "substage_id": "H7-scope-and-rollback-design-checkpoint",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
     "milestone": "F5",
@@ -17,7 +17,7 @@
   "authority_lane": "Read-only H7 readiness audit and candidate packaging only. Approval and promotion remain separate owner-initiated Kernel actions requiring exact candidate-bound phrases; no import, runtime selection, application, publishing, or protected-Kernel expansion.",
   "context_health": "Green: H6 is committed at 457c5b4; exact H1-H5 recovery and the full Forge gate pass; capture and heartbeat are current; H7 begins from a clean rollback point.",
   "stage_context": {
-    "stage_id": "H7-promotion-readiness-audit",
+    "stage_id": "H7-scope-and-rollback-design-checkpoint",
     "macro_sources": [
       "docs/canonical-system/MASTER_PLAN_V2.md",
       "docs/canonical-system/MASTER_PROGRAM.json",
@@ -49,6 +49,8 @@
       "H5 receipt 5c4eb3041ced04e1c1a5cd0e011babafe1826a4d8caf420bf267c8bff0617520 binds owner-approved PolyOne preview direction, not generated H3 surface geometry.",
       "H6 manifest a0eb0796a4a0edd800fcd937049eaa3ed7c65e695531daf0f754e835591ada2d proves ordered evidence continuity and recovery but deliberately grants no promotion.",
       "The primary H7 audit question is whether the promotable object is the engine-neutral proof-chain baseline itself or whether a future surface candidate must first bind the structural and visual evidence."
+      ,"The audit selects only engine-neutral-humanoid-proof-baseline-v1; production asset, H3-as-visual-human, and PolyOne-file candidates are rejected."
+      ,"Existing forward approval/promotion authority is strict, but the Kernel cannot withdraw an approved candidate or supersede a promoted baseline; authoritative rollback is the remaining H7 blocker."
     ]
   },
   "visual_quality_gate": {
@@ -59,18 +61,23 @@
     "receipts": []
   },
   "simulation_ladder": {
-    "cheapest_sufficient_tier": "static_reasoning",
+    "cheapest_sufficient_tier": "typed_model",
     "tiers_completed": [
       {
         "tier": "static_reasoning",
         "result": "Refreshed the H7 authority boundary and identified a candidate-scope question between the H3 structural wire and H5 visual target before constructing any promotion record.",
         "evidence": "MASTER_PLAN_V2 H7 definition; H3, H5, H6 results; explicit authorization and Kernel contracts"
+      },
+      {
+        "tier": "typed_model",
+        "result": "Completed the claim/non-claim matrix, selected the narrow H1-H6 proof-baseline candidate, rejected three overbroad alternatives, and proved from current APIs that approved/promoted candidate supersession is absent.",
+        "evidence": "docs/canonical-system/H7_HUMANOID_PROMOTION_READINESS.md; crates/forge-kernel/src/lib.rs candidate lifecycle"
       }
     ],
     "expensive_execution_planned": false,
-    "unresolved_risk": "Promoting an ambiguously named humanoid candidate could overclaim that the approved visual target is already generated geometry or that the structural wire is a production-ready character.",
-    "expected_information_gain": "The readiness matrix will determine whether a narrow proof-chain-baseline candidate is coherent now and separately expose any surface-generation bridge required for a future asset candidate.",
-    "estimated_cost": "Read-only evidence matrix and adversarial scope review; no code, install, import, graphics run, or owner interruption yet.",
+    "unresolved_risk": "The selected package is coherent on paper, but strict codecs and hostile cases have not yet proved that overbroad scope or forged rollback authority fail closed.",
+    "expected_information_gain": "A small capability-free fixture will validate the candidate schema and supersession semantics before deciding whether a protected-Kernel change is justified.",
+    "estimated_cost": "Extend the existing humanoid-proof-chain module with data-only types and in-memory tests; no Kernel mutation, install, import, graphics run, or owner interruption.",
     "regression_guard": "Do not alter H1-H6 identities, evidence, limitations, rejected candidates, owner wording, or authority state while packaging H7.",
     "stop_condition": "Stop and package an exact owner decision only if every candidate claim maps to retained evidence and every non-claim is explicit; otherwise record the narrow missing bridge and continue with the cheapest pre-promotion proof.",
     "final_integration_gate": "Pending: H7 scope matrix, hostile overclaim and stale-binding cases, exact rollback target, read-only owner decision package, mutation-negative checks, and the complete Forge gate before any promotion request."
@@ -91,9 +98,9 @@
     "no asset import, application, runtime selection, execution, publishing, or protected-Kernel mutation effect"
   ],
   "verification_plan": [
-    "audit every proposed promotion claim and non-claim against H1-H6 receipts",
-    "select the narrowest coherent candidate type and reject broader alternatives lacking evidence",
-    "define exact rollback target and stale-binding behavior",
+    "completed: audit every proposed promotion claim and non-claim against H1-H6 receipts",
+    "completed: select the narrowest coherent candidate type and reject broader alternatives lacking evidence",
+    "completed: define exact rollback target and stale-binding behavior",
     "prove hostile scope and authority cases in the cheapest sufficient typed fixture",
     "prepare but do not invoke candidate-specific owner approval and promotion actions",
     "run stage-quality, coherence, mutation-negative, projection, and complete Forge gates before presenting any H7 owner action"
@@ -101,6 +108,7 @@
   "resume_after": "Continue the H7 readiness matrix from the exact H3/H5 scope distinction; do not reopen H6 or import the PolyOne asset.",
   "evidence": [
     "docs/canonical-system/H6_HUMANOID_REPRODUCTION_RECOVERY_RESULT.md",
+    "docs/canonical-system/H7_HUMANOID_PROMOTION_READINESS.md",
     "contracts/humanoid-proof-chain-contract.md",
     "contracts/explicit-authorization-contract.md",
     "contracts/kernel-contract.md"
@@ -108,9 +116,11 @@
   "verification_receipts": [
     "H6 verified recovery proof committed at 457c5b4",
     "complete Forge gate passed in 74.5 seconds and capture restarted current",
-    "H7 macro/micro and authority boundary refreshed before candidate construction"
+    "H7 macro/micro and authority boundary refreshed before candidate construction",
+    "claim/non-claim matrix selects engine-neutral-humanoid-proof-baseline-v1 and rejects three overbroad candidate types",
+    "current Kernel has no approved-candidate withdrawal or promoted-candidate supersession state/event; control-plane and code rollback do not close that authority gap"
   ],
-  "transition": "H6 verified and committed -> H7 promotion-readiness audit executing -> candidate scope matrix next -> no owner action yet",
+  "transition": "H6 verified -> H7 scope audit -> narrow proof-baseline selected -> candidate rollback gap identified -> capability-free schema and lifecycle simulation next -> no owner action yet",
   "metrics": {
     "token_cost": {"status": "unknown", "value": null},
     "elapsed_time": {"status": "unknown", "value": null}

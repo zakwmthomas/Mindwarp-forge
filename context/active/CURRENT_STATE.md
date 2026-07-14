@@ -7,7 +7,7 @@
 
 - Package: **F5-H7-HUMANOID-PROMOTION-READINESS**
 - Master item / milestone: **F5 / F5**
-- State / substage: **executing / H7-promotion-readiness-audit**
+- State / substage: **checkpoint / H7-scope-and-rollback-design-checkpoint**
 - Related systems: asset-factory, forge-reference-studio, forge-truth-kernel, forge-control-plane
 - Objective: Audit whether H1-H6 form one coherent, correctly scoped canonical promotion candidate, or whether a missing bridge still separates the verified structural wire candidate from the owner-approved visual target.
 - Context health: Green: H6 is committed at 457c5b4; exact H1-H5 recovery and the full Forge gate pass; capture and heartbeat are current; H7 begins from a clean rollback point.
@@ -15,6 +15,7 @@
 ## Durable evidence
 
 - `docs/canonical-system/H6_HUMANOID_REPRODUCTION_RECOVERY_RESULT.md`
+- `docs/canonical-system/H7_HUMANOID_PROMOTION_READINESS.md`
 - `contracts/humanoid-proof-chain-contract.md`
 - `contracts/explicit-authorization-contract.md`
 - `contracts/kernel-contract.md`
@@ -25,7 +26,7 @@ Read-only H7 readiness audit and candidate packaging only. Approval and promotio
 
 ## Exact next action
 
-Build a claim-by-claim H7 promotion-readiness matrix across structural, functional, provenance, recovery, calibrated-observation, authority, rollback, and candidate-scope evidence; do not create, approve, or promote a candidate until every link is explicit.
+Implement the cheapest capability-free H7 proof inside humanoid-proof-chain: strict narrow candidate package plus a non-authoritative supersession lifecycle model and hostile scope/authority cases; do not modify the protected Kernel.
 
 ## Unresolved risks
 
