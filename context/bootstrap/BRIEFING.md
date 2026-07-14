@@ -9,7 +9,7 @@
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
 - Related systems: forge-truth-kernel, conversation-compiler, solo-studio-control-plane, forge-dashboard
 - Risk/research gate: **cross-cutting-continuity-and-recovery / satisfied-by-owner-approved-plan-repository-audit-and-primary-source-architecture-review**
-- Exact next action: Create the reviewed local Git baseline, then return to the independent F5 owner-observation gate without inferring an observation.
+- Exact next action: Await direct owner review in the built-in Forge viewport; do not infer or submit an observation on the owner's behalf.
 
 ## Approved operating policies
 

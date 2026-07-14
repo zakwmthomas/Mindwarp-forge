@@ -7,10 +7,10 @@
 
 - Package: **F5-COHERENCE-FOUNDATION**
 - Master item / milestone: **F5 / F5**
-- State / substage: **recorded / F5-COHERENCE-5-recorded-awaiting-git-baseline**
+- State / substage: **complete / F5-COHERENCE-6-complete-and-versioned**
 - Related systems: forge-truth-kernel, conversation-compiler, solo-studio-control-plane, forge-dashboard
 - Objective: Make conversation plans, canonical work, generated context, repository files, and the Forge interface operate as one recoverable anti-spaghetti continuity system.
-- Context health: Green: the coherence package is recorded; the full Forge gate passes and the real local ledger migrated additively to 223 typed knowledge records with integrity ok.
+- Context health: Green: the coherence package is complete, the full Forge gate passes, the real ledger migrated additively, and local Git now supplies an independent reviewed recovery baseline.
 
 ## Durable evidence
 
@@ -29,7 +29,7 @@ Owner-authorized local Forge implementation only; no inferred approvals, remote 
 
 ## Exact next action
 
-Create the reviewed local Git baseline, then return to the independent F5 owner-observation gate without inferring an observation.
+Await direct owner review in the built-in Forge viewport; do not infer or submit an observation on the owner's behalf.
 
 ## Unresolved risks
 
