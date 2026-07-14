@@ -31,6 +31,7 @@
     {"pattern":"README.md","role":"repository_navigation"},
     {"pattern":"Cargo.toml","role":"build_manifest"},
     {"pattern":"Cargo.lock","role":"dependency_lock"},
-    {"pattern":".gitignore","role":"version_control_policy"}
+    {"pattern":".gitignore","role":"version_control_policy"},
+    {"pattern":".gitattributes","role":"version_control_policy"}
   ]
 }
