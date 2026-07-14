@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **F5-H5-HUMANOID-VISUAL-REFERENCE-INTAKE**
-- Objective: Reframe mature semi-realistic stylization review for phone-legible evidence after the first contact sheet failed, while preserving selective living-entity aging as an explicit later lifecycle proof obligation rather than a visual or runtime claim.
+- Work package: **F5-N0-FULL-PLAN-REASSESSMENT**
+- Objective: Reassess the complete Forge and Mind Warp master plan, audit every proposed natural-function mechanism across Forge operations and game systems, eliminate redundancy and contradiction, and prepare deterministic case-by-case evidence before any mechanism is applied.
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
-- Related systems: asset-factory, procedural-animation, forge-reference-studio, forge-truth-kernel
-- Risk/research gate: **stylization-anatomy-growth-generalization-and-cross-platform-fidelity / Generated concepts may test visual direction only. Inspect actual pixels, reject anatomy and tone failures, and never infer mesh topology, shader feasibility, biological growth correctness, or device performance from an image.**
-- Exact next action: Prepare any later H5 comparison as one large subject or stage per image with deliberately isolated visual differences; retain the two-lane ambient-diversity versus relationship-lifecycle aging design for a separately gated capability-free proof.
+- Related systems: forge-truth-kernel, forge-conversation-compiler, forge-research-ledger, forge-control-plane, forge-reference-studio, universe-identity, field-basis, hierarchy-history, significance-system, construction-language, representation-selector, asset-factory, procedural-animation
+- Risk/research gate: **whole-system-plan-coherence-negative-transfer-and-metaphor-overreach / Treat natural mechanisms as scoped hypotheses. Compare every proposed manifestation with existing Forge contracts and a simpler baseline; retain counterexamples and non-applicable scope; do not infer universality, authority, or production readiness.**
+- Exact next action: Inventory and classify every canonical system, plan item, retained failure, natural-function proposal, selective-aging requirement, H5 obligation, dependency, authority boundary, and proof gap; then construct the Forge-wide manifestation atlas and disposable case-test gate.
 
 ## Approved operating policies
 

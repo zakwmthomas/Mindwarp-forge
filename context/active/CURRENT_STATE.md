@@ -5,46 +5,41 @@
 
 ## Active checkpoint
 
-- Package: **F5-H5-HUMANOID-VISUAL-REFERENCE-INTAKE**
+- Package: **F5-N0-FULL-PLAN-REASSESSMENT**
 - Master item / milestone: **F5 / F5**
-- State / substage: **executing / H5-phone-legible-direction-reframe**
-- Related systems: asset-factory, procedural-animation, forge-reference-studio, forge-truth-kernel
-- Objective: Reframe mature semi-realistic stylization review for phone-legible evidence after the first contact sheet failed, while preserving selective living-entity aging as an explicit later lifecycle proof obligation rather than a visual or runtime claim.
-- Context health: Green after a two-scale refresh. Owner phone observation rejected the first contact sheet as insufficiently distinguishable and clarified selective aging. Both are recorded without implementation claims; H5 dependent implementation remains blocked and heartbeat remains paused.
+- State / substage: **executing / N0-master-plan-inventory-and-alignment**
+- Related systems: forge-truth-kernel, forge-conversation-compiler, forge-research-ledger, forge-control-plane, forge-reference-studio, universe-identity, field-basis, hierarchy-history, significance-system, construction-language, representation-selector, asset-factory, procedural-animation
+- Objective: Reassess the complete Forge and Mind Warp master plan, audit every proposed natural-function mechanism across Forge operations and game systems, eliminate redundancy and contradiction, and prepare deterministic case-by-case evidence before any mechanism is applied.
+- Context health: Green after mandatory bootstrap. H5 is preserved as interrupted and pending; the active work is the owner-authorized full-plan reassessment. Capture is current and heartbeat remains paused.
 
 ## Durable evidence
 
-- `docs/canonical-system/H4_HUMANOID_FUNCTIONAL_CONTROLS_RESULT.md`
-- `docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md`
-- `docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md`
-- `docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md`
+- `docs/canonical-system/MASTER_PLAN_V2.md`
+- `docs/canonical-system/MASTER_PROGRAM.json`
+- `docs/canonical-system/system-registry.json`
+- `docs/canonical-system/SEMANTIC_CONSTRUCTION_DESIGN_GATE.md`
+- `docs/canonical-system/UNIVERSAL_IMPROVEMENT_KERNEL.md`
+- `contracts/federated-improvement-contract.md`
 - `evidence/imported-chat/2026-07-14-gemini-fractal-matrix-engine.md`
-- `contracts/control-calibration-contract.md`
-- `artifacts/chat-screenshots/v2-pose-reference.png.manifest.json`
-- `governance/STAGE_QUALITY_PROTOCOL.md`
+- `docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md`
 
 ## Authority boundary
 
-Owner-authorized requirement recording and bounded concept comparison only. Growth, geometry, shader, runtime, device profiling, approval, promotion, engine selection, external execution, and protected-Kernel mutation remain unauthorized.
+Owner-authorized planning-wave research, canonical planning updates, capability-free disposable simulations, and evidence recording only. Advisory mechanisms may not select or dispatch work, change policy, approve or promote candidates, execute external content, select a runtime, mutate game state, or alter the protected Kernel.
 
 ## Exact next action
 
-Prepare any later H5 comparison as one large subject or stage per image with deliberately isolated visual differences; retain the two-lane ambient-diversity versus relationship-lifecycle aging design for a separately gated capability-free proof.
+Inventory and classify every canonical system, plan item, retained failure, natural-function proposal, selective-aging requirement, H5 obligation, dependency, authority boundary, and proof gap; then construct the Forge-wide manifestation atlas and disposable case-test gate.
 
 ## Unresolved risks
 
-- No current repository asset is a verified good-quality human visual reference.
-- External candidates may have unclear licensing, incomplete provenance, hidden visual defects, or unsuitable pose/view/lighting.
-- An anatomically credible source can still be the wrong creative target for Mind Warp.
-- A single view can hide anatomy or proportion defects that appear from another angle.
-- Visual observation must not approve, promote, or overwrite structural evidence.
-- A concept image may look attractive while hiding topology, deformation, shader-cost, or phone-performance failures.
-- The exact meaning of the owner's term NNR is unresolved and is conservatively treated as constrained phone-class hardware.
-- Growth semantics for biological age, life stage, inherited morphology, acquired change, and creature diversity require a later bounded proof package.
-- The per-save extended-aging toggle pause/resume behavior is a reversible proposed default, not yet owner-tested gameplay behavior.
-- Age-cohort distributions and species-specific presentation curves remain uncalibrated.
-- Future H5 visual evidence must be legible on the owner's phone rather than relying on source resolution.
+- A nature metaphor may duplicate an existing Forge mechanism under less precise terminology.
+- A method may improve one case while causing negative transfer or higher total cost elsewhere.
+- A generic search protocol could accidentally centralize domain objectives or create a global score.
+- Advisory Forge-planning output could be mistaken for authority or actual work selection.
+- The planning wave could create a second queue instead of repairing the canonical program.
+- Network, deterministic-client, commerce, infinite-scale, free, instant, zero-overhead, and bandwidth claims remain unproved and outside current authority.
 
 ## Resume after this package
 
-The prior visual comparison is rejected. Resume H5 only with a phone-legible one-large-subject-per-image comparison; route selective aging to a later separately gated proof rather than implementing it inside H5.
+After N0-N3 evidence and plan reconciliation pass, present the case portfolio and scope decisions in chat. Resume H5 only after the planning/evidence gate, using one large phone-legible subject or stage per image.

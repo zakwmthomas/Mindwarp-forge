@@ -1,224 +1,129 @@
 {
   "schema_version": 2,
   "canonical_role": "sole-active-work-checkpoint",
-  "batch_id": "F5-H5-HUMANOID-VISUAL-REFERENCE-INTAKE",
+  "batch_id": "F5-N0-FULL-PLAN-REASSESSMENT",
   "master_program_item": "F5",
   "state": "executing",
-  "objective": "Reframe mature semi-realistic stylization review for phone-legible evidence after the first contact sheet failed, while preserving selective living-entity aging as an explicit later lifecycle proof obligation rather than a visual or runtime claim.",
-  "next_action": "Prepare any later H5 comparison as one large subject or stage per image with deliberately isolated visual differences; retain the two-lane ambient-diversity versus relationship-lifecycle aging design for a separately gated capability-free proof.",
-  "substage_id": "H5-phone-legible-direction-reframe",
+  "objective": "Reassess the complete Forge and Mind Warp master plan, audit every proposed natural-function mechanism across Forge operations and game systems, eliminate redundancy and contradiction, and prepare deterministic case-by-case evidence before any mechanism is applied.",
+  "next_action": "Inventory and classify every canonical system, plan item, retained failure, natural-function proposal, selective-aging requirement, H5 obligation, dependency, authority boundary, and proof gap; then construct the Forge-wide manifestation atlas and disposable case-test gate.",
+  "substage_id": "N0-master-plan-inventory-and-alignment",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
     "milestone": "F5",
-    "systems": ["asset-factory", "procedural-animation", "forge-reference-studio", "forge-truth-kernel"]
+    "systems": [
+      "forge-truth-kernel",
+      "forge-conversation-compiler",
+      "forge-research-ledger",
+      "forge-control-plane",
+      "forge-reference-studio",
+      "universe-identity",
+      "field-basis",
+      "hierarchy-history",
+      "significance-system",
+      "construction-language",
+      "representation-selector",
+      "asset-factory",
+      "procedural-animation"
+    ]
   },
-  "risk_level": "stylization-anatomy-growth-generalization-and-cross-platform-fidelity",
-  "research_gate": "Generated concepts may test visual direction only. Inspect actual pixels, reject anatomy and tone failures, and never infer mesh topology, shader feasibility, biological growth correctness, or device performance from an image.",
-  "authority_lane": "Owner-authorized requirement recording and bounded concept comparison only. Growth, geometry, shader, runtime, device profiling, approval, promotion, engine selection, external execution, and protected-Kernel mutation remain unauthorized.",
-  "context_health": "Green after a two-scale refresh. Owner phone observation rejected the first contact sheet as insufficiently distinguishable and clarified selective aging. Both are recorded without implementation claims; H5 dependent implementation remains blocked and heartbeat remains paused.",
+  "risk_level": "whole-system-plan-coherence-negative-transfer-and-metaphor-overreach",
+  "research_gate": "Treat natural mechanisms as scoped hypotheses. Compare every proposed manifestation with existing Forge contracts and a simpler baseline; retain counterexamples and non-applicable scope; do not infer universality, authority, or production readiness.",
+  "authority_lane": "Owner-authorized planning-wave research, canonical planning updates, capability-free disposable simulations, and evidence recording only. Advisory mechanisms may not select or dispatch work, change policy, approve or promote candidates, execute external content, select a runtime, mutate game state, or alter the protected Kernel.",
+  "context_health": "Green after mandatory bootstrap. H5 is preserved as interrupted and pending; the active work is the owner-authorized full-plan reassessment. Capture is current and heartbeat remains paused.",
   "stage_context": {
-    "stage_id": "H5-phone-legible-direction-reframe",
+    "stage_id": "N0-master-plan-inventory-and-alignment",
     "macro_sources": [
       "docs/canonical-system/MASTER_PLAN_V2.md",
       "docs/canonical-system/MASTER_PROGRAM.json",
+      "docs/canonical-system/system-registry.json",
+      "docs/canonical-system/DEPENDENCY_MAP.md",
       "docs/project-atlas/ROADMAP.md",
       "governance/WORKING_COVENANT.md",
-      "governance/STAGE_QUALITY_PROTOCOL.md",
-      "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md",
-      "docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md"
+      "governance/UNIVERSAL_IMPROVEMENT_KERNEL.md",
+      "governance/STAGE_QUALITY_PROTOCOL.md"
     ],
     "macro_findings": [
-      "H5 is the first visual-inspection stage; H6 recovery and H7 promotion remain later gates.",
-      "F5 remains engine-neutral and cannot import a production asset or select a runtime.",
-      "The owner requires good-quality accurate comparison targets and review whenever fitness or creative intent is uncertain.",
-      "The verified humanoid chain is a smallest engine-neutral proof, not an in-game growth, creature, mesh, shader, or device-performance implementation.",
-      "Later organism growth must generalize beyond humanoids while one canonical identity drives coordinated phone-to-high-end presentation and simulation fidelity.",
-      "Selective aging has two lanes: stable ambient age diversity and persistent baby-to-adult growth for bred companions and children, with optional adult-to-elder progression and no old-age death."
+      "Forge already separates identity, fields, history, significance, semantics, representation, evidence, authority, and improvement through bounded contracts; a new natural-function layer must reuse rather than duplicate them.",
+      "The humanoid chain remains the smallest F5 articulated proof, while organism lifecycle, creature generalization, multi-fidelity presentation, and runtime work remain later gates.",
+      "The owner requires natural-function ideas to be audited across Forge operations as well as game generation, tested case by case in chat, and applied only at evidence-supported scope.",
+      "H5 phone-legible visual work is interrupted but not completed or superseded."
     ],
     "micro_sources": [
-      "artifacts/chat-screenshots/v2-pose-reference.png",
-      "artifacts/chat-screenshots/v2-pose-reference.png.manifest.json",
-      "contracts/reference-viewport-contract.md",
-      "contracts/control-calibration-contract.md",
-      "docs/canonical-system/H4_HUMANOID_FUNCTIONAL_CONTROLS_RESULT.md",
-      "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md",
+      "evidence/imported-chat/2026-07-14-gemini-fractal-matrix-engine.md",
+      "docs/canonical-system/SEMANTIC_CONSTRUCTION_DESIGN_GATE.md",
+      "docs/canonical-system/UNIVERSAL_IMPROVEMENT_KERNEL.md",
+      "contracts/federated-improvement-contract.md",
       "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md",
       "docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md",
-      "evidence/imported-chat/2026-07-14-gemini-fractal-matrix-engine.md"
+      "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md"
     ],
     "micro_findings": [
-      "Original-resolution pixel inspection confirms the Forge UI capture is clean and correctly scoped to the Forge window.",
-      "The displayed reference is a tiny three-view stick skeleton with no surface anatomy, credible human silhouette, face, hands, musculature, or detailed proportions.",
-      "The current fixture is rejected for human-quality comparison but remains valid for the exact structural H2-H4 proofs.",
-      "Three official MakeHuman documentation images were inspected at original scale and rejected because crop, incompleteness, clothing, annotations, or occlusion prevent the required full-human comparison.",
-      "MakeHuman remains a provenance- and license-promising source family, but no actual candidate asset is verified fit.",
-      "The owner selected semi-realistic anatomy and proportions with mature economical stylization and a restrained toon/cel-like shader, explicitly avoiding childlike caricature.",
-      "The owner requires growth across NPCs, humanoids, and creatures plus coordinated degradation from high-end PC to phone-class hardware.",
-      "The imported Gemini compendium is preserved as evidence only; useful hypotheses and unsupported performance, determinism, security, and scale claims are explicitly separated.",
-      "The 1717x916 three-panel fidelity sheet was technically clear at source scale but the owner reported all panels looked the same on a phone, so it is rejected as a phone review fixture.",
-      "Ambient entities need deterministic age-cohort diversity without continuous aging; bred companions and player children need tracked baby-to-adult growth, while a setting controls only optional elderly progression.",
-      "Old age does not cause death, the player character is outside this aging system, and species-authored age cues must replace a universal head/eye scaling rule."
+      "P6 validates grounded pressures, roles, mechanism-distinct families, trade vectors, capability closure, and replayable recipes but intentionally lacks a general proposal-search solver.",
+      "B5 already supplies target-local transfer, negative-transfer rejection, counterexample retention, and portfolio rather than aggregate assessment.",
+      "The adult-form toggle is an appearance lock: canonical age continues; juveniles remain juvenile; eligible adults and elders present as adult while locked; disabling reveals true age; old age never causes death.",
+      "The Gemini code and performance claims are untrusted evidence; its ambient random branching implementation cannot prove deterministic peer simulation."
     ]
   },
   "visual_quality_gate": {
-    "asset_use_intent": true,
-    "status": "required_pending",
-    "rationale": "H5 must now compare actual rendered examples against the resolved mature semi-realistic and restrained toon/cel direction. Existing references remain insufficient, and generated concepts cannot pass as implementation or performance evidence.",
+    "asset_use_intent": false,
+    "status": "not_applicable",
+    "rationale": "N0 audits plans, contracts, algorithms, and deterministic case definitions without admitting or comparing visual assets. H5 visual receipts remain in their canonical H5 record.",
     "dependent_implementation_blocked": true,
-    "receipts": [
-      {
-        "content_sha256": "c85653f3329d164ea07f0dca334de05879faab4d17e65ac00ab1e9eed764840e",
-        "provenance": "Forge-owned window capture with verified PrintWindow manifest; artifact is disposable presentation evidence.",
-        "intended_comparison": "Neutral human visual form, anatomy, proportions, and pose quality.",
-        "accuracy_limits": "Only a 17-joint wire skeleton is visible; it contains no surface anatomy or detailed human form.",
-        "pixel_inspection_performed": true,
-        "rendered_views_inspected": ["Original 1116x799 Forge window capture", "Front, side, and top wire panels at displayed scale"],
-        "visible_defects": ["Tiny display region", "Stick-skeleton only", "No surface silhouette", "No face or hands", "No anatomy or musculature", "Insufficient proportional detail"],
-        "human_subject": true,
-        "anatomical_credibility": "rejected_for_visual_comparison",
-        "comparison_completeness": "rejected_for_visual_comparison",
-        "pose_view_lighting_fitness": "rejected_for_visual_comparison",
-        "disposition": "rejected"
-      },
-      {
-        "content_sha256": "80f312ced3cfd22aa29a196b89a479290fb7e57c1c2c753d6ff5d0fd4766d75f",
-        "provenance": "Official MakeHuman documentation image at https://static.makehumancommunity.org/makehuman/docs/main_labelled.png; inspected from disposable temp storage.",
-        "intended_comparison": "Neutral full-human visual form, anatomy, proportions, and articulation landmarks.",
-        "accuracy_limits": "Upper-body UI illustration only; clothing and annotations obscure the subject and lower body, hands, and feet are unavailable.",
-        "pixel_inspection_performed": true,
-        "rendered_views_inspected": ["Original downloaded documentation image at useful scale"],
-        "visible_defects": ["Incomplete body", "Clothed and annotated", "No usable hands or feet", "No multi-view comparison"],
-        "human_subject": true,
-        "anatomical_credibility": "plausible_but_insufficiently_visible",
-        "comparison_completeness": "rejected_for_visual_comparison",
-        "pose_view_lighting_fitness": "rejected_for_visual_comparison",
-        "disposition": "rejected"
-      },
-      {
-        "content_sha256": "2b45690e716cf725927222087ac76e05cf68f2e1522e9c5fd7f74334577cf233",
-        "provenance": "Official MakeHuman documentation image at https://static.makehumancommunity.org/makehuman/docs/age_0.png; inspected from disposable temp storage.",
-        "intended_comparison": "Neutral full-human visual form, anatomy, proportions, and articulation landmarks.",
-        "accuracy_limits": "Four head-and-bust variants only; no full body, neutral articulation view, hands, or feet.",
-        "pixel_inspection_performed": true,
-        "rendered_views_inspected": ["Original downloaded documentation image at useful scale"],
-        "visible_defects": ["Bust crop only", "No full body", "No hands or feet", "No usable articulation comparison"],
-        "human_subject": true,
-        "anatomical_credibility": "plausible_but_insufficiently_complete",
-        "comparison_completeness": "rejected_for_visual_comparison",
-        "pose_view_lighting_fitness": "rejected_for_visual_comparison",
-        "disposition": "rejected"
-      },
-      {
-        "content_sha256": "69cfc6220d7754adef469bf9423bcb9b5c9fbd1f603ae500426f1a88e3bccc8c",
-        "provenance": "Official MakeHuman documentation image at https://static.makehumancommunity.org/makehuman/docs/legs_modelling_2_0.png; inspected from disposable temp storage.",
-        "intended_comparison": "Neutral full-human visual form, anatomy, proportions, and articulation landmarks.",
-        "accuracy_limits": "Cropped torso and legs with clipped arms, absent face and feet, and a large censor block over comparison anatomy.",
-        "pixel_inspection_performed": true,
-        "rendered_views_inspected": ["Original downloaded documentation image at useful scale"],
-        "visible_defects": ["Arms clipped", "Face absent", "Feet absent", "Anatomy obscured by censor block", "No multi-view comparison"],
-        "human_subject": true,
-        "anatomical_credibility": "not_fully_judgeable",
-        "comparison_completeness": "rejected_for_visual_comparison",
-        "pose_view_lighting_fitness": "rejected_for_visual_comparison",
-        "disposition": "rejected"
-      },
-      {
-        "content_sha256": "049b8dc095fe8d92834a89aa4388d4f672da9ee246d7947a27c4308e7494ff52",
-        "provenance": "Built-in generated preview from the owner-directed H5 mature stylization comparison; preview-only source retained in the captured chat and Codex generated-image store.",
-        "intended_comparison": "High-end, balanced, and phone-low-poly treatments of the same adult humanoid and quadrupedal creature.",
-        "accuracy_limits": "Concept image only; cannot prove topology, shaders, growth, animation, or performance. Three equal panels compress each treatment on a phone display.",
-        "pixel_inspection_performed": true,
-        "rendered_views_inspected": ["Original 1717x916 three-panel image", "Owner observation on phone display"],
-        "visible_defects": ["Panel differences insufficiently legible at phone scale", "Contact-sheet subjects too small for the target review context", "No biological age-stage comparison", "Concept rendering cannot establish runtime cost"],
-        "human_subject": true,
-        "anatomical_credibility": "plausible_concept_only",
-        "comparison_completeness": "rejected_for_phone_comparison",
-        "pose_view_lighting_fitness": "rejected_for_phone_comparison",
-        "disposition": "rejected"
-      }
-    ]
+    "receipts": []
   },
   "simulation_ladder": {
-    "cheapest_sufficient_tier": "disposable_simulation",
-    "tiers_completed": [
-      {
-        "tier": "static_reasoning",
-        "result": "Source, license, provenance, and comparison-fitness criteria screened before candidate admission.",
-        "evidence": "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md"
-      },
-      {
-        "tier": "disposable_simulation",
-        "result": "Original-pixel inspection rejected the existing Forge wire capture and three official MakeHuman documentation images before any external application or integrated PC execution.",
-        "evidence": "Four rejected visual_quality_gate receipts bound by SHA-256 and pixel findings."
-      }
-    ],
+    "cheapest_sufficient_tier": "static_reasoning",
+    "tiers_completed": [],
     "expensive_execution_planned": false,
     "unresolved_risk": "",
     "expected_information_gain": "",
     "estimated_cost": "",
     "regression_guard": "",
     "stop_condition": "",
-    "final_integration_gate": "After visual receipts and any owner check are complete, retain exact fingerprint binding, mutation-negative checks, and the complete Forge gate before H5 closure."
+    "final_integration_gate": "No mechanism may influence canonical Forge behavior until the full manifestation audit, disposable case portfolio, target-local scope decision, focused fixtures, and complete Forge gate pass."
   },
   "unresolved_risks": [
-    "No current repository asset is a verified good-quality human visual reference.",
-    "External candidates may have unclear licensing, incomplete provenance, hidden visual defects, or unsuitable pose/view/lighting.",
-    "An anatomically credible source can still be the wrong creative target for Mind Warp.",
-    "A single view can hide anatomy or proportion defects that appear from another angle.",
-    "Visual observation must not approve, promote, or overwrite structural evidence.",
-    "A concept image may look attractive while hiding topology, deformation, shader-cost, or phone-performance failures.",
-    "The exact meaning of the owner's term NNR is unresolved and is conservatively treated as constrained phone-class hardware.",
-    "Growth semantics for biological age, life stage, inherited morphology, acquired change, and creature diversity require a later bounded proof package.",
-    "The per-save extended-aging toggle pause/resume behavior is a reversible proposed default, not yet owner-tested gameplay behavior.",
-    "Age-cohort distributions and species-specific presentation curves remain uncalibrated.",
-    "Future H5 visual evidence must be legible on the owner's phone rather than relying on source resolution."
+    "A nature metaphor may duplicate an existing Forge mechanism under less precise terminology.",
+    "A method may improve one case while causing negative transfer or higher total cost elsewhere.",
+    "A generic search protocol could accidentally centralize domain objectives or create a global score.",
+    "Advisory Forge-planning output could be mistaken for authority or actual work selection.",
+    "The planning wave could create a second queue instead of repairing the canonical program.",
+    "Network, deterministic-client, commerce, infinite-scale, free, instant, zero-overhead, and bandwidth claims remain unproved and outside current authority."
   ],
   "evidence_requirements": [
-    "authoritative source identity, license or use authority, and content fingerprint per candidate",
-    "actual-pixel inspection at useful scale and relevant views",
-    "anatomy, completeness, occlusion, pose, view, lighting, detail, and visible-defect record",
-    "explicit verified-fit, rejected, or owner-check-required disposition",
-    "one bounded labelled owner comparison if fitness or creative choice remains uncertain",
-    "exact H3/H4 candidate, calibration, and observation binding with no promotion effect"
+    "complete master-program and system-registry inventory with redundancy, contradiction, dependency, authority, and proof classifications",
+    "natural-function manifestation atlas covering Forge operations and game systems",
+    "per-mechanism mathematical abstraction, current equivalent, baseline, cost, falsifier, counterexample, non-applicable scope, and disposition",
+    "deterministic disposable MethodCaseReceipts with case-local, domain-local, cross-domain, universal-protocol, rejected, or inconclusive classifications",
+    "explicit H5 resume point and later selective-aging route",
+    "no protected-Kernel, approval, promotion, dispatch, runtime, external-execution, or game-state effect"
   ],
   "verification_plan": [
-    "research a small authoritative/licensed candidate set",
-    "inspect actual pixels and reject bad references before comparison",
-    "retain source and visual fitness receipts",
-    "route only genuine uncertainty to one owner comparison",
-    "bind any observation without approval or promotion effect",
-    "run focused, mutation-negative, and complete Forge gates",
-    "advance automatically to H6 only after H5 is verified"
+    "verify canonical plan/program/Atlas coverage and dependency coherence",
+    "adversarially trace Forge research, diagnosis, worker selection, test selection, semantic construction, organism aging, fidelity, and deferred network claims",
+    "run cheap deterministic case simulations against declared simple baselines",
+    "retain failures and negative transfer without aggregate masking",
+    "run stage-quality, active-context, master-program, Atlas, module-boundary, focused tests, and the complete Forge gate before closeout"
   ],
-  "resume_after": "The prior visual comparison is rejected. Resume H5 only with a phone-legible one-large-subject-per-image comparison; route selective aging to a later separately gated proof rather than implementing it inside H5.",
+  "resume_after": "After N0-N3 evidence and plan reconciliation pass, present the case portfolio and scope decisions in chat. Resume H5 only after the planning/evidence gate, using one large phone-legible subject or stage per image.",
   "evidence": [
-    "docs/canonical-system/H4_HUMANOID_FUNCTIONAL_CONTROLS_RESULT.md",
-    "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md",
-    "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md",
-    "docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md",
+    "docs/canonical-system/MASTER_PLAN_V2.md",
+    "docs/canonical-system/MASTER_PROGRAM.json",
+    "docs/canonical-system/system-registry.json",
+    "docs/canonical-system/SEMANTIC_CONSTRUCTION_DESIGN_GATE.md",
+    "docs/canonical-system/UNIVERSAL_IMPROVEMENT_KERNEL.md",
+    "contracts/federated-improvement-contract.md",
     "evidence/imported-chat/2026-07-14-gemini-fractal-matrix-engine.md",
-    "contracts/control-calibration-contract.md",
-    "artifacts/chat-screenshots/v2-pose-reference.png.manifest.json",
-    "governance/STAGE_QUALITY_PROTOCOL.md",
-    "contracts/perception-protocol-contract.md",
-    "contracts/viewport-stimulus-contract.md"
+    "docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md"
   ],
   "verification_receipts": [
-    "H4 calibration fingerprint 774a790aa963bb7ed329394d869fda4f5530697cce4d4d029a23d31e6d575f4d retained",
-    "H4 5 control-calibration tests pass",
-    "H4 18-module boundary gate passes",
-    "H4 complete Forge gate passes",
-    "current Forge wire reference inspected at original resolution and rejected for human-quality comparison",
-    "three official MakeHuman documentation images inspected at original scale and rejected for incomplete, cropped, or obscured human comparison",
-    "MakeHuman retained only as a license- and provenance-promising source family; no candidate admitted",
-    "owner semi-realistic mature stylization, restrained toon/cel treatment, organism growth, and phone-to-high-end fidelity requirements recorded without implementation claims",
-    "Gemini Fractal Matrix compendium stored verbatim as attributed evidence and explicitly not promoted",
-    "owner phone observation rejects generated fidelity contact sheet 049b8dc095fe8d92834a89aa4388d4f672da9ee246d7947a27c4308e7494ff52 as insufficiently distinguishable at target display scale",
-    "selective aging design records ambient cohort diversity, relationship-tracked baby-to-adult growth, optional elderly progression, and no old-age death without implementation claims",
-    "primary Forge capture restored current",
+    "mandatory Forge bootstrap passed before N0 transition",
+    "Atlas verifies F5 active with seven milestones and six system groups",
+    "operating-system verifier confirms fifteen approved policies before reassessment",
+    "H5 phone-legibility failure and selective-aging clarification retained before interruption",
     "heartbeat PAUSED"
   ],
-  "transition": "R0 accepted -> H1 intake verified -> H2 representation verified -> H3 generation verified -> H4 controls verified -> H5 source rejections retained -> H5 first stylized comparison rejected on phone -> H5 phone-legible direction reframe executing",
+  "transition": "R0 accepted -> H1-H4 verified -> H5 source/contact-sheet rejections retained -> H5 interrupted by owner-authorized N0 full-plan reassessment",
   "metrics": {
     "token_cost": {"status": "unknown", "value": null},
     "elapsed_time": {"status": "unknown", "value": null}
