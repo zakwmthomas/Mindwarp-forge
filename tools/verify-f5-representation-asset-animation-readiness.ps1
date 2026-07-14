@@ -1,5 +1,7 @@
 $ErrorActionPreference='Stop'
 $root=Split-Path -Parent $PSScriptRoot
+$attributesPath=Join-Path $root '.gitattributes'
+if(!(Test-Path -LiteralPath $attributesPath)-or!(Get-Content -LiteralPath $attributesPath -Raw).Contains('evidence/** -text')){throw 'Immutable evidence bytes are not protected from Git text conversion.'}
 $readinessPath=Join-Path $root 'docs\canonical-system\REPRESENTATION_ASSET_ANIMATION_READINESS.md'
 $gatePath=Join-Path $root 'docs\canonical-system\REPRESENTATION_ASSET_ANIMATION_DESIGN_GATE.md'
 $p7bGatePath=Join-Path $root 'docs\canonical-system\P7B_CONTROLLED_PERCEPTION_DESIGN_GATE.md'
