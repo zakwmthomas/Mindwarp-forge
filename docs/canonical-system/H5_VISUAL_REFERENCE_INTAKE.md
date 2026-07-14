@@ -72,17 +72,13 @@ design actually needs them, materials, and world shaders are modular derived
 layers. The baseline uses a continuous non-sexual mannequin surface so it can
 support many characters without hair or clothing hiding comparison anatomy.
 
-No candidate is yet `verified_fit`. A bounded generated comparison may now
-clarify *how much* geometric simplification and graphic shading fits this
-direction. Generated imagery remains visual-direction evidence only; it cannot
-prove topology, shader implementation, animation, growth, or device cost.
-
-The first large adult fixture proved phone-legible framing and a useful mature
-proportion direction, but its hair and garments fail the newly clarified
-neutral-base requirement. Shading is not part of the form gate. The next front
-fixture must use the featureless mannequin surface; H5 then needs separately
-legible side/back evidence. Generated view variants must preserve identity and
-proportions or be rejected rather than averaged into a fictitious human.
+The PolyOne preview set is now `verified_fit` for the owner-approved stylized
+feminine visual target and featureless multi-view presentation. This is not a
+production-asset, topology, shader, animation, growth, or device-cost receipt.
+The first large generated adult remains narrower phone-framing and mature-form
+evidence because its hair, garments, and single view fail the neutral-base
+construction requirement. No further generated H5 fixture is required unless
+a later stage exposes a specific visual-direction gap.
 
 Two attempts to generate that featureless mannequin were rejected by the image
 safety system at output moderation, even after changing from a realistic edit
@@ -98,10 +94,11 @@ existing source hierarchy:
    family: official, CC0, mature realistic and stylized variants, and a complete
    local archive already fingerprinted. Its public previews are insufficient to
    close anatomy by themselves.
-2. PolyOne is the clearest visual proof of the exact featureless bald surface
-   and multi-view presentation requested by the owner. Its proportions are too
-   stylized to copy, and CC-BY plus cross-listing inconsistencies make it a
-   reference rather than the preferred foundation.
+2. PolyOne is the clearest visual proof of the exact featureless bald surface,
+   multi-view presentation, and stylized feminine shape language approved by
+   the owner. CC-BY obligations, cross-listing inconsistencies, and the absent
+   file/topology audit still make its previews a visual target rather than an
+   imported production foundation.
 3. MakeHuman remains useful for parametric age/body diversity and CC0 exports,
    but the inspected public screenshots do not provide a complete comparison.
 4. Paid RenderHub, Fab, BlenderKit, Sketchfab, and work-in-progress community

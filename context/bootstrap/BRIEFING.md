@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **F5-H5-HUMANOID-VISUAL-REFERENCE-INTAKE**
-- Objective: Close H5 with a provenance-bound, pixel-inspected, owner-approved stylized humanoid direction while preserving the separation between visual target, production asset authority, gameplay capability, materials, shaders, and fidelity tiers.
+- Work package: **F5-H6-HUMANOID-REPRODUCTION-RECOVERY**
+- Objective: Prove that the H1-H5 humanoid proof chain can be rebuilt, replayed, recovered from hostile corruption cases, and inspected through stable identifiers with its exact provenance and visual receipts retained.
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
-- Related systems: asset-factory, procedural-animation, forge-reference-studio, forge-truth-kernel
-- Risk/research gate: **visual-reference-provenance-anatomy-quality-phone-legibility-and-creative-fit / Use authoritative or clearly licensed sources, inspect actual pixels rather than metadata, and keep the candidate set small. Do not download executable content, import a production asset, or treat popularity as quality.**
-- Exact next action: Run the complete Forge gate, checkpoint H5, then advance to H6 clean reproduction, replay, corruption recovery, stable-identifier, and retained-receipt readiness without acquiring or importing the PolyOne file.
+- Related systems: asset-factory, forge-reference-studio, forge-truth-kernel, forge-test-observatory
+- Risk/research gate: **proof-chain-reproducibility-corruption-recovery-identifier-and-receipt-continuity / Refresh canonical and implementation evidence first. Use existing local fixtures and capability-free simulations before adding code. Browse only if a specific standards gap survives the local audit; do not acquire or import marketplace assets.**
+- Exact next action: Implement the bounded engine-neutral H6 proof-chain module: reuse H1-H4 constructors, add one strict H5 decision record, derive an ordered aggregate chain ID, and prove deterministic rebuild plus hostile mutation rejection in memory before adding the disposable Kernel backup/reopen fixture.
 
 ## Approved operating policies
 

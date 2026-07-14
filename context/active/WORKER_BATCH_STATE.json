@@ -1,23 +1,23 @@
 {
   "schema_version": 2,
   "canonical_role": "sole-active-work-checkpoint",
-  "batch_id": "F5-H5-HUMANOID-VISUAL-REFERENCE-INTAKE",
+  "batch_id": "F5-H6-HUMANOID-REPRODUCTION-RECOVERY",
   "master_program_item": "F5",
   "state": "checkpoint",
-  "objective": "Close H5 with a provenance-bound, pixel-inspected, owner-approved stylized humanoid direction while preserving the separation between visual target, production asset authority, gameplay capability, materials, shaders, and fidelity tiers.",
-  "next_action": "Run the complete Forge gate, checkpoint H5, then advance to H6 clean reproduction, replay, corruption recovery, stable-identifier, and retained-receipt readiness without acquiring or importing the PolyOne file.",
-  "substage_id": "H5-owner-approved-visual-target",
+  "objective": "Prove that the H1-H5 humanoid proof chain can be rebuilt, replayed, recovered from hostile corruption cases, and inspected through stable identifiers with its exact provenance and visual receipts retained.",
+  "next_action": "Implement the bounded engine-neutral H6 proof-chain module: reuse H1-H4 constructors, add one strict H5 decision record, derive an ordered aggregate chain ID, and prove deterministic rebuild plus hostile mutation rejection in memory before adding the disposable Kernel backup/reopen fixture.",
+  "substage_id": "H6-proof-chain-design-checkpoint",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
     "milestone": "F5",
-    "systems": ["asset-factory", "procedural-animation", "forge-reference-studio", "forge-truth-kernel"]
+    "systems": ["asset-factory", "forge-reference-studio", "forge-truth-kernel", "forge-test-observatory"]
   },
-  "risk_level": "visual-reference-provenance-anatomy-quality-phone-legibility-and-creative-fit",
-  "research_gate": "Use authoritative or clearly licensed sources, inspect actual pixels rather than metadata, and keep the candidate set small. Do not download executable content, import a production asset, or treat popularity as quality.",
-  "authority_lane": "Owner approved the fingerprinted PolyOne preview set as visual direction only. This does not approve file acquisition, spending, production import, topology, rigging, runtime selection, promotion, or protected-Kernel mutation.",
-  "context_health": "Green: capture and typed retrieval are current; source screening is bounded; actual pixels and licences were inspected; owner resolved stylized feminine/masculine shape language; heartbeat will resume after this gate is processed.",
+  "risk_level": "proof-chain-reproducibility-corruption-recovery-identifier-and-receipt-continuity",
+  "research_gate": "Refresh canonical and implementation evidence first. Use existing local fixtures and capability-free simulations before adding code. Browse only if a specific standards gap survives the local audit; do not acquire or import marketplace assets.",
+  "authority_lane": "Owner-authorized H6 audit, capability-free fixtures, deterministic replay/recovery tests, and bounded local verification only. No asset acquisition, production import, runtime selection, promotion, approval, or protected-Kernel authority expansion.",
+  "context_health": "Green: H5 is committed at e1b1404, capture is current, the full Forge gate passed, and H6 begins from a clean stage boundary with explicit macro and micro evidence.",
   "stage_context": {
-    "stage_id": "H5-owner-approved-visual-target",
+    "stage_id": "H6-proof-chain-design-checkpoint",
     "macro_sources": [
       "docs/canonical-system/MASTER_PLAN_V2.md",
       "docs/canonical-system/MASTER_PROGRAM.json",
@@ -27,178 +27,106 @@
       "docs/canonical-system/FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md"
     ],
     "macro_findings": [
-      "H5 visual direction is resolved; H6 recovery remains next and H7 promotion remains blocked.",
-      "F5 remains engine-neutral and cannot import a production asset, install a tool, or select a runtime.",
-      "The owner requires a good-quality, accurate human comparison target, phone-legible review fixtures, and cheap proof before integrated PC work.",
-      "Natural-function methods remain case-by-case hypotheses: hard constraints kill invalid candidates, while no metaphor receives universal authority."
-      ,"A common Forge grammar may provide analogous art-family cohesion without forcing one identical shader across every planet."
+      "F5 remains the active engine-neutral proof milestone; H6 must pass before any H7 promotion candidate exists.",
+      "H6 requires clean rebuild, replay, corruption recovery, stable identifiers, and retained receipts as distinct observable claims.",
+      "The normal research, case-by-case natural-method, macro/micro refresh, visual-quality, and cheapest-sufficient-simulation disciplines remain active.",
+      "H5 approved a visual target only; H6 must preserve that exact scope and cannot turn it into asset or runtime authority."
     ],
     "micro_sources": [
-      "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md",
-      "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md",
-      "docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md",
+      "contracts/humanoid-generation-contract.md",
+      "contracts/reference-intake-contract.md",
+      "contracts/representation-contract.md",
       "contracts/reference-viewport-contract.md",
-      "contracts/control-calibration-contract.md",
-      "governance/STAGE_QUALITY_PROTOCOL.md"
+      "contracts/proof-receipt-projection-contract.md",
+      "contracts/backup-recovery-contract.md",
+      "crates/humanoid-generation/src/lib.rs",
+      "crates/reference-intake/src/lib.rs",
+      "crates/reference-viewport/src/lib.rs",
+      "crates/forge-kernel/src/persistence.rs",
+      "tools/verify-h1-reference-intake.ps1",
+      "tools/verify-h2-neutral-humanoid.ps1",
+      "tools/verify-h3-humanoid-generation.ps1",
+      "tools/verify-f5-proof-receipt.ps1"
     ],
     "micro_findings": [
-      "The existing wire capture and three official MakeHuman documentation screenshots were pixel-inspected and rejected as incomplete, obscured, or too structurally sparse.",
-      "The first three-panel generated sheet was rejected on phone because the differences collapsed at display scale; future fixtures use one large subject or stage per image.",
-      "The target is mature semi-realistic form without childlike caricature; shading is a replaceable presentation layer and no longer part of the anatomical-form gate.",
-      "Canonical biological age continues independently; the adult-appearance lock affects only eligible post-adult presentation and unlocking reveals true age.",
-      "One canonical organism must support coordinated presentation tiers from constrained phones to high-end PCs without changing gameplay identity.",
-      "Generated front direction v1 is coherent, mature, and phone-legible at 1024x1536, but hair and garments disqualify it as the newly clarified neutral base.",
-      "The neutral construction target is bald and unclothed with a continuous non-sexual mannequin surface, no genital anatomy, and no female nipple detail; hair, garments, optional surface details, materials, and shaders derive later.",
-      "Seven 1200x600 PolyOne previews prove the requested featureless multi-view presentation and owner-approved stylized feminine target; T-pose, listing inconsistencies, and CC-BY status still prevent silent production import.",
-      "Feminine defaults may read cute, sweet, and approachable while masculine defaults may read strong, powerful, and commanding; these are presentation profiles, not capability or role rules.",
-      "Two neutral-mannequin image-generation attempts were output-moderation blocked; that route is stopped without weakening the requirement."
+      "H1-H4 already retain exact source, representation, candidate, control, and artifact fingerprints, but H6 has not yet demonstrated one end-to-end recovery matrix across them.",
+      "The Kernel already has backup fixity, reopen/replay, corruption, and retained-receipt machinery that should be reused or adapted rather than duplicated.",
+      "The H5 visual target is bound to preview SHA-256 f3242d18b962103ec0b78fe424baf01db60c84d2c2a6f468c85d27818c145051; the actual marketplace file remains absent by design.",
+      "Windows live-process and SQLite-handle cleanup are known recovery-test hazards and must be separated from product failures.",
+      "The completed coverage matrix maps every H6 claim to existing proof, one exact gap, and the cheapest decisive next case."
     ]
   },
   "visual_quality_gate": {
-    "asset_use_intent": true,
-    "status": "passed",
-    "rationale": "The owner explicitly approved the fingerprinted PolyOne multi-view pixels, including their cute stylized feminine proportions, as the visual target. Actual asset acquisition and production fitness remain separate later gates.",
+    "asset_use_intent": false,
+    "status": "not_applicable",
+    "rationale": "H6 tests proof-chain bytes, identifiers, replay, corruption handling, and retained receipts; it creates or selects no new visual asset. The already passed H5 pixel receipt is an immutable input to preserve, not a new visual-quality decision.",
     "dependent_implementation_blocked": false,
-    "receipts": [
-      {
-        "content_sha256": "811f43accbb31a88266d932f8f5563b2d13586fca0ba2693aad1f5fe582b3515",
-        "provenance": "Official Blender Studio and community Human Base Meshes v1.4.1 CC0 archive; embedded preview pixels inspected from disposable extraction.",
-        "intended_comparison": "Coherent mature full-human anatomy and a realistic-to-stylized direction boundary.",
-        "accuracy_limits": "Embedded previews are 256x256 single views with the subject too small for detailed comparison.",
-        "pixel_inspection_performed": true,
-        "rendered_views_inspected": ["Four original 256x256 male/female realistic/stylized bundle previews"],
-        "visible_defects": ["Single view", "Human too small", "Hands, feet, and face lack comparison detail", "Stylized pair is too caricatured"],
-        "human_subject": true,
-        "anatomical_credibility": "plausible_but_insufficiently_visible",
-        "comparison_completeness": "rejected_for_visual_comparison",
-        "pose_view_lighting_fitness": "rejected_for_visual_comparison",
-        "disposition": "rejected"
-      },
-      {
-        "content_sha256": "009b3cbc1f5885ed66dd966306815effaaf529f33b4309060f2c7fee34a8441c",
-        "provenance": "Wikimedia render of the exact Blender Studio female realistic CC0 body asset, linked to the official Blender bundle; inspected at 1280x960.",
-        "intended_comparison": "Large-pixel mature full-human form, silhouette, hands, feet, and realistic endpoint.",
-        "accuracy_limits": "Only one elevated three-quarter render; no true side or back view and visible hip/thigh transitions.",
-        "pixel_inspection_performed": true,
-        "rendered_views_inspected": ["1280x960 elevated front three-quarter render"],
-        "visible_defects": ["No side view", "No back view", "Hip and thigh transition artifacts", "Neutral comparison projection unavailable"],
-        "human_subject": true,
-        "anatomical_credibility": "plausible_but_artifact_limited",
-        "comparison_completeness": "rejected_for_visual_comparison",
-        "pose_view_lighting_fitness": "rejected_for_visual_comparison",
-        "disposition": "rejected"
-      },
-      {
-        "content_sha256": "675e0d8c25d807501a588fd8a7567cc6931a94d95ebd8bd46d56a7f2af1ccbe2",
-        "provenance": "Forge-requested generated preview retained as immutable evidence at evidence/visual-reference-intake/h5-mature-adult-front-direction-v1.png; actual 1024x1536 pixels inspected.",
-        "intended_comparison": "Phone-legible mature semi-realistic adult front-form direction, full-body completeness, silhouette, hands, and feet.",
-        "accuracy_limits": "Generated direction evidence only; hair and garments violate the neutral-base requirement; one front view, no side/back anatomy, topology, deformation, shader implementation, or device-cost proof.",
-        "pixel_inspection_performed": true,
-        "rendered_views_inspected": ["Original 1024x1536 straight-on full-body front A-pose"],
-        "visible_defects": ["Hair is baked into the fixture", "Garments obscure and commit later layers", "No true side view", "No back view", "Studio shading is only illustrative"],
-        "human_subject": true,
-        "anatomical_credibility": "useful_mature_proportion_direction",
-        "comparison_completeness": "rejected_for_neutral_base",
-        "pose_view_lighting_fitness": "verified_for_phone_front_form_direction",
-        "disposition": "rejected"
-      },
-      {
-        "content_sha256": "f3242d18b962103ec0b78fe424baf01db60c84d2c2a6f468c85d27818c145051",
-        "provenance": "PolyOne Studio Free Pack female basemesh; Superhive product page identifies CC-BY 4.0. Seven 1200x600 product previews were downloaded to disposable storage and pixel-inspected.",
-        "intended_comparison": "Owner-approved cute/sweet stylized feminine humanoid direction, bald featureless neutral surface, absence of baked hair/garments/sexual surface detail, and front/side/back construction presentation.",
-        "accuracy_limits": "Visual-target evidence only: stylized proportions and T-pose are intentional; contradictory triangle-count text, CC-BY attribution obligation, Fab's blank licence display, and the uninspected asset file prevent production claims.",
-        "pixel_inspection_performed": true,
-        "rendered_views_inspected": ["Smooth front/three-quarter/back 1200x600 sheet", "Wireframe back/front/side 1200x600 sheet", "Five additional smooth and topology previews"],
-        "visible_defects": ["T-pose shoulder bias for later deformation judgment", "Listing triangle-count contradiction", "Fab licence display blank", "Actual downloadable file uninspected"],
-        "human_subject": true,
-        "anatomical_credibility": "verified",
-        "comparison_completeness": "verified",
-        "pose_view_lighting_fitness": "verified",
-        "disposition": "verified_fit"
-      }
-    ]
+    "receipts": []
   },
   "simulation_ladder": {
-    "cheapest_sufficient_tier": "disposable_simulation",
+    "cheapest_sufficient_tier": "typed_model",
     "tiers_completed": [
       {
         "tier": "static_reasoning",
-        "result": "Canonical target, hard visual constraints, prior failures, phone legibility, aging semantics, and source authority were refreshed before candidate search.",
-        "evidence": "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md and current stage context"
+        "result": "Refreshed the program boundary and identified the five independent H6 claims plus likely reusable Kernel recovery machinery before implementation.",
+        "evidence": "MASTER_PLAN_V2 H6 definition, current stage context, backup/recovery and proof-receipt contracts"
       },
       {
-        "tier": "disposable_simulation",
-        "result": "Original-pixel inspection rejected incomplete source candidates, then retained one 1024x1536 generated adult as narrow front-form evidence after owner clarification separated shader style from form acceptance.",
-        "evidence": "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md"
-      },
-      {
-        "tier": "disposable_simulation",
-        "result": "A bounded web search and original-pixel inspection of seven PolyOne previews found a usable featureless-surface/multi-view reference while rejecting its stylized anatomy and import metadata.",
-        "evidence": "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md"
+        "tier": "typed_model",
+        "result": "Audited the H1-H5 contracts, implementations, receipts, and tests; repaired two stale H5 pre-decision statements; and recorded a five-claim coverage matrix selecting one bounded proof-chain module plus existing Kernel recovery machinery.",
+        "evidence": "docs/canonical-system/H6_HUMANOID_REPRODUCTION_RECOVERY_READINESS.md; 52 focused H1-H4 package tests and H1-H3 verifier scripts pass"
       }
     ],
     "expensive_execution_planned": false,
-    "unresolved_risk": "Visual direction is resolved, but the actual marketplace file, exact licence bundle, topology, rig, deformation, derivative lineage, and phone/game budgets remain uninspected.",
-    "expected_information_gain": "H6 can now test whether H1-H5 evidence and identifiers reproduce and recover cleanly without touching the marketplace file or a runtime.",
-    "estimated_cost": "Existing capability-free tests, deterministic replay fixtures, corruption cases, receipt projections, and the complete Forge gate; no install or asset import.",
-    "regression_guard": "Retain hashes, source URLs, visible defects, accuracy limits, and explicit rejected or verified-fit dispositions; do not mutate H2-H4 structural evidence.",
-    "stop_condition": "H5 search and generation stop fired after owner approval. Do not browse or generate more humanoid targets unless H6/H7 exposes a specific evidence gap.",
-    "final_integration_gate": "Passed: exact H5 fingerprint, mutation-negative authority, generated projections, stage-quality/coherence checks, clean diff validation, and the complete Forge gate all passed. The first desktop-build attempt exposed only a live exact-repo executable handle; that identified process was stopped, the unchanged full gate passed, and context capture was restarted current."
+    "unresolved_risk": "Existing local tests may prove each subsystem separately while failing to prove exact H1-H5 linkage, stable cross-rebuild identifiers, or retention of the owner-bound H5 receipt.",
+    "expected_information_gain": "The selected in-memory manifest cases will prove whether the one real gap—cross-stage identity and H5 decision continuity—can close without new persistence architecture.",
+    "estimated_cost": "One small engine-neutral module, strict canonical fixtures, then one existing-Kernel disposable backup/reopen integration; no install, asset import, or graphics run.",
+    "regression_guard": "Do not alter H1-H5 evidence bytes or identifiers; retain negative authority, rejected references, owner wording, and the H5 visual fingerprint through every replay or recovery path.",
+    "stop_condition": "Stop expansion when every H6 claim has one decisive existing proof or one narrowly specified missing fixture; do not create speculative recovery infrastructure.",
+    "final_integration_gate": "Pending: focused H6 fixtures, mutation-negative checks, clean disposable rebuild/replay, corruption recovery, retained-receipt verification, generated-projection checks, and the complete Forge gate."
   },
   "unresolved_risks": [
-    "The actual PolyOne file and embedded licence evidence remain uninspected and unacquired.",
-    "Approved stylized visual defaults must not become gameplay capability, role, intelligence, morality, or importance rules.",
-    "A masculine strong/commanding counterpart has direction but no separately pixel-inspected reference yet; it is a later profile task, not an H5 feminine-target blocker.",
-    "Nothing yet proves production topology, deformation, animation, growth behavior, shader cost, or phone performance.",
-    "Owner visual approval has no promotion, import, purchase, or runtime-selection effect."
+    "Subsystem-local replay may not prove the complete H1-H5 chain reconstructs without identifier drift.",
+    "A corrupt or truncated receipt/link may be rejected without demonstrating recovery to the last known-good chain.",
+    "Generated projections may accidentally become recovery authority instead of remaining rebuildable views.",
+    "The approved H5 visual receipt could be omitted or semantically widened during reconstruction.",
+    "Windows file handles can produce environmental failures that must not be misreported as product corruption."
   ],
   "evidence_requirements": [
-    "authoritative source identity, license or use authority, and content fingerprint per admitted candidate",
-    "actual-pixel inspection at useful scale and relevant views",
-    "anatomy, completeness, occlusion, pose, view, lighting, detail, phone legibility, and visible-defect record",
-    "explicit verified-fit, rejected, or owner-check-required disposition",
-    "single large subject or stage per phone review fixture",
-    "no approval, promotion, runtime selection, executable install, or production asset import"
+    "trace every H6 claim to exact current contract, implementation, fixture, and retained output",
+    "prove clean reconstruction from canonical inputs without relying on generated projections",
+    "prove deterministic replay and stable identifiers across a fresh disposable store or process boundary",
+    "prove corrupt, truncated, wrong-link, stale, and unknown-version cases fail closed and preserve a known-good recovery route",
+    "prove H1-H5 provenance, limitations, rejected evidence, owner wording, and the exact H5 fingerprint survive recovery",
+    "retain capability-negative evidence showing replay and recovery cannot approve, promote, import, or select a runtime"
   ],
   "verification_plan": [
-    "completed: research MakeHuman and Blender Studio as the bounded authoritative source set",
-    "completed: inspect actual pixels and reject incomplete or defective references before comparison",
-    "retain source and visual-fitness receipts in the H5 canonical record",
-    "completed: generate and pixel-check one large single-subject mature proportion fixture",
-    "completed: attempt a neutral mannequin edit/generation; both attempts were moderation-blocked and produced no asset",
-    "completed: bounded web search and pixel inspection identified PolyOne as a featureless-surface reference but rejected it as anatomy/import authority",
-    "completed: bind owner approval to the fingerprinted PolyOne multi-view target without importing its file",
-    "keep planet-selectable shader profiles outside anatomical acceptance and later test their material/readability contract independently",
-    "completed: run stage-quality, coherence, mutation-negative, and complete Forge gates before closure"
+    "completed: audit H1-H5 contracts, crates, verifier scripts, and current receipts into a five-claim coverage matrix",
+    "reuse existing Kernel backup/recovery and ProofReceipt fixtures where their semantics exactly match",
+    "add only the smallest missing capability-free cases for cross-stage identifier and receipt continuity",
+    "run focused tests in memory or disposable directories before any repository-wide build",
+    "exercise corrupt, truncated, stale-link, unknown-version, and known-good recovery cases",
+    "run stage-quality, coherence, mutation-negative, projection, and complete Forge gates before H6 closure"
   ],
-  "resume_after": "After the complete H5 gate passes, advance to H6 reproduction and recovery using existing evidence only; do not acquire or import the PolyOne file.",
+  "resume_after": "Continue from the H6 coverage audit; do not reacquire H5 visual sources or import the PolyOne asset.",
   "evidence": [
+    "docs/canonical-system/MASTER_PLAN_V2.md",
     "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md",
-    "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md",
-    "docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md",
-    "docs/canonical-system/FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md",
-    "evidence/visual-reference-intake/h5-mature-adult-front-direction-v1.png",
-    "contracts/reference-viewport-contract.md",
-    "governance/STAGE_QUALITY_PROTOCOL.md"
+    "docs/canonical-system/H6_HUMANOID_REPRODUCTION_RECOVERY_READINESS.md",
+    "contracts/backup-recovery-contract.md",
+    "contracts/proof-receipt-projection-contract.md",
+    "contracts/humanoid-generation-contract.md",
+    "crates/forge-kernel/src/persistence.rs"
   ],
   "verification_receipts": [
-    "K1 conversational knowledge intake hardened and complete Forge gate passed",
-    "stale aging prose reconciled with the executable adult-lock proof; 8 focused cases pass",
-    "existing Forge wire reference inspected and rejected for human-quality comparison",
-    "three official MakeHuman documentation images inspected and rejected",
-    "official Blender CC0 archive fingerprinted and four embedded body previews inspected and rejected as too small and incomplete",
-    "four 1280x960 renders of the exact Blender assets inspected; realistic endpoints retained only as direction evidence and stylized endpoints rejected as too caricatured",
-    "first three-panel direction sheet rejected as phone-illegible",
-    "generated mature-adult front direction v1 inspected at original 1024x1536 and retained as narrow phone-legible form evidence",
-    "owner clarified realistic form, replaceable shader presentation, possible planet-specific shader profiles, and Forge-wide analogous cohesion",
-    "owner clarified a bald unclothed neutral base with no genital anatomy or female nipple detail; hair and garments become modular derived layers",
-    "two neutral mannequin generation attempts were blocked by output moderation and produced no admitted asset",
-    "seven PolyOne 1200x600 previews were pixel-inspected; featureless multi-view construction passed narrowly while anatomy and silent import were rejected",
-    "owner approved the fingerprinted PolyOne stylized feminine target and requested cute/sweet feminine versus strong/commanding masculine authored defaults",
-    "complete Forge gate passed after resolving the exact running forge-desktop.exe Windows file handle; no product or source change was required",
-    "Forge capture restarted and bootstrap verified current"
+    "H5 owner-approved stylized humanoid direction committed at e1b1404",
+    "H5 complete Forge gate passed and context capture restarted current",
+    "H6 macro/micro boundary refreshed before audit or implementation",
+    "52 focused H1-H4 package tests pass; H1, H2, and H3 verifier scripts pass",
+    "H6 coverage audit found and repaired two stale H5 pre-owner-resolution statements before replay design",
+    "five-claim matrix selects one bounded proof-chain module and reuse of existing Kernel recovery machinery"
   ],
-  "transition": "R0 accepted -> H1-H4 verified -> H5 source rejections -> N0-N3 natural-method wave complete -> K1 continuity intake hardened -> aging drift repaired -> H5 PolyOne preview target owner-approved -> H5 complete gate passed -> H6 next",
+  "transition": "H5 complete and committed -> H6 five-claim coverage audit complete -> proof-chain design checkpoint -> bounded in-memory implementation next",
   "metrics": {
     "token_cost": {"status": "unknown", "value": null},
     "elapsed_time": {"status": "unknown", "value": null}
