@@ -10,6 +10,10 @@ try {
   }
   & (Join-Path $PSScriptRoot 'refresh-worker-feedback.ps1') -Root $temp | Out-Null
   & (Join-Path $PSScriptRoot 'verify-worker-feedback-freshness.ps1') -Root $temp | Out-Null
+  $lineEndingFixture = Join-Path $temp $sources[0]
+  $lineEndingText = [IO.File]::ReadAllText($lineEndingFixture).Replace("`r`n", "`n")
+  [IO.File]::WriteAllText($lineEndingFixture, $lineEndingText.Replace("`n", "`r`n"), [Text.UTF8Encoding]::new($false))
+  & (Join-Path $PSScriptRoot 'verify-worker-feedback-freshness.ps1') -Root $temp | Out-Null
   foreach ($index in @(0, 5, 7, 8)) {
     Add-Content -LiteralPath (Join-Path $temp $sources[$index]) -Value ' '
     $rejected = $false
@@ -18,5 +22,5 @@ try {
     & (Join-Path $PSScriptRoot 'refresh-worker-feedback.ps1') -Root $temp | Out-Null
     & (Join-Path $PSScriptRoot 'verify-worker-feedback-freshness.ps1') -Root $temp | Out-Null
   }
-  Write-Output 'Worker feedback fixtures verified: change propagation and stale-source rejection.'
+  Write-Output 'Worker feedback fixtures verified: canonical line endings, change propagation, and stale-source rejection.'
 } finally { if (Test-Path $temp) { Remove-Item -LiteralPath $temp -Recurse -Force } }

@@ -1,11 +1,12 @@
 param([string]$Root)
 $ErrorActionPreference = 'Stop'
 $root = if ($Root) { $Root } else { Split-Path -Parent $PSScriptRoot }
+. (Join-Path $PSScriptRoot 'canonical-text-hash.ps1')
 $sources = @('governance\policy-registry.json','governance\WORKER_GOVERNANCE_SYSTEM.md','governance\WORKER_PROMPT_SPEC.md','governance\WORKER_LEARNING_LEDGER.md','governance\SYSTEM_EFFICIENCY_AUDIT.md','governance\WORKER_METRIC_REGISTRY.md','governance\MEASUREMENT_AND_RECURSIVE_LEARNING_CONTRACT.md','context\active\WORKER_BATCH_STATE.json','docs\canonical-system\MASTER_CLOSURE_REGISTER.md')
 foreach ($relative in $sources) { if (!(Test-Path -LiteralPath (Join-Path $root $relative))) { throw "Worker feedback source missing: $relative" } }
 $policy = Get-Content -LiteralPath (Join-Path $root 'governance\policy-registry.json') -Raw | ConvertFrom-Json
 $approved = @($policy.policies | Where-Object status -eq 'approved' | ForEach-Object id) -join ', '
-$hashes = $sources | ForEach-Object { "| ``$_`` | ``$((Get-FileHash -LiteralPath (Join-Path $root $_) -Algorithm SHA256).Hash.ToLowerInvariant())`` |" }
+$hashes = $sources | ForEach-Object { "| ``$_`` | ``$(Get-CanonicalTextSha256 (Join-Path $root $_))`` |" }
 $content = @"
 # Worker Feedback Brief (Generated)
 
