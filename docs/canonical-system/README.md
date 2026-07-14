@@ -144,8 +144,9 @@ Read in this order:
 56. `ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md` - future organism
     growth and coordinated phone-to-high-end fidelity obligations.
 57. `SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md` - ambient age diversity versus
-    relationship-tracked growth, optional elderly progression, no-old-age-death
-    boundary, presentation cues, and cheap proof plan.
+    relationship-tracked continuous biological aging, reversible adult-form
+    presentation lock, no-old-age-death boundary, presentation cues, and cheap
+    proof plan.
 58. `FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md` - full Forge/game
     manifestation audit, imported-compendium disposition, redundancy and
     dependency consolidation, philosophy boundary, and reconciled N0-N3 route.

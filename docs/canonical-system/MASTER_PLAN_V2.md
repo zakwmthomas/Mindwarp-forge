@@ -151,8 +151,9 @@ and cheap proof order are retained in
 Selective aging is further bounded by
 `SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md`: ambient populations receive stable
 age diversity without continuous lifetime simulation; bred companions and
-children grow to adulthood, optional extended aging permits elderly states,
-and old age never causes death.
+children age continuously, a reversible per-save adult-appearance lock affects
+only eligible post-adult presentation, disabling it reveals the current true
+stage, and old age never causes death.
 
 ## Material-package receipt
 

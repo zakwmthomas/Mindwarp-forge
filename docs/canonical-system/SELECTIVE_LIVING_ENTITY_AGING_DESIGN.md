@@ -31,22 +31,24 @@ Only explicitly tracked relationship entities need persistent growth:
 - a child the player has with a spouse;
 - a later explicitly promoted relationship entity, if a future design adds it.
 
-These entities always progress from baby/young to adult. A per-save gameplay
-setting controls only extended post-adult progression:
+These entities always progress biologically from baby/young through adult and,
+with sufficient elapsed lifecycle progress, into elderly. A per-save gameplay
+setting controls presentation only:
 
-- **Extended companion/family aging off:** growth continues through adulthood,
-  then pauses at adult;
-- **Extended companion/family aging on:** growth may continue from adult into
-  elderly;
+- **Adult-appearance lock on:** canonical biological age keeps advancing. A
+  juvenile remains visibly juvenile; once biological adulthood is reached, an
+  adult or elderly entity is presented in its adult form;
+- **Adult-appearance lock off:** presentation follows the current canonical
+  biological age, so an entity whose age advanced beyond adulthood while
+  locked reveals its current older stage;
 - old age never causes death;
 - the player character does not age through this system;
 - unrelated ambient NPCs do not begin ticking merely because the setting is on.
 
-Recommended reversible toggle behavior: turning the setting off pauses future
-post-adult progress without rejuvenating anyone; turning it on resumes retained
-progress. An entity already elderly remains elderly. This avoids destructive
-rewrites and visual popping. It is a proposed default until tested with the
-owner in a later gameplay-settings package.
+Toggle changes never rewrite, pause, rewind, rejuvenate, or accelerate canonical
+age. Enabling the lock can temporarily present an already elderly eligible
+entity as adult; disabling it reveals the true current stage. This makes the
+setting reversible while retaining continuous history.
 
 ## Canonical state boundary
 
@@ -57,7 +59,8 @@ The smallest engine-neutral record should keep these concepts separate:
 | `AgeCohort` | Generated population category such as young, juvenile, adult, elderly | A running clock or death timer |
 | `LifecycleMode` | Ambient snapshot or relationship-tracked | Importance, render LOD, or mortality |
 | `MaturityProgress` | Bounded baby/young-to-adult progress | Elderly progression |
-| `ElderProgress` | Bounded adult-to-elder progress when extended aging is enabled | Death, disease, or capability loss |
+| `ElderProgress` | Bounded canonical adult-to-elder progress that continues independently of presentation | Death, disease, or capability loss |
+| `AdultAppearanceLock` | Per-save presentation rule applied only at or beyond biological adulthood | Paused, rewritten, or rejuvenated canonical age |
 | `PresentationProfile` | Species/lineage-authored visual and motion response curves | One universal human aging formula |
 | `MortalityPolicy` | Separate future gameplay concern | Automatic death from age |
 
@@ -111,11 +114,12 @@ version coexistence, and no cohort reroll after reload.
 1. Define strict bounded enums and fixed-point progress values; no wall clock,
    renderer, mesh, engine, filesystem, or randomness capability.
 2. Build a pure state-transition table covering ambient entities, bred babies,
-   children, adoption, setting toggles, adulthood, elderly progression, reload,
-   and no-old-age-death invariants.
-3. Run property/metamorphic tests: deterministic replay, monotonic maturity,
-   adult stop when disabled, elder resume when enabled, no rejuvenation,
-   ambient non-ticking, adoption continuity, and no mortality event.
+   children, adoption, appearance-lock toggles, adulthood, hidden elderly
+   progression, reveal after unlock, reload, and no-old-age-death invariants.
+3. Run property/metamorphic tests: deterministic replay, monotonic biological
+   age, juveniles unaffected by the lock, adult presentation clamping, hidden
+   elderly progress, reveal after unlock, no rejuvenation, ambient non-ticking,
+   adoption continuity, and no mortality event.
 4. Test one humanoid and at least one structurally different creature profile
    so human proportions cannot masquerade as universal biology.
 5. Simulate age-distribution quality and presentation budgets in memory before
@@ -129,4 +133,3 @@ No aging state machine, population sampler, morph system, creature generator,
 shader, mesh LOD, animation set, runtime integration, or device performance is
 implemented by this document. It records the clarified design boundary and the
 cheapest safe route to a future proof.
-

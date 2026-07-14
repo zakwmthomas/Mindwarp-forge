@@ -12,9 +12,11 @@ gameplay truth or silently becoming a different creature.
 The owner subsequently narrowed lifecycle aging in
 `SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md`: ambient populations need stable age
 diversity, while only bred companions, children, and later explicitly tracked
-relationship entities require persistent growth. Baby-to-adult growth always
-continues; a setting controls optional adult-to-elder progression; old age does
-not cause death and the player character is outside this system.
+relationship entities require persistent growth. Canonical biological age
+always continues; a per-save adult-appearance lock leaves juveniles unchanged,
+presents eligible adults and elders as adult while enabled, and reveals the
+true current stage when disabled. Old age does not cause death and the player
+character is outside this system.
 
 The intended visual direction is semi-realistic anatomy and proportions with a
 mature stylized treatment: simplified shapes and materials, deliberately
