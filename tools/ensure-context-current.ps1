@@ -10,8 +10,10 @@ $ErrorActionPreference = 'Stop'
 
 $root = Split-Path -Parent $PSScriptRoot
 $manifestPath = Join-Path $root '.local\forge-bootstrap\MANIFEST.json'
-$releaseApp = Join-Path $root 'apps\forge-desktop\src-tauri\target\release\forge-desktop.exe'
-$debugApp = Join-Path $root 'apps\forge-desktop\src-tauri\target\debug\forge-desktop.exe'
+$workspaceReleaseApp = Join-Path $root 'target\release\forge-desktop.exe'
+$workspaceDebugApp = Join-Path $root 'target\debug\forge-desktop.exe'
+$legacyReleaseApp = Join-Path $root 'apps\forge-desktop\src-tauri\target\release\forge-desktop.exe'
+$legacyDebugApp = Join-Path $root 'apps\forge-desktop\src-tauri\target\debug\forge-desktop.exe'
 
 function Get-CaptureManifest {
     if (!(Test-Path -LiteralPath $manifestPath)) {
@@ -31,7 +33,11 @@ if ($manifest -and $manifest.capture_state -eq 'paused') {
 
 $forgeProcess = Get-Process -Name 'forge-desktop' -ErrorAction SilentlyContinue | Select-Object -First 1
 if (!$forgeProcess) {
-    $app = @($releaseApp, $debugApp) | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1
+    $app = @($workspaceReleaseApp, $workspaceDebugApp, $legacyReleaseApp, $legacyDebugApp) |
+        Where-Object { Test-Path -LiteralPath $_ } |
+        ForEach-Object { Get-Item -LiteralPath $_ } |
+        Sort-Object LastWriteTimeUtc -Descending |
+        Select-Object -First 1 -ExpandProperty FullName
     if (!$app) {
         throw 'Forge Desktop is not running and no built Forge executable was found. Build or open Forge Desktop, then retry.'
     }
