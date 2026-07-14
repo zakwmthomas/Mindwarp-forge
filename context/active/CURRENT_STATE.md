@@ -15,6 +15,7 @@
 ## Durable evidence
 
 - `docs/canonical-system/H4_HUMANOID_FUNCTIONAL_CONTROLS_RESULT.md`
+- `docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md`
 - `contracts/control-calibration-contract.md`
 - `artifacts/chat-screenshots/v2-pose-reference.png.manifest.json`
 - `governance/STAGE_QUALITY_PROTOCOL.md`
@@ -36,6 +37,7 @@ Research a small set of provenance- and license-safe neutral human reference can
 - An anatomically credible source can still be the wrong creative target for Mind Warp.
 - A single view can hide anatomy or proportion defects that appear from another angle.
 - Visual observation must not approve, promote, or overwrite structural evidence.
+- The owner has not yet selected whether the H5 comparison target is a realistic anatomically neutral adult or a specific stylized Mind Warp human.
 
 ## Resume after this package
 

@@ -35,12 +35,15 @@
       "artifacts/chat-screenshots/v2-pose-reference.png.manifest.json",
       "contracts/reference-viewport-contract.md",
       "contracts/control-calibration-contract.md",
-      "docs/canonical-system/H4_HUMANOID_FUNCTIONAL_CONTROLS_RESULT.md"
+      "docs/canonical-system/H4_HUMANOID_FUNCTIONAL_CONTROLS_RESULT.md",
+      "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md"
     ],
     "micro_findings": [
       "Original-resolution pixel inspection confirms the Forge UI capture is clean and correctly scoped to the Forge window.",
       "The displayed reference is a tiny three-view stick skeleton with no surface anatomy, credible human silhouette, face, hands, musculature, or detailed proportions.",
-      "The current fixture is rejected for human-quality comparison but remains valid for the exact structural H2-H4 proofs."
+      "The current fixture is rejected for human-quality comparison but remains valid for the exact structural H2-H4 proofs.",
+      "Three official MakeHuman documentation images were inspected at original scale and rejected because crop, incompleteness, clothing, annotations, or occlusion prevent the required full-human comparison.",
+      "MakeHuman remains a provenance- and license-promising source family, but no actual candidate asset is verified fit and the realistic-versus-stylized creative target remains unresolved."
     ]
   },
   "visual_quality_gate": {
@@ -62,12 +65,65 @@
         "comparison_completeness": "rejected_for_visual_comparison",
         "pose_view_lighting_fitness": "rejected_for_visual_comparison",
         "disposition": "rejected"
+      },
+      {
+        "content_sha256": "80f312ced3cfd22aa29a196b89a479290fb7e57c1c2c753d6ff5d0fd4766d75f",
+        "provenance": "Official MakeHuman documentation image at https://static.makehumancommunity.org/makehuman/docs/main_labelled.png; inspected from disposable temp storage.",
+        "intended_comparison": "Neutral full-human visual form, anatomy, proportions, and articulation landmarks.",
+        "accuracy_limits": "Upper-body UI illustration only; clothing and annotations obscure the subject and lower body, hands, and feet are unavailable.",
+        "pixel_inspection_performed": true,
+        "rendered_views_inspected": ["Original downloaded documentation image at useful scale"],
+        "visible_defects": ["Incomplete body", "Clothed and annotated", "No usable hands or feet", "No multi-view comparison"],
+        "human_subject": true,
+        "anatomical_credibility": "plausible_but_insufficiently_visible",
+        "comparison_completeness": "rejected_for_visual_comparison",
+        "pose_view_lighting_fitness": "rejected_for_visual_comparison",
+        "disposition": "rejected"
+      },
+      {
+        "content_sha256": "2b45690e716cf725927222087ac76e05cf68f2e1522e9c5fd7f74334577cf233",
+        "provenance": "Official MakeHuman documentation image at https://static.makehumancommunity.org/makehuman/docs/age_0.png; inspected from disposable temp storage.",
+        "intended_comparison": "Neutral full-human visual form, anatomy, proportions, and articulation landmarks.",
+        "accuracy_limits": "Four head-and-bust variants only; no full body, neutral articulation view, hands, or feet.",
+        "pixel_inspection_performed": true,
+        "rendered_views_inspected": ["Original downloaded documentation image at useful scale"],
+        "visible_defects": ["Bust crop only", "No full body", "No hands or feet", "No usable articulation comparison"],
+        "human_subject": true,
+        "anatomical_credibility": "plausible_but_insufficiently_complete",
+        "comparison_completeness": "rejected_for_visual_comparison",
+        "pose_view_lighting_fitness": "rejected_for_visual_comparison",
+        "disposition": "rejected"
+      },
+      {
+        "content_sha256": "69cfc6220d7754adef469bf9423bcb9b5c9fbd1f603ae500426f1a88e3bccc8c",
+        "provenance": "Official MakeHuman documentation image at https://static.makehumancommunity.org/makehuman/docs/legs_modelling_2_0.png; inspected from disposable temp storage.",
+        "intended_comparison": "Neutral full-human visual form, anatomy, proportions, and articulation landmarks.",
+        "accuracy_limits": "Cropped torso and legs with clipped arms, absent face and feet, and a large censor block over comparison anatomy.",
+        "pixel_inspection_performed": true,
+        "rendered_views_inspected": ["Original downloaded documentation image at useful scale"],
+        "visible_defects": ["Arms clipped", "Face absent", "Feet absent", "Anatomy obscured by censor block", "No multi-view comparison"],
+        "human_subject": true,
+        "anatomical_credibility": "not_fully_judgeable",
+        "comparison_completeness": "rejected_for_visual_comparison",
+        "pose_view_lighting_fitness": "rejected_for_visual_comparison",
+        "disposition": "rejected"
       }
     ]
   },
   "simulation_ladder": {
-    "cheapest_sufficient_tier": "static_reasoning",
-    "tiers_completed": [],
+    "cheapest_sufficient_tier": "disposable_simulation",
+    "tiers_completed": [
+      {
+        "tier": "static_reasoning",
+        "result": "Source, license, provenance, and comparison-fitness criteria screened before candidate admission.",
+        "evidence": "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md"
+      },
+      {
+        "tier": "disposable_simulation",
+        "result": "Original-pixel inspection rejected the existing Forge wire capture and three official MakeHuman documentation images before any external application or integrated PC execution.",
+        "evidence": "Four rejected visual_quality_gate receipts bound by SHA-256 and pixel findings."
+      }
+    ],
     "expensive_execution_planned": false,
     "unresolved_risk": "",
     "expected_information_gain": "",
@@ -81,7 +137,8 @@
     "External candidates may have unclear licensing, incomplete provenance, hidden visual defects, or unsuitable pose/view/lighting.",
     "An anatomically credible source can still be the wrong creative target for Mind Warp.",
     "A single view can hide anatomy or proportion defects that appear from another angle.",
-    "Visual observation must not approve, promote, or overwrite structural evidence."
+    "Visual observation must not approve, promote, or overwrite structural evidence.",
+    "The owner has not yet selected whether the H5 comparison target is a realistic anatomically neutral adult or a specific stylized Mind Warp human."
   ],
   "evidence_requirements": [
     "authoritative source identity, license or use authority, and content fingerprint per candidate",
@@ -103,6 +160,7 @@
   "resume_after": "Continue autonomous source and pixel-fitness research. Ask the owner only when a concrete candidate remains uncertain or a creative choice between verified-fit candidates is necessary.",
   "evidence": [
     "docs/canonical-system/H4_HUMANOID_FUNCTIONAL_CONTROLS_RESULT.md",
+    "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md",
     "contracts/control-calibration-contract.md",
     "artifacts/chat-screenshots/v2-pose-reference.png.manifest.json",
     "governance/STAGE_QUALITY_PROTOCOL.md",
@@ -115,6 +173,8 @@
     "H4 18-module boundary gate passes",
     "H4 complete Forge gate passes",
     "current Forge wire reference inspected at original resolution and rejected for human-quality comparison",
+    "three official MakeHuman documentation images inspected at original scale and rejected for incomplete, cropped, or obscured human comparison",
+    "MakeHuman retained only as a license- and provenance-promising source family; no candidate admitted",
     "primary Forge capture restored current",
     "heartbeat PAUSED"
   ],
