@@ -7,10 +7,10 @@
 
 - Package: **F5-H7-HUMANOID-PROMOTION-READINESS**
 - Master item / milestone: **F5 / F5**
-- State / substage: **executing / H7-authority-negative-candidate-package**
+- State / substage: **checkpoint / H7-owner-approval-gate**
 - Related systems: asset-factory, forge-reference-studio, forge-truth-kernel, forge-control-plane
 - Objective: Audit whether H1-H6 form one coherent, correctly scoped canonical promotion candidate, or whether a missing bridge still separates the verified structural wire candidate from the owner-approved visual target.
-- Context health: Green: owner-authorized supersession is implemented across Kernel, replay, persistence, backup recovery, exact desktop confirmation, responsive visual inspection, and the clean complete Forge gate; no H7 candidate or promotion exists.
+- Context health: Green at owner gate: final H7 and complete Forge gates pass; exact live candidate is Proposed; first admission added two authority-free events; immediate and post-restart retries added zero; verified pre-admission backup is retained; capture is current.
 
 ## Durable evidence
 
@@ -26,7 +26,7 @@ Owner explicitly authorized the bounded protected-Kernel safe-undo implementatio
 
 ## Exact next action
 
-Construct the exact engine-neutral-humanoid-proof-baseline-v1 owner package from the already verified H6/H5 bindings and propose it authority-negative only; do not approve or promote it, import an asset, or widen its claims.
+Await an exact direct-owner APPROVE action for candidate c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433. Do not infer approval, promote, import, apply, or continue across this protected gate.
 
 ## Unresolved risks
 

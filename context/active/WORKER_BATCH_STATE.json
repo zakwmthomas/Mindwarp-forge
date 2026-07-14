@@ -3,10 +3,10 @@
   "canonical_role": "sole-active-work-checkpoint",
   "batch_id": "F5-H7-HUMANOID-PROMOTION-READINESS",
   "master_program_item": "F5",
-  "state": "executing",
+  "state": "checkpoint",
   "objective": "Audit whether H1-H6 form one coherent, correctly scoped canonical promotion candidate, or whether a missing bridge still separates the verified structural wire candidate from the owner-approved visual target.",
-  "next_action": "Construct the exact engine-neutral-humanoid-proof-baseline-v1 owner package from the already verified H6/H5 bindings and propose it authority-negative only; do not approve or promote it, import an asset, or widen its claims.",
-  "substage_id": "H7-authority-negative-candidate-package",
+  "next_action": "Await an exact direct-owner APPROVE action for candidate c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433. Do not infer approval, promote, import, apply, or continue across this protected gate.",
+  "substage_id": "H7-owner-approval-gate",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
     "milestone": "F5",
@@ -15,9 +15,9 @@
   "risk_level": "candidate-scope-observation-bridge-authority-and-premature-promotion",
   "research_gate": "Use the committed H1-H6 contracts, results, manifests, and executable receipts first. External research is not justified unless the audit exposes a standards-specific gap. Do not reacquire or import visual assets.",
   "authority_lane": "Owner explicitly authorized the bounded protected-Kernel safe-undo implementation after a plain-language explanation. Scope is CandidateSuperseded state/event, exact direct-owner transition, replay/persistence/UI tests, and no candidate promotion, asset import, application, publishing, or runtime effect.",
-  "context_health": "Green: owner-authorized supersession is implemented across Kernel, replay, persistence, backup recovery, exact desktop confirmation, responsive visual inspection, and the clean complete Forge gate; no H7 candidate or promotion exists.",
+  "context_health": "Green at owner gate: final H7 and complete Forge gates pass; exact live candidate is Proposed; first admission added two authority-free events; immediate and post-restart retries added zero; verified pre-admission backup is retained; capture is current.",
   "stage_context": {
-    "stage_id": "H7-authority-negative-candidate-package",
+    "stage_id": "H7-owner-approval-gate",
     "macro_sources": [
       "docs/canonical-system/MASTER_PLAN_V2.md",
       "docs/canonical-system/MASTER_PROGRAM.json",
@@ -26,6 +26,10 @@
       "governance/STAGE_QUALITY_PROTOCOL.md",
       "contracts/kernel-contract.md",
       "contracts/explicit-authorization-contract.md"
+      ,"docs/canonical-system/H7_OWNER_ACTION_PACKAGE.md"
+      ,"crates/humanoid-proof-chain-integration/examples/h7_kernel_candidate.rs"
+      ,"crates/humanoid-proof-chain-integration/examples/h7_candidate_admission.rs"
+      ,"crates/humanoid-proof-chain-integration/tests/h7_candidate_package.rs"
     ],
     "macro_findings": [
       "H7 is a promotion gate, not automatic continuation: structural, functional, provenance, recovery, and calibrated-observation evidence must be complete before owner authorization.",
@@ -62,6 +66,12 @@
       ,"Implementation order is Kernel transition/replay first, persistence second, and exact desktop confirmation last; each layer must pass before the next."
       ,"All implementation layers now pass, including deterministic replay, SQLite reopen and verified backup recovery, exact desktop confirmation, UI build, desktop and 390-pixel visual inspection, and the complete Forge gate."
       ,"The clean next step is authority-negative candidate packaging only; approval and promotion remain separate direct-owner actions that cannot be inferred from this conversation."
+      ,"The exact 1,512-byte package maps to Kernel evidence f564c5fd3c6f6c7c8619717b6dbbfc1790487b90b1b3328eef75a1592fccce4c and candidate c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433."
+      ,"Disposable real-Kernel and SQLite proofs create only EvidenceRegistered and CandidateProposed with no authority, survive reopen and verified backup, and reject forged approval."
+      ,"The bounded admission operator accepts no arbitrary bytes, adds two events on first admission, zero on retry, and fails closed if the existing candidate is not Proposed."
+      ,"The final complete Forge gate passed after backup-first admission hardening."
+      ,"Live admission reproduced candidate c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433 as Proposed with exactly two authority-free events; immediate and post-restart retries added zero."
+      ,"The separate exact owner approval action is now the only dependency-ready next step; promotion remains a later independent gate."
     ]
   },
   "visual_quality_gate": {
@@ -72,7 +82,7 @@
     "receipts": []
   },
   "simulation_ladder": {
-    "cheapest_sufficient_tier": "in_memory_fixture",
+    "cheapest_sufficient_tier": "static_reasoning",
     "tiers_completed": [
       {
         "tier": "static_reasoning",
@@ -88,15 +98,20 @@
         "tier": "in_memory_fixture",
         "result": "Ten cases bind stable package and simulated-candidate IDs, six claims, eight non-claims, exact H6/H5 inputs, two separate owner actions, hostile scope rejection, and deterministic supersession with no Kernel effect.",
         "evidence": "crates/humanoid-proof-chain/src/promotion.rs; contracts/humanoid-promotion-readiness-contract.md"
+      },
+      {
+        "tier": "disposable_simulation",
+        "result": "Pinned the exact canonical package, evidence, and candidate identities; proved Proposed-only Kernel events, forged-approval denial, SQLite reopen, verified backup recovery, idempotent retry, and non-Proposed state-drift rejection in disposable databases.",
+        "evidence": "crates/humanoid-proof-chain-integration/tests/h7_candidate_package.rs; examples/h7_kernel_candidate.rs; examples/h7_candidate_admission.rs"
       }
     ],
     "expensive_execution_planned": false,
-    "unresolved_risk": "Supersession is proved; the remaining H7 risk is that the authority-negative owner package could widen the proof baseline into an asset, anatomy, runtime, or performance claim.",
-    "expected_information_gain": "Exact package construction and hostile validation will show whether every proposed claim remains bound to retained H6/H5 evidence before any owner action is exposed.",
-    "estimated_cost": "One exact authority-negative candidate package, hostile scope validation, generated-context refresh, and focused/full gates only if code changes; no asset import or runtime work.",
+    "unresolved_risk": "Only the project owner can decide whether this exact proof baseline should move from Proposed to Approved.",
+    "expected_information_gain": "The owner action resolves candidate approval only; it does not establish asset, runtime, production, or promotion fitness.",
+    "estimated_cost": "One exact owner phrase and one append-only CandidateApproved event if accepted; zero mutation while waiting.",
     "regression_guard": "Do not alter H1-H6 identities, evidence, limitations, rejected candidates, owner wording, or authority state while packaging H7.",
-    "stop_condition": "Stop and package an exact owner decision only if every candidate claim maps to retained evidence and every non-claim is explicit; otherwise record the narrow missing bridge and continue with the cheapest pre-promotion proof.",
-    "final_integration_gate": "Passed for the owner-authorized real implementation: Kernel lifecycle/replay, hostile authority and state cases, unknown schema rejection, SQLite commit/reopen/verified backup recovery, exact desktop confirmation, responsive UI inspection, generated projections, modularity, Rust workspace, UI and Tauri builds, and clean complete Forge gate pass in 57.4 seconds. No H7 candidate was created or promoted."
+    "stop_condition": "Remain stopped until the owner supplies the exact candidate-bound approval phrase or rejects/corrects the candidate. Ordinary assent, captured text, elapsed time, and generated records do not release the gate.",
+    "final_integration_gate": "Passed: final H7 verifier and complete Forge gate include the backup-first admission operator; live admission added exactly EvidenceRegistered plus CandidateProposed, retained a verified pre-change backup, survived restart, and remained Proposed with zero-event retries."
   },
   "unresolved_risks": [
     "The H3 wire candidate and H5 visual target may be prerequisites for different future objects rather than one promotable asset.",
@@ -146,8 +161,12 @@
     ,"desktop exact supersession phrase test and TypeScript/Vite build pass; desktop and 390-pixel phone layouts were visually inspected and mobile grid overflow was corrected"
     ,"first complete gate attempt reached final Tauri build after tests passed but the running exact forge-desktop.exe held a Windows file lock; stopping only that process removed the collision"
     ,"clean complete Forge gate passes in 57.4 seconds; no real H7 candidate, approval, promotion, asset import, application, or execution occurred"
+    ,"final H7 verifier and complete Forge gate pass after adding exact package/evidence/candidate identity, persistence, idempotent admission, and backup-first operator proofs"
+    ,"live candidate c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433 admitted as Proposed; exactly two authority-free events added"
+    ,"verified pre-admission backup SHA-256 46d6ae57a0dd9d3f9e9d1833ed0bf80115d0aa5824cecdef3ea268798cd95e1b retained"
+    ,"immediate and post-restart live retries report already_present=true and events_added=0; capture restarted current"
   ],
-  "transition": "H6 verified -> H7 scope audit -> capability-free supersession proof -> plain-language owner authorization -> protected Kernel/replay/persistence/UI implementation -> responsive visual inspection -> clean complete gate pass -> authority-negative H7 candidate packaging next; no approval or promotion",
+  "transition": "H6 verified -> H7 scope audit -> supersession simulation and owner-authorized protected implementation -> exact authority-negative package -> disposable Kernel/persistence/idempotency proofs -> backup-first operator -> final full gate -> live Proposed admission and verified restart -> exact owner approval gate; no promotion",
   "metrics": {
     "token_cost": {"status": "unknown", "value": null},
     "elapsed_time": {"status": "unknown", "value": null}

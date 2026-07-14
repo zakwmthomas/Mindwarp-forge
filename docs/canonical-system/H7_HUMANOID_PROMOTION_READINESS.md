@@ -1,8 +1,9 @@
 # H7 humanoid promotion readiness
 
 Status: **scope audit, capability-free lifecycle proof, owner-authorized
-protected supersession implementation, and complete Forge verification gate
-pass; no H7 candidate has been created, approved, or promoted**.
+protected supersession, exact disposable admission, complete Forge gate, and
+live Proposed-candidate admission pass; approval is awaiting a separate exact
+owner action and promotion has not occurred**.
 
 H7 asks whether H1-H6 form a coherent canonical promotion candidate. It does
 not import an asset, promote anything, infer owner authority, or claim that the
@@ -144,3 +145,32 @@ executed. The clean complete Forge gate passed in 57.4 seconds. An earlier gate
 attempt reached the final Tauri build after its tests passed but encountered a
 Windows lock from the already-running exact Forge desktop executable; stopping
 that process removed the infrastructure collision and it did not recur.
+
+## Authority-negative candidate package result
+
+The exact owner package is now retained in
+`docs/canonical-system/H7_OWNER_ACTION_PACKAGE.md`. Canonical package bytes are
+1,512 bytes and deterministically bind:
+
+- package ID
+  `7b01d650258fe50b7cd59290a4a56e6df3a17271991dba313e29b6c0cf607619`;
+- Kernel evidence ID
+  `f564c5fd3c6f6c7c8619717b6dbbfc1790487b90b1b3328eef75a1592fccce4c`;
+  and
+- Kernel candidate ID
+  `c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433`.
+
+A disposable real-Kernel test produces exactly `EvidenceRegistered` followed
+by `CandidateProposed`, both with `AuthorityBasis::None`. The Proposed state,
+canonical bytes, and identities survive SQLite reopen and verified backup
+recovery. Forged assistant approval is denied without adding an event.
+
+The bounded admission operator rebuilds this package internally and accepts no
+arbitrary bytes. Disposable tests prove first admission adds exactly two
+events, retry adds zero, and an existing non-Proposed candidate fails closed.
+The clean complete Forge gate passed after the final backup-first operator
+change. Live admission then created the exact pinned candidate as `Proposed`,
+adding two authority-free events. Immediate and post-restart retries added zero
+events. The verified pre-admission backup SHA-256 is
+`46d6ae57a0dd9d3f9e9d1833ed0bf80115d0aa5824cecdef3ea268798cd95e1b`.
+Approval and promotion remain unavailable until separate exact owner actions.
