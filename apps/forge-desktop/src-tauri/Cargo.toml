@@ -1,0 +1,30 @@
+[package]
+name = "forge-desktop"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+build = "build.rs"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+forge-kernel = { path = "../../../crates/forge-kernel" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"
+reference-viewport = { path = "../../../crates/reference-viewport" }
+viewport-stimulus = { path = "../../../crates/viewport-stimulus" }
+perception-protocol = { path = "../../../crates/perception-protocol" }
+tauri = { version = "2", features = [] }
+tauri-plugin-autostart = "2"
+tauri-plugin-single-instance = "2"
+
+[dev-dependencies]
+universe-identity = { path = "../../../crates/universe-identity" }
+field-basis = { path = "../../../crates/field-basis" }
+hierarchy-history = { path = "../../../crates/hierarchy-history" }
+significance-scheduler = { path = "../../../crates/significance-scheduler" }
+semantic-construction = { path = "../../../crates/semantic-construction" }
+representation-contract = { path = "../../../crates/representation-contract" }
+containment-profile = { path = "../../../crates/containment-profile" }

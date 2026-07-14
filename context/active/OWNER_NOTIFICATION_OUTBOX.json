@@ -1,0 +1,19 @@
+[
+    {
+        "problem_id":  "forge-heartbeat-owner-gate-loop",
+        "material_revision":  3,
+        "category":  "efficiency_escalation",
+        "severity":  "medium",
+        "affected_package":  "F5-P4-HIERARCHY-HISTORY-READINESS",
+        "evidence":  "context/active/WORKER_BATCH_STATE.json and context/active/WORKER_WAKE_LOG.jsonl",
+        "attempted":  "The hierarchy/history design gate and notification revision 1 are complete; unchanged wakes were suppressed, and automation deletion remains unavailable in the current tool surface.",
+        "consequence":  "Each unchanged scheduler wake reloads context, adds no durable package progress, and violates the repeated no-progress guard if treated as work.",
+        "requested_action":  "Pause the forge-heartbeat automation until the owner approves or changes the hierarchy/history lineage policy, then intentionally resume it.",
+        "channel":  "task_chat",
+        "queued_at":  "2026-07-13T06:35:06.6386643+00:00",
+        "status":  "queued",
+        "delivered_at":  null,
+        "authority_effect":  "none",
+        "protected_kernel_mutation":  false
+    }
+]

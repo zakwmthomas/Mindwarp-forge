@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "main",
+  "description": "The main Forge window may call only explicitly registered core commands.",
+  "windows": ["main"],
+  "permissions": ["core:default"]
+}

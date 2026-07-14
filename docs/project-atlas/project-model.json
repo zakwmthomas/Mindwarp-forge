@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "project": {
+    "id": "mindwarp",
+    "name": "Mind Warp",
+    "vision": "Build a durable solo-studio system that can preserve project truth, coordinate trustworthy work, and ultimately produce the Mind Warp game.",
+    "success_criteria": [
+      "A new Codex task can recover the project's operating method and active work without relying on a previous chat.",
+      "Forge preserves evidence, provenance, and explicit authority boundaries.",
+      "Mind Warp game development proceeds through verified, modular Forge workflows rather than opaque AI-generated spaghetti."
+    ]
+  },
+  "principles": [
+    "Research, design, adversarial review, readiness, implementation, verification, promotion.",
+    "Evidence is not authority.",
+    "Modularity, provenance, recoverability, and explicit tests prevent rework.",
+    "The owner directs vision and high-impact choices; Codex proposes, implements approved work, and verifies outcomes."
+  ],
+  "systems": [
+    {
+      "id": "forge-kernel",
+      "name": "Forge Kernel",
+      "stream": "forge",
+      "purpose": "Immutable evidence, deterministic events, candidate lifecycle, and replay validation.",
+      "references": [
+        "crates/forge-kernel/src/lib.rs",
+        "contracts/kernel-contract.md"
+      ]
+    },
+    {
+      "id": "conversation-capture",
+      "name": "Conversation Capture",
+      "stream": "forge",
+      "purpose": "Read local Codex evidence, preserve provenance, and never grant authority.",
+      "references": [
+        "apps/forge-desktop/src-tauri/src/codex_capture.rs",
+        "contracts/codex-local-capture-contract.md"
+      ]
+    },
+    {
+      "id": "task-bootstrap",
+      "name": "Task Bootstrap",
+      "stream": "forge",
+      "purpose": "Give new tasks verified navigation, current state, roadmap, and evidence routing.",
+      "references": ["AGENTS.md", "contracts/task-bootstrap-contract.md"]
+    },
+    {
+      "id": "forge-dashboard",
+      "name": "Forge Dashboard",
+      "stream": "forge",
+      "purpose": "Read-only projection of Forge state, decisions, and roadmap.",
+      "references": [
+        "apps/forge-desktop/ui",
+        "contracts/dossier-projection-contract.md"
+      ]
+    },
+    {
+      "id": "canonical-production-system",
+      "name": "Canonical Production System",
+      "stream": "game-canonical",
+      "purpose": "Engine-neutral universe, generation, optimisation, asset, animation, and persistence contracts proven through Forge Reference Studio.",
+      "references": [
+        "docs/canonical-system/system-registry.json",
+        "docs/canonical-system/DEPENDENCY_MAP.md"
+      ]
+    },
+    {
+      "id": "mindwarp-game",
+      "name": "Mind Warp Runtime",
+      "stream": "runtime",
+      "purpose": "Future selected engine adapter built only after canonical production systems are reference-proven.",
+      "references": ["docs/canonical-system/UNRESOLVED_GAPS.md"]
+    }
+  ],
+  "milestones": [
+    {
+      "id": "F1",
+      "stream": "forge",
+      "name": "Evidence and authority kernel",
+      "depends_on": [],
+      "exit_criteria": [
+        "Deterministic replay",
+        "Evidence cannot grant approval or promotion"
+      ],
+      "references": ["contracts/kernel-contract.md"]
+    },
+    {
+      "id": "F2",
+      "stream": "forge",
+      "name": "Automatic Codex continuity",
+      "depends_on": ["F1"],
+      "exit_criteria": [
+        "Local capture is idempotent",
+        "Bootstrap pack validates",
+        "New task navigation is available"
+      ],
+      "references": [
+        "contracts/codex-local-capture-contract.md",
+        "contracts/task-bootstrap-contract.md"
+      ]
+    },
+    {
+      "id": "F3",
+      "stream": "forge",
+      "name": "Project Atlas and decision navigation",
+      "depends_on": ["F2"],
+      "exit_criteria": [
+        "Canonical roadmap validates",
+        "Read-only Atlas dashboard renders",
+        "Fresh task identifies active milestone"
+      ],
+      "references": ["docs/project-atlas/project-model.json"]
+    },
+    {
+      "id": "F4",
+      "stream": "forge",
+      "name": "Canonical registry and controlled work orchestration",
+      "depends_on": ["F3"],
+      "exit_criteria": [
+        "Canonical system registry validates",
+        "Every foundation has dependencies, proof requirements, and an unresolved-gap record",
+        "Every material gap has passed macro-to-micro assessment, closure evidence, and a tested readiness gate",
+        "Work items have dependencies, risks, evidence, and one next action"
+      ],
+      "references": [
+        "docs/canonical-system/system-registry.json",
+        "contracts/solo-studio-control-plane-contract.md",
+        "docs/canonical-system/F4_EXIT_AUDIT.md"
+      ]
+    },
+    {
+      "id": "F5",
+      "stream": "forge",
+      "name": "Engine-neutral proof harnesses and Reference Studio",
+      "depends_on": ["F4"],
+      "exit_criteria": [
+        "Foundational systems have deterministic proof harnesses",
+        "Reference Studio exposes evidence-linked inspection",
+        "Unsafe execution remains gated"
+      ],
+      "references": [
+        "docs/canonical-system/PROOF_MATRIX.md",
+        "docs/canonical-system/DEPENDENCY_MAP.md",
+        "docs/canonical-system/F5_PROOF_RECEIPT_DECISION.md"
+      ]
+    },
+    {
+      "id": "G1",
+      "stream": "game-canonical",
+      "name": "Canonical Mind Warp production system",
+      "depends_on": ["F5"],
+      "exit_criteria": [
+        "Required production foundations are reference-proven",
+        "World, asset, animation, optimisation, and persistence outputs are reproducible",
+        "No runtime engine is canonical"
+      ],
+      "references": ["docs/canonical-system/system-registry.json"]
+    },
+    {
+      "id": "R1",
+      "stream": "runtime",
+      "name": "Runtime engine selection and adapter",
+      "depends_on": ["G1"],
+      "exit_criteria": [
+        "Engine decision is scored and owner-approved",
+        "A new selected-engine project imports promoted Forge output",
+        "Clean-project build and profiling pass"
+      ],
+      "references": ["docs/canonical-system/UNRESOLVED_GAPS.md"]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D1",
+      "name": "Forge precedes game implementation",
+      "status": "approved",
+      "rationale": "Continuity and trustworthy workflow are the highest leverage foundation.",
+      "references": ["context/capsules/2026-07-13-context-recovery.md"]
+    },
+    {
+      "id": "D2",
+      "name": "Captured conversation is evidence only",
+      "status": "approved",
+      "rationale": "Automation must not turn imported text into authority.",
+      "references": ["contracts/codex-local-capture-contract.md"]
+    },
+    {
+      "id": "D3",
+      "name": "Project Atlas changes require owner approval",
+      "status": "approved",
+      "rationale": "Vision and roadmap order must not drift silently.",
+      "references": ["governance/WORKING_COVENANT.md"]
+    },
+    {
+      "id": "D4",
+      "name": "Engine-neutral production system precedes runtime selection",
+      "status": "approved",
+      "rationale": "The owner requires complete conceptual planning and bottom-up reference proof before committing to Unity, Godot, or a custom engine.",
+      "references": ["docs/canonical-system/DEPENDENCY_MAP.md"]
+    }
+  ]
+}

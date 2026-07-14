@@ -1,0 +1,11 @@
+{
+  "problem_id": "forge-heartbeat-owner-gate-loop",
+  "category": "efficiency_escalation",
+  "severity": "medium",
+  "affected_package": "F5-P7B1B-DENIAL-CANARY-DESIGN",
+  "evidence": "context/active/WORKER_BATCH_STATE.json and context/active/WORKER_WAKE_LOG.jsonl",
+  "attempted": "The P7b-1b stable-LPAC design, critical review, exact owner question, and full Forge verification are complete. One unchanged owner-gate wake was recorded no_work. Automation update or deletion is unavailable in the current tool surface, so that limitation is recorded once and the batch is blocked rather than retried.",
+  "consequence": "The denial canary cannot begin without exact owner authority, while further unchanged scheduler wakes would reload context and exceed the batch's one-no-progress limit.",
+  "requested_action": "Approve or decline the single synthetic LPAC denial-canary trial. If deciding later, pause forge-heartbeat until the decision and resume it afterward.",
+  "material_revision": 4
+}

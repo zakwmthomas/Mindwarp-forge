@@ -1,0 +1,10 @@
+/target/
+/apps/forge-desktop/ui/node_modules/
+/apps/forge-desktop/ui/dist/
+/.local/
+/local-data/
+/exports/*.zip
+/forge documents from gpt handover/
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm

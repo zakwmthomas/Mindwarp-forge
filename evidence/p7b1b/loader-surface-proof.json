@@ -1,0 +1,500 @@
+{
+    "schema":  1,
+    "proof":  "p7b1b-offline-pe-loader-surface",
+    "status":  "completed_claim_limited",
+    "parser_sha256":  "0fdfc4f08b42c19926a70c95037b4df776be75541d438f87f40cc8008a64b4a6",
+    "source_receipt":  {
+                           "path":  "evidence/p7b1b/startup-compatibility-proof.json",
+                           "sha256":  "1123373704a528e86c81e3d32e16c1842d95ecd84002565e9b0fd1cb0b0e3585"
+                       },
+    "candidates":  [
+                       {
+                           "name":  "dynamic",
+                           "repository_path":  "target/p7b1b-startup-proof/dynamic/x86_64-pc-windows-msvc/debug/containment-denial-canary.exe",
+                           "sha256":  "b1319077ce29984c50ea84d52f775bb7a0b0e868744c9a42e86d10d6167bcb66",
+                           "byte_length":  287744,
+                           "image":  {
+                                         "pe_magic":  "0x020b",
+                                         "machine":  "0x8664",
+                                         "entry_point_rva":  "0x00030f80",
+                                         "size_of_image":  303104,
+                                         "size_of_headers":  1024,
+                                         "sections":  [
+                                                          {
+                                                              "name":  ".text",
+                                                              "virtual_address":  "0x00001000",
+                                                              "virtual_size":  205043,
+                                                              "raw_pointer":  1024,
+                                                              "raw_size":  205312,
+                                                              "characteristics":  "0x60000020"
+                                                          },
+                                                          {
+                                                              "name":  ".rdata",
+                                                              "virtual_address":  "0x00034000",
+                                                              "virtual_size":  69078,
+                                                              "raw_pointer":  206336,
+                                                              "raw_size":  69120,
+                                                              "characteristics":  "0x40000040"
+                                                          },
+                                                          {
+                                                              "name":  ".data",
+                                                              "virtual_address":  "0x00045000",
+                                                              "virtual_size":  752,
+                                                              "raw_pointer":  275456,
+                                                              "raw_size":  512,
+                                                              "characteristics":  "0xc0000040"
+                                                          },
+                                                          {
+                                                              "name":  ".pdata",
+                                                              "virtual_address":  "0x00046000",
+                                                              "virtual_size":  10608,
+                                                              "raw_pointer":  275968,
+                                                              "raw_size":  10752,
+                                                              "characteristics":  "0x40000040"
+                                                          },
+                                                          {
+                                                              "name":  ".reloc",
+                                                              "virtual_address":  "0x00049000",
+                                                              "virtual_size":  868,
+                                                              "raw_pointer":  286720,
+                                                              "raw_size":  1024,
+                                                              "characteristics":  "0x42000040"
+                                                          }
+                                                      ],
+                                         "imports":  [
+                                                         {
+                                                             "dll":  "advapi32.dll",
+                                                             "functions":  [
+                                                                               "GetTokenInformation",
+                                                                               "OpenProcessToken"
+                                                                           ]
+                                                         },
+                                                         {
+                                                             "dll":  "api-ms-win-core-synch-l1-2-0.dll",
+                                                             "functions":  [
+                                                                               "WaitOnAddress",
+                                                                               "WakeByAddressAll",
+                                                                               "WakeByAddressSingle"
+                                                                           ]
+                                                         },
+                                                         {
+                                                             "dll":  "api-ms-win-crt-heap-l1-1-0.dll",
+                                                             "functions":  [
+                                                                               "_set_new_mode",
+                                                                               "free"
+                                                                           ]
+                                                         },
+                                                         {
+                                                             "dll":  "api-ms-win-crt-locale-l1-1-0.dll",
+                                                             "functions":  [
+                                                                               "_configthreadlocale"
+                                                                           ]
+                                                         },
+                                                         {
+                                                             "dll":  "api-ms-win-crt-math-l1-1-0.dll",
+                                                             "functions":  [
+                                                                               "__setusermatherr"
+                                                                           ]
+                                                         },
+                                                         {
+                                                             "dll":  "api-ms-win-crt-runtime-l1-1-0.dll",
+                                                             "functions":  [
+                                                                               "__p___argc",
+                                                                               "__p___argv",
+                                                                               "_c_exit",
+                                                                               "_cexit",
+                                                                               "_configure_narrow_argv",
+                                                                               "_crt_atexit",
+                                                                               "_exit",
+                                                                               "_get_initial_narrow_environment",
+                                                                               "_initialize_narrow_environment",
+                                                                               "_initialize_onexit_table",
+                                                                               "_initterm",
+                                                                               "_initterm_e",
+                                                                               "_register_onexit_function",
+                                                                               "_register_thread_local_exe_atexit_callback",
+                                                                               "_seh_filter_exe",
+                                                                               "_set_app_type",
+                                                                               "exit",
+                                                                               "terminate"
+                                                                           ]
+                                                         },
+                                                         {
+                                                             "dll":  "api-ms-win-crt-stdio-l1-1-0.dll",
+                                                             "functions":  [
+                                                                               "__p__commode",
+                                                                               "_set_fmode"
+                                                                           ]
+                                                         },
+                                                         {
+                                                             "dll":  "kernel32.dll",
+                                                             "functions":  [
+                                                                               "AddVectoredExceptionHandler",
+                                                                               "CloseHandle",
+                                                                               "CompareStringOrdinal",
+                                                                               "CreateFileW",
+                                                                               "CreateMutexA",
+                                                                               "CreateProcessW",
+                                                                               "CreateThread",
+                                                                               "DuplicateHandle",
+                                                                               "ExitProcess",
+                                                                               "FormatMessageW",
+                                                                               "FreeEnvironmentStringsW",
+                                                                               "GetCommandLineW",
+                                                                               "GetConsoleMode",
+                                                                               "GetConsoleOutputCP",
+                                                                               "GetCurrentDirectoryW",
+                                                                               "GetCurrentProcess",
+                                                                               "GetCurrentProcessId",
+                                                                               "GetCurrentThread",
+                                                                               "GetCurrentThreadId",
+                                                                               "GetEnvironmentStringsW",
+                                                                               "GetEnvironmentVariableW",
+                                                                               "GetFileAttributesW",
+                                                                               "GetFileInformationByHandle",
+                                                                               "GetFileInformationByHandleEx",
+                                                                               "GetFullPathNameW",
+                                                                               "GetLastError",
+                                                                               "GetModuleFileNameW",
+                                                                               "GetModuleHandleA",
+                                                                               "GetModuleHandleW",
+                                                                               "GetProcAddress",
+                                                                               "GetProcessHeap",
+                                                                               "GetStdHandle",
+                                                                               "GetSystemDirectoryW",
+                                                                               "GetSystemTimeAsFileTime",
+                                                                               "GetWindowsDirectoryW",
+                                                                               "HeapAlloc",
+                                                                               "HeapFree",
+                                                                               "HeapReAlloc",
+                                                                               "InitializeSListHead",
+                                                                               "IsDebuggerPresent",
+                                                                               "IsProcessorFeaturePresent",
+                                                                               "LoadLibraryA",
+                                                                               "lstrlenW",
+                                                                               "MultiByteToWideChar",
+                                                                               "QueryPerformanceCounter",
+                                                                               "ReadFileEx",
+                                                                               "ReleaseMutex",
+                                                                               "RtlCaptureContext",
+                                                                               "RtlLookupFunctionEntry",
+                                                                               "RtlVirtualUnwind",
+                                                                               "SetFileInformationByHandle",
+                                                                               "SetFileTime",
+                                                                               "SetHandleInformation",
+                                                                               "SetLastError",
+                                                                               "SetThreadStackGuarantee",
+                                                                               "SetUnhandledExceptionFilter",
+                                                                               "SleepEx",
+                                                                               "UnhandledExceptionFilter",
+                                                                               "WaitForSingleObject",
+                                                                               "WaitForSingleObjectEx",
+                                                                               "WideCharToMultiByte",
+                                                                               "WriteConsoleW",
+                                                                               "WriteFileEx"
+                                                                           ]
+                                                         },
+                                                         {
+                                                             "dll":  "ntdll.dll",
+                                                             "functions":  [
+                                                                               "NtCreateNamedPipeFile",
+                                                                               "NtOpenFile",
+                                                                               "NtReadFile",
+                                                                               "NtWriteFile",
+                                                                               "RtlNtStatusToDosError"
+                                                                           ]
+                                                         },
+                                                         {
+                                                             "dll":  "vcruntime140.dll",
+                                                             "functions":  [
+                                                                               "__C_specific_handler",
+                                                                               "__current_exception",
+                                                                               "__current_exception_context",
+                                                                               "__CxxFrameHandler3",
+                                                                               "_CxxThrowException",
+                                                                               "memcmp",
+                                                                               "memcpy",
+                                                                               "memmove",
+                                                                               "memset"
+                                                                           ]
+                                                         },
+                                                         {
+                                                             "dll":  "ws2_32.dll",
+                                                             "functions":  [
+                                                                               "ordinal:10",
+                                                                               "ordinal:111",
+                                                                               "ordinal:115",
+                                                                               "ordinal:116",
+                                                                               "ordinal:18",
+                                                                               "ordinal:3",
+                                                                               "ordinal:4",
+                                                                               "ordinal:7",
+                                                                               "WSASocketW"
+                                                                           ]
+                                                         }
+                                                     ],
+                                         "delay_imports":  [
+
+                                                           ],
+                                         "tls":  {
+                                                     "callback_count":  1,
+                                                     "callback_vas":  [
+                                                                          "0x0000000140020460"
+                                                                      ]
+                                                 },
+                                         "load_config":  {
+                                                             "size":  320,
+                                                             "declared_size":  320,
+                                                             "sha256":  "f0fdc2b85769d1ec16235e3bf0e3f3ba5d922c3791f57f9a0e147c410766edae"
+                                                         },
+                                         "resources":  {
+                                                           "directory_sha256":  null,
+                                                           "manifests":  [
+
+                                                                         ]
+                                                       }
+                                     }
+                       },
+                       {
+                           "name":  "static",
+                           "repository_path":  "target/p7b1b-startup-proof/static/x86_64-pc-windows-msvc/debug/containment-denial-canary.exe",
+                           "sha256":  "25109e5e9c4de262b4dc4020f2b75b6ba6515c3c6570fad575e131d7bf820856",
+                           "byte_length":  388096,
+                           "image":  {
+                                         "pe_magic":  "0x020b",
+                                         "machine":  "0x8664",
+                                         "entry_point_rva":  "0x00030f80",
+                                         "size_of_image":  405504,
+                                         "size_of_headers":  1024,
+                                         "sections":  [
+                                                          {
+                                                              "name":  ".text",
+                                                              "virtual_address":  "0x00001000",
+                                                              "virtual_size":  259712,
+                                                              "raw_pointer":  1024,
+                                                              "raw_size":  260096,
+                                                              "characteristics":  "0x60000020"
+                                                          },
+                                                          {
+                                                              "name":  ".rdata",
+                                                              "virtual_address":  "0x00041000",
+                                                              "virtual_size":  105636,
+                                                              "raw_pointer":  261120,
+                                                              "raw_size":  105984,
+                                                              "characteristics":  "0x40000040"
+                                                          },
+                                                          {
+                                                              "name":  ".data",
+                                                              "virtual_address":  "0x0005b000",
+                                                              "virtual_size":  7432,
+                                                              "raw_pointer":  367104,
+                                                              "raw_size":  3072,
+                                                              "characteristics":  "0xc0000040"
+                                                          },
+                                                          {
+                                                              "name":  ".pdata",
+                                                              "virtual_address":  "0x0005d000",
+                                                              "virtual_size":  14400,
+                                                              "raw_pointer":  370176,
+                                                              "raw_size":  14848,
+                                                              "characteristics":  "0x40000040"
+                                                          },
+                                                          {
+                                                              "name":  ".fptable",
+                                                              "virtual_address":  "0x00061000",
+                                                              "virtual_size":  256,
+                                                              "raw_pointer":  385024,
+                                                              "raw_size":  512,
+                                                              "characteristics":  "0xc0000040"
+                                                          },
+                                                          {
+                                                              "name":  ".reloc",
+                                                              "virtual_address":  "0x00062000",
+                                                              "virtual_size":  2456,
+                                                              "raw_pointer":  385536,
+                                                              "raw_size":  2560,
+                                                              "characteristics":  "0x42000040"
+                                                          }
+                                                      ],
+                                         "imports":  [
+                                                         {
+                                                             "dll":  "advapi32.dll",
+                                                             "functions":  [
+                                                                               "GetTokenInformation",
+                                                                               "OpenProcessToken"
+                                                                           ]
+                                                         },
+                                                         {
+                                                             "dll":  "api-ms-win-core-synch-l1-2-0.dll",
+                                                             "functions":  [
+                                                                               "WaitOnAddress",
+                                                                               "WakeByAddressAll",
+                                                                               "WakeByAddressSingle"
+                                                                           ]
+                                                         },
+                                                         {
+                                                             "dll":  "kernel32.dll",
+                                                             "functions":  [
+                                                                               "AddVectoredExceptionHandler",
+                                                                               "CloseHandle",
+                                                                               "CompareStringOrdinal",
+                                                                               "CompareStringW",
+                                                                               "CreateFileW",
+                                                                               "CreateMutexA",
+                                                                               "CreateProcessW",
+                                                                               "CreateThread",
+                                                                               "DeleteCriticalSection",
+                                                                               "DuplicateHandle",
+                                                                               "EncodePointer",
+                                                                               "EnterCriticalSection",
+                                                                               "ExitProcess",
+                                                                               "FindClose",
+                                                                               "FindFirstFileExW",
+                                                                               "FindNextFileW",
+                                                                               "FlsAlloc",
+                                                                               "FlsFree",
+                                                                               "FlsGetValue",
+                                                                               "FlsSetValue",
+                                                                               "FlushFileBuffers",
+                                                                               "FormatMessageW",
+                                                                               "FreeEnvironmentStringsW",
+                                                                               "FreeLibrary",
+                                                                               "GetACP",
+                                                                               "GetCommandLineA",
+                                                                               "GetCommandLineW",
+                                                                               "GetConsoleMode",
+                                                                               "GetConsoleOutputCP",
+                                                                               "GetCPInfo",
+                                                                               "GetCurrentDirectoryW",
+                                                                               "GetCurrentProcess",
+                                                                               "GetCurrentProcessId",
+                                                                               "GetCurrentThread",
+                                                                               "GetCurrentThreadId",
+                                                                               "GetEnvironmentStringsW",
+                                                                               "GetEnvironmentVariableW",
+                                                                               "GetFileAttributesW",
+                                                                               "GetFileInformationByHandle",
+                                                                               "GetFileInformationByHandleEx",
+                                                                               "GetFileType",
+                                                                               "GetFullPathNameW",
+                                                                               "GetLastError",
+                                                                               "GetModuleFileNameW",
+                                                                               "GetModuleHandleA",
+                                                                               "GetModuleHandleExW",
+                                                                               "GetModuleHandleW",
+                                                                               "GetOEMCP",
+                                                                               "GetProcAddress",
+                                                                               "GetProcessHeap",
+                                                                               "GetStartupInfoW",
+                                                                               "GetStdHandle",
+                                                                               "GetStringTypeW",
+                                                                               "GetSystemDirectoryW",
+                                                                               "GetSystemTimeAsFileTime",
+                                                                               "GetWindowsDirectoryW",
+                                                                               "HeapAlloc",
+                                                                               "HeapFree",
+                                                                               "HeapReAlloc",
+                                                                               "HeapSize",
+                                                                               "InitializeCriticalSectionAndSpinCount",
+                                                                               "InitializeCriticalSectionEx",
+                                                                               "InitializeSListHead",
+                                                                               "IsDebuggerPresent",
+                                                                               "IsProcessorFeaturePresent",
+                                                                               "IsValidCodePage",
+                                                                               "LCMapStringW",
+                                                                               "LeaveCriticalSection",
+                                                                               "LoadLibraryA",
+                                                                               "LoadLibraryExW",
+                                                                               "lstrlenW",
+                                                                               "MultiByteToWideChar",
+                                                                               "QueryPerformanceCounter",
+                                                                               "RaiseException",
+                                                                               "ReadFileEx",
+                                                                               "ReleaseMutex",
+                                                                               "RtlCaptureContext",
+                                                                               "RtlLookupFunctionEntry",
+                                                                               "RtlPcToFileHeader",
+                                                                               "RtlUnwindEx",
+                                                                               "RtlVirtualUnwind",
+                                                                               "SetEnvironmentVariableW",
+                                                                               "SetFileInformationByHandle",
+                                                                               "SetFilePointerEx",
+                                                                               "SetFileTime",
+                                                                               "SetHandleInformation",
+                                                                               "SetLastError",
+                                                                               "SetStdHandle",
+                                                                               "SetThreadStackGuarantee",
+                                                                               "SetUnhandledExceptionFilter",
+                                                                               "SleepEx",
+                                                                               "TerminateProcess",
+                                                                               "TlsAlloc",
+                                                                               "TlsFree",
+                                                                               "TlsGetValue",
+                                                                               "TlsSetValue",
+                                                                               "UnhandledExceptionFilter",
+                                                                               "VirtualProtect",
+                                                                               "WaitForSingleObject",
+                                                                               "WaitForSingleObjectEx",
+                                                                               "WideCharToMultiByte",
+                                                                               "WriteConsoleW",
+                                                                               "WriteFile",
+                                                                               "WriteFileEx"
+                                                                           ]
+                                                         },
+                                                         {
+                                                             "dll":  "ntdll.dll",
+                                                             "functions":  [
+                                                                               "NtCreateNamedPipeFile",
+                                                                               "NtOpenFile",
+                                                                               "NtReadFile",
+                                                                               "NtWriteFile",
+                                                                               "RtlNtStatusToDosError"
+                                                                           ]
+                                                         },
+                                                         {
+                                                             "dll":  "ws2_32.dll",
+                                                             "functions":  [
+                                                                               "ordinal:10",
+                                                                               "ordinal:111",
+                                                                               "ordinal:115",
+                                                                               "ordinal:116",
+                                                                               "ordinal:18",
+                                                                               "ordinal:3",
+                                                                               "ordinal:4",
+                                                                               "ordinal:7",
+                                                                               "WSASocketW"
+                                                                           ]
+                                                         }
+                                                     ],
+                                         "delay_imports":  [
+
+                                                           ],
+                                         "tls":  {
+                                                     "callback_count":  1,
+                                                     "callback_vas":  [
+                                                                          "0x0000000140020460"
+                                                                      ]
+                                                 },
+                                         "load_config":  {
+                                                             "size":  320,
+                                                             "declared_size":  320,
+                                                             "sha256":  "1615945703c9a9c7a02f98959cb10ba10f757f4c1cf49b990b4bff5530afa724"
+                                                         },
+                                         "resources":  {
+                                                           "directory_sha256":  null,
+                                                           "manifests":  [
+
+                                                                         ]
+                                                       }
+                                     }
+                       }
+                   ],
+    "canary_executed":  false,
+    "profile_created":  false,
+    "registry_modified":  false,
+    "acl_modified":  false,
+    "capability_added":  false,
+    "runtime_cause_proved":  false,
+    "denial_proved":  false,
+    "conclusion":  "Static PE structure is bound; it does not identify the runtime DLL-init cause."
+}

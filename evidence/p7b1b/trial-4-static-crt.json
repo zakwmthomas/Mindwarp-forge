@@ -1,0 +1,1 @@
+{"schema":1,"trial":"P7b-1b","run_id":"7fe469dbd720775e3075eba05fdc441f","moniker":"MindwarpForge.P7b1b.7fe469dbd720775e3075eba05fdc441f","status":"failed","contract_version":1,"cleanup_ok":true,"error":"post-resume canary exit 0xC0000142 (3221225794) after access-check-after-class46-error87","cleanup_errors":[]}

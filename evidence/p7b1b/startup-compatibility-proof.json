@@ -1,0 +1,64 @@
+{
+    "schema":  1,
+    "status":  "prototype_tested_not_executed",
+    "target":  "x86_64-pc-windows-msvc",
+    "rustc":  "rustc 1.97.0 (2d8144b78 2026-07-07)\nbinary: rustc\ncommit-hash: 2d8144b7880597b6e6d3dfd63a9a9efae3f533d3\ncommit-date: 2026-07-07\nhost: x86_64-pc-windows-msvc\nrelease: 1.97.0\nLLVM version: 22.1.6",
+    "proof_tool_sha256":  "4990257fb18e3435ea320225a70e1f5760e86e44af591caf608b8148ebc5ac82",
+    "dumpbin_sha256":  "12a1cd87238bd66dfdb788b4fcdcb91ce4b3f81236aab12a7a29e5ae1d85af50",
+    "cargo_lock_sha256":  "a3ba24faa5746c517cf324cbfcef04fa483a0405db3c38ac112e8136c2d358ca",
+    "canary_source_sha256":  "54a36470b19091c0f6429df449546caae753359e18ae3c21d9b706ff4164e7e5",
+    "canary_build_script_sha256":  "5c66821a0a56786b0cd4c182bb81a5ea04530bccf77c9222377297eae840774c",
+    "dynamic":  {
+                    "sha256":  "b1319077ce29984c50ea84d52f775bb7a0b0e868744c9a42e86d10d6167bcb66",
+                    "bytes":  287744,
+                    "pe_magic":  "0x20b",
+                    "dll_characteristics":  "0x9160",
+                    "appcontainer":  true,
+                    "high_entropy_aslr":  true,
+                    "dynamic_base":  true,
+                    "nx_compatible":  true,
+                    "imports":  [
+                                    "advapi32.dll",
+                                    "api-ms-win-core-synch-l1-2-0.dll",
+                                    "api-ms-win-crt-heap-l1-1-0.dll",
+                                    "api-ms-win-crt-locale-l1-1-0.dll",
+                                    "api-ms-win-crt-math-l1-1-0.dll",
+                                    "api-ms-win-crt-runtime-l1-1-0.dll",
+                                    "api-ms-win-crt-stdio-l1-1-0.dll",
+                                    "kernel32.dll",
+                                    "ntdll.dll",
+                                    "vcruntime140.dll",
+                                    "ws2_32.dll"
+                                ]
+                },
+    "static":  {
+                   "sha256":  "25109e5e9c4de262b4dc4020f2b75b6ba6515c3c6570fad575e131d7bf820856",
+                   "bytes":  388096,
+                   "pe_magic":  "0x20b",
+                   "dll_characteristics":  "0x9160",
+                   "appcontainer":  true,
+                   "high_entropy_aslr":  true,
+                   "dynamic_base":  true,
+                   "nx_compatible":  true,
+                   "imports":  [
+                                   "advapi32.dll",
+                                   "api-ms-win-core-synch-l1-2-0.dll",
+                                   "kernel32.dll",
+                                   "ntdll.dll",
+                                   "ws2_32.dll"
+                               ]
+               },
+    "dynamic_rustflags":  "-D warnings -C target-feature=-crt-static",
+    "static_rustflags":  "-D warnings -C target-feature=+crt-static",
+    "normal_workspace":  {
+                             "canary_sha256_before":  "550cec84a6f39d4fc6860cd342f7925a3e7b085f4fe404ff295ca6098e526865",
+                             "canary_sha256_after":  "550cec84a6f39d4fc6860cd342f7925a3e7b085f4fe404ff295ca6098e526865",
+                             "runner_sha256_before":  "5ea636687b99a99c5b66983370f18c1ff472ff4b054337ec85b5d4f9a0ea7be1",
+                             "runner_sha256_after":  "5ea636687b99a99c5b66983370f18c1ff472ff4b054337ec85b5d4f9a0ea7be1",
+                             "unchanged":  true
+                         },
+    "canary_executed":  false,
+    "lpac_profile_created":  false,
+    "capability_added":  false,
+    "lpac_compatibility_proved":  false
+}

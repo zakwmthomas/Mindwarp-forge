@@ -1,0 +1,11 @@
+{
+  "problem_id": "f5-universe-identity-design-gate",
+  "category": "design_gate",
+  "severity": "medium",
+  "affected_package": "F5-P2-UNIVERSE-IDENTITY-READINESS",
+  "evidence": "docs/canonical-system/UNIVERSE_IDENTITY_DESIGN_GATE.md",
+  "attempted": "Primary standards research, reuse comparison, adversarial failure analysis, fixed-vector manifest, recovery rules, and a recommended lane are complete.",
+  "consequence": "Implementation without confirmation would silently lock permanent logical identity, save migration, serialization, hash, and deterministic stream semantics.",
+  "requested_action": "Approve the recommended stable-logical-identity and deterministic CBOR/SHA-256/HKDF-HMAC lane, or request a different invariant.",
+  "material_revision": 1
+}

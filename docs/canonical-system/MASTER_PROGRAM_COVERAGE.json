@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "purpose": "Coverage map from legacy Forge planning sources to the authoritative master program.",
+  "sources": [
+    {
+      "path": "docs/project-atlas/ROADMAP.md",
+      "coverage": "covered",
+      "items": ["F4-MODULARITY", "F5", "C1", "C2", "C3-C7", "R1"]
+    },
+    {
+      "path": "docs/canonical-system/MASTER_CLOSURE_REGISTER.md",
+      "coverage": "covered",
+      "items": [
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "B5",
+        "C1",
+        "C2",
+        "C3-C7"
+      ]
+    },
+    {
+      "path": "docs/canonical-system/F5_READINESS_GATE.md",
+      "coverage": "covered",
+      "items": ["F5", "C1", "C2", "C3-C7"]
+    },
+    {
+      "path": "governance/WORKER_FORGE_INTEGRATION_PLAN.md",
+      "coverage": "partial",
+      "items": ["W1", "W2", "B4"]
+    },
+    {
+      "path": "docs/canonical-system/CONVERSATION_COMPILER_READINESS.md",
+      "coverage": "partial",
+      "items": ["A1", "A2"]
+    },
+    {
+      "path": "docs/canonical-system/RESEARCH_RECORD_READINESS.md",
+      "coverage": "partial",
+      "items": ["B1"]
+    },
+    {
+      "path": "docs/canonical-system/CONTROL_PLANE_READINESS.md",
+      "coverage": "partial",
+      "items": ["B2"]
+    },
+    {
+      "path": "docs/canonical-system/REFERENCE_STUDIO_READINESS.md",
+      "coverage": "partial",
+      "items": ["B3"]
+    },
+    {
+      "path": "docs/canonical-system/UNIVERSE_IDENTITY_READINESS.md",
+      "coverage": "partial",
+      "items": ["C2"]
+    },
+    {
+      "path": "docs/canonical-system/FIELD_BASIS_READINESS.md",
+      "coverage": "partial",
+      "items": ["C3-C7"]
+    },
+    {
+      "path": "docs/canonical-system/HIERARCHY_HISTORY_READINESS.md",
+      "coverage": "partial",
+      "items": ["C3-C7"]
+    },
+    {
+      "path": "docs/canonical-system/SIGNIFICANCE_SCHEDULER_READINESS.md",
+      "coverage": "partial",
+      "items": ["C3-C7"]
+    },
+    {
+      "path": "docs/canonical-system/SEMANTIC_CONSTRUCTION_READINESS.md",
+      "coverage": "partial",
+      "items": ["C3-C7"]
+    },
+    {
+      "path": "docs/canonical-system/REPRESENTATION_ASSET_ANIMATION_READINESS.md",
+      "coverage": "partial",
+      "items": ["C3-C7"]
+    },
+    {
+      "path": "contracts/knowledge-record-contract.md",
+      "coverage": "covered",
+      "items": ["F5-COHERENCE"]
+    }
+  ]
+}

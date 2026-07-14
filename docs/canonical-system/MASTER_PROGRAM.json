@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "purpose": "Authoritative dependency-ordered execution registry for Mind Warp Forge; see MASTER_EXECUTION_PROGRAM.md for the complete pathway.",
+  "items": [
+    {
+      "id": "F4-MODULARITY",
+      "milestone": "F4",
+      "status": "complete",
+      "depends_on": [],
+      "gate": "hard",
+      "next_action": "Maintain the declared module graph and static boundary fixtures.",
+      "proof": "Dependency verifier and failure-isolation tests.",
+      "sources": [
+        "SYSTEM_REBASELINE_EXECUTION.md",
+        "MODULARITY_READINESS.md",
+        "module-boundary-contract.md"
+      ]
+    },
+    {
+      "id": "W1",
+      "milestone": "F4",
+      "status": "complete",
+      "depends_on": ["F4-MODULARITY"],
+      "gate": "hard",
+      "next_action": "Build and run the worker proof harness before further autonomous package rollout.",
+      "proof": "Fresh-source, feedback propagation, Forge interaction, package completion, metric integrity, and escalation fixtures.",
+      "sources": [
+        "WORKER_FORGE_INTEGRATION_PLAN.md",
+        "WORKER_OPTIMIZATION_PROTOCOL.md"
+      ]
+    },
+    {
+      "id": "W2",
+      "milestone": "F4",
+      "status": "complete",
+      "depends_on": ["W1"],
+      "gate": "hard",
+      "next_action": "Implement owner-notification routing for actionable Forge problems.",
+      "proof": "Classification, deduplication, remote-chat delivery, acknowledgement, escalation, and authority-negative fixtures.",
+      "sources": [
+        "WORKER_FORGE_INTEGRATION_PLAN.md",
+        "OWNER_NOTIFICATION_CONTRACT.md"
+      ]
+    },
+    {
+      "id": "A1",
+      "milestone": "F4",
+      "status": "complete",
+      "depends_on": ["F4-MODULARITY", "W1"],
+      "gate": "hard",
+      "next_action": "Implement versioned SourceChunkEnvelope persistence and replay.",
+      "proof": "Raw-byte, child-link, conflict, migration, replay, authority-negative tests.",
+      "sources": [
+        "MASTER_CLOSURE_REGISTER.md",
+        "source-chunk-envelope-contract.md"
+      ]
+    },
+    {
+      "id": "A2",
+      "milestone": "F4",
+      "status": "complete",
+      "depends_on": ["A1"],
+      "gate": "hard",
+      "next_action": "Persist source manifest/gap history.",
+      "proof": "Persistence, replay, and idempotency tests.",
+      "sources": ["MASTER_CLOSURE_REGISTER.md"]
+    },
+    {
+      "id": "A3",
+      "milestone": "F4",
+      "status": "complete",
+      "depends_on": ["F4-MODULARITY"],
+      "gate": "hard",
+      "next_action": "Build hostile controlled-application fixture pack.",
+      "proof": "Path, symlink, environment, network, process, crash, rollback tests.",
+      "sources": ["MASTER_CLOSURE_REGISTER.md"]
+    },
+    {
+      "id": "A4",
+      "milestone": "F4",
+      "status": "complete",
+      "depends_on": ["A3"],
+      "gate": "hard",
+      "next_action": "Run backup/recovery corruption drill.",
+      "proof": "Corrupt, partial, and fixity recovery tests.",
+      "sources": ["MASTER_CLOSURE_REGISTER.md"]
+    },
+    {
+      "id": "B4",
+      "milestone": "F4",
+      "status": "complete",
+      "depends_on": ["F4-MODULARITY"],
+      "gate": "hard",
+      "next_action": "Maintain append-only BatchEvent and advisory projection fixtures.",
+      "proof": "Replay, privacy, cardinality, projection, and Goodhart tests.",
+      "sources": [
+        "WORKER_TELEMETRY_MODULE.md",
+        "BATCH_EVENT_READINESS.md",
+        "batch-event-contract.md"
+      ]
+    },
+    {
+      "id": "B5",
+      "milestone": "F4",
+      "status": "complete",
+      "depends_on": ["B4"],
+      "gate": "hard",
+      "next_action": "Maintain federated local-isolation and transfer-gate fixtures.",
+      "proof": "Isolation, aggregate-masking, transfer, outage, rollback, authority-negative tests.",
+      "sources": [
+        "UNIVERSAL_IMPROVEMENT_KERNEL.md",
+        "FEDERATED_IMPROVEMENT_READINESS.md",
+        "federated-improvement-contract.md"
+      ]
+    },
+    {
+      "id": "F4-CLOSEOUT",
+      "milestone": "F4",
+      "status": "complete",
+      "depends_on": [
+        "F4-MODULARITY",
+        "W1",
+        "W2",
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "B5"
+      ],
+      "gate": "hard",
+      "next_action": "Maintain the mechanical F4 exit audit and owner-gate evidence.",
+      "proof": "All F4 items complete, full gate pass, canonical state consistency, and explicit owner-gate preservation.",
+      "sources": [
+        "MASTER_EXECUTION_PROGRAM.md",
+        "F4_EXIT_AUDIT.md",
+        "F5_READINESS_GATE.md"
+      ]
+    },
+    {
+      "id": "F5-OWNER-GATE",
+      "milestone": "F4",
+      "status": "complete",
+      "depends_on": ["F4-CLOSEOUT"],
+      "gate": "owner",
+      "next_action": "Retain the owner-delegated versioned-projection decision and its narrow authority boundary.",
+      "proof": "Owner instruction plus researched failure matrix and storage decision.",
+      "sources": [
+        "F4_EXIT_AUDIT.md",
+        "F5_OWNER_GATE.md",
+        "F5_PROOF_RECEIPT_DECISION.md"
+      ]
+    },
+    {
+      "id": "B1",
+      "milestone": "F4",
+      "status": "complete",
+      "depends_on": ["A1"],
+      "gate": "hard",
+      "next_action": "Implement research source/claim/contradiction records.",
+      "proof": "Traceability, contradiction, cache, authority-negative tests.",
+      "sources": ["MASTER_CLOSURE_REGISTER.md"]
+    },
+    {
+      "id": "B2",
+      "milestone": "F4",
+      "status": "complete",
+      "depends_on": ["B1"],
+      "gate": "hard",
+      "next_action": "Persist control-plane gate/blocker/rollback receipts.",
+      "proof": "Lifecycle, authority, rollback tests.",
+      "sources": ["MASTER_CLOSURE_REGISTER.md"]
+    },
+    {
+      "id": "B3",
+      "milestone": "F4",
+      "status": "complete",
+      "depends_on": ["B2"],
+      "gate": "hard",
+      "next_action": "Build read-only Reference Studio proof inspector.",
+      "proof": "Mutation-negative, source-gap, version, failure-view tests.",
+      "sources": ["MASTER_CLOSURE_REGISTER.md"]
+    },
+    {
+      "id": "F5",
+      "milestone": "F5",
+      "status": "active",
+      "depends_on": ["F5-OWNER-GATE"],
+      "gate": "hard",
+      "next_action": "Await direct owner review in the built-in Forge viewport. Present the reference against the three visible negative controls with no preselected pair, outcome, or confidence. Accept only a deliberate owner submission; do not infer an observation, approval, promotion, population preference, external execution, or protected-Kernel mutation.",
+      "proof": "The capability-free reference-viewport and viewport-stimulus modules bind one exact reference plus three deliberate controls to six P7b pairs. A blank-by-default owner form now produces one deterministic CreativeDirector/ProjectDirection receipt only after a direct action bound to the current base fingerprint. Stale fingerprints, not_observed, hidden pairs, and confidence outside 1-100 fail closed. Nine module tests, twenty-six desktop tests, the UI build, and the full Forge gate pass; the receipt has authority_effect none and does not persist approval or mutate the protected Kernel.",
+      "sources": [
+        "representation-contract.md",
+        "perception-protocol-contract.md",
+        "reference-viewport-contract.md",
+        "viewport-stimulus-contract.md",
+        "P7B_BUILTIN_VIEWPORT_CONTROLLED_STIMULUS_RESULT.md",
+        "REPRESENTATION_ASSET_ANIMATION_DESIGN_GATE.md",
+        "P7B_CONTROLLED_PERCEPTION_DESIGN_GATE.md",
+        "P7B1_CONTAINMENT_DESIGN_GATE.md",
+        "P7B1B_DENIAL_CANARY_DESIGN_GATE.md",
+        "P7B1B_DENIAL_CANARY_RESULT.md",
+        "P7B1B_DENIAL_CANARY_FAILURE_ANALYSIS.md",
+        "P7B1B_DENIAL_CANARY_TRIAL2_RESULT.md",
+        "P7B1B_DENIAL_CANARY_TRIAL3_RESULT.md",
+        "P7B1B_STARTUP_COMPATIBILITY_DESIGN.md",
+        "P7B1B_DENIAL_CANARY_TRIAL4_RESULT.md",
+        "P7B1B_LOADER_DIAGNOSIS_DESIGN_GATE.md",
+        "P7B1B_LOADER_SURFACE_PROOF_RESULT.md",
+        "P7B1B_ROUTINE_TEST_DELEGATION_AND_DYNAMIC_OBSERVATION.md",
+        "P7B1B_DYNAMIC_OBSERVATION_TRIAL5_RESULT.md",
+        "P7B1B_POST_TRIAL5_ROUTE_DECISION.md",
+        "P7B1B_REPAIRED_OBSERVER_VALIDATION_RESULT.md",
+        "P7B1B_ALTERNATIVE_CONTAINMENT_ROUTE.md",
+        "P7B1B_NO_OS_UPGRADE_REBASELINE.md",
+        "P7B_BUILTIN_REFERENCE_VIEWPORT_DECISION.md",
+        "REPRESENTATION_ASSET_ANIMATION_READINESS.md",
+        "SEMANTIC_CONSTRUCTION_DESIGN_GATE.md",
+        "semantic-construction-contract.md",
+        "SIGNIFICANCE_SCHEDULER_DESIGN_GATE.md",
+        "significance-scheduler-contract.md",
+        "HIERARCHY_HISTORY_DESIGN_GATE.md",
+        "hierarchy-history-contract.md",
+        "proof-receipt-projection-contract.md"
+      ]
+    },
+    {
+      "id": "F5-COHERENCE",
+      "milestone": "F5",
+      "status": "complete",
+      "depends_on": ["F4-CLOSEOUT"],
+      "gate": "hard",
+      "next_action": "Implement the owner-approved typed knowledge intake, canonical role registry, recoverability baseline, unified snapshot, and generated knowledge views without crossing the independent F5 owner-observation gate.",
+      "proof": "Role coverage and stale-source validators, idempotent typed intake and persistence tests, authority-negative promotion fixtures, rebuildable snapshot/UI tests, verified SQLite backup, full Forge gate, and local Git baseline.",
+      "sources": [
+        "knowledge-record-contract.md",
+        "RECORDING_PROTOCOL.md",
+        "CONTEXT_PROTOCOL.md"
+      ]
+    },
+    {
+      "id": "C1",
+      "milestone": "G1",
+      "status": "owner_gated",
+      "depends_on": ["F5"],
+      "gate": "owner",
+      "next_action": "Choose ProofReceipt storage boundary.",
+      "proof": "Contract, recovery, validator tests.",
+      "sources": ["MASTER_CLOSURE_REGISTER.md"]
+    },
+    {
+      "id": "C2",
+      "milestone": "G1",
+      "status": "design_gated",
+      "depends_on": ["C1"],
+      "gate": "design",
+      "next_action": "Resolve universe identity policy.",
+      "proof": "Fixed-vector, migration, collision tests.",
+      "sources": ["MASTER_CLOSURE_REGISTER.md"]
+    },
+    {
+      "id": "C3-C7",
+      "milestone": "G1",
+      "status": "gated",
+      "depends_on": ["C2"],
+      "gate": "design",
+      "next_action": "Advance canonical modules bottom-up with local proof packs.",
+      "proof": "Determinism, adversarial, recovery, cost, integration and perception proofs.",
+      "sources": ["MASTER_CLOSURE_REGISTER.md"]
+    },
+    {
+      "id": "R1",
+      "milestone": "R1",
+      "status": "gated",
+      "depends_on": ["C3-C7"],
+      "gate": "owner",
+      "next_action": "Prepare runtime-adapter selection package.",
+      "proof": "Clean import, build, profiling, identifier preservation, replay.",
+      "sources": ["ROADMAP.md"]
+    }
+  ]
+}

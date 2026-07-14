@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "source_root": "forge documents from gpt handover",
+  "generated_at": "2026-07-13",
+  "objects": [
+    {"path":"2nd upload/MINDWARP_FORGE_CONTINUATION_PACK.zip","sha256":"8a5640be99fe5f0b21bbd986bcbfb435adf2b3cc99c8d9a9fcbad2bea1ccab5b","bytes":1071},
+    {"path":"ARCHITECTURE.md","sha256":"e9b58916665dc1577913d2624d60a339aa42118a6ada639018f2bf9350851cca","bytes":711},
+    {"path":"forge_chat_handoff_latest.zip","sha256":"8b55d14a7f5100d9f01e1dbafcc1d3aa7b177c70560f74d13e77daf1f5c5caca","bytes":3652},
+    {"path":"FORGE_HANDOFF.zip","sha256":"098be5196347adfa7775e34cb1f5bc29cd630289fb835d34d8b4358f7204429f","bytes":1691},
+    {"path":"FORGE_HANDOFF_PACK_03.zip","sha256":"f0ca40f3f1d8f8f7c1a19d2d1073b82265cbf8dc65c79f47b6dbef8d74257f69","bytes":3724},
+    {"path":"FORGE_MASTER_HANDOFF.zip","sha256":"6d593fc8e57036b6be6b79dabab857e8ee3af08327c72270a9b5a64d84d48e2a","bytes":3993},
+    {"path":"ForgeBootstrapAndroid_source_v0.1.0.zip","sha256":"4e4bf04994f6e78529224c571cbf06c5bf214ef4d20d6943471fed1322532002","bytes":15756686},
+    {"path":"MINDWARP_FORGE_ANDROID_BOOTSTRAP_EMERGENCY_PACK_2026-07-12.zip","sha256":"36aab7f95731fcff0cb400c4cf807b5167227e2ef3942e247bcbd403a3689d50","bytes":47541362},
+    {"path":"MINDWARP_FORGE_CONTINUATION_PACK.zip","sha256":"6a029b93999b5c8db44aed5934286a562d79166136c39f2b0b78ad852ccd5052","bytes":683},
+    {"path":"MINDWARP_FORGE_CONTINUATION_SURVIVAL_PACK_2026-07-12.zip","sha256":"f0f01b7469226d3d5c77780c23e97a96342b517ece536bc0351e9486117b251b","bytes":15739042},
+    {"path":"MindWarpForgePC_v0.1.0.zip","sha256":"48f997072ed7b02896754b8b7d18618399024130579adb1792f4ca96c0aff724","bytes":5558729}
+  ]
+}

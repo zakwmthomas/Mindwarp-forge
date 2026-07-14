@@ -1,0 +1,1 @@
+{"main":{"identifier":"main","description":"The main Forge window may call only explicitly registered core commands.","local":true,"windows":["main"],"permissions":["core:default"]}}

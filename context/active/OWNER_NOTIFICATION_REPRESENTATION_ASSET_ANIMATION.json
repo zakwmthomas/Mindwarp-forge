@@ -1,0 +1,11 @@
+{
+  "problem_id": "f5-p7a-contract-lineage-design-gate",
+  "category": "design_gate",
+  "severity": "medium",
+  "affected_package": "F5-P7-REPRESENTATION-ASSET-ANIMATION-DESIGN",
+  "evidence": "docs/canonical-system/REPRESENTATION_ASSET_ANIMATION_DESIGN_GATE.md",
+  "attempted": "Fixed recovered packages and targeted legacy failures were inspected in memory, primary neutral standards and perception research were reconciled, the whole P4-P6 dependency chain was challenged, a premature registry status was repaired, and focused plus full gates passed.",
+  "consequence": "Implementing more than P7a now could permanently lock quality to a first format, renderer, category table, synthetic score, or unsafe asset resolver. The staged boundary avoids that commitment.",
+  "requested_action": "Approve only the tiny offline capability-free P7a contract and lineage test harness; keep all geometry, rendering, visual review, assets, animation generation, formats, runtime, and engine work gated.",
+  "material_revision": 1
+}

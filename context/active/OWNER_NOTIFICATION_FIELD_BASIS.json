@@ -1,0 +1,11 @@
+{
+  "problem_id": "f5-field-basis-numerical-policy-gate",
+  "category": "design_gate",
+  "severity": "medium",
+  "affected_package": "F5-P3-FIELD-BASIS-READINESS",
+  "evidence": "docs/canonical-system/FIELD_BASIS_DESIGN_GATE.md",
+  "attempted": "Primary-source reuse research, fixed-point and floating-point comparison, Philox/PCG/Threefry/ChaCha/HMAC alternatives, cache mapping, adversarial fixtures, cost and recovery analysis are complete.",
+  "consequence": "Implementation without confirmation would silently lock permanent numerical, cache, generator mapping, migration, and accelerator-equivalence semantics.",
+  "requested_action": "Approve the bounded Q32.32/Q16.48 fixed-point reference and proposed Philox4x32-10 mapping lane, or request a different numerical or counter-generator lane.",
+  "material_revision": 1
+}

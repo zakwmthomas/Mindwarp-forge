@@ -1,0 +1,22 @@
+{
+  "version": "0.1.0",
+  "platform": "windows-x64",
+  "verification": {
+    "integrated_gate": "passed: UI build, rustfmt, 40 tests, desktop build, whitespace check, overwrite rollback recovery drill, forced verification failure auto-rollback drill",
+    "production_bundle": "passed: MSI and NSIS bundles"
+  },
+  "artifacts": [
+    {
+      "kind": "msi",
+      "path": "target/release/bundle/msi/Mind Warp Forge_0.1.0_x64_en-US.msi",
+      "bytes": 3858432,
+      "sha256": "bd3ab66914ad5cdf3156e7ec963f5e65cb7b53bfdf19131ae10956890b7ddacb"
+    },
+    {
+      "kind": "nsis-setup-exe",
+      "path": "target/release/bundle/nsis/Mind Warp Forge_0.1.0_x64-setup.exe",
+      "bytes": 2693715,
+      "sha256": "287165be3e9f506c528a26e68d1a78ba159314e53ed8382b569743e922380b8f"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#08090b" />
+    <title>Mindwarp Forge</title>
+    <link rel="stylesheet" href="/src/app.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="titlebar">
+        <a class="brand" href="#home" data-nav="home" aria-label="Mindwarp Forge home"><span class="brand-mark" aria-hidden="true">MW</span><span>MINDWARP FORGE</span></a>
+        <div class="title-status" aria-label="Forge connection status"><span class="status-chip">● LOCAL</span><span class="status-chip" id="capture-chip">● CAPTURE</span></div>
+      </header>
+
+      <aside class="sidebar" aria-label="Primary navigation">
+        <nav>
+          <button class="nav-item is-active" data-nav="home" aria-current="page"><span aria-hidden="true">⌂</span><span>Home</span></button>
+          <button class="nav-item" data-nav="work"><span aria-hidden="true">▣</span><span>Work</span><span class="nav-count" id="work-count">0</span></button>
+          <button class="nav-item" data-nav="studio"><span aria-hidden="true">◇</span><span>Studio</span></button>
+          <button class="nav-item" data-nav="evidence"><span aria-hidden="true">⬡</span><span>Evidence</span></button>
+          <button class="nav-item" data-nav="activity"><span aria-hidden="true">⌁</span><span>Activity</span></button>
+        </nav>
+        <nav class="sidebar-footer" aria-label="Support navigation">
+          <button class="nav-item" data-nav="help"><span aria-hidden="true">?</span><span>Help</span></button>
+          <button class="nav-item" data-nav="settings"><span aria-hidden="true">⚙</span><span>Settings</span></button>
+        </nav>
+      </aside>
+
+      <main id="main-content" tabindex="-1">
+        <p id="status" class="sr-only" role="status" aria-live="polite">Loading local Forge status…</p>
+
+        <div class="page is-active" data-page="home">
+          <div class="page-heading"><div><p class="eyebrow">CONTROL CENTRE</p><h1>Forge is ready</h1><p>One clear action, with project truth close at hand.</p></div><span class="verified-pill">✓ VERIFIED LOCAL</span></div>
+          <div class="dashboard-grid">
+            <section class="panel hero-panel" aria-labelledby="current-action-heading">
+              <p class="eyebrow">YOUR NEXT ACTION</p><h2 id="current-action-heading">Review three visual comparisons</h2>
+              <p>You are recording what you can see—not approving software or changing the project.</p>
+              <div class="progress-row"><strong>0 OF 3</strong><span class="progress-track"><span></span></span></div>
+              <button id="go-to-review" class="primary" type="button">Begin review <span aria-hidden="true">→</span></button>
+            </section>
+            <section class="panel" aria-labelledby="health-heading"><p class="eyebrow">FORGE HEALTH</p><h2 id="health-heading">Verified local status</h2><p id="home-health">Checking current evidence…</p><ul class="status-list"><li><span>Local repository</span><strong>CONNECTED</strong></li><li><span>Project integrity</span><strong>VERIFIED</strong></li><li><span>Authority boundary</span><strong>INTACT</strong></li></ul></section>
+            <section class="panel wide" aria-labelledby="path-heading"><div class="panel-heading"><div><p class="eyebrow">PROJECT PATH</p><h2 id="path-heading">Foundation to runtime</h2></div><button class="text-button" data-nav="work">View work →</button></div><ol id="atlas-milestones" class="milestone-path" aria-label="Project roadmap milestones"></ol><p id="atlas-summary" role="status" aria-live="polite"></p><ul id="atlas-systems" class="sr-only" aria-label="Project systems"></ul><button id="refresh-atlas" class="sr-only" type="button">Refresh Atlas</button></section>
+            <section class="panel wide" aria-labelledby="home-attention-heading"><div class="panel-heading"><div><p class="eyebrow">NEEDS ATTENTION</p><h2 id="home-attention-heading">Owner queue</h2></div><button class="text-button" data-nav="work">Open queue →</button></div><p id="home-attention">One visual review is waiting for you. There are no inferred approvals.</p></section>
+          </div>
+        </div>
+
+        <div class="page" data-page="work">
+          <div class="page-heading"><div><p class="eyebrow">WORK</p><h1>Owner queue</h1><p>Decisions, candidates, and controlled application in one place.</p></div></div>
+          <section class="panel"><div class="panel-heading"><div><h2>Project knowledge</h2><p>Plans, ideas, decisions, tasks, research, and corrections are generated views over records stored once.</p></div><button id="refresh-knowledge" type="button">Refresh</button></div><p id="knowledge-summary" role="status" aria-live="polite"></p><div class="knowledge-filters" role="group" aria-label="Knowledge record filters"><button type="button" data-knowledge-filter="all">All</button><button type="button" data-knowledge-filter="plan">Plans</button><button type="button" data-knowledge-filter="idea">Ideas</button><button type="button" data-knowledge-filter="decision">Decisions</button><button type="button" data-knowledge-filter="task">Tasks</button><button type="button" data-knowledge-filter="research">Research</button><button type="button" data-knowledge-filter="correction">Corrections</button></div><ol id="knowledge-list"></ol></section>
+          <section class="panel"><h2>Decision brief</h2><p>Proposed candidates are not approvals or commands.</p><button id="refresh-brief" type="button">Refresh brief</button><p id="brief-summary" role="status" aria-live="polite"></p><ol id="brief-list"></ol><form id="authorization-form" class="form-grid"><label>Action<select id="authorization-action"><option value="approve">Approve candidate</option><option value="promote">Promote candidate</option></select></label><label>Candidate ID<input id="authorization-candidate" required /></label><label class="full">Exact confirmation phrase<input id="authorization-confirmation" required autocomplete="off" /></label><button class="primary" type="submit">Record explicit authorization</button></form><p id="authorization-receipt" role="status" aria-live="polite"></p></section>
+          <details class="panel"><summary>Code admission and controlled staging</summary><form id="code-form" class="form-grid"><label>Source identifier<input id="code-source" required maxlength="200" /></label><label>Repository-relative path<input id="code-path" required maxlength="300" /></label><label>Language<input id="code-language" required maxlength="80" /></label><label class="full">Code<textarea id="code-text" required rows="9" maxlength="1048576"></textarea></label><button type="submit">Record code evidence</button></form><p id="code-receipt" role="status"></p><div class="form-grid"><label>Candidate ID to preview<input id="preview-candidate" /></label><button id="preview-code" type="button">Preview candidate</button></div><p id="preview-summary" role="status"></p><pre id="code-preview"></pre><form id="apply-form" class="form-grid"><label>Promoted candidate ID<input id="apply-candidate" required /></label><label>Exact apply confirmation<input id="apply-confirmation" required autocomplete="off" /></label><button type="submit">Apply to staging</button></form><p id="apply-receipt" role="status"></p><form id="rollback-form" class="form-grid danger-zone"><label>Application event ID<input id="rollback-event" required /></label><label>Exact rollback confirmation<input id="rollback-confirmation" required autocomplete="off" /></label><button type="submit">Rollback application</button></form><p id="rollback-receipt" role="status"></p><button id="refresh-workspace" type="button">Inspect staging workspace</button><p id="workspace-summary"></p><ul id="workspace-files"></ul><button id="refresh-project" type="button">Inspect approved Forge workspace</button><p id="project-summary"></p></details>
+        </div>
+
+        <div class="page" data-page="studio">
+          <div class="page-heading"><div><p class="eyebrow">STUDIO</p><h1>Visual review</h1><p>Compare deterministic reference views and record only what you observe.</p></div></div>
+          <section id="reference-review" class="panel studio-panel"><div class="review-layout"><div><div class="panel-heading"><div><p class="eyebrow">REFERENCE VIEWPORT</p><h2>Three-view comparison</h2></div><button id="refresh-reference-viewport" type="button">Refresh</button></div><label>Stimulus<select id="reference-viewport-stimulus"></select></label><label>Pose frame<input id="reference-viewport-frame" type="range" min="0" max="0" value="0" step="1" /></label><p id="reference-viewport-summary" role="status"></p><canvas id="reference-viewport-canvas" width="960" height="360" aria-label="Front, side, and top deterministic wireframe projections"></canvas><details><summary>Technical limitations</summary><ul id="reference-viewport-limitations"></ul></details></div><form id="reference-observation-form" class="review-form"><p class="eyebrow">TELL FORGE WHAT YOU SEE</p><h2>Observation</h2><p>This creates feedback only. It grants no authority.</p><label>Check<select id="reference-observation-pair" required><option value="">Choose a comparison</option></select></label><label>What did you observe?<select id="reference-observation-outcome" required><option value="">Choose an outcome</option><option value="satisfied">Reference meets this check</option><option value="violated">Reference fails this check</option><option value="no_preference">No meaningful preference</option><option value="indeterminate">Cannot tell from this view</option></select></label><label>Confidence (1–100)<input id="reference-observation-confidence" type="number" min="1" max="100" required /></label><button class="primary" type="submit">Create observation receipt</button><p id="reference-observation-receipt" role="status"></p></form></div></section>
+          <details class="panel"><summary>Reference Studio inspector</summary><button id="refresh-reference-studio" type="button">Refresh inspector</button><p id="reference-studio-summary"></p><h3>Lifecycle and failure records</h3><ul id="reference-studio-records"></ul><h3>Known source gaps</h3><ul id="reference-studio-gaps"></ul></details>
+        </div>
+
+        <div class="page" data-page="evidence">
+          <div class="page-heading"><div><p class="eyebrow">EVIDENCE</p><h1>Local evidence ledger</h1><p>Import, inspect, and back up evidence without granting authority.</p></div></div>
+          <section class="panel"><h2>Manual conversation import</h2><form id="import-form" class="form-grid"><label>Source identifier<input id="source-id" required maxlength="200" /></label><label class="full">Labelled transcript<textarea id="transcript" required rows="12" maxlength="1048576" placeholder="User: …&#10;Assistant: …"></textarea></label><button class="primary" type="submit">Record evidence</button></form><p id="receipt" role="status"></p></section>
+          <section class="panel"><div class="panel-heading"><div><h2>Read-only dossier</h2><p>Candidate state is not approval or promotion.</p></div><button id="refresh-dossier" type="button">Refresh dossier</button></div><p id="dossier-summary"></p><ul id="candidate-list"></ul></section>
+          <section class="panel"><h2>Verified local backup</h2><p>Creates, hashes, reopens, and replays a local SQLite backup. Nothing is uploaded.</p><button id="create-backup" type="button">Create verified backup</button><p id="backup-receipt" role="status"></p></section>
+        </div>
+
+        <div class="page" data-page="activity">
+          <div class="page-heading"><div><p class="eyebrow">ACTIVITY</p><h1>Capture and system activity</h1><p>Plain-language status first; technical records remain available on demand.</p></div></div>
+          <section class="panel"><h2>Automatic local Codex capture</h2><p>Forge records visible user and assistant text as evidence only. It cannot read your screen, clipboard, or network.</p><div class="button-row"><button id="refresh-codex-capture" type="button">Refresh status</button><button id="pause-codex-capture" type="button">Pause capture</button><button id="resume-codex-capture" type="button">Resume and rescan</button></div><p id="codex-capture-status" role="status"></p></section>
+        </div>
+
+        <div class="page" data-page="help"><div class="page-heading"><div><p class="eyebrow">HELP</p><h1>How Forge works</h1><p>Forge keeps project truth visible while preserving your authority.</p></div></div><section class="panel prose"><h2>The short version</h2><ol><li><strong>Home</strong> tells you the one thing that needs attention.</li><li><strong>Work</strong> holds explicit decisions and controlled candidate actions.</li><li><strong>Studio</strong> is for visual inspection and feedback.</li><li><strong>Evidence</strong> stores and verifies source material.</li><li><strong>Activity</strong> shows capture and operational events.</li></ol><p>Nothing shown in Forge becomes approval, promotion, spending, publishing, or code authority unless you complete the exact explicit gate.</p></section></div>
+
+        <div class="page" data-page="settings">
+          <div class="page-heading"><div><p class="eyebrow">SETTINGS</p><h1>Operating state</h1><p>Read-only policies and the active canonical route.</p></div></div>
+          <section class="panel"><div class="panel-heading"><h2>Forge operating system</h2><button id="refresh-operating" type="button">Refresh</button></div><p id="operating-summary"></p><ul id="operating-policies"></ul></section>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

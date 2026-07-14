@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "verify_cargo_dependencies": true,
+  "modules": [
+    {
+      "id": "forge-kernel",
+      "root": "crates/forge-kernel",
+      "dependencies": [],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "protected kernel cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "protected kernel cannot initiate network access"}
+      ]
+    },
+    {
+      "id": "universe-identity",
+      "root": "crates/universe-identity",
+      "dependencies": [],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "canonical identity cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "canonical identity cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "canonical identity cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "canonical identity cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "forge-desktop",
+      "root": "apps/forge-desktop/src-tauri",
+      "dependencies": ["forge-kernel", "universe-identity", "field-basis", "hierarchy-history", "significance-scheduler", "semantic-construction", "representation-contract", "perception-protocol", "reference-viewport", "viewport-stimulus", "containment-profile"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "(?:^|[\\/])ui(?:[\\/])src", "reason": "desktop backend cannot import frontend source"}
+      ]
+    },
+    {
+      "id": "field-basis",
+      "root": "crates/field-basis",
+      "dependencies": ["universe-identity"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "canonical fields cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "canonical fields cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "canonical fields cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "canonical fields cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "hierarchy-history",
+      "root": "crates/hierarchy-history",
+      "dependencies": [],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "canonical hierarchy and history cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "canonical hierarchy and history cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "canonical hierarchy and history cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "canonical hierarchy and history cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "significance-scheduler",
+      "root": "crates/significance-scheduler",
+      "dependencies": [],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "reference scheduling cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "reference scheduling cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "reference scheduling cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "reference scheduling cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "semantic-construction",
+      "root": "crates/semantic-construction",
+      "dependencies": [],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "semantic/construction proof cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "semantic/construction proof cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "semantic/construction proof cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "semantic/construction proof cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "representation-contract",
+      "root": "crates/representation-contract",
+      "dependencies": [],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "representation proof cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "representation proof cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "representation proof cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "representation proof cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "perception-protocol",
+      "root": "crates/perception-protocol",
+      "dependencies": [],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "perception protocol proof cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "perception protocol proof cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "perception protocol proof cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "perception protocol proof cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "reference-viewport",
+      "root": "crates/reference-viewport",
+      "dependencies": [],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "reference projection cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "reference projection cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "reference projection cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "reference projection cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "viewport-stimulus",
+      "root": "crates/viewport-stimulus",
+      "dependencies": ["perception-protocol", "reference-viewport"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "stimulus binding cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "stimulus binding cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "stimulus binding cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "stimulus binding cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "containment-profile",
+      "root": "crates/containment-profile",
+      "dependencies": [],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "containment policy proof cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "containment policy proof cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "containment policy proof cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "containment policy proof cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "containment-denial-canary",
+      "root": "crates/containment-denial-canary",
+      "dependencies": [],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "denial canary cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "denial canary cannot depend on desktop or UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio|winhttp|wininet)::", "reason": "denial canary cannot use an HTTP, async, or external-network stack"},
+        {"pattern": "\\b(?:serde|serde_json|sha2|containment_profile)(?:::|\\s*=)", "reason": "denial canary remains tiny and independent of parsers, hashes, policy, and canonical modules"}
+      ]
+    },
+    {
+      "id": "containment-canary-runner",
+      "root": "crates/containment-canary-runner",
+      "dependencies": ["containment-profile"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "owner-gated runner cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "owner-gated runner cannot be reachable from desktop or UI"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio)::", "reason": "runner cannot use HTTP, async, or external-network clients"},
+        {"pattern": "\\b(?:serde|serde_json)(?:::|\\s*=)", "reason": "runner admits only its fixed strict bounded report without a general parser"}
+      ]
+    },
+    {
+      "id": "forge-desktop-ui",
+      "root": "apps/forge-desktop/ui",
+      "dependencies": [],
+      "source_extensions": [".ts"],
+      "forbidden_imports": [
+        {"pattern": "from\\s+[\"'](?:node:|fs[\"']|child_process[\"']|net[\"']|http[\"']|https[\"'])", "reason": "frontend cannot import filesystem, process, or network runtimes"},
+        {"pattern": "\\bfetch\\s*\\(", "reason": "frontend cannot create a direct network path"},
+        {"pattern": "(?:crates/forge-kernel|src-tauri/src)", "reason": "frontend cannot bypass the bounded Tauri command surface"}
+      ]
+    }
+  ]
+}
