@@ -33,7 +33,7 @@ try {
   $result = Invoke-FixtureVerifier $fixture $policyPath
   if ($result.ExitCode -eq 0) { throw 'Forbidden-import fixture unexpectedly passed.' }
   $text = $result.Text
-  if ($text -notmatch 'module-a: forbidden import' -or $text -notmatch 'module-b: forbidden import') { throw 'Failure isolation did not retain both module violations.' }
+  if ($text -notmatch 'module-a: forbidden\s+import' -or $text -notmatch 'module-b: forbidden\s+import') { throw 'Failure isolation did not retain both module violations.' }
 
   $policy.modules[0].dependencies = @('module-b'); $policy.modules[1].dependencies = @('module-a')
   Set-Content (Join-Path $fixture 'a\src\lib.rs') 'pub fn safe() {}'; Set-Content (Join-Path $fixture 'b\src\lib.rs') 'pub fn safe() {}'
