@@ -20,7 +20,9 @@ function Must-Fail($state,[string]$message) {
 try {
   $valid=Valid-State; $valid | ConvertTo-Json -Depth 10 | Set-Content -LiteralPath $temp; & $verifier -Path $temp | Out-Null
   $stale=Valid-State; $stale.stage_context.stage_id='old-stage'; Must-Fail $stale 'Stale stage context was accepted.'
+  $pending=Valid-State; $pending.visual_quality_gate=@{asset_use_intent=$true;status='required_pending';rationale='candidate search';dependent_implementation_blocked=$true;receipts=@()}; $pending | ConvertTo-Json -Depth 10 | Set-Content -LiteralPath $temp; & $verifier -Path $temp | Out-Null
+  $unblocked=Valid-State; $unblocked.visual_quality_gate=@{asset_use_intent=$true;status='required_pending';rationale='candidate search';dependent_implementation_blocked=$false;receipts=@()}; Must-Fail $unblocked 'Unblocked pending visual work was accepted.'
   $metadata=Valid-State; $metadata.visual_quality_gate=@{asset_use_intent=$true;status='passed';rationale='fixture';receipts=@(@{content_sha256=('a'*64);provenance='fixture';intended_comparison='human';accuracy_limits='none';pixel_inspection_performed=$false;rendered_views_inspected=@();disposition='verified_fit';human_subject=$true;anatomical_credibility='verified';comparison_completeness='verified';pose_view_lighting_fitness='verified'})}; Must-Fail $metadata 'Metadata-only visual admission was accepted.'
   $costly=Valid-State; $costly.simulation_ladder.cheapest_sufficient_tier='bounded_integrated_pc'; $costly.simulation_ladder.expensive_execution_planned=$true; Must-Fail $costly 'Unjustified expensive execution was accepted.'
-  Write-Output 'Stage-quality fixtures verified: stale context, metadata-only visuals, and unjustified expensive execution fail closed.'
+  Write-Output 'Stage-quality fixtures verified: stale context, unblocked or metadata-only visuals, and unjustified expensive execution fail closed.'
 } finally { Remove-Item -LiteralPath $temp -Force -ErrorAction SilentlyContinue }

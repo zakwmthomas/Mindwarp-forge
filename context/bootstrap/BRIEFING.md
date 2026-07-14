@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **F5-H4-HUMANOID-FUNCTIONAL-CONTROLS**
-- Objective: Calibrate cheap deterministic structural metrics against the exact broken-connection, silhouette-collapse, and articulation-drift controls without inferring visual quality or owner judgement.
+- Work package: **F5-H5-HUMANOID-VISUAL-REFERENCE-INTAKE**
+- Objective: Admit only provenance-safe, pixel-inspected, comparison-fit human visual references and prepare a bounded owner check for any unresolved quality, anatomy, accuracy, or creative uncertainty.
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
 - Related systems: asset-factory, procedural-animation, forge-reference-studio, forge-truth-kernel
-- Risk/research gate: **control-metric-cross-sensitivity-threshold-and-visual-overclaim / Use the existing Forge-owned reference viewport, H3 receipt, and typed control snapshots. No external assets, human reference, renderer, engine, or runtime research is required for H4.**
-- Exact next action: Freeze and verify the H4 calibration receipt, run focused and modularity checks, then run the complete Forge gate before closing H4 and preparing the separately visual-gated H5 package.
+- Risk/research gate: **visual-reference-provenance-anatomy-quality-and-creative-fit / Use authoritative or clearly licensed sources, inspect actual pixels rather than metadata, and keep the candidate set small. Do not download executable content, import a production asset, or treat popularity as quality.**
+- Exact next action: Research a small set of provenance- and license-safe neutral human reference candidates, inspect actual pixels at useful scale and relevant views, reject visibly unsuitable candidates, and prepare one labelled owner comparison only if more than one verified-fit creative target remains or fitness is uncertain.
 
 ## Approved operating policies
 

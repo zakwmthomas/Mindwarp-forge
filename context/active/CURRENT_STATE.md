@@ -5,39 +5,38 @@
 
 ## Active checkpoint
 
-- Package: **F5-H4-HUMANOID-FUNCTIONAL-CONTROLS**
+- Package: **F5-H5-HUMANOID-VISUAL-REFERENCE-INTAKE**
 - Master item / milestone: **F5 / F5**
-- State / substage: **executing / H4-control-calibration-verification**
+- State / substage: **executing / H5-visual-reference-source-and-fitness-intake**
 - Related systems: asset-factory, procedural-animation, forge-reference-studio, forge-truth-kernel
-- Objective: Calibrate cheap deterministic structural metrics against the exact broken-connection, silhouette-collapse, and articulation-drift controls without inferring visual quality or owner judgement.
-- Context health: Green after H3 focused and complete Forge gates. P13-P15 stage-quality enforcement is active; capture is current and heartbeat remains paused.
+- Objective: Admit only provenance-safe, pixel-inspected, comparison-fit human visual references and prepare a bounded owner check for any unresolved quality, anatomy, accuracy, or creative uncertainty.
+- Context health: Green after H4 focused and complete Forge gates. P13 visual intake is required and dependent implementation is blocked; capture is current and heartbeat remains paused.
 
 ## Durable evidence
 
-- `docs/canonical-system/H3_NEUTRAL_HUMANOID_GENERATION_RESULT.md`
-- `contracts/humanoid-generation-contract.md`
-- `contracts/reference-viewport-contract.md`
-- `contracts/viewport-stimulus-contract.md`
-- `crates/reference-viewport/src/lib.rs`
-- `crates/viewport-stimulus/src/lib.rs`
+- `docs/canonical-system/H4_HUMANOID_FUNCTIONAL_CONTROLS_RESULT.md`
+- `contracts/control-calibration-contract.md`
+- `artifacts/chat-screenshots/v2-pose-reference.png.manifest.json`
 - `governance/STAGE_QUALITY_PROTOCOL.md`
+- `contracts/perception-protocol-contract.md`
+- `contracts/viewport-stimulus-contract.md`
 
 ## Authority boundary
 
-Owner-authorized implementation of the approved master plan. H4 may calibrate deterministic structural metrics only; it cannot assert asset quality, human anatomy, perception, preference, approval, promotion, engine compatibility, or protected-Kernel mutation.
+Owner-authorized reference research and pixel inspection only. Dependent visual implementation remains blocked until a verified-fit receipt exists and any creative ambiguity is resolved by the owner. No approval, promotion, engine selection, external execution, or protected-Kernel mutation.
 
 ## Exact next action
 
-Freeze and verify the H4 calibration receipt, run focused and modularity checks, then run the complete Forge gate before closing H4 and preparing the separately visual-gated H5 package.
+Research a small set of provenance- and license-safe neutral human reference candidates, inspect actual pixels at useful scale and relevant views, reject visibly unsuitable candidates, and prepare one labelled owner comparison only if more than one verified-fit creative target remains or fitness is uncertain.
 
 ## Unresolved risks
 
-- A metric may respond to more than its named control and be falsely described as specific.
-- A threshold chosen after viewing controls would encode post-hoc acceptance rather than calibration.
-- Stale reference or control fingerprints could silently rebind old evidence.
-- Structural metric separation could be overclaimed as visual or anatomical quality.
-- The H2/H3 wire fixture remains not a verified good-quality visual human.
+- No current repository asset is a verified good-quality human visual reference.
+- External candidates may have unclear licensing, incomplete provenance, hidden visual defects, or unsuitable pose/view/lighting.
+- An anatomically credible source can still be the wrong creative target for Mind Warp.
+- A single view can hide anatomy or proportion defects that appear from another angle.
+- Visual observation must not approve, promote, or overwrite structural evidence.
 
 ## Resume after this package
 
-Continue automatically after progress updates. Ask the owner only when H5 presents a genuine visual-quality, accuracy, anatomy, or creative-intent uncertainty.
+Continue autonomous source and pixel-fitness research. Ask the owner only when a concrete candidate remains uncertain or a creative choice between verified-fit candidates is necessary.

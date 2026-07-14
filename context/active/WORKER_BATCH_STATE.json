@@ -1,23 +1,23 @@
 {
   "schema_version": 2,
   "canonical_role": "sole-active-work-checkpoint",
-  "batch_id": "F5-H4-HUMANOID-FUNCTIONAL-CONTROLS",
+  "batch_id": "F5-H5-HUMANOID-VISUAL-REFERENCE-INTAKE",
   "master_program_item": "F5",
   "state": "executing",
-  "objective": "Calibrate cheap deterministic structural metrics against the exact broken-connection, silhouette-collapse, and articulation-drift controls without inferring visual quality or owner judgement.",
-  "next_action": "Freeze and verify the H4 calibration receipt, run focused and modularity checks, then run the complete Forge gate before closing H4 and preparing the separately visual-gated H5 package.",
-  "substage_id": "H4-control-calibration-verification",
+  "objective": "Admit only provenance-safe, pixel-inspected, comparison-fit human visual references and prepare a bounded owner check for any unresolved quality, anatomy, accuracy, or creative uncertainty.",
+  "next_action": "Research a small set of provenance- and license-safe neutral human reference candidates, inspect actual pixels at useful scale and relevant views, reject visibly unsuitable candidates, and prepare one labelled owner comparison only if more than one verified-fit creative target remains or fitness is uncertain.",
+  "substage_id": "H5-visual-reference-source-and-fitness-intake",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
     "milestone": "F5",
     "systems": ["asset-factory", "procedural-animation", "forge-reference-studio", "forge-truth-kernel"]
   },
-  "risk_level": "control-metric-cross-sensitivity-threshold-and-visual-overclaim",
-  "research_gate": "Use the existing Forge-owned reference viewport, H3 receipt, and typed control snapshots. No external assets, human reference, renderer, engine, or runtime research is required for H4.",
-  "authority_lane": "Owner-authorized implementation of the approved master plan. H4 may calibrate deterministic structural metrics only; it cannot assert asset quality, human anatomy, perception, preference, approval, promotion, engine compatibility, or protected-Kernel mutation.",
-  "context_health": "Green after H3 focused and complete Forge gates. P13-P15 stage-quality enforcement is active; capture is current and heartbeat remains paused.",
+  "risk_level": "visual-reference-provenance-anatomy-quality-and-creative-fit",
+  "research_gate": "Use authoritative or clearly licensed sources, inspect actual pixels rather than metadata, and keep the candidate set small. Do not download executable content, import a production asset, or treat popularity as quality.",
+  "authority_lane": "Owner-authorized reference research and pixel inspection only. Dependent visual implementation remains blocked until a verified-fit receipt exists and any creative ambiguity is resolved by the owner. No approval, promotion, engine selection, external execution, or protected-Kernel mutation.",
+  "context_health": "Green after H4 focused and complete Forge gates. P13 visual intake is required and dependent implementation is blocked; capture is current and heartbeat remains paused.",
   "stage_context": {
-    "stage_id": "H4-control-calibration-verification",
+    "stage_id": "H5-visual-reference-source-and-fitness-intake",
     "macro_sources": [
       "docs/canonical-system/MASTER_PLAN_V2.md",
       "docs/canonical-system/MASTER_PROGRAM.json",
@@ -26,99 +26,99 @@
       "governance/STAGE_QUALITY_PROTOCOL.md"
     ],
     "macro_findings": [
-      "H4 calibrates functional controls after H3 generation and before H5 visual observation.",
-      "F5 remains engine-neutral; G1 production and R1 runtime work remain gated.",
-      "Metric discrimination cannot establish a good-quality human, perceptual quality, player preference, approval, or promotion."
+      "H5 is the first visual-inspection stage; H6 recovery and H7 promotion remain later gates.",
+      "F5 remains engine-neutral and cannot import a production asset or select a runtime.",
+      "The owner requires a good-quality, accurate human comparison target and review whenever fitness or creative intent is uncertain."
     ],
     "micro_sources": [
-      "crates/reference-viewport/src/lib.rs",
+      "artifacts/chat-screenshots/v2-pose-reference.png",
+      "artifacts/chat-screenshots/v2-pose-reference.png.manifest.json",
       "contracts/reference-viewport-contract.md",
-      "crates/viewport-stimulus/src/lib.rs",
-      "crates/control-calibration/src/lib.rs",
       "contracts/control-calibration-contract.md",
-      "contracts/viewport-stimulus-contract.md",
-      "crates/humanoid-generation/src/lib.rs",
-      "docs/canonical-system/H3_NEUTRAL_HUMANOID_GENERATION_RESULT.md"
+      "docs/canonical-system/H4_HUMANOID_FUNCTIONAL_CONTROLS_RESULT.md"
     ],
     "micro_findings": [
-      "The existing controls are deterministic and distinct: one removes the right knee-ankle link, one narrows frame-zero front span, and one changes frame-one hand height while preserving segment length.",
-      "Edge deficit, rest front-span loss, and frame-one hand vertical displacement can form an orthogonal integer metric matrix without rendering pixels.",
-      "Every metric and control binds exact reference/control fingerprints and declares non-detections rather than implying general quality.",
-      "Five in-memory tests retain the orthogonal 1/480/480 matrix and reject missing controls, stale binding, cross-sensitive or post-hoc claims, unknown fields, and noncanonical bytes.",
-      "Calibration fingerprint 774a790aa963bb7ed329394d869fda4f5530697cce4d4d029a23d31e6d575f4d is ready for the complete integration gate."
+      "Original-resolution pixel inspection confirms the Forge UI capture is clean and correctly scoped to the Forge window.",
+      "The displayed reference is a tiny three-view stick skeleton with no surface anatomy, credible human silhouette, face, hands, musculature, or detailed proportions.",
+      "The current fixture is rejected for human-quality comparison but remains valid for the exact structural H2-H4 proofs."
     ]
   },
   "visual_quality_gate": {
-    "asset_use_intent": false,
-    "status": "not_applicable",
-    "rationale": "H4 reads typed point, edge, and frame coordinates and computes integer metrics in memory. It does not use a rendered image or human visual asset. H5 visual comparison remains separately gated by P13.",
-    "receipts": []
+    "asset_use_intent": true,
+    "status": "required_pending",
+    "rationale": "H5 must select and inspect an actual human visual reference. The existing Forge wire capture is visibly insufficient for human-quality comparison, and no replacement has yet passed provenance and pixel fitness.",
+    "dependent_implementation_blocked": true,
+    "receipts": [
+      {
+        "content_sha256": "c85653f3329d164ea07f0dca334de05879faab4d17e65ac00ab1e9eed764840e",
+        "provenance": "Forge-owned window capture with verified PrintWindow manifest; artifact is disposable presentation evidence.",
+        "intended_comparison": "Neutral human visual form, anatomy, proportions, and pose quality.",
+        "accuracy_limits": "Only a 17-joint wire skeleton is visible; it contains no surface anatomy or detailed human form.",
+        "pixel_inspection_performed": true,
+        "rendered_views_inspected": ["Original 1116x799 Forge window capture", "Front, side, and top wire panels at displayed scale"],
+        "visible_defects": ["Tiny display region", "Stick-skeleton only", "No surface silhouette", "No face or hands", "No anatomy or musculature", "Insufficient proportional detail"],
+        "human_subject": true,
+        "anatomical_credibility": "rejected_for_visual_comparison",
+        "comparison_completeness": "rejected_for_visual_comparison",
+        "pose_view_lighting_fitness": "rejected_for_visual_comparison",
+        "disposition": "rejected"
+      }
+    ]
   },
   "simulation_ladder": {
-    "cheapest_sufficient_tier": "in_memory_fixture",
-    "tiers_completed": [
-      {
-        "tier": "static_reasoning",
-        "result": "Three existing control mutations affect independent structural dimensions that can be measured with exact integer differences.",
-        "evidence": "crates/reference-viewport/src/lib.rs negative_control_snapshots"
-      },
-      {
-        "tier": "typed_model",
-        "result": "Exact edge deficit, rest front-span loss, and frame-one hand vertical displacement form an orthogonal matrix for the three bound controls.",
-        "evidence": "crates/control-calibration/src/lib.rs"
-      }
-    ],
+    "cheapest_sufficient_tier": "static_reasoning",
+    "tiers_completed": [],
     "expensive_execution_planned": false,
     "unresolved_risk": "",
     "expected_information_gain": "",
     "estimated_cost": "",
     "regression_guard": "",
     "stop_condition": "",
-    "final_integration_gate": "After typed and in-memory H4 calibration passes, retain modularity and the complete Forge gate before H4 closure."
+    "final_integration_gate": "After visual receipts and any owner check are complete, retain exact fingerprint binding, mutation-negative checks, and the complete Forge gate before H5 closure."
   },
   "unresolved_risks": [
-    "A metric may respond to more than its named control and be falsely described as specific.",
-    "A threshold chosen after viewing controls would encode post-hoc acceptance rather than calibration.",
-    "Stale reference or control fingerprints could silently rebind old evidence.",
-    "Structural metric separation could be overclaimed as visual or anatomical quality.",
-    "The H2/H3 wire fixture remains not a verified good-quality visual human."
+    "No current repository asset is a verified good-quality human visual reference.",
+    "External candidates may have unclear licensing, incomplete provenance, hidden visual defects, or unsuitable pose/view/lighting.",
+    "An anatomically credible source can still be the wrong creative target for Mind Warp.",
+    "A single view can hide anatomy or proportion defects that appear from another angle.",
+    "Visual observation must not approve, promote, or overwrite structural evidence."
   ],
   "evidence_requirements": [
-    "exact H3 candidate and reference/control fingerprint bindings",
-    "integer-only metric definitions with no learned or post-hoc threshold",
-    "complete metric-by-control detection and non-detection matrix",
-    "deterministic canonical calibration receipt",
-    "adversarial missing-control, stale-binding, cross-sensitivity, threshold-drift, and overclaim fixtures",
-    "explicit no-visual-quality and no-owner-judgement limits"
+    "authoritative source identity, license or use authority, and content fingerprint per candidate",
+    "actual-pixel inspection at useful scale and relevant views",
+    "anatomy, completeness, occlusion, pose, view, lighting, detail, and visible-defect record",
+    "explicit verified-fit, rejected, or owner-check-required disposition",
+    "one bounded labelled owner comparison if fitness or creative choice remains uncertain",
+    "exact H3/H4 candidate, calibration, and observation binding with no promotion effect"
   ],
   "verification_plan": [
-    "inspect exact reference/control mutations and existing stimulus bindings",
-    "derive the smallest orthogonal typed metric model",
-    "run in-memory reference and adversarial fixtures",
-    "freeze calibration fingerprints and record claim limits",
-    "run modularity, focused, and complete Forge gates",
-    "advance automatically to H5 only after H4 is verified"
+    "research a small authoritative/licensed candidate set",
+    "inspect actual pixels and reject bad references before comparison",
+    "retain source and visual fitness receipts",
+    "route only genuine uncertainty to one owner comparison",
+    "bind any observation without approval or promotion effect",
+    "run focused, mutation-negative, and complete Forge gates",
+    "advance automatically to H6 only after H5 is verified"
   ],
-  "resume_after": "Continue automatically after progress updates. Ask the owner only when H5 presents a genuine visual-quality, accuracy, anatomy, or creative-intent uncertainty.",
+  "resume_after": "Continue autonomous source and pixel-fitness research. Ask the owner only when a concrete candidate remains uncertain or a creative choice between verified-fit candidates is necessary.",
   "evidence": [
-    "docs/canonical-system/H3_NEUTRAL_HUMANOID_GENERATION_RESULT.md",
-    "contracts/humanoid-generation-contract.md",
-    "contracts/reference-viewport-contract.md",
-    "contracts/viewport-stimulus-contract.md",
-    "crates/reference-viewport/src/lib.rs",
-    "crates/viewport-stimulus/src/lib.rs",
-    "governance/STAGE_QUALITY_PROTOCOL.md"
+    "docs/canonical-system/H4_HUMANOID_FUNCTIONAL_CONTROLS_RESULT.md",
+    "contracts/control-calibration-contract.md",
+    "artifacts/chat-screenshots/v2-pose-reference.png.manifest.json",
+    "governance/STAGE_QUALITY_PROTOCOL.md",
+    "contracts/perception-protocol-contract.md",
+    "contracts/viewport-stimulus-contract.md"
   ],
   "verification_receipts": [
-    "H3 fixed input and candidate fingerprints retained",
-    "H3 6 humanoid-generation tests pass",
-    "H3 17-module boundary gate passes",
-    "H3 complete Forge gate passes",
-    "P13-P15 stage-quality fixtures pass",
+    "H4 calibration fingerprint 774a790aa963bb7ed329394d869fda4f5530697cce4d4d029a23d31e6d575f4d retained",
+    "H4 5 control-calibration tests pass",
+    "H4 18-module boundary gate passes",
+    "H4 complete Forge gate passes",
+    "current Forge wire reference inspected at original resolution and rejected for human-quality comparison",
     "primary Forge capture restored current",
     "heartbeat PAUSED"
   ],
-  "transition": "R0 accepted -> H1 intake verified -> H2 representation verified -> H3 generation verified -> H4 functional controls executing",
+  "transition": "R0 accepted -> H1 intake verified -> H2 representation verified -> H3 generation verified -> H4 controls verified -> H5 visual intake executing",
   "metrics": {
     "token_cost": {"status": "unknown", "value": null},
     "elapsed_time": {"status": "unknown", "value": null}

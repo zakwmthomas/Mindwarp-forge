@@ -23,10 +23,19 @@ if (!$visual.asset_use_intent) {
     throw 'A no-asset stage must be explicitly not_applicable and cannot carry visual receipts.'
   }
 } else {
-  if ($visual.status -ne 'passed' -or @($visual.receipts).Count -eq 0) {
-    throw 'Visual asset use requires at least one passed pixel-level fitness receipt.'
+  if ($visual.status -eq 'required_pending') {
+    if (!$visual.dependent_implementation_blocked) {
+      throw 'A pending visual gate must explicitly block dependent implementation.'
+    }
+    foreach ($receipt in @($visual.receipts)) {
+      if ($receipt.disposition -notin @('owner_check_required','rejected')) {
+        throw 'A pending visual gate can retain only rejected or owner-check receipts.'
+      }
+    }
+  } elseif ($visual.status -ne 'passed' -or @($visual.receipts | Where-Object disposition -eq 'verified_fit').Count -eq 0) {
+    throw 'Visual asset use requires a pending block or at least one passed pixel-level fitness receipt.'
   }
-  foreach ($receipt in @($visual.receipts)) {
+  foreach ($receipt in @($visual.receipts | Where-Object disposition -eq 'verified_fit')) {
     if ($receipt.content_sha256 -notmatch '^[0-9a-f]{64}$' -or
         [string]::IsNullOrWhiteSpace($receipt.provenance) -or
         [string]::IsNullOrWhiteSpace($receipt.intended_comparison) -or

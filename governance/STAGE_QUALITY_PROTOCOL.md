@@ -24,8 +24,10 @@ not a second authored context record.
 `visual_quality_gate.asset_use_intent` declares whether the current substage
 will use a visual asset as a reference, comparison target, fixture, or
 candidate. If false, status is `not_applicable` with a concrete reason. If
-true, status must be `passed` before dependent implementation and every asset
-has a canonical receipt containing:
+true, status is `required_pending` during bounded source/inspection work and
+must set `dependent_implementation_blocked=true`. It becomes `passed` only
+before dependent implementation and every admitted asset then has a canonical
+receipt containing:
 
 - content fingerprint, source/provenance, license or authority status;
 - actual rendered views inspected at useful scale and inspection conditions;
