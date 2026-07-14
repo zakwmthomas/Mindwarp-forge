@@ -24,7 +24,7 @@ foreach ($milestone in @($program.items.milestone | Select-Object -Unique)) {
   }
   $lines.Add('')
 }
-$expected = ($lines -join "`n") + "`n"
+$expected = ($lines -join "`n").TrimEnd() + "`n"
 
 if ($Check) {
   if (!(Test-Path -LiteralPath $outputPath -PathType Leaf)) { throw 'Generated master-plan view is missing.' }

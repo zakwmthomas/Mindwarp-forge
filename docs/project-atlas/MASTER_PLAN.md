@@ -56,4 +56,3 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
 
 - **R1** - proposed; gate: owner; depends on: C3-C7.
   Next: Prepare runtime-adapter selection package.
-
