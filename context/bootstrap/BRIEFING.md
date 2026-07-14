@@ -9,7 +9,7 @@
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
 - Related systems: forge-truth-kernel, forge-conversation-compiler, forge-research-ledger, forge-control-plane, forge-reference-studio, universe-identity, field-basis, hierarchy-history, significance-system, construction-language, representation-selector, asset-factory, procedural-animation
 - Risk/research gate: **whole-system-plan-coherence-negative-transfer-and-metaphor-overreach / Treat natural mechanisms as scoped hypotheses. Compare every proposed manifestation with existing Forge contracts and a simpler baseline; retain counterexamples and non-applicable scope; do not infer universality, authority, or production readiness.**
-- Exact next action: Inventory and classify every canonical system, plan item, retained failure, natural-function proposal, selective-aging requirement, H5 obligation, dependency, authority boundary, and proof gap; then construct the Forge-wide manifestation atlas and disposable case-test gate.
+- Exact next action: Present the completed N0-N3 evidence portfolio in chat, retain the no-application boundary, then restore H5 at its phone-legible visual-reference intake point with one large subject or stage per image.
 
 ## Approved operating policies
 
@@ -28,6 +28,7 @@
 - **P13:** Before any visual asset is used as a reference, comparison target, fixture, or candidate, inspect the actual rendered pixels at useful scale and record fitness, provenance, accuracy limits, and visible defects. Human references must be coherent, anatomically credible, sufficiently complete and unobscured for the comparison, and appropriate in pose, view, lighting, and detail. Metadata, filenames, hashes, or technical validity alone never prove visual quality; uncertainty or creative ambiguity requires a bounded owner visual check.
 - **P14:** At every material substage transition, refresh context at both scales before implementation: macro project objective, dependency route, authority and neighbouring contracts; micro current inputs, invariants, failures, tests, and exact next action. The recorded context stage must equal the active substage, so stale context fails closed.
 - **P15:** Use the cheapest sufficient falsification and proof tier before implementation or expensive PC execution: static reasoning, typed model, in-memory fixture, and disposable simulation precede bounded integrated or external runs whenever logically possible. Escalation requires retained lower-tier results, a named unresolved risk, expected information gain, cost, and a stop condition; passing simulations never replace a required final integration gate.
+- **P16:** Treat every nature-inspired mechanism as a scoped hypothesis, not a universal default: record its mathematical abstraction, assumptions, target-local metric, simple baseline, cost, falsifier, counterexample, and non-applicable scope; require deterministic disposable and target-local evidence before application. Natural resemblance never proves correctness, efficiency, universality, fitness, or authority, and domain objectives, heuristics, parameters, and conclusions may not transfer as a shared protocol.
 
 ## Navigation
 

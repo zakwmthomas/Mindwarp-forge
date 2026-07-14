@@ -39,7 +39,7 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
 ## F5
 
 - **F5** - executing; gate: hard; depends on: F5-OWNER-GATE.
-  Next: Execute the owner-authorized N0 full-plan reassessment before continuing H5: audit natural-function mechanisms across Forge operations and game systems, eliminate plan redundancy and contradiction, run disposable case-by-case baseline comparisons, classify scope and negative transfer, reconcile the canonical program, then resume H5 at its preserved phone-legible review point.
+  Next: Present the completed N0-N3 natural-function evidence gate in chat, retain the no-application boundary, then resume H5 at its preserved phone-legible visual-reference intake point with one large subject or stage per image.
 - **F5-COHERENCE** - promoted; gate: hard; depends on: F4-CLOSEOUT.
   Next: Implement the owner-approved typed knowledge intake, canonical role registry, recoverability baseline, unified snapshot, and generated knowledge views without crossing the independent F5 owner-observation gate.
 

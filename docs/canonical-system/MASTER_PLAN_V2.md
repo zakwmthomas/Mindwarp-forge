@@ -37,6 +37,29 @@ quality claim, a population-preference claim, or an engine-selection claim.
    acceptance gate.
 8. Platform gaps block only when they threaten provenance, authority,
    recoverability, plan coherence, or the full verification gate.
+9. Nature-inspired mechanisms form a tested method library, never a universal
+   engine or privileged truth source. Every candidate states an abstraction,
+   assumptions, local metric, simple baseline, cost, falsifier, counterexample,
+   and non-applicable scope; deterministic disposable and target-local evidence
+   precede application. Shared experimental protocols may transfer, while
+   domain objectives, heuristics, parameters, and conclusions remain local.
+
+## F5 natural-function planning wave
+
+N0-N3 are a bounded interruption inside F5, not a second roadmap. The
+Forge-wide audit consolidates the imported fractal-matrix proposal against the
+existing truth kernel, compiler, research, control plane, improvement,
+identity, field, hierarchy/history, significance, semantic, representation,
+asset, animation, organism, fidelity, and aging contracts. Its disposable
+grounded-search harness tests proposal ordering across synthetic semantic,
+Forge-diagnosis, morphology, spatial, failure, replay and aging cases without
+connecting any adapter to production behavior.
+
+The accepted reusable candidate is the evidence protocol, not a universal
+solver. SDF, diffusion, branching, Voronoi, spiral, chemotaxis, lineage and P2P
+ideas remain independently gated domain candidates or rejections as recorded
+in `FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md`. After the N3 evidence gate,
+F5 resumes H5 at the preserved phone-legible visual-reference intake point.
 
 ## Lifecycle law
 

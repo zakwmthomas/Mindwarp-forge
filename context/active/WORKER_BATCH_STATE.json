@@ -3,10 +3,10 @@
   "canonical_role": "sole-active-work-checkpoint",
   "batch_id": "F5-N0-FULL-PLAN-REASSESSMENT",
   "master_program_item": "F5",
-  "state": "executing",
+  "state": "checkpoint",
   "objective": "Reassess the complete Forge and Mind Warp master plan, audit every proposed natural-function mechanism across Forge operations and game systems, eliminate redundancy and contradiction, and prepare deterministic case-by-case evidence before any mechanism is applied.",
-  "next_action": "Inventory and classify every canonical system, plan item, retained failure, natural-function proposal, selective-aging requirement, H5 obligation, dependency, authority boundary, and proof gap; then construct the Forge-wide manifestation atlas and disposable case-test gate.",
-  "substage_id": "N0-master-plan-inventory-and-alignment",
+  "next_action": "Present the completed N0-N3 evidence portfolio in chat, retain the no-application boundary, then restore H5 at its phone-legible visual-reference intake point with one large subject or stage per image.",
+  "substage_id": "N3-verification-and-evidence-gate",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
     "milestone": "F5",
@@ -31,7 +31,7 @@
   "authority_lane": "Owner-authorized planning-wave research, canonical planning updates, capability-free disposable simulations, and evidence recording only. Advisory mechanisms may not select or dispatch work, change policy, approve or promote candidates, execute external content, select a runtime, mutate game state, or alter the protected Kernel.",
   "context_health": "Green after mandatory bootstrap. H5 is preserved as interrupted and pending; the active work is the owner-authorized full-plan reassessment. Capture is current and heartbeat remains paused.",
   "stage_context": {
-    "stage_id": "N0-master-plan-inventory-and-alignment",
+    "stage_id": "N3-verification-and-evidence-gate",
     "macro_sources": [
       "docs/canonical-system/MASTER_PLAN_V2.md",
       "docs/canonical-system/MASTER_PROGRAM.json",
@@ -39,14 +39,15 @@
       "docs/canonical-system/DEPENDENCY_MAP.md",
       "docs/project-atlas/ROADMAP.md",
       "governance/WORKING_COVENANT.md",
-      "governance/UNIVERSAL_IMPROVEMENT_KERNEL.md",
+      "docs/canonical-system/UNIVERSAL_IMPROVEMENT_KERNEL.md",
       "governance/STAGE_QUALITY_PROTOCOL.md"
     ],
     "macro_findings": [
       "Forge already separates identity, fields, history, significance, semantics, representation, evidence, authority, and improvement through bounded contracts; a new natural-function layer must reuse rather than duplicate them.",
       "The humanoid chain remains the smallest F5 articulated proof, while organism lifecycle, creature generalization, multi-fidelity presentation, and runtime work remain later gates.",
       "The owner requires natural-function ideas to be audited across Forge operations as well as game generation, tested case by case in chat, and applied only at evidence-supported scope.",
-      "H5 phone-legible visual work is interrupted but not completed or superseded."
+      "H5 phone-legible visual work is interrupted but not completed or superseded.",
+      "N0-N2 now consolidate the plan, classify every imported mechanism, add P16, and retain a capability-free eight-test case portfolio with explicit negative transfer."
     ],
     "micro_sources": [
       "evidence/imported-chat/2026-07-14-gemini-fractal-matrix-engine.md",
@@ -55,13 +56,18 @@
       "contracts/federated-improvement-contract.md",
       "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md",
       "docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md",
-      "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md"
+      "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md",
+      "docs/canonical-system/FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md",
+      "docs/canonical-system/GROUNDED_SEARCH_CASE_RESULT.md",
+      "crates/grounded-search-protocol/src/lib.rs"
     ],
     "micro_findings": [
       "P6 validates grounded pressures, roles, mechanism-distinct families, trade vectors, capability closure, and replayable recipes but intentionally lacks a general proposal-search solver.",
       "B5 already supplies target-local transfer, negative-transfer rejection, counterexample retention, and portfolio rather than aggregate assessment.",
       "The adult-form toggle is an appearance lock: canonical age continues; juveniles remain juvenile; eligible adults and elders present as adult while locked; disabling reveals true age; old age never causes death.",
-      "The Gemini code and performance claims are untrusted evidence; its ambient random branching implementation cannot prove deterministic peer simulation."
+      "The Gemini code and performance claims are untrusted evidence; its ambient random branching implementation cannot prove deterministic peer simulation.",
+      "The misleading-resistance fixture defeats the grounded heuristic under budget, so only the experimental protocol is cross-domain reusable; every heuristic and parameter remains target-local.",
+      "The pure adult-lock case confirms that presentation clamps only at or after adulthood while biological age continues and is revealed when the lock is disabled."
     ]
   },
   "visual_quality_gate": {
@@ -72,15 +78,36 @@
     "receipts": []
   },
   "simulation_ladder": {
-    "cheapest_sufficient_tier": "static_reasoning",
-    "tiers_completed": [],
+    "cheapest_sufficient_tier": "disposable_simulation",
+    "tiers_completed": [
+      {
+        "tier": "static_reasoning",
+        "result": "Full-system redundancy, philosophy, dependency, failure and manifestation audit completed.",
+        "evidence": "docs/canonical-system/FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md"
+      },
+      {
+        "tier": "typed_model",
+        "result": "Capability-free finite probe graph, hard validity, objective, resistance, budget and trace types compiled.",
+        "evidence": "crates/grounded-search-protocol/src/lib.rs"
+      },
+      {
+        "tier": "in_memory_fixture",
+        "result": "Semantic, Forge diagnosis, morphology, spatial, negative-transfer, constraint, replay and aging fixtures executed deterministically.",
+        "evidence": "docs/canonical-system/GROUNDED_SEARCH_CASE_RESULT.md"
+      },
+      {
+        "tier": "disposable_simulation",
+        "result": "Eight deterministic Rust tests pass.",
+        "evidence": "tools/verify-f5-natural-function-reassessment.ps1"
+      }
+    ],
     "expensive_execution_planned": false,
-    "unresolved_risk": "",
-    "expected_information_gain": "",
-    "estimated_cost": "",
-    "regression_guard": "",
-    "stop_condition": "",
-    "final_integration_gate": "No mechanism may influence canonical Forge behavior until the full manifestation audit, disposable case portfolio, target-local scope decision, focused fixtures, and complete Forge gate pass."
+    "unresolved_risk": "Canonical plan, governance, projections, workspace integration, or existing proof modules may regress despite focused case success.",
+    "expected_information_gain": "The complete Forge gate proves that the new audit, policy, crate, boundary and routing records coexist with all prior verified work.",
+    "estimated_cost": "One bounded local full-gate execution; no external, network, runtime, visual-rendering, or production-game test.",
+    "regression_guard": "Any focused or full-gate failure blocks closeout and is repaired without activating an operational adapter.",
+    "stop_condition": "Stop after one clean full-gate pass and evidence presentation; do not apply the grounded method to Forge or game behavior in this wave.",
+    "final_integration_gate": "Passed after the full manifestation audit, disposable case portfolio, target-local scope decision, focused fixtures, UI build, complete Rust workspace, desktop build, and clean-diff verification. No mechanism is connected to canonical Forge or game behavior."
   },
   "unresolved_risks": [
     "A nature metaphor may duplicate an existing Forge mechanism under less precise terminology.",
@@ -114,16 +141,27 @@
     "docs/canonical-system/UNIVERSAL_IMPROVEMENT_KERNEL.md",
     "contracts/federated-improvement-contract.md",
     "evidence/imported-chat/2026-07-14-gemini-fractal-matrix-engine.md",
-    "docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md"
+    "docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md",
+    "docs/canonical-system/FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md",
+    "docs/canonical-system/GROUNDED_SEARCH_CASE_RESULT.md",
+    "crates/grounded-search-protocol/src/lib.rs",
+    "governance/policy-registry.json"
   ],
   "verification_receipts": [
     "mandatory Forge bootstrap passed before N0 transition",
     "Atlas verifies F5 active with seven milestones and six system groups",
     "operating-system verifier confirms fifteen approved policies before reassessment",
     "H5 phone-legibility failure and selective-aging clarification retained before interruption",
-    "heartbeat PAUSED"
+    "heartbeat PAUSED",
+    "N0 full-plan and manifestation audit retained",
+    "N1 eight deterministic capability-free cases pass",
+    "N2 P16 and worker-governance natural-method gates recorded",
+    "N3 focused audit, governance, master-program, stage-quality, projection and 19-module gates pass",
+    "first full-gate attempt passed all tests but correctly failed when the bootstrap-started Forge desktop held the output executable",
+    "exact repo-built Forge desktop process 189852 stopped to release only the build lock",
+    "second complete Forge gate passes including UI build, all workspace tests, desktop build, and clean-diff verification"
   ],
-  "transition": "R0 accepted -> H1-H4 verified -> H5 source/contact-sheet rejections retained -> H5 interrupted by owner-authorized N0 full-plan reassessment",
+  "transition": "R0 accepted -> H1-H4 verified -> H5 source/contact-sheet rejections retained -> H5 interrupted -> N0-N3 audit, cases, policy and full gate complete -> H5 resume is next",
   "metrics": {
     "token_cost": {"status": "unknown", "value": null},
     "elapsed_time": {"status": "unknown", "value": null}

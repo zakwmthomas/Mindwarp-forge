@@ -73,3 +73,10 @@ Optimization Protocol, then synchronize the automation prompt.
     simulations before bounded PC or external runs. Escalate only with retained
     lower-tier results, unresolved risk, expected information gain, cost, and a
     stop condition. Still run the required final integration gate.
+19. Treat nature-inspired mechanisms as scoped hypotheses. Before applying one,
+    state its mathematical abstraction, assumptions, local metric, simple
+    baseline, cost, falsifier, counterexample, and non-applicable scope; run a
+    deterministic disposable comparison and the target-local transfer gate.
+    Never infer correctness, universality, fitness, or authority from natural
+    resemblance, and never transfer domain objectives, heuristics, parameters,
+    or conclusions as a shared protocol.

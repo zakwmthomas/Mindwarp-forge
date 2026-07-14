@@ -83,6 +83,18 @@ insufficiently detailed, misleadingly posed or lit, or visibly corrupted
 references. If fitness or the intended aesthetic target remains uncertain,
 route one labelled comparison to the owner and pause the dependent work.
 
+## Natural-method candidate gate
+
+Translate every nature-inspired proposal into a mathematical or engineering
+abstraction before treating it as a method. Record assumptions, the receiving
+domain's metric and constraints, a simple baseline, implementation and
+operating cost, a falsifier, at least one counterexample, and non-applicable
+scope. Run deterministic disposable cases first, then the Federated
+Improvement Kernel's target-local transfer gate. Natural resemblance is never
+evidence of correctness, efficiency, universality, fitness, or authority. A
+shared experimental protocol may transfer; objectives, resistance heuristics,
+parameters, and conclusions remain local.
+
 ## Three-batch optimization audit
 
 Count only completed meaningful batches, never heartbeat wake-ups or individual

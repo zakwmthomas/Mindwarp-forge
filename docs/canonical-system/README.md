@@ -146,6 +146,12 @@ Read in this order:
 57. `SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md` - ambient age diversity versus
     relationship-tracked growth, optional elderly progression, no-old-age-death
     boundary, presentation cues, and cheap proof plan.
+58. `FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md` - full Forge/game
+    manifestation audit, imported-compendium disposition, redundancy and
+    dependency consolidation, philosophy boundary, and reconciled N0-N3 route.
+59. `GROUNDED_SEARCH_CASE_RESULT.md` - capability-free bounded-search case
+    portfolio, negative-transfer result, selective-aging formula check, and
+    explicit no-application gate.
 
 ## Status meaning
 

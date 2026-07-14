@@ -74,6 +74,8 @@ if (!$?) { throw 'F5 significance/scheduler readiness verification failed.' }
 & (Join-Path $PSScriptRoot 'verify-f5-semantic-construction-readiness.ps1')
 & (Join-Path $PSScriptRoot 'verify-f5-representation-asset-animation-readiness.ps1')
 if (!$?) { throw 'F5 semantic/construction readiness verification failed.' }
+& (Join-Path $PSScriptRoot 'verify-f5-natural-function-reassessment.ps1')
+if (!$?) { throw 'F5 natural-function reassessment verification failed.' }
 & (Join-Path $PSScriptRoot 'test-p7b1b-loader-surface.ps1')
 if (!$?) { throw 'P7b-1b loader-surface proof verification failed.' }
 

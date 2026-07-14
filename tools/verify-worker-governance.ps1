@@ -23,6 +23,9 @@ foreach ($required in @('five consecutive heartbeat wakes','dependency closure',
 foreach ($required in @('refresh and record both context scales','actual pixels of every visual asset','human reference must','cheapest sufficient proof tier','Still run the required final integration gate')) {
     if (!$prompt.Contains($required)) { throw "Canonical worker prompt lacks stage-quality guard: $required" }
 }
+foreach ($required in @('nature-inspired mechanisms as scoped hypotheses','baseline, cost, falsifier','counterexample','Never infer correctness')) {
+    if (!$prompt.Contains($required)) { throw "Canonical worker prompt lacks natural-method guard: $required" }
+}
 $protocol = Get-Content -LiteralPath (Join-Path $root $manifest.protocol) -Raw
 foreach ($required in @('Five-wake owner-wait safety fallback','full dependency closure is already satisfied','never infer owner input','Immediate owner-wait suspension','one labelled side-by-side image','never the whole desktop','does not resume the scheduler')) {
     if (!$protocol.Contains($required)) { throw "Worker optimization protocol lacks owner-wait fallback guard: $required" }
@@ -30,5 +33,8 @@ foreach ($required in @('Five-wake owner-wait safety fallback','full dependency 
 if ($protocol -notmatch 'never\s+reorder a dependency chain') { throw 'Worker optimization protocol lacks dependency-reordering guard.' }
 foreach ($required in @('Simulation-first execution ladder','cheapest tier capable','never replaces a required final integrated verification','Visual reference fitness','actual rendered pixels','anatomically incoherent')) {
     if (!$protocol.Contains($required)) { throw "Worker optimization protocol lacks stage-quality guard: $required" }
+}
+foreach ($required in @('Natural-method candidate gate','abstraction before treating it as a method','target-local transfer gate','objectives, resistance heuristics')) {
+    if (!$protocol.Contains($required)) { throw "Worker optimization protocol lacks natural-method guard: $required" }
 }
 Write-Output "Worker governance verified: $(@($manifest.required_policies).Count) required policies and $(@($manifest.PSObject.Properties).Count - 2) linked records."

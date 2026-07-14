@@ -82,6 +82,18 @@
       ]
     },
     {
+      "id": "grounded-search-protocol",
+      "root": "crates/grounded-search-protocol",
+      "dependencies": [],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "search evidence cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "search evidence cannot depend on desktop or UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "search evidence cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "search evidence cannot access files or processes"}
+      ]
+    },
+    {
       "id": "representation-contract",
       "root": "crates/representation-contract",
       "dependencies": ["reference-intake", "reference-viewport"],
