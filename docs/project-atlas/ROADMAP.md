@@ -2,11 +2,12 @@
 
 ```mermaid
 flowchart LR
-  F1["F1 Kernel\nverified"] --> F2["F2 Continuity\nverified"] --> F3["F3 Atlas\nverified"] --> F4["F4 Canonical registry\nverified"] --> F5["F5 Reference proof studio\nactive"] --> G1["G1 Canonical production system\ngated"] --> R1["R1 Runtime adapter\ngated"]
+  F1["F1 Kernel\nverified"] --> F2["F2 Continuity\nverified"] --> F3["F3 Atlas\nverified"] --> F4["F4 Canonical registry\nverified"] --> F5["F5 Reference proof studio\nverified"] --> G1["G1 Canonical production system\nactive"] --> R1["R1 Runtime adapter\ngated"]
 ```
 
-The current active milestone is **F5: Engine-neutral proof harnesses and
-Reference Studio**. ProofReceipt P1, bounded universe-identity P2, bounded
+The current active milestone is **G1: Canonical production system**. The F5
+engine-neutral proof milestone is verified. ProofReceipt P1, bounded
+universe-identity P2, bounded
 field-basis P3, capability-free hierarchy/history P4, and bounded
 significance/scheduler P5 reference prototypes are verified. P5 keeps shared
 significance separate from consumer fidelity, admits safety work before
@@ -24,8 +25,12 @@ and its P7b-0 capability-free protocol/receipt validator is verified with 18
 adversarial tests and read-only integration. The owner-approved built-in Forge
 reference viewport now projects one strict data-only fixture into deterministic
 front, side, and top wireframes with two pose frames and seven adversarial
-tests. It launches no external renderer or program. Structured stimulus and
-owner-observation binding is next. External executable containment remains an
+tests. It launches no external renderer or program. H1-H7 now culminate in a
+separately owner-promoted engine-neutral humanoid proof baseline with no asset,
+runtime, or production claim. G1 entry starts by reconciling the inherited C1
+ProofReceipt storage gate with the already verified F5 decision and by requiring
+exact typed H7 dependency checks rather than generic promoted state. External
+executable containment remains an
 R1 concern only if a selected adapter actually needs untrusted executable
 content. Runtime executors, product vocabulary and weights, AI generation,
 general geometry/assets/animation, multiplayer, and mutable gameplay

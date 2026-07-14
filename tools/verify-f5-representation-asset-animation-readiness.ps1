@@ -183,5 +183,6 @@ foreach($required in @('containment-profile','windows-sys','0.61.2')){if(!$p7b1b
 foreach($forbidden in @('forge-kernel','tauri','tokio','reqwest','serde')){if($p7b1bRunnerManifest.Contains($forbidden)){throw "P7b-1b runner manifest crosses boundary: $forbidden"}}
 $program=Get-Content (Join-Path $root 'docs\canonical-system\MASTER_PROGRAM.json') -Raw|ConvertFrom-Json
 $active=@($program.items|Where-Object status -eq 'active')
-if($active.Count-ne 1-or$active[0].id-ne'F5'){throw 'P7 design gate is not routed through active F5.'}
+$f5=@($program.items|Where-Object id -eq 'F5')[0]
+if($active.Count-ne 1-or($active[0].id-ne'F5'-and!($f5.status-eq'complete'-and$active[0].milestone-in@('G1','R1')))){throw 'P7 design gate is not retained through the F5 or later route.'}
 Write-Output 'F5 P7 verified: strict P7a/P7b contracts, retained containment evidence, and the owner-approved no-install built-in reference viewport remain bounded, deterministic, read-only, and authority-negative.'

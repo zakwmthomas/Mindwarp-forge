@@ -27,7 +27,9 @@ $f4Status = if (@($f4Items | Where-Object status -ne 'complete').Count -eq 0) { 
 $f5Status = if (@($f5Items | Where-Object status -eq 'active').Count -gt 0) { 'active' } elseif (@($f5Items | Where-Object status -ne 'complete').Count -eq 0) { 'verified' } else { 'gated' }
 $preTransition = $items['F5-OWNER-GATE'].status -eq 'active' -and $items['F5'].status -eq 'gated' -and $f4Status -eq 'active' -and $f5Status -eq 'gated'
 $postTransition = $items['F5-OWNER-GATE'].status -eq 'complete' -and $items['F5'].status -in @('active','owner_gated') -and $f4Status -eq 'verified' -and $f5Status -eq 'active'
-if ((!$preTransition -and !$postTransition) -or $atlasDecision.status -ne 'approved') { throw 'Atlas milestone owner boundary is inconsistent.' }
+$g1Items = @($program.items | Where-Object milestone -eq 'G1')
+$postF5Transition = $items['F5-OWNER-GATE'].status -eq 'complete' -and $items['F5'].status -eq 'complete' -and $f4Status -eq 'verified' -and $f5Status -eq 'verified' -and @($g1Items | Where-Object status -eq 'active').Count -eq 1
+if ((!$preTransition -and !$postTransition -and !$postF5Transition) -or $atlasDecision.status -ne 'approved') { throw 'Atlas milestone owner boundary is inconsistent.' }
 
 $requiredEvidence = @(
   'docs\canonical-system\F4_EXIT_AUDIT.md',

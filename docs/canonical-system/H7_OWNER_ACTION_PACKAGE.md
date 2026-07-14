@@ -1,7 +1,7 @@
 # H7 owner action package
 
-Status: **owner-approved technical foundation; promotion into the active
-canonical baseline remains a separate ungranted gate**.
+Status: **owner-approved and separately promoted technical proof foundation;
+no asset, runtime, application, or production authority was granted**.
 
 ## Plain-language scope
 
@@ -88,10 +88,22 @@ The historical approval action was:
 
 `APPROVE c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433`
 
-The only possible next authority action is promotion, which remains separate
-and cannot be inferred from approval:
+The later historical promotion action remained separate and could not be
+inferred from approval:
 
 `PROMOTE c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433`
+
+After the owner received a separate research-backed comparison and directly
+authorized that exact proof-baseline decision, one `CandidatePromoted` event
+was added:
+
+`a3ed68febb622762c5b1ca34fae232221b7ba0fff917032fd8be63790d11a7ad`
+
+The verified pre-promotion backup is
+`pre-h7-promotion-20260714-232134-1578249.sqlite3`, SHA-256
+`ba4d4ef46fb9ecbbbe011c2b254d29709ecb2d1687991b6f5ce276e9fb436801`.
+Immediate and post-restart retries added zero events. Promotion applied no
+code or asset and caused no runtime effect.
 
 The rollback target is `no_promoted_humanoid_proof_baseline`. If correction is
 needed after approval or promotion, the protected append-only supersession path

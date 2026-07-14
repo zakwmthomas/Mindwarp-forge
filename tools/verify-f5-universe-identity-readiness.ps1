@@ -39,6 +39,7 @@ foreach ($required in @('fixed_vectors_are_byte_exact', 'strict_codec_rejects', 
 }
 $program = Get-Content (Join-Path $root 'docs\canonical-system\MASTER_PROGRAM.json') -Raw | ConvertFrom-Json
 $active = @($program.items | Where-Object status -eq 'active')
-if ($active.Count -ne 1 -or $active[0].id -ne 'F5') { throw 'Universe identity readiness is not routed through active F5.' }
+$f5 = @($program.items | Where-Object id -eq 'F5')[0]
+if ($active.Count -ne 1 -or ($active[0].id -ne 'F5' -and !($f5.status -eq 'complete' -and $active[0].milestone -in @('G1','R1')))) { throw 'Universe identity readiness is not retained through the F5 or later route.' }
 if ((Get-Content (Join-Path $root 'crates\forge-kernel\src\lib.rs') -Raw).Contains('UniverseIdentity')) { throw 'Readiness work leaked into protected Kernel implementation.' }
 Write-Output 'F5 universe identity reference verified: approved decision, strict contract, fixed vectors, migration/collision failures, ProofReceipt evidence, and authority boundaries retained.'

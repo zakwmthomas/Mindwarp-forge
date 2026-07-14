@@ -23,8 +23,10 @@ The canonical 1,512 package bytes have Kernel evidence ID
 and deterministic real-Kernel candidate ID
 `c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433`.
 The simulated ID is not a Kernel candidate ID. The real ID now exists in the
-live Forge ledger as `Approved`, with the same canonical evidence bytes and one
-separate direct-owner approval event. It has not been promoted.
+live Forge ledger as `Promoted`, with the same canonical evidence bytes, one
+separate direct-owner approval event, and one later separate direct-owner
+promotion event. Promotion applied no code or asset and caused no runtime
+effect.
 
 Strict canonical decoding rejects ambiguous names, production-asset scope,
 stale H6 or missing H5 bindings, merged H3/visual claims, absent non-claims,
@@ -56,5 +58,7 @@ After the exact live candidate was explained in plain language—including what
 H1-H6 tested and the missing asset, anatomy, rigging, ageing, graphics, and
 device-performance evidence—the owner directly replied, "Yeah sweet, I
 approve, continue". The single active checkpoint binds that response only to
-`CandidateApproved` for the exact H7 proof-baseline candidate. Promotion
-remains a separate ungranted action.
+`CandidateApproved` for the exact H7 proof-baseline candidate. After a later
+comparative assessment restated the proof-baseline-only consequence and
+non-claims, the owner separately authorized promotion. Backup-first execution,
+reopen, immediate retry, post-restart retry, and no-application checks pass.

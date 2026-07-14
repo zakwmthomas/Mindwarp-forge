@@ -1,8 +1,8 @@
 # H7 humanoid promotion readiness
 
-Status: **scope audit, reversible protected lifecycle, exact admission, owner
-approval, backup/restart verification, and complete Forge gates pass; promotion
-into the active canonical baseline remains ungranted**.
+Status: **promoted as the narrow engine-neutral humanoid proof baseline after
+separate owner authorization, verified backup, exact one-event transition,
+restart/reopen, idempotent retries, and complete Forge gates**.
 
 H7 asks whether H1-H6 form a coherent canonical promotion candidate. It does
 not import an asset, promote anything, infer owner authority, or claim that the
@@ -191,3 +191,42 @@ The verified pre-approval backup SHA-256 is
 Immediate and post-restart retries added zero events and reproduced state
 `Approved`. No `CandidatePromoted`, asset import, application, execution, or
 runtime effect occurred.
+
+## Owner promotion result
+
+After a separate comparative assessment explained that this is an early
+proof/functional baseline rather than a product or asset baseline, the owner
+directly authorized the exact H7 promotion. A bounded backup-first executor
+added one `CandidatePromoted` event:
+
+The assessment compared Forge's actual consumers with primary guidance:
+
+- NASA configuration management distinguishes functional, allocated, product,
+  and as-deployed baselines, supporting an early proof baseline without
+  mislabelling it as a physical product baseline:
+  <https://www.nasa.gov/reference/6-5-configuration-management/>.
+- SLSA requires consumers to verify provenance against explicit expectations,
+  supporting the future G1 typed-consumer guard rather than trust in a generic
+  status label: <https://slsa.dev/spec/v1.2/principles>.
+- Khronos glTF treats meshes, materials, skins, morph targets, and animations
+  as separate 3D asset concerns, confirming that H7's wire and proof chain do
+  not establish a finished asset:
+  <https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html>.
+
+`a3ed68febb622762c5b1ca34fae232221b7ba0fff917032fd8be63790d11a7ad`
+
+The verified pre-promotion backup is
+`pre-h7-promotion-20260714-232134-1578249.sqlite3`, SHA-256
+`ba4d4ef46fb9ecbbbe011c2b254d29709ecb2d1687991b6f5ce276e9fb436801`.
+It reopens at the prior `Approved` state. The live database reopens at
+`Promoted`; immediate and post-restart retries add zero events. Disposable
+tests also prove that this promoted non-code package is rejected by the code
+application path before a workspace is created.
+
+Promotion establishes only the six claims and eight non-claims in the exact
+package. It generated or imported no asset, applied no code, selected no
+runtime, and made no visual, anatomical, rigging, ageing, device-performance,
+or production-fitness claim. Before any G1 consumer depends on this baseline,
+it must verify the exact package type, candidate identity, `Promoted` and
+non-superseded state, claims, non-claims, and retained blockers rather than
+accepting generic promoted state alone.

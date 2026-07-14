@@ -1,87 +1,53 @@
 {
   "schema_version": 2,
   "canonical_role": "sole-active-work-checkpoint",
-  "batch_id": "F5-H7-HUMANOID-PROMOTION-READINESS",
-  "master_program_item": "F5",
+  "batch_id": "G1-C1-PROOFRECEIPT-STORAGE-REASSESSMENT",
+  "master_program_item": "C1",
   "state": "checkpoint",
-  "objective": "Audit whether H1-H6 form one coherent, correctly scoped canonical promotion candidate, or whether a missing bridge still separates the verified structural wire candidate from the owner-approved visual target.",
-  "next_action": "Explain in plain language that promotion would make the already approved H1-H6 test foundation the active canonical standard for future humanoid work, not approve an asset; await a separate direct-owner promotion decision and do not infer it from approval or 'continue'.",
-  "substage_id": "H7-owner-promotion-gate",
+  "objective": "Reassess the inherited G1 C1 ProofReceipt storage gate against the already verified F5 ProofReceipt decision and the promoted H7 typed-consumer requirement before asking the owner to repeat or make any choice.",
+  "next_action": "Audit C1 provenance, compare it with F5_PROOF_RECEIPT_DECISION and current Kernel persistence, remove or consolidate any redundant decision, and present at most one plain owner gate only if a material unresolved choice remains.",
+  "substage_id": "G1-C1-entry-redundancy-and-dependency-audit",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
-    "milestone": "F5",
-    "systems": ["asset-factory", "forge-reference-studio", "forge-truth-kernel", "forge-control-plane"]
+    "milestone": "G1",
+    "systems": ["canonical-production-system", "forge-truth-kernel", "forge-control-plane", "forge-reference-studio"]
   },
-  "risk_level": "candidate-scope-observation-bridge-authority-and-premature-promotion",
-  "research_gate": "Use the committed H1-H6 contracts, results, manifests, and executable receipts first. External research is not justified unless the audit exposes a standards-specific gap. Do not reacquire or import visual assets.",
-  "authority_lane": "After a plain-language explanation of what H1-H6 tested and did not test, the owner explicitly wrote 'Yeah sweet, I approve, continue'. This authorizes only CandidateApproved for the exact current H7 proof-baseline candidate. It does not authorize promotion, asset import, application, publishing, runtime selection, or any visual/model claim.",
-  "context_health": "Green at separate promotion gate: owner approval is durably recorded as one event; verified pre-approval backup retained; immediate and post-restart retries added zero; state is Approved; promotion_effect=false; capture is current.",
+  "risk_level": "stale-owner-gate-duplication-and-generic-promotion-consumption",
+  "research_gate": "Use the committed F5 ProofReceipt decision, Kernel persistence, H7 promotion result, and master-program provenance first. External research is unnecessary unless these sources expose a standards-specific unresolved storage question.",
+  "authority_lane": "The owner authorized and Forge completed only the exact H7 proof-baseline promotion. C1 has no new owner decision yet. Research, redundancy removal, and decision preparation are authority-negative; no asset, runtime, engine, spending, publishing, application, or production action is authorized.",
+  "context_health": "Green at G1 entry: F5 is verified; H7 is Promoted after one backup-first event; immediate and post-restart retries add zero; no application/runtime effect occurred; stale F5-only milestone guards were extended without weakening their earlier-state checks; the post-promotion complete Forge gate passes; heartbeat remains paused.",
   "stage_context": {
-    "stage_id": "H7-owner-promotion-gate",
+    "stage_id": "G1-C1-entry-redundancy-and-dependency-audit",
     "macro_sources": [
       "docs/canonical-system/MASTER_PLAN_V2.md",
       "docs/canonical-system/MASTER_PROGRAM.json",
       "docs/project-atlas/ROADMAP.md",
       "governance/WORKING_COVENANT.md",
-      "governance/STAGE_QUALITY_PROTOCOL.md",
-      "contracts/kernel-contract.md",
-      "contracts/explicit-authorization-contract.md"
-      ,"docs/canonical-system/H7_OWNER_ACTION_PACKAGE.md"
-      ,"crates/humanoid-proof-chain-integration/examples/h7_kernel_candidate.rs"
-      ,"crates/humanoid-proof-chain-integration/examples/h7_candidate_admission.rs"
-      ,"crates/humanoid-proof-chain-integration/tests/h7_candidate_package.rs"
+      "governance/STAGE_QUALITY_PROTOCOL.md"
     ],
     "macro_findings": [
-      "H7 is a promotion gate, not automatic continuation: structural, functional, provenance, recovery, and calibrated-observation evidence must be complete before owner authorization.",
-      "Approval and promotion are separate owner-initiated ledger actions; ordinary conversation, AI output, receipts, and readiness findings cannot invoke them.",
-      "Promotion alone does not import, apply, execute, publish, or change runtime behavior.",
-      "The candidate scope must be named precisely enough that a promotion cannot silently claim production asset, anatomy, rigging, runtime, or phone performance."
+      "F5 is complete and G1 is the active milestone.",
+      "G1 promotes neutral proof packs bottom-up without collapsing local gates.",
+      "The inherited C1 owner gate may duplicate an already verified F5 ProofReceipt storage decision and must be audited before consuming owner attention."
     ],
     "micro_sources": [
-      "docs/canonical-system/H1_REFERENCE_INTAKE_RESULT.md",
-      "docs/canonical-system/H2_NEUTRAL_HUMANOID_REPRESENTATION_RESULT.md",
-      "docs/canonical-system/H3_NEUTRAL_HUMANOID_GENERATION_RESULT.md",
-      "docs/canonical-system/H4_HUMANOID_FUNCTIONAL_CONTROLS_RESULT.md",
-      "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md",
-      "docs/canonical-system/H6_HUMANOID_REPRODUCTION_RECOVERY_RESULT.md",
-      "contracts/humanoid-proof-chain-contract.md",
-      "crates/humanoid-proof-chain/src/lib.rs",
-      "crates/forge-kernel/src/lib.rs",
-      "crates/forge-kernel/src/persistence.rs",
-      "apps/forge-desktop/src-tauri/src/main.rs",
-      "apps/forge-desktop/ui/src/main.ts",
-      "contracts/explicit-authorization-contract.md"
+      "docs/canonical-system/F5_PROOF_RECEIPT_DECISION.md",
+      "docs/canonical-system/PROOF_RECEIPT_READINESS.md",
+      "docs/canonical-system/H7_HUMANOID_PROMOTION_READINESS.md",
+      "contracts/proof-receipt-projection-contract.md",
+      "contracts/humanoid-promotion-readiness-contract.md",
+      "crates/forge-kernel/src/persistence.rs"
     ],
     "micro_findings": [
-      "H3 candidate fingerprint 4d04df0dd58cdd8ecdb7c41e9dbde2dec1910b36b7d5643b2d254ef4b3c707fa identifies a capability-free 17-joint/16-link wire structure, not a surface asset.",
-      "H4 calibrates exact structural negative controls against that wire candidate and does not establish visual quality.",
-      "H5 receipt 5c4eb3041ced04e1c1a5cd0e011babafe1826a4d8caf420bf267c8bff0617520 binds owner-approved PolyOne preview direction, not generated H3 surface geometry.",
-      "H6 manifest a0eb0796a4a0edd800fcd937049eaa3ed7c65e695531daf0f754e835591ada2d proves ordered evidence continuity and recovery but deliberately grants no promotion.",
-      "The primary H7 audit question is whether the promotable object is the engine-neutral proof-chain baseline itself or whether a future surface candidate must first bind the structural and visual evidence."
-      ,"The audit selects only engine-neutral-humanoid-proof-baseline-v1; production asset, H3-as-visual-human, and PolyOne-file candidates are rejected."
-      ,"Existing forward approval/promotion authority is strict, but the Kernel cannot withdraw an approved candidate or supersede a promoted baseline; authoritative rollback is the remaining H7 blocker."
-      ,"Ten capability-free H7 cases now prove the strict narrow package and proposed supersession semantics without creating a Kernel candidate."
-      ,"The complete Forge gate passes with the H7 verifier integrated; protected-Kernel supersession implementation is the sole next authority gate."
-      ,"The owner explicitly authorized adding the safe history-preserving undo after it was restated in plain language."
-      ,"Implementation order is Kernel transition/replay first, persistence second, and exact desktop confirmation last; each layer must pass before the next."
-      ,"All implementation layers now pass, including deterministic replay, SQLite reopen and verified backup recovery, exact desktop confirmation, UI build, desktop and 390-pixel visual inspection, and the complete Forge gate."
-      ,"The clean next step is authority-negative candidate packaging only; approval and promotion remain separate direct-owner actions that cannot be inferred from this conversation."
-      ,"The exact 1,512-byte package maps to Kernel evidence f564c5fd3c6f6c7c8619717b6dbbfc1790487b90b1b3328eef75a1592fccce4c and candidate c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433."
-      ,"Disposable real-Kernel and SQLite proofs create only EvidenceRegistered and CandidateProposed with no authority, survive reopen and verified backup, and reject forged approval."
-      ,"The bounded admission operator accepts no arbitrary bytes, adds two events on first admission, zero on retry, and fails closed if the existing candidate is not Proposed."
-      ,"The final complete Forge gate passed after backup-first admission hardening."
-      ,"Live admission reproduced candidate c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433 as Proposed with exactly two authority-free events; immediate and post-restart retries added zero."
-      ,"The separate exact owner approval action is now the only dependency-ready next step; promotion remains a later independent gate."
-      ,"The owner explicitly approved the plain-language H1-H6 technical foundation after its tests and non-tests were explained; this is candidate-specific approval, not promotion or asset approval."
-      ,"The bounded approval operator passes disposable backup-first, exact one-event transition, reopen, idempotent retry, no-promotion, and promoted-state rejection tests."
-      ,"Live approval added exactly CandidateApproved event 6a073f7fdd7ab494b926d19938f135268417711527a6e0ad2c87b565497e9a59 after verified backup; state is Approved across restart and retries add zero."
-      ,"Promotion is now the only open authority gate and must be explained and authorized separately; owner approval and 'continue' did not grant it."
+      "H7 candidate c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433 is Promoted with exact proof-baseline scope only.",
+      "Future G1 consumers must validate H7 package type, identity, claims, non-claims, lifecycle and supersession state, and retained blockers; generic Promoted state is insufficient.",
+      "C1 currently says to choose a ProofReceipt storage boundary even though F5 records an owner decision and verified persistence, so novelty and provenance are unresolved."
     ]
   },
   "visual_quality_gate": {
     "asset_use_intent": false,
     "status": "not_applicable",
-    "rationale": "H7 audits the scope and completeness of already verified evidence and creates no new visual asset. The H5 pixel receipt remains an immutable prerequisite, not a fresh visual admission.",
+    "rationale": "C1 audits records, storage, and dependency contracts and uses no visual asset.",
     "dependent_implementation_blocked": false,
     "receipts": []
   },
@@ -90,90 +56,51 @@
     "tiers_completed": [
       {
         "tier": "static_reasoning",
-        "result": "Refreshed the H7 authority boundary and identified a candidate-scope question between the H3 structural wire and H5 visual target before constructing any promotion record.",
-        "evidence": "MASTER_PLAN_V2 H7 definition; H3, H5, H6 results; explicit authorization and Kernel contracts"
-      },
-      {
-        "tier": "typed_model",
-        "result": "Completed the claim/non-claim matrix, selected the narrow H1-H6 proof-baseline candidate, rejected three overbroad alternatives, and proved from current APIs that approved/promoted candidate supersession is absent.",
-        "evidence": "docs/canonical-system/H7_HUMANOID_PROMOTION_READINESS.md; crates/forge-kernel/src/lib.rs candidate lifecycle"
-      },
-      {
-        "tier": "in_memory_fixture",
-        "result": "Ten cases bind stable package and simulated-candidate IDs, six claims, eight non-claims, exact H6/H5 inputs, two separate owner actions, hostile scope rejection, and deterministic supersession with no Kernel effect.",
-        "evidence": "crates/humanoid-proof-chain/src/promotion.rs; contracts/humanoid-promotion-readiness-contract.md"
-      },
-      {
-        "tier": "disposable_simulation",
-        "result": "Pinned the exact canonical package, evidence, and candidate identities; proved Proposed-only Kernel events, forged-approval denial, SQLite reopen, verified backup recovery, idempotent retry, and non-Proposed state-drift rejection in disposable databases.",
-        "evidence": "crates/humanoid-proof-chain-integration/tests/h7_candidate_package.rs; examples/h7_kernel_candidate.rs; examples/h7_candidate_admission.rs"
+        "result": "Macro/micro refresh identified a likely redundant inherited C1 owner gate and a required typed H7 consumer check before any G1 dependency application.",
+        "evidence": "MASTER_PROGRAM C1; F5_PROOF_RECEIPT_DECISION; H7 promotion result; MASTER_PLAN_V2"
       }
     ],
     "expensive_execution_planned": false,
-    "unresolved_risk": "Only the owner can decide whether the approved technical foundation should become the active canonical baseline for later humanoid work.",
-    "expected_information_gain": "A separate promotion decision determines canonical status only; it adds no model, visual, runtime, or production evidence.",
-    "estimated_cost": "One plain-language owner decision and zero mutation while waiting.",
-    "regression_guard": "Do not alter H1-H6 identities, evidence, limitations, rejected candidates, owner wording, or authority state while packaging H7.",
-    "stop_condition": "Remain stopped until the owner separately and directly authorizes or rejects promotion after its consequence is explained. Approval, 'continue', elapsed time, and captured records do not release this gate.",
-    "final_integration_gate": "Passed for owner approval: disposable approval executor, complete Forge gate, verified pre-change backup, exact one-event live transition, reopen, and zero-event retries pass; promotion remains unexecuted."
+    "unresolved_risk": "C1 may ask the owner to repeat a decision already made in F5, while a generic promoted-state consumer could omit H7 scope validation.",
+    "expected_information_gain": "A bounded provenance and contract comparison can determine whether C1 is new, redundant, or needs one narrowed residual decision.",
+    "estimated_cost": "Static document and code audit followed by a small typed fixture only if a real consumer gap remains.",
+    "regression_guard": "Do not reopen or weaken H7, fabricate a C1 decision, or let generic lifecycle state substitute for typed package verification.",
+    "stop_condition": "Stop at one plain owner gate only if the audit finds a material unresolved storage choice; otherwise consolidate the duplicate and continue through the verified route.",
+    "final_integration_gate": "Pending C1 audit; no implementation is yet justified."
   },
   "unresolved_risks": [
-    "The H3 wire candidate and H5 visual target may be prerequisites for different future objects rather than one promotable asset.",
-    "A promotion label could silently widen proof-chain status into production or runtime claims.",
-    "Owner wording must remain bound to the exact H5 fingerprint and limitations.",
-    "Approval and promotion commands must be candidate-specific, explicit, separate, and impossible to infer from conversational assent.",
-    "H7 needs a named rollback target even though promotion itself does not apply code or assets."
+    "The inherited C1 gate may be stale or redundant with the verified F5 ProofReceipt decision.",
+    "No downstream G1 consumer yet enforces the exact H7 proof-baseline type and limitations.",
+    "G1 must not reinterpret F5 proof promotion as an asset, runtime, or production baseline."
   ],
   "evidence_requirements": [
-    "one exact candidate ID, content scope, ordered H1-H6 evidence links, claims, non-claims, and rollback target",
-    "complete structural, functional, provenance, recovery, and calibrated-observation mapping",
-    "proof that H5 visual direction is neither omitted nor misrepresented as generated H3 geometry",
-    "hostile cases for stale fingerprints, missing evidence, ambiguous scope, semantic widening, forged owner language, and skipped approval",
-    "read-only owner package with exact separate approval and promotion phrases only after readiness passes",
-    "no asset import, application, runtime selection, execution, publishing, or protected-Kernel mutation effect"
+    "exact provenance comparison between C1 and the F5 ProofReceipt owner decision",
+    "current storage and recovery behavior from contracts, code, and retained receipts",
+    "explicit novelty or redundancy finding with no repeated owner question",
+    "typed H7 dependency-consumption rule before any G1 consumer application"
   ],
   "verification_plan": [
-    "completed: audit every proposed promotion claim and non-claim against H1-H6 receipts",
-    "completed: select the narrowest coherent candidate type and reject broader alternatives lacking evidence",
-    "completed: define exact rollback target and stale-binding behavior",
-    "completed: prove hostile scope and authority cases in the cheapest sufficient typed fixture",
-    "prepare but do not invoke candidate-specific owner approval and promotion actions",
-    "completed: run stage-quality, coherence, mutation-negative, projection, and complete Forge gates before presenting any H7 owner action"
+    "audit C1 source lineage and claimed unresolved decision",
+    "compare C1 options with the already verified F5 ProofReceipt storage and recovery path",
+    "test any remaining typed consumer rule cheaply before implementation",
+    "run canonical, context, dependency, and complete Forge gates before advancing C1"
   ],
-  "resume_after": "Continue the H7 readiness matrix from the exact H3/H5 scope distinction; do not reopen H6 or import the PolyOne asset.",
+  "resume_after": "Continue at the G1 C1 redundancy and dependency audit; do not reopen H7 or infer a new owner choice.",
   "evidence": [
-    "docs/canonical-system/H6_HUMANOID_REPRODUCTION_RECOVERY_RESULT.md",
     "docs/canonical-system/H7_HUMANOID_PROMOTION_READINESS.md",
-    "contracts/humanoid-proof-chain-contract.md",
-    "contracts/explicit-authorization-contract.md",
-    "contracts/kernel-contract.md"
+    "docs/canonical-system/H7_OWNER_ACTION_PACKAGE.md",
+    "docs/canonical-system/F5_PROOF_RECEIPT_DECISION.md",
+    "docs/canonical-system/MASTER_PROGRAM.json"
   ],
   "verification_receipts": [
-    "H6 verified recovery proof committed at 457c5b4",
-    "complete Forge gate passed in 74.5 seconds and capture restarted current",
-    "H7 macro/micro and authority boundary refreshed before candidate construction",
-    "claim/non-claim matrix selects engine-neutral-humanoid-proof-baseline-v1 and rejects three overbroad candidate types",
-    "current Kernel has no approved-candidate withdrawal or promoted-candidate supersession state/event; control-plane and code rollback do not close that authority gap"
-    ,"H7 package ID 7b01d650258fe50b7cd59290a4a56e6df3a17271991dba313e29b6c0cf607619 and simulated candidate ID 2d93d3ae31de08754852e27a3a04332d009b456141565be8e805a98eed8d6222 reproduce exactly"
-    ,"ten capability-free H7 scope and supersession cases pass; kernel_candidate_created=false"
-    ,"complete Forge gate passes in 84.5 seconds with H7 readiness verifier integrated"
-    ,"Forge capture restarted and verified current within 1 second"
-    ,"bounded protected-Kernel supersession scope documented; no real candidate created"
-    ,"owner explicitly authorized the safe history-preserving undo after plain-language clarification; heartbeat resumed"
-    ,"81 Forge Kernel tests pass with append-only Approved/Promoted to Superseded semantics, retained evidence, strict replacement binding, forged replay rejection, and unknown-schema failure"
-    ,"superseded candidate survives SQLite commit/reopen and verified backup reopen with original and correction evidence retained"
-    ,"desktop exact supersession phrase test and TypeScript/Vite build pass; desktop and 390-pixel phone layouts were visually inspected and mobile grid overflow was corrected"
-    ,"first complete gate attempt reached final Tauri build after tests passed but the running exact forge-desktop.exe held a Windows file lock; stopping only that process removed the collision"
-    ,"clean complete Forge gate passes in 57.4 seconds; no real H7 candidate, approval, promotion, asset import, application, or execution occurred"
-    ,"final H7 verifier and complete Forge gate pass after adding exact package/evidence/candidate identity, persistence, idempotent admission, and backup-first operator proofs"
-    ,"live candidate c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433 admitted as Proposed; exactly two authority-free events added"
-    ,"verified pre-admission backup SHA-256 46d6ae57a0dd9d3f9e9d1833ed0bf80115d0aa5824cecdef3ea268798cd95e1b retained"
-    ,"immediate and post-restart live retries report already_present=true and events_added=0; capture restarted current"
-    ,"owner directly approved the explained H1-H6 technical foundation in natural language; no asset or promotion authority inferred"
-    ,"bounded approval executor and complete Forge gate pass; live CandidateApproved event 6a073f7fdd7ab494b926d19938f135268417711527a6e0ad2c87b565497e9a59 added exactly once"
-    ,"verified pre-approval backup SHA-256 b058d6e161bea12bff0acdf7d2c575edeedd65786ed4831d324ed2c1db4b87fd retained; immediate and post-restart retries add zero; promotion_effect=false"
+    "H7 disposable promotion tests pass for pre-approval failure, exact one-event transition, verified backup, reopen, idempotent retry, and no code-application workspace",
+    "clean complete Forge gate passed before live promotion",
+    "live CandidatePromoted event a3ed68febb622762c5b1ca34fae232221b7ba0fff917032fd8be63790d11a7ad added exactly once",
+    "pre-promotion backup ba4d4ef46fb9ecbbbe011c2b254d29709ecb2d1687991b6f5ce276e9fb436801 reopens at Approved",
+    "live reopen and post-restart retry reproduce Promoted with zero new events; application_effect=false; runtime_effect=false"
+    ,"post-promotion complete Forge gate passes in 74.9 seconds after extending stale F4/F5 verifiers to retain their proofs through the valid G1/R1 route"
   ],
-  "transition": "H6 verified -> H7 scope/recovery/supersession -> exact package and live Proposed admission -> plain-language explanation -> explicit owner approval -> backup-first one-event Approved transition and restart verification -> separate owner promotion gate",
+  "transition": "F5 H7 approved proof baseline -> research-backed owner promotion authorization -> disposable and complete preflight verification -> backup-first one-event Promoted transition -> restart and idempotency verification -> F5 complete -> G1 C1 redundancy and typed-dependency audit",
   "metrics": {
     "token_cost": {"status": "unknown", "value": null},
     "elapsed_time": {"status": "unknown", "value": null}

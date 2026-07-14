@@ -145,7 +145,7 @@ Read in this order:
     corruption recovery, stable-identifier, and retained-receipt coverage audit.
 57. `H6_HUMANOID_REPRODUCTION_RECOVERY_RESULT.md` - exact H1-H5 manifest,
     hostile-byte recovery, durable ProofReceipt, and backup/reopen result.
-58. `H7_HUMANOID_PROMOTION_READINESS.md` - narrow proof-baseline candidate,
+58. `H7_HUMANOID_PROMOTION_READINESS.md` - promoted narrow proof baseline,
     claim/non-claim matrix, and reversible candidate-lifecycle gap.
 59. `ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md` - future organism
     growth and coordinated phone-to-high-end fidelity obligations.

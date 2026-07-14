@@ -10,7 +10,8 @@ foreach($required in @('CommandConflict','ForkConflict','UnsupportedCrossTarget'
 foreach($required in @('measured_window_sizes','capabilities: Vec::new','proof_is_bounded_and_authority_negative','baseline_coexistence_allows_quality_improvement')){if(!$proof.Contains($required)){throw "Proof fixture missing: $required"}}
 $program=Get-Content (Join-Path $root 'docs\canonical-system\MASTER_PROGRAM.json') -Raw|ConvertFrom-Json
 $active=@($program.items|Where-Object status -eq 'active')
-if($active.Count-ne 1-or$active[0].id-ne'F5'){throw 'Hierarchy/history reference is not routed through F5.'}
+$f5=@($program.items|Where-Object id -eq 'F5')[0]
+if($active.Count-ne 1-or($active[0].id-ne'F5'-and!($f5.status-eq'complete'-and$active[0].milestone-in@('G1','R1')))){throw 'Hierarchy/history reference is not retained through the F5 or later route.'}
 $kernel=Get-Content (Join-Path $root 'crates\forge-kernel\src\lib.rs') -Raw
 if($kernel.Contains('HierarchyDescriptor') -or $kernel.Contains('DeltaEnvelope')){throw 'Hierarchy/history reference leaked into protected Kernel.'}
 Write-Output 'F5 hierarchy/history reference verified: critical revalidation, capability-free boundaries, strict descriptors, bounded paging, per-target replay/conflicts, migration, snapshot distrust, scale evidence, and authority-negative proof retained.'

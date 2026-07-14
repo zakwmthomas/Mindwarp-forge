@@ -20,5 +20,6 @@ $manifest=Get-Content (Join-Path $cratePath 'Cargo.toml') -Raw
 foreach($forbidden in @('forge-kernel','tauri','tokio','reqwest')){if($manifest.Contains($forbidden)){throw "P5 manifest crosses capability boundary: $forbidden"}}
 $program=Get-Content (Join-Path $root 'docs\canonical-system\MASTER_PROGRAM.json') -Raw|ConvertFrom-Json
 $active=@($program.items|Where-Object status -eq 'active')
-if($active.Count-ne 1-or$active[0].id-ne'F5'){throw 'P5 design gate is not routed through active F5.'}
+$f5=@($program.items|Where-Object id -eq 'F5')[0]
+if($active.Count-ne 1-or($active[0].id-ne'F5'-and!($f5.status-eq'complete'-and$active[0].milestone-in@('G1','R1')))){throw 'P5 design gate is not retained through the F5 or later route.'}
 Write-Output 'F5 P5 significance/scheduler verified: second-wave research, strict contracts, deterministic reference implementation, failure proofs, and capability boundaries retained.'

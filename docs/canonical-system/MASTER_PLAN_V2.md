@@ -131,7 +131,11 @@ canonical promotion candidate.
 ## Later horizons
 
 G1 promotes the engine-neutral proof packs bottom-up without collapsing their
-local gates. R1 runtime-adapter selection remains owner-gated until the G1
+local gates. A G1 consumer may depend on the promoted H7 humanoid proof
+baseline only after verifying its exact package type, identity, lifecycle
+state, claims, non-claims, supersession status, and retained blockers; generic
+`Promoted` state is insufficient. R1 runtime-adapter selection remains
+owner-gated until the G1
 chain is reference-proven and clean import, official provenance, build,
 profiling, identifier preservation, replay, rollback, cost, and maintenance
 evidence exist. The repeatedly failing external containment route remains

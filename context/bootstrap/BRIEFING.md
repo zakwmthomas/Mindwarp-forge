@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **F5-H7-HUMANOID-PROMOTION-READINESS**
-- Objective: Audit whether H1-H6 form one coherent, correctly scoped canonical promotion candidate, or whether a missing bridge still separates the verified structural wire candidate from the owner-approved visual target.
-- Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
-- Related systems: asset-factory, forge-reference-studio, forge-truth-kernel, forge-control-plane
-- Risk/research gate: **candidate-scope-observation-bridge-authority-and-premature-promotion / Use the committed H1-H6 contracts, results, manifests, and executable receipts first. External research is not justified unless the audit exposes a standards-specific gap. Do not reacquire or import visual assets.**
-- Exact next action: Explain in plain language that promotion would make the already approved H1-H6 test foundation the active canonical standard for future humanoid work, not approve an asset; await a separate direct-owner promotion decision and do not infer it from approval or 'continue'.
+- Work package: **G1-C1-PROOFRECEIPT-STORAGE-REASSESSMENT**
+- Objective: Reassess the inherited G1 C1 ProofReceipt storage gate against the already verified F5 ProofReceipt decision and the promoted H7 typed-consumer requirement before asking the owner to repeat or make any choice.
+- Atlas milestone: **G1 - Canonical Mind Warp production system**
+- Related systems: canonical-production-system, forge-truth-kernel, forge-control-plane, forge-reference-studio
+- Risk/research gate: **stale-owner-gate-duplication-and-generic-promotion-consumption / Use the committed F5 ProofReceipt decision, Kernel persistence, H7 promotion result, and master-program provenance first. External research is unnecessary unless these sources expose a standards-specific unresolved storage question.**
+- Exact next action: Audit C1 provenance, compare it with F5_PROOF_RECEIPT_DECISION and current Kernel persistence, remove or consolidate any redundant decision, and present at most one plain owner gate only if a material unresolved choice remains.
 
 ## Approved operating policies
 
