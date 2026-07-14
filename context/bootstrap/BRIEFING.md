@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **F5-H1-REFERENCE-INTAKE**
-- Objective: Inventory and classify recovered plus synthetic humanoid reference inputs already present in Forge, retain exact provenance and fixity, and define the smallest authority-safe reference set for engine-neutral structural generation.
+- Work package: **F5-H2-NEUTRAL-HUMANOID-REPRESENTATION**
+- Objective: Reconcile the existing representation contract, v3 typed scene, and H1 reference suite into one stable engine-neutral humanoid representation profile with deterministic structural proof.
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
-- Related systems: forge-research, forge-reference-studio, asset-factory, procedural-animation, forge-truth-kernel
-- Risk/research gate: **reference-provenance-authority-and-poisoning / Repository-local evidence and existing recovered archives only. No network acquisition, external executable content, silent baseline adoption, license assumptions, perceptual approval, or production promotion.**
-- Exact next action: Use bounded repository evidence search to locate recovered or synthetic humanoid reference candidates, classify each as usable inert evidence, ambiguous, duplicate, executable, or out of scope, record exact hashes and provenance, then design and adversarially verify the minimal H1 intake contract without downloading new material.
+- Related systems: asset-factory, procedural-animation, forge-reference-studio, forge-truth-kernel
+- Risk/research gate: **representation-identity-hierarchy-and-contract-drift / Use existing repository contracts, H1 evidence, and synthetic fixtures. No external acquisition or runtime research is required unless a risk-critical contract ambiguity cannot be resolved locally.**
+- Exact next action: Audit the representation-contract and reference-viewport schemas together, identify identity, coordinate, hierarchy, bind/rest-pose, role, topology, serialization, and authority gaps, then implement the smallest typed alignment and adversarial fixtures without adding surfaces, skinning, deformation, engines, or visual-quality claims.
 
 ## Approved operating policies
 

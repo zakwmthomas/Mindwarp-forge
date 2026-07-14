@@ -1,5 +1,5 @@
 [workspace]
-members = ["crates/forge-kernel", "crates/universe-identity", "crates/field-basis", "crates/hierarchy-history", "crates/significance-scheduler", "crates/semantic-construction", "crates/representation-contract", "crates/perception-protocol", "crates/reference-viewport", "crates/viewport-stimulus", "crates/containment-profile", "crates/containment-denial-canary", "crates/containment-canary-runner", "apps/forge-desktop/src-tauri"]
+members = ["crates/forge-kernel", "crates/universe-identity", "crates/field-basis", "crates/hierarchy-history", "crates/significance-scheduler", "crates/semantic-construction", "crates/representation-contract", "crates/perception-protocol", "crates/reference-intake", "crates/reference-viewport", "crates/viewport-stimulus", "crates/containment-profile", "crates/containment-denial-canary", "crates/containment-canary-runner", "apps/forge-desktop/src-tauri"]
 resolver = "2"
 
 [workspace.package]

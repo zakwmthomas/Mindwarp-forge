@@ -10,7 +10,7 @@ new engine-neutral fixture reruns their relevant claim.
 | Semantics/construction | `p06`, `p23`, `p28`, `p30` | Poison/synonym/contradiction/recipe-validator fixtures | AI wording as causal proof |
 | Control/recording | `p12`, `p14`-`p18` | Gate/blocker/rollback/owner-brief adversarial fixtures | Workflow status inferred from chat |
 | Significance/scheduling | `p07`, `p09`, `p19`, `p22`, `p24`, `p26`, `p27`, `p29` | Pressure/deadline/cancellation/thrash traces | Runtime performance claim from prototype |
-| Representation/assets/animation | `p09`, `p23`, `p29` and legacy reports | Neutral manifest, structural/temporal/review fixtures | Hand-authored rigs or images as end-to-end proof |
+| Representation/assets/animation | `p09`, `p23`, `p29` plus three humanoid legacy JSON reports; no recovered mesh/image/rig asset is present | H1 typed provenance/authority suite plus neutral structural, temporal, and review fixtures | Legacy scores/timings/categories, disposable screenshots, or hand-authored rigs/images as baselines or end-to-end proof |
 
 ## Retrieval rule
 

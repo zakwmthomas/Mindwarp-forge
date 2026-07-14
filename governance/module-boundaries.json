@@ -106,6 +106,18 @@
       ]
     },
     {
+      "id": "reference-intake",
+      "root": "crates/reference-intake",
+      "dependencies": ["reference-viewport"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "reference intake cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "reference intake cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "reference intake cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "reference intake cannot access files or processes"}
+      ]
+    },
+    {
       "id": "reference-viewport",
       "root": "crates/reference-viewport",
       "dependencies": [],

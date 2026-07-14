@@ -130,6 +130,9 @@ Read in this order:
 50. `P7B_BUILTIN_VIEWPORT_CONTROLLED_STIMULUS_RESULT.md` - exact reference plus
     three deliberate bad-control bindings, six protocol pairs, zero inferred
     owner claims, focused verification, and explicit observation-entry boundary.
+51. `H1_REFERENCE_INTAKE_RESULT.md` - repository-local recovered/synthetic
+    reference inventory, duplicate provenance, poison audit, minimal typed
+    suite, and authority-negative H1 result.
 
 ## Status meaning
 

@@ -2827,6 +2827,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "reference-intake"
+version = "0.1.0"
+dependencies = [
+ "reference-viewport",
+ "serde",
+ "serde_json",
+ "sha2",
+]
+
+[[package]]
 name = "reference-viewport"
 version = "0.1.0"
 dependencies = [

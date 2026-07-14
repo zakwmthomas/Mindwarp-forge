@@ -1,65 +1,66 @@
 {
   "schema_version": 2,
   "canonical_role": "sole-active-work-checkpoint",
-  "batch_id": "F5-H1-REFERENCE-INTAKE",
+  "batch_id": "F5-H2-NEUTRAL-HUMANOID-REPRESENTATION",
   "master_program_item": "F5",
   "state": "executing",
-  "objective": "Inventory and classify recovered plus synthetic humanoid reference inputs already present in Forge, retain exact provenance and fixity, and define the smallest authority-safe reference set for engine-neutral structural generation.",
-  "next_action": "Use bounded repository evidence search to locate recovered or synthetic humanoid reference candidates, classify each as usable inert evidence, ambiguous, duplicate, executable, or out of scope, record exact hashes and provenance, then design and adversarially verify the minimal H1 intake contract without downloading new material.",
-  "substage_id": "H1-existing-reference-inventory-and-contract",
+  "objective": "Reconcile the existing representation contract, v3 typed scene, and H1 reference suite into one stable engine-neutral humanoid representation profile with deterministic structural proof.",
+  "next_action": "Audit the representation-contract and reference-viewport schemas together, identify identity, coordinate, hierarchy, bind/rest-pose, role, topology, serialization, and authority gaps, then implement the smallest typed alignment and adversarial fixtures without adding surfaces, skinning, deformation, engines, or visual-quality claims.",
+  "substage_id": "H2-contract-reconciliation-and-gap-audit",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
     "milestone": "F5",
     "systems": [
-      "forge-research",
-      "forge-reference-studio",
       "asset-factory",
       "procedural-animation",
+      "forge-reference-studio",
       "forge-truth-kernel"
     ]
   },
-  "risk_level": "reference-provenance-authority-and-poisoning",
-  "research_gate": "Repository-local evidence and existing recovered archives only. No network acquisition, external executable content, silent baseline adoption, license assumptions, perceptual approval, or production promotion.",
-  "authority_lane": "Owner-authorized implementation of the approved master plan. AI and recovered assets remain candidate evidence only; humans retain production-code, reference-selection, promotion, runtime, spending, publishing, credential, and engine authority.",
-  "context_health": "Green after R0 clean-worktree acceptance. Primary Forge capture is current and heartbeat remains paused.",
+  "risk_level": "representation-identity-hierarchy-and-contract-drift",
+  "research_gate": "Use existing repository contracts, H1 evidence, and synthetic fixtures. No external acquisition or runtime research is required unless a risk-critical contract ambiguity cannot be resolved locally.",
+  "authority_lane": "Owner-authorized implementation of the approved master plan. The profile is a structural proof candidate only; no perceptual approval, production promotion, engine selection, external execution, or protected-Kernel mutation.",
+  "context_health": "Green after H1 full-gate pass. Forge capture is current and heartbeat remains paused.",
   "unresolved_risks": [
-    "Recovered packages may contain duplicates, recap-only material, ambiguous provenance, or executable content.",
-    "The repository may contain no suitable inert humanoid reference beyond the synthetic v3 fixture.",
-    "Similarity metrics remain uncalibrated and cannot select a baseline.",
-    "The v3 fixture is structurally verified but not perceptually approved."
+    "The representation contract and viewport scene may use different joint/identity vocabularies.",
+    "The v3 fixture may lack explicit bind transforms, units, or stable semantic role mapping.",
+    "The recovered blueprint is declared legacy evidence and cannot supply verified dimensions or quality thresholds.",
+    "Surface topology, skinning, deformation, and visual convergence remain outside H2."
   ],
   "evidence_requirements": [
-    "bounded inventory of repository-local candidate references",
-    "exact repository-relative paths and SHA-256 fixity",
-    "provenance and novelty classification",
-    "explicit authority and executable-content classification",
-    "minimal neutral reference-set rationale",
-    "adversarial duplicate, ambiguity, path, and authority-negative fixtures"
+    "representation and viewport schema comparison",
+    "stable identity and coordinate convention",
+    "explicit rest/bind pose and joint-role mapping",
+    "bounded topology and deterministic canonical bytes",
+    "H1 source lineage without legacy authority escalation",
+    "adversarial missing-role, cycle, drift, unknown-field, and overclaim fixtures"
   ],
   "verification_plan": [
-    "use rg and the existing evidence finder rather than broad transcript reads",
-    "inspect archive manifests before extraction and use a short disposable path if extraction is needed",
-    "hash candidate files without modifying them",
-    "compare actual novelty and provenance against known survival-pack and recap-only sources",
-    "write or extend one canonical intake contract and result record",
-    "add deterministic authority-negative validation fixtures",
-    "run focused and complete Forge gates",
-    "advance automatically to H2 only if H1 is verified"
+    "inspect existing representation-contract and reference-viewport code and contracts",
+    "record exact overlap and gaps",
+    "implement a small typed neutral humanoid profile or adapter in a capability-free module",
+    "bind the H1 suite by fingerprint without importing recovered content",
+    "add deterministic and adversarial tests",
+    "run modularity, focused, and complete Forge gates",
+    "advance automatically to H3 only after H2 is verified"
   ],
-  "resume_after": "Continue automatically after progress updates. Ask the owner only for a genuine authority boundary or an unresolvable provenance choice.",
+  "resume_after": "Continue automatically after progress updates. Ask the owner only for a genuine authority boundary or irreducible design choice.",
   "evidence": [
-    "docs/canonical-system/R0_REBASELINE_ACCEPTANCE.md",
-    "docs/canonical-system/FIXTURE_SOURCE_INVENTORY.md",
-    "docs/canonical-system/SOURCE_AUDIT.md",
+    "contracts/reference-intake-contract.md",
+    "docs/canonical-system/H1_REFERENCE_INTAKE_RESULT.md",
+    "contracts/representation-contract.md",
     "contracts/reference-viewport-contract.md",
-    "context/capsules/2026-07-14-reference-guided-transfer.md"
+    "crates/representation-contract/src/lib.rs",
+    "crates/reference-viewport/src/lib.rs"
   ],
   "verification_receipts": [
-    "R0 disposable clean-worktree complete Forge gate passed at 2963bdf",
+    "H1 archive fixity and duplicate provenance verified",
+    "H1 6 reference-intake tests pass",
+    "H1 complete Forge gate passes",
     "primary Forge capture restored current",
-    "heartbeat status PAUSED"
+    "heartbeat PAUSED"
   ],
-  "transition": "R0 rebaseline accepted -> H1 repository-local reference intake executing",
+  "transition": "R0 accepted -> H1 reference intake verified -> H2 neutral representation executing",
   "metrics": {
     "token_cost": {
       "status": "unknown",

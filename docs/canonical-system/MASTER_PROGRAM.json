@@ -217,8 +217,8 @@
       "status": "active",
       "depends_on": ["F5-OWNER-GATE"],
       "gate": "hard",
-      "next_action": "Execute H1 reference intake: inventory recovered and synthetic humanoid references already present in the repository, classify provenance and authority, retain exact fixity, reject executable or ambiguous inputs, and define the smallest neutral reference set needed for an engine-neutral structural generation proof. Do not download external references or treat old-project assets as canonical baselines.",
-      "proof": "R0.2 registry schema v2, lifecycle validation, classified legacy plans, exact capsule provenance routing, and the generated owner plan pass their focused verifiers. R0.3 binds neutral-t-pose-articulation-fixture-v3 / artifact-reference-viewport-003 with stable segment lengths and a valid direction-only articulation control; all focused and full Forge gates pass without inferring perceptual approval. R0.4 adds a fixed 1,024-message synthetic corpus with exact replay, legacy schema migration, proposed-only candidates, portable POSIX/Windows/UNC path rejection, and explicit SQLite handle release; 70 Forge-kernel tests and the complete Forge gate pass. R0.5 reproduces the committed package in a detached clean worktree and repairs four checkout-only assumptions involving line endings, long paths, immutable evidence bytes, and ignored parser fixtures. The complete disposable gate passes at commit 2963bdf. The three v1 owner receipts remain retained only against their original fingerprint. Nothing here approves, promotes, implies population preference, mutates the protected Kernel, or proves the v3 fixture perceptually suitable.",
+      "next_action": "Execute H2 representation alignment: reconcile the existing representation contract, v3 typed scene, recovered declared hierarchy challenge, stable identity and coordinate conventions into one neutral humanoid representation profile. Prove hierarchy, rest/bind pose, named roles, topology bounds, deterministic serialization, and authority-negative generation inputs without claiming skinning, deformation, visual quality, or production readiness.",
+      "proof": "R0.2-R0.5 establish registry v2, the repaired v3 fixture, compiler continuity, and clean-worktree acceptance. H1 directly inspects the authoritative recovered archives, finds no recovered mesh/rig/visual target, identifies three legacy JSON reports, and proves the emergency copies are byte-identical rather than independent evidence. The capability-free reference-intake module admits one recovered declared-structure challenge plus one Forge-owned synthetic v3 fixture, rejects duplicate hashes, executable/path/network-shaped inputs, legacy claims presented as verified, missing provenance diversity, baseline/promotion uses, numeric thresholds, unknown fields, and version drift. Six H1 tests and the complete Forge gate pass. The three v1 owner receipts remain retained only against their original fingerprint. Nothing here approves, promotes, implies population preference, mutates the protected Kernel, or proves the v3 fixture perceptually suitable.",
       "sources": [
         "representation-contract.md",
         "perception-protocol-contract.md",
@@ -255,6 +255,8 @@
         "docs/canonical-system/MASTER_PLAN_V2.md",
         "docs/canonical-system/CONVERSATION_COMPILER_READINESS.md",
         "docs/canonical-system/R0_REBASELINE_ACCEPTANCE.md",
+        "docs/canonical-system/H1_REFERENCE_INTAKE_RESULT.md",
+        "contracts/reference-intake-contract.md",
         "context/capsules/2026-07-14-reference-guided-transfer.md"
       ]
     },

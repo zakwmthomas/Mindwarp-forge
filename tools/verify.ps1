@@ -13,6 +13,8 @@ if (!$?) { throw 'Forge operating-system validation failed.' }
 if (!$?) { throw 'Canonical system registry validation failed.' }
 & (Join-Path $PSScriptRoot 'verify-conversation-compiler-continuity.ps1')
 if (!$?) { throw 'Conversation compiler continuity validation failed.' }
+& (Join-Path $PSScriptRoot 'verify-h1-reference-intake.ps1')
+if (!$?) { throw 'H1 reference-intake validation failed.' }
 & (Join-Path $PSScriptRoot 'verify-record-roles.ps1')
 if (!$?) { throw 'Forge record-role validation failed.' }
 & (Join-Path $PSScriptRoot 'verify-coherence.ps1')

@@ -39,7 +39,7 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
 ## F5
 
 - **F5** - executing; gate: hard; depends on: F5-OWNER-GATE.
-  Next: Execute H1 reference intake: inventory recovered and synthetic humanoid references already present in the repository, classify provenance and authority, retain exact fixity, reject executable or ambiguous inputs, and define the smallest neutral reference set needed for an engine-neutral structural generation proof. Do not download external references or treat old-project assets as canonical baselines.
+  Next: Execute H2 representation alignment: reconcile the existing representation contract, v3 typed scene, recovered declared hierarchy challenge, stable identity and coordinate conventions into one neutral humanoid representation profile. Prove hierarchy, rest/bind pose, named roles, topology bounds, deterministic serialization, and authority-negative generation inputs without claiming skinning, deformation, visual quality, or production readiness.
 - **F5-COHERENCE** - promoted; gate: hard; depends on: F4-CLOSEOUT.
   Next: Implement the owner-approved typed knowledge intake, canonical role registry, recoverability baseline, unified snapshot, and generated knowledge views without crossing the independent F5 owner-observation gate.
 

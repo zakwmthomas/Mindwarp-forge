@@ -5,36 +5,37 @@
 
 ## Active checkpoint
 
-- Package: **F5-H1-REFERENCE-INTAKE**
+- Package: **F5-H2-NEUTRAL-HUMANOID-REPRESENTATION**
 - Master item / milestone: **F5 / F5**
-- State / substage: **executing / H1-existing-reference-inventory-and-contract**
-- Related systems: forge-research, forge-reference-studio, asset-factory, procedural-animation, forge-truth-kernel
-- Objective: Inventory and classify recovered plus synthetic humanoid reference inputs already present in Forge, retain exact provenance and fixity, and define the smallest authority-safe reference set for engine-neutral structural generation.
-- Context health: Green after R0 clean-worktree acceptance. Primary Forge capture is current and heartbeat remains paused.
+- State / substage: **executing / H2-contract-reconciliation-and-gap-audit**
+- Related systems: asset-factory, procedural-animation, forge-reference-studio, forge-truth-kernel
+- Objective: Reconcile the existing representation contract, v3 typed scene, and H1 reference suite into one stable engine-neutral humanoid representation profile with deterministic structural proof.
+- Context health: Green after H1 full-gate pass. Forge capture is current and heartbeat remains paused.
 
 ## Durable evidence
 
-- `docs/canonical-system/R0_REBASELINE_ACCEPTANCE.md`
-- `docs/canonical-system/FIXTURE_SOURCE_INVENTORY.md`
-- `docs/canonical-system/SOURCE_AUDIT.md`
+- `contracts/reference-intake-contract.md`
+- `docs/canonical-system/H1_REFERENCE_INTAKE_RESULT.md`
+- `contracts/representation-contract.md`
 - `contracts/reference-viewport-contract.md`
-- `context/capsules/2026-07-14-reference-guided-transfer.md`
+- `crates/representation-contract/src/lib.rs`
+- `crates/reference-viewport/src/lib.rs`
 
 ## Authority boundary
 
-Owner-authorized implementation of the approved master plan. AI and recovered assets remain candidate evidence only; humans retain production-code, reference-selection, promotion, runtime, spending, publishing, credential, and engine authority.
+Owner-authorized implementation of the approved master plan. The profile is a structural proof candidate only; no perceptual approval, production promotion, engine selection, external execution, or protected-Kernel mutation.
 
 ## Exact next action
 
-Use bounded repository evidence search to locate recovered or synthetic humanoid reference candidates, classify each as usable inert evidence, ambiguous, duplicate, executable, or out of scope, record exact hashes and provenance, then design and adversarially verify the minimal H1 intake contract without downloading new material.
+Audit the representation-contract and reference-viewport schemas together, identify identity, coordinate, hierarchy, bind/rest-pose, role, topology, serialization, and authority gaps, then implement the smallest typed alignment and adversarial fixtures without adding surfaces, skinning, deformation, engines, or visual-quality claims.
 
 ## Unresolved risks
 
-- Recovered packages may contain duplicates, recap-only material, ambiguous provenance, or executable content.
-- The repository may contain no suitable inert humanoid reference beyond the synthetic v3 fixture.
-- Similarity metrics remain uncalibrated and cannot select a baseline.
-- The v3 fixture is structurally verified but not perceptually approved.
+- The representation contract and viewport scene may use different joint/identity vocabularies.
+- The v3 fixture may lack explicit bind transforms, units, or stable semantic role mapping.
+- The recovered blueprint is declared legacy evidence and cannot supply verified dimensions or quality thresholds.
+- Surface topology, skinning, deformation, and visual convergence remain outside H2.
 
 ## Resume after this package
 
-Continue automatically after progress updates. Ask the owner only for a genuine authority boundary or an unresolvable provenance choice.
+Continue automatically after progress updates. Ask the owner only for a genuine authority boundary or irreducible design choice.
