@@ -21,6 +21,8 @@ if (!$?) { throw 'H2 neutral humanoid validation failed.' }
 if (!$?) { throw 'H3 humanoid generation validation failed.' }
 & (Join-Path $PSScriptRoot 'verify-h4-control-calibration.ps1')
 if (!$?) { throw 'H4 control calibration failed.' }
+& (Join-Path $PSScriptRoot 'verify-h6-humanoid-recovery.ps1')
+if (!$?) { throw 'H6 humanoid reproduction and recovery failed.' }
 & (Join-Path $PSScriptRoot 'verify-record-roles.ps1')
 if (!$?) { throw 'Forge record-role validation failed.' }
 & (Join-Path $PSScriptRoot 'verify-coherence.ps1')

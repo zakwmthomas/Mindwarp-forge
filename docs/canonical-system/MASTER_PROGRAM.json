@@ -264,6 +264,8 @@
         "contracts/reference-intake-contract.md",
         "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md",
         "docs/canonical-system/H6_HUMANOID_REPRODUCTION_RECOVERY_READINESS.md",
+        "docs/canonical-system/H6_HUMANOID_REPRODUCTION_RECOVERY_RESULT.md",
+        "contracts/humanoid-proof-chain-contract.md",
         "context/capsules/2026-07-14-reference-guided-transfer.md",
         "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md",
         "evidence/imported-chat/2026-07-14-gemini-fractal-matrix-engine.md",

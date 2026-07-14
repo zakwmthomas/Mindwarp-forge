@@ -143,19 +143,21 @@ Read in this order:
     owner creative direction, and phone-legibility failure evidence.
 56. `H6_HUMANOID_REPRODUCTION_RECOVERY_READINESS.md` - clean rebuild, replay,
     corruption recovery, stable-identifier, and retained-receipt coverage audit.
-57. `ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md` - future organism
+57. `H6_HUMANOID_REPRODUCTION_RECOVERY_RESULT.md` - exact H1-H5 manifest,
+    hostile-byte recovery, durable ProofReceipt, and backup/reopen result.
+58. `ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md` - future organism
     growth and coordinated phone-to-high-end fidelity obligations.
-58. `SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md` - ambient age diversity versus
+59. `SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md` - ambient age diversity versus
     relationship-tracked continuous biological aging, reversible adult-form
     presentation lock, no-old-age-death boundary, presentation cues, and cheap
     proof plan.
-59. `FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md` - full Forge/game
+60. `FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md` - full Forge/game
     manifestation audit, imported-compendium disposition, redundancy and
     dependency consolidation, philosophy boundary, and reconciled N0-N3 route.
-60. `GROUNDED_SEARCH_CASE_RESULT.md` - capability-free bounded-search case
+61. `GROUNDED_SEARCH_CASE_RESULT.md` - capability-free bounded-search case
     portfolio, negative-transfer result, selective-aging formula check, and
     explicit no-application gate.
-61. `KNOWLEDGE_INTAKE_V2_RESULT.md` - multi-facet conversational knowledge
+62. `KNOWLEDGE_INTAKE_V2_RESULT.md` - multi-facet conversational knowledge
     classification, category/actor search projection, canonical routing,
     adversarial fixtures, and authority-negative limitations.
 

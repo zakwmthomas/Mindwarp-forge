@@ -7,16 +7,17 @@
 
 - Package: **F5-H6-HUMANOID-REPRODUCTION-RECOVERY**
 - Master item / milestone: **F5 / F5**
-- State / substage: **checkpoint / H6-proof-chain-design-checkpoint**
+- State / substage: **recorded / H6-verified-recovery-proof**
 - Related systems: asset-factory, forge-reference-studio, forge-truth-kernel, forge-test-observatory
-- Objective: Prove that the H1-H5 humanoid proof chain can be rebuilt, replayed, recovered from hostile corruption cases, and inspected through stable identifiers with its exact provenance and visual receipts retained.
-- Context health: Green: H5 is committed at e1b1404, capture is current, the full Forge gate passed, and H6 begins from a clean stage boundary with explicit macro and micro evidence.
+- Objective: H6 complete: the exact H1-H5 humanoid proof chain rebuilds, replays, rejects hostile corruption, recovers known-good state, and retains stable identifiers plus exact provenance and visual receipts through verified backup/reopen.
+- Context health: Green: H5 is committed at e1b1404; H6 focused and complete gates pass; the architectural test-dependency defect is repaired; capture is current; H7 readiness is next.
 
 ## Durable evidence
 
 - `docs/canonical-system/MASTER_PLAN_V2.md`
 - `docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md`
 - `docs/canonical-system/H6_HUMANOID_REPRODUCTION_RECOVERY_READINESS.md`
+- `docs/canonical-system/H6_HUMANOID_REPRODUCTION_RECOVERY_RESULT.md`
 - `contracts/backup-recovery-contract.md`
 - `contracts/proof-receipt-projection-contract.md`
 - `contracts/humanoid-generation-contract.md`
@@ -28,7 +29,7 @@ Owner-authorized H6 audit, capability-free fixtures, deterministic replay/recove
 
 ## Exact next action
 
-Implement the bounded engine-neutral H6 proof-chain module: reuse H1-H4 constructors, add one strict H5 decision record, derive an ordered aggregate chain ID, and prove deterministic rebuild plus hostile mutation rejection in memory before adding the disposable Kernel backup/reopen fixture.
+Commit the verified H6 closure as a distinct rollback point, then refresh the macro/micro boundary for H7 promotion readiness without promoting or requesting owner action until the evidence package is complete.
 
 ## Unresolved risks
 

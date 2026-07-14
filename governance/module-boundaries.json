@@ -130,6 +130,28 @@
       ]
     },
     {
+      "id": "humanoid-proof-chain",
+      "root": "crates/humanoid-proof-chain",
+      "dependencies": ["control-calibration", "humanoid-generation", "reference-intake", "representation-contract"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "capability-free proof reconstruction cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "proof reconstruction cannot depend on desktop or UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "proof reconstruction cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "proof reconstruction cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "humanoid-proof-chain-integration",
+      "root": "crates/humanoid-proof-chain-integration",
+      "dependencies": ["forge-kernel", "humanoid-proof-chain"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "recovery integration cannot depend on desktop or UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "recovery integration cannot initiate network access"}
+      ]
+    },
+    {
       "id": "perception-protocol",
       "root": "crates/perception-protocol",
       "dependencies": [],

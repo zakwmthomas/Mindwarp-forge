@@ -1,6 +1,8 @@
 # H6 humanoid reproduction and recovery readiness
 
-Status: **coverage audit complete; bounded implementation pending**.
+Status: **coverage audit complete; bounded implementation verified**. See
+`H6_HUMANOID_REPRODUCTION_RECOVERY_RESULT.md` for retained identities and the
+complete-gate result.
 
 H6 proves continuity of the exact H1-H5 proof chain. It does not create a
 humanoid asset, acquire the PolyOne file, choose a runtime, reinterpret the

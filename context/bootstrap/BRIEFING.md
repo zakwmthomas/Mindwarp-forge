@@ -5,11 +5,11 @@
 ## Active route
 
 - Work package: **F5-H6-HUMANOID-REPRODUCTION-RECOVERY**
-- Objective: Prove that the H1-H5 humanoid proof chain can be rebuilt, replayed, recovered from hostile corruption cases, and inspected through stable identifiers with its exact provenance and visual receipts retained.
+- Objective: H6 complete: the exact H1-H5 humanoid proof chain rebuilds, replays, rejects hostile corruption, recovers known-good state, and retains stable identifiers plus exact provenance and visual receipts through verified backup/reopen.
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
 - Related systems: asset-factory, forge-reference-studio, forge-truth-kernel, forge-test-observatory
 - Risk/research gate: **proof-chain-reproducibility-corruption-recovery-identifier-and-receipt-continuity / Refresh canonical and implementation evidence first. Use existing local fixtures and capability-free simulations before adding code. Browse only if a specific standards gap survives the local audit; do not acquire or import marketplace assets.**
-- Exact next action: Implement the bounded engine-neutral H6 proof-chain module: reuse H1-H4 constructors, add one strict H5 decision record, derive an ordered aggregate chain ID, and prove deterministic rebuild plus hostile mutation rejection in memory before adding the disposable Kernel backup/reopen fixture.
+- Exact next action: Commit the verified H6 closure as a distinct rollback point, then refresh the macro/micro boundary for H7 promotion readiness without promoting or requesting owner action until the evidence package is complete.
 
 ## Approved operating policies
 

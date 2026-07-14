@@ -3,10 +3,11 @@
   "canonical_role": "sole-active-work-checkpoint",
   "batch_id": "F5-H6-HUMANOID-REPRODUCTION-RECOVERY",
   "master_program_item": "F5",
-  "state": "checkpoint",
-  "objective": "Prove that the H1-H5 humanoid proof chain can be rebuilt, replayed, recovered from hostile corruption cases, and inspected through stable identifiers with its exact provenance and visual receipts retained.",
-  "next_action": "Implement the bounded engine-neutral H6 proof-chain module: reuse H1-H4 constructors, add one strict H5 decision record, derive an ordered aggregate chain ID, and prove deterministic rebuild plus hostile mutation rejection in memory before adding the disposable Kernel backup/reopen fixture.",
-  "substage_id": "H6-proof-chain-design-checkpoint",
+  "state": "recorded",
+  "previous_state": "verifying",
+  "objective": "H6 complete: the exact H1-H5 humanoid proof chain rebuilds, replays, rejects hostile corruption, recovers known-good state, and retains stable identifiers plus exact provenance and visual receipts through verified backup/reopen.",
+  "next_action": "Commit the verified H6 closure as a distinct rollback point, then refresh the macro/micro boundary for H7 promotion readiness without promoting or requesting owner action until the evidence package is complete.",
+  "substage_id": "H6-verified-recovery-proof",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
     "milestone": "F5",
@@ -15,9 +16,9 @@
   "risk_level": "proof-chain-reproducibility-corruption-recovery-identifier-and-receipt-continuity",
   "research_gate": "Refresh canonical and implementation evidence first. Use existing local fixtures and capability-free simulations before adding code. Browse only if a specific standards gap survives the local audit; do not acquire or import marketplace assets.",
   "authority_lane": "Owner-authorized H6 audit, capability-free fixtures, deterministic replay/recovery tests, and bounded local verification only. No asset acquisition, production import, runtime selection, promotion, approval, or protected-Kernel authority expansion.",
-  "context_health": "Green: H5 is committed at e1b1404, capture is current, the full Forge gate passed, and H6 begins from a clean stage boundary with explicit macro and micro evidence.",
+  "context_health": "Green: H5 is committed at e1b1404; H6 focused and complete gates pass; the architectural test-dependency defect is repaired; capture is current; H7 readiness is next.",
   "stage_context": {
-    "stage_id": "H6-proof-chain-design-checkpoint",
+    "stage_id": "H6-verified-recovery-proof",
     "macro_sources": [
       "docs/canonical-system/MASTER_PLAN_V2.md",
       "docs/canonical-system/MASTER_PROGRAM.json",
@@ -54,6 +55,7 @@
       "The H5 visual target is bound to preview SHA-256 f3242d18b962103ec0b78fe424baf01db60c84d2c2a6f468c85d27818c145051; the actual marketplace file remains absent by design.",
       "Windows live-process and SQLite-handle cleanup are known recovery-test hazards and must be separated from product failures.",
       "The completed coverage matrix maps every H6 claim to existing proof, one exact gap, and the cheapest decisive next case."
+      ,"The bounded H6 module now binds stable H1-H5 stage IDs, H5 receipt ID 5c4eb3041ced04e1c1a5cd0e011babafe1826a4d8caf420bf267c8bff0617520, and aggregate manifest ID a0eb0796a4a0edd800fcd937049eaa3ed7c65e695531daf0f754e835591ada2d."
     ]
   },
   "visual_quality_gate": {
@@ -64,7 +66,7 @@
     "receipts": []
   },
   "simulation_ladder": {
-    "cheapest_sufficient_tier": "typed_model",
+    "cheapest_sufficient_tier": "disposable_simulation",
     "tiers_completed": [
       {
         "tier": "static_reasoning",
@@ -75,15 +77,25 @@
         "tier": "typed_model",
         "result": "Audited the H1-H5 contracts, implementations, receipts, and tests; repaired two stale H5 pre-decision statements; and recorded a five-claim coverage matrix selecting one bounded proof-chain module plus existing Kernel recovery machinery.",
         "evidence": "docs/canonical-system/H6_HUMANOID_REPRODUCTION_RECOVERY_READINESS.md; 52 focused H1-H4 package tests and H1-H3 verifier scripts pass"
+      },
+      {
+        "tier": "in_memory_fixture",
+        "result": "Five H6 cases prove byte-identical rebuild/replay, published H1-H4 fingerprints, strict H5 decision retention, nine hostile mutation/truncation rejections, known-good rebuild, and authority-negative recovery.",
+        "evidence": "crates/humanoid-proof-chain/src/lib.rs"
+      },
+      {
+        "tier": "disposable_simulation",
+        "result": "One disposable SQLite integration stores all five stage receipts, the strict H5 decision, and aggregate manifest as seven content-addressed Kernel objects; the exact ProofReceipt and bytes survive verified online backup plus live/backup reopen.",
+        "evidence": "crates/humanoid-proof-chain-integration/tests/h6_humanoid_recovery.rs"
       }
     ],
     "expensive_execution_planned": false,
-    "unresolved_risk": "Existing local tests may prove each subsystem separately while failing to prove exact H1-H5 linkage, stable cross-rebuild identifiers, or retention of the owner-bound H5 receipt.",
-    "expected_information_gain": "The selected in-memory manifest cases will prove whether the one real gap—cross-stage identity and H5 decision continuity—can close without new persistence architecture.",
-    "estimated_cost": "One small engine-neutral module, strict canonical fixtures, then one existing-Kernel disposable backup/reopen integration; no install, asset import, or graphics run.",
+    "unresolved_risk": "H6 continuity claims are verified; asset production, runtime performance, and H7 promotion authority remain explicitly outside this proof.",
+    "expected_information_gain": "H7 can now audit whether structural, functional, provenance, recovery, and calibrated-observation prerequisites form a complete promotion candidate without reopening H1-H6.",
+    "estimated_cost": "Read-only H7 evidence audit and owner-facing decision packaging only; no promotion, install, import, or graphics execution.",
     "regression_guard": "Do not alter H1-H5 evidence bytes or identifiers; retain negative authority, rejected references, owner wording, and the H5 visual fingerprint through every replay or recovery path.",
     "stop_condition": "Stop expansion when every H6 claim has one decisive existing proof or one narrowly specified missing fixture; do not create speculative recovery infrastructure.",
-    "final_integration_gate": "Pending: focused H6 fixtures, mutation-negative checks, clean disposable rebuild/replay, corruption recovery, retained-receipt verification, generated-projection checks, and the complete Forge gate."
+    "final_integration_gate": "Passed: focused H6 fixtures, mutation-negative checks, disposable rebuild/replay, corruption recovery, retained-receipt backup/reopen, generated projections, 21-module boundary, UI build, complete Rust workspace, desktop build, whitespace, and the complete Forge gate all pass; capture restarted current."
   },
   "unresolved_risks": [
     "Subsystem-local replay may not prove the complete H1-H5 chain reconstructs without identifier drift.",
@@ -102,17 +114,18 @@
   ],
   "verification_plan": [
     "completed: audit H1-H5 contracts, crates, verifier scripts, and current receipts into a five-claim coverage matrix",
-    "reuse existing Kernel backup/recovery and ProofReceipt fixtures where their semantics exactly match",
-    "add only the smallest missing capability-free cases for cross-stage identifier and receipt continuity",
-    "run focused tests in memory or disposable directories before any repository-wide build",
-    "exercise corrupt, truncated, stale-link, unknown-version, and known-good recovery cases",
-    "run stage-quality, coherence, mutation-negative, projection, and complete Forge gates before H6 closure"
+    "completed: reuse existing Kernel backup/recovery and ProofReceipt fixtures where their semantics exactly match",
+    "completed: add only the smallest missing capability-free cases for cross-stage identifier and receipt continuity",
+    "completed: run focused tests in memory or disposable directories before any repository-wide build",
+    "completed: exercise corrupt, truncated, stale-link, unknown-version, and known-good recovery cases",
+    "completed: run stage-quality, coherence, mutation-negative, projection, and complete Forge gates before H6 closure"
   ],
   "resume_after": "Continue from the H6 coverage audit; do not reacquire H5 visual sources or import the PolyOne asset.",
   "evidence": [
     "docs/canonical-system/MASTER_PLAN_V2.md",
     "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md",
     "docs/canonical-system/H6_HUMANOID_REPRODUCTION_RECOVERY_READINESS.md",
+    "docs/canonical-system/H6_HUMANOID_REPRODUCTION_RECOVERY_RESULT.md",
     "contracts/backup-recovery-contract.md",
     "contracts/proof-receipt-projection-contract.md",
     "contracts/humanoid-generation-contract.md",
@@ -125,8 +138,14 @@
     "52 focused H1-H4 package tests pass; H1, H2, and H3 verifier scripts pass",
     "H6 coverage audit found and repaired two stale H5 pre-owner-resolution statements before replay design",
     "five-claim matrix selects one bounded proof-chain module and reuse of existing Kernel recovery machinery"
+    ,"H6 receipt ID 5c4eb3041ced04e1c1a5cd0e011babafe1826a4d8caf420bf267c8bff0617520 and manifest ID a0eb0796a4a0edd800fcd937049eaa3ed7c65e695531daf0f754e835591ada2d reproduce exactly"
+    ,"five in-memory H6 cases and one disposable Kernel backup/reopen integration pass"
+    ,"architecturally invalid forge-kernel test dependency was rejected by modularity and moved to the separate integration harness"
+    ,"21-module boundary passes with no forbidden imports or dependency cycles"
+    ,"complete Forge gate passes in 74.5 seconds, including UI, full Rust workspace, and desktop build"
+    ,"Forge capture restarted and verified current within 2 seconds"
   ],
-  "transition": "H5 complete and committed -> H6 five-claim coverage audit complete -> proof-chain design checkpoint -> bounded in-memory implementation next",
+  "transition": "H5 complete -> H6 coverage audit -> strict proof-chain and separate persistence integration -> hostile recovery and backup/reopen pass -> architectural dependency correction -> complete Forge gate passed -> H6 recorded -> H7 readiness next",
   "metrics": {
     "token_cost": {"status": "unknown", "value": null},
     "elapsed_time": {"status": "unknown", "value": null}
