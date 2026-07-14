@@ -1,8 +1,9 @@
 # Master Execution Program
 
-This is the authoritative project pathway. `MASTER_PROGRAM.json` supplies its
-atomic machine-selected work items; this document supplies the ordered program
-and completion law.
+`MASTER_PROGRAM.json` is the sole machine-selectable execution registry.
+`MASTER_PLAN_V2.md` supplies the current planning doctrine; this retained
+document supplies the earlier milestone ordering and completion law. Where its
+terminology differs, the v2 lifecycle and package law governs.
 
 ## F4: Trust and Forge control
 

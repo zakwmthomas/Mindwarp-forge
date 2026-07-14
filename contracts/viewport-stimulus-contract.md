@@ -17,7 +17,7 @@ install, approve, promote, or mutate project content.
   `awaiting_owner_observation`; they are placeholders and never owner claims.
 - Analysis counts are recomputed from the bound observation set. The package
   reports `observed_claim_count=0` until a direct owner action is recorded.
-- The active reference binds `artifact-reference-viewport-002`; older owner
+- The active reference binds `artifact-reference-viewport-003`; older owner
   receipts remain evidence for their original fingerprint and are never
   silently rebound to the repaired fixture.
 - The v2 articulation control preserves both forearm segment lengths while

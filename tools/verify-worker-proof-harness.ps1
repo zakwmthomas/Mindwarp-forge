@@ -9,8 +9,21 @@ if ($active.Count -eq 0 -or @($active | Where-Object { [string]::IsNullOrWhiteSp
 if (@($program.items | Where-Object { $_.status -in @('gated','owner_gated','design_gated') -and $_.next_action -match 'Implement|Build' }).Count -gt 0) { throw 'Gated work is presented as implementation-ready.' }
 foreach ($item in $program.items) {
   foreach ($source in @($item.sources)) {
-    $matches = @(Get-ChildItem -Path (Join-Path $root 'docs'),(Join-Path $root 'governance'),(Join-Path $root 'contracts') -Recurse -File -ErrorAction SilentlyContinue | Where-Object Name -eq $source)
+    $normalized = ([string]$source).Replace('/', [IO.Path]::DirectorySeparatorChar)
+    $explicitPath = Join-Path $root $normalized
+    if (Test-Path -LiteralPath $explicitPath -PathType Leaf) { continue }
+
+    if ([IO.Path]::GetFileName([string]$source) -ne [string]$source) {
+      throw "Worker route has a missing explicit source reference: $source on $($item.id)"
+    }
+
+    $sourceRoots = @('docs', 'governance', 'contracts', 'context', 'handover', 'forge documents from gpt handover') |
+      ForEach-Object { Join-Path $root $_ } |
+      Where-Object { Test-Path -LiteralPath $_ -PathType Container }
+    $matches = @(Get-ChildItem -Path $sourceRoots -Recurse -File -ErrorAction SilentlyContinue |
+      Where-Object Name -eq $source)
     if ($matches.Count -eq 0) { throw "Worker route has a missing source reference: $source on $($item.id)" }
+    if ($matches.Count -gt 1) { throw "Worker route has an ambiguous source reference: $source on $($item.id); use a repository-relative path" }
   }
 }
 $protocol = Get-Content (Join-Path $root 'governance\WORKER_OPTIMIZATION_PROTOCOL.md') -Raw

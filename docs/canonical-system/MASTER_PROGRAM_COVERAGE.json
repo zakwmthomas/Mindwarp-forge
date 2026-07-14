@@ -1,11 +1,27 @@
 {
-  "schema_version": 1,
-  "purpose": "Coverage map from legacy Forge planning sources to the authoritative master program.",
+  "schema_version": 2,
+  "purpose": "Classification and coverage map from planning sources to the sole canonical execution registry.",
   "sources": [
+    {
+      "path": "docs/canonical-system/MASTER_PLAN_V2.md",
+      "role": "canonical_planning_doctrine",
+      "coverage": "covered",
+      "items": [
+        "F5"
+      ]
+    },
     {
       "path": "docs/project-atlas/ROADMAP.md",
       "coverage": "covered",
-      "items": ["F4-MODULARITY", "F5", "C1", "C2", "C3-C7", "R1"]
+      "items": [
+        "F4-MODULARITY",
+        "F5",
+        "C1",
+        "C2",
+        "C3-C7",
+        "R1"
+      ],
+      "role": "superseded_navigation_plan"
     },
     {
       "path": "docs/canonical-system/MASTER_CLOSURE_REGISTER.md",
@@ -23,72 +39,118 @@
         "C1",
         "C2",
         "C3-C7"
-      ]
+      ],
+      "role": "retained_closure_evidence"
     },
     {
       "path": "docs/canonical-system/F5_READINESS_GATE.md",
       "coverage": "covered",
-      "items": ["F5", "C1", "C2", "C3-C7"]
+      "items": [
+        "F5",
+        "C1",
+        "C2",
+        "C3-C7"
+      ],
+      "role": "retained_readiness_evidence"
     },
     {
       "path": "governance/WORKER_FORGE_INTEGRATION_PLAN.md",
       "coverage": "partial",
-      "items": ["W1", "W2", "B4"]
+      "items": [
+        "W1",
+        "W2",
+        "B4"
+      ],
+      "role": "retained_governance_plan"
     },
     {
       "path": "docs/canonical-system/CONVERSATION_COMPILER_READINESS.md",
       "coverage": "partial",
-      "items": ["A1", "A2"]
+      "items": [
+        "A1",
+        "A2"
+      ],
+      "role": "retained_readiness_evidence"
     },
     {
       "path": "docs/canonical-system/RESEARCH_RECORD_READINESS.md",
       "coverage": "partial",
-      "items": ["B1"]
+      "items": [
+        "B1"
+      ],
+      "role": "retained_readiness_evidence"
     },
     {
       "path": "docs/canonical-system/CONTROL_PLANE_READINESS.md",
       "coverage": "partial",
-      "items": ["B2"]
+      "items": [
+        "B2"
+      ],
+      "role": "retained_readiness_evidence"
     },
     {
       "path": "docs/canonical-system/REFERENCE_STUDIO_READINESS.md",
       "coverage": "partial",
-      "items": ["B3"]
+      "items": [
+        "B3"
+      ],
+      "role": "retained_readiness_evidence"
     },
     {
       "path": "docs/canonical-system/UNIVERSE_IDENTITY_READINESS.md",
       "coverage": "partial",
-      "items": ["C2"]
+      "items": [
+        "C2"
+      ],
+      "role": "retained_readiness_evidence"
     },
     {
       "path": "docs/canonical-system/FIELD_BASIS_READINESS.md",
       "coverage": "partial",
-      "items": ["C3-C7"]
+      "items": [
+        "C3-C7"
+      ],
+      "role": "retained_readiness_evidence"
     },
     {
       "path": "docs/canonical-system/HIERARCHY_HISTORY_READINESS.md",
       "coverage": "partial",
-      "items": ["C3-C7"]
+      "items": [
+        "C3-C7"
+      ],
+      "role": "retained_readiness_evidence"
     },
     {
       "path": "docs/canonical-system/SIGNIFICANCE_SCHEDULER_READINESS.md",
       "coverage": "partial",
-      "items": ["C3-C7"]
+      "items": [
+        "C3-C7"
+      ],
+      "role": "retained_readiness_evidence"
     },
     {
       "path": "docs/canonical-system/SEMANTIC_CONSTRUCTION_READINESS.md",
       "coverage": "partial",
-      "items": ["C3-C7"]
+      "items": [
+        "C3-C7"
+      ],
+      "role": "retained_readiness_evidence"
     },
     {
       "path": "docs/canonical-system/REPRESENTATION_ASSET_ANIMATION_READINESS.md",
       "coverage": "partial",
-      "items": ["C3-C7"]
+      "items": [
+        "C3-C7"
+      ],
+      "role": "retained_readiness_evidence"
     },
     {
       "path": "contracts/knowledge-record-contract.md",
       "coverage": "covered",
-      "items": ["F5-COHERENCE"]
+      "items": [
+        "F5-COHERENCE"
+      ],
+      "role": "canonical_contract"
     }
   ]
 }

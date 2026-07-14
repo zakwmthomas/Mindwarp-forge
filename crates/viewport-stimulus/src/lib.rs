@@ -195,7 +195,7 @@ pub fn controlled_stimulus_bundle() -> Result<ControlledStimulusBundle, String> 
     let connection_assertion = id_for("assertion-connection-complete");
     let silhouette_assertion = id_for("assertion-silhouette-distinct");
     let articulation_assertion = id_for("assertion-articulation-stable");
-    let artifact_ref = id_for("artifact-reference-viewport-002");
+    let artifact_ref = id_for("artifact-reference-viewport-003");
     let derivative_refs = vec![
         base_ref,
         control_refs[&NegativeControlKind::BrokenConnection],

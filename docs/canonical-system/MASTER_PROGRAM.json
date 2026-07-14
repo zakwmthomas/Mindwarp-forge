@@ -1,10 +1,23 @@
 {
-  "schema_version": 1,
-  "purpose": "Authoritative dependency-ordered execution registry for Mind Warp Forge; see MASTER_EXECUTION_PROGRAM.md for the complete pathway.",
+  "schema_version": 2,
+  "purpose": "Authoritative dependency-ordered execution registry for Mind Warp Forge; see MASTER_EXECUTION_PROGRAM.md and MASTER_PLAN_V2.md for the governing pathway.",
+  "canonical_state_field": "state",
+  "compatibility_projection": {
+    "field": "status",
+    "removal_target": "schema_version_3",
+    "mapping": {
+      "promoted": "complete",
+      "executing": "active",
+      "ready_for_owner": "owner_gated",
+      "designed": "design_gated",
+      "proposed": "gated"
+    }
+  },
   "items": [
     {
       "id": "F4-MODULARITY",
       "milestone": "F4",
+      "state": "promoted",
       "status": "complete",
       "depends_on": [],
       "gate": "hard",
@@ -19,6 +32,7 @@
     {
       "id": "W1",
       "milestone": "F4",
+      "state": "promoted",
       "status": "complete",
       "depends_on": ["F4-MODULARITY"],
       "gate": "hard",
@@ -32,6 +46,7 @@
     {
       "id": "W2",
       "milestone": "F4",
+      "state": "promoted",
       "status": "complete",
       "depends_on": ["W1"],
       "gate": "hard",
@@ -45,6 +60,7 @@
     {
       "id": "A1",
       "milestone": "F4",
+      "state": "promoted",
       "status": "complete",
       "depends_on": ["F4-MODULARITY", "W1"],
       "gate": "hard",
@@ -58,6 +74,7 @@
     {
       "id": "A2",
       "milestone": "F4",
+      "state": "promoted",
       "status": "complete",
       "depends_on": ["A1"],
       "gate": "hard",
@@ -68,6 +85,7 @@
     {
       "id": "A3",
       "milestone": "F4",
+      "state": "promoted",
       "status": "complete",
       "depends_on": ["F4-MODULARITY"],
       "gate": "hard",
@@ -78,6 +96,7 @@
     {
       "id": "A4",
       "milestone": "F4",
+      "state": "promoted",
       "status": "complete",
       "depends_on": ["A3"],
       "gate": "hard",
@@ -88,6 +107,7 @@
     {
       "id": "B4",
       "milestone": "F4",
+      "state": "promoted",
       "status": "complete",
       "depends_on": ["F4-MODULARITY"],
       "gate": "hard",
@@ -102,6 +122,7 @@
     {
       "id": "B5",
       "milestone": "F4",
+      "state": "promoted",
       "status": "complete",
       "depends_on": ["B4"],
       "gate": "hard",
@@ -116,6 +137,7 @@
     {
       "id": "F4-CLOSEOUT",
       "milestone": "F4",
+      "state": "promoted",
       "status": "complete",
       "depends_on": [
         "F4-MODULARITY",
@@ -143,6 +165,7 @@
     {
       "id": "F5-OWNER-GATE",
       "milestone": "F4",
+      "state": "promoted",
       "status": "complete",
       "depends_on": ["F4-CLOSEOUT"],
       "gate": "owner",
@@ -157,6 +180,7 @@
     {
       "id": "B1",
       "milestone": "F4",
+      "state": "promoted",
       "status": "complete",
       "depends_on": ["A1"],
       "gate": "hard",
@@ -167,6 +191,7 @@
     {
       "id": "B2",
       "milestone": "F4",
+      "state": "promoted",
       "status": "complete",
       "depends_on": ["B1"],
       "gate": "hard",
@@ -177,6 +202,7 @@
     {
       "id": "B3",
       "milestone": "F4",
+      "state": "promoted",
       "status": "complete",
       "depends_on": ["B2"],
       "gate": "hard",
@@ -187,11 +213,12 @@
     {
       "id": "F5",
       "milestone": "F5",
+      "state": "executing",
       "status": "active",
       "depends_on": ["F5-OWNER-GATE"],
       "gate": "hard",
-      "next_action": "Preserve the incomplete v3 T-pose work and review the owner-requested reference-guided generation proposal in a new chat. Treat external and old-project assets as quarantined references and test targets, not canonical baselines or implementation authority. Do not resume the heartbeat or implement the proposal until the owner explicitly approves or revises it.",
-      "proof": "The capability-free reference-viewport and viewport-stimulus modules now bind neutral-articulation-fixture-v2 / artifact-reference-viewport-002. Explicit shoulder/elbow/hand and hip/knee/foot segments have stable squared length 14400 across both reference pose frames; the articulation control changes forearm direction while preserving length. Adversarial tests reject short base limbs and pose-frame length drift. The three v1 owner receipts remain retained against their original fingerprint, including articulation_drift/indeterminate at confidence 40 and the possible poisoned simple-stick limitation. Nothing here approves, promotes, implies population preference, mutates the protected Kernel, or proves the v2 fixture perceptually suitable.",
+      "next_action": "After the owner reviews the completed R0.2 registry and R0.3 v3 repair package, close R0.4: exercise the context compiler against a representative long corpus, deterministic replay and migration fixtures, both Windows- and POSIX-rooted path rejection, and explicit SQLite-handle closure. Keep external references quarantined and heartbeat automation paused.",
+      "proof": "R0.2 registry schema v2, lifecycle validation, classified legacy plans, exact capsule provenance routing, and the generated owner plan pass their focused verifiers. The capability-free reference-viewport and viewport-stimulus modules bind neutral-t-pose-articulation-fixture-v3 / artifact-reference-viewport-003. Explicit shoulder/elbow/hand and hip/knee/ankle segments have stable squared length 14400 across both reference pose frames; the articulation control changes forearm direction while preserving length. All 12 reference-viewport tests, all 9 viewport-stimulus tests, the F5 P7 readiness verifier, UI build, desktop tests, and the complete Forge gate pass. The three v1 owner receipts remain retained against their original fingerprint, including articulation_drift/indeterminate at confidence 40 and the possible poisoned simple-stick limitation. Nothing here approves, promotes, implies population preference, mutates the protected Kernel, or proves the v3 fixture perceptually suitable.",
       "sources": [
         "representation-contract.md",
         "perception-protocol-contract.md",
@@ -225,12 +252,14 @@
         "HIERARCHY_HISTORY_DESIGN_GATE.md",
         "hierarchy-history-contract.md",
         "proof-receipt-projection-contract.md",
-        "2026-07-14-reference-guided-transfer.md"
+        "docs/canonical-system/MASTER_PLAN_V2.md",
+        "context/capsules/2026-07-14-reference-guided-transfer.md"
       ]
     },
     {
       "id": "F5-COHERENCE",
       "milestone": "F5",
+      "state": "promoted",
       "status": "complete",
       "depends_on": ["F4-CLOSEOUT"],
       "gate": "hard",
@@ -245,6 +274,7 @@
     {
       "id": "C1",
       "milestone": "G1",
+      "state": "ready_for_owner",
       "status": "owner_gated",
       "depends_on": ["F5"],
       "gate": "owner",
@@ -255,6 +285,7 @@
     {
       "id": "C2",
       "milestone": "G1",
+      "state": "designed",
       "status": "design_gated",
       "depends_on": ["C1"],
       "gate": "design",
@@ -265,6 +296,7 @@
     {
       "id": "C3-C7",
       "milestone": "G1",
+      "state": "proposed",
       "status": "gated",
       "depends_on": ["C2"],
       "gate": "design",
@@ -275,6 +307,7 @@
     {
       "id": "R1",
       "milestone": "R1",
+      "state": "proposed",
       "status": "gated",
       "depends_on": ["C3-C7"],
       "gate": "owner",

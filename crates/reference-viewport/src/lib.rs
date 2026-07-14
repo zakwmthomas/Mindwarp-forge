@@ -259,11 +259,11 @@ pub fn negative_control_snapshots() -> Result<Vec<ControlledSnapshot>, ViewportE
     drifted.scene_id = "control-articulation-drift".into();
     for vertex in &mut drifted.frames[1].vertices {
         if vertex.id == "hand_left" {
-            vertex.x = -60;
-            vertex.y = 90;
+            vertex.x = 180;
+            vertex.y = 210;
         } else if vertex.id == "hand_right" {
-            vertex.x = 60;
-            vertex.y = 90;
+            vertex.x = -180;
+            vertex.y = 210;
         }
     }
 
@@ -417,9 +417,16 @@ fn validate_t_pose_rest_geometry(scene: &ReferenceScene) -> Result<(), ViewportE
     let shoulder_right = point("shoulder_right")?;
     let elbow_right = point("elbow_right")?;
     let hand_right = point("hand_right")?;
-    if ![shoulder_left, elbow_left, hand_left, shoulder_right, elbow_right, hand_right]
-        .iter()
-        .all(|joint| joint.y == 90 && joint.z == 0)
+    if ![
+        shoulder_left,
+        elbow_left,
+        hand_left,
+        shoulder_right,
+        elbow_right,
+        hand_right,
+    ]
+    .iter()
+    .all(|joint| joint.y == 90 && joint.z == 0)
     {
         return Err(ViewportError::Invalid(
             "rest arms must be collinear on the x axis",
@@ -664,17 +671,17 @@ mod tests {
     }
 
     #[test]
-    fn v2_fixture_has_legible_segmented_limbs_with_stable_lengths() {
+    fn v3_fixture_has_legible_segmented_limbs_with_stable_lengths() {
         let scene = reference_scene();
         validate_reference_fixture_semantics(&scene).unwrap();
-        assert_eq!(scene.scene_id, "neutral-articulation-fixture-v2");
-        assert_eq!(scene.artifact_id, "artifact-reference-viewport-002");
+        assert_eq!(scene.scene_id, "neutral-t-pose-articulation-fixture-v3");
+        assert_eq!(scene.artifact_id, "artifact-reference-viewport-003");
         for frame in &scene.frames {
             for (from, to) in [
                 ("shoulder_left", "elbow_left"),
                 ("elbow_left", "hand_left"),
                 ("hip_left", "knee_left"),
-                ("knee_left", "foot_left"),
+                ("knee_left", "ankle_left"),
             ] {
                 assert_eq!(squared_distance(&frame.vertices, from, to).unwrap(), 14_400);
             }
@@ -682,7 +689,7 @@ mod tests {
     }
 
     #[test]
-    fn short_reference_limbs_fail_the_v2_semantic_gate() {
+    fn short_reference_limbs_fail_the_v3_semantic_gate() {
         let mut scene = reference_scene();
         for vertices in std::iter::once(&mut scene.vertices)
             .chain(scene.frames.iter_mut().map(|frame| &mut frame.vertices))
@@ -696,13 +703,13 @@ mod tests {
         assert_eq!(
             validate_reference_fixture_semantics(&scene),
             Err(ViewportError::Invalid(
-                "reference limb segment is not the legible v2 length"
+                "reference limb segment is not the declared v3 length"
             ))
         );
     }
 
     #[test]
-    fn pose_length_drift_fails_the_v2_semantic_gate() {
+    fn pose_length_drift_fails_the_v3_semantic_gate() {
         let mut scene = reference_scene();
         scene.frames[1]
             .vertices

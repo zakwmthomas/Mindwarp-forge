@@ -6,6 +6,7 @@
     {"pattern":"context/active/CURRENT_STATE.md","role":"generated_projection"},
     {"pattern":"context/bootstrap/BRIEFING.md","role":"generated_projection"},
     {"pattern":"governance/WORKER_FEEDBACK_BRIEF.md","role":"generated_projection"},
+    {"pattern":"docs/project-atlas/MASTER_PLAN.md","role":"generated_projection"},
     {"pattern":"apps/forge-desktop/src-tauri/gen/**","role":"generated_projection"},
     {"pattern":"artifacts/chat-screenshots/**","role":"ephemeral_presentation_artifact"},
     {"pattern":"context/active/WORKER_WAKE_LOG.jsonl","role":"append_only_evidence"},

@@ -1,4 +1,4 @@
-# Built-in Reference Viewport Contract v2
+# Built-in Reference Viewport Contract v3
 
 The `reference-viewport` module is Forge-owned, deterministic, data-only
 projection for early P7 visual inspection. It accepts a strict bounded
@@ -7,8 +7,8 @@ coordinate limits, complete frame identity, and contiguous frame order, then
 produces front, side, and top integer orthographic wireframes.
 
 The owner-review fixture profile is versioned separately from the scene schema.
-`neutral-articulation-fixture-v2` uses explicit shoulder, elbow, hand, hip,
-knee, and foot joints. Every arm and leg segment has squared length `14400`
+`neutral-t-pose-articulation-fixture-v3` uses explicit shoulder, elbow, hand,
+hip, knee, ankle, and toe joints. Every arm and leg segment has squared length `14400`
 in the reference and both pose frames. The semantic gate rejects a short base
 segment or any frame-to-frame length drift before the reference is exposed.
 Negative controls may deliberately violate their named property, but the

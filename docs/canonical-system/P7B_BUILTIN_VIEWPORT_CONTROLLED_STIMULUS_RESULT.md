@@ -57,8 +57,8 @@ comparison changed limb length and pose together. That fixture cannot isolate
 articulation and its indeterminate receipt remains attached to the old scene
 fingerprint.
 
-The replacement is `neutral-articulation-fixture-v2`, bound to
-`artifact-reference-viewport-002`. It replaces single-line limbs with named
+The replacement is `neutral-t-pose-articulation-fixture-v3`, bound to
+`artifact-reference-viewport-003`. It replaces single-line limbs with named
 shoulder/elbow/hand and hip/knee/foot segments. Every arm and leg segment has
 squared length `14400` in the base and both pose frames. The altered pose keeps
 the correct shoulders and elbows, changes only the hand direction, and retains
@@ -74,7 +74,7 @@ The semantic gate and adversarial matrix now prove:
 - the broken-connection control removes one explicit leg segment; and
 - all controls remain deterministic, distinct, inert, and authority-negative.
 
-This is implementation readiness only. The v2 fixture has not been judged by
+This is implementation readiness only. The v3 fixture has not been judged by
 the owner and does not replace or reinterpret any v1 observation.
 
 ## Direct v2 owner finding
@@ -137,7 +137,7 @@ promotion, or protected-Kernel authority.
 
 ## Exact next action
 
-The v2 fixture, focused proof gates, UI build, 31 desktop tests, and whole-Forge
+The v3 fixture, focused proof gates, UI build, 31 desktop tests, and whole-Forge
 gate pass. A fresh labelled window-only pose-frame-1 comparison was produced
 with SHA-256
 `a1ad6ec9f64b351b5ea3051401a5321056c4592d48f5b4cdc26b6a64d84a5165`.
