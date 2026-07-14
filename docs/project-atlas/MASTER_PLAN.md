@@ -39,7 +39,7 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
 ## F5
 
 - **F5** - executing; gate: hard; depends on: F5-OWNER-GATE.
-  Next: Close R0.5 by verifying the committed rebaseline from a disposable clean worktree, rerunning the complete Forge gate without the live desktop executable lock, confirming generated views and recovery boundaries, and recording the final rebaseline receipt. Continue autonomously into the next dependency-ready humanoid proof package unless a genuine authority boundary appears.
+  Next: Execute H1 reference intake: inventory recovered and synthetic humanoid references already present in the repository, classify provenance and authority, retain exact fixity, reject executable or ambiguous inputs, and define the smallest neutral reference set needed for an engine-neutral structural generation proof. Do not download external references or treat old-project assets as canonical baselines.
 - **F5-COHERENCE** - promoted; gate: hard; depends on: F4-CLOSEOUT.
   Next: Implement the owner-approved typed knowledge intake, canonical role registry, recoverability baseline, unified snapshot, and generated knowledge views without crossing the independent F5 owner-observation gate.
 

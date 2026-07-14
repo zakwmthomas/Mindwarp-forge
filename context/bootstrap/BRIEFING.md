@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **R0-ACCEPTANCE-REBASELINE**
-- Objective: Verify the committed master-plan v2, repaired v3 viewport, and compiler-continuity rebaseline from a disposable clean worktree, then retain one final R0 acceptance receipt.
+- Work package: **F5-H1-REFERENCE-INTAKE**
+- Objective: Inventory and classify recovered plus synthetic humanoid reference inputs already present in Forge, retain exact provenance and fixity, and define the smallest authority-safe reference set for engine-neutral structural generation.
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
-- Related systems: forge-truth-kernel, forge-context-compiler, solo-studio-control-plane, forge-dashboard
-- Risk/research gate: **rebaseline-integrity-and-recoverability / No new research is needed for R0.5; verify only the committed bounded package and stop on provenance, recovery, authority, coherence, or full-gate failure.**
-- Exact next action: Commit the verified R0.4 continuity package, create a disposable clean worktree at that commit, run generated-view, recovery, focused compiler, and complete Forge gates there, then record the R0 acceptance result and advance to the next dependency-ready humanoid proof package.
+- Related systems: forge-research, forge-reference-studio, asset-factory, procedural-animation, forge-truth-kernel
+- Risk/research gate: **reference-provenance-authority-and-poisoning / Repository-local evidence and existing recovered archives only. No network acquisition, external executable content, silent baseline adoption, license assumptions, perceptual approval, or production promotion.**
+- Exact next action: Use bounded repository evidence search to locate recovered or synthetic humanoid reference candidates, classify each as usable inert evidence, ambiguous, duplicate, executable, or out of scope, record exact hashes and provenance, then design and adversarially verify the minimal H1 intake contract without downloading new material.
 
 ## Approved operating policies
 

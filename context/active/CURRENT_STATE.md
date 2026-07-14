@@ -5,38 +5,36 @@
 
 ## Active checkpoint
 
-- Package: **R0-ACCEPTANCE-REBASELINE**
+- Package: **F5-H1-REFERENCE-INTAKE**
 - Master item / milestone: **F5 / F5**
-- State / substage: **executing / R0.5-disposable-recovery-and-full-gate**
-- Related systems: forge-truth-kernel, forge-context-compiler, solo-studio-control-plane, forge-dashboard
-- Objective: Verify the committed master-plan v2, repaired v3 viewport, and compiler-continuity rebaseline from a disposable clean worktree, then retain one final R0 acceptance receipt.
-- Context health: Green for bounded R0.5 verification. Forge capture was current before the full gate; the live UI is intentionally stopped during desktop build verification and must be restarted afterward. Heartbeat remains paused.
+- State / substage: **executing / H1-existing-reference-inventory-and-contract**
+- Related systems: forge-research, forge-reference-studio, asset-factory, procedural-animation, forge-truth-kernel
+- Objective: Inventory and classify recovered plus synthetic humanoid reference inputs already present in Forge, retain exact provenance and fixity, and define the smallest authority-safe reference set for engine-neutral structural generation.
+- Context health: Green after R0 clean-worktree acceptance. Primary Forge capture is current and heartbeat remains paused.
 
 ## Durable evidence
 
-- `docs/canonical-system/MASTER_PLAN_V2.md`
-- `docs/canonical-system/MASTER_PROGRAM.json`
-- `docs/canonical-system/CONVERSATION_COMPILER_READINESS.md`
-- `contracts/conversation-compiler-contract.md`
-- `crates/forge-kernel/src/code_admission.rs`
-- `crates/forge-kernel/src/persistence.rs`
-- `tools/verify-conversation-compiler-continuity.ps1`
-- `tools/verify.ps1`
+- `docs/canonical-system/R0_REBASELINE_ACCEPTANCE.md`
+- `docs/canonical-system/FIXTURE_SOURCE_INVENTORY.md`
+- `docs/canonical-system/SOURCE_AUDIT.md`
+- `contracts/reference-viewport-contract.md`
+- `context/capsules/2026-07-14-reference-guided-transfer.md`
 
 ## Authority boundary
 
-Owner-authorized implementation of the approved master plan. No external downloads, heartbeat resumption, artifact promotion, owner-observation inference, spending, publishing, credentials, engine selection, external execution, or protected-Kernel mutation.
+Owner-authorized implementation of the approved master plan. AI and recovered assets remain candidate evidence only; humans retain production-code, reference-selection, promotion, runtime, spending, publishing, credential, and engine authority.
 
 ## Exact next action
 
-Commit the verified R0.4 continuity package, create a disposable clean worktree at that commit, run generated-view, recovery, focused compiler, and complete Forge gates there, then record the R0 acceptance result and advance to the next dependency-ready humanoid proof package.
+Use bounded repository evidence search to locate recovered or synthetic humanoid reference candidates, classify each as usable inert evidence, ambiguous, duplicate, executable, or out of scope, record exact hashes and provenance, then design and adversarially verify the minimal H1 intake contract without downloading new material.
 
 ## Unresolved risks
 
-- A clean disposable worktree has not yet reproduced the rebaseline.
-- The complete gate must be rerun against committed rather than dirty state.
-- The v3 fixture remains structurally verified but not perceptually approved.
+- Recovered packages may contain duplicates, recap-only material, ambiguous provenance, or executable content.
+- The repository may contain no suitable inert humanoid reference beyond the synthetic v3 fixture.
+- Similarity metrics remain uncalibrated and cannot select a baseline.
+- The v3 fixture is structurally verified but not perceptually approved.
 
 ## Resume after this package
 
-Continue automatically after status updates. Ask the owner only if a real authority boundary or unresolvable safety decision is reached.
+Continue automatically after progress updates. Ask the owner only for a genuine authority boundary or an unresolvable provenance choice.
