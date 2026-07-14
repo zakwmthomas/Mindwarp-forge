@@ -1,152 +1,154 @@
 {
   "schema_version": 2,
   "canonical_role": "sole-active-work-checkpoint",
-  "batch_id": "F5-K1-KNOWLEDGE-INTAKE-HARDENING",
+  "batch_id": "F5-H5-HUMANOID-VISUAL-REFERENCE-INTAKE",
   "master_program_item": "F5",
-  "state": "checkpoint",
-  "objective": "Prove and harden Forge's first continuity stage so every visible conversation message is durably captured and every non-noise message is typed into useful evidence-only categories that future workers can retrieve without relying on remembered chat context.",
-  "next_action": "Resume H5 at its preserved phone-legible visual-reference intake point: research and pixel-inspect only a small authoritative candidate set, use one large subject or stage per image, and retain the K1 typed-knowledge search route for context refresh.",
-  "substage_id": "K1-live-backfill-and-integration-verification",
+  "state": "executing",
+  "objective": "Admit only provenance-safe, pixel-inspected, comparison-fit human visual references and prepare phone-legible single-subject direction evidence without importing production assets or selecting a runtime.",
+  "next_action": "Screen a small authoritative and clearly licensed human-reference set, inspect actual pixels at useful scale, reject unsuitable candidates, and generate one large single-subject direction image only if source screening cannot resolve the mature semi-realistic stylized target.",
+  "substage_id": "H5-authoritative-source-and-pixel-intake",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
     "milestone": "F5",
-    "systems": [
-      "forge-truth-kernel",
-      "forge-conversation-compiler",
-      "forge-reference-studio"
-    ]
+    "systems": ["asset-factory", "procedural-animation", "forge-reference-studio", "forge-truth-kernel"]
   },
-  "risk_level": "conversation-loss-misclassification-duplicate-projection-and-context-recall-drift",
-  "research_gate": "Preserve exact source evidence and classify for retrieval only. Measure live category coverage, ordinary-language behavior, noise suppression, deterministic replay, legacy coexistence, and authority isolation before claiming continuity improvement.",
-  "authority_lane": "Owner-authorized local continuity hardening, deterministic classification, disposable projections, UI search filters, backfill, and verification. Classification cannot edit canonical plans or policies, approve, promote, dispatch, execute content, select a runtime, or alter protected authority semantics.",
-  "context_health": "Green after live bootstrap verification: capture was running and two seconds current with nine sessions and 5080 events. Audit found 257 projected knowledge records dominated by task and plan, with no explicit philosophy, requirement, constraint, preference, risk, question, observation, idea, or correction coverage; K1 repairs that gap before H5.",
+  "risk_level": "visual-reference-provenance-anatomy-quality-phone-legibility-and-creative-fit",
+  "research_gate": "Use authoritative or clearly licensed sources, inspect actual pixels rather than metadata, and keep the candidate set small. Do not download executable content, import a production asset, or treat popularity as quality.",
+  "authority_lane": "Owner-authorized reference research, disposable image inspection, rejection, and bounded visual-direction generation only. Dependent implementation remains blocked until a verified-fit receipt exists and any real creative uncertainty is resolved. No approval, promotion, engine selection, external executable, or protected-Kernel mutation.",
+  "context_health": "Green after K1 continuity hardening and focused correction of stale aging semantics. Typed knowledge retrieval is available; H5 resumes with prior rejections retained in its canonical intake record, capture current, and heartbeat paused.",
   "stage_context": {
-    "stage_id": "K1-live-backfill-and-integration-verification",
+    "stage_id": "H5-authoritative-source-and-pixel-intake",
     "macro_sources": [
       "docs/canonical-system/MASTER_PLAN_V2.md",
       "docs/canonical-system/MASTER_PROGRAM.json",
-      "docs/canonical-system/system-registry.json",
-      "governance/RECORDING_PROTOCOL.md",
-      "governance/CONTEXT_PROTOCOL.md",
-      "context/bootstrap/START_HERE.md",
-      "contracts/conversation-compiler-contract.md"
+      "docs/project-atlas/ROADMAP.md",
+      "governance/WORKING_COVENANT.md",
+      "governance/STAGE_QUALITY_PROTOCOL.md",
+      "docs/canonical-system/FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md"
     ],
     "macro_findings": [
-      "Raw captured chat is evidence, while validated material results must be stored once in their owning canonical plan, policy, contract, result, risk, or checkpoint record.",
-      "Layered startup must retrieve only relevant typed knowledge and exact evidence spans rather than reloading all transcripts or relying on model memory.",
-      "Classification is a retrieval route and cannot silently convert conversational wording into authority or canonical truth.",
-      "H5 remains the next product stage after this owner-requested continuity prerequisite."
+      "H5 is the first visual-inspection stage; later recovery and promotion gates remain blocked.",
+      "F5 remains engine-neutral and cannot import a production asset, install a tool, or select a runtime.",
+      "The owner requires a good-quality, accurate human comparison target, phone-legible review fixtures, and cheap proof before integrated PC work.",
+      "Natural-function methods remain case-by-case hypotheses: hard constraints kill invalid candidates, while no metaphor receives universal authority."
     ],
     "micro_sources": [
-      "crates/forge-kernel/src/knowledge.rs",
-      "crates/forge-kernel/src/persistence.rs",
-      "apps/forge-desktop/src-tauri/src/codex_capture.rs",
-      "apps/forge-desktop/ui/src/main.ts",
-      "apps/forge-desktop/ui/index.html",
-      "tools/find-evidence.ps1",
-      "tools/find-knowledge.ps1",
-      "docs/canonical-system/KNOWLEDGE_INTAKE_V2_RESULT.md"
+      "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md",
+      "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md",
+      "docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md",
+      "contracts/reference-viewport-contract.md",
+      "contracts/control-calibration-contract.md",
+      "governance/STAGE_QUALITY_PROTOCOL.md"
     ],
     "micro_findings": [
-      "Live capture and source cursors are healthy, current, lossless, ordered, idempotent, and gap-aware.",
-      "Classifier v1 returns at most one record, recognizes six material types through narrow trigger phrases, and leaves ordinary philosophies, requirements, constraints, preferences, risks, questions and mixed messages only in raw evidence.",
-      "The live projection contained 257 records: 210 task, 37 plan, 9 decision and 1 research, confirming the category-coverage gap.",
-      "Classifier v2 emits deterministic multi-facet evidence records, retains source actor and confidence, provides context fallback for non-noise messages, and suppresses exact acknowledgements and bootstrap receipts.",
-      "SQLite retains legacy rows while the read-only current projection exposes only the newest classifier version present.",
-      "The bootstrap pack now generates a typed knowledge index/catalogue and a local category/actor search command before transcript fallback."
+      "The existing wire capture and three official MakeHuman documentation screenshots were pixel-inspected and rejected as incomplete, obscured, or too structurally sparse.",
+      "The first three-panel generated sheet was rejected on phone because the differences collapsed at display scale; future fixtures use one large subject or stage per image.",
+      "The target is mature semi-realistic anatomy with economical stylization and restrained toon-like shading, not photorealism or childlike caricature.",
+      "Canonical biological age continues independently; the adult-appearance lock affects only eligible post-adult presentation and unlocking reveals true age.",
+      "One canonical organism must support coordinated presentation tiers from constrained phones to high-end PCs without changing gameplay identity."
     ]
   },
   "visual_quality_gate": {
-    "asset_use_intent": false,
-    "status": "not_applicable",
-    "rationale": "K1 audits text capture, deterministic categorization, SQLite projections, search routing, and UI filters without admitting or comparing visual assets. H5 visual receipts remain preserved.",
+    "asset_use_intent": true,
+    "status": "required_pending",
+    "rationale": "H5 must inspect an actual coherent human at useful scale. All current candidates are rejected, and generated visual direction cannot substitute for anatomical or implementation evidence.",
     "dependent_implementation_blocked": true,
-    "receipts": []
+    "receipts": [
+      {
+        "content_sha256": "811f43accbb31a88266d932f8f5563b2d13586fca0ba2693aad1f5fe582b3515",
+        "provenance": "Official Blender Studio and community Human Base Meshes v1.4.1 CC0 archive; embedded preview pixels inspected from disposable extraction.",
+        "intended_comparison": "Coherent mature full-human anatomy and a realistic-to-stylized direction boundary.",
+        "accuracy_limits": "Embedded previews are 256x256 single views with the subject too small for detailed comparison.",
+        "pixel_inspection_performed": true,
+        "rendered_views_inspected": ["Four original 256x256 male/female realistic/stylized bundle previews"],
+        "visible_defects": ["Single view", "Human too small", "Hands, feet, and face lack comparison detail", "Stylized pair is too caricatured"],
+        "human_subject": true,
+        "anatomical_credibility": "plausible_but_insufficiently_visible",
+        "comparison_completeness": "rejected_for_visual_comparison",
+        "pose_view_lighting_fitness": "rejected_for_visual_comparison",
+        "disposition": "rejected"
+      },
+      {
+        "content_sha256": "009b3cbc1f5885ed66dd966306815effaaf529f33b4309060f2c7fee34a8441c",
+        "provenance": "Wikimedia render of the exact Blender Studio female realistic CC0 body asset, linked to the official Blender bundle; inspected at 1280x960.",
+        "intended_comparison": "Large-pixel mature full-human form, silhouette, hands, feet, and realistic endpoint.",
+        "accuracy_limits": "Only one elevated three-quarter render; no true side or back view and visible hip/thigh transitions.",
+        "pixel_inspection_performed": true,
+        "rendered_views_inspected": ["1280x960 elevated front three-quarter render"],
+        "visible_defects": ["No side view", "No back view", "Hip and thigh transition artifacts", "Neutral comparison projection unavailable"],
+        "human_subject": true,
+        "anatomical_credibility": "plausible_but_artifact_limited",
+        "comparison_completeness": "rejected_for_visual_comparison",
+        "pose_view_lighting_fitness": "rejected_for_visual_comparison",
+        "disposition": "rejected"
+      }
+    ]
   },
   "simulation_ladder": {
     "cheapest_sufficient_tier": "disposable_simulation",
     "tiers_completed": [
       {
         "tier": "static_reasoning",
-        "result": "Live capture, canonical routing, current knowledge categories, projection path and fresh-worker retrieval route audited.",
-        "evidence": "docs/canonical-system/KNOWLEDGE_INTAKE_V2_RESULT.md"
-      },
-      {
-        "tier": "typed_model",
-        "result": "Fourteen material categories, source actor, confidence, content fingerprint, classifier version and evidence-only authority compile.",
-        "evidence": "crates/forge-kernel/src/knowledge.rs"
-      },
-      {
-        "tier": "in_memory_fixture",
-        "result": "Ordinary efficiency, phone/style, correction/question, context fallback, noise suppression, determinism and persistent authority-negative fixtures pass.",
-        "evidence": "73 forge-kernel tests and four focused codex-capture tests"
+        "result": "Canonical target, hard visual constraints, prior failures, phone legibility, aging semantics, and source authority were refreshed before candidate search.",
+        "evidence": "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md and current stage context"
       },
       {
         "tier": "disposable_simulation",
-        "result": "Generated typed index/catalogue and expanded UI/search path compile in disposable test state.",
-        "evidence": "tools/verify-conversation-compiler-continuity.ps1"
+        "result": "Prior original-pixel inspection rejected the wire capture and three official MakeHuman documentation images before any install or integrated execution.",
+        "evidence": "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md"
       }
     ],
     "expensive_execution_planned": false,
-    "unresolved_risk": "The running live database has not yet been backfilled by the new binary, so real category coverage, search output and legacy coexistence are not yet measured.",
-    "expected_information_gain": "One local restart proves actual historical messages become typed and searchable without source loss, duplication in the current projection, or authority changes.",
-    "estimated_cost": "One local desktop rebuild/restart, bounded read-only ledger measurement, focused verification and the existing complete Forge gate; no install or external service.",
-    "regression_guard": "Retain SQLite legacy rows, compare object/event/candidate counts and capture health, reject stale catalogue versions, and fail the complete Forge gate on any existing-system regression.",
-    "stop_condition": "Stop after live v2 category/search evidence and one clean full Forge gate; return to the preserved H5 route without expanding into semantic linking.",
-    "final_integration_gate": "Passed: live classifier-v2 backfill, typed search of this conversation, capture-current bootstrap, UI build, complete workspace tests, desktop build, projection verification and clean diff all pass."
+    "unresolved_risk": "No coherent full-human source candidate has yet passed pixels, provenance, anatomy, completeness, and comparison conditions together.",
+    "expected_information_gain": "The bounded source screen proved that a single-subject generated direction fixture is the cheapest next style clarification while authoritative anatomy admission remains blocked.",
+    "estimated_cost": "A few primary-source page and image inspections; no install, executable download, production import, or integrated PC run.",
+    "regression_guard": "Retain hashes, source URLs, visible defects, accuracy limits, and explicit rejected or verified-fit dispositions; do not mutate H2-H4 structural evidence.",
+    "stop_condition": "Source expansion stopped after MakeHuman and Blender Studio; do not browse broadly while marginal information gain remains below a single-subject direction fixture.",
+    "final_integration_gate": "After visual receipts and any necessary owner check, retain exact fingerprint binding, mutation-negative checks, and the complete Forge gate before H5 closure."
   },
   "unresolved_risks": [
-    "Deterministic phrase rules can over-classify a whole message or miss nuance.",
-    "Multiple facets improve recall but can increase library size and duplicate-looking summaries.",
-    "Legacy v1 rows must remain recoverable without polluting the current v2 projection.",
-    "A typed evidence record could be mistaken for a canonical plan, decision, requirement, or policy.",
-    "Automatic relation, contradiction and supersession linking remains unproved and outside K1.",
-    "Retention/redaction policy and external connectors remain unresolved."
+    "No current repository asset is a verified good-quality human visual reference.",
+    "A reputable or correctly licensed source can still be visually incomplete, anatomically misleading, or wrong for the comparison.",
+    "A single view can hide defects, while a multi-panel sheet can become illegible on a phone.",
+    "Generated imagery can clarify style but cannot prove anatomy, topology, animation, growth behavior, shader cost, or device performance.",
+    "Visual observation must not approve, promote, or overwrite structural evidence."
   ],
   "evidence_requirements": [
-    "current lossless capture and cursor health",
-    "multi-facet ordinary-language cases for philosophy, requirement, constraint, preference, risk, question, observation and context",
-    "source actor, evidence ID, content fingerprint, confidence, classifier version and evidence-only authority per record",
-    "legacy retention with newest-version current projection",
-    "generated typed index/catalogue plus category, actor and text search",
-    "live backfill counts and relevant results from this conversation",
-    "no plan/policy edit, approval, promotion, dispatch, execution or protected authority effect"
+    "authoritative source identity, license or use authority, and content fingerprint per admitted candidate",
+    "actual-pixel inspection at useful scale and relevant views",
+    "anatomy, completeness, occlusion, pose, view, lighting, detail, phone legibility, and visible-defect record",
+    "explicit verified-fit, rejected, or owner-check-required disposition",
+    "single large subject or stage per phone review fixture",
+    "no approval, promotion, runtime selection, executable install, or production asset import"
   ],
   "verification_plan": [
-    "run forge-kernel and codex-capture classification/storage fixtures",
-    "run conversation-compiler, canonical-system, stage-quality and projection gates",
-    "build and restart the exact repo Forge desktop to backfill the live ledger",
-    "measure category distribution and search efficiency, philosophy, aging and phone constraints from live v2 output",
-    "confirm capture remains current and authority counts/state do not change from classification",
-    "run the complete Forge gate and clean-diff check before closeout"
+    "completed: research MakeHuman and Blender Studio as the bounded authoritative source set",
+    "completed: inspect actual pixels and reject incomplete or defective references before comparison",
+    "retain source and visual-fitness receipts in the H5 canonical record",
+    "generate only one large single-subject direction fixture if source evidence cannot resolve style",
+    "route only genuine remaining subjective uncertainty to the owner",
+    "run stage-quality, coherence, mutation-negative, and complete Forge gates before closure"
   ],
-  "resume_after": "After K1 live backfill, typed-search evidence and the complete Forge gate pass, resume H5 using one large phone-legible subject or stage per image.",
+  "resume_after": "Continue autonomous source and pixel-fitness research. Ask the owner only if an inspected candidate remains genuinely uncertain or a creative choice between defensible alternatives cannot be resolved from existing direction.",
   "evidence": [
-    "contracts/conversation-compiler-contract.md",
-    "docs/canonical-system/CONVERSATION_COMPILER_READINESS.md",
-    "docs/canonical-system/KNOWLEDGE_INTAKE_V2_RESULT.md",
-    "crates/forge-kernel/src/knowledge.rs",
-    "crates/forge-kernel/src/persistence.rs",
-    "apps/forge-desktop/src-tauri/src/codex_capture.rs",
-    "apps/forge-desktop/ui/index.html",
-    "tools/find-knowledge.ps1",
-    "governance/RECORDING_PROTOCOL.md",
-    "context/bootstrap/START_HERE.md"
+    "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md",
+    "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md",
+    "docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md",
+    "docs/canonical-system/FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md",
+    "contracts/reference-viewport-contract.md",
+    "governance/STAGE_QUALITY_PROTOCOL.md"
   ],
   "verification_receipts": [
-    "mandatory live bootstrap passed with 9 sessions, 5080 events and capture two seconds current",
-    "live v1 projection measured 257 current knowledge records: 210 task, 37 plan, 9 decision and 1 research",
-    "73 forge-kernel tests pass including seven knowledge/persistence fixtures",
-    "four focused Codex-capture tests pass",
-    "UI TypeScript and Vite production build pass",
-    "live v2 backfill retains 257 v1 rows and adds 3226 v2 rows; current catalogue exposes only v2",
-    "live v2 catalogue has 2500 assistant and 726 captured-user facets with no legacy-unknown actor",
-    "live typed searches recover efficiency philosophy, aging constraints, phone requirements and the current categorization request",
-    "conversation-compiler and canonical-system focused gates pass",
-    "complete Forge gate passes with 354 durable files classified, expanded UI build, all workspace tests, desktop build and clean diff",
+    "K1 conversational knowledge intake hardened and complete Forge gate passed",
+    "stale aging prose reconciled with the executable adult-lock proof; 8 focused cases pass",
+    "existing Forge wire reference inspected and rejected for human-quality comparison",
+    "three official MakeHuman documentation images inspected and rejected",
+    "official Blender CC0 archive fingerprinted and four embedded body previews inspected and rejected as too small and incomplete",
+    "four 1280x960 renders of the exact Blender assets inspected; realistic endpoints retained only as direction evidence and stylized endpoints rejected as too caricatured",
+    "first three-panel direction sheet rejected as phone-illegible",
     "heartbeat remains PAUSED"
   ],
-  "transition": "R0 accepted -> H1-H4 verified -> H5 preserved -> N0-N3 natural-method wave complete -> K1 live audit found classifier-v1 coverage gap -> K1 v2 backfill/search/full gate complete -> H5 resume is next",
+  "transition": "R0 accepted -> H1-H4 verified -> H5 source rejections -> N0-N3 natural-method wave complete -> K1 continuity intake hardened -> aging drift repaired -> H5 source and pixel intake resumed",
   "metrics": {
     "token_cost": {"status": "unknown", "value": null},
     "elapsed_time": {"status": "unknown", "value": null}

@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **F5-K1-KNOWLEDGE-INTAKE-HARDENING**
-- Objective: Prove and harden Forge's first continuity stage so every visible conversation message is durably captured and every non-noise message is typed into useful evidence-only categories that future workers can retrieve without relying on remembered chat context.
+- Work package: **F5-H5-HUMANOID-VISUAL-REFERENCE-INTAKE**
+- Objective: Admit only provenance-safe, pixel-inspected, comparison-fit human visual references and prepare phone-legible single-subject direction evidence without importing production assets or selecting a runtime.
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
-- Related systems: forge-truth-kernel, forge-conversation-compiler, forge-reference-studio
-- Risk/research gate: **conversation-loss-misclassification-duplicate-projection-and-context-recall-drift / Preserve exact source evidence and classify for retrieval only. Measure live category coverage, ordinary-language behavior, noise suppression, deterministic replay, legacy coexistence, and authority isolation before claiming continuity improvement.**
-- Exact next action: Resume H5 at its preserved phone-legible visual-reference intake point: research and pixel-inspect only a small authoritative candidate set, use one large subject or stage per image, and retain the K1 typed-knowledge search route for context refresh.
+- Related systems: asset-factory, procedural-animation, forge-reference-studio, forge-truth-kernel
+- Risk/research gate: **visual-reference-provenance-anatomy-quality-phone-legibility-and-creative-fit / Use authoritative or clearly licensed sources, inspect actual pixels rather than metadata, and keep the candidate set small. Do not download executable content, import a production asset, or treat popularity as quality.**
+- Exact next action: Screen a small authoritative and clearly licensed human-reference set, inspect actual pixels at useful scale, reject unsuitable candidates, and generate one large single-subject direction image only if source screening cannot resolve the mature semi-realistic stylized target.
 
 ## Approved operating policies
 

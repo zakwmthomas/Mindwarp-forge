@@ -23,6 +23,8 @@ are necessary evidence but do not establish visual fitness.
 | MakeHuman labelled main-window image | Official MakeHuman documentation, `https://static.makehumancommunity.org/makehuman/docs/main_labelled.png`; SHA-256 `80f312ced3cfd22aa29a196b89a479290fb7e57c1c2c753d6ff5d0fd4766d75f`; downloaded to disposable temp storage and inspected at original scale | Plausible rendered upper body in the MakeHuman UI, but clothing and annotations obscure the subject and the lower body, hands, and feet are not available for comparison. | **Rejected** as the H5 baseline. |
 | MakeHuman age image | Official MakeHuman documentation, `https://static.makehumancommunity.org/makehuman/docs/age_0.png`; SHA-256 `2b45690e716cf725927222087ac76e05cf68f2e1522e9c5fd7f74334577cf233`; downloaded to disposable temp storage and inspected at original scale | Four head-and-bust variants. No full bodies, neutral articulation view, hands, or feet. | **Rejected** as the H5 baseline. |
 | MakeHuman legs-modelling image | Official MakeHuman documentation, `https://static.makehumancommunity.org/makehuman/docs/legs_modelling_2_0.png`; SHA-256 `69cfc6220d7754adef469bf9423bcb9b5c9fbd1f603ae500426f1a88e3bccc8c`; downloaded to disposable temp storage and inspected at original scale | Cropped torso and legs; arms are clipped, face and feet are absent, and a large white censor block obscures anatomy. | **Rejected** as the H5 baseline. |
+| Blender Human Base Meshes v1.4.1 embedded previews | Official Blender download page identifies the Blender Studio/community bundle as CC0. The 50,643,039-byte archive from `https://download.blender.org/demo/asset-bundles/human-base-meshes/human-base-meshes-bundle-v1.4.1.zip` has SHA-256 `811f43accbb31a88266d932f8f5563b2d13586fca0ba2693aad1f5fe582b3515`. Its realistic and stylized male/female PNG previews were extracted to disposable storage and inspected at original scale. | Each body preview is only 256x256, single-view, and the subject is too small for reliable face, hand, foot, or subtle-anatomy judgment. The realistic pair is a credible source lead; the stylized pair has enlarged heads, eyes, hands, and feet beyond the mature target. | **Rejected** as the H5 baseline; source family retained. |
+| High-resolution renders of exact Blender CC0 body assets | Wikimedia file records identify Blender Studio and the named artists, link back to Blender's bundle, and retain CC0. Disposable 1280x960 renders inspected: female realistic SHA-256 `009b3cbc1f5885ed66dd966306815effaaf529f33b4309060f2c7fee34a8441c`; male realistic `b0c0383e49d6db5f1bdfaF993d441ed58350ba67f7a361eb6c802d0dc3bfe04b`; female stylized `963fc7422d06cbd0a4a5e2a1151cd78fb6ea599c02c76dfcc4194b0177ac4ed4`; male stylized `534496a66eeb2207ed1b5d4b6a01571df8e8b0e69ca37a43029ebcc0a08a4be6`. | The larger pixels make overall form, hands, and feet visible, but only one elevated three-quarter view is rendered. Back and true side silhouettes are absent, and visible hip/thigh mesh transitions interrupt anatomical comparison. The stylized bodies are deliberately more caricatured than the owner target. | **Rejected** as the complete H5 baseline; realistic bodies retained only as bounded anatomical-direction evidence. |
 
 ## Source-family assessment
 
@@ -40,6 +42,15 @@ Creating a fresh, neutral, full-body multi-view candidate with the external
 application would be a later escalation, not a justified substitute for this
 cheap source-and-pixel screen. No executable was downloaded or run.
 
+Blender Studio's Human Base Meshes bundle is the stronger second source family:
+the official bundle is CC0, coherent, full-bodied, and includes separate
+realistic and stylized assets. Its embedded previews and the available
+high-resolution renders still fail H5 because they do not provide complete
+comparison views and expose visible transition artifacts. The source screen is
+therefore stopped after these two authoritative families; adding more sites
+would currently cost more than the expected information gain. The archive was
+inspected as data in disposable storage. Its `.blend` file was not executed.
+
 ## Current creative direction
 
 The owner resolved the broad target on 2026-07-14: semi-realistic anatomy and
@@ -52,6 +63,12 @@ No candidate is yet `verified_fit`. A bounded generated comparison may now
 clarify *how much* geometric simplification and graphic shading fits this
 direction. Generated imagery remains visual-direction evidence only; it cannot
 prove topology, shader implementation, animation, growth, or device cost.
+
+The next cheap fixture is one large, neutral adult subject rather than another
+contact sheet. It must keep mature human proportions, simplify secondary forms
+and materials economically, use restrained graphic shading, fill the frame at
+phone scale, and avoid both pore-level photorealism and enlarged childlike
+features. It remains `owner_check_required` even if its pixels are clean.
 
 The first generated three-panel fidelity sheet (SHA-256
 `049b8dc095fe8d92834a89aa4388d4f672da9ee246d7947a27c4308e7494ff52`,

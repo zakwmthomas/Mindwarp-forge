@@ -5,41 +5,38 @@
 
 ## Active checkpoint
 
-- Package: **F5-K1-KNOWLEDGE-INTAKE-HARDENING**
+- Package: **F5-H5-HUMANOID-VISUAL-REFERENCE-INTAKE**
 - Master item / milestone: **F5 / F5**
-- State / substage: **checkpoint / K1-live-backfill-and-integration-verification**
-- Related systems: forge-truth-kernel, forge-conversation-compiler, forge-reference-studio
-- Objective: Prove and harden Forge's first continuity stage so every visible conversation message is durably captured and every non-noise message is typed into useful evidence-only categories that future workers can retrieve without relying on remembered chat context.
-- Context health: Green after live bootstrap verification: capture was running and two seconds current with nine sessions and 5080 events. Audit found 257 projected knowledge records dominated by task and plan, with no explicit philosophy, requirement, constraint, preference, risk, question, observation, idea, or correction coverage; K1 repairs that gap before H5.
+- State / substage: **executing / H5-authoritative-source-and-pixel-intake**
+- Related systems: asset-factory, procedural-animation, forge-reference-studio, forge-truth-kernel
+- Objective: Admit only provenance-safe, pixel-inspected, comparison-fit human visual references and prepare phone-legible single-subject direction evidence without importing production assets or selecting a runtime.
+- Context health: Green after K1 continuity hardening and focused correction of stale aging semantics. Typed knowledge retrieval is available; H5 resumes with prior rejections retained in its canonical intake record, capture current, and heartbeat paused.
 
 ## Durable evidence
 
-- `contracts/conversation-compiler-contract.md`
-- `docs/canonical-system/CONVERSATION_COMPILER_READINESS.md`
-- `docs/canonical-system/KNOWLEDGE_INTAKE_V2_RESULT.md`
-- `crates/forge-kernel/src/knowledge.rs`
-- `crates/forge-kernel/src/persistence.rs`
-- `apps/forge-desktop/src-tauri/src/codex_capture.rs`
-- `apps/forge-desktop/ui/index.html`
-- `tools/find-knowledge.ps1`
+- `docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md`
+- `docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md`
+- `docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md`
+- `docs/canonical-system/FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md`
+- `contracts/reference-viewport-contract.md`
+- `governance/STAGE_QUALITY_PROTOCOL.md`
 
 ## Authority boundary
 
-Owner-authorized local continuity hardening, deterministic classification, disposable projections, UI search filters, backfill, and verification. Classification cannot edit canonical plans or policies, approve, promote, dispatch, execute content, select a runtime, or alter protected authority semantics.
+Owner-authorized reference research, disposable image inspection, rejection, and bounded visual-direction generation only. Dependent implementation remains blocked until a verified-fit receipt exists and any real creative uncertainty is resolved. No approval, promotion, engine selection, external executable, or protected-Kernel mutation.
 
 ## Exact next action
 
-Resume H5 at its preserved phone-legible visual-reference intake point: research and pixel-inspect only a small authoritative candidate set, use one large subject or stage per image, and retain the K1 typed-knowledge search route for context refresh.
+Screen a small authoritative and clearly licensed human-reference set, inspect actual pixels at useful scale, reject unsuitable candidates, and generate one large single-subject direction image only if source screening cannot resolve the mature semi-realistic stylized target.
 
 ## Unresolved risks
 
-- Deterministic phrase rules can over-classify a whole message or miss nuance.
-- Multiple facets improve recall but can increase library size and duplicate-looking summaries.
-- Legacy v1 rows must remain recoverable without polluting the current v2 projection.
-- A typed evidence record could be mistaken for a canonical plan, decision, requirement, or policy.
-- Automatic relation, contradiction and supersession linking remains unproved and outside K1.
-- Retention/redaction policy and external connectors remain unresolved.
+- No current repository asset is a verified good-quality human visual reference.
+- A reputable or correctly licensed source can still be visually incomplete, anatomically misleading, or wrong for the comparison.
+- A single view can hide defects, while a multi-panel sheet can become illegible on a phone.
+- Generated imagery can clarify style but cannot prove anatomy, topology, animation, growth behavior, shader cost, or device performance.
+- Visual observation must not approve, promote, or overwrite structural evidence.
 
 ## Resume after this package
 
-After K1 live backfill, typed-search evidence and the complete Forge gate pass, resume H5 using one large phone-legible subject or stage per image.
+Continue autonomous source and pixel-fitness research. Ask the owner only if an inspected candidate remains genuinely uncertain or a creative choice between defensible alternatives cannot be resolved from existing direction.
