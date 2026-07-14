@@ -16,6 +16,9 @@ verified improvements.
    benefit, and regression signals.
 5. **Verification system** — tests and gates decide whether a technical or
    workflow change is retained.
+6. **Stage-quality gates** - macro/micro context freshness, rendered-asset
+   fitness, and simulation-first escalation are mandatory inputs to material
+   work rather than optional worker judgement.
 
 ## Self-governing loop
 

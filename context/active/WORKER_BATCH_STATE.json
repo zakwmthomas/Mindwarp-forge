@@ -21,6 +21,56 @@
   "research_gate": "Use repository-owned H2 profile, semantic-construction contract, and deterministic fixtures first. External tools, model acquisition, runtime research, and executable content remain out of scope.",
   "authority_lane": "Owner-authorized implementation of the approved master plan. H3 may produce only deterministic engine-neutral candidate data; no perceptual approval, production promotion, engine selection, external execution, or protected-Kernel mutation.",
   "context_health": "Green after H2 focused and complete Forge gates. Forge capture is current and heartbeat remains paused; cold-start scanning of the large local session corpus remains slow.",
+  "stage_context": {
+    "stage_id": "H3-generation-boundary-and-input-audit",
+    "macro_sources": [
+      "docs/canonical-system/MASTER_PLAN_V2.md",
+      "docs/canonical-system/MASTER_PROGRAM.json",
+      "docs/project-atlas/ROADMAP.md",
+      "governance/WORKING_COVENANT.md"
+    ],
+    "macro_findings": [
+      "F5 remains an engine-neutral proof milestone; G1 production and R1 runtime work remain gated.",
+      "H3 may create deterministic candidate data but cannot approve assets, select an engine, execute external content, or mutate the protected Kernel.",
+      "H3 must retain H1 provenance and H2 structural authority boundaries while preparing later H4 controls and H5 human observation."
+    ],
+    "micro_sources": [
+      "contracts/semantic-construction-contract.md",
+      "crates/semantic-construction/src/model.rs",
+      "crates/semantic-construction/src/validate.rs",
+      "contracts/representation-contract.md",
+      "crates/representation-contract/src/neutral_humanoid.rs",
+      "governance/STAGE_QUALITY_PROTOCOL.md"
+    ],
+    "micro_findings": [
+      "P6 already owns ordered functional graph recipes and exact replay; H3 must bind its fingerprints rather than duplicate recipe semantics.",
+      "H2 owns named joints, hierarchy, coordinate convention, rest positions, structural limits, and exact negative claims.",
+      "The first H3 proof should be a typed in-memory model with deterministic bytes and adversarial drift/exhaustion tests before any integrated PC run."
+    ]
+  },
+  "visual_quality_gate": {
+    "asset_use_intent": false,
+    "status": "not_applicable",
+    "rationale": "This H3 boundary audit uses only typed structural records and no visual asset. Any later rendered human reference or candidate requires pixel-level fitness receipts before use.",
+    "receipts": []
+  },
+  "simulation_ladder": {
+    "cheapest_sufficient_tier": "typed_model",
+    "tiers_completed": [
+      {
+        "tier": "static_reasoning",
+        "result": "The existing P6 and H2 ownership boundaries reconcile through one-way fingerprint binding; a second recipe or geometry authority is unnecessary.",
+        "evidence": "contracts/semantic-construction-contract.md and docs/canonical-system/H2_NEUTRAL_HUMANOID_REPRESENTATION_RESULT.md"
+      }
+    ],
+    "expensive_execution_planned": false,
+    "unresolved_risk": "",
+    "expected_information_gain": "",
+    "estimated_cost": "",
+    "regression_guard": "",
+    "stop_condition": "",
+    "final_integration_gate": "After typed and in-memory H3 proofs pass, retain the complete Forge verification gate before H3 closure."
+  },
   "unresolved_risks": [
     "Semantic-construction recipes and the H2 profile use different identity domains and need an explicit one-way binding.",
     "A generator contract could accidentally duplicate P6 recipe authority or imply production geometry.",

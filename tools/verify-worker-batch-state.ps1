@@ -43,4 +43,6 @@ $allowed = @{
   blocked = @()
 }
 if ($null -ne $state.previous_state -and $allowed[$state.previous_state] -notcontains $state.state) { throw 'Illegal worker batch-state transition.' }
+& (Join-Path $PSScriptRoot 'verify-stage-quality-gates.ps1') -Path $path
+if (!$?) { throw 'Stage-quality gates failed.' }
 Write-Output "Worker batch state verified: $($state.state)."

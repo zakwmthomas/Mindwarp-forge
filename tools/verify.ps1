@@ -31,6 +31,8 @@ if (!$?) { throw 'Worker feedback fixtures failed.' }
 if (!$?) { throw 'Worker batch-state validation failed.' }
 & (Join-Path $PSScriptRoot 'test-worker-batch-state.ps1')
 if (!$?) { throw 'Worker batch-state fixtures failed.' }
+& (Join-Path $PSScriptRoot 'test-stage-quality-gates.ps1')
+if (!$?) { throw 'Stage-quality fixtures failed.' }
 & (Join-Path $PSScriptRoot 'test-active-context-projections.ps1')
 if (!$?) { throw 'Active-context projection fixtures failed.' }
 & (Join-Path $PSScriptRoot 'test-verify-bootstrap-read-only.ps1')

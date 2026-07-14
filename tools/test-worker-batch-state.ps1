@@ -8,6 +8,9 @@ function Fixture([string]$state,[string]$previous,[string]$next='next') {
     state=$state; previous_state=$previous; objective='fixture objective'; next_action=$next; substage_id='fixture-stage'
     consecutive_no_progress_limit=1; atlas_route=@{milestone='F5';systems=@('task-bootstrap')}
     risk_level='bounded-fixture'; research_gate='fixture'; authority_lane='no authority'; context_health='green'
+    stage_context=@{stage_id='fixture-stage';macro_sources=@('master');macro_findings=@('route');micro_sources=@('contract');micro_findings=@('invariant')}
+    visual_quality_gate=@{asset_use_intent=$false;status='not_applicable';rationale='No visual asset in fixture';receipts=@()}
+    simulation_ladder=@{cheapest_sufficient_tier='typed_model';tiers_completed=@(@{tier='static_reasoning';result='pass';evidence='fixture logic'});expensive_execution_planned=$false;unresolved_risk='';expected_information_gain='';estimated_cost='';regression_guard='';stop_condition='';final_integration_gate='fixture full gate'}
     unresolved_risks=@('fixture risk'); evidence_requirements=@('fixture evidence'); verification_plan=@('fixture verification')
     resume_after='fixture resume'; evidence=@(); verification_receipts=@(); transition=''; metrics=$null
   }
@@ -43,5 +46,5 @@ try {
   $failed = $false
   try { & $verifier -Path $temp | Out-Null } catch { $failed = $true }
   if (!$failed) { throw 'Authority-bearing worker completion was accepted.' }
-  Write-Output 'Worker batch fixtures verified: canonical schema, resume, completion receipts, metric integrity, and authority rejection.'
+  Write-Output 'Worker batch fixtures verified: canonical schema, stage-quality gates, resume, completion receipts, metric integrity, and authority rejection.'
 } finally { Remove-Item -LiteralPath $temp -Force -ErrorAction SilentlyContinue }

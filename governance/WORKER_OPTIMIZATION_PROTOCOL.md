@@ -62,6 +62,27 @@ state so later turns resume directly. Promote a communication or workflow
 improvement into policy, guidance, a template, or a test only after recording
 the problem it solves and how future work will detect regression.
 
+## Simulation-first execution ladder
+
+Before implementation, choose the cheapest tier capable of falsifying the
+current assumptions: static reasoning, typed model, in-memory fixture,
+disposable simulation, bounded integrated PC test, then external execution.
+Do not skip a cheaper applicable tier. Moving upward records the lower-tier
+result, unresolved risk, expected information gain, execution and context
+cost, regression guard, and stop condition. A cheap pass improves the starting
+point but never replaces a required final integrated verification.
+
+## Visual reference fitness
+
+Technical validity is not visual fitness. Inspect actual rendered pixels at a
+useful scale before any visual asset becomes a reference, comparison target,
+fixture, or candidate. Record source identity and provenance, views inspected,
+visible defects, intended comparison, accuracy limitations, and disposition.
+For a human comparison, reject anatomically incoherent, badly occluded,
+insufficiently detailed, misleadingly posed or lit, or visibly corrupted
+references. If fitness or the intended aesthetic target remains uncertain,
+route one labelled comparison to the owner and pause the dependent work.
+
 ## Three-batch optimization audit
 
 Count only completed meaningful batches, never heartbeat wake-ups or individual

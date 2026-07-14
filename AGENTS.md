@@ -35,6 +35,16 @@ At every package transition, update only the canonical
 Keep modules small, preserve provenance, avoid unrelated edits, and run the
 relevant verification gate before handing work over.
 
+At every material substage, refresh the macro and micro context recorded in the
+canonical Worker Batch State before implementation. Apply the simulation-first
+ladder in `governance/STAGE_QUALITY_PROTOCOL.md`: use cheap logical, typed, and
+disposable proofs before costly integrated PC execution where possible, while
+retaining the final integration gate. Before any visual asset is used, inspect
+its actual pixels at useful scale and record a fitness receipt. Human
+references must be anatomically credible and fit for the exact comparison; if
+quality, accuracy, or creative intent is uncertain, stop for one bounded owner
+visual check.
+
 ## Owner-wait automation
 
 At a recognized owner approval, confirmation, or observation gate, create one

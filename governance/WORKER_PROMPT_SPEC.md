@@ -55,3 +55,21 @@ Optimization Protocol, then synchronize the automation prompt.
     or infer or submit the observation. Resume with `-Mode
     resume` only after new user-authored input materially resolves or explicitly
     releases that exact gate. Unrelated owner chat does not resume automation.
+16. Before each material substage, refresh and record both context scales. The
+    macro refresh covers the master objective, dependency route, authority,
+    neighbouring contracts, and system risks. The micro refresh covers exact
+    inputs, invariants, known failures, fixtures, tests, and next action. The
+    recorded stage ID must equal the active Batch State substage.
+17. Visually inspect the actual pixels of every visual asset before using it as
+    a reference, target, fixture, or candidate. Record provenance, useful-scale
+    views, fitness, accuracy limits, and visible defects. A human reference must
+    be anatomically credible, sufficiently complete and unobscured, and fit in
+    pose, view, lighting, and detail for the comparison. A filename, hash, or
+    successful decode is not a quality check. If fitness or creative intent is
+    uncertain, stop at one bounded owner visual check; never substitute a poor
+    or arbitrary human reference.
+18. Declare the cheapest sufficient proof tier before implementation. Prefer
+    static reasoning, typed models, in-memory fixtures, and disposable
+    simulations before bounded PC or external runs. Escalate only with retained
+    lower-tier results, unresolved risk, expected information gain, cost, and a
+    stop condition. Still run the required final integration gate.
