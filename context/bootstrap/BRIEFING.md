@@ -9,7 +9,7 @@
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
 - Related systems: asset-factory, forge-reference-studio, forge-truth-kernel, forge-control-plane
 - Risk/research gate: **candidate-scope-observation-bridge-authority-and-premature-promotion / Use the committed H1-H6 contracts, results, manifests, and executable receipts first. External research is not justified unless the audit exposes a standards-specific gap. Do not reacquire or import visual assets.**
-- Exact next action: Await an exact direct-owner APPROVE action for candidate c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433. Do not infer approval, promote, import, apply, or continue across this protected gate.
+- Exact next action: Explain in plain language that promotion would make the already approved H1-H6 test foundation the active canonical standard for future humanoid work, not approve an asset; await a separate direct-owner promotion decision and do not infer it from approval or 'continue'.
 
 ## Approved operating policies
 

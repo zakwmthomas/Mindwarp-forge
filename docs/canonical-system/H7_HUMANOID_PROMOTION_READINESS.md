@@ -1,9 +1,8 @@
 # H7 humanoid promotion readiness
 
-Status: **scope audit, capability-free lifecycle proof, owner-authorized
-protected supersession, exact disposable admission, complete Forge gate, and
-live Proposed-candidate admission pass; approval is awaiting a separate exact
-owner action and promotion has not occurred**.
+Status: **scope audit, reversible protected lifecycle, exact admission, owner
+approval, backup/restart verification, and complete Forge gates pass; promotion
+into the active canonical baseline remains ungranted**.
 
 H7 asks whether H1-H6 form a coherent canonical promotion candidate. It does
 not import an asset, promote anything, infer owner authority, or claim that the
@@ -54,9 +53,10 @@ Promotion of this proof baseline must not claim or cause:
 - approval, promotion, rejection, supersession, or protected authority from a
   receipt, assistant output, captured conversation, or ordinary assent.
 
-## Rollback gap and alternatives
+## Pre-implementation rollback gap and alternatives
 
-The current Kernel candidate lifecycle is `Proposed -> Approved -> Promoted`,
+At the start of the H7 audit, the Kernel lifecycle was
+`Proposed -> Approved -> Promoted`,
 with terminal `Rejected` or `Quarantined` paths. `reject_candidate` accepts only
 a `Proposed` candidate. There is no event or state for withdrawing an approved
 candidate or superseding a promoted canonical baseline.
@@ -88,9 +88,10 @@ Before any protected-Kernel change, a capability-free typed fixture must prove:
 5. supersession has no import, execution, application, publishing, or runtime
    effect.
 
-Only after that cheaper proof passes should a separately authorized Kernel
-change be proposed. No owner approval or promotion phrase should be requested
-until the lifecycle gap is closed and the complete Forge gate passes.
+The audit required that cheaper proof to pass before proposing a separately
+authorized Kernel change. At that time no owner approval or promotion action
+could be requested until the lifecycle gap closed and the complete Forge gate
+passed.
 
 ## Capability-free proof result
 
@@ -173,4 +174,20 @@ change. Live admission then created the exact pinned candidate as `Proposed`,
 adding two authority-free events. Immediate and post-restart retries added zero
 events. The verified pre-admission backup SHA-256 is
 `46d6ae57a0dd9d3f9e9d1833ed0bf80115d0aa5824cecdef3ea268798cd95e1b`.
-Approval and promotion remain unavailable until separate exact owner actions.
+The owner later supplied the separate approval action described below.
+Promotion remains unavailable without its own direct owner decision.
+
+## Owner approval result
+
+After the H1-H6 tests and important non-tests were explained in plain language,
+the owner directly approved the technical foundation and asked Forge to
+continue. The single active checkpoint bound that natural-language response to
+this exact candidate only. The bounded backup-first executor added one
+`CandidateApproved` event
+`6a073f7fdd7ab494b926d19938f135268417711527a6e0ad2c87b565497e9a59`.
+
+The verified pre-approval backup SHA-256 is
+`b058d6e161bea12bff0acdf7d2c575edeedd65786ed4831d324ed2c1db4b87fd`.
+Immediate and post-restart retries added zero events and reproduced state
+`Approved`. No `CandidatePromoted`, asset import, application, execution, or
+runtime effect occurred.

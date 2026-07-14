@@ -38,16 +38,19 @@ if ($LASTEXITCODE -ne 0) { throw 'H7 candidate persistence and authority-negativ
 & $cargo test -q -p humanoid-proof-chain-integration --example h7_candidate_admission
 if ($LASTEXITCODE -ne 0) { throw 'H7 bounded candidate admission idempotency and state-drift shields failed.' }
 
+& $cargo test -q -p humanoid-proof-chain-integration --example h7_candidate_approval
+if ($LASTEXITCODE -ne 0) { throw 'H7 bounded owner-approved transition backup, idempotency, and no-promotion shields failed.' }
+
 $source = Get-Content -LiteralPath (Join-Path $root 'crates\humanoid-proof-chain\src\promotion.rs') -Raw
 $contract = Get-Content -LiteralPath (Join-Path $root 'contracts\humanoid-promotion-readiness-contract.md') -Raw
 $readiness = Get-Content -LiteralPath (Join-Path $root 'docs\canonical-system\H7_HUMANOID_PROMOTION_READINESS.md') -Raw
 foreach ($required in @(
   'EvidencePackageOnlyNotKernelCandidate', 'no_generated_or_imported_surface_asset',
   'simulated_only_no_kernel_state_change', 'no_promoted_humanoid_proof_baseline',
-  'separate owner actions', 'current Kernel', 'does not authorize'
+  'separate owner actions', 'CandidateSuperseded', 'does not authorize'
 )) {
   if (!$source.Contains($required) -and !$contract.Contains($required) -and !$readiness.Contains($required)) {
     throw "H7 scope, rollback, or authority boundary is missing: $required"
   }
 }
-Write-Output 'H7 readiness verified: narrow proof-baseline scope, exact H6/H5 binding, stable package/evidence/candidate IDs, hostile overclaim rejection, disposable Proposed-only Kernel integration, persistence recovery, and protected supersession pass; live approval and promotion remain blocked.'
+Write-Output 'H7 readiness verified: narrow proof-baseline scope, exact H6/H5 binding, stable package/evidence/candidate IDs, hostile overclaim rejection, disposable proposal/approval integration, persistence recovery, and protected supersession pass; live approval is recorded and promotion remains blocked.'

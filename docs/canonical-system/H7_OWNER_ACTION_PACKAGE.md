@@ -1,8 +1,7 @@
 # H7 owner action package
 
-Status: **exact candidate admitted to the live Forge ledger as `Proposed`;
-approval is the current owner gate and promotion remains a separate later
-gate**.
+Status: **owner-approved technical foundation; promotion into the active
+canonical baseline remains a separate ungranted gate**.
 
 ## Plain-language scope
 
@@ -73,13 +72,24 @@ Forge capture then restarted current without changing the candidate state.
 
 ## Later owner actions, not current requests
 
-The exact candidate now exists as `Proposed`. The first and only current owner
-action is:
+The owner approved the explained technical foundation in natural language on
+2026-07-14. Forge bound that direct response internally to the single active
+candidate. One `CandidateApproved` event was added:
+
+`6a073f7fdd7ab494b926d19938f135268417711527a6e0ad2c87b565497e9a59`
+
+The verified pre-approval backup is
+`pre-h7-approval-20260714-230440-4068300.sqlite3`, SHA-256
+`b058d6e161bea12bff0acdf7d2c575edeedd65786ed4831d324ed2c1db4b87fd`.
+Immediate and post-restart retries added zero events. Approval had no promotion
+effect.
+
+The historical approval action was:
 
 `APPROVE c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433`
 
-Promotion remains a separate later action and cannot be combined with
-approval:
+The only possible next authority action is promotion, which remains separate
+and cannot be inferred from approval:
 
 `PROMOTE c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433`
 

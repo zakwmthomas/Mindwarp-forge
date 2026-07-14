@@ -7,10 +7,10 @@
 
 - Package: **F5-H7-HUMANOID-PROMOTION-READINESS**
 - Master item / milestone: **F5 / F5**
-- State / substage: **checkpoint / H7-owner-approval-gate**
+- State / substage: **checkpoint / H7-owner-promotion-gate**
 - Related systems: asset-factory, forge-reference-studio, forge-truth-kernel, forge-control-plane
 - Objective: Audit whether H1-H6 form one coherent, correctly scoped canonical promotion candidate, or whether a missing bridge still separates the verified structural wire candidate from the owner-approved visual target.
-- Context health: Green at owner gate: final H7 and complete Forge gates pass; exact live candidate is Proposed; first admission added two authority-free events; immediate and post-restart retries added zero; verified pre-admission backup is retained; capture is current.
+- Context health: Green at separate promotion gate: owner approval is durably recorded as one event; verified pre-approval backup retained; immediate and post-restart retries added zero; state is Approved; promotion_effect=false; capture is current.
 
 ## Durable evidence
 
@@ -22,11 +22,11 @@
 
 ## Authority boundary
 
-Owner explicitly authorized the bounded protected-Kernel safe-undo implementation after a plain-language explanation. Scope is CandidateSuperseded state/event, exact direct-owner transition, replay/persistence/UI tests, and no candidate promotion, asset import, application, publishing, or runtime effect.
+After a plain-language explanation of what H1-H6 tested and did not test, the owner explicitly wrote 'Yeah sweet, I approve, continue'. This authorizes only CandidateApproved for the exact current H7 proof-baseline candidate. It does not authorize promotion, asset import, application, publishing, runtime selection, or any visual/model claim.
 
 ## Exact next action
 
-Await an exact direct-owner APPROVE action for candidate c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433. Do not infer approval, promote, import, apply, or continue across this protected gate.
+Explain in plain language that promotion would make the already approved H1-H6 test foundation the active canonical standard for future humanoid work, not approve an asset; await a separate direct-owner promotion decision and do not infer it from approval or 'continue'.
 
 ## Unresolved risks
 

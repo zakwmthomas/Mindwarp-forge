@@ -5,8 +5,8 @@
   "master_program_item": "F5",
   "state": "checkpoint",
   "objective": "Audit whether H1-H6 form one coherent, correctly scoped canonical promotion candidate, or whether a missing bridge still separates the verified structural wire candidate from the owner-approved visual target.",
-  "next_action": "Await an exact direct-owner APPROVE action for candidate c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433. Do not infer approval, promote, import, apply, or continue across this protected gate.",
-  "substage_id": "H7-owner-approval-gate",
+  "next_action": "Explain in plain language that promotion would make the already approved H1-H6 test foundation the active canonical standard for future humanoid work, not approve an asset; await a separate direct-owner promotion decision and do not infer it from approval or 'continue'.",
+  "substage_id": "H7-owner-promotion-gate",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
     "milestone": "F5",
@@ -14,10 +14,10 @@
   },
   "risk_level": "candidate-scope-observation-bridge-authority-and-premature-promotion",
   "research_gate": "Use the committed H1-H6 contracts, results, manifests, and executable receipts first. External research is not justified unless the audit exposes a standards-specific gap. Do not reacquire or import visual assets.",
-  "authority_lane": "Owner explicitly authorized the bounded protected-Kernel safe-undo implementation after a plain-language explanation. Scope is CandidateSuperseded state/event, exact direct-owner transition, replay/persistence/UI tests, and no candidate promotion, asset import, application, publishing, or runtime effect.",
-  "context_health": "Green at owner gate: final H7 and complete Forge gates pass; exact live candidate is Proposed; first admission added two authority-free events; immediate and post-restart retries added zero; verified pre-admission backup is retained; capture is current.",
+  "authority_lane": "After a plain-language explanation of what H1-H6 tested and did not test, the owner explicitly wrote 'Yeah sweet, I approve, continue'. This authorizes only CandidateApproved for the exact current H7 proof-baseline candidate. It does not authorize promotion, asset import, application, publishing, runtime selection, or any visual/model claim.",
+  "context_health": "Green at separate promotion gate: owner approval is durably recorded as one event; verified pre-approval backup retained; immediate and post-restart retries added zero; state is Approved; promotion_effect=false; capture is current.",
   "stage_context": {
-    "stage_id": "H7-owner-approval-gate",
+    "stage_id": "H7-owner-promotion-gate",
     "macro_sources": [
       "docs/canonical-system/MASTER_PLAN_V2.md",
       "docs/canonical-system/MASTER_PROGRAM.json",
@@ -72,6 +72,10 @@
       ,"The final complete Forge gate passed after backup-first admission hardening."
       ,"Live admission reproduced candidate c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433 as Proposed with exactly two authority-free events; immediate and post-restart retries added zero."
       ,"The separate exact owner approval action is now the only dependency-ready next step; promotion remains a later independent gate."
+      ,"The owner explicitly approved the plain-language H1-H6 technical foundation after its tests and non-tests were explained; this is candidate-specific approval, not promotion or asset approval."
+      ,"The bounded approval operator passes disposable backup-first, exact one-event transition, reopen, idempotent retry, no-promotion, and promoted-state rejection tests."
+      ,"Live approval added exactly CandidateApproved event 6a073f7fdd7ab494b926d19938f135268417711527a6e0ad2c87b565497e9a59 after verified backup; state is Approved across restart and retries add zero."
+      ,"Promotion is now the only open authority gate and must be explained and authorized separately; owner approval and 'continue' did not grant it."
     ]
   },
   "visual_quality_gate": {
@@ -106,12 +110,12 @@
       }
     ],
     "expensive_execution_planned": false,
-    "unresolved_risk": "Only the project owner can decide whether this exact proof baseline should move from Proposed to Approved.",
-    "expected_information_gain": "The owner action resolves candidate approval only; it does not establish asset, runtime, production, or promotion fitness.",
-    "estimated_cost": "One exact owner phrase and one append-only CandidateApproved event if accepted; zero mutation while waiting.",
+    "unresolved_risk": "Only the owner can decide whether the approved technical foundation should become the active canonical baseline for later humanoid work.",
+    "expected_information_gain": "A separate promotion decision determines canonical status only; it adds no model, visual, runtime, or production evidence.",
+    "estimated_cost": "One plain-language owner decision and zero mutation while waiting.",
     "regression_guard": "Do not alter H1-H6 identities, evidence, limitations, rejected candidates, owner wording, or authority state while packaging H7.",
-    "stop_condition": "Remain stopped until the owner supplies the exact candidate-bound approval phrase or rejects/corrects the candidate. Ordinary assent, captured text, elapsed time, and generated records do not release the gate.",
-    "final_integration_gate": "Passed: final H7 verifier and complete Forge gate include the backup-first admission operator; live admission added exactly EvidenceRegistered plus CandidateProposed, retained a verified pre-change backup, survived restart, and remained Proposed with zero-event retries."
+    "stop_condition": "Remain stopped until the owner separately and directly authorizes or rejects promotion after its consequence is explained. Approval, 'continue', elapsed time, and captured records do not release this gate.",
+    "final_integration_gate": "Passed for owner approval: disposable approval executor, complete Forge gate, verified pre-change backup, exact one-event live transition, reopen, and zero-event retries pass; promotion remains unexecuted."
   },
   "unresolved_risks": [
     "The H3 wire candidate and H5 visual target may be prerequisites for different future objects rather than one promotable asset.",
@@ -165,8 +169,11 @@
     ,"live candidate c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433 admitted as Proposed; exactly two authority-free events added"
     ,"verified pre-admission backup SHA-256 46d6ae57a0dd9d3f9e9d1833ed0bf80115d0aa5824cecdef3ea268798cd95e1b retained"
     ,"immediate and post-restart live retries report already_present=true and events_added=0; capture restarted current"
+    ,"owner directly approved the explained H1-H6 technical foundation in natural language; no asset or promotion authority inferred"
+    ,"bounded approval executor and complete Forge gate pass; live CandidateApproved event 6a073f7fdd7ab494b926d19938f135268417711527a6e0ad2c87b565497e9a59 added exactly once"
+    ,"verified pre-approval backup SHA-256 b058d6e161bea12bff0acdf7d2c575edeedd65786ed4831d324ed2c1db4b87fd retained; immediate and post-restart retries add zero; promotion_effect=false"
   ],
-  "transition": "H6 verified -> H7 scope audit -> supersession simulation and owner-authorized protected implementation -> exact authority-negative package -> disposable Kernel/persistence/idempotency proofs -> backup-first operator -> final full gate -> live Proposed admission and verified restart -> exact owner approval gate; no promotion",
+  "transition": "H6 verified -> H7 scope/recovery/supersession -> exact package and live Proposed admission -> plain-language explanation -> explicit owner approval -> backup-first one-event Approved transition and restart verification -> separate owner promotion gate",
   "metrics": {
     "token_cost": {"status": "unknown", "value": null},
     "elapsed_time": {"status": "unknown", "value": null}
