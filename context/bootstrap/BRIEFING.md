@@ -9,7 +9,7 @@
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
 - Related systems: asset-factory, procedural-animation, forge-reference-studio, forge-truth-kernel
 - Risk/research gate: **control-metric-cross-sensitivity-threshold-and-visual-overclaim / Use the existing Forge-owned reference viewport, H3 receipt, and typed control snapshots. No external assets, human reference, renderer, engine, or runtime research is required for H4.**
-- Exact next action: Audit the existing reference and three negative-control snapshots, derive a minimal orthogonal integer metric matrix bound to the H3 candidate and exact scene fingerprints, then add in-memory adversarial fixtures for missing controls, cross-sensitivity, stale bindings, threshold drift, and overclaim before any integrated gate.
+- Exact next action: Freeze and verify the H4 calibration receipt, run focused and modularity checks, then run the complete Forge gate before closing H4 and preparing the separately visual-gated H5 package.
 
 ## Approved operating policies
 

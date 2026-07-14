@@ -106,6 +106,18 @@
       ]
     },
     {
+      "id": "control-calibration",
+      "root": "crates/control-calibration",
+      "dependencies": ["humanoid-generation", "reference-viewport"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "control calibration cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "control calibration cannot depend on desktop or UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "control calibration cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "control calibration cannot access files or processes"}
+      ]
+    },
+    {
       "id": "perception-protocol",
       "root": "crates/perception-protocol",
       "dependencies": [],

@@ -5,8 +5,8 @@
   "master_program_item": "F5",
   "state": "executing",
   "objective": "Calibrate cheap deterministic structural metrics against the exact broken-connection, silhouette-collapse, and articulation-drift controls without inferring visual quality or owner judgement.",
-  "next_action": "Audit the existing reference and three negative-control snapshots, derive a minimal orthogonal integer metric matrix bound to the H3 candidate and exact scene fingerprints, then add in-memory adversarial fixtures for missing controls, cross-sensitivity, stale bindings, threshold drift, and overclaim before any integrated gate.",
-  "substage_id": "H4-control-metric-audit",
+  "next_action": "Freeze and verify the H4 calibration receipt, run focused and modularity checks, then run the complete Forge gate before closing H4 and preparing the separately visual-gated H5 package.",
+  "substage_id": "H4-control-calibration-verification",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
     "milestone": "F5",
@@ -17,7 +17,7 @@
   "authority_lane": "Owner-authorized implementation of the approved master plan. H4 may calibrate deterministic structural metrics only; it cannot assert asset quality, human anatomy, perception, preference, approval, promotion, engine compatibility, or protected-Kernel mutation.",
   "context_health": "Green after H3 focused and complete Forge gates. P13-P15 stage-quality enforcement is active; capture is current and heartbeat remains paused.",
   "stage_context": {
-    "stage_id": "H4-control-metric-audit",
+    "stage_id": "H4-control-calibration-verification",
     "macro_sources": [
       "docs/canonical-system/MASTER_PLAN_V2.md",
       "docs/canonical-system/MASTER_PROGRAM.json",
@@ -34,6 +34,8 @@
       "crates/reference-viewport/src/lib.rs",
       "contracts/reference-viewport-contract.md",
       "crates/viewport-stimulus/src/lib.rs",
+      "crates/control-calibration/src/lib.rs",
+      "contracts/control-calibration-contract.md",
       "contracts/viewport-stimulus-contract.md",
       "crates/humanoid-generation/src/lib.rs",
       "docs/canonical-system/H3_NEUTRAL_HUMANOID_GENERATION_RESULT.md"
@@ -41,7 +43,9 @@
     "micro_findings": [
       "The existing controls are deterministic and distinct: one removes the right knee-ankle link, one narrows frame-zero front span, and one changes frame-one hand height while preserving segment length.",
       "Edge deficit, rest front-span loss, and frame-one hand vertical displacement can form an orthogonal integer metric matrix without rendering pixels.",
-      "Every metric and control must bind exact reference/control fingerprints and declare non-detections rather than imply general quality."
+      "Every metric and control binds exact reference/control fingerprints and declares non-detections rather than implying general quality.",
+      "Five in-memory tests retain the orthogonal 1/480/480 matrix and reject missing controls, stale binding, cross-sensitive or post-hoc claims, unknown fields, and noncanonical bytes.",
+      "Calibration fingerprint 774a790aa963bb7ed329394d869fda4f5530697cce4d4d029a23d31e6d575f4d is ready for the complete integration gate."
     ]
   },
   "visual_quality_gate": {
@@ -51,12 +55,17 @@
     "receipts": []
   },
   "simulation_ladder": {
-    "cheapest_sufficient_tier": "typed_model",
+    "cheapest_sufficient_tier": "in_memory_fixture",
     "tiers_completed": [
       {
         "tier": "static_reasoning",
         "result": "Three existing control mutations affect independent structural dimensions that can be measured with exact integer differences.",
         "evidence": "crates/reference-viewport/src/lib.rs negative_control_snapshots"
+      },
+      {
+        "tier": "typed_model",
+        "result": "Exact edge deficit, rest front-span loss, and frame-one hand vertical displacement form an orthogonal matrix for the three bound controls.",
+        "evidence": "crates/control-calibration/src/lib.rs"
       }
     ],
     "expensive_execution_planned": false,

@@ -7,7 +7,7 @@
 
 - Package: **F5-H4-HUMANOID-FUNCTIONAL-CONTROLS**
 - Master item / milestone: **F5 / F5**
-- State / substage: **executing / H4-control-metric-audit**
+- State / substage: **executing / H4-control-calibration-verification**
 - Related systems: asset-factory, procedural-animation, forge-reference-studio, forge-truth-kernel
 - Objective: Calibrate cheap deterministic structural metrics against the exact broken-connection, silhouette-collapse, and articulation-drift controls without inferring visual quality or owner judgement.
 - Context health: Green after H3 focused and complete Forge gates. P13-P15 stage-quality enforcement is active; capture is current and heartbeat remains paused.
@@ -28,7 +28,7 @@ Owner-authorized implementation of the approved master plan. H4 may calibrate de
 
 ## Exact next action
 
-Audit the existing reference and three negative-control snapshots, derive a minimal orthogonal integer metric matrix bound to the H3 candidate and exact scene fingerprints, then add in-memory adversarial fixtures for missing controls, cross-sensitivity, stale bindings, threshold drift, and overclaim before any integrated gate.
+Freeze and verify the H4 calibration receipt, run focused and modularity checks, then run the complete Forge gate before closing H4 and preparing the separately visual-gated H5 package.
 
 ## Unresolved risks
 
