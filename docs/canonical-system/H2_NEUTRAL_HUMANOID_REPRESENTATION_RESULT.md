@@ -46,6 +46,12 @@ H1-suite drift, and structural overclaim. Validation also rejects identity or
 role duplication, unknown joints, multiple parents, source fingerprint drift,
 coordinate drift, topology exhaustion, and authority changes.
 
+The H2 verifier, modularity gate, UI build, complete Rust workspace tests,
+desktop build, and complete Forge verification gate all pass. The first full
+gate attempt also exposed a live Windows executable lock; stopping only the
+running Forge Desktop process allowed the clean full gate to pass, after which
+capture was restored.
+
 ## Remaining boundary
 
 The profile is deliberately a wire-structure contract. Surface topology,

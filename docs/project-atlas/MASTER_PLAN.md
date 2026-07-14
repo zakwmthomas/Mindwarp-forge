@@ -39,7 +39,7 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
 ## F5
 
 - **F5** - executing; gate: hard; depends on: F5-OWNER-GATE.
-  Next: Execute H2 representation alignment: reconcile the existing representation contract, v3 typed scene, recovered declared hierarchy challenge, stable identity and coordinate conventions into one neutral humanoid representation profile. Prove hierarchy, rest/bind pose, named roles, topology bounds, deterministic serialization, and authority-negative generation inputs without claiming skinning, deformation, visual quality, or production readiness.
+  Next: Execute H3 Forge generation: audit semantic-construction and representation boundaries, define the smallest declared engine-neutral construction input and deterministic candidate output around the verified H2 profile, and prove replay, input binding, bounded output, no executable or network content, no hidden mutation, and authority-negative status without claiming surfaces, skinning, deformation, visual quality, engine compatibility, or production readiness.
 - **F5-COHERENCE** - promoted; gate: hard; depends on: F4-CLOSEOUT.
   Next: Implement the owner-approved typed knowledge intake, canonical role registry, recoverability baseline, unified snapshot, and generated knowledge views without crossing the independent F5 owner-observation gate.
 

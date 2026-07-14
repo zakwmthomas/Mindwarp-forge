@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
   "canonical_role": "sole-active-work-checkpoint",
-  "batch_id": "F5-H2-NEUTRAL-HUMANOID-REPRESENTATION",
+  "batch_id": "F5-H3-NEUTRAL-HUMANOID-GENERATION",
   "master_program_item": "F5",
   "state": "executing",
-  "objective": "Reconcile the existing representation contract, v3 typed scene, and H1 reference suite into one stable engine-neutral humanoid representation profile with deterministic structural proof.",
-  "next_action": "Audit the representation-contract and reference-viewport schemas together, identify identity, coordinate, hierarchy, bind/rest-pose, role, topology, serialization, and authority gaps, then implement the smallest typed alignment and adversarial fixtures without adding surfaces, skinning, deformation, engines, or visual-quality claims.",
-  "substage_id": "H2-contract-reconciliation-and-gap-audit",
+  "objective": "Construct a deterministic engine-neutral candidate from declared Forge inputs bound to the verified H2 neutral humanoid profile, without external execution, hidden mutation, or authority escalation.",
+  "next_action": "Audit semantic-construction and representation-contract integration points, then define the smallest typed H3 construction input, deterministic candidate output, replay receipt, resource bounds, and adversarial no-executable/no-network/no-hidden-mutation fixtures while retaining the H2 structural and authority limits.",
+  "substage_id": "H3-generation-boundary-and-input-audit",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
     "milestone": "F5",
@@ -17,50 +17,57 @@
       "forge-truth-kernel"
     ]
   },
-  "risk_level": "representation-identity-hierarchy-and-contract-drift",
-  "research_gate": "Use existing repository contracts, H1 evidence, and synthetic fixtures. No external acquisition or runtime research is required unless a risk-critical contract ambiguity cannot be resolved locally.",
-  "authority_lane": "Owner-authorized implementation of the approved master plan. The profile is a structural proof candidate only; no perceptual approval, production promotion, engine selection, external execution, or protected-Kernel mutation.",
-  "context_health": "Green after H1 full-gate pass. Forge capture is current and heartbeat remains paused.",
+  "risk_level": "generation-input-authority-replay-and-hidden-mutation-drift",
+  "research_gate": "Use repository-owned H2 profile, semantic-construction contract, and deterministic fixtures first. External tools, model acquisition, runtime research, and executable content remain out of scope.",
+  "authority_lane": "Owner-authorized implementation of the approved master plan. H3 may produce only deterministic engine-neutral candidate data; no perceptual approval, production promotion, engine selection, external execution, or protected-Kernel mutation.",
+  "context_health": "Green after H2 focused and complete Forge gates. Forge capture is current and heartbeat remains paused; cold-start scanning of the large local session corpus remains slow.",
   "unresolved_risks": [
-    "The representation contract and viewport scene may use different joint/identity vocabularies.",
-    "The v3 fixture may lack explicit bind transforms, units, or stable semantic role mapping.",
-    "The recovered blueprint is declared legacy evidence and cannot supply verified dimensions or quality thresholds.",
-    "Surface topology, skinning, deformation, and visual convergence remain outside H2."
+    "Semantic-construction recipes and the H2 profile use different identity domains and need an explicit one-way binding.",
+    "A generator contract could accidentally duplicate P6 recipe authority or imply production geometry.",
+    "Replay and cache identity must bind all declared inputs without admitting locators, executables, plugins, or network content.",
+    "Surface topology, skinning, deformation, visual convergence, engine integration, and production promotion remain outside H3.",
+    "Forge capture cold start currently rescans roughly 113 MB of session logs and can take several minutes."
   ],
   "evidence_requirements": [
-    "representation and viewport schema comparison",
-    "stable identity and coordinate convention",
-    "explicit rest/bind pose and joint-role mapping",
-    "bounded topology and deterministic canonical bytes",
-    "H1 source lineage without legacy authority escalation",
-    "adversarial missing-role, cycle, drift, unknown-field, and overclaim fixtures"
+    "explicit P6 recipe and H2 profile fingerprint bindings",
+    "strict declared construction inputs with no executable, path, plugin, or network authority",
+    "deterministic candidate bytes, identity, replay, and bounded resource counts",
+    "no hidden filesystem, process, network, clock, randomness, or protected-Kernel mutation",
+    "H1/H2 lineage retained without importing recovered content",
+    "adversarial input drift, replay drift, unknown-field, exhaustion, and overclaim fixtures"
   ],
   "verification_plan": [
-    "inspect existing representation-contract and reference-viewport code and contracts",
-    "record exact overlap and gaps",
-    "implement a small typed neutral humanoid profile or adapter in a capability-free module",
-    "bind the H1 suite by fingerprint without importing recovered content",
-    "add deterministic and adversarial tests",
+    "inspect semantic-construction and H2 profile code and contracts",
+    "record identity, authority, replay, resource, and mutation-boundary gaps",
+    "implement the smallest capability-free H3 input/output adapter without duplicating P6 or H2 ownership",
+    "bind P6 and H2 fingerprints without recovered content or external locators",
+    "add deterministic replay and adversarial authority-negative tests",
     "run modularity, focused, and complete Forge gates",
-    "advance automatically to H3 only after H2 is verified"
+    "advance automatically to H4 only after H3 is verified"
   ],
   "resume_after": "Continue automatically after progress updates. Ask the owner only for a genuine authority boundary or irreducible design choice.",
   "evidence": [
     "contracts/reference-intake-contract.md",
     "docs/canonical-system/H1_REFERENCE_INTAKE_RESULT.md",
+    "docs/canonical-system/H2_NEUTRAL_HUMANOID_REPRESENTATION_RESULT.md",
     "contracts/representation-contract.md",
     "contracts/reference-viewport-contract.md",
-    "crates/representation-contract/src/lib.rs",
-    "crates/reference-viewport/src/lib.rs"
+    "crates/representation-contract/src/neutral_humanoid.rs",
+    "contracts/semantic-construction-contract.md",
+    "crates/semantic-construction/src/lib.rs"
   ],
   "verification_receipts": [
     "H1 archive fixity and duplicate provenance verified",
     "H1 6 reference-intake tests pass",
     "H1 complete Forge gate passes",
+    "H2 fixed profile, scene, and H1-suite fingerprints retained",
+    "H2 23 representation-contract tests pass",
+    "H2 complete Forge gate passes",
+    "Forge context launch discovery repaired and tested",
     "primary Forge capture restored current",
     "heartbeat PAUSED"
   ],
-  "transition": "R0 accepted -> H1 reference intake verified -> H2 neutral representation executing",
+  "transition": "R0 accepted -> H1 intake verified -> H2 neutral representation verified -> H3 deterministic generation executing",
   "metrics": {
     "token_cost": {
       "status": "unknown",

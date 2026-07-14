@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **F5-H2-NEUTRAL-HUMANOID-REPRESENTATION**
-- Objective: Reconcile the existing representation contract, v3 typed scene, and H1 reference suite into one stable engine-neutral humanoid representation profile with deterministic structural proof.
+- Work package: **F5-H3-NEUTRAL-HUMANOID-GENERATION**
+- Objective: Construct a deterministic engine-neutral candidate from declared Forge inputs bound to the verified H2 neutral humanoid profile, without external execution, hidden mutation, or authority escalation.
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
 - Related systems: asset-factory, procedural-animation, forge-reference-studio, forge-truth-kernel
-- Risk/research gate: **representation-identity-hierarchy-and-contract-drift / Use existing repository contracts, H1 evidence, and synthetic fixtures. No external acquisition or runtime research is required unless a risk-critical contract ambiguity cannot be resolved locally.**
-- Exact next action: Audit the representation-contract and reference-viewport schemas together, identify identity, coordinate, hierarchy, bind/rest-pose, role, topology, serialization, and authority gaps, then implement the smallest typed alignment and adversarial fixtures without adding surfaces, skinning, deformation, engines, or visual-quality claims.
+- Risk/research gate: **generation-input-authority-replay-and-hidden-mutation-drift / Use repository-owned H2 profile, semantic-construction contract, and deterministic fixtures first. External tools, model acquisition, runtime research, and executable content remain out of scope.**
+- Exact next action: Audit semantic-construction and representation-contract integration points, then define the smallest typed H3 construction input, deterministic candidate output, replay receipt, resource bounds, and adversarial no-executable/no-network/no-hidden-mutation fixtures while retaining the H2 structural and authority limits.
 
 ## Approved operating policies
 
