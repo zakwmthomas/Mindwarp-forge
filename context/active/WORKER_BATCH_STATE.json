@@ -5,8 +5,8 @@
   "master_program_item": "F5",
   "state": "executing",
   "objective": "Construct a deterministic engine-neutral candidate from declared Forge inputs bound to the verified H2 neutral humanoid profile, without external execution, hidden mutation, or authority escalation.",
-  "next_action": "Audit semantic-construction and representation-contract integration points, then define the smallest typed H3 construction input, deterministic candidate output, replay receipt, resource bounds, and adversarial no-executable/no-network/no-hidden-mutation fixtures while retaining the H2 structural and authority limits.",
-  "substage_id": "H3-generation-boundary-and-input-audit",
+  "next_action": "Freeze the H3 input and candidate fingerprints, record the typed generation contract and result, verify exact H2 structural replay and no-mutation/capability limits, then run modularity and the complete Forge gate before H3 closure.",
+  "substage_id": "H3-typed-model-verification",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
     "milestone": "F5",
@@ -22,7 +22,7 @@
   "authority_lane": "Owner-authorized implementation of the approved master plan. H3 may produce only deterministic engine-neutral candidate data; no perceptual approval, production promotion, engine selection, external execution, or protected-Kernel mutation.",
   "context_health": "Green after H2 focused and complete Forge gates. Forge capture is current and heartbeat remains paused; cold-start scanning of the large local session corpus remains slow.",
   "stage_context": {
-    "stage_id": "H3-generation-boundary-and-input-audit",
+    "stage_id": "H3-typed-model-verification",
     "macro_sources": [
       "docs/canonical-system/MASTER_PLAN_V2.md",
       "docs/canonical-system/MASTER_PROGRAM.json",
@@ -40,27 +40,35 @@
       "crates/semantic-construction/src/validate.rs",
       "contracts/representation-contract.md",
       "crates/representation-contract/src/neutral_humanoid.rs",
+      "crates/humanoid-generation/src/lib.rs",
       "governance/STAGE_QUALITY_PROTOCOL.md"
     ],
     "micro_findings": [
       "P6 already owns ordered functional graph recipes and exact replay; H3 must bind its fingerprints rather than duplicate recipe semantics.",
       "H2 owns named joints, hierarchy, coordinate convention, rest positions, structural limits, and exact negative claims.",
-      "The first H3 proof should be a typed in-memory model with deterministic bytes and adversarial drift/exhaustion tests before any integrated PC run."
+      "The new humanoid-generation crate binds exact P6 package, semantic and recipe-result fingerprints to the exact H2 profile fingerprint.",
+      "Six in-memory tests prove deterministic replay, unchanged inputs, exact H2 joint/link copying, exhaustion-before-output, strict codecs, drift rejection, and authority-negative capability closure.",
+      "The reference input fingerprint is 5667d387e4f7a0159fee99bab584c9481cc42b549535eaaec78de3a7b5796adf and candidate fingerprint is 4d04df0dd58cdd8ecdb7c41e9dbde2dec1910b36b7d5643b2d254ef4b3c707fa."
     ]
   },
   "visual_quality_gate": {
     "asset_use_intent": false,
     "status": "not_applicable",
-    "rationale": "This H3 boundary audit uses only typed structural records and no visual asset. Any later rendered human reference or candidate requires pixel-level fitness receipts before use.",
+    "rationale": "H3 verification uses only typed structural records and an in-memory candidate, not a rendered visual asset. Any later rendered human reference or candidate requires pixel-level fitness receipts before use.",
     "receipts": []
   },
   "simulation_ladder": {
-    "cheapest_sufficient_tier": "typed_model",
+    "cheapest_sufficient_tier": "in_memory_fixture",
     "tiers_completed": [
       {
         "tier": "static_reasoning",
         "result": "The existing P6 and H2 ownership boundaries reconcile through one-way fingerprint binding; a second recipe or geometry authority is unnecessary.",
         "evidence": "contracts/semantic-construction-contract.md and docs/canonical-system/H2_NEUTRAL_HUMANOID_REPRESENTATION_RESULT.md"
+      },
+      {
+        "tier": "typed_model",
+        "result": "A capability-free one-way adapter can bind P6 and H2 without duplicating recipe, representation, or authority ownership.",
+        "evidence": "crates/humanoid-generation/src/lib.rs"
       }
     ],
     "expensive_execution_planned": false,

@@ -94,6 +94,18 @@
       ]
     },
     {
+      "id": "humanoid-generation",
+      "root": "crates/humanoid-generation",
+      "dependencies": ["semantic-construction", "representation-contract", "reference-viewport"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "candidate generation cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "candidate generation cannot depend on desktop or UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "candidate generation cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "candidate generation cannot access files or processes"}
+      ]
+    },
+    {
       "id": "perception-protocol",
       "root": "crates/perception-protocol",
       "dependencies": [],

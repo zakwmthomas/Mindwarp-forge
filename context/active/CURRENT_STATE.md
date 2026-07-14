@@ -7,7 +7,7 @@
 
 - Package: **F5-H3-NEUTRAL-HUMANOID-GENERATION**
 - Master item / milestone: **F5 / F5**
-- State / substage: **executing / H3-generation-boundary-and-input-audit**
+- State / substage: **executing / H3-typed-model-verification**
 - Related systems: asset-factory, procedural-animation, forge-reference-studio, forge-truth-kernel
 - Objective: Construct a deterministic engine-neutral candidate from declared Forge inputs bound to the verified H2 neutral humanoid profile, without external execution, hidden mutation, or authority escalation.
 - Context health: Green after H2 focused and complete Forge gates. Forge capture is current and heartbeat remains paused; cold-start scanning of the large local session corpus remains slow.
@@ -29,7 +29,7 @@ Owner-authorized implementation of the approved master plan. H3 may produce only
 
 ## Exact next action
 
-Audit semantic-construction and representation-contract integration points, then define the smallest typed H3 construction input, deterministic candidate output, replay receipt, resource bounds, and adversarial no-executable/no-network/no-hidden-mutation fixtures while retaining the H2 structural and authority limits.
+Freeze the H3 input and candidate fingerprints, record the typed generation contract and result, verify exact H2 structural replay and no-mutation/capability limits, then run modularity and the complete Forge gate before H3 closure.
 
 ## Unresolved risks
 

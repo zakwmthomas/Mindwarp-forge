@@ -9,7 +9,7 @@
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
 - Related systems: asset-factory, procedural-animation, forge-reference-studio, forge-truth-kernel
 - Risk/research gate: **generation-input-authority-replay-and-hidden-mutation-drift / Use repository-owned H2 profile, semantic-construction contract, and deterministic fixtures first. External tools, model acquisition, runtime research, and executable content remain out of scope.**
-- Exact next action: Audit semantic-construction and representation-contract integration points, then define the smallest typed H3 construction input, deterministic candidate output, replay receipt, resource bounds, and adversarial no-executable/no-network/no-hidden-mutation fixtures while retaining the H2 structural and authority limits.
+- Exact next action: Freeze the H3 input and candidate fingerprints, record the typed generation contract and result, verify exact H2 structural replay and no-mutation/capability limits, then run modularity and the complete Forge gate before H3 closure.
 
 ## Approved operating policies
 
