@@ -39,7 +39,7 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
 ## F5
 
 - **F5** - executing; gate: hard; depends on: F5-OWNER-GATE.
-  Next: Execute H6 reproduction and recovery: first audit clean rebuild, replay, corruption recovery, stable identifiers, and retained H1-H5 receipts; then add only the smallest missing capability-free fixtures before the complete Forge gate.
+  Next: Execute the H7 promotion-readiness audit: distinguish the verified H1-H6 proof-chain baseline from any unbuilt surface asset, map every candidate claim and non-claim to retained evidence, and prepare no owner action until scope, rollback, and authority tests pass.
 - **F5-COHERENCE** - promoted; gate: hard; depends on: F4-CLOSEOUT.
   Next: Implement the owner-approved typed knowledge intake, canonical role registry, recoverability baseline, unified snapshot, and generated knowledge views without crossing the independent F5 owner-observation gate.
 

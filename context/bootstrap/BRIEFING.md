@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **F5-H6-HUMANOID-REPRODUCTION-RECOVERY**
-- Objective: H6 complete: the exact H1-H5 humanoid proof chain rebuilds, replays, rejects hostile corruption, recovers known-good state, and retains stable identifiers plus exact provenance and visual receipts through verified backup/reopen.
+- Work package: **F5-H7-HUMANOID-PROMOTION-READINESS**
+- Objective: Audit whether H1-H6 form one coherent, correctly scoped canonical promotion candidate, or whether a missing bridge still separates the verified structural wire candidate from the owner-approved visual target.
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
-- Related systems: asset-factory, forge-reference-studio, forge-truth-kernel, forge-test-observatory
-- Risk/research gate: **proof-chain-reproducibility-corruption-recovery-identifier-and-receipt-continuity / Refresh canonical and implementation evidence first. Use existing local fixtures and capability-free simulations before adding code. Browse only if a specific standards gap survives the local audit; do not acquire or import marketplace assets.**
-- Exact next action: Commit the verified H6 closure as a distinct rollback point, then refresh the macro/micro boundary for H7 promotion readiness without promoting or requesting owner action until the evidence package is complete.
+- Related systems: asset-factory, forge-reference-studio, forge-truth-kernel, forge-control-plane
+- Risk/research gate: **candidate-scope-observation-bridge-authority-and-premature-promotion / Use the committed H1-H6 contracts, results, manifests, and executable receipts first. External research is not justified unless the audit exposes a standards-specific gap. Do not reacquire or import visual assets.**
+- Exact next action: Build a claim-by-claim H7 promotion-readiness matrix across structural, functional, provenance, recovery, calibrated-observation, authority, rollback, and candidate-scope evidence; do not create, approve, or promote a candidate until every link is explicit.
 
 ## Approved operating policies
 
