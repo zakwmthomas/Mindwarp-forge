@@ -15,6 +15,14 @@ decision-preparation action.
 | Test or verification | Relevant contract/test plus receipt or linked output | Fixture/input ID, version, result, cost if relevant, failure classification, retained artifact location |
 | Owner-level choice needed | Owner brief or unresolved-gap record | Options, consequence, evidence, reversible default, and why automation stopped |
 | Conversation | Local capture and context capsule | Source identity, ordering, gap status; never treated as authority by itself |
+| Typed conversation knowledge | Local v2 knowledge catalogue, then the owning canonical record after validation | Multi-facet type, source actor/evidence, confidence, authority-negative state, and canonical destination |
+
+Validated plans route to the master program or their design gate; philosophies
+to the master doctrine, covenant, or policy; requirements and constraints to
+the owning contract; preferences to creative-direction records; risks to the
+active checkpoint or gap/failure record; and research/observations to
+source-linked system evidence. Classification alone never performs that
+promotion.
 
 ## Mandatory close-out sequence
 

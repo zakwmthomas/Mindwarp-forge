@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **F5-N0-FULL-PLAN-REASSESSMENT**
-- Objective: Reassess the complete Forge and Mind Warp master plan, audit every proposed natural-function mechanism across Forge operations and game systems, eliminate redundancy and contradiction, and prepare deterministic case-by-case evidence before any mechanism is applied.
+- Work package: **F5-K1-KNOWLEDGE-INTAKE-HARDENING**
+- Objective: Prove and harden Forge's first continuity stage so every visible conversation message is durably captured and every non-noise message is typed into useful evidence-only categories that future workers can retrieve without relying on remembered chat context.
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
-- Related systems: forge-truth-kernel, forge-conversation-compiler, forge-research-ledger, forge-control-plane, forge-reference-studio, universe-identity, field-basis, hierarchy-history, significance-system, construction-language, representation-selector, asset-factory, procedural-animation
-- Risk/research gate: **whole-system-plan-coherence-negative-transfer-and-metaphor-overreach / Treat natural mechanisms as scoped hypotheses. Compare every proposed manifestation with existing Forge contracts and a simpler baseline; retain counterexamples and non-applicable scope; do not infer universality, authority, or production readiness.**
-- Exact next action: Present the completed N0-N3 evidence portfolio in chat, retain the no-application boundary, then restore H5 at its phone-legible visual-reference intake point with one large subject or stage per image.
+- Related systems: forge-truth-kernel, forge-conversation-compiler, forge-reference-studio
+- Risk/research gate: **conversation-loss-misclassification-duplicate-projection-and-context-recall-drift / Preserve exact source evidence and classify for retrieval only. Measure live category coverage, ordinary-language behavior, noise suppression, deterministic replay, legacy coexistence, and authority isolation before claiming continuity improvement.**
+- Exact next action: Resume H5 at its preserved phone-legible visual-reference intake point: research and pixel-inspect only a small authoritative candidate set, use one large subject or stage per image, and retain the K1 typed-knowledge search route for context refresh.
 
 ## Approved operating policies
 

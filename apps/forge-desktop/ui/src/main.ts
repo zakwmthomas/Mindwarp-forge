@@ -169,7 +169,7 @@ type AuthorizationReceipt = { action: string; candidate_id: string; event_id: st
 type CodePreview = { candidate: string; relative_path: string; language: string; code: string; code_object: string };
 type AppliedCodeReceipt = { candidate_id: string; path: string; event_id: string };
 type WorkspaceFile = { relative_path: string; bytes: number; sha256: string };
-type KnowledgeRecord = { id: string; record_type: string; state: string; title: string; summary: string; source_evidence_ids: string[]; classifier_confidence: number; authority_lane: string };
+type KnowledgeRecord = { id: string; record_type: string; state: string; title: string; summary: string; source_evidence_ids: string[]; source_actor: string; classifier_confidence: number; authority_lane: string };
 type ForgeSnapshot = { schema_version: number; revision: string; read_only: boolean; master_program: { items: { id: string; status: string }[] }; active_checkpoint: { batch_id: string; next_action: string }; atlas: ProjectAtlas; knowledge_records: KnowledgeRecord[] };
 
 const statusElement = document.querySelector<HTMLParagraphElement>("#status");
@@ -362,7 +362,7 @@ function renderKnowledge(): void {
     const summary = document.createElement("summary");
     summary.textContent = "Technical details";
     const exact = document.createElement("p");
-    exact.textContent = `Record ${record.id}; state ${record.state}; authority ${record.authority_lane}; evidence links ${record.source_evidence_ids.length}.`;
+    exact.textContent = `Record ${record.id}; source ${record.source_actor}; state ${record.state}; authority ${record.authority_lane}; evidence links ${record.source_evidence_ids.length}.`;
     technical.append(summary, exact);
     item.append(heading, detail, technical);
     return item;

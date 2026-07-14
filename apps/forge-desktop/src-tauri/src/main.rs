@@ -738,7 +738,7 @@ fn scan_capture(
         .lock()
         .map_err(|_| "The local Forge state lock is unavailable.".to_owned())?;
     let report = codex_capture::scan_all(&mut forge, sessions_root);
-    codex_capture::write_bootstrap_pack(forge.kernel(), project_root, &report)?;
+    codex_capture::write_bootstrap_pack(&forge, project_root, &report)?;
     let mut destination = status
         .lock()
         .map_err(|_| "The Codex capture status lock is unavailable.".to_owned())?;

@@ -166,7 +166,7 @@ impl SqliteJournal {
     }
 
     pub fn put_knowledge_record(&self, record: &KnowledgeRecord) -> Result<(), PersistenceError> {
-        if record.schema_version != 1
+        if !matches!(record.schema_version, 1 | 2)
             || record.id.trim().is_empty()
             || record.source_evidence_ids.is_empty()
             || record.authority_lane != "evidence_only"
@@ -217,7 +217,16 @@ impl SqliteJournal {
             .connection
             .prepare("SELECT record_json FROM knowledge_records ORDER BY id")?;
         let rows = statement.query_map([], |row| decode(&row.get::<_, String>(0)?))?;
-        rows.collect::<Result<Vec<_>, _>>().map_err(Into::into)
+        let records = rows.collect::<Result<Vec<KnowledgeRecord>, _>>()?;
+        let current_version = records
+            .iter()
+            .map(|record| record.classifier_version)
+            .max()
+            .unwrap_or(0);
+        Ok(records
+            .into_iter()
+            .filter(|record| record.classifier_version == current_version)
+            .collect())
     }
 
     pub fn object(&self, id: &str) -> Result<Option<StoredObject>, PersistenceError> {
@@ -2141,6 +2150,7 @@ impl PersistentForge {
         actor: crate::ActorKind,
         bytes: &[u8],
     ) -> Result<BridgeReceipt, PersistenceError> {
+        let knowledge_actor = actor.clone();
         let receipt = ConversationCompiler::ingest_codex_message(
             &mut self.kernel,
             thread_id,
@@ -2150,7 +2160,7 @@ impl PersistentForge {
         )?;
         self.commit()?;
         if !receipt.already_recorded {
-            if let Some(record) = classify_knowledge(&receipt.evidence, bytes) {
+            for record in classify_knowledge(&receipt.evidence, &knowledge_actor, bytes) {
                 self.journal.put_knowledge_record(&record)?;
             }
         }
@@ -2169,7 +2179,17 @@ impl PersistentForge {
             let Some(object) = self.kernel.object(evidence_id) else {
                 continue;
             };
-            if let Some(record) = classify_knowledge(evidence_id, &object.bytes) {
+            let actor = self
+                .kernel
+                .events()
+                .iter()
+                .find(|event| {
+                    event.event_type == crate::EventType::EvidenceRegistered
+                        && event.input_objects.first() == Some(evidence_id)
+                })
+                .map(|event| &event.actor)
+                .unwrap_or(&crate::ActorKind::ImportedContent);
+            for record in classify_knowledge(evidence_id, actor, &object.bytes) {
                 self.journal.put_knowledge_record(&record)?;
             }
         }
@@ -2187,7 +2207,7 @@ impl PersistentForge {
             let Some(object) = self.kernel.object(evidence_id) else {
                 continue;
             };
-            if let Some(record) = classify_knowledge(evidence_id, &object.bytes) {
+            for record in classify_knowledge(evidence_id, &event.actor, &object.bytes) {
                 self.journal.put_knowledge_record(&record)?;
             }
         }
@@ -2913,6 +2933,40 @@ mod tests {
             )
             .unwrap();
         assert_eq!(forge.knowledge_records().unwrap().len(), 1);
+    }
+
+    #[test]
+    fn current_knowledge_projection_hides_but_does_not_delete_legacy_rows() {
+        let journal = SqliteJournal::in_memory().unwrap();
+        let mut current = classify_knowledge(
+            "evidence-current",
+            &ActorKind::ImportedContent,
+            b"Efficiency is important to me and we need cheap tests.",
+        );
+        assert!(current.len() > 1);
+        let mut legacy = current[0].clone();
+        legacy.id = "legacy-row".into();
+        legacy.schema_version = 1;
+        legacy.classifier_version = 1;
+        legacy.source_actor = "legacy_unknown".into();
+        journal.put_knowledge_record(&legacy).unwrap();
+        for record in current.drain(..) {
+            journal.put_knowledge_record(&record).unwrap();
+        }
+        let projected = journal.knowledge_records().unwrap();
+        assert!(projected.len() > 1);
+        assert!(
+            projected
+                .iter()
+                .all(|record| record.classifier_version == 2)
+        );
+        let stored: usize = journal
+            .connection
+            .query_row("SELECT COUNT(*) FROM knowledge_records", [], |row| {
+                row.get(0)
+            })
+            .unwrap();
+        assert_eq!(stored, projected.len() + 1);
     }
 
     #[test]

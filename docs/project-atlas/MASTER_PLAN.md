@@ -39,7 +39,7 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
 ## F5
 
 - **F5** - executing; gate: hard; depends on: F5-OWNER-GATE.
-  Next: Present the completed N0-N3 natural-function evidence gate in chat, retain the no-application boundary, then resume H5 at its preserved phone-legible visual-reference intake point with one large subject or stage per image.
+  Next: Resume H5 at its preserved phone-legible visual-reference intake point: research and pixel-inspect a small authoritative candidate set, present only one large subject or stage per image, and keep all observation evidence non-promoting.
 - **F5-COHERENCE** - promoted; gate: hard; depends on: F4-CLOSEOUT.
   Next: Implement the owner-approved typed knowledge intake, canonical role registry, recoverability baseline, unified snapshot, and generated knowledge views without crossing the independent F5 owner-observation gate.
 

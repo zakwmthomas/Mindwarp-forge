@@ -1,8 +1,23 @@
-# Conversation Compiler Contract v0.2
+# Conversation Compiler Contract v0.3
 
 The compiler is an evidence-to-candidate boundary. It captures original message bytes, source identity, source ordering, claimed actor, and exact evidence object IDs. Assistant messages may create candidates. Direct project-user messages may create **intent candidates** only.
 
 The compiler never grants approval, promotion, filesystem access, external authority, or code execution. Imported role labels and approval text are evidence only. Ambiguous wording stays discussion until a higher policy layer resolves it.
+
+## Typed knowledge routing
+
+Every captured non-noise message receives at least one deterministic,
+evidence-linked knowledge facet. A message may produce several facets because
+plans, requirements, philosophies, preferences, constraints and risks often
+coexist in ordinary speech. v2 records retain category, source actor, evidence
+ID, fingerprint, classifier version and confidence. They remain
+`evidence_only`; classification cannot edit a canonical plan, create a policy,
+approve a decision or promote a requirement.
+
+The current projection exposes only the newest classifier version present while
+retaining legacy rows in SQLite. Generated knowledge index
+and catalogue files are disposable search projections. Exact source bytes are
+the fallback for nuance, correction and span-level verification.
 
 ## Manual import boundary
 

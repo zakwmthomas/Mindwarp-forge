@@ -152,6 +152,9 @@ Read in this order:
 59. `GROUNDED_SEARCH_CASE_RESULT.md` - capability-free bounded-search case
     portfolio, negative-transfer result, selective-aging formula check, and
     explicit no-application gate.
+60. `KNOWLEDGE_INTAKE_V2_RESULT.md` - multi-facet conversational knowledge
+    classification, category/actor search projection, canonical routing,
+    adversarial fixtures, and authority-negative limitations.
 
 ## Status meaning
 

@@ -1,79 +1,65 @@
 {
   "schema_version": 2,
   "canonical_role": "sole-active-work-checkpoint",
-  "batch_id": "F5-N0-FULL-PLAN-REASSESSMENT",
+  "batch_id": "F5-K1-KNOWLEDGE-INTAKE-HARDENING",
   "master_program_item": "F5",
   "state": "checkpoint",
-  "objective": "Reassess the complete Forge and Mind Warp master plan, audit every proposed natural-function mechanism across Forge operations and game systems, eliminate redundancy and contradiction, and prepare deterministic case-by-case evidence before any mechanism is applied.",
-  "next_action": "Present the completed N0-N3 evidence portfolio in chat, retain the no-application boundary, then restore H5 at its phone-legible visual-reference intake point with one large subject or stage per image.",
-  "substage_id": "N3-verification-and-evidence-gate",
+  "objective": "Prove and harden Forge's first continuity stage so every visible conversation message is durably captured and every non-noise message is typed into useful evidence-only categories that future workers can retrieve without relying on remembered chat context.",
+  "next_action": "Resume H5 at its preserved phone-legible visual-reference intake point: research and pixel-inspect only a small authoritative candidate set, use one large subject or stage per image, and retain the K1 typed-knowledge search route for context refresh.",
+  "substage_id": "K1-live-backfill-and-integration-verification",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
     "milestone": "F5",
     "systems": [
       "forge-truth-kernel",
       "forge-conversation-compiler",
-      "forge-research-ledger",
-      "forge-control-plane",
-      "forge-reference-studio",
-      "universe-identity",
-      "field-basis",
-      "hierarchy-history",
-      "significance-system",
-      "construction-language",
-      "representation-selector",
-      "asset-factory",
-      "procedural-animation"
+      "forge-reference-studio"
     ]
   },
-  "risk_level": "whole-system-plan-coherence-negative-transfer-and-metaphor-overreach",
-  "research_gate": "Treat natural mechanisms as scoped hypotheses. Compare every proposed manifestation with existing Forge contracts and a simpler baseline; retain counterexamples and non-applicable scope; do not infer universality, authority, or production readiness.",
-  "authority_lane": "Owner-authorized planning-wave research, canonical planning updates, capability-free disposable simulations, and evidence recording only. Advisory mechanisms may not select or dispatch work, change policy, approve or promote candidates, execute external content, select a runtime, mutate game state, or alter the protected Kernel.",
-  "context_health": "Green after mandatory bootstrap. H5 is preserved as interrupted and pending; the active work is the owner-authorized full-plan reassessment. Capture is current and heartbeat remains paused.",
+  "risk_level": "conversation-loss-misclassification-duplicate-projection-and-context-recall-drift",
+  "research_gate": "Preserve exact source evidence and classify for retrieval only. Measure live category coverage, ordinary-language behavior, noise suppression, deterministic replay, legacy coexistence, and authority isolation before claiming continuity improvement.",
+  "authority_lane": "Owner-authorized local continuity hardening, deterministic classification, disposable projections, UI search filters, backfill, and verification. Classification cannot edit canonical plans or policies, approve, promote, dispatch, execute content, select a runtime, or alter protected authority semantics.",
+  "context_health": "Green after live bootstrap verification: capture was running and two seconds current with nine sessions and 5080 events. Audit found 257 projected knowledge records dominated by task and plan, with no explicit philosophy, requirement, constraint, preference, risk, question, observation, idea, or correction coverage; K1 repairs that gap before H5.",
   "stage_context": {
-    "stage_id": "N3-verification-and-evidence-gate",
+    "stage_id": "K1-live-backfill-and-integration-verification",
     "macro_sources": [
       "docs/canonical-system/MASTER_PLAN_V2.md",
       "docs/canonical-system/MASTER_PROGRAM.json",
       "docs/canonical-system/system-registry.json",
-      "docs/canonical-system/DEPENDENCY_MAP.md",
-      "docs/project-atlas/ROADMAP.md",
-      "governance/WORKING_COVENANT.md",
-      "docs/canonical-system/UNIVERSAL_IMPROVEMENT_KERNEL.md",
-      "governance/STAGE_QUALITY_PROTOCOL.md"
+      "governance/RECORDING_PROTOCOL.md",
+      "governance/CONTEXT_PROTOCOL.md",
+      "context/bootstrap/START_HERE.md",
+      "contracts/conversation-compiler-contract.md"
     ],
     "macro_findings": [
-      "Forge already separates identity, fields, history, significance, semantics, representation, evidence, authority, and improvement through bounded contracts; a new natural-function layer must reuse rather than duplicate them.",
-      "The humanoid chain remains the smallest F5 articulated proof, while organism lifecycle, creature generalization, multi-fidelity presentation, and runtime work remain later gates.",
-      "The owner requires natural-function ideas to be audited across Forge operations as well as game generation, tested case by case in chat, and applied only at evidence-supported scope.",
-      "H5 phone-legible visual work is interrupted but not completed or superseded.",
-      "N0-N2 now consolidate the plan, classify every imported mechanism, add P16, and retain a capability-free eight-test case portfolio with explicit negative transfer."
+      "Raw captured chat is evidence, while validated material results must be stored once in their owning canonical plan, policy, contract, result, risk, or checkpoint record.",
+      "Layered startup must retrieve only relevant typed knowledge and exact evidence spans rather than reloading all transcripts or relying on model memory.",
+      "Classification is a retrieval route and cannot silently convert conversational wording into authority or canonical truth.",
+      "H5 remains the next product stage after this owner-requested continuity prerequisite."
     ],
     "micro_sources": [
-      "evidence/imported-chat/2026-07-14-gemini-fractal-matrix-engine.md",
-      "docs/canonical-system/SEMANTIC_CONSTRUCTION_DESIGN_GATE.md",
-      "docs/canonical-system/UNIVERSAL_IMPROVEMENT_KERNEL.md",
-      "contracts/federated-improvement-contract.md",
-      "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md",
-      "docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md",
-      "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md",
-      "docs/canonical-system/FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md",
-      "docs/canonical-system/GROUNDED_SEARCH_CASE_RESULT.md",
-      "crates/grounded-search-protocol/src/lib.rs"
+      "crates/forge-kernel/src/knowledge.rs",
+      "crates/forge-kernel/src/persistence.rs",
+      "apps/forge-desktop/src-tauri/src/codex_capture.rs",
+      "apps/forge-desktop/ui/src/main.ts",
+      "apps/forge-desktop/ui/index.html",
+      "tools/find-evidence.ps1",
+      "tools/find-knowledge.ps1",
+      "docs/canonical-system/KNOWLEDGE_INTAKE_V2_RESULT.md"
     ],
     "micro_findings": [
-      "P6 validates grounded pressures, roles, mechanism-distinct families, trade vectors, capability closure, and replayable recipes but intentionally lacks a general proposal-search solver.",
-      "B5 already supplies target-local transfer, negative-transfer rejection, counterexample retention, and portfolio rather than aggregate assessment.",
-      "The adult-form toggle is an appearance lock: canonical age continues; juveniles remain juvenile; eligible adults and elders present as adult while locked; disabling reveals true age; old age never causes death.",
-      "The Gemini code and performance claims are untrusted evidence; its ambient random branching implementation cannot prove deterministic peer simulation.",
-      "The misleading-resistance fixture defeats the grounded heuristic under budget, so only the experimental protocol is cross-domain reusable; every heuristic and parameter remains target-local.",
-      "The pure adult-lock case confirms that presentation clamps only at or after adulthood while biological age continues and is revealed when the lock is disabled."
+      "Live capture and source cursors are healthy, current, lossless, ordered, idempotent, and gap-aware.",
+      "Classifier v1 returns at most one record, recognizes six material types through narrow trigger phrases, and leaves ordinary philosophies, requirements, constraints, preferences, risks, questions and mixed messages only in raw evidence.",
+      "The live projection contained 257 records: 210 task, 37 plan, 9 decision and 1 research, confirming the category-coverage gap.",
+      "Classifier v2 emits deterministic multi-facet evidence records, retains source actor and confidence, provides context fallback for non-noise messages, and suppresses exact acknowledgements and bootstrap receipts.",
+      "SQLite retains legacy rows while the read-only current projection exposes only the newest classifier version present.",
+      "The bootstrap pack now generates a typed knowledge index/catalogue and a local category/actor search command before transcript fallback."
     ]
   },
   "visual_quality_gate": {
     "asset_use_intent": false,
     "status": "not_applicable",
-    "rationale": "N0 audits plans, contracts, algorithms, and deterministic case definitions without admitting or comparing visual assets. H5 visual receipts remain in their canonical H5 record.",
+    "rationale": "K1 audits text capture, deterministic categorization, SQLite projections, search routing, and UI filters without admitting or comparing visual assets. H5 visual receipts remain preserved.",
     "dependent_implementation_blocked": true,
     "receipts": []
   },
@@ -82,86 +68,85 @@
     "tiers_completed": [
       {
         "tier": "static_reasoning",
-        "result": "Full-system redundancy, philosophy, dependency, failure and manifestation audit completed.",
-        "evidence": "docs/canonical-system/FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md"
+        "result": "Live capture, canonical routing, current knowledge categories, projection path and fresh-worker retrieval route audited.",
+        "evidence": "docs/canonical-system/KNOWLEDGE_INTAKE_V2_RESULT.md"
       },
       {
         "tier": "typed_model",
-        "result": "Capability-free finite probe graph, hard validity, objective, resistance, budget and trace types compiled.",
-        "evidence": "crates/grounded-search-protocol/src/lib.rs"
+        "result": "Fourteen material categories, source actor, confidence, content fingerprint, classifier version and evidence-only authority compile.",
+        "evidence": "crates/forge-kernel/src/knowledge.rs"
       },
       {
         "tier": "in_memory_fixture",
-        "result": "Semantic, Forge diagnosis, morphology, spatial, negative-transfer, constraint, replay and aging fixtures executed deterministically.",
-        "evidence": "docs/canonical-system/GROUNDED_SEARCH_CASE_RESULT.md"
+        "result": "Ordinary efficiency, phone/style, correction/question, context fallback, noise suppression, determinism and persistent authority-negative fixtures pass.",
+        "evidence": "73 forge-kernel tests and four focused codex-capture tests"
       },
       {
         "tier": "disposable_simulation",
-        "result": "Eight deterministic Rust tests pass.",
-        "evidence": "tools/verify-f5-natural-function-reassessment.ps1"
+        "result": "Generated typed index/catalogue and expanded UI/search path compile in disposable test state.",
+        "evidence": "tools/verify-conversation-compiler-continuity.ps1"
       }
     ],
     "expensive_execution_planned": false,
-    "unresolved_risk": "Canonical plan, governance, projections, workspace integration, or existing proof modules may regress despite focused case success.",
-    "expected_information_gain": "The complete Forge gate proves that the new audit, policy, crate, boundary and routing records coexist with all prior verified work.",
-    "estimated_cost": "One bounded local full-gate execution; no external, network, runtime, visual-rendering, or production-game test.",
-    "regression_guard": "Any focused or full-gate failure blocks closeout and is repaired without activating an operational adapter.",
-    "stop_condition": "Stop after one clean full-gate pass and evidence presentation; do not apply the grounded method to Forge or game behavior in this wave.",
-    "final_integration_gate": "Passed after the full manifestation audit, disposable case portfolio, target-local scope decision, focused fixtures, UI build, complete Rust workspace, desktop build, and clean-diff verification. No mechanism is connected to canonical Forge or game behavior."
+    "unresolved_risk": "The running live database has not yet been backfilled by the new binary, so real category coverage, search output and legacy coexistence are not yet measured.",
+    "expected_information_gain": "One local restart proves actual historical messages become typed and searchable without source loss, duplication in the current projection, or authority changes.",
+    "estimated_cost": "One local desktop rebuild/restart, bounded read-only ledger measurement, focused verification and the existing complete Forge gate; no install or external service.",
+    "regression_guard": "Retain SQLite legacy rows, compare object/event/candidate counts and capture health, reject stale catalogue versions, and fail the complete Forge gate on any existing-system regression.",
+    "stop_condition": "Stop after live v2 category/search evidence and one clean full Forge gate; return to the preserved H5 route without expanding into semantic linking.",
+    "final_integration_gate": "Passed: live classifier-v2 backfill, typed search of this conversation, capture-current bootstrap, UI build, complete workspace tests, desktop build, projection verification and clean diff all pass."
   },
   "unresolved_risks": [
-    "A nature metaphor may duplicate an existing Forge mechanism under less precise terminology.",
-    "A method may improve one case while causing negative transfer or higher total cost elsewhere.",
-    "A generic search protocol could accidentally centralize domain objectives or create a global score.",
-    "Advisory Forge-planning output could be mistaken for authority or actual work selection.",
-    "The planning wave could create a second queue instead of repairing the canonical program.",
-    "Network, deterministic-client, commerce, infinite-scale, free, instant, zero-overhead, and bandwidth claims remain unproved and outside current authority."
+    "Deterministic phrase rules can over-classify a whole message or miss nuance.",
+    "Multiple facets improve recall but can increase library size and duplicate-looking summaries.",
+    "Legacy v1 rows must remain recoverable without polluting the current v2 projection.",
+    "A typed evidence record could be mistaken for a canonical plan, decision, requirement, or policy.",
+    "Automatic relation, contradiction and supersession linking remains unproved and outside K1.",
+    "Retention/redaction policy and external connectors remain unresolved."
   ],
   "evidence_requirements": [
-    "complete master-program and system-registry inventory with redundancy, contradiction, dependency, authority, and proof classifications",
-    "natural-function manifestation atlas covering Forge operations and game systems",
-    "per-mechanism mathematical abstraction, current equivalent, baseline, cost, falsifier, counterexample, non-applicable scope, and disposition",
-    "deterministic disposable MethodCaseReceipts with case-local, domain-local, cross-domain, universal-protocol, rejected, or inconclusive classifications",
-    "explicit H5 resume point and later selective-aging route",
-    "no protected-Kernel, approval, promotion, dispatch, runtime, external-execution, or game-state effect"
+    "current lossless capture and cursor health",
+    "multi-facet ordinary-language cases for philosophy, requirement, constraint, preference, risk, question, observation and context",
+    "source actor, evidence ID, content fingerprint, confidence, classifier version and evidence-only authority per record",
+    "legacy retention with newest-version current projection",
+    "generated typed index/catalogue plus category, actor and text search",
+    "live backfill counts and relevant results from this conversation",
+    "no plan/policy edit, approval, promotion, dispatch, execution or protected authority effect"
   ],
   "verification_plan": [
-    "verify canonical plan/program/Atlas coverage and dependency coherence",
-    "adversarially trace Forge research, diagnosis, worker selection, test selection, semantic construction, organism aging, fidelity, and deferred network claims",
-    "run cheap deterministic case simulations against declared simple baselines",
-    "retain failures and negative transfer without aggregate masking",
-    "run stage-quality, active-context, master-program, Atlas, module-boundary, focused tests, and the complete Forge gate before closeout"
+    "run forge-kernel and codex-capture classification/storage fixtures",
+    "run conversation-compiler, canonical-system, stage-quality and projection gates",
+    "build and restart the exact repo Forge desktop to backfill the live ledger",
+    "measure category distribution and search efficiency, philosophy, aging and phone constraints from live v2 output",
+    "confirm capture remains current and authority counts/state do not change from classification",
+    "run the complete Forge gate and clean-diff check before closeout"
   ],
-  "resume_after": "After N0-N3 evidence and plan reconciliation pass, present the case portfolio and scope decisions in chat. Resume H5 only after the planning/evidence gate, using one large phone-legible subject or stage per image.",
+  "resume_after": "After K1 live backfill, typed-search evidence and the complete Forge gate pass, resume H5 using one large phone-legible subject or stage per image.",
   "evidence": [
-    "docs/canonical-system/MASTER_PLAN_V2.md",
-    "docs/canonical-system/MASTER_PROGRAM.json",
-    "docs/canonical-system/system-registry.json",
-    "docs/canonical-system/SEMANTIC_CONSTRUCTION_DESIGN_GATE.md",
-    "docs/canonical-system/UNIVERSAL_IMPROVEMENT_KERNEL.md",
-    "contracts/federated-improvement-contract.md",
-    "evidence/imported-chat/2026-07-14-gemini-fractal-matrix-engine.md",
-    "docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md",
-    "docs/canonical-system/FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md",
-    "docs/canonical-system/GROUNDED_SEARCH_CASE_RESULT.md",
-    "crates/grounded-search-protocol/src/lib.rs",
-    "governance/policy-registry.json"
+    "contracts/conversation-compiler-contract.md",
+    "docs/canonical-system/CONVERSATION_COMPILER_READINESS.md",
+    "docs/canonical-system/KNOWLEDGE_INTAKE_V2_RESULT.md",
+    "crates/forge-kernel/src/knowledge.rs",
+    "crates/forge-kernel/src/persistence.rs",
+    "apps/forge-desktop/src-tauri/src/codex_capture.rs",
+    "apps/forge-desktop/ui/index.html",
+    "tools/find-knowledge.ps1",
+    "governance/RECORDING_PROTOCOL.md",
+    "context/bootstrap/START_HERE.md"
   ],
   "verification_receipts": [
-    "mandatory Forge bootstrap passed before N0 transition",
-    "Atlas verifies F5 active with seven milestones and six system groups",
-    "operating-system verifier confirms fifteen approved policies before reassessment",
-    "H5 phone-legibility failure and selective-aging clarification retained before interruption",
-    "heartbeat PAUSED",
-    "N0 full-plan and manifestation audit retained",
-    "N1 eight deterministic capability-free cases pass",
-    "N2 P16 and worker-governance natural-method gates recorded",
-    "N3 focused audit, governance, master-program, stage-quality, projection and 19-module gates pass",
-    "first full-gate attempt passed all tests but correctly failed when the bootstrap-started Forge desktop held the output executable",
-    "exact repo-built Forge desktop process 189852 stopped to release only the build lock",
-    "second complete Forge gate passes including UI build, all workspace tests, desktop build, and clean-diff verification"
+    "mandatory live bootstrap passed with 9 sessions, 5080 events and capture two seconds current",
+    "live v1 projection measured 257 current knowledge records: 210 task, 37 plan, 9 decision and 1 research",
+    "73 forge-kernel tests pass including seven knowledge/persistence fixtures",
+    "four focused Codex-capture tests pass",
+    "UI TypeScript and Vite production build pass",
+    "live v2 backfill retains 257 v1 rows and adds 3226 v2 rows; current catalogue exposes only v2",
+    "live v2 catalogue has 2500 assistant and 726 captured-user facets with no legacy-unknown actor",
+    "live typed searches recover efficiency philosophy, aging constraints, phone requirements and the current categorization request",
+    "conversation-compiler and canonical-system focused gates pass",
+    "complete Forge gate passes with 354 durable files classified, expanded UI build, all workspace tests, desktop build and clean diff",
+    "heartbeat remains PAUSED"
   ],
-  "transition": "R0 accepted -> H1-H4 verified -> H5 source/contact-sheet rejections retained -> H5 interrupted -> N0-N3 audit, cases, policy and full gate complete -> H5 resume is next",
+  "transition": "R0 accepted -> H1-H4 verified -> H5 preserved -> N0-N3 natural-method wave complete -> K1 live audit found classifier-v1 coverage gap -> K1 v2 backfill/search/full gate complete -> H5 resume is next",
   "metrics": {
     "token_cost": {"status": "unknown", "value": null},
     "elapsed_time": {"status": "unknown", "value": null}
