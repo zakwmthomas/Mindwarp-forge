@@ -7,10 +7,10 @@
 
 - Package: **F5-H5-HUMANOID-VISUAL-REFERENCE-INTAKE**
 - Master item / milestone: **F5 / F5**
-- State / substage: **executing / H5-neutral-base-surface-intake**
+- State / substage: **checkpoint / H5-owner-approved-visual-target**
 - Related systems: asset-factory, procedural-animation, forge-reference-studio, forge-truth-kernel
-- Objective: Complete a provenance-safe, pixel-inspected mature human form direction while keeping canonical organism form, material vocabulary, planet-selectable shader profiles, and fidelity tiers explicitly separate.
-- Context health: Green: capture and typed retrieval are current; source screening is bounded; owner clarification separates realistic form from replaceable and potentially planet-specific shading; heartbeat remains paused.
+- Objective: Close H5 with a provenance-bound, pixel-inspected, owner-approved stylized humanoid direction while preserving the separation between visual target, production asset authority, gameplay capability, materials, shaders, and fidelity tiers.
+- Context health: Green: capture and typed retrieval are current; source screening is bounded; actual pixels and licences were inspected; owner resolved stylized feminine/masculine shape language; heartbeat will resume after this gate is processed.
 
 ## Durable evidence
 
@@ -24,20 +24,20 @@
 
 ## Authority boundary
 
-Owner-authorized reference research, disposable image inspection, rejection, and bounded visual-direction generation only. Dependent implementation remains blocked until a verified-fit receipt exists and any real creative uncertainty is resolved. No approval, promotion, engine selection, external executable, or protected-Kernel mutation.
+Owner approved the fingerprinted PolyOne preview set as visual direction only. This does not approve file acquisition, spending, production import, topology, rigging, runtime selection, promotion, or protected-Kernel mutation.
 
 ## Exact next action
 
-Consolidate the neutral-reference roles: Blender CC0 for the leading future form source, PolyOne only for featureless-surface and multi-view construction evidence, and v1 only for mature proportions/phone framing; keep H5 pending until one identity-stable side/back route is separately justified.
+Run the complete Forge gate, checkpoint H5, then advance to H6 clean reproduction, replay, corruption recovery, stable-identifier, and retained-receipt readiness without acquiring or importing the PolyOne file.
 
 ## Unresolved risks
 
-- The retained v1 front fixture is proportion evidence only and fails the neutral-base layer requirement.
-- A reputable or correctly licensed source can still be visually incomplete, anatomically misleading, or wrong for the comparison.
-- A single view can hide defects; separate large views preserve phone legibility but generated identity may drift between them.
-- Generated imagery can clarify style but cannot prove anatomy, topology, animation, growth behavior, shader cost, or device performance.
-- Visual observation must not approve, promote, or overwrite structural evidence.
+- The actual PolyOne file and embedded licence evidence remain uninspected and unacquired.
+- Approved stylized visual defaults must not become gameplay capability, role, intelligence, morality, or importance rules.
+- A masculine strong/commanding counterpart has direction but no separately pixel-inspected reference yet; it is a later profile task, not an H5 feminine-target blocker.
+- Nothing yet proves production topology, deformation, animation, growth behavior, shader cost, or phone performance.
+- Owner visual approval has no promotion, import, purchase, or runtime-selection effect.
 
 ## Resume after this package
 
-Use the recorded source-role synthesis. Do not repeat image generation or broad search; next assess whether an already-available, read-only Blender CC0 render route can be justified without installation or production import.
+After the complete H5 gate passes, advance to H6 reproduction and recovery using existing evidence only; do not acquire or import the PolyOne file.

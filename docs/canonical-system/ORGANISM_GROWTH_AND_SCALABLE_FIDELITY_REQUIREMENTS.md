@@ -26,6 +26,14 @@ shader profiles for distinct atmosphere. The shared Forge grammar across form,
 materials, composition, and quality supplies broader family resemblance; one
 universal shader is not required.
 
+The approved humanoid shape-language defaults deliberately allow stylization:
+feminine profiles may read cute, sweet, and approachable; masculine profiles
+may read strong, powerful, and commanding. They are authored visual defaults,
+not statistical or biological capability rules. Individual, cultural, age,
+body-type, lineage, and player-authored variation must remain possible, and
+non-human lineages define their own shape language rather than inheriting a
+human sex binary.
+
 The reusable neutral organism representation is bald and unclothed. It has a
 continuous non-sexual mannequin surface with no baked genital anatomy and no
 female nipple detail. Hair/grooming, garments, equipment, optional sex-specific

@@ -3,10 +3,10 @@
   "canonical_role": "sole-active-work-checkpoint",
   "batch_id": "F5-H5-HUMANOID-VISUAL-REFERENCE-INTAKE",
   "master_program_item": "F5",
-  "state": "executing",
-  "objective": "Complete a provenance-safe, pixel-inspected mature human form direction while keeping canonical organism form, material vocabulary, planet-selectable shader profiles, and fidelity tiers explicitly separate.",
-  "next_action": "Consolidate the neutral-reference roles: Blender CC0 for the leading future form source, PolyOne only for featureless-surface and multi-view construction evidence, and v1 only for mature proportions/phone framing; keep H5 pending until one identity-stable side/back route is separately justified.",
-  "substage_id": "H5-neutral-base-surface-intake",
+  "state": "checkpoint",
+  "objective": "Close H5 with a provenance-bound, pixel-inspected, owner-approved stylized humanoid direction while preserving the separation between visual target, production asset authority, gameplay capability, materials, shaders, and fidelity tiers.",
+  "next_action": "Run the complete Forge gate, checkpoint H5, then advance to H6 clean reproduction, replay, corruption recovery, stable-identifier, and retained-receipt readiness without acquiring or importing the PolyOne file.",
+  "substage_id": "H5-owner-approved-visual-target",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
     "milestone": "F5",
@@ -14,10 +14,10 @@
   },
   "risk_level": "visual-reference-provenance-anatomy-quality-phone-legibility-and-creative-fit",
   "research_gate": "Use authoritative or clearly licensed sources, inspect actual pixels rather than metadata, and keep the candidate set small. Do not download executable content, import a production asset, or treat popularity as quality.",
-  "authority_lane": "Owner-authorized reference research, disposable image inspection, rejection, and bounded visual-direction generation only. Dependent implementation remains blocked until a verified-fit receipt exists and any real creative uncertainty is resolved. No approval, promotion, engine selection, external executable, or protected-Kernel mutation.",
-  "context_health": "Green: capture and typed retrieval are current; source screening is bounded; owner clarification separates realistic form from replaceable and potentially planet-specific shading; heartbeat remains paused.",
+  "authority_lane": "Owner approved the fingerprinted PolyOne preview set as visual direction only. This does not approve file acquisition, spending, production import, topology, rigging, runtime selection, promotion, or protected-Kernel mutation.",
+  "context_health": "Green: capture and typed retrieval are current; source screening is bounded; actual pixels and licences were inspected; owner resolved stylized feminine/masculine shape language; heartbeat will resume after this gate is processed.",
   "stage_context": {
-    "stage_id": "H5-neutral-base-surface-intake",
+    "stage_id": "H5-owner-approved-visual-target",
     "macro_sources": [
       "docs/canonical-system/MASTER_PLAN_V2.md",
       "docs/canonical-system/MASTER_PROGRAM.json",
@@ -27,7 +27,7 @@
       "docs/canonical-system/FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md"
     ],
     "macro_findings": [
-      "H5 is the first visual-inspection stage; later recovery and promotion gates remain blocked.",
+      "H5 visual direction is resolved; H6 recovery remains next and H7 promotion remains blocked.",
       "F5 remains engine-neutral and cannot import a production asset, install a tool, or select a runtime.",
       "The owner requires a good-quality, accurate human comparison target, phone-legible review fixtures, and cheap proof before integrated PC work.",
       "Natural-function methods remain case-by-case hypotheses: hard constraints kill invalid candidates, while no metaphor receives universal authority."
@@ -49,15 +49,16 @@
       "One canonical organism must support coordinated presentation tiers from constrained phones to high-end PCs without changing gameplay identity.",
       "Generated front direction v1 is coherent, mature, and phone-legible at 1024x1536, but hair and garments disqualify it as the newly clarified neutral base.",
       "The neutral construction target is bald and unclothed with a continuous non-sexual mannequin surface, no genital anatomy, and no female nipple detail; hair, garments, optional surface details, materials, and shaders derive later.",
-      "Seven 1200x600 PolyOne previews prove the requested featureless multi-view presentation is practical, but exaggerated proportions, T-pose shoulders, listing inconsistencies, and CC-BY status prevent anatomical authority or silent import.",
+      "Seven 1200x600 PolyOne previews prove the requested featureless multi-view presentation and owner-approved stylized feminine target; T-pose, listing inconsistencies, and CC-BY status still prevent silent production import.",
+      "Feminine defaults may read cute, sweet, and approachable while masculine defaults may read strong, powerful, and commanding; these are presentation profiles, not capability or role rules.",
       "Two neutral-mannequin image-generation attempts were output-moderation blocked; that route is stopped without weakening the requirement."
     ]
   },
   "visual_quality_gate": {
     "asset_use_intent": true,
-    "status": "required_pending",
-    "rationale": "V1 proves mature proportions and phone framing but is rejected as the neutral base because hair and garments obscure and commit later construction layers. A featureless bald mannequin front must pass before side/back evidence; shader choice is outside this gate.",
-    "dependent_implementation_blocked": true,
+    "status": "passed",
+    "rationale": "The owner explicitly approved the fingerprinted PolyOne multi-view pixels, including their cute stylized feminine proportions, as the visual target. Actual asset acquisition and production fitness remain separate later gates.",
+    "dependent_implementation_blocked": false,
     "receipts": [
       {
         "content_sha256": "811f43accbb31a88266d932f8f5563b2d13586fca0ba2693aad1f5fe582b3515",
@@ -104,16 +105,16 @@
       {
         "content_sha256": "f3242d18b962103ec0b78fe424baf01db60c84d2c2a6f468c85d27818c145051",
         "provenance": "PolyOne Studio Free Pack female basemesh; Superhive product page identifies CC-BY 4.0. Seven 1200x600 product previews were downloaded to disposable storage and pixel-inspected.",
-        "intended_comparison": "Bald featureless neutral surface, absence of baked hair/garments/sexual surface detail, and front/side/back construction presentation.",
-        "accuracy_limits": "Stylized hourglass proportions, doll-like face, T-pose, contradictory triangle-count text, CC-BY attribution obligation, and a Fab mirror with blank licence display.",
+        "intended_comparison": "Owner-approved cute/sweet stylized feminine humanoid direction, bald featureless neutral surface, absence of baked hair/garments/sexual surface detail, and front/side/back construction presentation.",
+        "accuracy_limits": "Visual-target evidence only: stylized proportions and T-pose are intentional; contradictory triangle-count text, CC-BY attribution obligation, Fab's blank licence display, and the uninspected asset file prevent production claims.",
         "pixel_inspection_performed": true,
         "rendered_views_inspected": ["Smooth front/three-quarter/back 1200x600 sheet", "Wireframe back/front/side 1200x600 sheet", "Five additional smooth and topology previews"],
-        "visible_defects": ["Waist too narrow", "Hips and breast volume exaggerated", "Legs elongated", "Face doll-like", "T-pose shoulder bias", "Listing metadata contradiction"],
+        "visible_defects": ["T-pose shoulder bias for later deformation judgment", "Listing triangle-count contradiction", "Fab licence display blank", "Actual downloadable file uninspected"],
         "human_subject": true,
-        "anatomical_credibility": "rejected_as_mature_neutral_authority",
-        "comparison_completeness": "verified_for_featureless_layer_and_views_only",
-        "pose_view_lighting_fitness": "verified_for_construction_reference_only",
-        "disposition": "rejected"
+        "anatomical_credibility": "verified",
+        "comparison_completeness": "verified",
+        "pose_view_lighting_fitness": "verified",
+        "disposition": "verified_fit"
       }
     ]
   },
@@ -137,19 +138,19 @@
       }
     ],
     "expensive_execution_planned": false,
-    "unresolved_risk": "No single inspected candidate combines mature neutral anatomy, featureless surface, identity-stable front/side/back views, clean provenance, and phone/game suitability.",
-    "expected_information_gain": "The bounded search has separated source roles; the next material gain would require a separately justified read-only render of the already fingerprinted Blender CC0 asset, not more broad browsing.",
-    "estimated_cost": "No further search cost. Any later Blender render requires an explicit bounded execution route and retained no-install/no-import safeguards.",
+    "unresolved_risk": "Visual direction is resolved, but the actual marketplace file, exact licence bundle, topology, rig, deformation, derivative lineage, and phone/game budgets remain uninspected.",
+    "expected_information_gain": "H6 can now test whether H1-H5 evidence and identifiers reproduce and recover cleanly without touching the marketplace file or a runtime.",
+    "estimated_cost": "Existing capability-free tests, deterministic replay fixtures, corruption cases, receipt projections, and the complete Forge gate; no install or asset import.",
     "regression_guard": "Retain hashes, source URLs, visible defects, accuracy limits, and explicit rejected or verified-fit dispositions; do not mutate H2-H4 structural evidence.",
-    "stop_condition": "Fired: two image-generation attempts were moderation-blocked and bounded web search reached diminishing returns. Stop image generation and broad browsing; retain source-role synthesis without claiming H5 closure.",
-    "final_integration_gate": "After visual receipts and any necessary owner check, retain exact fingerprint binding, mutation-negative checks, and the complete Forge gate before H5 closure."
+    "stop_condition": "H5 search and generation stop fired after owner approval. Do not browse or generate more humanoid targets unless H6/H7 exposes a specific evidence gap.",
+    "final_integration_gate": "Passed: exact H5 fingerprint, mutation-negative authority, generated projections, stage-quality/coherence checks, clean diff validation, and the complete Forge gate all passed. The first desktop-build attempt exposed only a live exact-repo executable handle; that identified process was stopped, the unchanged full gate passed, and context capture was restarted current."
   },
   "unresolved_risks": [
-    "The retained v1 front fixture is proportion evidence only and fails the neutral-base layer requirement.",
-    "A reputable or correctly licensed source can still be visually incomplete, anatomically misleading, or wrong for the comparison.",
-    "A single view can hide defects; separate large views preserve phone legibility but generated identity may drift between them.",
-    "Generated imagery can clarify style but cannot prove anatomy, topology, animation, growth behavior, shader cost, or device performance.",
-    "Visual observation must not approve, promote, or overwrite structural evidence."
+    "The actual PolyOne file and embedded licence evidence remain uninspected and unacquired.",
+    "Approved stylized visual defaults must not become gameplay capability, role, intelligence, morality, or importance rules.",
+    "A masculine strong/commanding counterpart has direction but no separately pixel-inspected reference yet; it is a later profile task, not an H5 feminine-target blocker.",
+    "Nothing yet proves production topology, deformation, animation, growth behavior, shader cost, or phone performance.",
+    "Owner visual approval has no promotion, import, purchase, or runtime-selection effect."
   ],
   "evidence_requirements": [
     "authoritative source identity, license or use authority, and content fingerprint per admitted candidate",
@@ -166,11 +167,11 @@
     "completed: generate and pixel-check one large single-subject mature proportion fixture",
     "completed: attempt a neutral mannequin edit/generation; both attempts were moderation-blocked and produced no asset",
     "completed: bounded web search and pixel inspection identified PolyOne as a featureless-surface reference but rejected it as anatomy/import authority",
-    "retain Blender CC0 as leading future form source and justify any identity-stable side/back rendering as a separate bounded route",
+    "completed: bind owner approval to the fingerprinted PolyOne multi-view target without importing its file",
     "keep planet-selectable shader profiles outside anatomical acceptance and later test their material/readability contract independently",
-    "run stage-quality, coherence, mutation-negative, and complete Forge gates before closure"
+    "completed: run stage-quality, coherence, mutation-negative, and complete Forge gates before closure"
   ],
-  "resume_after": "Use the recorded source-role synthesis. Do not repeat image generation or broad search; next assess whether an already-available, read-only Blender CC0 render route can be justified without installation or production import.",
+  "resume_after": "After the complete H5 gate passes, advance to H6 reproduction and recovery using existing evidence only; do not acquire or import the PolyOne file.",
   "evidence": [
     "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md",
     "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md",
@@ -193,9 +194,11 @@
     "owner clarified a bald unclothed neutral base with no genital anatomy or female nipple detail; hair and garments become modular derived layers",
     "two neutral mannequin generation attempts were blocked by output moderation and produced no admitted asset",
     "seven PolyOne 1200x600 previews were pixel-inspected; featureless multi-view construction passed narrowly while anatomy and silent import were rejected",
-    "heartbeat remains PAUSED"
+    "owner approved the fingerprinted PolyOne stylized feminine target and requested cute/sweet feminine versus strong/commanding masculine authored defaults",
+    "complete Forge gate passed after resolving the exact running forge-desktop.exe Windows file handle; no product or source change was required",
+    "Forge capture restarted and bootstrap verified current"
   ],
-  "transition": "R0 accepted -> H1-H4 verified -> H5 source rejections -> N0-N3 natural-method wave complete -> K1 continuity intake hardened -> aging drift repaired -> H5 source and pixel intake resumed",
+  "transition": "R0 accepted -> H1-H4 verified -> H5 source rejections -> N0-N3 natural-method wave complete -> K1 continuity intake hardened -> aging drift repaired -> H5 PolyOne preview target owner-approved -> H5 complete gate passed -> H6 next",
   "metrics": {
     "token_cost": {"status": "unknown", "value": null},
     "elapsed_time": {"status": "unknown", "value": null}

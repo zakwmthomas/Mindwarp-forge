@@ -5,11 +5,11 @@
 ## Active route
 
 - Work package: **F5-H5-HUMANOID-VISUAL-REFERENCE-INTAKE**
-- Objective: Complete a provenance-safe, pixel-inspected mature human form direction while keeping canonical organism form, material vocabulary, planet-selectable shader profiles, and fidelity tiers explicitly separate.
+- Objective: Close H5 with a provenance-bound, pixel-inspected, owner-approved stylized humanoid direction while preserving the separation between visual target, production asset authority, gameplay capability, materials, shaders, and fidelity tiers.
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
 - Related systems: asset-factory, procedural-animation, forge-reference-studio, forge-truth-kernel
 - Risk/research gate: **visual-reference-provenance-anatomy-quality-phone-legibility-and-creative-fit / Use authoritative or clearly licensed sources, inspect actual pixels rather than metadata, and keep the candidate set small. Do not download executable content, import a production asset, or treat popularity as quality.**
-- Exact next action: Consolidate the neutral-reference roles: Blender CC0 for the leading future form source, PolyOne only for featureless-surface and multi-view construction evidence, and v1 only for mature proportions/phone framing; keep H5 pending until one identity-stable side/back route is separately justified.
+- Exact next action: Run the complete Forge gate, checkpoint H5, then advance to H6 clean reproduction, replay, corruption recovery, stable-identifier, and retained-receipt readiness without acquiring or importing the PolyOne file.
 
 ## Approved operating policies
 
