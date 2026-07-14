@@ -9,6 +9,9 @@ use representation_contract::reference_neutral_humanoid_profile;
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
 
+mod promotion;
+pub use promotion::*;
+
 pub const SCHEMA_VERSION: u16 = 1;
 const H5_DOMAIN: &[u8] = b"mindwarp.humanoid-proof-chain.h5-decision.v1\0";
 const MANIFEST_DOMAIN: &[u8] = b"mindwarp.humanoid-proof-chain.manifest.v1\0";

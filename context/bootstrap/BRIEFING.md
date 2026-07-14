@@ -9,7 +9,7 @@
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
 - Related systems: asset-factory, forge-reference-studio, forge-truth-kernel, forge-control-plane
 - Risk/research gate: **candidate-scope-observation-bridge-authority-and-premature-promotion / Use the committed H1-H6 contracts, results, manifests, and executable receipts first. External research is not justified unless the audit exposes a standards-specific gap. Do not reacquire or import visual assets.**
-- Exact next action: Implement the cheapest capability-free H7 proof inside humanoid-proof-chain: strict narrow candidate package plus a non-authoritative supersession lifecycle model and hostile scope/authority cases; do not modify the protected Kernel.
+- Exact next action: Await explicit owner authorization for the bounded protected-Kernel candidate-supersession implementation; do not modify Kernel, persistence, authorization UI, or candidate state before that response.
 
 ## Approved operating policies
 

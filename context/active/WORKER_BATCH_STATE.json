@@ -5,8 +5,8 @@
   "master_program_item": "F5",
   "state": "checkpoint",
   "objective": "Audit whether H1-H6 form one coherent, correctly scoped canonical promotion candidate, or whether a missing bridge still separates the verified structural wire candidate from the owner-approved visual target.",
-  "next_action": "Implement the cheapest capability-free H7 proof inside humanoid-proof-chain: strict narrow candidate package plus a non-authoritative supersession lifecycle model and hostile scope/authority cases; do not modify the protected Kernel.",
-  "substage_id": "H7-scope-and-rollback-design-checkpoint",
+  "next_action": "Await explicit owner authorization for the bounded protected-Kernel candidate-supersession implementation; do not modify Kernel, persistence, authorization UI, or candidate state before that response.",
+  "substage_id": "H7-kernel-supersession-authorization-gate",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
     "milestone": "F5",
@@ -17,7 +17,7 @@
   "authority_lane": "Read-only H7 readiness audit and candidate packaging only. Approval and promotion remain separate owner-initiated Kernel actions requiring exact candidate-bound phrases; no import, runtime selection, application, publishing, or protected-Kernel expansion.",
   "context_health": "Green: H6 is committed at 457c5b4; exact H1-H5 recovery and the full Forge gate pass; capture and heartbeat are current; H7 begins from a clean rollback point.",
   "stage_context": {
-    "stage_id": "H7-scope-and-rollback-design-checkpoint",
+    "stage_id": "H7-kernel-supersession-authorization-gate",
     "macro_sources": [
       "docs/canonical-system/MASTER_PLAN_V2.md",
       "docs/canonical-system/MASTER_PROGRAM.json",
@@ -51,6 +51,8 @@
       "The primary H7 audit question is whether the promotable object is the engine-neutral proof-chain baseline itself or whether a future surface candidate must first bind the structural and visual evidence."
       ,"The audit selects only engine-neutral-humanoid-proof-baseline-v1; production asset, H3-as-visual-human, and PolyOne-file candidates are rejected."
       ,"Existing forward approval/promotion authority is strict, but the Kernel cannot withdraw an approved candidate or supersede a promoted baseline; authoritative rollback is the remaining H7 blocker."
+      ,"Ten capability-free H7 cases now prove the strict narrow package and proposed supersession semantics without creating a Kernel candidate."
+      ,"The complete Forge gate passes with the H7 verifier integrated; protected-Kernel supersession implementation is the sole next authority gate."
     ]
   },
   "visual_quality_gate": {
@@ -61,7 +63,7 @@
     "receipts": []
   },
   "simulation_ladder": {
-    "cheapest_sufficient_tier": "typed_model",
+    "cheapest_sufficient_tier": "in_memory_fixture",
     "tiers_completed": [
       {
         "tier": "static_reasoning",
@@ -72,15 +74,20 @@
         "tier": "typed_model",
         "result": "Completed the claim/non-claim matrix, selected the narrow H1-H6 proof-baseline candidate, rejected three overbroad alternatives, and proved from current APIs that approved/promoted candidate supersession is absent.",
         "evidence": "docs/canonical-system/H7_HUMANOID_PROMOTION_READINESS.md; crates/forge-kernel/src/lib.rs candidate lifecycle"
+      },
+      {
+        "tier": "in_memory_fixture",
+        "result": "Ten cases bind stable package and simulated-candidate IDs, six claims, eight non-claims, exact H6/H5 inputs, two separate owner actions, hostile scope rejection, and deterministic supersession with no Kernel effect.",
+        "evidence": "crates/humanoid-proof-chain/src/promotion.rs; contracts/humanoid-promotion-readiness-contract.md"
       }
     ],
     "expensive_execution_planned": false,
-    "unresolved_risk": "The selected package is coherent on paper, but strict codecs and hostile cases have not yet proved that overbroad scope or forged rollback authority fail closed.",
-    "expected_information_gain": "A small capability-free fixture will validate the candidate schema and supersession semantics before deciding whether a protected-Kernel change is justified.",
-    "estimated_cost": "Extend the existing humanoid-proof-chain module with data-only types and in-memory tests; no Kernel mutation, install, import, graphics run, or owner interruption.",
+    "unresolved_risk": "The real Kernel forward lifecycle remains irreversible for approved/promoted candidates; implementing the proven design changes protected authority code and needs explicit owner authorization.",
+    "expected_information_gain": "If authorized, focused Kernel/replay/persistence/UI hostile cases will determine whether authoritative supersession matches the passing capability-free model without widening application authority.",
+    "estimated_cost": "Bounded Kernel enum/transition/replay, persistence, exact authorization command/UI, contracts, adversarial tests, and one complete Forge gate; no asset import or runtime work.",
     "regression_guard": "Do not alter H1-H6 identities, evidence, limitations, rejected candidates, owner wording, or authority state while packaging H7.",
     "stop_condition": "Stop and package an exact owner decision only if every candidate claim maps to retained evidence and every non-claim is explicit; otherwise record the narrow missing bridge and continue with the cheapest pre-promotion proof.",
-    "final_integration_gate": "Pending: H7 scope matrix, hostile overclaim and stale-binding cases, exact rollback target, read-only owner decision package, mutation-negative checks, and the complete Forge gate before any promotion request."
+    "final_integration_gate": "Passed for H7 readiness simulation: scope matrix, hostile overclaim/stale-binding cases, rollback target, mutation-negative simulation, generated projections, modularity, UI build, Rust workspace, desktop build, and complete Forge gate pass in 84.5 seconds; real Kernel implementation remains unauthorized and no promotion request is permitted."
   },
   "unresolved_risks": [
     "The H3 wire candidate and H5 visual target may be prerequisites for different future objects rather than one promotable asset.",
@@ -101,9 +108,9 @@
     "completed: audit every proposed promotion claim and non-claim against H1-H6 receipts",
     "completed: select the narrowest coherent candidate type and reject broader alternatives lacking evidence",
     "completed: define exact rollback target and stale-binding behavior",
-    "prove hostile scope and authority cases in the cheapest sufficient typed fixture",
+    "completed: prove hostile scope and authority cases in the cheapest sufficient typed fixture",
     "prepare but do not invoke candidate-specific owner approval and promotion actions",
-    "run stage-quality, coherence, mutation-negative, projection, and complete Forge gates before presenting any H7 owner action"
+    "completed: run stage-quality, coherence, mutation-negative, projection, and complete Forge gates before presenting any H7 owner action"
   ],
   "resume_after": "Continue the H7 readiness matrix from the exact H3/H5 scope distinction; do not reopen H6 or import the PolyOne asset.",
   "evidence": [
@@ -119,8 +126,13 @@
     "H7 macro/micro and authority boundary refreshed before candidate construction",
     "claim/non-claim matrix selects engine-neutral-humanoid-proof-baseline-v1 and rejects three overbroad candidate types",
     "current Kernel has no approved-candidate withdrawal or promoted-candidate supersession state/event; control-plane and code rollback do not close that authority gap"
+    ,"H7 package ID 7b01d650258fe50b7cd59290a4a56e6df3a17271991dba313e29b6c0cf607619 and simulated candidate ID 2d93d3ae31de08754852e27a3a04332d009b456141565be8e805a98eed8d6222 reproduce exactly"
+    ,"ten capability-free H7 scope and supersession cases pass; kernel_candidate_created=false"
+    ,"complete Forge gate passes in 84.5 seconds with H7 readiness verifier integrated"
+    ,"Forge capture restarted and verified current within 1 second"
+    ,"bounded protected-Kernel supersession scope documented; implementation not authorized and no real candidate created"
   ],
-  "transition": "H6 verified -> H7 scope audit -> narrow proof-baseline selected -> candidate rollback gap identified -> capability-free schema and lifecycle simulation next -> no owner action yet",
+  "transition": "H6 verified -> H7 scope audit -> narrow proof-baseline selected -> rollback gap identified -> capability-free supersession proof and full gate pass -> protected-Kernel implementation authorization gate -> no real candidate or promotion",
   "metrics": {
     "token_cost": {"status": "unknown", "value": null},
     "elapsed_time": {"status": "unknown", "value": null}

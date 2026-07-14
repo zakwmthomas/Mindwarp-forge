@@ -7,7 +7,7 @@
 
 - Package: **F5-H7-HUMANOID-PROMOTION-READINESS**
 - Master item / milestone: **F5 / F5**
-- State / substage: **checkpoint / H7-scope-and-rollback-design-checkpoint**
+- State / substage: **checkpoint / H7-kernel-supersession-authorization-gate**
 - Related systems: asset-factory, forge-reference-studio, forge-truth-kernel, forge-control-plane
 - Objective: Audit whether H1-H6 form one coherent, correctly scoped canonical promotion candidate, or whether a missing bridge still separates the verified structural wire candidate from the owner-approved visual target.
 - Context health: Green: H6 is committed at 457c5b4; exact H1-H5 recovery and the full Forge gate pass; capture and heartbeat are current; H7 begins from a clean rollback point.
@@ -26,7 +26,7 @@ Read-only H7 readiness audit and candidate packaging only. Approval and promotio
 
 ## Exact next action
 
-Implement the cheapest capability-free H7 proof inside humanoid-proof-chain: strict narrow candidate package plus a non-authoritative supersession lifecycle model and hostile scope/authority cases; do not modify the protected Kernel.
+Await explicit owner authorization for the bounded protected-Kernel candidate-supersession implementation; do not modify Kernel, persistence, authorization UI, or candidate state before that response.
 
 ## Unresolved risks
 

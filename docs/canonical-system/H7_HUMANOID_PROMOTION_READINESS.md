@@ -1,7 +1,8 @@
 # H7 humanoid promotion readiness
 
-Status: **scope audit complete; promotion blocked pending reversible candidate
-lifecycle proof**.
+Status: **scope audit and capability-free lifecycle proof complete; promotion
+blocked pending authorization and verification of a reversible protected
+candidate lifecycle**.
 
 H7 asks whether H1-H6 form a coherent canonical promotion candidate. It does
 not import an asset, promote anything, infer owner authority, or claim that the
@@ -89,3 +90,49 @@ Before any protected-Kernel change, a capability-free typed fixture must prove:
 Only after that cheaper proof passes should a separately authorized Kernel
 change be proposed. No owner approval or promotion phrase should be requested
 until the lifecycle gap is closed and the complete Forge gate passes.
+
+## Capability-free proof result
+
+The cheaper proof now passes ten in-memory cases in
+`humanoid-proof-chain`. It retains:
+
+- promotion-package ID
+  `7b01d650258fe50b7cd59290a4a56e6df3a17271991dba313e29b6c0cf607619`;
+- simulated candidate ID
+  `2d93d3ae31de08754852e27a3a04332d009b456141565be8e805a98eed8d6222`;
+- six exact claims, eight exact non-claims, two separate owner actions, and
+  rollback target `no_promoted_humanoid_proof_baseline`.
+
+Eight package mutations plus unknown-field injection fail closed. Forged
+assistant/imported actors, stale IDs, skipped promotion, proposed
+supersession, malformed correction evidence, and self-replacement also fail.
+Promoted supersession replays deterministically, retains the original evidence
+package, and declares `simulated_only_no_kernel_state_change` plus explicit
+no-import/no-execution effects.
+
+This proves the proposed semantics cheaply but does not close H7: the real
+Kernel still lacks `Superseded` state, an append-only supersession event,
+replay validation, persistence tests, and exact direct-owner confirmation.
+
+## Protected-Kernel implementation authorization gate
+
+The smallest justified protected change is now bounded:
+
+1. add `CandidateState::Superseded` and `EventType::CandidateSuperseded`;
+2. add an append-only `supersede_candidate` transition for `Approved` or
+   `Promoted` candidates only;
+3. require `DirectProjectUser`, `ExplicitUserAuthorization`, exact candidate
+   binding, retained lowercase-SHA-256 correction evidence, and optional
+   non-self replacement candidate binding;
+4. preserve the old evidence and event history on replay and SQLite reopen;
+5. extend the explicit-authorization command/UI with an exact supersession
+   phrase while retaining separate approval and promotion actions;
+6. reject proposed/rejected/quarantined/superseded sources, forged/imported
+   actors, stale IDs, missing evidence, self-replacement, repeated action, and
+   unknown versions; and
+7. prove no code/asset application, import, execution, publishing, runtime
+   selection, or deletion effect before the complete Forge gate.
+
+This change would make promotion reversible at the authority ledger without
+promoting the H7 humanoid package itself. It modifies the protected Kernel and
+therefore requires separate owner authorization under the Working Covenant.
