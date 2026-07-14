@@ -18,10 +18,20 @@ presents eligible adults and elders as adult while enabled, and reveals the
 true current stage when disabled. Old age does not cause death and the player
 character is outside this system.
 
-The intended visual direction is semi-realistic anatomy and proportions with a
-mature stylized treatment: simplified shapes and materials, deliberately
-graphic lighting, and a restrained toon/cel-like shader. It must avoid both
-photorealistic production cost and childlike caricature.
+The intended form direction is semi-realistic anatomy and proportions with a
+mature economical treatment: coherent shapes and materials without childlike
+caricature. Shading is a separate presentation layer. A restrained
+toon/cel-like profile can provide cohesion, but planets may select different
+shader profiles for distinct atmosphere. The shared Forge grammar across form,
+materials, composition, and quality supplies broader family resemblance; one
+universal shader is not required.
+
+The reusable neutral organism representation is bald and unclothed. It has a
+continuous non-sexual mannequin surface with no baked genital anatomy and no
+female nipple detail. Hair/grooming, garments, equipment, optional sex-specific
+surface details, materials, and planet/fidelity shader profiles are separate
+derived layers. This keeps the base versatile and prevents accessories from
+hiding or silently redefining morphology.
 
 ## What exists now
 
@@ -40,9 +50,11 @@ mesh, shader, animation runtime, or phone-performance result.
    state into proportions, part roles, articulation, mass distribution, and
    material regions. A humanoid is one possible morphology, not the universal
    base class for creatures.
-3. **Presentation derivation:** geometry, rig, textures/materials, animation,
-   collision, and effects are derived artifacts with lineage back to the same
-   organism state.
+3. **Presentation derivation:** the neutral morphology surface derives first;
+   optional anatomical surface details, hair/grooming, garments/equipment,
+   textures/materials, world/fidelity shader profile, animation, collision, and
+   effects remain distinct derived layers with lineage back to the same organism
+   state. No accessory or shader may redefine canonical morphology.
 4. **Fidelity policy:** shared significance selects declared presentation and
    simulation tiers; it cannot change canonical biology or create a private
    gameplay truth.
@@ -57,6 +69,8 @@ Phone scalability requires coordinated degradation across independent axes:
 - geometry LOD and silhouette preservation;
 - skeleton/skin influence and deformation LOD;
 - material/shader feature tiers and lighting complexity;
+- world/planet shader-profile selection with a declared fallback that preserves
+  material meaning and silhouette;
 - texture resolution and residency;
 - animation sampling, interpolation, and secondary-motion cadence;
 - AI, sensing, pathfinding, growth, and off-screen simulation cadence;
@@ -90,6 +104,8 @@ visible popping, oscillation, or gameplay divergence.
   distinct variables; none silently substitutes for another.
 - Life-stage transitions preserve identity and do not require storing a unique
   production mesh for every age.
+- Neutral-base tests prove that removing hair, garments, equipment, and shader
+  profiles leaves the same canonical morphology and landmarks.
 - Creature diversity is tested against withheld morphologies rather than one
   humanoid template stretched into animals.
 - LOD transitions preserve silhouette, landmarks, contacts, recognisability,
@@ -121,9 +137,12 @@ security domains and must never inherit authority from this document.
   a structurally different creature.
 - Define representative phone, mainstream PC, and high-end PC budget envelopes
   after the future runtime route is selected.
-- Calibrate a mature semi-realistic stylization target with actual visual
-  comparisons; concept imagery is direction evidence, not topology or device
-  performance proof.
+- Complete the mature semi-realistic form target with separately phone-legible
+  front, side, and back evidence; concept imagery remains direction evidence,
+  not topology or device-performance proof.
+- Define the bounded shader-profile contract: shared material semantics,
+  planet-specific selection, fidelity fallbacks, accessibility/readability,
+  and transition behavior without changing canonical organism identity.
 - Clarify whether the owner's phrase "NNR" names a particular device or
   technology; current requirements conservatively interpret it as constrained
   phone-class hardware.

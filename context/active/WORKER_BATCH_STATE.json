@@ -4,9 +4,9 @@
   "batch_id": "F5-H5-HUMANOID-VISUAL-REFERENCE-INTAKE",
   "master_program_item": "F5",
   "state": "executing",
-  "objective": "Admit only provenance-safe, pixel-inspected, comparison-fit human visual references and prepare phone-legible single-subject direction evidence without importing production assets or selecting a runtime.",
-  "next_action": "Screen a small authoritative and clearly licensed human-reference set, inspect actual pixels at useful scale, reject unsuitable candidates, and generate one large single-subject direction image only if source screening cannot resolve the mature semi-realistic stylized target.",
-  "substage_id": "H5-authoritative-source-and-pixel-intake",
+  "objective": "Complete a provenance-safe, pixel-inspected mature human form direction while keeping canonical organism form, material vocabulary, planet-selectable shader profiles, and fidelity tiers explicitly separate.",
+  "next_action": "Generate and pixel-check one revised bald, unclothed, featureless mature-adult front mannequin that preserves v1 proportions; reject sexual detail, hair, garments, identity drift, or anatomical defects before attempting side/back views.",
+  "substage_id": "H5-neutral-base-surface-intake",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
     "milestone": "F5",
@@ -15,9 +15,9 @@
   "risk_level": "visual-reference-provenance-anatomy-quality-phone-legibility-and-creative-fit",
   "research_gate": "Use authoritative or clearly licensed sources, inspect actual pixels rather than metadata, and keep the candidate set small. Do not download executable content, import a production asset, or treat popularity as quality.",
   "authority_lane": "Owner-authorized reference research, disposable image inspection, rejection, and bounded visual-direction generation only. Dependent implementation remains blocked until a verified-fit receipt exists and any real creative uncertainty is resolved. No approval, promotion, engine selection, external executable, or protected-Kernel mutation.",
-  "context_health": "Green after K1 continuity hardening and focused correction of stale aging semantics. Typed knowledge retrieval is available; H5 resumes with prior rejections retained in its canonical intake record, capture current, and heartbeat paused.",
+  "context_health": "Green: capture and typed retrieval are current; source screening is bounded; owner clarification separates realistic form from replaceable and potentially planet-specific shading; heartbeat remains paused.",
   "stage_context": {
-    "stage_id": "H5-authoritative-source-and-pixel-intake",
+    "stage_id": "H5-neutral-base-surface-intake",
     "macro_sources": [
       "docs/canonical-system/MASTER_PLAN_V2.md",
       "docs/canonical-system/MASTER_PROGRAM.json",
@@ -31,6 +31,7 @@
       "F5 remains engine-neutral and cannot import a production asset, install a tool, or select a runtime.",
       "The owner requires a good-quality, accurate human comparison target, phone-legible review fixtures, and cheap proof before integrated PC work.",
       "Natural-function methods remain case-by-case hypotheses: hard constraints kill invalid candidates, while no metaphor receives universal authority."
+      ,"A common Forge grammar may provide analogous art-family cohesion without forcing one identical shader across every planet."
     ],
     "micro_sources": [
       "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md",
@@ -43,15 +44,17 @@
     "micro_findings": [
       "The existing wire capture and three official MakeHuman documentation screenshots were pixel-inspected and rejected as incomplete, obscured, or too structurally sparse.",
       "The first three-panel generated sheet was rejected on phone because the differences collapsed at display scale; future fixtures use one large subject or stage per image.",
-      "The target is mature semi-realistic anatomy with economical stylization and restrained toon-like shading, not photorealism or childlike caricature.",
+      "The target is mature semi-realistic form without childlike caricature; shading is a replaceable presentation layer and no longer part of the anatomical-form gate.",
       "Canonical biological age continues independently; the adult-appearance lock affects only eligible post-adult presentation and unlocking reveals true age.",
-      "One canonical organism must support coordinated presentation tiers from constrained phones to high-end PCs without changing gameplay identity."
+      "One canonical organism must support coordinated presentation tiers from constrained phones to high-end PCs without changing gameplay identity.",
+      "Generated front direction v1 is coherent, mature, and phone-legible at 1024x1536, but hair and garments disqualify it as the newly clarified neutral base.",
+      "The neutral construction target is bald and unclothed with a continuous non-sexual mannequin surface, no genital anatomy, and no female nipple detail; hair, garments, optional surface details, materials, and shaders derive later."
     ]
   },
   "visual_quality_gate": {
     "asset_use_intent": true,
     "status": "required_pending",
-    "rationale": "H5 must inspect an actual coherent human at useful scale. All current candidates are rejected, and generated visual direction cannot substitute for anatomical or implementation evidence.",
+    "rationale": "V1 proves mature proportions and phone framing but is rejected as the neutral base because hair and garments obscure and commit later construction layers. A featureless bald mannequin front must pass before side/back evidence; shader choice is outside this gate.",
     "dependent_implementation_blocked": true,
     "receipts": [
       {
@@ -81,6 +84,20 @@
         "comparison_completeness": "rejected_for_visual_comparison",
         "pose_view_lighting_fitness": "rejected_for_visual_comparison",
         "disposition": "rejected"
+      },
+      {
+        "content_sha256": "675e0d8c25d807501a588fd8a7567cc6931a94d95ebd8bd46d56a7f2af1ccbe2",
+        "provenance": "Forge-requested generated preview retained as immutable evidence at evidence/visual-reference-intake/h5-mature-adult-front-direction-v1.png; actual 1024x1536 pixels inspected.",
+        "intended_comparison": "Phone-legible mature semi-realistic adult front-form direction, full-body completeness, silhouette, hands, and feet.",
+        "accuracy_limits": "Generated direction evidence only; hair and garments violate the neutral-base requirement; one front view, no side/back anatomy, topology, deformation, shader implementation, or device-cost proof.",
+        "pixel_inspection_performed": true,
+        "rendered_views_inspected": ["Original 1024x1536 straight-on full-body front A-pose"],
+        "visible_defects": ["Hair is baked into the fixture", "Garments obscure and commit later layers", "No true side view", "No back view", "Studio shading is only illustrative"],
+        "human_subject": true,
+        "anatomical_credibility": "useful_mature_proportion_direction",
+        "comparison_completeness": "rejected_for_neutral_base",
+        "pose_view_lighting_fitness": "verified_for_phone_front_form_direction",
+        "disposition": "rejected"
       }
     ]
   },
@@ -94,22 +111,22 @@
       },
       {
         "tier": "disposable_simulation",
-        "result": "Prior original-pixel inspection rejected the wire capture and three official MakeHuman documentation images before any install or integrated execution.",
+        "result": "Original-pixel inspection rejected incomplete source candidates, then retained one 1024x1536 generated adult as narrow front-form evidence after owner clarification separated shader style from form acceptance.",
         "evidence": "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md"
       }
     ],
     "expensive_execution_planned": false,
-    "unresolved_risk": "No coherent full-human source candidate has yet passed pixels, provenance, anatomy, completeness, and comparison conditions together.",
-    "expected_information_gain": "The bounded source screen proved that a single-subject generated direction fixture is the cheapest next style clarification while authoritative anatomy admission remains blocked.",
-    "estimated_cost": "A few primary-source page and image inspections; no install, executable download, production import, or integrated PC run.",
+    "unresolved_risk": "Removing hair and garments may cause the generator to add sexual detail, alter proportions, or introduce surface/anatomical defects before side/back consistency is tested.",
+    "expected_information_gain": "One constrained edit can cheaply prove whether the mature v1 direction survives construction-layer removal as a clean neutral mannequin.",
+    "estimated_cost": "One bounded generated edit plus actual-pixel comparison; no install, executable download, production import, or integrated PC run.",
     "regression_guard": "Retain hashes, source URLs, visible defects, accuracy limits, and explicit rejected or verified-fit dispositions; do not mutate H2-H4 structural evidence.",
-    "stop_condition": "Source expansion stopped after MakeHuman and Blender Studio; do not browse broadly while marginal information gain remains below a single-subject direction fixture.",
+    "stop_condition": "Stop after one neutral-front edit if it adds sexual detail, changes mature proportions, or introduces anatomy defects; reject it and reassess the fixture method before any side/back generation.",
     "final_integration_gate": "After visual receipts and any necessary owner check, retain exact fingerprint binding, mutation-negative checks, and the complete Forge gate before H5 closure."
   },
   "unresolved_risks": [
-    "No current repository asset is a verified good-quality human visual reference.",
+    "The retained v1 front fixture is proportion evidence only and fails the neutral-base layer requirement.",
     "A reputable or correctly licensed source can still be visually incomplete, anatomically misleading, or wrong for the comparison.",
-    "A single view can hide defects, while a multi-panel sheet can become illegible on a phone.",
+    "A single view can hide defects; separate large views preserve phone legibility but generated identity may drift between them.",
     "Generated imagery can clarify style but cannot prove anatomy, topology, animation, growth behavior, shader cost, or device performance.",
     "Visual observation must not approve, promote, or overwrite structural evidence."
   ],
@@ -125,16 +142,19 @@
     "completed: research MakeHuman and Blender Studio as the bounded authoritative source set",
     "completed: inspect actual pixels and reject incomplete or defective references before comparison",
     "retain source and visual-fitness receipts in the H5 canonical record",
-    "generate only one large single-subject direction fixture if source evidence cannot resolve style",
-    "route only genuine remaining subjective uncertainty to the owner",
+    "completed: generate and pixel-check one large single-subject mature proportion fixture",
+    "edit v1 into one bald, unclothed, featureless non-sexual mannequin front while preserving proportions and framing",
+    "only after the neutral front passes, generate separate side and back fixtures with identity and proportion invariants",
+    "keep planet-selectable shader profiles outside anatomical acceptance and later test their material/readability contract independently",
     "run stage-quality, coherence, mutation-negative, and complete Forge gates before closure"
   ],
-  "resume_after": "Continue autonomous source and pixel-fitness research. Ask the owner only if an inspected candidate remains genuinely uncertain or a creative choice between defensible alternatives cannot be resolved from existing direction.",
+  "resume_after": "Continue autonomously with the neutral-front edit and actual-pixel inspection. Proceed to separate side/back fixtures only if it passes; ask the owner only if a genuine form choice remains unresolved.",
   "evidence": [
     "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md",
     "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md",
     "docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md",
     "docs/canonical-system/FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md",
+    "evidence/visual-reference-intake/h5-mature-adult-front-direction-v1.png",
     "contracts/reference-viewport-contract.md",
     "governance/STAGE_QUALITY_PROTOCOL.md"
   ],
@@ -146,6 +166,9 @@
     "official Blender CC0 archive fingerprinted and four embedded body previews inspected and rejected as too small and incomplete",
     "four 1280x960 renders of the exact Blender assets inspected; realistic endpoints retained only as direction evidence and stylized endpoints rejected as too caricatured",
     "first three-panel direction sheet rejected as phone-illegible",
+    "generated mature-adult front direction v1 inspected at original 1024x1536 and retained as narrow phone-legible form evidence",
+    "owner clarified realistic form, replaceable shader presentation, possible planet-specific shader profiles, and Forge-wide analogous cohesion",
+    "owner clarified a bald unclothed neutral base with no genital anatomy or female nipple detail; hair and garments become modular derived layers",
     "heartbeat remains PAUSED"
   ],
   "transition": "R0 accepted -> H1-H4 verified -> H5 source rejections -> N0-N3 natural-method wave complete -> K1 continuity intake hardened -> aging drift repaired -> H5 source and pixel intake resumed",

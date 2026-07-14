@@ -5,11 +5,11 @@
 ## Active route
 
 - Work package: **F5-H5-HUMANOID-VISUAL-REFERENCE-INTAKE**
-- Objective: Admit only provenance-safe, pixel-inspected, comparison-fit human visual references and prepare phone-legible single-subject direction evidence without importing production assets or selecting a runtime.
+- Objective: Complete a provenance-safe, pixel-inspected mature human form direction while keeping canonical organism form, material vocabulary, planet-selectable shader profiles, and fidelity tiers explicitly separate.
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
 - Related systems: asset-factory, procedural-animation, forge-reference-studio, forge-truth-kernel
 - Risk/research gate: **visual-reference-provenance-anatomy-quality-phone-legibility-and-creative-fit / Use authoritative or clearly licensed sources, inspect actual pixels rather than metadata, and keep the candidate set small. Do not download executable content, import a production asset, or treat popularity as quality.**
-- Exact next action: Screen a small authoritative and clearly licensed human-reference set, inspect actual pixels at useful scale, reject unsuitable candidates, and generate one large single-subject direction image only if source screening cannot resolve the mature semi-realistic stylized target.
+- Exact next action: Generate and pixel-check one revised bald, unclothed, featureless mature-adult front mannequin that preserves v1 proportions; reject sexual detail, hair, garments, identity drift, or anatomical defects before attempting side/back views.
 
 ## Approved operating policies
 
