@@ -65,12 +65,12 @@
     },
     {
       "path": "docs/canonical-system/CONVERSATION_COMPILER_READINESS.md",
-      "coverage": "partial",
+      "coverage": "covered",
       "items": [
         "A1",
         "A2"
       ],
-      "role": "retained_readiness_evidence"
+      "role": "retained_verified_evidence"
     },
     {
       "path": "docs/canonical-system/RESEARCH_RECORD_READINESS.md",

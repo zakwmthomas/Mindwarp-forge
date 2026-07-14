@@ -1,25 +1,79 @@
 {
   "schema_version": 2,
   "canonical_role": "sole-active-work-checkpoint",
-  "batch_id": "F5-TPOSE-BIND-FIXTURE-V3",
+  "batch_id": "R0-ACCEPTANCE-REBASELINE",
   "master_program_item": "F5",
-  "state": "checkpoint",
-  "previous_state": "executing",
-  "objective": "Preserve the incomplete v3 T-pose work and the owner's reference-guided generation proposal in a verified handover without treating either as approved production direction.",
-  "next_action": "In a new chat, bootstrap from the Forge repository, inspect the preserved dirty worktree, read context/capsules/2026-07-14-reference-guided-transfer.md and the handover export, then obtain the owner's decision on the pending reference-guided generation plan. Do not implement it or resume the heartbeat without explicit owner authorization.",
-  "substage_id": "F5-REFERENCE-GUIDED-TRANSFER-owner-review-pending",
+  "state": "executing",
+  "previous_state": "checkpoint",
+  "objective": "Verify the committed master-plan v2, repaired v3 viewport, and compiler-continuity rebaseline from a disposable clean worktree, then retain one final R0 acceptance receipt.",
+  "next_action": "Commit the verified R0.4 continuity package, create a disposable clean worktree at that commit, run generated-view, recovery, focused compiler, and complete Forge gates there, then record the R0 acceptance result and advance to the next dependency-ready humanoid proof package.",
+  "substage_id": "R0.5-disposable-recovery-and-full-gate",
   "consecutive_no_progress_limit": 1,
-  "atlas_route": {"milestone":"F5","systems":["forge-truth-kernel","conversation-compiler","solo-studio-control-plane","forge-dashboard"]},
-  "risk_level": "context-integrity-and-owner-direction",
-  "research_gate": "No new research or implementation is authorized during transfer; the latest reference-guided proposal is retained as an owner-decision candidate, not canonical policy.",
-  "authority_lane": "Owner-authorized heartbeat shutdown, context capsule, and portable handover only; no reference-guided implementation, inferred judgment, approval, promotion, remote publishing, spending, credentials, engine selection, external execution, or protected-Kernel mutation.",
-  "context_health": "Red for continued expansion in this chat because the owner identified truncation and compression as a corruption risk. The heartbeat is paused and a verified transfer package is required before any continuation.",
-  "unresolved_risks": ["The working tree contains substantial tracked and untracked in-flight changes that a future worker must preserve.","MASTER_PROGRAM and the active checkpoint must remain aligned at an owner-review transfer state rather than silently continuing v3.","The latest reference-guided plan is pending owner review and must not be mistaken for implementation authority.","The built-in viewport proves skeleton semantics and legibility only; it does not prove skin weights, inverse-bind matrices, deformation quality, engine import, or production representation."],
-  "evidence_requirements": ["paused forge-heartbeat status","canonical transfer capsule","complete pending reference-guided plan in portable export","tracked binary diff and untracked-file snapshot","canonical MASTER_PROGRAM and WORKER_BATCH_STATE snapshots","SHA-256 manifest and verified archive integrity","generated active-context projection agreement","explicit new-chat no-resume and no-implementation instructions"],
-  "verification_plan": ["verify heartbeat remains PAUSED","verify worker batch state and active-context projections","validate canonical JSON files","verify tracked and untracked worktree inventory is packaged","verify every handover manifest hash","verify archive opens successfully","run bootstrap in paused mode without resuming automation","report archive and capsule hashes plus dirty-worktree warning"],
-  "resume_after": "Resume only after a new user-authored instruction explicitly approves or revises the pending plan and explicitly releases the paused heartbeat; opening or bootstrapping a new chat is insufficient.",
-  "evidence": ["context/capsules/2026-07-14-reference-guided-transfer.md","contracts/knowledge-record-contract.md","governance/record-role-registry.json","governance/RECORDING_PROTOCOL.md","governance/CONTEXT_PROTOCOL.md","tools/verify-record-roles.ps1","tools/verify-coherence.ps1","tools/forge-heartbeat-control.ps1","tools/test-forge-heartbeat-control.ps1","tools/forge-chat-visual.ps1","tools/test-forge-chat-visual.ps1","governance/WORKER_PROMPT_SPEC.md","governance/WORKER_OPTIMIZATION_PROTOCOL.md","governance/SYSTEM_EFFICIENCY_AUDIT.md","crates/forge-kernel/src/knowledge.rs","crates/forge-kernel/src/persistence.rs","apps/forge-desktop/src-tauri/src/main.rs","apps/forge-desktop/src-tauri/src/owner_presentation.rs","apps/forge-desktop/ui/index.html","apps/forge-desktop/ui/src/main.ts","apps/forge-desktop/ui/src/owner.css"],
-  "verification_receipts": ["verified online SQLite pre-migration backup f71f17de13ef682e552c65dc3113d7d7bad452f4a931ea94252f5c1ab5de68e3","full Forge gate passes after owner-wait suspension repair","68 forge-kernel tests pass","31 forge-desktop tests pass including internal-subagent capture exclusion, owner-action exclusion, and dependency gating","UI TypeScript and Vite build pass","292 durable files classified by 28 ordered rules","paused bootstrap fixture proves generated projections remain unchanged","heartbeat control passes status, atomic pause, idempotency, resume, prompt retention, timestamp, and foreign-record rejection fixtures","window-only capture requires exact PID/title, non-occluded rendering, distinct inputs, SHA-256 provenance sidecars, and chat_delivery_performed false","live Forge PrintWindow capture passed with nonuniform 1116x799 output","worker governance and proof harness pass with visual-delivery regression guards","live automation prompt requires window-only side-by-side visual gates","conversation capture reports running with zero paused sources after worker rollout collision repair","full canonical Forge gate passes after capture and visual-proof hardening","P12 approved and worker governance verifies 8 required policies","typed intake is idempotent and authority-free","unified snapshot is deterministic and read-only","Atlas milestone status derives from master program","owner queue reports 1 actionable gate while background candidates remain reference-only","Home, Work, Studio, Evidence, Activity, Help, and Settings passed live visual inspection","explicit owner Step 1 receipt validated_direct_owner_observation broken_connection/satisfied confidence 90 SHA-256 f54b719ba5b0f20723f751d7fcadd8901f4ae932b093cc61ebe63d1d7c0312c3 authority effect none","Step 2 exact shape comparison reference SHA-256 543090b7c1ab576cfc38c8170c1df50c21066ffacb8bf94ab489e50ca923f4ca altered SHA-256 00676a5eddae20405079bab068f185a62e13cecaf930e567d2323b9aeaada4c6 comparison SHA-256 019d5f6dda693ccd199af34da8fc64c320f92a324c8a2a596c1704363e5a4e5b chat_delivery_performed false before handoff","explicit owner Step 2 receipt validated_direct_owner_observation silhouette_collapse/satisfied confidence 90 SHA-256 00d328acd8da49db903a05880805632e0c4dc9d75359d4d6635a965029d3a07a authority effect none; owner wording: altered is incorrectly rotated at the legs","Step 3 exact frame-1 pose comparison reference SHA-256 34c86a41e24cd683d918d4ac9dea35ac82bfaaf29c360dd3bf6912f2faf2c14d altered SHA-256 1dd26f5b8913b95f530e8445eb2332a5ff37f78931ea9d37c8349d8efb94051f comparison SHA-256 60649c44acc88ce2917f3d0bb22311fee891a06908658e395693d0fcc0a3d94b chat_delivery_performed false before handoff","explicit owner Step 3 receipt validated_direct_owner_observation articulation_drift/indeterminate confidence 40 SHA-256 3c26d4ca607e9b7f3d14bfe85fb9671ed4ba418bb9684cdeb0d9ca0e094cd7b7 authority effect none; owner wording: original arms and legs too short, alternative arms too long, possible poison because simple sticks make certainty difficult","local Forge UI reports all three observations saved locally with nothing approved, promoted, or changed automatically","local Git root baseline f9658515c30e7ccfb839e352806c04dd4f9753d7","v2 poisoned-fixture repair: neutral-articulation-fixture-v2 / artifact-reference-viewport-002, 12 reference-viewport tests, 9 viewport-stimulus tests, UI build, 31 desktop tests, F5 readiness verifier, and full Forge gate pass","window-only labelled v2 pose-frame-1 comparison SHA-256 a1ad6ec9f64b351b5ea3051401a5321056c4592d48f5b4cdc26b6a64d84a5165; no owner result inferred and chat_delivery_performed false before handoff"],
-  "transition": "v1 owner review retained poison -> v2 isolated length from articulation -> owner rejected v2 star stance -> v3 implementation began -> owner reframed external assets as references rather than baselines -> owner requested heartbeat shutdown and verified new-chat transfer before further work",
-  "metrics": {"token_cost":{"status":"unknown","value":null},"elapsed_time":{"status":"unknown","value":null}}
+  "atlas_route": {
+    "milestone": "F5",
+    "systems": [
+      "forge-truth-kernel",
+      "forge-context-compiler",
+      "solo-studio-control-plane",
+      "forge-dashboard"
+    ]
+  },
+  "risk_level": "rebaseline-integrity-and-recoverability",
+  "research_gate": "No new research is needed for R0.5; verify only the committed bounded package and stop on provenance, recovery, authority, coherence, or full-gate failure.",
+  "authority_lane": "Owner-authorized implementation of the approved master plan. No external downloads, heartbeat resumption, artifact promotion, owner-observation inference, spending, publishing, credentials, engine selection, external execution, or protected-Kernel mutation.",
+  "context_health": "Green for bounded R0.5 verification. Forge capture was current before the full gate; the live UI is intentionally stopped during desktop build verification and must be restarted afterward. Heartbeat remains paused.",
+  "unresolved_risks": [
+    "A clean disposable worktree has not yet reproduced the rebaseline.",
+    "The complete gate must be rerun against committed rather than dirty state.",
+    "The v3 fixture remains structurally verified but not perceptually approved."
+  ],
+  "evidence_requirements": [
+    "R0.4 commit identity",
+    "clean disposable worktree",
+    "generated master-plan freshness",
+    "representative long-corpus fixed hash and replay",
+    "legacy SQLite migration and immediate directory deletion",
+    "portable rooted-path rejection",
+    "complete Forge gate",
+    "restored current capture with heartbeat paused"
+  ],
+  "verification_plan": [
+    "commit the focused and full-gate-passing R0.4 package",
+    "create a disposable Git worktree at the commit",
+    "run bootstrap-independent generated-view and canonical verifiers",
+    "run focused compiler continuity and recovery tests",
+    "run the complete Forge gate with no running disposable Forge executable",
+    "remove the disposable worktree only after resolving and checking its absolute path",
+    "restart the primary Forge UI and verify current capture",
+    "record exact pass/failure evidence and advance the canonical next action"
+  ],
+  "resume_after": "Continue automatically after status updates. Ask the owner only if a real authority boundary or unresolvable safety decision is reached.",
+  "evidence": [
+    "docs/canonical-system/MASTER_PLAN_V2.md",
+    "docs/canonical-system/MASTER_PROGRAM.json",
+    "docs/canonical-system/CONVERSATION_COMPILER_READINESS.md",
+    "contracts/conversation-compiler-contract.md",
+    "crates/forge-kernel/src/code_admission.rs",
+    "crates/forge-kernel/src/persistence.rs",
+    "tools/verify-conversation-compiler-continuity.ps1",
+    "tools/verify.ps1"
+  ],
+  "verification_receipts": [
+    "R0.2 registry v2 and generated owner view verified",
+    "R0.3 viewport repair: 12 reference-viewport and 9 viewport-stimulus tests pass",
+    "R0.4 fixed corpus SHA-256 9e5c620f6d18b000b0c3a328fa20c8f6dfd497e9600b8ba42cc9849e53be5b3d",
+    "R0.4 70 Forge-kernel tests pass",
+    "R0.4 complete Forge gate passes in the primary worktree"
+  ],
+  "transition": "pre-approval transfer checkpoint -> owner-approved master plan v2 -> R0.2 registry consolidation -> R0.3 v3 repair -> R0.4 compiler continuity verified -> R0.5 disposable acceptance executing",
+  "metrics": {
+    "token_cost": {
+      "status": "unknown",
+      "value": null
+    },
+    "elapsed_time": {
+      "status": "unknown",
+      "value": null
+    }
+  }
 }

@@ -136,18 +136,25 @@ fn validate(
             "Code exceeds the 1 MiB admission limit.".into(),
         ));
     }
-    if relative_path.is_empty()
-        || relative_path.starts_with('/')
-        || relative_path.contains('\\')
-        || relative_path
-            .split('/')
-            .any(|part| part.is_empty() || part == "." || part == "..")
-    {
+    if !is_safe_repository_relative_path(relative_path) {
         return Err(KernelError::InvalidCodeAdmission(
             "Target path must be a safe repository-relative slash path.".into(),
         ));
     }
     Ok(())
+}
+
+pub(crate) fn is_safe_repository_relative_path(path: &str) -> bool {
+    let bytes = path.as_bytes();
+    let has_drive_prefix = bytes.len() >= 2 && bytes[0].is_ascii_alphabetic() && bytes[1] == b':';
+    !path.is_empty()
+        && !path.starts_with('/')
+        && !path.starts_with('\\')
+        && !has_drive_prefix
+        && !path.contains('\\')
+        && !path
+            .split('/')
+            .any(|part| part.is_empty() || part == "." || part == "..")
 }
 
 #[cfg(test)]
@@ -199,10 +206,18 @@ mod tests {
         assert!(!first.already_recorded);
         assert!(second.already_recorded);
         assert_eq!(kernel.events().len(), events);
-        assert!(matches!(
-            admit_pasted_code(&mut kernel, "chat-a", "../escape.rs", "rust", b"x"),
-            Err(KernelError::InvalidCodeAdmission(_))
-        ));
+        for path in [
+            "../escape.rs",
+            "/absolute.rs",
+            "C:/absolute.rs",
+            "C:\\absolute.rs",
+            "\\\\server\\share\\escape.rs",
+        ] {
+            assert!(matches!(
+                admit_pasted_code(&mut kernel, "chat-a", path, "rust", b"x"),
+                Err(KernelError::InvalidCodeAdmission(_))
+            ));
+        }
     }
 
     #[test]

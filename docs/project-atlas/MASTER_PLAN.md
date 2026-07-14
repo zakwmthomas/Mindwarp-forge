@@ -39,7 +39,7 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
 ## F5
 
 - **F5** - executing; gate: hard; depends on: F5-OWNER-GATE.
-  Next: After the owner reviews the completed R0.2 registry and R0.3 v3 repair package, close R0.4: exercise the context compiler against a representative long corpus, deterministic replay and migration fixtures, both Windows- and POSIX-rooted path rejection, and explicit SQLite-handle closure. Keep external references quarantined and heartbeat automation paused.
+  Next: Close R0.5 by verifying the committed rebaseline from a disposable clean worktree, rerunning the complete Forge gate without the live desktop executable lock, confirming generated views and recovery boundaries, and recording the final rebaseline receipt. Continue autonomously into the next dependency-ready humanoid proof package unless a genuine authority boundary appears.
 - **F5-COHERENCE** - promoted; gate: hard; depends on: F4-CLOSEOUT.
   Next: Implement the owner-approved typed knowledge intake, canonical role registry, recoverability baseline, unified snapshot, and generated knowledge views without crossing the independent F5 owner-observation gate.
 

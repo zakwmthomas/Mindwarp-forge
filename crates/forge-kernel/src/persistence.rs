@@ -14,7 +14,8 @@ use sha2::{Digest, Sha256};
 use crate::{
     Event, ForgeKernel, KernelError, StoredObject,
     code_admission::{
-        CodeAdmissionReceipt, CodePreview, admit_pasted_code, preview_code_candidate,
+        CodeAdmissionReceipt, CodePreview, admit_pasted_code, is_safe_repository_relative_path,
+        preview_code_candidate,
     },
     compiler::ConversationCompiler,
     contracts::{
@@ -2431,7 +2432,8 @@ fn safe_staging_target_with(
     mut is_symlink: impl FnMut(&Path) -> Result<bool, PersistenceError>,
 ) -> Result<PathBuf, PersistenceError> {
     let relative = Path::new(relative_path);
-    if relative.is_absolute()
+    if !is_safe_repository_relative_path(relative_path)
+        || relative.is_absolute()
         || relative
             .components()
             .any(|component| !matches!(component, std::path::Component::Normal(_)))
@@ -2789,6 +2791,29 @@ impl From<std::io::Error> for PersistenceError {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    fn representative_corpus_chunk(chunk_index: usize, message_count: usize) -> Vec<u8> {
+        let mut transcript = String::new();
+        for local_index in 0..message_count {
+            let index = chunk_index * message_count + local_index;
+            if index % 2 == 0 {
+                transcript.push_str(&format!(
+                    "Assistant: Candidate {index} remains evidence only.\ncontinued-detail-{index}\n"
+                ));
+            } else if index % 17 == 0 {
+                transcript.push_str(&format!(
+                    "User: Approved wording at {index} is intent evidence, not authority.\n"
+                ));
+            } else if index % 19 == 0 {
+                transcript.push_str(&format!(
+                    "User: No, that's wrong at {index}; preserve the correction.\n"
+                ));
+            } else {
+                transcript.push_str(&format!("User: Ordered reply {index}.\n"));
+            }
+        }
+        transcript.into_bytes()
+    }
     use crate::{ActorKind, AuthorityBasis, CandidateState, EventType};
     use serde_json::json;
 
@@ -3285,6 +3310,105 @@ mod tests {
         );
         drop(reopened);
         fs::remove_dir_all(directory).unwrap();
+    }
+
+    #[test]
+    fn representative_long_corpus_replays_exactly_and_releases_sqlite_files() {
+        const CHUNK_COUNT: usize = 8;
+        const MESSAGES_PER_CHUNK: usize = 128;
+        let fixtures = (0..CHUNK_COUNT)
+            .map(|index| representative_corpus_chunk(index, MESSAGES_PER_CHUNK))
+            .collect::<Vec<_>>();
+        let mut corpus_bytes = Vec::new();
+        for fixture in &fixtures {
+            corpus_bytes.extend_from_slice(fixture);
+            corpus_bytes.push(0);
+        }
+        assert_eq!(
+            ForgeKernel::object_id_for(&corpus_bytes),
+            "9e5c620f6d18b000b0c3a328fa20c8f6dfd497e9600b8ba42cc9849e53be5b3d"
+        );
+
+        let directory =
+            std::env::temp_dir().join(format!("mindwarp-forge-long-corpus-{}", std::process::id()));
+        fs::create_dir_all(&directory).unwrap();
+        let database = directory.join("forge.sqlite3");
+        let mut forge = PersistentForge::open(&database).unwrap();
+        for index in [7, 0, 3, 1, 6, 2, 5, 4] {
+            let report = forge
+                .ingest_labeled_transcript_chunk(
+                    "synthetic-representative-corpus-v1",
+                    &fixtures[index],
+                    1,
+                    ZERO_BASED_CHUNK_ORDERING,
+                    CHUNK_COUNT as u32,
+                    index as u32,
+                )
+                .unwrap();
+            assert_eq!(report.message_count, MESSAGES_PER_CHUNK);
+            assert_eq!(report.candidate_count, MESSAGES_PER_CHUNK / 2);
+            assert_eq!(
+                report.source_gap.state,
+                if index == 4 { "complete" } else { "incomplete" }
+            );
+        }
+        assert_eq!(forge.kernel().candidate_count(), 512);
+        assert!(
+            forge
+                .kernel()
+                .candidates()
+                .all(|candidate| candidate.state == CandidateState::Proposed)
+        );
+        let before_envelopes = forge
+            .journal
+            .source_chunk_envelopes("synthetic-representative-corpus-v1", 1)
+            .unwrap();
+        let before_history = forge
+            .journal
+            .source_manifest_history("synthetic-representative-corpus-v1", 1)
+            .unwrap();
+        assert_eq!(before_envelopes.len(), CHUNK_COUNT);
+        assert_eq!(before_history.len(), CHUNK_COUNT);
+        assert_eq!(before_history.last().unwrap().state, "complete");
+        drop(forge);
+
+        let reopened = PersistentForge::open(&database).unwrap();
+        assert_eq!(
+            reopened
+                .journal
+                .source_chunk_envelopes("synthetic-representative-corpus-v1", 1)
+                .unwrap(),
+            before_envelopes
+        );
+        assert_eq!(
+            reopened
+                .journal
+                .source_manifest_history("synthetic-representative-corpus-v1", 1)
+                .unwrap(),
+            before_history
+        );
+        assert_eq!(reopened.kernel().candidate_count(), 512);
+        for envelope in &before_envelopes {
+            let raw = reopened
+                .journal
+                .object(&envelope.raw_bytes_object_id)
+                .unwrap()
+                .unwrap();
+            assert_eq!(raw.bytes, fixtures[envelope.chunk_index as usize]);
+            assert_eq!(
+                ForgeKernel::object_id_for(&raw.bytes),
+                envelope.raw_bytes_sha256
+            );
+            assert!(
+                envelope
+                    .child_evidence_ids
+                    .iter()
+                    .all(|id| reopened.kernel().object(id).is_some())
+            );
+        }
+        drop(reopened);
+        fs::remove_dir_all(&directory).unwrap();
+        assert!(!directory.exists());
     }
 
     #[test]
@@ -3977,6 +4101,23 @@ mod tests {
         }
         assert!(!directory.join("escape.txt").exists());
         fs::remove_dir_all(directory).unwrap();
+    }
+
+    #[test]
+    fn staging_boundary_rejects_posix_and_windows_rooted_paths_portably() {
+        let root = Path::new("bounded-root");
+        for path in [
+            "/absolute.txt",
+            "C:/absolute.txt",
+            "C:\\absolute.txt",
+            "\\\\server\\share\\absolute.txt",
+            "../escape.txt",
+        ] {
+            assert!(matches!(
+                safe_staging_target_with(root, path, |_| Ok(false)),
+                Err(PersistenceError::UnsafeApplyTarget(_))
+            ));
+        }
     }
 
     #[test]

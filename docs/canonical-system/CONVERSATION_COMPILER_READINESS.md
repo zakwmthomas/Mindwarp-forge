@@ -1,6 +1,6 @@
 # Conversation Compiler Long-Corpus and Format-Drift: Readiness Package
 
-**Status:** discovery and readiness only. This document does not expand the
+**Status:** R0.4 bounded continuity profile verified. This document does not expand the
 manual-import grammar, enable clipboard watching, add file import, or grant
 captured text any authority.
 
@@ -71,3 +71,27 @@ require a dedicated design/readiness package before code changes.
   capability beyond the explicitly authorized source boundary.
 - Existing adversarial cases remain passing; no grammar expansion is accepted
   merely because it parses more text.
+
+## R0.4 verification result
+
+The bounded v1 profile now closes the risk-critical continuity gap without
+selecting an external export format or widening compiler authority:
+
+- `synthetic-representative-corpus-v1` deterministically generates 1,024
+  non-sensitive messages across eight chunks; aggregate fixture SHA-256 is
+  `9e5c620f6d18b000b0c3a328fa20c8f6dfd497e9600b8ba42cc9849e53be5b3d`.
+- Out-of-order ingestion remains incomplete until all indices exist. Exact raw
+  bytes, 1,024 child-evidence links, ordered manifest history, and 512 proposed
+  Assistant candidates survive a fresh SQLite reopen.
+- The reopened journal is explicitly dropped before the disposable database
+  directory is removed, which passes on Windows and guards the prior WinError
+  32 failure mode.
+- The retained legacy-database fixture adds the envelope schema and replays
+  exact links without losing the old `source_chunks` row.
+- Platform-independent shared portable validation rejects `/absolute`, `C:/absolute`,
+  `C:\\absolute`, UNC, and traversal forms at admission and staging.
+- Approval and correction language are counted only as evidence/intent; no
+  candidate becomes approved or promoted.
+
+This proves the declared synthetic v1 boundary, not universal corpus capacity,
+arbitrary export compatibility, privacy policy, or automatic source discovery.

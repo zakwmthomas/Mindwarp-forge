@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **F5-TPOSE-BIND-FIXTURE-V3**
-- Objective: Preserve the incomplete v3 T-pose work and the owner's reference-guided generation proposal in a verified handover without treating either as approved production direction.
+- Work package: **R0-ACCEPTANCE-REBASELINE**
+- Objective: Verify the committed master-plan v2, repaired v3 viewport, and compiler-continuity rebaseline from a disposable clean worktree, then retain one final R0 acceptance receipt.
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
-- Related systems: forge-truth-kernel, conversation-compiler, solo-studio-control-plane, forge-dashboard
-- Risk/research gate: **context-integrity-and-owner-direction / No new research or implementation is authorized during transfer; the latest reference-guided proposal is retained as an owner-decision candidate, not canonical policy.**
-- Exact next action: In a new chat, bootstrap from the Forge repository, inspect the preserved dirty worktree, read context/capsules/2026-07-14-reference-guided-transfer.md and the handover export, then obtain the owner's decision on the pending reference-guided generation plan. Do not implement it or resume the heartbeat without explicit owner authorization.
+- Related systems: forge-truth-kernel, forge-context-compiler, solo-studio-control-plane, forge-dashboard
+- Risk/research gate: **rebaseline-integrity-and-recoverability / No new research is needed for R0.5; verify only the committed bounded package and stop on provenance, recovery, authority, coherence, or full-gate failure.**
+- Exact next action: Commit the verified R0.4 continuity package, create a disposable clean worktree at that commit, run generated-view, recovery, focused compiler, and complete Forge gates there, then record the R0 acceptance result and advance to the next dependency-ready humanoid proof package.
 
 ## Approved operating policies
 
