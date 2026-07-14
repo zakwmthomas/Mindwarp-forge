@@ -4,31 +4,34 @@
   "batch_id": "F5-H5-HUMANOID-VISUAL-REFERENCE-INTAKE",
   "master_program_item": "F5",
   "state": "executing",
-  "objective": "Admit only provenance-safe, pixel-inspected, comparison-fit human visual references and prepare a bounded owner check for any unresolved quality, anatomy, accuracy, or creative uncertainty.",
-  "next_action": "Research a small set of provenance- and license-safe neutral human reference candidates, inspect actual pixels at useful scale and relevant views, reject visibly unsuitable candidates, and prepare one labelled owner comparison only if more than one verified-fit creative target remains or fitness is uncertain.",
-  "substage_id": "H5-visual-reference-source-and-fitness-intake",
+  "objective": "Calibrate a mature semi-realistic, restrained toon/cel visual direction that can later derive from one organism identity across phone and high-end PC fidelity tiers, without mistaking concept imagery for implementation or performance proof.",
+  "next_action": "Generate one bounded visual direction sheet spanning semi-realistic stylization and coordinated high-to-low fidelity, inspect its actual pixels for anatomy, completeness, tone, and comparison fitness, and retain it only as an owner-check concept candidate.",
+  "substage_id": "H5-stylized-scalable-direction-comparison",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
     "milestone": "F5",
     "systems": ["asset-factory", "procedural-animation", "forge-reference-studio", "forge-truth-kernel"]
   },
-  "risk_level": "visual-reference-provenance-anatomy-quality-and-creative-fit",
-  "research_gate": "Use authoritative or clearly licensed sources, inspect actual pixels rather than metadata, and keep the candidate set small. Do not download executable content, import a production asset, or treat popularity as quality.",
-  "authority_lane": "Owner-authorized reference research and pixel inspection only. Dependent visual implementation remains blocked until a verified-fit receipt exists and any creative ambiguity is resolved by the owner. No approval, promotion, engine selection, external execution, or protected-Kernel mutation.",
-  "context_health": "Green after H4 focused and complete Forge gates. P13 visual intake is required and dependent implementation is blocked; capture is current and heartbeat remains paused.",
+  "risk_level": "stylization-anatomy-growth-generalization-and-cross-platform-fidelity",
+  "research_gate": "Generated concepts may test visual direction only. Inspect actual pixels, reject anatomy and tone failures, and never infer mesh topology, shader feasibility, biological growth correctness, or device performance from an image.",
+  "authority_lane": "Owner-authorized requirement recording and bounded concept comparison only. Growth, geometry, shader, runtime, device profiling, approval, promotion, engine selection, external execution, and protected-Kernel mutation remain unauthorized.",
+  "context_health": "Green after a two-scale refresh. The owner resolved the broad art direction and added organism growth plus phone-to-high-end fidelity requirements; these are recorded as unimplemented future system obligations. H5 dependent implementation remains blocked and heartbeat remains paused.",
   "stage_context": {
-    "stage_id": "H5-visual-reference-source-and-fitness-intake",
+    "stage_id": "H5-stylized-scalable-direction-comparison",
     "macro_sources": [
       "docs/canonical-system/MASTER_PLAN_V2.md",
       "docs/canonical-system/MASTER_PROGRAM.json",
       "docs/project-atlas/ROADMAP.md",
       "governance/WORKING_COVENANT.md",
-      "governance/STAGE_QUALITY_PROTOCOL.md"
+      "governance/STAGE_QUALITY_PROTOCOL.md",
+      "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md"
     ],
     "macro_findings": [
       "H5 is the first visual-inspection stage; H6 recovery and H7 promotion remain later gates.",
       "F5 remains engine-neutral and cannot import a production asset or select a runtime.",
-      "The owner requires a good-quality, accurate human comparison target and review whenever fitness or creative intent is uncertain."
+      "The owner requires good-quality accurate comparison targets and review whenever fitness or creative intent is uncertain.",
+      "The verified humanoid chain is a smallest engine-neutral proof, not an in-game growth, creature, mesh, shader, or device-performance implementation.",
+      "Later organism growth must generalize beyond humanoids while one canonical identity drives coordinated phone-to-high-end presentation and simulation fidelity."
     ],
     "micro_sources": [
       "artifacts/chat-screenshots/v2-pose-reference.png",
@@ -36,20 +39,25 @@
       "contracts/reference-viewport-contract.md",
       "contracts/control-calibration-contract.md",
       "docs/canonical-system/H4_HUMANOID_FUNCTIONAL_CONTROLS_RESULT.md",
-      "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md"
+      "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md",
+      "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md",
+      "evidence/imported-chat/2026-07-14-gemini-fractal-matrix-engine.md"
     ],
     "micro_findings": [
       "Original-resolution pixel inspection confirms the Forge UI capture is clean and correctly scoped to the Forge window.",
       "The displayed reference is a tiny three-view stick skeleton with no surface anatomy, credible human silhouette, face, hands, musculature, or detailed proportions.",
       "The current fixture is rejected for human-quality comparison but remains valid for the exact structural H2-H4 proofs.",
       "Three official MakeHuman documentation images were inspected at original scale and rejected because crop, incompleteness, clothing, annotations, or occlusion prevent the required full-human comparison.",
-      "MakeHuman remains a provenance- and license-promising source family, but no actual candidate asset is verified fit and the realistic-versus-stylized creative target remains unresolved."
+      "MakeHuman remains a provenance- and license-promising source family, but no actual candidate asset is verified fit.",
+      "The owner selected semi-realistic anatomy and proportions with mature economical stylization and a restrained toon/cel-like shader, explicitly avoiding childlike caricature.",
+      "The owner requires growth across NPCs, humanoids, and creatures plus coordinated degradation from high-end PC to phone-class hardware.",
+      "The imported Gemini compendium is preserved as evidence only; useful hypotheses and unsupported performance, determinism, security, and scale claims are explicitly separated."
     ]
   },
   "visual_quality_gate": {
     "asset_use_intent": true,
     "status": "required_pending",
-    "rationale": "H5 must select and inspect an actual human visual reference. The existing Forge wire capture is visibly insufficient for human-quality comparison, and no replacement has yet passed provenance and pixel fitness.",
+    "rationale": "H5 must now compare actual rendered examples against the resolved mature semi-realistic and restrained toon/cel direction. Existing references remain insufficient, and generated concepts cannot pass as implementation or performance evidence.",
     "dependent_implementation_blocked": true,
     "receipts": [
       {
@@ -138,7 +146,9 @@
     "An anatomically credible source can still be the wrong creative target for Mind Warp.",
     "A single view can hide anatomy or proportion defects that appear from another angle.",
     "Visual observation must not approve, promote, or overwrite structural evidence.",
-    "The owner has not yet selected whether the H5 comparison target is a realistic anatomically neutral adult or a specific stylized Mind Warp human."
+    "A concept image may look attractive while hiding topology, deformation, shader-cost, or phone-performance failures.",
+    "The exact meaning of the owner's term NNR is unresolved and is conservatively treated as constrained phone-class hardware.",
+    "Growth semantics for biological age, life stage, inherited morphology, acquired change, and creature diversity require a later bounded design package."
   ],
   "evidence_requirements": [
     "authoritative source identity, license or use authority, and content fingerprint per candidate",
@@ -157,10 +167,12 @@
     "run focused, mutation-negative, and complete Forge gates",
     "advance automatically to H6 only after H5 is verified"
   ],
-  "resume_after": "Continue autonomous source and pixel-fitness research. Ask the owner only when a concrete candidate remains uncertain or a creative choice between verified-fit candidates is necessary.",
+  "resume_after": "Present the bounded concept comparison in chat. Continue only after the owner's visual observation; do not infer preference or resume dependent implementation automatically.",
   "evidence": [
     "docs/canonical-system/H4_HUMANOID_FUNCTIONAL_CONTROLS_RESULT.md",
     "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md",
+    "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md",
+    "evidence/imported-chat/2026-07-14-gemini-fractal-matrix-engine.md",
     "contracts/control-calibration-contract.md",
     "artifacts/chat-screenshots/v2-pose-reference.png.manifest.json",
     "governance/STAGE_QUALITY_PROTOCOL.md",
@@ -175,10 +187,12 @@
     "current Forge wire reference inspected at original resolution and rejected for human-quality comparison",
     "three official MakeHuman documentation images inspected at original scale and rejected for incomplete, cropped, or obscured human comparison",
     "MakeHuman retained only as a license- and provenance-promising source family; no candidate admitted",
+    "owner semi-realistic mature stylization, restrained toon/cel treatment, organism growth, and phone-to-high-end fidelity requirements recorded without implementation claims",
+    "Gemini Fractal Matrix compendium stored verbatim as attributed evidence and explicitly not promoted",
     "primary Forge capture restored current",
     "heartbeat PAUSED"
   ],
-  "transition": "R0 accepted -> H1 intake verified -> H2 representation verified -> H3 generation verified -> H4 controls verified -> H5 visual intake executing",
+  "transition": "R0 accepted -> H1 intake verified -> H2 representation verified -> H3 generation verified -> H4 controls verified -> H5 source rejections retained -> H5 stylized scalable direction comparison executing",
   "metrics": {
     "token_cost": {"status": "unknown", "value": null},
     "elapsed_time": {"status": "unknown", "value": null}

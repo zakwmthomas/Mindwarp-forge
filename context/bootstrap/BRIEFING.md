@@ -5,11 +5,11 @@
 ## Active route
 
 - Work package: **F5-H5-HUMANOID-VISUAL-REFERENCE-INTAKE**
-- Objective: Admit only provenance-safe, pixel-inspected, comparison-fit human visual references and prepare a bounded owner check for any unresolved quality, anatomy, accuracy, or creative uncertainty.
+- Objective: Calibrate a mature semi-realistic, restrained toon/cel visual direction that can later derive from one organism identity across phone and high-end PC fidelity tiers, without mistaking concept imagery for implementation or performance proof.
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
 - Related systems: asset-factory, procedural-animation, forge-reference-studio, forge-truth-kernel
-- Risk/research gate: **visual-reference-provenance-anatomy-quality-and-creative-fit / Use authoritative or clearly licensed sources, inspect actual pixels rather than metadata, and keep the candidate set small. Do not download executable content, import a production asset, or treat popularity as quality.**
-- Exact next action: Research a small set of provenance- and license-safe neutral human reference candidates, inspect actual pixels at useful scale and relevant views, reject visibly unsuitable candidates, and prepare one labelled owner comparison only if more than one verified-fit creative target remains or fitness is uncertain.
+- Risk/research gate: **stylization-anatomy-growth-generalization-and-cross-platform-fidelity / Generated concepts may test visual direction only. Inspect actual pixels, reject anatomy and tone failures, and never infer mesh topology, shader feasibility, biological growth correctness, or device performance from an image.**
+- Exact next action: Generate one bounded visual direction sheet spanning semi-realistic stylization and coordinated high-to-low fidelity, inspect its actual pixels for anatomy, completeness, tone, and comparison fitness, and retain it only as an owner-check concept candidate.
 
 ## Approved operating policies
 

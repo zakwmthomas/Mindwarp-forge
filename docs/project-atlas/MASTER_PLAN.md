@@ -39,7 +39,7 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
 ## F5
 
 - **F5** - executing; gate: hard; depends on: F5-OWNER-GATE.
-  Next: Execute H5 visual reference intake and inspection: retain the current Forge wire capture as rejected for human-quality comparison, research provenance- and license-safe candidate human references, inspect their actual pixels at useful scale and multiple relevant views, record anatomy/completeness/pose/view/lighting/detail defects, and route any remaining quality, accuracy, or creative ambiguity to one bounded owner comparison before dependent visual implementation.
+  Next: Execute H5 mature-stylization comparison: preserve the owner's semi-realistic, restrained toon/cel direction and phone-to-high-end fidelity requirement; generate a bounded visual direction sheet, inspect its actual pixels, reject anatomy or tone failures, and route the useful alternatives to one owner observation without claiming topology, shader, growth, or runtime performance.
 - **F5-COHERENCE** - promoted; gate: hard; depends on: F4-CLOSEOUT.
   Next: Implement the owner-approved typed knowledge intake, canonical role registry, recoverability baseline, unified snapshot, and generated knowledge views without crossing the independent F5 owner-observation gate.
 

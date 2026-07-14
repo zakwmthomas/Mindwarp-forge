@@ -115,6 +115,17 @@ evidence exist. The repeatedly failing external containment route remains
 retained evidence and deferred research; it is not allowed to block the safe
 built-in proof path unless its risk becomes critical.
 
+The humanoid proof is the smallest articulated reference, not the final game
+population architecture. Later G1 packages must generalize the verified
+identity, lineage, representation, articulation, observation, and recovery
+contracts into organism lifecycle and morphology growth for humanoids and
+structurally distinct creatures. Presentation and simulation fidelity must
+derive from one canonical organism state across constrained phone hardware and
+high-end PCs; LOD may reduce geometry, materials, animation, AI, physics, and
+update cadence, but it may not fork gameplay truth. The detailed requirement
+and cheap proof order are retained in
+`ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md`.
+
 ## Material-package receipt
 
 Each owner checkpoint must state: package and dependency; exact files and

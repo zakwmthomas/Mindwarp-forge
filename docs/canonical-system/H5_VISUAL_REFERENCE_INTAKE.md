@@ -40,11 +40,15 @@ Creating a fresh, neutral, full-body multi-view candidate with the external
 application would be a later escalation, not a justified substitute for this
 cheap source-and-pixel screen. No executable was downloaded or run.
 
-## Current decision
+## Current creative direction
 
-No candidate is `verified_fit`. The remaining uncertainty is creative rather
-than technical: whether the comparison baseline should be a realistic,
-anatomically neutral adult or a specific stylized Mind Warp human. That choice
-materially changes which otherwise-good reference is fit, so it must be
-resolved by the owner before candidate generation or dependent implementation.
+The owner resolved the broad target on 2026-07-14: semi-realistic anatomy and
+proportions with a mature stylized treatment, economical forms/materials, and
+a restrained toon/cel-like shader. It must avoid both photorealistic production
+cost and childlike caricature. The same canonical organism must support
+presentation tiers from constrained phone hardware through high-end PC.
 
+No candidate is yet `verified_fit`. A bounded generated comparison may now
+clarify *how much* geometric simplification and graphic shading fits this
+direction. Generated imagery remains visual-direction evidence only; it cannot
+prove topology, shader implementation, animation, growth, or device cost.
