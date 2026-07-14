@@ -268,9 +268,18 @@ fn authorize_candidate(
     action: String,
     candidate_id: String,
     confirmation: String,
+    correction_evidence_id: Option<String>,
+    replacement_candidate_id: Option<String>,
     state: State<'_, AppState>,
 ) -> Result<AuthorizationReceipt, String> {
-    authorize_candidate_for(&state.forge, &action, &candidate_id, &confirmation)
+    authorize_candidate_for(
+        &state.forge,
+        &action,
+        &candidate_id,
+        &confirmation,
+        correction_evidence_id.as_deref(),
+        replacement_candidate_id.as_deref(),
+    )
 }
 
 #[tauri::command]
@@ -688,8 +697,28 @@ fn authorize_candidate_for(
     action: &str,
     candidate_id: &str,
     confirmation: &str,
+    correction_evidence_id: Option<&str>,
+    replacement_candidate_id: Option<&str>,
 ) -> Result<AuthorizationReceipt, String> {
-    let expected_confirmation = format!("{} {}", action.to_ascii_uppercase(), candidate_id);
+    let correction_evidence_id = correction_evidence_id.filter(|value| !value.trim().is_empty());
+    let replacement_candidate_id =
+        replacement_candidate_id.filter(|value| !value.trim().is_empty());
+    let expected_confirmation = match action {
+        "approve" => format!("APPROVE {candidate_id}"),
+        "promote" => format!("PROMOTE {candidate_id}"),
+        "supersede" => {
+            let correction = correction_evidence_id.ok_or_else(|| {
+                "Supersession requires an existing correction evidence ID.".to_owned()
+            })?;
+            match replacement_candidate_id {
+                Some(replacement) => {
+                    format!("SUPERSEDE {candidate_id} USING {correction} WITH {replacement}")
+                }
+                None => format!("SUPERSEDE {candidate_id} USING {correction}"),
+            }
+        }
+        _ => return Err("Action must be approve, promote, or supersede.".to_owned()),
+    };
     if confirmation.trim() != expected_confirmation {
         return Err(format!(
             "Confirmation must exactly equal: {expected_confirmation}"
@@ -711,17 +740,26 @@ fn authorize_candidate_for(
             candidate_id,
             "desktop:explicit-promotion",
         ),
-        _ => return Err("Action must be approve or promote.".to_owned()),
+        "supersede" => forge.kernel_mut().supersede_candidate(
+            ActorKind::DirectProjectUser,
+            AuthorityBasis::ExplicitUserAuthorization,
+            candidate_id,
+            correction_evidence_id.expect("validated correction evidence"),
+            replacement_candidate_id,
+            "desktop:explicit-supersession",
+        ),
+        _ => unreachable!("validated action"),
     }
     .map_err(|error| format!("Authorization was not accepted: {error:?}"))?;
     forge
         .commit()
         .map_err(|error| format!("Authorization was not made durable: {error:?}"))?;
     Ok(AuthorizationReceipt {
-        action: if action == "approve" {
-            "approved"
-        } else {
-            "promoted"
+        action: match action {
+            "approve" => "approved",
+            "promote" => "promoted",
+            "supersede" => "superseded",
+            _ => unreachable!("validated action"),
         },
         candidate_id: candidate_id.to_owned(),
         event_id,
@@ -1088,13 +1126,23 @@ mod tests {
             .id
             .clone();
         assert!(
-            authorize_candidate_for(&forge, "approve", &candidate_id, "approve anything").is_err()
+            authorize_candidate_for(
+                &forge,
+                "approve",
+                &candidate_id,
+                "approve anything",
+                None,
+                None,
+            )
+            .is_err()
         );
         let approval = authorize_candidate_for(
             &forge,
             "approve",
             &candidate_id,
             &format!("APPROVE {candidate_id}"),
+            None,
+            None,
         )
         .unwrap();
         assert_eq!(approval.action, "approved");
@@ -1103,10 +1151,88 @@ mod tests {
             "promote",
             &candidate_id,
             &format!("PROMOTE {candidate_id}"),
+            None,
+            None,
         )
         .unwrap();
         assert_eq!(promotion.action, "promoted");
         assert_eq!(candidate.candidate_count, 1);
+    }
+
+    #[test]
+    fn supersession_requires_correction_binding_and_exact_distinct_phrase() {
+        let forge = Mutex::new(PersistentForge::in_memory().unwrap());
+        let candidate_id = {
+            let mut forge = forge.lock().unwrap();
+            forge
+                .ingest_labeled_transcript("supersede-auth", b"Assistant: Withdrawable candidate.")
+                .unwrap();
+            let candidate_id = forge.kernel().candidates().next().unwrap().id.clone();
+            forge
+                .kernel_mut()
+                .approve_candidate(
+                    ActorKind::DirectProjectUser,
+                    AuthorityBasis::ExplicitUserAuthorization,
+                    &candidate_id,
+                    "supersede-auth",
+                )
+                .unwrap();
+            forge.commit().unwrap();
+            candidate_id
+        };
+        let correction = forge
+            .lock()
+            .unwrap()
+            .kernel_mut()
+            .register_evidence(
+                ActorKind::DirectProjectUser,
+                b"Owner correction",
+                "supersede-auth",
+            )
+            .unwrap();
+
+        assert!(
+            authorize_candidate_for(
+                &forge,
+                "supersede",
+                &candidate_id,
+                &format!("SUPERSEDE {candidate_id}"),
+                None,
+                None,
+            )
+            .is_err()
+        );
+        assert!(
+            authorize_candidate_for(
+                &forge,
+                "supersede",
+                &candidate_id,
+                &format!("SUPERSEDE {candidate_id} USING wrong"),
+                Some(&correction),
+                None,
+            )
+            .is_err()
+        );
+        let receipt = authorize_candidate_for(
+            &forge,
+            "supersede",
+            &candidate_id,
+            &format!("SUPERSEDE {candidate_id} USING {correction}"),
+            Some(&correction),
+            None,
+        )
+        .unwrap();
+        assert_eq!(receipt.action, "superseded");
+        assert_eq!(
+            forge
+                .lock()
+                .unwrap()
+                .kernel()
+                .candidate(&candidate_id)
+                .unwrap()
+                .state,
+            CandidateState::Superseded
+        );
     }
 
     #[test]

@@ -7,10 +7,10 @@
 
 - Package: **F5-H7-HUMANOID-PROMOTION-READINESS**
 - Master item / milestone: **F5 / F5**
-- State / substage: **checkpoint / H7-kernel-supersession-authorization-gate**
+- State / substage: **executing / H7-authority-negative-candidate-package**
 - Related systems: asset-factory, forge-reference-studio, forge-truth-kernel, forge-control-plane
 - Objective: Audit whether H1-H6 form one coherent, correctly scoped canonical promotion candidate, or whether a missing bridge still separates the verified structural wire candidate from the owner-approved visual target.
-- Context health: Green: H6 is committed at 457c5b4; exact H1-H5 recovery and the full Forge gate pass; capture and heartbeat are current; H7 begins from a clean rollback point.
+- Context health: Green: owner-authorized supersession is implemented across Kernel, replay, persistence, backup recovery, exact desktop confirmation, responsive visual inspection, and the clean complete Forge gate; no H7 candidate or promotion exists.
 
 ## Durable evidence
 
@@ -22,11 +22,11 @@
 
 ## Authority boundary
 
-Read-only H7 readiness audit and candidate packaging only. Approval and promotion remain separate owner-initiated Kernel actions requiring exact candidate-bound phrases; no import, runtime selection, application, publishing, or protected-Kernel expansion.
+Owner explicitly authorized the bounded protected-Kernel safe-undo implementation after a plain-language explanation. Scope is CandidateSuperseded state/event, exact direct-owner transition, replay/persistence/UI tests, and no candidate promotion, asset import, application, publishing, or runtime effect.
 
 ## Exact next action
 
-Await explicit owner authorization for the bounded protected-Kernel candidate-supersession implementation; do not modify Kernel, persistence, authorization UI, or candidate state before that response.
+Construct the exact engine-neutral-humanoid-proof-baseline-v1 owner package from the already verified H6/H5 bindings and propose it authority-negative only; do not approve or promote it, import an asset, or widen its claims.
 
 ## Unresolved risks
 

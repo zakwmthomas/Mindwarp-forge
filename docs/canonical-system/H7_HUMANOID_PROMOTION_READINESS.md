@@ -1,8 +1,8 @@
 # H7 humanoid promotion readiness
 
-Status: **scope audit and capability-free lifecycle proof complete; promotion
-blocked pending authorization and verification of a reversible protected
-candidate lifecycle**.
+Status: **scope audit, capability-free lifecycle proof, owner-authorized
+protected supersession implementation, and complete Forge verification gate
+pass; no H7 candidate has been created, approved, or promoted**.
 
 H7 asks whether H1-H6 form a coherent canonical promotion candidate. It does
 not import an asset, promote anything, infer owner authority, or claim that the
@@ -35,7 +35,7 @@ Its H5 decision root is
 | Recovery | H6 strict chain, hostile matrix, seven Kernel objects, ProofReceipt, backup/reopen | Exact H1-H5 identities and limitations reconstruct and recover without authority widening. | Pass |
 | Candidate scope | This audit and the H6 manifest | The standard binds separately scoped structural and visual evidence for later surface work. | Pass once encoded and adversarially tested |
 | Approval and promotion authority | Kernel and explicit-authorization contracts | Only exact, separate, direct-owner actions may change candidate state. | Pass in existing forward path |
-| Rollback/supersession | Control-plane rollback exists only for failed/blocked work gates; Kernel code rollback applies only to code application | A promoted canonical baseline can be retired or superseded append-only without erasing history. | **Fail: candidate lifecycle has no such state or event** |
+| Rollback/supersession | Kernel `CandidateSuperseded` event/state, explicit owner phrase, strict replay, SQLite recovery | An approved or promoted baseline can be retired append-only without erasing history or causing application/runtime effects. | Pass: focused tests and complete Forge gate |
 
 ## Mandatory non-claims
 
@@ -110,11 +110,11 @@ Promoted supersession replays deterministically, retains the original evidence
 package, and declares `simulated_only_no_kernel_state_change` plus explicit
 no-import/no-execution effects.
 
-This proves the proposed semantics cheaply but does not close H7: the real
-Kernel still lacks `Superseded` state, an append-only supersession event,
-replay validation, persistence tests, and exact direct-owner confirmation.
+This cheap proof justified the protected change without creating or promoting
+a real H7 candidate. The owner then explicitly authorized the narrowly bounded
+Kernel implementation after it was explained in plain language as a safe undo.
 
-## Protected-Kernel implementation authorization gate
+## Protected-Kernel implementation result
 
 The smallest justified protected change is now bounded:
 
@@ -133,6 +133,14 @@ The smallest justified protected change is now bounded:
 7. prove no code/asset application, import, execution, publishing, runtime
    selection, or deletion effect before the complete Forge gate.
 
-This change would make promotion reversible at the authority ledger without
-promoting the H7 humanoid package itself. It modifies the protected Kernel and
-therefore requires separate owner authorization under the Working Covenant.
+The owner-authorized implementation now supplies all seven bounded properties.
+Focused evidence includes 81 passing Kernel tests, a separate SQLite
+commit/reopen/verified-backup recovery test, an exact desktop supersession
+phrase test, a clean TypeScript/Vite build, and visual inspection at desktop
+and 390-pixel phone widths. Unknown event schema versions now fail closed.
+
+No H7 humanoid candidate was created, approved, promoted, imported, applied, or
+executed. The clean complete Forge gate passed in 57.4 seconds. An earlier gate
+attempt reached the final Tauri build after its tests passed but encountered a
+Windows lock from the already-running exact Forge desktop executable; stopping
+that process removed the infrastructure collision and it did not recur.

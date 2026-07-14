@@ -45,6 +45,7 @@ pub enum EventType {
     ApprovalProposed,
     CandidateApproved,
     CandidatePromoted,
+    CandidateSuperseded,
     CandidateRejected,
     CandidateQuarantined,
     CodeApplied,
@@ -56,6 +57,7 @@ pub enum CandidateState {
     Proposed,
     Approved,
     Promoted,
+    Superseded,
     Rejected,
     Quarantined,
 }
@@ -87,6 +89,14 @@ pub struct Candidate {
     pub evidence: ObjectId,
     pub state: CandidateState,
     pub evidence_events: Vec<EventId>,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
+#[serde(deny_unknown_fields)]
+struct CandidateSupersession {
+    candidate_id: CandidateId,
+    correction_evidence_id: ObjectId,
+    replacement_candidate_id: Option<CandidateId>,
 }
 
 #[derive(Default)]
@@ -162,6 +172,9 @@ impl ForgeKernel {
                     expected: expected_sequence,
                     actual: event.sequence,
                 });
+            }
+            if event.schema_version != 1 {
+                return Err(KernelError::UnsupportedEventSchema(event.schema_version));
             }
             if event.id != event.hash || event.hash != event_hash(&event)? {
                 return Err(KernelError::EventHashMismatch(event.id));
@@ -311,6 +324,60 @@ impl ForgeKernel {
             .expect("checked candidate")
             .evidence_events
             .push(event.id.clone());
+        Ok(event.id)
+    }
+
+    pub fn supersede_candidate(
+        &mut self,
+        actor: ActorKind,
+        authority: AuthorityBasis,
+        candidate_id: &str,
+        correction_evidence: &str,
+        replacement_candidate_id: Option<&str>,
+        correlation_id: impl Into<String>,
+    ) -> Result<EventId, KernelError> {
+        self.require_explicit_user(actor, &authority)?;
+        let candidate = self
+            .candidate(candidate_id)
+            .ok_or_else(|| KernelError::UnknownCandidate(candidate_id.into()))?
+            .clone();
+        if !matches!(
+            candidate.state,
+            CandidateState::Approved | CandidateState::Promoted
+        ) {
+            return Err(KernelError::InvalidSupersessionState {
+                candidate: candidate_id.into(),
+                actual: candidate.state,
+            });
+        }
+        if self.object(correction_evidence).is_none() {
+            return Err(KernelError::UnknownObject(correction_evidence.into()));
+        }
+        if let Some(replacement_id) = replacement_candidate_id {
+            self.require_valid_replacement(candidate_id, replacement_id)?;
+        }
+
+        let payload = serde_json::to_value(CandidateSupersession {
+            candidate_id: candidate_id.into(),
+            correction_evidence_id: correction_evidence.into(),
+            replacement_candidate_id: replacement_candidate_id.map(str::to_owned),
+        })
+        .map_err(|error| KernelError::Serialization(error.to_string()))?;
+        let event = self.append_event(
+            EventType::CandidateSuperseded,
+            ActorKind::DirectProjectUser,
+            authority,
+            vec![candidate.evidence.clone(), correction_evidence.into()],
+            candidate.evidence_events.clone(),
+            correlation_id.into(),
+            payload,
+        )?;
+        let candidate = self
+            .candidates
+            .get_mut(candidate_id)
+            .expect("checked candidate");
+        candidate.state = CandidateState::Superseded;
+        candidate.evidence_events.push(event.id.clone());
         Ok(event.id)
     }
 
@@ -488,6 +555,10 @@ impl ForgeKernel {
                     event,
                 )?;
             }
+            EventType::CandidateSuperseded => {
+                self.require_replayed_explicit_user(event)?;
+                self.apply_replayed_supersession(event)?;
+            }
             EventType::CorrectionRecorded | EventType::CandidateRejected => {
                 if event.actor != ActorKind::DirectProjectUser
                     || event.authority != AuthorityBasis::None
@@ -549,6 +620,65 @@ impl ForgeKernel {
         Ok(())
     }
 
+    fn apply_replayed_supersession(&mut self, event: &Event) -> Result<(), KernelError> {
+        let payload: CandidateSupersession = serde_json::from_value(event.payload.clone())
+            .map_err(|_| KernelError::InvalidReplayEvent(event.id.clone()))?;
+        let candidate = self
+            .candidate(&payload.candidate_id)
+            .ok_or_else(|| KernelError::InvalidReplayEvent(event.id.clone()))?
+            .clone();
+        if !matches!(
+            candidate.state,
+            CandidateState::Approved | CandidateState::Promoted
+        ) || self.object(&payload.correction_evidence_id).is_none()
+        {
+            return Err(KernelError::InvalidReplayEvent(event.id.clone()));
+        }
+        if let Some(replacement_id) = payload.replacement_candidate_id.as_deref() {
+            self.require_valid_replacement(&payload.candidate_id, replacement_id)
+                .map_err(|_| KernelError::InvalidReplayEvent(event.id.clone()))?;
+        }
+
+        let mut expected_inputs = vec![candidate.evidence.clone(), payload.correction_evidence_id];
+        expected_inputs.sort();
+        let mut expected_prior_events = candidate.evidence_events.clone();
+        expected_prior_events.sort();
+        if event.input_objects != expected_inputs || event.prior_events != expected_prior_events {
+            return Err(KernelError::InvalidReplayEvent(event.id.clone()));
+        }
+
+        let candidate = self
+            .candidates
+            .get_mut(&payload.candidate_id)
+            .expect("checked replayed candidate");
+        candidate.state = CandidateState::Superseded;
+        candidate.evidence_events.push(event.id.clone());
+        Ok(())
+    }
+
+    fn require_valid_replacement(
+        &self,
+        candidate_id: &str,
+        replacement_candidate_id: &str,
+    ) -> Result<(), KernelError> {
+        if candidate_id == replacement_candidate_id {
+            return Err(KernelError::SelfReplacement(candidate_id.into()));
+        }
+        let replacement = self
+            .candidate(replacement_candidate_id)
+            .ok_or_else(|| KernelError::UnknownCandidate(replacement_candidate_id.into()))?;
+        if !matches!(
+            replacement.state,
+            CandidateState::Approved | CandidateState::Promoted
+        ) {
+            return Err(KernelError::InvalidReplacementState {
+                candidate: replacement_candidate_id.into(),
+                actual: replacement.state.clone(),
+            });
+        }
+        Ok(())
+    }
+
     fn require_replayed_explicit_user(&self, event: &Event) -> Result<(), KernelError> {
         if event.actor == ActorKind::DirectProjectUser
             && event.authority == AuthorityBasis::ExplicitUserAuthorization
@@ -602,6 +732,7 @@ pub enum KernelError {
         expected: u64,
         actual: u64,
     },
+    UnsupportedEventSchema(u16),
     InvalidReplayEvent(String),
     InvalidTranscript(String),
     InvalidCodeAdmission(String),
@@ -610,6 +741,15 @@ pub enum KernelError {
         actual: CandidateState,
         required: CandidateState,
     },
+    InvalidSupersessionState {
+        candidate: String,
+        actual: CandidateState,
+    },
+    InvalidReplacementState {
+        candidate: String,
+        actual: CandidateState,
+    },
+    SelfReplacement(String),
     AuthorityDenied,
     Serialization(String),
 }
@@ -770,6 +910,256 @@ mod tests {
         assert!(matches!(
             ForgeKernel::from_records(objects, events),
             Err(KernelError::InvalidReplayEvent(_))
+        ));
+    }
+
+    fn explicitly_approved_candidate(kernel: &mut ForgeKernel, evidence: &[u8]) -> CandidateId {
+        let evidence = kernel
+            .register_evidence(ActorKind::Assistant, evidence, "supersession-test")
+            .unwrap();
+        let candidate = kernel
+            .propose_candidate(&evidence, "supersession-test")
+            .unwrap();
+        kernel
+            .approve_candidate(
+                ActorKind::DirectProjectUser,
+                AuthorityBasis::ExplicitUserAuthorization,
+                &candidate,
+                "supersession-test",
+            )
+            .unwrap();
+        candidate
+    }
+
+    #[test]
+    fn approved_or_promoted_candidate_can_be_superseded_without_deleting_history() {
+        for promote_first in [false, true] {
+            let mut kernel = ForgeKernel::default();
+            let candidate = explicitly_approved_candidate(&mut kernel, b"candidate");
+            if promote_first {
+                kernel
+                    .promote_candidate(
+                        ActorKind::DirectProjectUser,
+                        AuthorityBasis::ExplicitUserAuthorization,
+                        &candidate,
+                        "supersession-test",
+                    )
+                    .unwrap();
+            }
+            let correction = kernel
+                .register_evidence(
+                    ActorKind::DirectProjectUser,
+                    b"owner correction",
+                    "supersession-test",
+                )
+                .unwrap();
+            let events_before = kernel.events().len();
+
+            kernel
+                .supersede_candidate(
+                    ActorKind::DirectProjectUser,
+                    AuthorityBasis::ExplicitUserAuthorization,
+                    &candidate,
+                    &correction,
+                    None,
+                    "supersession-test",
+                )
+                .unwrap();
+
+            let superseded = kernel.candidate(&candidate).unwrap();
+            assert_eq!(superseded.state, CandidateState::Superseded);
+            assert!(kernel.object(&superseded.evidence).is_some());
+            assert_eq!(kernel.events().len(), events_before + 1);
+            assert_eq!(
+                kernel.events().last().unwrap().event_type,
+                EventType::CandidateSuperseded
+            );
+        }
+    }
+
+    #[test]
+    fn supersession_requires_direct_explicit_user_and_existing_correction() {
+        let mut kernel = ForgeKernel::default();
+        let candidate = explicitly_approved_candidate(&mut kernel, b"candidate");
+        let correction = kernel.put_object(b"owner correction");
+
+        assert_eq!(
+            kernel.supersede_candidate(
+                ActorKind::ImportedContent,
+                AuthorityBasis::ExplicitUserAuthorization,
+                &candidate,
+                &correction,
+                None,
+                "supersession-test",
+            ),
+            Err(KernelError::AuthorityDenied)
+        );
+        assert!(matches!(
+            kernel.supersede_candidate(
+                ActorKind::DirectProjectUser,
+                AuthorityBasis::ExplicitUserAuthorization,
+                &candidate,
+                &"0".repeat(64),
+                None,
+                "supersession-test",
+            ),
+            Err(KernelError::UnknownObject(_))
+        ));
+        assert_eq!(
+            kernel.candidate(&candidate).unwrap().state,
+            CandidateState::Approved
+        );
+    }
+
+    #[test]
+    fn supersession_rejects_ineligible_repeated_and_self_replacement_actions() {
+        let mut kernel = ForgeKernel::default();
+        let proposed_evidence = kernel.put_object(b"proposed");
+        let proposed = kernel
+            .propose_candidate(&proposed_evidence, "supersession-test")
+            .unwrap();
+        let approved = explicitly_approved_candidate(&mut kernel, b"approved");
+        let correction = kernel.put_object(b"owner correction");
+
+        assert!(matches!(
+            kernel.supersede_candidate(
+                ActorKind::DirectProjectUser,
+                AuthorityBasis::ExplicitUserAuthorization,
+                &proposed,
+                &correction,
+                None,
+                "supersession-test",
+            ),
+            Err(KernelError::InvalidSupersessionState { .. })
+        ));
+        assert!(matches!(
+            kernel.supersede_candidate(
+                ActorKind::DirectProjectUser,
+                AuthorityBasis::ExplicitUserAuthorization,
+                &approved,
+                &correction,
+                Some(&approved),
+                "supersession-test",
+            ),
+            Err(KernelError::SelfReplacement(_))
+        ));
+        kernel
+            .supersede_candidate(
+                ActorKind::DirectProjectUser,
+                AuthorityBasis::ExplicitUserAuthorization,
+                &approved,
+                &correction,
+                None,
+                "supersession-test",
+            )
+            .unwrap();
+        assert!(matches!(
+            kernel.supersede_candidate(
+                ActorKind::DirectProjectUser,
+                AuthorityBasis::ExplicitUserAuthorization,
+                &approved,
+                &correction,
+                None,
+                "supersession-test",
+            ),
+            Err(KernelError::InvalidSupersessionState { .. })
+        ));
+    }
+
+    #[test]
+    fn replacement_binding_requires_a_distinct_approved_or_promoted_candidate() {
+        let mut kernel = ForgeKernel::default();
+        let old = explicitly_approved_candidate(&mut kernel, b"old");
+        let proposed_evidence = kernel.put_object(b"unreviewed replacement");
+        let proposed = kernel
+            .propose_candidate(&proposed_evidence, "supersession-test")
+            .unwrap();
+        let replacement = explicitly_approved_candidate(&mut kernel, b"replacement");
+        let correction = kernel.put_object(b"owner correction");
+
+        assert!(matches!(
+            kernel.supersede_candidate(
+                ActorKind::DirectProjectUser,
+                AuthorityBasis::ExplicitUserAuthorization,
+                &old,
+                &correction,
+                Some(&proposed),
+                "supersession-test",
+            ),
+            Err(KernelError::InvalidReplacementState { .. })
+        ));
+        kernel
+            .supersede_candidate(
+                ActorKind::DirectProjectUser,
+                AuthorityBasis::ExplicitUserAuthorization,
+                &old,
+                &correction,
+                Some(&replacement),
+                "supersession-test",
+            )
+            .unwrap();
+        assert_eq!(
+            kernel.candidate(&old).unwrap().state,
+            CandidateState::Superseded
+        );
+        assert_eq!(
+            kernel.candidate(&replacement).unwrap().state,
+            CandidateState::Approved
+        );
+    }
+
+    #[test]
+    fn supersession_replays_deterministically_and_rejects_rehashed_forgery() {
+        let mut kernel = ForgeKernel::default();
+        let candidate = explicitly_approved_candidate(&mut kernel, b"candidate");
+        let correction = kernel.put_object(b"owner correction");
+        kernel
+            .supersede_candidate(
+                ActorKind::DirectProjectUser,
+                AuthorityBasis::ExplicitUserAuthorization,
+                &candidate,
+                &correction,
+                None,
+                "supersession-test",
+            )
+            .unwrap();
+        let objects = kernel.objects().cloned().collect::<Vec<_>>();
+        let events = kernel.events().to_vec();
+        let replayed = ForgeKernel::from_records(objects.clone(), events.clone()).unwrap();
+        assert_eq!(
+            replayed.candidate(&candidate).unwrap().state,
+            CandidateState::Superseded
+        );
+        assert_eq!(replayed.events(), events);
+
+        let mut forged_events = events;
+        let forged = forged_events.last_mut().unwrap();
+        forged.actor = ActorKind::Assistant;
+        let forged_hash = event_hash(forged).unwrap();
+        forged.id = forged_hash.clone();
+        forged.hash = forged_hash;
+        assert!(matches!(
+            ForgeKernel::from_records(objects, forged_events),
+            Err(KernelError::InvalidReplayEvent(_))
+        ));
+    }
+
+    #[test]
+    fn replay_rejects_unknown_event_schema_versions() {
+        let mut kernel = ForgeKernel::default();
+        kernel
+            .register_evidence(ActorKind::Assistant, b"evidence", "schema-test")
+            .unwrap();
+        let objects = kernel.objects().cloned().collect::<Vec<_>>();
+        let mut events = kernel.events().to_vec();
+        let event = events.last_mut().unwrap();
+        event.schema_version = 2;
+        let hash = event_hash(event).unwrap();
+        event.id = hash.clone();
+        event.hash = hash;
+        assert!(matches!(
+            ForgeKernel::from_records(objects, events),
+            Err(KernelError::UnsupportedEventSchema(2))
         ));
     }
 }

@@ -3,10 +3,10 @@
   "canonical_role": "sole-active-work-checkpoint",
   "batch_id": "F5-H7-HUMANOID-PROMOTION-READINESS",
   "master_program_item": "F5",
-  "state": "checkpoint",
+  "state": "executing",
   "objective": "Audit whether H1-H6 form one coherent, correctly scoped canonical promotion candidate, or whether a missing bridge still separates the verified structural wire candidate from the owner-approved visual target.",
-  "next_action": "Await explicit owner authorization for the bounded protected-Kernel candidate-supersession implementation; do not modify Kernel, persistence, authorization UI, or candidate state before that response.",
-  "substage_id": "H7-kernel-supersession-authorization-gate",
+  "next_action": "Construct the exact engine-neutral-humanoid-proof-baseline-v1 owner package from the already verified H6/H5 bindings and propose it authority-negative only; do not approve or promote it, import an asset, or widen its claims.",
+  "substage_id": "H7-authority-negative-candidate-package",
   "consecutive_no_progress_limit": 1,
   "atlas_route": {
     "milestone": "F5",
@@ -14,10 +14,10 @@
   },
   "risk_level": "candidate-scope-observation-bridge-authority-and-premature-promotion",
   "research_gate": "Use the committed H1-H6 contracts, results, manifests, and executable receipts first. External research is not justified unless the audit exposes a standards-specific gap. Do not reacquire or import visual assets.",
-  "authority_lane": "Read-only H7 readiness audit and candidate packaging only. Approval and promotion remain separate owner-initiated Kernel actions requiring exact candidate-bound phrases; no import, runtime selection, application, publishing, or protected-Kernel expansion.",
-  "context_health": "Green: H6 is committed at 457c5b4; exact H1-H5 recovery and the full Forge gate pass; capture and heartbeat are current; H7 begins from a clean rollback point.",
+  "authority_lane": "Owner explicitly authorized the bounded protected-Kernel safe-undo implementation after a plain-language explanation. Scope is CandidateSuperseded state/event, exact direct-owner transition, replay/persistence/UI tests, and no candidate promotion, asset import, application, publishing, or runtime effect.",
+  "context_health": "Green: owner-authorized supersession is implemented across Kernel, replay, persistence, backup recovery, exact desktop confirmation, responsive visual inspection, and the clean complete Forge gate; no H7 candidate or promotion exists.",
   "stage_context": {
-    "stage_id": "H7-kernel-supersession-authorization-gate",
+    "stage_id": "H7-authority-negative-candidate-package",
     "macro_sources": [
       "docs/canonical-system/MASTER_PLAN_V2.md",
       "docs/canonical-system/MASTER_PROGRAM.json",
@@ -41,7 +41,12 @@
       "docs/canonical-system/H5_VISUAL_REFERENCE_INTAKE.md",
       "docs/canonical-system/H6_HUMANOID_REPRODUCTION_RECOVERY_RESULT.md",
       "contracts/humanoid-proof-chain-contract.md",
-      "crates/humanoid-proof-chain/src/lib.rs"
+      "crates/humanoid-proof-chain/src/lib.rs",
+      "crates/forge-kernel/src/lib.rs",
+      "crates/forge-kernel/src/persistence.rs",
+      "apps/forge-desktop/src-tauri/src/main.rs",
+      "apps/forge-desktop/ui/src/main.ts",
+      "contracts/explicit-authorization-contract.md"
     ],
     "micro_findings": [
       "H3 candidate fingerprint 4d04df0dd58cdd8ecdb7c41e9dbde2dec1910b36b7d5643b2d254ef4b3c707fa identifies a capability-free 17-joint/16-link wire structure, not a surface asset.",
@@ -53,6 +58,10 @@
       ,"Existing forward approval/promotion authority is strict, but the Kernel cannot withdraw an approved candidate or supersede a promoted baseline; authoritative rollback is the remaining H7 blocker."
       ,"Ten capability-free H7 cases now prove the strict narrow package and proposed supersession semantics without creating a Kernel candidate."
       ,"The complete Forge gate passes with the H7 verifier integrated; protected-Kernel supersession implementation is the sole next authority gate."
+      ,"The owner explicitly authorized adding the safe history-preserving undo after it was restated in plain language."
+      ,"Implementation order is Kernel transition/replay first, persistence second, and exact desktop confirmation last; each layer must pass before the next."
+      ,"All implementation layers now pass, including deterministic replay, SQLite reopen and verified backup recovery, exact desktop confirmation, UI build, desktop and 390-pixel visual inspection, and the complete Forge gate."
+      ,"The clean next step is authority-negative candidate packaging only; approval and promotion remain separate direct-owner actions that cannot be inferred from this conversation."
     ]
   },
   "visual_quality_gate": {
@@ -82,12 +91,12 @@
       }
     ],
     "expensive_execution_planned": false,
-    "unresolved_risk": "The real Kernel forward lifecycle remains irreversible for approved/promoted candidates; implementing the proven design changes protected authority code and needs explicit owner authorization.",
-    "expected_information_gain": "If authorized, focused Kernel/replay/persistence/UI hostile cases will determine whether authoritative supersession matches the passing capability-free model without widening application authority.",
-    "estimated_cost": "Bounded Kernel enum/transition/replay, persistence, exact authorization command/UI, contracts, adversarial tests, and one complete Forge gate; no asset import or runtime work.",
+    "unresolved_risk": "Supersession is proved; the remaining H7 risk is that the authority-negative owner package could widen the proof baseline into an asset, anatomy, runtime, or performance claim.",
+    "expected_information_gain": "Exact package construction and hostile validation will show whether every proposed claim remains bound to retained H6/H5 evidence before any owner action is exposed.",
+    "estimated_cost": "One exact authority-negative candidate package, hostile scope validation, generated-context refresh, and focused/full gates only if code changes; no asset import or runtime work.",
     "regression_guard": "Do not alter H1-H6 identities, evidence, limitations, rejected candidates, owner wording, or authority state while packaging H7.",
     "stop_condition": "Stop and package an exact owner decision only if every candidate claim maps to retained evidence and every non-claim is explicit; otherwise record the narrow missing bridge and continue with the cheapest pre-promotion proof.",
-    "final_integration_gate": "Passed for H7 readiness simulation: scope matrix, hostile overclaim/stale-binding cases, rollback target, mutation-negative simulation, generated projections, modularity, UI build, Rust workspace, desktop build, and complete Forge gate pass in 84.5 seconds; real Kernel implementation remains unauthorized and no promotion request is permitted."
+    "final_integration_gate": "Passed for the owner-authorized real implementation: Kernel lifecycle/replay, hostile authority and state cases, unknown schema rejection, SQLite commit/reopen/verified backup recovery, exact desktop confirmation, responsive UI inspection, generated projections, modularity, Rust workspace, UI and Tauri builds, and clean complete Forge gate pass in 57.4 seconds. No H7 candidate was created or promoted."
   },
   "unresolved_risks": [
     "The H3 wire candidate and H5 visual target may be prerequisites for different future objects rather than one promotable asset.",
@@ -130,9 +139,15 @@
     ,"ten capability-free H7 scope and supersession cases pass; kernel_candidate_created=false"
     ,"complete Forge gate passes in 84.5 seconds with H7 readiness verifier integrated"
     ,"Forge capture restarted and verified current within 1 second"
-    ,"bounded protected-Kernel supersession scope documented; implementation not authorized and no real candidate created"
+    ,"bounded protected-Kernel supersession scope documented; no real candidate created"
+    ,"owner explicitly authorized the safe history-preserving undo after plain-language clarification; heartbeat resumed"
+    ,"81 Forge Kernel tests pass with append-only Approved/Promoted to Superseded semantics, retained evidence, strict replacement binding, forged replay rejection, and unknown-schema failure"
+    ,"superseded candidate survives SQLite commit/reopen and verified backup reopen with original and correction evidence retained"
+    ,"desktop exact supersession phrase test and TypeScript/Vite build pass; desktop and 390-pixel phone layouts were visually inspected and mobile grid overflow was corrected"
+    ,"first complete gate attempt reached final Tauri build after tests passed but the running exact forge-desktop.exe held a Windows file lock; stopping only that process removed the collision"
+    ,"clean complete Forge gate passes in 57.4 seconds; no real H7 candidate, approval, promotion, asset import, application, or execution occurred"
   ],
-  "transition": "H6 verified -> H7 scope audit -> narrow proof-baseline selected -> rollback gap identified -> capability-free supersession proof and full gate pass -> protected-Kernel implementation authorization gate -> no real candidate or promotion",
+  "transition": "H6 verified -> H7 scope audit -> capability-free supersession proof -> plain-language owner authorization -> protected Kernel/replay/persistence/UI implementation -> responsive visual inspection -> clean complete gate pass -> authority-negative H7 candidate packaging next; no approval or promotion",
   "metrics": {
     "token_cost": {"status": "unknown", "value": null},
     "elapsed_time": {"status": "unknown", "value": null}

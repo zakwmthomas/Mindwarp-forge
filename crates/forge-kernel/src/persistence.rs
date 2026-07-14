@@ -3012,6 +3012,91 @@ mod tests {
     }
 
     #[test]
+    fn superseded_candidate_survives_commit_reopen_and_verified_backup() {
+        let directory = std::env::temp_dir().join(format!(
+            "mindwarp-forge-supersession-recovery-{}",
+            std::process::id()
+        ));
+        fs::create_dir_all(&directory).unwrap();
+        let database = directory.join("forge.sqlite3");
+        let backup = directory.join("forge-backup.sqlite3");
+
+        let mut forge = PersistentForge::open(&database).unwrap();
+        let evidence = forge
+            .kernel_mut()
+            .register_evidence(
+                ActorKind::Assistant,
+                b"candidate to withdraw",
+                "supersession-recovery",
+            )
+            .unwrap();
+        let candidate = forge
+            .kernel_mut()
+            .propose_candidate(&evidence, "supersession-recovery")
+            .unwrap();
+        forge
+            .kernel_mut()
+            .approve_candidate(
+                ActorKind::DirectProjectUser,
+                AuthorityBasis::ExplicitUserAuthorization,
+                &candidate,
+                "supersession-recovery",
+            )
+            .unwrap();
+        forge
+            .kernel_mut()
+            .promote_candidate(
+                ActorKind::DirectProjectUser,
+                AuthorityBasis::ExplicitUserAuthorization,
+                &candidate,
+                "supersession-recovery",
+            )
+            .unwrap();
+        let correction = forge
+            .kernel_mut()
+            .register_evidence(
+                ActorKind::DirectProjectUser,
+                b"owner withdrew this candidate",
+                "supersession-recovery",
+            )
+            .unwrap();
+        forge
+            .kernel_mut()
+            .supersede_candidate(
+                ActorKind::DirectProjectUser,
+                AuthorityBasis::ExplicitUserAuthorization,
+                &candidate,
+                &correction,
+                None,
+                "supersession-recovery",
+            )
+            .unwrap();
+        forge.commit().unwrap();
+        let receipt = forge.backup_to(&backup).unwrap();
+        PersistentForge::verify_backup(&receipt).unwrap();
+        drop(forge);
+
+        let reopened = PersistentForge::open(&database).unwrap();
+        assert_eq!(
+            reopened.kernel().candidate(&candidate).unwrap().state,
+            CandidateState::Superseded
+        );
+        assert!(reopened.kernel().object(&evidence).is_some());
+        assert!(reopened.kernel().object(&correction).is_some());
+        drop(reopened);
+
+        let recovered = PersistentForge::open(&backup).unwrap();
+        assert_eq!(
+            recovered.kernel().candidate(&candidate).unwrap().state,
+            CandidateState::Superseded
+        );
+        assert!(recovered.kernel().object(&evidence).is_some());
+        assert!(recovered.kernel().object(&correction).is_some());
+        drop(recovered);
+        fs::remove_dir_all(directory).unwrap();
+    }
+
+    #[test]
     fn commit_can_retry_after_a_partial_write_and_reopen() {
         let directory =
             std::env::temp_dir().join(format!("mindwarp-forge-journal-{}", std::process::id()));

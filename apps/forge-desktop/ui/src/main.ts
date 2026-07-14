@@ -236,6 +236,9 @@ const briefList = document.querySelector<HTMLOListElement>("#brief-list");
 const authorizationForm = document.querySelector<HTMLFormElement>("#authorization-form");
 const authorizationAction = document.querySelector<HTMLSelectElement>("#authorization-action");
 const authorizationCandidate = document.querySelector<HTMLInputElement>("#authorization-candidate");
+const authorizationCorrection = document.querySelector<HTMLInputElement>("#authorization-correction");
+const authorizationReplacement = document.querySelector<HTMLInputElement>("#authorization-replacement");
+const authorizationHint = document.querySelector<HTMLParagraphElement>("#authorization-hint");
 const authorizationConfirmation = document.querySelector<HTMLInputElement>("#authorization-confirmation");
 const authorizationReceipt = document.querySelector<HTMLParagraphElement>("#authorization-receipt");
 const previewCandidate = document.querySelector<HTMLInputElement>("#preview-candidate");
@@ -912,6 +915,8 @@ authorizationForm?.addEventListener("submit", async (event) => {
       action: authorizationAction.value,
       candidateId: authorizationCandidate.value,
       confirmation: authorizationConfirmation.value,
+      correctionEvidenceId: authorizationCorrection?.value || null,
+      replacementCandidateId: authorizationReplacement?.value || null,
     });
     authorizationReceipt.textContent = `${receipt.action} candidate ${receipt.candidate_id}. Ledger event: ${receipt.event_id}. This did not apply code or write a repository file.`;
     authorizationConfirmation.value = "";
@@ -922,6 +927,24 @@ authorizationForm?.addEventListener("submit", async (event) => {
     authorizationReceipt.textContent = `Authorization was not accepted: ${String(error)}`;
   }
 });
+
+function updateAuthorizationHint() {
+  if (!authorizationAction || !authorizationCandidate || !authorizationHint) return;
+  const candidate = authorizationCandidate.value || "<candidate ID>";
+  if (authorizationAction.value === "supersede") {
+    const correction = authorizationCorrection?.value || "<correction evidence ID>";
+    const replacement = authorizationReplacement?.value;
+    authorizationHint.textContent = replacement
+      ? `Exact phrase: SUPERSEDE ${candidate} USING ${correction} WITH ${replacement}`
+      : `Exact phrase: SUPERSEDE ${candidate} USING ${correction}`;
+    return;
+  }
+  authorizationHint.textContent = `Exact phrase: ${authorizationAction.value.toUpperCase()} ${candidate}`;
+}
+
+[authorizationAction, authorizationCandidate, authorizationCorrection, authorizationReplacement]
+  .forEach((element) => element?.addEventListener("input", updateAuthorizationHint));
+updateAuthorizationHint();
 
 backupButton?.addEventListener("click", async () => {
   if (!backupReceipt) return;

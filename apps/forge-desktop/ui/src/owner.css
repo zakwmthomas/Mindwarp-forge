@@ -52,6 +52,17 @@
   border-top: 1px solid var(--line);
 }
 
+.form-grid > label,
+.form-grid input,
+.form-grid select,
+.form-grid textarea {
+  min-width: 0;
+}
+
+#authorization-hint {
+  overflow-wrap: anywhere;
+}
+
 .action-panel {
   border-color: var(--red);
   background: linear-gradient(135deg, rgb(227 38 54 / 8%), transparent 55%), var(--panel);
