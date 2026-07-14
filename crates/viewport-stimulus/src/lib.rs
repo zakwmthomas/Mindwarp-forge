@@ -195,7 +195,7 @@ pub fn controlled_stimulus_bundle() -> Result<ControlledStimulusBundle, String> 
     let connection_assertion = id_for("assertion-connection-complete");
     let silhouette_assertion = id_for("assertion-silhouette-distinct");
     let articulation_assertion = id_for("assertion-articulation-stable");
-    let artifact_ref = id_for("artifact-reference-viewport-001");
+    let artifact_ref = id_for("artifact-reference-viewport-002");
     let derivative_refs = vec![
         base_ref,
         control_refs[&NegativeControlKind::BrokenConnection],
@@ -251,7 +251,7 @@ pub fn controlled_stimulus_bundle() -> Result<ControlledStimulusBundle, String> 
     let environment = EnvironmentProfile {
         schema_version: 1,
         tool_profile: id_for("reference-viewport-0.1.0"),
-        tool_binary_fingerprint: id_for("forge-owned-reference-viewport-source-v1"),
+        tool_binary_fingerprint: id_for("forge-owned-reference-viewport-source-v2"),
         tool_config_fingerprint: id_for(base.renderer_profile),
         os_profile: "forge_desktop_existing_host".into(),
         device_profile: "existing_tauri_webview_canvas".into(),
@@ -274,7 +274,7 @@ pub fn controlled_stimulus_bundle() -> Result<ControlledStimulusBundle, String> 
             PresentationMode::TopologyDiagnostic,
             PresentationMode::TemporalSequence,
         ],
-        color_config_fingerprint: id_for("fixed-wireframe-role-colours-v1"),
+        color_config_fingerprint: id_for("fixed-wireframe-role-colours-v2"),
         output_transform: "existing_canvas_integer_projection".into(),
         display_conditions: "owner_local_forge_desktop_unverified_display".into(),
         reproducibility: ReproducibilityClass::SemanticCrossEnvironment,

@@ -17,11 +17,11 @@ foreach ($id in @($manifest.required_policies)) {
 }
 $prompt = Get-Content -LiteralPath (Join-Path $root $manifest.canonical_prompt) -Raw
 if ($prompt -notmatch 'MASTER_PROGRAM.json' -or $prompt -notmatch 'Worker Batch State') { throw 'Canonical worker prompt lacks master-program navigation requirements.' }
-foreach ($required in @('five consecutive heartbeat wakes','dependency closure','never cross the gate','Wakes never imply owner approval')) {
+foreach ($required in @('five consecutive heartbeat wakes','dependency closure','never cross the gate','Wakes never imply owner approval','recognized owner-input gate','one labelled side-by-side image','capture only','never send the whole desktop','Unrelated owner chat does not resume automation')) {
     if (!$prompt.Contains($required)) { throw "Canonical worker prompt lacks owner-wait fallback guard: $required" }
 }
 $protocol = Get-Content -LiteralPath (Join-Path $root $manifest.protocol) -Raw
-foreach ($required in @('Five-wake owner-wait fallback','full dependency closure is already satisfied','never infer owner input')) {
+foreach ($required in @('Five-wake owner-wait safety fallback','full dependency closure is already satisfied','never infer owner input','Immediate owner-wait suspension','one labelled side-by-side image','never the whole desktop','does not resume the scheduler')) {
     if (!$protocol.Contains($required)) { throw "Worker optimization protocol lacks owner-wait fallback guard: $required" }
 }
 if ($protocol -notmatch 'never\s+reorder a dependency chain') { throw 'Worker optimization protocol lacks dependency-reordering guard.' }

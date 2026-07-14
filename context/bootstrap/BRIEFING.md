@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **F5-COHERENCE-FOUNDATION**
-- Objective: Make conversation plans, canonical work, generated context, repository files, and the Forge interface operate as one recoverable anti-spaghetti continuity system.
+- Work package: **F5-TPOSE-BIND-FIXTURE-V3**
+- Objective: Preserve the incomplete v3 T-pose work and the owner's reference-guided generation proposal in a verified handover without treating either as approved production direction.
 - Atlas milestone: **F5 - Engine-neutral proof harnesses and Reference Studio**
 - Related systems: forge-truth-kernel, conversation-compiler, solo-studio-control-plane, forge-dashboard
-- Risk/research gate: **cross-cutting-continuity-and-recovery / satisfied-by-owner-approved-plan-repository-audit-and-primary-source-architecture-review**
-- Exact next action: Await direct owner review in the built-in Forge viewport; do not infer or submit an observation on the owner's behalf.
+- Risk/research gate: **context-integrity-and-owner-direction / No new research or implementation is authorized during transfer; the latest reference-guided proposal is retained as an owner-decision candidate, not canonical policy.**
+- Exact next action: In a new chat, bootstrap from the Forge repository, inspect the preserved dirty worktree, read context/capsules/2026-07-14-reference-guided-transfer.md and the handover export, then obtain the owner's decision on the pending reference-guided generation plan. Do not implement it or resume the heartbeat without explicit owner authorization.
 
 ## Approved operating policies
 
@@ -24,6 +24,7 @@
 - **P9:** Govern workers through the versioned Worker Governance System: policy, prompt specification, planning records, learning ledger, and verification must improve together; no prompt-only change may silently replace a universal rule.
 - **P10:** Every self-improvement proposal must quantify a baseline, expected verified gain, implementation and operating cost, uncertainty, regression guard, and an explicit stop, revise, or refocus condition. Do not continue optimization once expected marginal verified gain is below its measured cost or evidence is insufficient.
 - **P11:** After five consecutive heartbeat wakes at the same unchanged owner gate, stop repeating the wait. Work may continue only on a different dependency-ready master-program item whose dependency closure is satisfied and which neither crosses nor descends from the waiting gate; otherwise deduplicate and pause or retire the heartbeat when possible. Elapsed wakes never imply owner approval.
+- **P12:** At a recognized owner-input gate, create one bounded chat handoff, pause the Forge heartbeat before another scheduled wake, and resume it only after new user-authored input materially resolves or explicitly releases that gate. For a visual gate, the handoff must include exact current-fixture screenshots and a plain response format; automation must never infer or submit the owner observation.
 
 ## Navigation
 

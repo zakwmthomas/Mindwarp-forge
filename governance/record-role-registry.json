@@ -5,7 +5,9 @@
   "rules": [
     {"pattern":"context/active/CURRENT_STATE.md","role":"generated_projection"},
     {"pattern":"context/bootstrap/BRIEFING.md","role":"generated_projection"},
+    {"pattern":"governance/WORKER_FEEDBACK_BRIEF.md","role":"generated_projection"},
     {"pattern":"apps/forge-desktop/src-tauri/gen/**","role":"generated_projection"},
+    {"pattern":"artifacts/chat-screenshots/**","role":"ephemeral_presentation_artifact"},
     {"pattern":"context/active/WORKER_WAKE_LOG.jsonl","role":"append_only_evidence"},
     {"pattern":"context/active/WORKER_BATCH_STATE.json","role":"canonical_checkpoint"},
     {"pattern":"docs/canonical-system/MASTER_PROGRAM.json","role":"canonical_execution_registry"},
@@ -31,4 +33,3 @@
     {"pattern":".gitignore","role":"version_control_policy"}
   ]
 }
-

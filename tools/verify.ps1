@@ -27,6 +27,8 @@ if (!$?) { throw 'Worker batch-state validation failed.' }
 if (!$?) { throw 'Worker batch-state fixtures failed.' }
 & (Join-Path $PSScriptRoot 'test-active-context-projections.ps1')
 if (!$?) { throw 'Active-context projection fixtures failed.' }
+& (Join-Path $PSScriptRoot 'test-verify-bootstrap-read-only.ps1')
+if (!$?) { throw 'Read-only bootstrap fixtures failed.' }
 & (Join-Path $PSScriptRoot 'test-worker-selector.ps1')
 if (!$?) { throw 'Worker selector fixtures failed.' }
 & (Join-Path $PSScriptRoot 'test-worker-progress.ps1')
@@ -35,6 +37,10 @@ if (!$?) { throw 'Worker progress fixtures failed.' }
 if (!$?) { throw 'Worker escalation fixtures failed.' }
 & (Join-Path $PSScriptRoot 'test-owner-notification.ps1')
 if (!$?) { throw 'Owner notification fixtures failed.' }
+& (Join-Path $PSScriptRoot 'test-forge-heartbeat-control.ps1')
+if (!$?) { throw 'Forge heartbeat control fixtures failed.' }
+& (Join-Path $PSScriptRoot 'test-forge-chat-visual.ps1')
+if (!$?) { throw 'Forge chat visual fixtures failed.' }
 & (Join-Path $PSScriptRoot 'verify-modularity.ps1')
 if (!$?) { throw 'Modularity verification failed.' }
 & (Join-Path $PSScriptRoot 'test-modularity.ps1')

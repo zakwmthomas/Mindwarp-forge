@@ -1,12 +1,15 @@
+param([string]$Root)
+
 $ErrorActionPreference = 'Stop'
 
-$root = Split-Path -Parent $PSScriptRoot
-& (Join-Path $PSScriptRoot 'verify-worker-batch-state.ps1')
-if (!$?) { throw 'Canonical active checkpoint validation failed.' }
-& (Join-Path $PSScriptRoot 'refresh-active-context.ps1')
-if (!$?) { throw 'Active-context projection refresh failed.' }
-& (Join-Path $PSScriptRoot 'refresh-worker-feedback.ps1')
-if (!$?) { throw 'Worker feedback refresh failed.' }
+$root = if ($Root) { [System.IO.Path]::GetFullPath($Root) } else { Split-Path -Parent $PSScriptRoot }
+$manifestPath = Join-Path $root '.local\forge-bootstrap\MANIFEST.json'
+if (Test-Path -LiteralPath $manifestPath) {
+    $manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
+    if ($manifest.schema_version -ne 1) { throw 'Unsupported Forge bootstrap manifest schema.' }
+    if ($manifest.capture_state -ne 'running') { throw "Forge capture is $($manifest.capture_state); resolve it before mutable work." }
+}
+
 $required = @(
     'AGENTS.md',
     'context\bootstrap\START_HERE.md',
@@ -25,10 +28,7 @@ foreach ($relative in $required) {
     }
 }
 
-$manifestPath = Join-Path $root '.local\forge-bootstrap\MANIFEST.json'
 $manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
-if ($manifest.schema_version -ne 1) { throw 'Unsupported Forge bootstrap manifest schema.' }
-if ($manifest.capture_state -ne 'running') { throw "Forge capture is $($manifest.capture_state); resolve it before mutable work." }
 $age = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds() - [int64]$manifest.last_capture_unix
 if ($age -lt 0 -or $age -gt 86400) { throw "Forge bootstrap is stale ($age seconds since capture). Refresh Forge capture before mutable work." }
 foreach ($session in @($manifest.sessions)) {
@@ -37,6 +37,13 @@ foreach ($session in @($manifest.sessions)) {
     $actual = (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant()
     if ($actual -ne [string]$session.sha256) { throw "Bootstrap transcript hash mismatch: $($session.path)" }
 }
+
+& (Join-Path $PSScriptRoot 'verify-worker-batch-state.ps1')
+if (!$?) { throw 'Canonical active checkpoint validation failed.' }
+& (Join-Path $PSScriptRoot 'refresh-active-context.ps1')
+if (!$?) { throw 'Active-context projection refresh failed.' }
+& (Join-Path $PSScriptRoot 'refresh-worker-feedback.ps1')
+if (!$?) { throw 'Worker feedback refresh failed.' }
 
 $work = Get-Content (Join-Path $root 'context\active\WORKER_BATCH_STATE.json') -Raw | ConvertFrom-Json
 $briefing = Get-Content (Join-Path $root 'context\bootstrap\BRIEFING.md') -Raw

@@ -5,39 +5,39 @@
 
 ## Active checkpoint
 
-- Package: **F5-COHERENCE-FOUNDATION**
+- Package: **F5-TPOSE-BIND-FIXTURE-V3**
 - Master item / milestone: **F5 / F5**
-- State / substage: **complete / F5-COHERENCE-6-complete-and-versioned**
+- State / substage: **checkpoint / F5-REFERENCE-GUIDED-TRANSFER-owner-review-pending**
 - Related systems: forge-truth-kernel, conversation-compiler, solo-studio-control-plane, forge-dashboard
-- Objective: Make conversation plans, canonical work, generated context, repository files, and the Forge interface operate as one recoverable anti-spaghetti continuity system.
-- Context health: Green: the coherence package is complete, the full Forge gate passes, the real ledger migrated additively, and local Git now supplies an independent reviewed recovery baseline.
+- Objective: Preserve the incomplete v3 T-pose work and the owner's reference-guided generation proposal in a verified handover without treating either as approved production direction.
+- Context health: Red for continued expansion in this chat because the owner identified truncation and compression as a corruption risk. The heartbeat is paused and a verified transfer package is required before any continuation.
 
 ## Durable evidence
 
+- `context/capsules/2026-07-14-reference-guided-transfer.md`
 - `contracts/knowledge-record-contract.md`
 - `governance/record-role-registry.json`
+- `governance/RECORDING_PROTOCOL.md`
+- `governance/CONTEXT_PROTOCOL.md`
 - `tools/verify-record-roles.ps1`
 - `tools/verify-coherence.ps1`
-- `crates/forge-kernel/src/knowledge.rs`
-- `crates/forge-kernel/src/persistence.rs`
-- `apps/forge-desktop/src-tauri/src/main.rs`
-- `apps/forge-desktop/ui/index.html`
+- `tools/forge-heartbeat-control.ps1`
 
 ## Authority boundary
 
-Owner-authorized local Forge implementation only; no inferred approvals, remote publishing, spending, credentials, engine selection, external execution, or owner observation submission.
+Owner-authorized heartbeat shutdown, context capsule, and portable handover only; no reference-guided implementation, inferred judgment, approval, promotion, remote publishing, spending, credentials, engine selection, external execution, or protected-Kernel mutation.
 
 ## Exact next action
 
-Await direct owner review in the built-in Forge viewport; do not infer or submit an observation on the owner's behalf.
+In a new chat, bootstrap from the Forge repository, inspect the preserved dirty worktree, read context/capsules/2026-07-14-reference-guided-transfer.md and the handover export, then obtain the owner's decision on the pending reference-guided generation plan. Do not implement it or resume the heartbeat without explicit owner authorization.
 
 ## Unresolved risks
 
-- The repository has no existing commit baseline.
-- Generic conversation candidates can flood owner review.
-- Duplicated status and stale navigation can misroute a context-limited worker.
-- The independent F5 owner-observation gate must remain untouched.
+- The working tree contains substantial tracked and untracked in-flight changes that a future worker must preserve.
+- MASTER_PROGRAM and the active checkpoint must remain aligned at an owner-review transfer state rather than silently continuing v3.
+- The latest reference-guided plan is pending owner review and must not be mistaken for implementation authority.
+- The built-in viewport proves skeleton semantics and legibility only; it does not prove skin weights, inverse-bind matrices, deformation quality, engine import, or production representation.
 
 ## Resume after this package
 
-Resume the independent F5 owner-observation gate only after this package closes or if the owner deliberately submits an observation in the built-in viewport.
+Resume only after a new user-authored instruction explicitly approves or revises the pending plan and explicitly releases the paused heartbeat; opening or bootstrapping a new chat is insufficient.

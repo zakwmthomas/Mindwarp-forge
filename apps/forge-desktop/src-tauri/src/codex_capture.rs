@@ -378,9 +378,18 @@ fn session_identity(bytes: &[u8]) -> Result<(String, bool), String> {
         .get("session_id")
         .and_then(Value::as_str)
         .ok_or_else(|| "Local Codex session metadata has no session ID.".to_owned())?;
+    let internal_subagent = payload
+        .get("source")
+        .and_then(Value::as_object)
+        .is_some_and(|source| source.contains_key("subagent"))
+        || payload
+            .get("parent_thread_id")
+            .and_then(Value::as_str)
+            .is_some();
     Ok((
         session_id.to_owned(),
-        payload.get("originator").and_then(Value::as_str) == Some("Codex Desktop"),
+        payload.get("originator").and_then(Value::as_str) == Some("Codex Desktop")
+            && !internal_subagent,
     ))
 }
 
@@ -539,6 +548,49 @@ mod tests {
             .unwrap()
             .unwrap();
         assert_eq!(cursor.status, "running");
+        std::fs::remove_dir_all(directory).unwrap();
+    }
+
+    #[test]
+    fn internal_subagent_rollout_sharing_parent_session_is_not_captured() {
+        let directory = std::env::temp_dir().join(format!(
+            "mindwarp-forge-subagent-capture-{}",
+            std::process::id()
+        ));
+        fs::create_dir_all(&directory).unwrap();
+        let parent = directory.join("parent.jsonl");
+        let subagent = directory.join("subagent.jsonl");
+        fs::write(
+            &parent,
+            concat!(
+                r#"{"timestamp":"meta","type":"session_meta","payload":{"session_id":"parent-session","id":"parent-session","originator":"Codex Desktop","source":"vscode"}}"#, "\n",
+                r#"{"timestamp":"1","type":"response_item","payload":{"role":"user","content":[{"type":"input_text","text":"Visible owner message"}]}}"#, "\n"
+            ),
+        ).unwrap();
+        fs::write(
+            &subagent,
+            concat!(
+                r#"{"timestamp":"meta","type":"session_meta","payload":{"session_id":"parent-session","id":"worker-session","parent_thread_id":"parent-session","originator":"Codex Desktop","source":{"subagent":{"thread_spawn":{}}}}}"#, "\n",
+                r#"{"timestamp":"2","type":"response_item","payload":{"role":"assistant","content":[{"type":"output_text","text":"Internal worker message"}]}}"#, "\n"
+            ),
+        ).unwrap();
+
+        let mut forge = PersistentForge::in_memory().unwrap();
+        assert_eq!(scan_one(&mut forge, &parent).unwrap(), (1, 1));
+        let parent_cursor = forge
+            .source_cursor("codex-local:parent-session")
+            .unwrap()
+            .unwrap();
+        assert_eq!(scan_one(&mut forge, &subagent).unwrap(), (0, 0));
+        assert_eq!(
+            forge
+                .source_cursor("codex-local:parent-session")
+                .unwrap()
+                .unwrap(),
+            parent_cursor
+        );
+        assert_eq!(forge.kernel().candidate_count(), 0);
+        assert_eq!(forge.kernel().events().len(), 1);
         std::fs::remove_dir_all(directory).unwrap();
     }
 }

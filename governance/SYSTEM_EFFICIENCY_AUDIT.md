@@ -51,6 +51,28 @@ empty/micro cycles, raise it incrementally. The worker must record the observed
 duration, decision, expected benefit, and regression signal before changing the
 automation schedule.
 
+## Owner-wait suspension trial
+
+- **Baseline:** one prior F5 wait produced 120 consecutive `no_work` wakes; the
+  current visual gate produced additional five-minute interruptions even after
+  work was correctly deduplicated.
+- **Target outcome:** zero scheduled heartbeat wakes between a recognized owner
+  gate handoff and new user-authored input that resolves or releases that gate.
+- **Expected gain:** remove every repeated bootstrap, selector, and narration
+  cycle during the wait while preserving the exact dependency and authority
+  boundary.
+- **Implementation cost:** one small atomic status-control script, one fixture,
+  canonical prompt/policy updates, and one automation status write per pause or
+  resume.
+- **Recurring cost:** negligible local TOML read/write at gate transitions;
+  visual gates additionally require one bounded current-viewport capture.
+- **Uncertainty:** the external scheduler must honor `status = "PAUSED"` without
+  rewriting the automation record.
+- **Regression guard:** never resume on unrelated chat, elapsed time, captured
+  evidence, or generated summaries; never infer or submit owner input.
+- **Stop/refocus:** if a heartbeat fires while the saved status remains
+  `PAUSED`, stop prompt tuning and repair the scheduler integration instead.
+
 ## Planned-duration control
 
 Before starting a meaningful batch, estimate the expected uninterrupted work

@@ -7,5 +7,5 @@
   "batch_state": "context/active/WORKER_BATCH_STATE.json",
   "closure_register": "docs/canonical-system/MASTER_CLOSURE_REGISTER.md",
   "integration_plan": "governance/WORKER_FORGE_INTEGRATION_PLAN.md",
-  "required_policies": ["P5", "P6", "P7", "P8", "P9", "P10", "P11"]
+  "required_policies": ["P5", "P6", "P7", "P8", "P9", "P10", "P11", "P12"]
 }

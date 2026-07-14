@@ -16,5 +16,5 @@ foreach ($item in $program.items) {
 $protocol = Get-Content (Join-Path $root 'governance\WORKER_OPTIMIZATION_PROTOCOL.md') -Raw
 if ($protocol -notmatch 'meaningful batches' -or $protocol -notmatch 'three') { throw 'Worker protocol lacks anti-micro-task audit controls.' }
 $prompt = Get-Content (Join-Path $root 'governance\WORKER_PROMPT_SPEC.md') -Raw
-if ($prompt -notmatch 'five consecutive heartbeat wakes' -or $prompt -notmatch 'independent of the waiting gate' -or $prompt -notmatch 'Wakes never imply owner approval') { throw 'Worker prompt lacks dependency-safe owner-wait fallback controls.' }
+if ($prompt -notmatch 'five consecutive heartbeat wakes' -or $prompt -notmatch 'independent of the waiting gate' -or $prompt -notmatch 'Wakes never imply owner approval' -or $prompt -notmatch 'forge-heartbeat-control.ps1 -Mode pause' -or $prompt -notmatch 'one labelled side-by-side image' -or $prompt -notmatch 'capture only' -or $prompt -notmatch 'never send the whole desktop' -or $prompt -notmatch 'Unrelated owner chat does not resume automation') { throw 'Worker prompt lacks dependency-safe owner-wait suspension controls.' }
 Write-Output "Worker proof harness verified: feedback freshness, active routing, gate exclusion, and anti-micro-task controls."

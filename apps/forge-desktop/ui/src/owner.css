@@ -1,0 +1,157 @@
+.supporting-copy {
+  color: var(--muted);
+  max-width: 72ch;
+}
+
+.action-time {
+  display: inline-flex;
+  margin: 4px 0 18px;
+  padding: 7px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.technical-details {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.technical-details summary,
+.advanced-panel > summary {
+  cursor: pointer;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.technical-details dl,
+.technical-details p,
+.technical-details ul {
+  margin-top: 12px;
+}
+
+.technical-details dt {
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.technical-details dd {
+  margin: 2px 0 10px;
+  overflow-wrap: anywhere;
+  color: var(--text);
+}
+
+.advanced-panel > section {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.action-panel {
+  border-color: var(--red);
+  background: linear-gradient(135deg, rgb(227 38 54 / 8%), transparent 55%), var(--panel);
+}
+
+.search-label {
+  display: block;
+  max-width: 620px;
+  margin: 20px 0;
+}
+
+.library-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.library-list li {
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgb(255 255 255 / 1.5%);
+}
+
+.library-list li p {
+  margin: 7px 0 0;
+}
+
+.technical-list {
+  max-height: 520px;
+  overflow: auto;
+  overflow-wrap: anywhere;
+}
+
+.review-progress {
+  margin-bottom: 22px;
+}
+
+.review-progress .progress-track {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.comparison-toggle {
+  margin: 16px 0;
+}
+
+.technical-input {
+  display: none;
+}
+
+.glossary {
+  display: grid;
+  grid-template-columns: minmax(130px, 180px) 1fr;
+  gap: 12px 20px;
+}
+
+.glossary dt {
+  font-weight: 800;
+}
+
+.glossary dd {
+  margin: 0;
+  color: var(--muted);
+}
+
+.capture-panel > h2 {
+  margin-bottom: 8px;
+  font-size: 2rem;
+}
+
+.nav-count[hidden] {
+  display: none;
+}
+
+.milestone-path li {
+  min-width: 0;
+  font-size: 0.65rem;
+  line-height: 1.15;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.review-form select {
+  width: 100%;
+}
+
+@media (max-width: 760px) {
+  .glossary {
+    grid-template-columns: 1fr;
+  }
+
+  .milestone-path {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.app-shell {
+  height: 100vh;
+  min-height: 0;
+  overflow: hidden;
+  grid-template-rows: 46px minmax(0, 1fr);
+}

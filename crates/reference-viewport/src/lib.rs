@@ -217,44 +217,53 @@ pub fn project(scene: &ReferenceScene) -> Result<ViewportSnapshot, ViewportError
 }
 
 pub fn reference_snapshot() -> Result<ViewportSnapshot, ViewportError> {
-    project(&reference_scene())
+    let scene = reference_scene();
+    validate_reference_fixture_semantics(&scene)?;
+    project(&scene)
 }
 
 pub fn negative_control_snapshots() -> Result<Vec<ControlledSnapshot>, ViewportError> {
-    let mut broken = reference_scene();
+    let reference = reference_scene();
+    validate_reference_fixture_semantics(&reference)?;
+
+    let mut broken = reference.clone();
     broken.scene_id = "control-broken-connection".into();
     broken
         .edges
-        .retain(|edge| !(edge.from == "base_right" && edge.to == "spine_low"));
+        .retain(|edge| !(edge.from == "knee_right" && edge.to == "ankle_right"));
 
-    let mut collapsed = reference_scene();
+    let mut collapsed = reference.clone();
     collapsed.scene_id = "control-silhouette-collapse".into();
     for frame in &mut collapsed.frames {
         for vertex in &mut frame.vertices {
-            if vertex.id == "arm_left" {
-                vertex.x = -10;
-            } else if vertex.id == "arm_right" {
-                vertex.x = 10;
+            match vertex.id.as_str() {
+                "elbow_left" => vertex.x = -12,
+                "hand_left" => vertex.x = -18,
+                "elbow_right" => vertex.x = 12,
+                "hand_right" => vertex.x = 18,
+                _ => {}
             }
         }
     }
     for vertex in &mut collapsed.vertices {
-        if vertex.id == "arm_left" {
-            vertex.x = -10;
-        } else if vertex.id == "arm_right" {
-            vertex.x = 10;
+        match vertex.id.as_str() {
+            "elbow_left" => vertex.x = -12,
+            "hand_left" => vertex.x = -18,
+            "elbow_right" => vertex.x = 12,
+            "hand_right" => vertex.x = 18,
+            _ => {}
         }
     }
 
-    let mut drifted = reference_scene();
+    let mut drifted = reference.clone();
     drifted.scene_id = "control-articulation-drift".into();
     for vertex in &mut drifted.frames[1].vertices {
-        if vertex.id == "arm_left" {
-            vertex.x = -360;
-            vertex.y = -40;
-        } else if vertex.id == "arm_right" {
-            vertex.x = 360;
-            vertex.y = -40;
+        if vertex.id == "hand_left" {
+            vertex.x = -60;
+            vertex.y = 90;
+        } else if vertex.id == "hand_right" {
+            vertex.x = 60;
+            vertex.y = 90;
         }
     }
 
@@ -276,35 +285,65 @@ pub fn negative_control_snapshots() -> Result<Vec<ControlledSnapshot>, ViewportE
 
 pub fn reference_scene() -> ReferenceScene {
     let base = vec![
-        vertex("base_left", -180, -120, 0),
-        vertex("base_right", 180, -120, 0),
-        vertex("spine_low", 0, -80, 0),
-        vertex("spine_high", 0, 120, 0),
-        vertex("arm_left", -150, 40, 0),
-        vertex("arm_right", 150, 40, 0),
-        vertex("head", 0, 210, 0),
+        vertex("pelvis", 0, -70, 0),
+        vertex("chest", 0, 90, 0),
+        vertex("shoulder_left", 60, 90, 0),
+        vertex("elbow_left", 180, 90, 0),
+        vertex("hand_left", 300, 90, 0),
+        vertex("shoulder_right", -60, 90, 0),
+        vertex("elbow_right", -180, 90, 0),
+        vertex("hand_right", -300, 90, 0),
+        vertex("hip_left", 45, -70, 0),
+        vertex("knee_left", 45, -190, 0),
+        vertex("ankle_left", 45, -310, 0),
+        vertex("toe_left", 45, -310, 60),
+        vertex("hip_right", -45, -70, 0),
+        vertex("knee_right", -45, -190, 0),
+        vertex("ankle_right", -45, -310, 0),
+        vertex("toe_right", -45, -310, 60),
+        vertex("head", 0, 190, 0),
     ];
     let raised = vec![
-        vertex("base_left", -180, -120, 0),
-        vertex("base_right", 180, -120, 0),
-        vertex("spine_low", 0, -80, 0),
-        vertex("spine_high", 0, 120, 0),
-        vertex("arm_left", -125, 145, 30),
-        vertex("arm_right", 125, 145, -30),
-        vertex("head", 0, 210, 0),
+        vertex("pelvis", 0, -70, 0),
+        vertex("chest", 0, 90, 0),
+        vertex("shoulder_left", 60, 90, 0),
+        vertex("elbow_left", 180, 90, 0),
+        vertex("hand_left", 180, -30, 0),
+        vertex("shoulder_right", -60, 90, 0),
+        vertex("elbow_right", -180, 90, 0),
+        vertex("hand_right", -180, -30, 0),
+        vertex("hip_left", 45, -70, 0),
+        vertex("knee_left", 45, -190, 0),
+        vertex("ankle_left", 45, -310, 0),
+        vertex("toe_left", 45, -310, 60),
+        vertex("hip_right", -45, -70, 0),
+        vertex("knee_right", -45, -190, 0),
+        vertex("ankle_right", -45, -310, 0),
+        vertex("toe_right", -45, -310, 60),
+        vertex("head", 0, 190, 0),
     ];
     ReferenceScene {
         schema_version: SCHEMA_VERSION,
-        scene_id: "neutral-articulation-fixture".into(),
-        artifact_id: "artifact-reference-viewport-001".into(),
+        scene_id: "neutral-t-pose-articulation-fixture-v3".into(),
+        artifact_id: "artifact-reference-viewport-003".into(),
         vertices: base.clone(),
         edges: vec![
-            edge("base_left", "spine_low", "support"),
-            edge("base_right", "spine_low", "support"),
-            edge("spine_low", "spine_high", "structure"),
-            edge("spine_high", "arm_left", "articulation"),
-            edge("spine_high", "arm_right", "articulation"),
-            edge("spine_high", "head", "structure"),
+            edge("pelvis", "chest", "structure"),
+            edge("chest", "head", "structure"),
+            edge("chest", "shoulder_left", "structure"),
+            edge("shoulder_left", "elbow_left", "articulation"),
+            edge("elbow_left", "hand_left", "articulation"),
+            edge("chest", "shoulder_right", "structure"),
+            edge("shoulder_right", "elbow_right", "articulation"),
+            edge("elbow_right", "hand_right", "articulation"),
+            edge("pelvis", "hip_left", "structure"),
+            edge("hip_left", "knee_left", "support"),
+            edge("knee_left", "ankle_left", "support"),
+            edge("ankle_left", "toe_left", "orientation"),
+            edge("pelvis", "hip_right", "structure"),
+            edge("hip_right", "knee_right", "support"),
+            edge("knee_right", "ankle_right", "support"),
+            edge("ankle_right", "toe_right", "orientation"),
         ],
         frames: vec![
             PoseFrame {
@@ -317,6 +356,167 @@ pub fn reference_scene() -> ReferenceScene {
             },
         ],
     }
+}
+
+pub fn validate_reference_fixture_semantics(scene: &ReferenceScene) -> Result<(), ViewportError> {
+    validate_scene(scene)?;
+    if scene.scene_id != "neutral-t-pose-articulation-fixture-v3"
+        || scene.artifact_id != "artifact-reference-viewport-003"
+        || scene.frames.len() != 2
+    {
+        return Err(ViewportError::Invalid(
+            "unsupported reference fixture profile",
+        ));
+    }
+
+    let segments = [
+        ("shoulder_left", "elbow_left"),
+        ("elbow_left", "hand_left"),
+        ("shoulder_right", "elbow_right"),
+        ("elbow_right", "hand_right"),
+        ("hip_left", "knee_left"),
+        ("knee_left", "ankle_left"),
+        ("hip_right", "knee_right"),
+        ("knee_right", "ankle_right"),
+    ];
+    for (from, to) in segments {
+        let base_length = squared_distance(&scene.vertices, from, to)?;
+        if base_length != 14_400 {
+            return Err(ViewportError::Invalid(
+                "reference limb segment is not the declared v3 length",
+            ));
+        }
+        for frame in &scene.frames {
+            if squared_distance(&frame.vertices, from, to)? != base_length {
+                return Err(ViewportError::Invalid(
+                    "reference limb length drifts across pose frames",
+                ));
+            }
+        }
+    }
+    validate_t_pose_rest_geometry(scene)?;
+    validate_joint_hierarchy(scene)?;
+    Ok(())
+}
+
+fn validate_t_pose_rest_geometry(scene: &ReferenceScene) -> Result<(), ViewportError> {
+    if scene.vertices != scene.frames[0].vertices {
+        return Err(ViewportError::Invalid(
+            "frame zero must equal the declared rest bind pose",
+        ));
+    }
+    let rest = &scene.vertices;
+    let point = |id: &str| {
+        rest.iter()
+            .find(|vertex| vertex.id == id)
+            .ok_or(ViewportError::Invalid("required fixture joint is missing"))
+    };
+    let shoulder_left = point("shoulder_left")?;
+    let elbow_left = point("elbow_left")?;
+    let hand_left = point("hand_left")?;
+    let shoulder_right = point("shoulder_right")?;
+    let elbow_right = point("elbow_right")?;
+    let hand_right = point("hand_right")?;
+    if ![shoulder_left, elbow_left, hand_left, shoulder_right, elbow_right, hand_right]
+        .iter()
+        .all(|joint| joint.y == 90 && joint.z == 0)
+    {
+        return Err(ViewportError::Invalid(
+            "rest arms must be collinear on the x axis",
+        ));
+    }
+    if !(shoulder_left.x > 0
+        && elbow_left.x > shoulder_left.x
+        && hand_left.x > elbow_left.x
+        && shoulder_right.x < 0
+        && elbow_right.x < shoulder_right.x
+        && hand_right.x < elbow_right.x)
+    {
+        return Err(ViewportError::Invalid(
+            "anatomical left must be positive x in the rest pose",
+        ));
+    }
+    for side in ["left", "right"] {
+        let hip = point(&format!("hip_{side}"))?;
+        let knee = point(&format!("knee_{side}"))?;
+        let ankle = point(&format!("ankle_{side}"))?;
+        let toe = point(&format!("toe_{side}"))?;
+        if hip.x != knee.x
+            || knee.x != ankle.x
+            || hip.z != 0
+            || knee.z != 0
+            || ankle.z != 0
+            || !(hip.y > knee.y && knee.y > ankle.y)
+        {
+            return Err(ViewportError::Invalid(
+                "rest legs must be straight vertical and parallel",
+            ));
+        }
+        if toe.x != ankle.x || toe.y != ankle.y || toe.z <= ankle.z {
+            return Err(ViewportError::Invalid(
+                "rest toes must point forward along positive z",
+            ));
+        }
+    }
+    for role in ["shoulder", "elbow", "hand", "hip", "knee", "ankle", "toe"] {
+        let left = point(&format!("{role}_left"))?;
+        let right = point(&format!("{role}_right"))?;
+        if left.x != -right.x || left.y != right.y || left.z != right.z {
+            return Err(ViewportError::Invalid(
+                "rest pose must be bilaterally symmetric",
+            ));
+        }
+    }
+    Ok(())
+}
+
+fn validate_joint_hierarchy(scene: &ReferenceScene) -> Result<(), ViewportError> {
+    let required = [
+        ("pelvis", "chest"),
+        ("chest", "head"),
+        ("chest", "shoulder_left"),
+        ("shoulder_left", "elbow_left"),
+        ("elbow_left", "hand_left"),
+        ("chest", "shoulder_right"),
+        ("shoulder_right", "elbow_right"),
+        ("elbow_right", "hand_right"),
+        ("pelvis", "hip_left"),
+        ("hip_left", "knee_left"),
+        ("knee_left", "ankle_left"),
+        ("ankle_left", "toe_left"),
+        ("pelvis", "hip_right"),
+        ("hip_right", "knee_right"),
+        ("knee_right", "ankle_right"),
+        ("ankle_right", "toe_right"),
+    ];
+    if scene.edges.len() != required.len()
+        || required.iter().any(|(from, to)| {
+            !scene
+                .edges
+                .iter()
+                .any(|edge| edge.from == *from && edge.to == *to)
+        })
+    {
+        return Err(ViewportError::Invalid(
+            "fixture joints must retain the directed pelvis-rooted hierarchy",
+        ));
+    }
+    Ok(())
+}
+
+fn squared_distance(vertices: &[Vertex], from: &str, to: &str) -> Result<i64, ViewportError> {
+    let from = vertices
+        .iter()
+        .find(|vertex| vertex.id == from)
+        .ok_or(ViewportError::Invalid("required fixture joint is missing"))?;
+    let to = vertices
+        .iter()
+        .find(|vertex| vertex.id == to)
+        .ok_or(ViewportError::Invalid("required fixture joint is missing"))?;
+    let dx = i64::from(to.x - from.x);
+    let dy = i64::from(to.y - from.y);
+    let dz = i64::from(to.z - from.z);
+    Ok(dx * dx + dy * dy + dz * dz)
 }
 
 fn validate_vertices(vertices: &[Vertex]) -> Result<BTreeSet<String>, ViewportError> {
@@ -444,9 +644,9 @@ mod tests {
         let front = &snapshot.frames[0].views[0].points[0];
         let side = &snapshot.frames[0].views[1].points[0];
         let top = &snapshot.frames[0].views[2].points[0];
-        assert_eq!((front.x, front.y), (-180, -120));
-        assert_eq!((side.x, side.y), (0, -120));
-        assert_eq!((top.x, top.y), (-180, 0));
+        assert_eq!((front.x, front.y), (0, -70));
+        assert_eq!((side.x, side.y), (0, -70));
+        assert_eq!((top.x, top.y), (0, 0));
     }
 
     #[test]
@@ -461,5 +661,93 @@ mod tests {
             .collect();
         assert_eq!(fingerprints.len(), 3);
         assert!(!fingerprints.contains(reference_snapshot().unwrap().scene_fingerprint.as_str()));
+    }
+
+    #[test]
+    fn v2_fixture_has_legible_segmented_limbs_with_stable_lengths() {
+        let scene = reference_scene();
+        validate_reference_fixture_semantics(&scene).unwrap();
+        assert_eq!(scene.scene_id, "neutral-articulation-fixture-v2");
+        assert_eq!(scene.artifact_id, "artifact-reference-viewport-002");
+        for frame in &scene.frames {
+            for (from, to) in [
+                ("shoulder_left", "elbow_left"),
+                ("elbow_left", "hand_left"),
+                ("hip_left", "knee_left"),
+                ("knee_left", "foot_left"),
+            ] {
+                assert_eq!(squared_distance(&frame.vertices, from, to).unwrap(), 14_400);
+            }
+        }
+    }
+
+    #[test]
+    fn short_reference_limbs_fail_the_v2_semantic_gate() {
+        let mut scene = reference_scene();
+        for vertices in std::iter::once(&mut scene.vertices)
+            .chain(scene.frames.iter_mut().map(|frame| &mut frame.vertices))
+        {
+            vertices
+                .iter_mut()
+                .find(|vertex| vertex.id == "hand_left")
+                .unwrap()
+                .x += 48;
+        }
+        assert_eq!(
+            validate_reference_fixture_semantics(&scene),
+            Err(ViewportError::Invalid(
+                "reference limb segment is not the legible v2 length"
+            ))
+        );
+    }
+
+    #[test]
+    fn pose_length_drift_fails_the_v2_semantic_gate() {
+        let mut scene = reference_scene();
+        scene.frames[1]
+            .vertices
+            .iter_mut()
+            .find(|vertex| vertex.id == "hand_right")
+            .unwrap()
+            .x += 120;
+        assert_eq!(
+            validate_reference_fixture_semantics(&scene),
+            Err(ViewportError::Invalid(
+                "reference limb length drifts across pose frames"
+            ))
+        );
+    }
+
+    #[test]
+    fn articulation_control_changes_pose_without_changing_segment_length() {
+        let reference = reference_scene();
+        let reference_frame = &reference.frames[1].vertices;
+        let control = negative_control_snapshots()
+            .unwrap()
+            .into_iter()
+            .find(|item| item.control == NegativeControlKind::ArticulationDrift)
+            .unwrap();
+        let control_frame = &control.snapshot.frames[1].views[0].points;
+        for side in ["left", "right"] {
+            let elbow = format!("elbow_{side}");
+            let hand = format!("hand_{side}");
+            let reference_length = squared_distance(reference_frame, &elbow, &hand).unwrap();
+            let elbow_point = control_frame
+                .iter()
+                .find(|point| point.id == elbow)
+                .unwrap();
+            let hand_point = control_frame.iter().find(|point| point.id == hand).unwrap();
+            let dx = i64::from(hand_point.x - elbow_point.x);
+            let dy = i64::from(hand_point.y - elbow_point.y);
+            assert_eq!(dx * dx + dy * dy, reference_length);
+            let reference_hand = reference_frame
+                .iter()
+                .find(|point| point.id == hand)
+                .unwrap();
+            assert_ne!(
+                (hand_point.x, hand_point.y),
+                (reference_hand.x, reference_hand.y)
+            );
+        }
     }
 }

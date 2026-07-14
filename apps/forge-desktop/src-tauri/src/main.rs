@@ -11,6 +11,7 @@ use std::{
 };
 
 mod codex_capture;
+mod owner_presentation;
 
 use forge_kernel::{
     ActorKind, AuthorityBasis, CandidateState, EventType, ForgeKernel,
@@ -500,6 +501,17 @@ fn operating_system_snapshot(state: State<'_, AppState>) -> Result<serde_json::V
 }
 
 #[tauri::command]
+fn owner_dashboard_snapshot(
+    state: State<'_, AppState>,
+) -> Result<owner_presentation::OwnerDashboardSnapshot, String> {
+    let forge = state
+        .forge
+        .lock()
+        .map_err(|_| "The local Forge state lock is unavailable.".to_owned())?;
+    owner_presentation::owner_dashboard_for(&forge, &state.project_root)
+}
+
+#[tauri::command]
 fn forge_snapshot(state: State<'_, AppState>) -> Result<ForgeSnapshot, String> {
     let forge = state
         .forge
@@ -866,6 +878,7 @@ fn main() {
             project_inventory,
             project_atlas,
             operating_system_snapshot,
+            owner_dashboard_snapshot,
             forge_snapshot,
             workspace_binding,
             apply_to_approved_forge_workspace,

@@ -141,6 +141,29 @@ type OwnerBrief = {
   truncated: boolean;
 };
 
+type TechnicalReference = { label: string; value: string };
+type OwnerAction = {
+  action_id: string;
+  title: string;
+  summary: string;
+  why_now: string;
+  estimated_minutes: number;
+  can_defer: boolean;
+  defer_effect: string;
+  destination: string;
+  progress_current: number;
+  progress_total: number;
+  technical_references: TechnicalReference[];
+};
+type OwnerDashboardSnapshot = {
+  schema_version: number;
+  actionable_count: number;
+  primary_action: OwnerAction | null;
+  later_action_count: number;
+  reference: { knowledge_record_count: number; background_candidate_count: number; description: string };
+  health: { label: string; summary: string; repository: string; integrity: string; authority: string };
+};
+
 type AuthorizationReceipt = { action: string; candidate_id: string; event_id: string };
 
 type CodePreview = { candidate: string; relative_path: string; language: string; code: string; code_object: string };
@@ -153,9 +176,15 @@ const statusElement = document.querySelector<HTMLParagraphElement>("#status");
 const knowledgeSummary = document.querySelector<HTMLParagraphElement>("#knowledge-summary");
 const knowledgeList = document.querySelector<HTMLOListElement>("#knowledge-list");
 const refreshKnowledge = document.querySelector<HTMLButtonElement>("#refresh-knowledge");
+const knowledgeSearch = document.querySelector<HTMLInputElement>("#knowledge-search");
+const knowledgeMore = document.querySelector<HTMLParagraphElement>("#knowledge-more");
 const knowledgeFilters = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-knowledge-filter]"));
 let currentKnowledge: KnowledgeRecord[] = [];
-let currentKnowledgeFilter = "all";
+let currentKnowledgeFilter = "none";
+let currentKnowledgeSearch = "";
+let currentOwnerAction: OwnerAction | null = null;
+let currentReviewStep = 0;
+let reviewPreviewPinned = false;
 const mainElement = document.querySelector<HTMLElement>("main");
 const goToReview = document.querySelector<HTMLButtonElement>("#go-to-review");
 const toggleDetails = document.querySelector<HTMLButtonElement>("#toggle-details");
@@ -166,6 +195,7 @@ const sourceInput = document.querySelector<HTMLInputElement>("#source-id");
 const transcriptInput = document.querySelector<HTMLTextAreaElement>("#transcript");
 const dossierSummary = document.querySelector<HTMLParagraphElement>("#dossier-summary");
 const candidateList = document.querySelector<HTMLUListElement>("#candidate-list");
+const candidateMore = document.querySelector<HTMLParagraphElement>("#candidate-more");
 const refreshDossier = document.querySelector<HTMLButtonElement>("#refresh-dossier");
 const refreshReferenceStudio = document.querySelector<HTMLButtonElement>("#refresh-reference-studio");
 const referenceStudioSummary = document.querySelector<HTMLParagraphElement>("#reference-studio-summary");
@@ -180,8 +210,18 @@ const refreshReferenceViewport = document.querySelector<HTMLButtonElement>("#ref
 const referenceObservationForm = document.querySelector<HTMLFormElement>("#reference-observation-form");
 const referenceObservationPair = document.querySelector<HTMLSelectElement>("#reference-observation-pair");
 const referenceObservationOutcome = document.querySelector<HTMLSelectElement>("#reference-observation-outcome");
-const referenceObservationConfidence = document.querySelector<HTMLInputElement>("#reference-observation-confidence");
+const referenceObservationConfidence = document.querySelector<HTMLSelectElement>("#reference-observation-confidence");
 const referenceObservationReceipt = document.querySelector<HTMLParagraphElement>("#reference-observation-receipt");
+const referenceObservationTechnical = document.querySelector<HTMLDetailsElement>("#reference-observation-technical");
+const referenceObservationTechnicalText = document.querySelector<HTMLParagraphElement>("#reference-observation-technical-text");
+const reviewStepLabel = document.querySelector<HTMLParagraphElement>("#review-step-label");
+const reviewProgressFill = document.querySelector<HTMLElement>("#review-progress-fill");
+const reviewCheckTitle = document.querySelector<HTMLHeadingElement>("#review-check-title");
+const reviewCheckInstruction = document.querySelector<HTMLParagraphElement>("#review-check-instruction");
+const showReference = document.querySelector<HTMLButtonElement>("#show-reference");
+const showCurrentComparison = document.querySelector<HTMLButtonElement>("#show-current-comparison");
+const reviewPreviousStep = document.querySelector<HTMLButtonElement>("#review-previous-step");
+const reviewNextStep = document.querySelector<HTMLButtonElement>("#review-next-step");
 const backupButton = document.querySelector<HTMLButtonElement>("#create-backup");
 const backupReceipt = document.querySelector<HTMLParagraphElement>("#backup-receipt");
 const codeForm = document.querySelector<HTMLFormElement>("#code-form");
@@ -221,13 +261,32 @@ const atlasSystems = document.querySelector<HTMLUListElement>("#atlas-systems");
 const refreshAtlas = document.querySelector<HTMLButtonElement>("#refresh-atlas");
 const operatingSummary = document.querySelector<HTMLParagraphElement>("#operating-summary");
 const operatingPolicies = document.querySelector<HTMLUListElement>("#operating-policies");
+const operatingOwnerTitle = document.querySelector<HTMLHeadingElement>("#operating-owner-title");
+const operatingOwnerSummary = document.querySelector<HTMLParagraphElement>("#operating-owner-summary");
 const refreshOperating = document.querySelector<HTMLButtonElement>("#refresh-operating");
 const codexCaptureSummary = document.querySelector<HTMLParagraphElement>("#codex-capture-status");
+const captureOwnerState = document.querySelector<HTMLHeadingElement>("#capture-owner-state");
+const captureOwnerSummary = document.querySelector<HTMLParagraphElement>("#capture-owner-summary");
 const refreshCodexCapture = document.querySelector<HTMLButtonElement>("#refresh-codex-capture");
 const pauseCodexCapture = document.querySelector<HTMLButtonElement>("#pause-codex-capture");
 const resumeCodexCapture = document.querySelector<HTMLButtonElement>("#resume-codex-capture");
 const homeHealth = document.querySelector<HTMLParagraphElement>("#home-health");
 const homeAttention = document.querySelector<HTMLParagraphElement>("#home-attention");
+const currentActionHeading = document.querySelector<HTMLHeadingElement>("#current-action-heading");
+const homeActionSummary = document.querySelector<HTMLParagraphElement>("#home-action-summary");
+const homeActionWhy = document.querySelector<HTMLParagraphElement>("#home-action-why");
+const homeActionTime = document.querySelector<HTMLParagraphElement>("#home-action-time");
+const homeActionProgress = document.querySelector<HTMLElement>("#home-action-progress");
+const homeProgressFill = document.querySelector<HTMLElement>("#home-progress-fill");
+const homeActionTechnical = document.querySelector<HTMLElement>("#home-action-technical");
+const deferAction = document.querySelector<HTMLButtonElement>("#defer-action");
+const deferEffect = document.querySelector<HTMLParagraphElement>("#defer-effect");
+const workActionTitle = document.querySelector<HTMLHeadingElement>("#work-action-title");
+const workActionSummary = document.querySelector<HTMLParagraphElement>("#work-action-summary");
+const workActionWhy = document.querySelector<HTMLParagraphElement>("#work-action-why");
+const workActionTechnical = document.querySelector<HTMLElement>("#work-action-technical");
+const workOpenAction = document.querySelector<HTMLButtonElement>("#work-open-action");
+const evidenceOwnerSummary = document.querySelector<HTMLParagraphElement>("#evidence-owner-summary");
 const captureChip = document.querySelector<HTMLElement>("#capture-chip");
 const workCount = document.querySelector<HTMLElement>("#work-count");
 const navButtons = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-nav]"));
@@ -256,20 +315,63 @@ async function invokeForge<T>(command: string, arguments_: Record<string, unknow
   return invoke<T>(command, arguments_);
 }
 
+function renderTechnicalReferences(target: HTMLElement | null, references: TechnicalReference[]): void {
+  if (!target) return;
+  target.replaceChildren(...references.flatMap((reference) => {
+    const term = document.createElement("dt");
+    const value = document.createElement("dd");
+    term.textContent = reference.label;
+    value.textContent = reference.value;
+    return [term, value];
+  }));
+}
+
+function shorten(text: string, limit: number): string {
+  const clean = text.replace(/\s+/g, " ").trim();
+  return clean.length <= limit ? clean : `${clean.slice(0, limit - 1).trimEnd()}…`;
+}
+
+function friendlyRecordTitle(record: KnowledgeRecord): string {
+  const withoutReceipt = record.title
+    .replace(/^BOOTSTRAP RECEIPT\s*[—-]?\s*/i, "")
+    .replace(/^Active objective:\s*/i, "");
+  return shorten(withoutReceipt || `${record.record_type} record`, 110);
+}
+
 function renderKnowledge(): void {
   if (!knowledgeList) return;
-  const visible = currentKnowledgeFilter === "all"
+  const filteredByType = currentKnowledgeFilter === "none"
+    ? []
+    : currentKnowledgeFilter === "all"
     ? currentKnowledge
     : currentKnowledge.filter((record) => record.record_type === currentKnowledgeFilter);
+  const query = currentKnowledgeSearch.toLocaleLowerCase();
+  const searchPool = query && currentKnowledgeFilter === "none" ? currentKnowledge : filteredByType;
+  const matches = query
+    ? searchPool.filter((record) => `${record.title} ${record.summary}`.toLocaleLowerCase().includes(query))
+    : filteredByType;
+  const visible = matches.slice(0, 30);
   knowledgeList.replaceChildren(...visible.map((record) => {
     const item = document.createElement("li");
     const heading = document.createElement("strong");
-    heading.textContent = `${record.record_type.toUpperCase()} — ${record.title}`;
+    heading.textContent = `${record.record_type.toUpperCase()} — ${friendlyRecordTitle(record)}`;
     const detail = document.createElement("p");
-    detail.textContent = `${record.state}; ${record.summary} Evidence links: ${record.source_evidence_ids.length}. Authority: ${record.authority_lane}.`;
-    item.append(heading, detail);
+    detail.textContent = shorten(record.summary, 240);
+    const technical = document.createElement("details");
+    technical.className = "technical-details";
+    const summary = document.createElement("summary");
+    summary.textContent = "Technical details";
+    const exact = document.createElement("p");
+    exact.textContent = `Record ${record.id}; state ${record.state}; authority ${record.authority_lane}; evidence links ${record.source_evidence_ids.length}.`;
+    technical.append(summary, exact);
+    item.append(heading, detail, technical);
     return item;
   }));
+  if (knowledgeMore) knowledgeMore.textContent = currentKnowledgeFilter === "none" && !query
+    ? "Search or choose a category to open the project library."
+    : matches.length > visible.length
+    ? `Showing the first ${visible.length} of ${matches.length} matches. Refine the search to narrow the library.`
+    : `${matches.length} matching record${matches.length === 1 ? "" : "s"}.`;
 }
 
 async function loadKnowledge(): Promise<void> {
@@ -277,8 +379,7 @@ async function loadKnowledge(): Promise<void> {
   try {
     const snapshot = await invokeForge<ForgeSnapshot>("forge_snapshot");
     currentKnowledge = snapshot.knowledge_records;
-    const active = snapshot.master_program.items.find((item) => item.status === "active");
-    knowledgeSummary.textContent = `${currentKnowledge.length} typed records; canonical revision ${snapshot.revision.slice(0, 12)}; active master item ${active?.id ?? "none"}. These records are evidence-only until an explicit gate promotes them.`;
+    knowledgeSummary.textContent = `${currentKnowledge.length} saved project records. They are reference material, not a list of things you need to approve.`;
     renderKnowledge();
   } catch (error) {
     knowledgeSummary.textContent = `Project knowledge is unavailable: ${String(error)}`;
@@ -293,13 +394,93 @@ knowledgeFilters.forEach((button) => button.addEventListener("click", () => {
   knowledgeFilters.forEach((candidate) => candidate.setAttribute("aria-pressed", String(candidate === button)));
   renderKnowledge();
 }));
+knowledgeSearch?.addEventListener("input", () => {
+  currentKnowledgeSearch = knowledgeSearch.value;
+  renderKnowledge();
+});
+
+function openCurrentOwnerAction(): void {
+  if (!currentOwnerAction) return;
+  navigate(currentOwnerAction.destination);
+  if (currentOwnerAction.destination === "studio") {
+    referenceReview?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+async function loadOwnerDashboard(): Promise<void> {
+  try {
+    const snapshot = await invokeForge<OwnerDashboardSnapshot>("owner_dashboard_snapshot");
+    currentOwnerAction = snapshot.primary_action;
+    if (workCount) {
+      workCount.textContent = String(snapshot.actionable_count);
+      workCount.title = `${snapshot.actionable_count} owner action${snapshot.actionable_count === 1 ? "" : "s"}`;
+      workCount.hidden = snapshot.actionable_count === 0;
+    }
+    if (homeHealth) homeHealth.textContent = snapshot.health.summary;
+    if (evidenceOwnerSummary) {
+      evidenceOwnerSummary.textContent = `${snapshot.reference.knowledge_record_count} project records are stored locally. ${snapshot.reference.description}`;
+    }
+    const action = snapshot.primary_action;
+    if (!action) {
+      if (currentActionHeading) currentActionHeading.textContent = "Nothing needs you right now";
+      if (homeActionSummary) homeActionSummary.textContent = "Forge has no unresolved owner decision or observation ready for review.";
+      if (homeActionWhy) homeActionWhy.textContent = "Background work and reference material remain available without becoming owner tasks.";
+      if (homeActionTime) homeActionTime.textContent = "";
+      if (homeActionProgress) homeActionProgress.textContent = "CLEAR";
+      if (homeProgressFill) homeProgressFill.style.width = "100%";
+      if (homeAttention) homeAttention.textContent = "Your owner queue is clear.";
+      if (goToReview) goToReview.hidden = true;
+      if (deferAction) deferAction.hidden = true;
+      if (workActionTitle) workActionTitle.textContent = "Nothing needs you right now";
+      if (workActionSummary) workActionSummary.textContent = "Completed and background records are available in the project library below.";
+      if (workActionWhy) workActionWhy.textContent = "Forge will raise a new card only when a deliberate owner action becomes dependency-ready.";
+      if (workOpenAction) workOpenAction.hidden = true;
+      renderTechnicalReferences(homeActionTechnical, []);
+      renderTechnicalReferences(workActionTechnical, []);
+      return;
+    }
+    const progress = action.progress_total ? Math.round((action.progress_current / action.progress_total) * 100) : 0;
+    if (currentActionHeading) currentActionHeading.textContent = action.title;
+    if (homeActionSummary) homeActionSummary.textContent = action.summary;
+    if (homeActionWhy) homeActionWhy.textContent = action.why_now;
+    if (homeActionTime) homeActionTime.textContent = `About ${action.estimated_minutes} minute${action.estimated_minutes === 1 ? "" : "s"}`;
+    if (homeActionProgress) homeActionProgress.textContent = `${action.progress_current} OF ${action.progress_total}`;
+    if (homeProgressFill) homeProgressFill.style.width = `${progress}%`;
+    if (homeAttention) homeAttention.textContent = snapshot.later_action_count
+      ? `One action needs you now; ${snapshot.later_action_count} can wait.`
+      : "One short action needs you. Background project records do not require review.";
+    if (deferEffect) deferEffect.textContent = action.defer_effect;
+    if (goToReview) goToReview.hidden = false;
+    if (deferAction) deferAction.hidden = !action.can_defer;
+    renderTechnicalReferences(homeActionTechnical, action.technical_references);
+    if (workActionTitle) workActionTitle.textContent = action.title;
+    if (workActionSummary) workActionSummary.textContent = `${action.summary} About ${action.estimated_minutes} minutes.`;
+    if (workActionWhy) workActionWhy.textContent = `${action.why_now} ${action.defer_effect}`;
+    if (workOpenAction) workOpenAction.hidden = false;
+    renderTechnicalReferences(workActionTechnical, action.technical_references);
+  } catch (error) {
+    if (homeAttention) homeAttention.textContent = "The owner queue could not be checked. Technical diagnostics remain available in Activity.";
+    if (workActionTitle) workActionTitle.textContent = "Owner queue unavailable";
+    if (workActionSummary) workActionSummary.textContent = "Forge could not build the read-only owner view.";
+    if (workActionWhy) workActionWhy.textContent = String(error);
+  }
+}
+
+deferAction?.addEventListener("click", () => {
+  if (!currentOwnerAction) return;
+  deferAction.disabled = true;
+  deferAction.textContent = "Saved for later";
+  if (homeAttention) homeAttention.textContent = "Your action is still safely waiting; nothing was approved or advanced.";
+});
+workOpenAction?.addEventListener("click", openCurrentOwnerAction);
 
 async function loadStatus(): Promise<void> {
   if (!statusElement) return;
   try {
     const result = await invokeForge<KernelStatus>("kernel_status");
-    statusElement.textContent = `${result.mode}: ${result.message} Objects: ${result.object_count}; events: ${result.event_count}; candidates: ${result.candidate_count}.`;
-    if (homeHealth) homeHealth.textContent = `${result.message} ${result.object_count} objects and ${result.event_count} events are available locally.`;
+    statusElement.textContent = result.mode === "local-only"
+      ? "Forge is connected locally, project history is verified, and technical records remain available on demand."
+      : "Forge is connected and project history is available.";
   } catch {
     statusElement.textContent = "Forge desktop shell is running outside Tauri.";
   }
@@ -310,12 +491,14 @@ async function loadAtlas(): Promise<void> {
   try {
     const atlas = await invokeForge<ProjectAtlas>("project_atlas");
     const active = atlas.milestones.find((milestone) => milestone.status === "active");
-    atlasSummary.textContent = `${atlas.project.name}: ${atlas.project.vision} Active milestone: ${active ? `${active.id} — ${active.name}` : "none"}.`;
+    atlasSummary.textContent = active
+      ? `Current stage: ${active.name}. ${atlas.project.vision}`
+      : `${atlas.project.vision} No active stage requires attention.`;
     atlasMilestones.replaceChildren(...atlas.milestones.map((milestone) => {
       const item = document.createElement("li");
       item.dataset.status = milestone.status;
       item.title = `${milestone.name} — ${milestone.status}`;
-      item.textContent = milestone.id;
+      item.textContent = milestone.name;
       return item;
     }));
     atlasSystems.replaceChildren(...atlas.systems.map((system) => {
@@ -333,6 +516,8 @@ async function loadOperating(): Promise<void> {
   try {
     const snapshot = await invokeForge<OperatingSnapshot>("operating_system_snapshot");
     const work = snapshot.active_checkpoint;
+    if (operatingOwnerTitle) operatingOwnerTitle.textContent = work.state === "complete" ? "Continuity foundation verified" : "Continuity foundation in progress";
+    if (operatingOwnerSummary) operatingOwnerSummary.textContent = `${work.objective} Forge will not cross the next owner boundary automatically.`;
     operatingSummary.textContent = `${work.batch_id} [${work.state}/${work.substage_id}]: ${work.objective} Route: ${work.atlas_route.milestone}; risk/research: ${work.risk_level}/${work.research_gate}; next: ${work.next_action} Evidence catalogue: ${snapshot.catalogue_available ? "available" : "fallback transcript search"}.`;
     operatingPolicies.replaceChildren(...snapshot.policy.policies.filter((policy) => policy.status === "approved").map((policy) => {
       const item = document.createElement("li"); item.textContent = `${policy.id}: ${policy.rule}`; return item;
@@ -344,7 +529,16 @@ function showCodexCapture(status: CodexCaptureStatus): void {
   if (!codexCaptureSummary) return;
   const error = status.last_error ? ` Last issue: ${status.last_error}` : "";
   codexCaptureSummary.textContent = `${status.state}: ${status.sessions} session(s); ${status.captured_messages} message(s) captured this scan; ${status.skipped_records} non-visible/internal record(s) skipped; ${status.paused_sources} source(s) paused safely.${error}`;
-  if (captureChip) captureChip.textContent = status.state === "running" ? "● CAPTURE ON" : `○ CAPTURE ${status.state.toUpperCase()}`;
+  const plainState = status.last_error ? "Needs attention" : status.state === "running" ? "Up to date" : status.state === "paused" ? "Paused" : "Checking";
+  if (captureOwnerState) captureOwnerState.textContent = plainState;
+  if (captureOwnerSummary) captureOwnerSummary.textContent = status.last_error
+    ? "Forge could not finish checking conversation history. Open Technical details for the exact issue."
+    : status.state === "running"
+      ? "Visible conversation history is being recorded locally and is ready for Forge to use as evidence."
+      : status.state === "paused"
+        ? "Automatic conversation capture is paused. Existing project history remains safe."
+        : "Forge is checking the local conversation history. If this state persists, use Check again.";
+  if (captureChip) captureChip.textContent = status.state === "running" ? "● CAPTURE ON" : status.state === "paused" ? "○ CAPTURE PAUSED" : "○ CAPTURE CHECKING";
 }
 
 async function loadCodexCapture(): Promise<void> {
@@ -361,11 +555,15 @@ async function loadDossier(): Promise<void> {
     const dossier = await invokeForge<DossierSnapshot>("dossier_snapshot");
     const activeApplications = dossier.applications.filter((application) => !application.rolled_back).length;
     dossierSummary.textContent = `Objects: ${dossier.object_count}; events: ${dossier.event_count}; candidates: ${dossier.candidates.length}; active applications: ${activeApplications}; rolled back: ${dossier.applications.length - activeApplications}.`;
-    candidateList.replaceChildren(...dossier.candidates.map((candidate) => {
+    const visible = dossier.candidates.slice(0, 25);
+    candidateList.replaceChildren(...visible.map((candidate) => {
       const item = document.createElement("li");
       item.textContent = `${candidate.state} candidate ${candidate.id} (evidence ${candidate.evidence_id}; history events ${candidate.history_event_count})`;
       return item;
     }));
+    if (candidateMore) candidateMore.textContent = dossier.candidates.length > visible.length
+      ? `Showing 25 of ${dossier.candidates.length} technical candidates.`
+      : `${dossier.candidates.length} technical candidates.`;
   } catch {
     dossierSummary.textContent = "Dossier is available only inside the local Forge desktop app.";
   }
@@ -416,6 +614,59 @@ async function loadReferenceStudio(): Promise<void> {
 
 let currentViewport: ReferenceViewportSnapshot | null = null;
 let currentViewportBundle: ControlledStimulusBundle | null = null;
+
+const reviewSteps = [
+  { title: "Connection check", instruction: "Compare the reference with the altered version and check whether the parts remain connected in the expected places." },
+  { title: "Shape check", instruction: "Check whether the reference keeps a clear, readable outline instead of collapsing into a flat shape." },
+  { title: "Pose check", instruction: "Move the pose frame and check whether the reference joint stays in the expected position." },
+];
+
+function progressKey(bundle: ControlledStimulusBundle): string {
+  return `forge-visual-review:${bundle.base_scene_fingerprint}`;
+}
+
+function receiptsKey(bundle: ControlledStimulusBundle): string {
+  return `${progressKey(bundle)}:receipts`;
+}
+
+function completedReviewSteps(bundle: ControlledStimulusBundle): number[] {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(progressKey(bundle)) ?? "[]");
+    return Array.isArray(parsed) ? parsed.filter((value) => Number.isInteger(value) && value >= 0 && value < 3) : [];
+  } catch {
+    return [];
+  }
+}
+
+function updateGuidedReview(): void {
+  if (!currentViewportBundle || !referenceObservationPair) return;
+  const completed = completedReviewSteps(currentViewportBundle);
+  const firstIncomplete = reviewSteps.findIndex((_, index) => !completed.includes(index));
+  if (!reviewPreviewPinned) currentReviewStep = firstIncomplete === -1 ? 2 : firstIncomplete;
+  const step = reviewSteps[currentReviewStep];
+  if (reviewStepLabel) reviewStepLabel.textContent = firstIncomplete === -1 ? `REVIEW COMPLETE — VIEW ${currentReviewStep + 1} OF ${reviewSteps.length}` : `STEP ${currentReviewStep + 1} OF ${reviewSteps.length}`;
+  if (reviewProgressFill) reviewProgressFill.style.width = `${Math.round((completed.length / reviewSteps.length) * 100)}%`;
+  if (reviewCheckTitle) reviewCheckTitle.textContent = step.title;
+  if (reviewCheckInstruction) reviewCheckInstruction.textContent = step.instruction;
+  if (reviewPreviousStep) reviewPreviousStep.disabled = currentReviewStep === 0;
+  if (reviewNextStep) reviewNextStep.disabled = currentReviewStep === reviewSteps.length - 1;
+  const placeholder = document.createElement("option");
+  placeholder.value = "";
+  const currentIsActionable = firstIncomplete === currentReviewStep;
+  placeholder.textContent = firstIncomplete === -1 ? "Review complete" : currentIsActionable ? "Choose when ready" : "Preview only — finish the earlier check first";
+  const stimulus = currentViewportBundle.stimuli[currentReviewStep + 1];
+  const option = document.createElement("option");
+  option.value = String(currentReviewStep);
+  option.textContent = stimulus ? `Use ${controlLabel(stimulus.control).split(" — ")[0].toLocaleLowerCase()}` : "Comparison unavailable";
+  referenceObservationPair.replaceChildren(placeholder, ...(currentIsActionable ? [option] : []));
+  referenceObservationPair.value = "";
+  referenceObservationPair.disabled = !currentIsActionable;
+  if (currentOwnerAction?.action_id === "F5") {
+    currentOwnerAction.progress_current = completed.length;
+    if (homeActionProgress) homeActionProgress.textContent = `${completed.length} OF ${reviewSteps.length}`;
+    if (homeProgressFill) homeProgressFill.style.width = `${Math.round((completed.length / reviewSteps.length) * 100)}%`;
+  }
+}
 
 function controlLabel(control: ControlledStimulusBundle["stimuli"][number]["control"]): string {
   switch (control) {
@@ -481,23 +732,11 @@ async function loadReferenceViewport(): Promise<void> {
       option.textContent = controlLabel(stimulus.control);
       return option;
     }));
-    if (referenceObservationPair) {
-      const placeholder = document.createElement("option");
-      placeholder.value = "";
-      placeholder.textContent = "Choose a comparison";
-      referenceObservationPair.replaceChildren(placeholder, ...bundle.stimuli.slice(1).map((stimulus, index) => {
-        const option = document.createElement("option");
-        option.value = String(index);
-        option.textContent = controlLabel(stimulus.control);
-        return option;
-      }));
-      referenceObservationPair.value = "";
-    }
     referenceViewportFrame.min = "0";
     referenceViewportFrame.max = String(Math.max(0, snapshot.frames.length - 1));
     referenceViewportFrame.value = "0";
     referenceViewportSummary.textContent = snapshot.read_only
-      ? `Ready for review. ${bundle.stimuli.length - 1} deliberate comparison controls are bound to the current scene; ${bundle.observed_claim_count} owner observations recorded.`
+      ? "Ready. Use the two buttons to switch between the reference and the altered version for this step."
       : "This view failed its read-only safety check and cannot be reviewed.";
     referenceViewportLimitations.replaceChildren(...[...bundle.limitations, ...snapshot.limitations].map((limitation) => {
       const item = document.createElement("li");
@@ -505,6 +744,7 @@ async function loadReferenceViewport(): Promise<void> {
       return item;
     }));
     drawReferenceViewport(snapshot, 0);
+    updateGuidedReview();
   } catch (error) {
     referenceViewportSummary.textContent = `Built-in reference viewport is unavailable: ${String(error)}`;
     currentViewport = null;
@@ -517,14 +757,7 @@ async function loadOwnerBrief(): Promise<void> {
   try {
     const brief = await invokeForge<OwnerBrief>("owner_brief");
     const suffix = brief.truncated ? " Showing the first five only." : "";
-    briefSummary.textContent = `Proposed candidates needing review: ${brief.pending_decision_count}.${suffix} Nothing here is approved or promoted.`;
-    if (workCount) {
-      workCount.textContent = brief.pending_decision_count > 99 ? "99+" : String(brief.pending_decision_count);
-      workCount.title = `${brief.pending_decision_count} proposed candidates awaiting review`;
-    }
-    if (homeAttention) homeAttention.textContent = brief.pending_decision_count
-      ? `${brief.pending_decision_count} candidate decision${brief.pending_decision_count === 1 ? "" : "s"} plus the active visual review need your attention.`
-      : "One visual review is waiting for you. There are no inferred approvals.";
+    briefSummary.textContent = `${brief.pending_decision_count} background technical candidates.${suffix} They do not enter the owner queue unless a separate canonical gate makes one actionable.`;
     briefList.replaceChildren(...brief.visible_decisions.map((item) => {
       const entry = document.createElement("li");
       entry.textContent = `${item.state}: ${item.candidate_id} (evidence ${item.evidence_id})`;
@@ -549,6 +782,7 @@ form?.addEventListener("submit", async (event) => {
     await loadStatus();
     await loadDossier();
     await loadOwnerBrief();
+    await loadOwnerDashboard();
   } catch (error) {
     receiptElement.textContent = `Import was not accepted: ${String(error)}`;
   }
@@ -569,6 +803,40 @@ referenceViewportStimulus?.addEventListener("change", () => {
   referenceViewportFrame.value = "0";
   drawReferenceViewport(stimulus.snapshot, 0);
 });
+showReference?.addEventListener("click", () => {
+  if (!currentViewportBundle || !referenceViewportStimulus || !referenceViewportFrame) return;
+  const stimulus = currentViewportBundle.stimuli[0];
+  referenceViewportStimulus.value = "0";
+  currentViewport = stimulus.snapshot;
+  referenceViewportFrame.max = String(Math.max(0, stimulus.snapshot.frames.length - 1));
+  referenceViewportFrame.value = "0";
+  drawReferenceViewport(stimulus.snapshot, 0);
+});
+showCurrentComparison?.addEventListener("click", () => {
+  if (!currentViewportBundle || !referenceViewportStimulus || !referenceViewportFrame) return;
+  const stimulusIndex = currentReviewStep + 1;
+  const stimulus = currentViewportBundle.stimuli[stimulusIndex];
+  if (!stimulus) return;
+  referenceViewportStimulus.value = String(stimulusIndex);
+  currentViewport = stimulus.snapshot;
+  referenceViewportFrame.max = String(Math.max(0, stimulus.snapshot.frames.length - 1));
+  referenceViewportFrame.value = "0";
+  drawReferenceViewport(stimulus.snapshot, 0);
+});
+reviewPreviousStep?.addEventListener("click", () => {
+  if (currentReviewStep === 0) return;
+  currentReviewStep -= 1;
+  reviewPreviewPinned = true;
+  updateGuidedReview();
+  showReference?.click();
+});
+reviewNextStep?.addEventListener("click", () => {
+  if (currentReviewStep >= reviewSteps.length - 1) return;
+  currentReviewStep += 1;
+  reviewPreviewPinned = true;
+  updateGuidedReview();
+  showReference?.click();
+});
 referenceObservationPair?.addEventListener("change", () => {
   if (!currentViewportBundle || !referenceViewportStimulus || !referenceViewportFrame || referenceObservationPair.value === "") return;
   const stimulusIndex = Number(referenceObservationPair.value) + 1;
@@ -587,8 +855,9 @@ referenceObservationForm?.addEventListener("submit", async (event) => {
     referenceObservationReceipt.textContent = "Choose a comparison, an observed outcome, and confidence before creating a receipt.";
     return;
   }
-  referenceObservationReceipt.textContent = "Validating direct observation against the current fingerprints...";
+  referenceObservationReceipt.textContent = "Checking and saving your observation…";
   try {
+    const completedStep = Number(referenceObservationPair.value);
     const receipt = await invokeForge<OwnerObservationReceipt>("record_reference_viewport_observation", {
       input: {
         expected_base_scene_fingerprint: currentViewportBundle.base_scene_fingerprint,
@@ -597,9 +866,24 @@ referenceObservationForm?.addEventListener("submit", async (event) => {
         confidence: Number(referenceObservationConfidence.value),
       },
     });
-    referenceObservationReceipt.textContent = `${receipt.status}; ${receipt.control}/${receipt.outcome}; confidence ${receipt.confidence}; receipt SHA-256 ${receipt.receipt_fingerprint}; authority effect ${receipt.authority_effect}. This is one project-direction observation, not approval or promotion.`;
+    const completed = completedReviewSteps(currentViewportBundle);
+    if (!completed.includes(completedStep)) completed.push(completedStep);
+    localStorage.setItem(progressKey(currentViewportBundle), JSON.stringify(completed.sort()));
+    const savedReceipts = JSON.parse(localStorage.getItem(receiptsKey(currentViewportBundle)) ?? "{}");
+    savedReceipts[String(completedStep)] = receipt;
+    localStorage.setItem(receiptsKey(currentViewportBundle), JSON.stringify(savedReceipts));
+    referenceObservationReceipt.textContent = completed.length === reviewSteps.length
+      ? "All three observations are saved locally. Nothing was approved, promoted, or changed automatically."
+      : "Observation saved. The next visual check is ready.";
+    if (referenceObservationTechnical && referenceObservationTechnicalText) {
+      referenceObservationTechnical.hidden = false;
+      referenceObservationTechnicalText.textContent = `${receipt.status}; ${receipt.control}/${receipt.outcome}; confidence ${receipt.confidence}; receipt SHA-256 ${receipt.receipt_fingerprint}; authority effect ${receipt.authority_effect}.`;
+    }
     referenceObservationOutcome.value = "";
     referenceObservationConfidence.value = "";
+    reviewPreviewPinned = false;
+    updateGuidedReview();
+    showReference?.click();
   } catch (error) {
     referenceObservationReceipt.textContent = `Observation receipt was rejected: ${String(error)}`;
   }
@@ -742,8 +1026,7 @@ async function loadWorkspace(): Promise<void> {
 workspaceButton?.addEventListener("click", () => void loadWorkspace());
 
 goToReview?.addEventListener("click", () => {
-  navigate("studio");
-  referenceReview?.scrollIntoView({ behavior: "smooth", block: "start" });
+  openCurrentOwnerAction();
   window.setTimeout(() => referenceObservationPair?.focus(), 350);
 });
 
@@ -774,4 +1057,5 @@ void loadReferenceStudio();
 void loadReferenceViewport();
 void loadOwnerBrief();
 void loadKnowledge();
+void loadOwnerDashboard();
 navigate(window.location.hash.slice(1) || "home");

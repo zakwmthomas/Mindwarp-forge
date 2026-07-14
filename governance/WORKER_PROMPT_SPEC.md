@@ -45,3 +45,13 @@ Optimization Protocol, then synchronize the automation prompt.
     descendants. If none exists, deduplicate the escalation and pause/delete
     the heartbeat when possible. Wakes never imply owner approval, and an
     explicit owner instruction may exempt the current wait.
+15. Do not wait five wakes when scheduler control is available. At the first
+    recognized owner-input gate, prepare one bounded chat handoff and run
+    `tools/forge-heartbeat-control.ps1 -Mode pause` before another scheduled
+    wake. For a visual gate, use `tools/forge-chat-visual.ps1` to capture only
+    the actual Forge window and send one labelled side-by-side image of the
+    exact reference and altered controls plus a plain response format in chat;
+    never send the whole desktop, require the owner to switch between files,
+    or infer or submit the observation. Resume with `-Mode
+    resume` only after new user-authored input materially resolves or explicitly
+    releases that exact gate. Unrelated owner chat does not resume automation.

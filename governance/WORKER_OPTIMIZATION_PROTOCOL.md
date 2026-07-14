@@ -16,7 +16,26 @@ either continue to the next eligible package or remain silent; it may notify
 only for a new durable result, a verification result, or a genuine recorded
 blocker.
 
-## Five-wake owner-wait fallback
+## Immediate owner-wait suspension
+
+When scheduler control is available, the first recognized owner approval,
+confirmation, or observation gate must create exactly one bounded chat handoff
+and then pause the Forge heartbeat with
+`tools/forge-heartbeat-control.ps1 -Mode pause` before another scheduled wake.
+The handoff states the required input, consequence, reversible default, and why
+automation stopped. A visual gate also includes one labelled side-by-side image
+of the exact current reference and altered controls plus a plain answer format.
+Create it with `tools/forge-chat-visual.ps1`: capture only the Forge window,
+never the whole desktop, and never require the owner to open or memorize
+separate screenshots. Screenshot delivery changes presentation only: never
+infer owner judgement, preselect an answer, or submit a receipt.
+
+Resume with `tools/forge-heartbeat-control.ps1 -Mode resume` only after new
+user-authored input materially resolves or explicitly releases the exact gate.
+An unrelated message, elapsed time, a generated summary, or captured evidence
+does not resume the scheduler and never grants authority.
+
+## Five-wake owner-wait safety fallback
 
 When the same owner approval, confirmation, or observation gate remains
 unchanged for five consecutive heartbeat wakes, stop reloading and narrating

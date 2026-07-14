@@ -21,6 +21,16 @@ function Convert-GlobToRegex([string]$pattern) {
 $compiled = @($registry.rules | ForEach-Object {
   [pscustomobject]@{ Pattern = $_.pattern; Role = $_.role; Regex = Convert-GlobToRegex $_.pattern }
 })
+
+foreach ($requiredMapping in @(
+  @{ Pattern = 'governance/WORKER_FEEDBACK_BRIEF.md'; Role = 'generated_projection' },
+  @{ Pattern = 'artifacts/chat-screenshots/**'; Role = 'ephemeral_presentation_artifact' }
+)) {
+  $mapping = @($registry.rules | Where-Object { $_.pattern -eq $requiredMapping.Pattern -and $_.role -eq $requiredMapping.Role })
+  if ($mapping.Count -ne 1) {
+    throw "Record-role registry lacks exact mapping $($requiredMapping.Pattern) => $($requiredMapping.Role)."
+  }
+}
 $ignored = @($registry.ignored_roots)
 $unclassified = [System.Collections.Generic.List[string]]::new()
 $classified = 0

@@ -4,6 +4,7 @@
 /.local/
 /local-data/
 /exports/*.zip
+/artifacts/chat-screenshots/
 /forge documents from gpt handover/
 *.sqlite3
 *.sqlite3-wal

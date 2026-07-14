@@ -190,8 +190,8 @@
       "status": "active",
       "depends_on": ["F5-OWNER-GATE"],
       "gate": "hard",
-      "next_action": "Await direct owner review in the built-in Forge viewport. Present the reference against the three visible negative controls with no preselected pair, outcome, or confidence. Accept only a deliberate owner submission; do not infer an observation, approval, promotion, population preference, external execution, or protected-Kernel mutation.",
-      "proof": "The capability-free reference-viewport and viewport-stimulus modules bind one exact reference plus three deliberate controls to six P7b pairs. A blank-by-default owner form now produces one deterministic CreativeDirector/ProjectDirection receipt only after a direct action bound to the current base fingerprint. Stale fingerprints, not_observed, hidden pairs, and confidence outside 1-100 fail closed. Nine module tests, twenty-six desktop tests, the UI build, and the full Forge gate pass; the receipt has authority_effect none and does not persist approval or mutate the protected Kernel.",
+      "next_action": "Preserve the incomplete v3 T-pose work and review the owner-requested reference-guided generation proposal in a new chat. Treat external and old-project assets as quarantined references and test targets, not canonical baselines or implementation authority. Do not resume the heartbeat or implement the proposal until the owner explicitly approves or revises it.",
+      "proof": "The capability-free reference-viewport and viewport-stimulus modules now bind neutral-articulation-fixture-v2 / artifact-reference-viewport-002. Explicit shoulder/elbow/hand and hip/knee/foot segments have stable squared length 14400 across both reference pose frames; the articulation control changes forearm direction while preserving length. Adversarial tests reject short base limbs and pose-frame length drift. The three v1 owner receipts remain retained against their original fingerprint, including articulation_drift/indeterminate at confidence 40 and the possible poisoned simple-stick limitation. Nothing here approves, promotes, implies population preference, mutates the protected Kernel, or proves the v2 fixture perceptually suitable.",
       "sources": [
         "representation-contract.md",
         "perception-protocol-contract.md",
@@ -224,7 +224,8 @@
         "significance-scheduler-contract.md",
         "HIERARCHY_HISTORY_DESIGN_GATE.md",
         "hierarchy-history-contract.md",
-        "proof-receipt-projection-contract.md"
+        "proof-receipt-projection-contract.md",
+        "2026-07-14-reference-guided-transfer.md"
       ]
     },
     {
