@@ -1,6 +1,8 @@
+param([string]$ProgramPath,[string]$CheckpointPath)
 $ErrorActionPreference = 'Stop'
-
 $root = Split-Path -Parent $PSScriptRoot
+if ([string]::IsNullOrWhiteSpace($ProgramPath)) { $ProgramPath = Join-Path $root 'docs\canonical-system\MASTER_PROGRAM.json' }
+if ([string]::IsNullOrWhiteSpace($CheckpointPath)) { $CheckpointPath = Join-Path $root 'context\active\WORKER_BATCH_STATE.json' }
 $readinessPath = Join-Path $root 'docs\canonical-system\G1_GP3_ENCOUNTER_GRAMMAR_READINESS.md'
 $designPath = Join-Path $root 'docs\canonical-system\G1_GP3_ENCOUNTER_GRAMMAR_DESIGN.md'
 $registryPath = Join-Path $root 'docs\canonical-system\G1_GP3_ENCOUNTER_GRAMMAR_FIXED_REGISTRY.md'
@@ -55,19 +57,46 @@ foreach ($forbidden in @(
     }
 }
 
-$checkpoint = Get-Content -LiteralPath (Join-Path $root 'context\active\WORKER_BATCH_STATE.json') -Raw | ConvertFrom-Json
-if ($checkpoint.batch_id -ne 'G1-GP3-ENCOUNTER-GRAMMAR-V1' -or
-    $checkpoint.master_program_item -ne 'GP3' -or
-    $checkpoint.substage_id -notin @(
+$checkpoint = Get-Content -LiteralPath $CheckpointPath -Raw | ConvertFrom-Json
+$gp3Live = $checkpoint.batch_id -eq 'G1-GP3-ENCOUNTER-GRAMMAR-V1' -and
+    $checkpoint.master_program_item -eq 'GP3' -and
+    $checkpoint.substage_id -in @(
         'gp3-encounter-grammar-readiness',
         'gp3-encounter-grammar-implementation',
         'gp3-encounter-grammar-verification',
         'gp3-encounter-grammar-recorded'
-    )) {
-    throw 'GP3 readiness is not bound to the canonical checkpoint route.'
+    )
+$gp4Successor = $checkpoint.batch_id -eq 'G1-GP4-SIGNAL-ANCHOR-VERTICAL-V1' -and
+    $checkpoint.master_program_item -eq 'GP4' -and
+    $checkpoint.substage_id -in @(
+        'gp4-signal-anchor-readiness',
+        'gp4-signal-anchor-implementation',
+        'gp4-signal-anchor-verification',
+        'gp4-signal-anchor-recorded'
+    )
+$closeoutSuccessor = $checkpoint.batch_id -eq 'G1-VERTICAL-CLOSEOUT-V1' -and
+    $checkpoint.master_program_item -eq 'G1-VERTICAL-CLOSEOUT' -and
+    $checkpoint.substage_id -eq 'g1-vertical-closeout-recorded'
+if (!$gp3Live -and !$gp4Successor -and !$closeoutSuccessor) {
+    throw 'GP3 readiness is not bound to its canonical route or an admitted authenticated successor.'
+}
+if ($gp4Successor -or $closeoutSuccessor) {
+    $program = Get-Content -LiteralPath $ProgramPath -Raw | ConvertFrom-Json
+    $gp3 = @($program.items | Where-Object id -eq 'GP3')
+    $gp4 = @($program.items | Where-Object id -eq 'GP4')
+    $closeout = @($program.items | Where-Object id -eq 'G1-VERTICAL-CLOSEOUT')
+    $runMatch = if ($closeoutSuccessor -and $gp4.Count -eq 1) { [regex]::Match([string]$gp4[0].proof,'run-[0-9a-f]{32}') } else { $null }
+    $gp4StateValid = if ($closeoutSuccessor) {
+        $gp4.Count -eq 1 -and $gp4[0].state -eq 'verified' -and $gp4[0].status -eq 'complete' -and $runMatch.Success -and @($checkpoint.verification_receipts) -contains "registered-full-gate:$($runMatch.Value):passed" -and
+        $closeout.Count -eq 1 -and $closeout[0].state -eq 'executing' -and $closeout[0].status -eq 'active' -and @($closeout[0].depends_on) -contains 'GP4'
+    } else { $gp4.Count -eq 1 -and $gp4[0].state -eq 'executing' -and $gp4[0].status -eq 'active' }
+    if ($gp3.Count -ne 1 -or $gp3[0].state -ne 'promoted' -or $gp3[0].status -ne 'complete' -or
+        $gp3[0].proof -notlike '*run-50a8c78043eb46c483f1f655d3793f9b*' -or !$gp4StateValid -or @($gp4[0].depends_on) -notcontains 'GP3') {
+        throw 'GP4 or bounded closeout successor does not authenticate recorded GP3 closure.'
+    }
 }
 
 $route = & (Join-Path $root 'tools\test-c3-federated-interruption.ps1') -Checkpoint $checkpoint
-if ($route -ne $true) { throw 'GP3 is not admitted by the federated interruption route.' }
+if ($route -ne $true) { throw 'GP3 or its authenticated successor is not admitted by the federated interruption route.' }
 
 Write-Output 'G1 GP3 encounter grammar readiness verified: five fixed domain-tagged situations, exact GP0 references, noncombat/retreat/threat boundaries and hostile codec limits are frozen before source.'

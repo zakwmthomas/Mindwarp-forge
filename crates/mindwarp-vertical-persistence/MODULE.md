@@ -42,7 +42,7 @@ Prove one isolated engine-neutral C4V persistence seam from exact C2 identities,
 
 ## Downstream neighbours
 
-- None declared.
+- mindwarp-signal-anchor-vertical
 
 ## Invariants and failure boundaries
 

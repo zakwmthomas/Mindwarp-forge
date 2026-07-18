@@ -214,6 +214,10 @@ Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-gp3-encoun
 if (!$?) { throw 'G1 GP3 encounter-grammar verification failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-c4v-vertical-persistence.ps1'
 if (!$?) { throw 'G1 C4V vertical-persistence verification failed.' }
+Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-gp4-signal-anchor.ps1'
+if (!$?) { throw 'G1 GP4 Signal Anchor implementation verification failed.' }
+Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-vertical-closeout.ps1'
+if (!$?) { throw 'G1 bounded vertical closeout receipt verification failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-p7b1b-loader-surface.ps1'
 if (!$?) { throw 'P7b-1b loader-surface proof verification failed.' }
 

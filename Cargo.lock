@@ -2333,6 +2333,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "mindwarp-signal-anchor-vertical"
+version = "0.1.0"
+dependencies = [
+ "addressable-world-binding",
+ "derived-world-rules",
+ "field-basis",
+ "hierarchy-history",
+ "mindwarp-gameplay-foundation",
+ "mindwarp-vertical-persistence",
+ "serde",
+ "serde_json",
+ "sha2",
+ "universe-identity",
+]
+
+[[package]]
 name = "mindwarp-vertical-persistence"
 version = "0.1.0"
 dependencies = [

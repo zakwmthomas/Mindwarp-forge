@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **G1-GP3-ENCOUNTER-GRAMMAR-V1**
-- Objective: Prove exactly five fixed authored encounter situations with explainable evidence and risk facets, multiple noncombat resolutions, retreat and exact GP0 consequence references.
+- Work package: **G1-VERTICAL-CLOSEOUT-V1**
+- Objective: Retain the exact typed bounded G1 vertical closeout receipt from verified C3A, C4V and GP0-GP4 evidence without broad G1 closure or runtime authority.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **bounded-authored-gp3-encounter-grammar-proof / GP0, GP1 and GP2 are complete and C4V is promoted. GP3 is game-first and authored-only: readiness and adversarial gates precede source; GP4, runtime, generation, weights and C3B remain blocked.**
-- Exact next action: GP3 is recorded and closed. Await explicit owner authorization before GP4; do not start GP4 or runtime.
+- Risk/research gate: **bounded-g1-vertical-closeout-evidence-only / GP4 is verified and complete through registered run-7e5c44dc8f48424a8cec42da756e3127; the typed closeout receipt binds exact C3A, C4V and GP0-GP4 proof references and grants no successor authority.**
+- Exact next action: Keep G1-VERTICAL-CLOSEOUT as the sole active program item until the owner authorizes a successor; do not implicitly activate broad G1-CLOSEOUT or R1.
 
 ## Approved operating policies
 

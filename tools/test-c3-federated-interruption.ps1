@@ -61,7 +61,17 @@ $gp3GameplayRoute =
   $Checkpoint.master_program_item -eq 'GP3' -and
   $Checkpoint.substage_id -in @('gp3-encounter-grammar-readiness','gp3-encounter-grammar-implementation','gp3-encounter-grammar-verification','gp3-encounter-grammar-recorded') -and
   $Checkpoint.authority_lane -like '*Owner-authorized bounded GP3 authored encounter grammar only*Exactly five fixed situations*No procedural generation*weights*random selection*runtime*GP4*C3B*Greenfield*persistence expansion*combat resolver*economy mapping*automatic GP2 progression*Kernel mutation*'
-$gameplayFoundationRoute = $gp0GameplayRoute -or $gp1GameplayRoute -or $gp2GameplayRoute -or $c4vGameplayRoute -or $gp3GameplayRoute
+$gp4GameplayRoute =
+  $Checkpoint.batch_id -eq 'G1-GP4-SIGNAL-ANCHOR-VERTICAL-V1' -and
+  $Checkpoint.master_program_item -eq 'GP4' -and
+  $Checkpoint.substage_id -in @('gp4-signal-anchor-readiness','gp4-signal-anchor-implementation','gp4-signal-anchor-verification','gp4-signal-anchor-recorded') -and
+  $Checkpoint.authority_lane -like '*Owner-authorized bounded GP4 Signal Anchor temporary-rescue vertical only*No engine selection*runtime implementation*promotion*broad C4*C3B*Companion*Greenfield*procedural generation*persistence expansion*filesystem*network*Kernel mutation*'
+$g1VerticalCloseoutRoute =
+  $Checkpoint.batch_id -eq 'G1-VERTICAL-CLOSEOUT-V1' -and
+  $Checkpoint.master_program_item -eq 'G1-VERTICAL-CLOSEOUT' -and
+  $Checkpoint.substage_id -eq 'g1-vertical-closeout-recorded' -and
+  $Checkpoint.authority_lane -like '*Owner-authorized bounded G1 vertical closeout evidence receipt only*broad_g1=false*runtime_selected=false*runtime_containment_pending=true*evidence_only=true*promotion_authority=false*No runtime*broad C4*C3B*Companion*Greenfield*procedural generation*persistence expansion*filesystem*network*process*Kernel mutation*'
+$gameplayFoundationRoute = $gp0GameplayRoute -or $gp1GameplayRoute -or $gp2GameplayRoute -or $c4vGameplayRoute -or $gp3GameplayRoute -or $gp4GameplayRoute -or $g1VerticalCloseoutRoute
 $c3DesignRoute =
   $Checkpoint.batch_id -eq 'G1-C3-WHOLE-CELL-RECEIVER-COUPLING-MATHEMATICAL-DESIGN-V1' -and
   $Checkpoint.master_program_item -eq 'C3' -and

@@ -1339,6 +1339,47 @@
             ]
         },
         {
+            "id": "mindwarp-signal-anchor-vertical",
+            "maturity": "prototype_tested",
+            "purpose": "Prove one fixed runtime-independent GP4 Signal Anchor temporary-rescue vertical from exact GP0-GP3, C3A and C4V evidence without selecting or promoting a runtime.",
+            "owns": [
+                "strict 21-field SignalAnchorBundleV1 composition and 8 MiB preparse ceiling",
+                "exhaustive 13-field dual-authority BaseLoop semantic projection excluding only world_context",
+                "exact four-batch five-action C4V command and prefix/final restart binding",
+                "exact GP3 approach threat and consequence plus authored-only GP2 progression binding",
+                "twenty-five neutral semantic presentation slots and twenty-nine unmeasured adapter requirements"
+            ],
+            "non_goals": [
+                "runtime engine renderer audio input or accessibility conformance",
+                "broad G1 or C4 closure C3B authority procedural content or persistence expansion",
+                "filesystem network process Kernel Companion Greenfield or publishing integration",
+                "performance measurement runtime preference or promotion authority"
+            ],
+            "entrypoints": ["src/lib.rs", "tests/gp4_signal_anchor.rs"],
+            "invariants": [
+                "caller-supplied exact C3A input and packet are authority and every received nested artifact is strictly decoded and replayed",
+                "C3A-backed and authored shadow terminal states match all thirteen non-world-context fields and both ledger byte sets",
+                "the C4V route is exactly four parent-bound batches containing five actions with revision-three and revision-four restart verification",
+                "GP2 consumes only the authored shadow and emits the six exact records and transitions without threat leakage",
+                "all semantic slots and unmeasured requirement tuples equal the frozen registry and grant no runtime claim",
+                "bounds precede nested decode digest precedes authority and fixed registry equality remains final"
+            ],
+            "verification": [
+                "cargo test -p mindwarp-signal-anchor-vertical",
+                "cargo clippy -p mindwarp-signal-anchor-vertical --tests --no-deps -- -D warnings",
+                "tools/verify-g1-gp4-signal-anchor.ps1",
+                "tools/verify-module-context.ps1",
+                "tools/verify.ps1"
+            ],
+            "references": [
+                "contracts/mindwarp-signal-anchor-vertical-contract.md",
+                "docs/canonical-system/G1_GP4_SIGNAL_ANCHOR_READINESS.md",
+                "docs/canonical-system/G1_GP4_SIGNAL_ANCHOR_DESIGN.md",
+                "docs/canonical-system/G1_GP4_SIGNAL_ANCHOR_FIXED_REGISTRY.md",
+                "docs/canonical-system/G1_GP4_SIGNAL_ANCHOR_RESULT.md"
+            ]
+        },
+        {
             "id": "entity-lifecycle",
             "maturity": "prototype_tested",
             "purpose": "Strict typed age-cohort and selected-entity lifecycle records plus a pure, capability-free state-transition and presentation table for SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md.",

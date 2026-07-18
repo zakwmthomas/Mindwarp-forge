@@ -1,83 +1,83 @@
 ﻿{
     "schema_version":  3,
     "canonical_role":  "sole-active-work-checkpoint",
-    "batch_id":  "G1-GP3-ENCOUNTER-GRAMMAR-V1",
-    "master_program_item":  "GP3",
+    "batch_id":  "G1-VERTICAL-CLOSEOUT-V1",
+    "master_program_item":  "G1-VERTICAL-CLOSEOUT",
     "state":  "recorded",
     "previous_state":  "verifying",
-    "objective":  "Prove exactly five fixed authored encounter situations with explainable evidence and risk facets, multiple noncombat resolutions, retreat and exact GP0 consequence references.",
-    "next_action":  "GP3 is recorded and closed. Await explicit owner authorization before GP4; do not start GP4 or runtime.",
-    "substage_id":  "gp3-encounter-grammar-recorded",
+    "objective":  "Retain the exact typed bounded G1 vertical closeout receipt from verified C3A, C4V and GP0-GP4 evidence without broad G1 closure or runtime authority.",
+    "next_action":  "Keep G1-VERTICAL-CLOSEOUT as the sole active program item until the owner authorizes a successor; do not implicitly activate broad G1-CLOSEOUT or R1.",
+    "substage_id":  "g1-vertical-closeout-recorded",
     "handoff_section_receipts":  {
                                      "objective":  {
-                                                       "stage_id":  "gp3-encounter-grammar-recorded",
-                                                       "content_sha256":  "cadfd5f00e77248beaa2cf3521e02c9fa91b04d205f67e70c397106d6b710cf7",
+                                                       "stage_id":  "g1-vertical-closeout-recorded",
+                                                       "content_sha256":  "f45aa004fb5a3a6eba54f5f5ec003f3a04ebb4ed297afbd9e630579d4c0377be",
                                                        "review_disposition":  "revised",
                                                        "review_note":  "Reviewed all handoff sections against the active substage."
                                                    },
                                      "next_action":  {
-                                                         "stage_id":  "gp3-encounter-grammar-recorded",
-                                                         "content_sha256":  "a7e7f4a33a6aa3af56b1378312b49c2a09826ec0924385c947bfb228239c5f05",
+                                                         "stage_id":  "g1-vertical-closeout-recorded",
+                                                         "content_sha256":  "846d572a1b1294a37bf116374a19d31c26c18293e97c7430a8adf7967ec3e9f3",
                                                          "review_disposition":  "revised",
                                                          "review_note":  "Reviewed all handoff sections against the active substage."
                                                      },
                                      "stage_context":  {
-                                                           "stage_id":  "gp3-encounter-grammar-recorded",
-                                                           "content_sha256":  "c8df5db0af983452af594092a6c6ddac7b6f1eed3a0959eda9118c1a9722ea8f",
+                                                           "stage_id":  "g1-vertical-closeout-recorded",
+                                                           "content_sha256":  "562c3daa67deadc8d155e3a93d52c59c7c5ebb37773689aafe34c6b13460284e",
                                                            "review_disposition":  "revised",
                                                            "review_note":  "Reviewed all handoff sections against the active substage."
                                                        },
                                      "visual_quality_gate":  {
-                                                                 "stage_id":  "gp3-encounter-grammar-recorded",
-                                                                 "content_sha256":  "67083d8e5e1e1128eb6ffc5d9a39aa4615b21af5e518baa251f710edbcbabaf8",
+                                                                 "stage_id":  "g1-vertical-closeout-recorded",
+                                                                 "content_sha256":  "c8b9d6b9d1b78212912f6d01a17ee39ed974a726d63b93aca62036cba93f93dd",
                                                                  "review_disposition":  "revised",
                                                                  "review_note":  "Reviewed all handoff sections against the active substage."
                                                              },
                                      "simulation_ladder":  {
-                                                               "stage_id":  "gp3-encounter-grammar-recorded",
-                                                               "content_sha256":  "790a1f0b9ed0c07b52dc87c4c64f335f94aad886f131620d4470ff74058cb0f7",
+                                                               "stage_id":  "g1-vertical-closeout-recorded",
+                                                               "content_sha256":  "762592efd60e104a06126f8529576b5819f3ee39ef3e8720905a5af130bdc04e",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "unresolved_risks":  {
-                                                              "stage_id":  "gp3-encounter-grammar-recorded",
-                                                              "content_sha256":  "f8158d65559393d85b2649becaf35f92a1b1787109d452f31f7c707280047df6",
+                                                              "stage_id":  "g1-vertical-closeout-recorded",
+                                                              "content_sha256":  "628de84bf5583f9a58169b9b972cbcb8d5523e9593b04bb801b1782cccd5f5a0",
                                                               "review_disposition":  "revised",
                                                               "review_note":  "Reviewed all handoff sections against the active substage."
                                                           },
                                      "evidence_requirements":  {
-                                                                   "stage_id":  "gp3-encounter-grammar-recorded",
-                                                                   "content_sha256":  "744586e0a910a51df1dfb7949d8ba30ac88b82605fb99af0e63c55237c2fb780",
+                                                                   "stage_id":  "g1-vertical-closeout-recorded",
+                                                                   "content_sha256":  "ff7c382852684bbc649a1c23e1e140731daeeae1c3ff1795d986405ecc148804",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "verification_plan":  {
-                                                               "stage_id":  "gp3-encounter-grammar-recorded",
-                                                               "content_sha256":  "6d63f410fff1221a4ff994e45cf3fdf0503a6cfa71c64faeab460f5a9885aa3e",
+                                                               "stage_id":  "g1-vertical-closeout-recorded",
+                                                               "content_sha256":  "4db9d2e6aeef77891377ff208f9ad02bb2398cf59aaab4903fabd2b522b5efc5",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "resume_after":  {
-                                                          "stage_id":  "gp3-encounter-grammar-recorded",
-                                                          "content_sha256":  "6a14659792cd2802fe1dd516823f4b882facf50bb22853e8d348edfc5c865dfa",
+                                                          "stage_id":  "g1-vertical-closeout-recorded",
+                                                          "content_sha256":  "b0245b314de7f60d20602e2067d1f2e21c43e65a668aaeb864d4524e6b0836a9",
                                                           "review_disposition":  "revised",
                                                           "review_note":  "Reviewed all handoff sections against the active substage."
                                                       },
                                      "evidence":  {
-                                                      "stage_id":  "gp3-encounter-grammar-recorded",
-                                                      "content_sha256":  "044cda73388213399d21d2296130525355ec9418a93783ab016141395cc166fc",
+                                                      "stage_id":  "g1-vertical-closeout-recorded",
+                                                      "content_sha256":  "c107eec70793315272691a9aeaf6a7582f116126e94be25b66c4d5dceb26f544",
                                                       "review_disposition":  "revised",
                                                       "review_note":  "Reviewed all handoff sections against the active substage."
                                                   },
                                      "verification_receipts":  {
-                                                                   "stage_id":  "gp3-encounter-grammar-recorded",
-                                                                   "content_sha256":  "f7699cc37e4eda1ecf9f01e95c015d40e6431a9448dba68dc718efd4e455c7bf",
+                                                                   "stage_id":  "g1-vertical-closeout-recorded",
+                                                                   "content_sha256":  "c601808d3457ae438db6aca285f07b47c8cf5e05a22cead49aecb9a8a9c343ed",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "transition":  {
-                                                        "stage_id":  "gp3-encounter-grammar-recorded",
-                                                        "content_sha256":  "416556c8d68c8ecabda16662fd0a8fd9dcdc40b0cb36e2ab4b1b2a230fc51731",
+                                                        "stage_id":  "g1-vertical-closeout-recorded",
+                                                        "content_sha256":  "03a4206e5e8e6fe6e4724368ccaac9772b428c9c8eb9711614fd83c158f26e11",
                                                         "review_disposition":  "revised",
                                                         "review_note":  "Reviewed all handoff sections against the active substage."
                                                     }
@@ -92,44 +92,46 @@
                                         "domain-creative-suites"
                                     ]
                     },
-    "risk_level":  "bounded-authored-gp3-encounter-grammar-proof",
-    "research_gate":  "GP0, GP1 and GP2 are complete and C4V is promoted. GP3 is game-first and authored-only: readiness and adversarial gates precede source; GP4, runtime, generation, weights and C3B remain blocked.",
-    "authority_lane":  "Owner-authorized bounded GP3 authored encounter grammar only. Exactly five fixed situations; no procedural generation, weights, random selection, runtime, GP4, C3B, Greenfield, persistence expansion, combat resolver, economy mapping, automatic GP2 progression or Kernel mutation.",
-    "context_health":  "GP3 is promoted, recorded and closed after independently accepted readiness and implementation, 18 focused hostile tests, retained regressions, workspace integration and registered complete gate run-50a8c78043eb46c483f1f655d3793f9b. GP4 and runtime remain owner-gated and inactive.",
+    "risk_level":  "bounded-g1-vertical-closeout-evidence-only",
+    "research_gate":  "GP4 is verified and complete through registered run-7e5c44dc8f48424a8cec42da756e3127; the typed closeout receipt binds exact C3A, C4V and GP0-GP4 proof references and grants no successor authority.",
+    "authority_lane":  "Owner-authorized bounded G1 vertical closeout evidence receipt only; broad_g1=false; runtime_selected=false; runtime_containment_pending=true; evidence_only=true; promotion_authority=false. No runtime, broad C4, C3B, Companion, Greenfield, procedural generation, persistence expansion, filesystem, network, process or Kernel mutation.",
+    "context_health":  "Registered complete gate run-7e5c44dc8f48424a8cec42da756e3127 passed in 590582 ms; typed deterministic closeout receipt is recorded; broad G1-CLOSEOUT and R1 remain gated.",
     "stage_context":  {
-                          "stage_id":  "gp3-encounter-grammar-recorded",
+                          "stage_id":  "g1-vertical-closeout-recorded",
                           "macro_sources":  [
                                                 "docs/canonical-system/MASTER_PROGRAM.json",
                                                 "docs/canonical-system/MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",
-                                                "docs/canonical-system/G1_GP0_GAMEPLAY_FOUNDATION_RESULT.md",
-                                                "docs/canonical-system/G1_GP1_FIXED_BASE_LOOP_RESULT.md",
+                                                "docs/canonical-system/G1_PRODUCT_PORTFOLIO_AND_C3_DEPENDENCY_REBASELINE.md",
                                                 "docs/canonical-system/G1_GP2_PROGRESSION_RESULT.md",
-                                                "docs/canonical-system/G1_C4V_VERTICAL_PERSISTENCE_RESULT.md"
+                                                "docs/canonical-system/G1_GP3_ENCOUNTER_GRAMMAR_RESULT.md",
+                                                "docs/canonical-system/G1_C4V_VERTICAL_PERSISTENCE_RESULT.md",
+                                                "docs/canonical-system/G1_GP4_SIGNAL_ANCHOR_RESULT.md",
+                                                "docs/canonical-system/G1_VERTICAL_CLOSEOUT_RECEIPT.json"
                                             ],
                           "macro_findings":  [
-                                                 "GP3 is the game-first authored encounter-grammar item after verified GP0-GP2 and C4V.",
-                                                 "Exactly five fixed situations cover environment, creature, society, anomaly and construction domains.",
-                                                 "GP3 may reference exact GP0 consequences but performs no GP2 mapping or automatic progression.",
-                                                 "GP4, runtime, procedural generation, selection weights and C3B remain excluded."
+                                                 "GP4 is verified and complete after focused, workspace and registered complete-gate evidence.",
+                                                 "The typed canonical receipt binds the exact deterministic bundle, ordered dependency proofs and registered successful run.",
+                                                 "The recorded closeout is evidence only and grants no runtime, promotion or broad G1 authority.",
+                                                 "Broad G1-CLOSEOUT and R1 remain unchanged and gated."
                                              ],
                           "micro_sources":  [
-                                                "crates/mindwarp-gameplay-foundation/src/fixtures.rs",
                                                 "crates/mindwarp-gameplay-foundation/src/base_loop.rs",
-                                                "crates/mindwarp-gameplay-foundation/src/lib.rs",
-                                                "crates/mindwarp-gameplay-foundation/tests/gp0_contract.rs",
-                                                "crates/mindwarp-gameplay-foundation/tests/gp1_base_loop.rs"
+                                                "crates/mindwarp-gameplay-foundation/src/progression.rs",
+                                                "crates/mindwarp-gameplay-foundation/src/encounter_grammar.rs",
+                                                "crates/mindwarp-vertical-persistence/src/lib.rs",
+                                                "docs/canonical-system/G1_C4V_VERTICAL_PERSISTENCE_DESIGN.md"
                                             ],
                           "micro_findings":  [
-                                                 "Each situation binds domain facets plus evidence and risk references to one fixed GP0 session.",
-                                                 "Each situation admits at least two threat-free resolutions plus retreat; S3 force is partial only.",
-                                                 "Optional nonterminal threat contribution is allowed only in S2, S4 and S5.",
-                                                 "Strict codecs, hard bounds, an internal fixed registry and a hostile negative matrix precede implementation acceptance."
+                                                 "C4V already authenticates the exact C3A input and packet and reconstructs return state by semantic replay rather than deserialization trust.",
+                                                 "GP2 emissions require exact replay-validated terminal GP1 state and history; GP4 may embed exact outputs but cannot synthesize progression.",
+                                                 "GP3 exposes authenticated fixed situation, approach, consequence and optional nonterminal threat references.",
+                                                 "GP4 needs a separate isolated module with an 8 MiB bundle ceiling and strict nested validation before canonical equality."
                                              ]
                       },
     "visual_quality_gate":  {
                                 "asset_use_intent":  false,
                                 "status":  "not_applicable",
-                                "rationale":  "C4V readiness and persistence proof are typed and engine-neutral with no admitted visual asset.",
+                                "rationale":  "The closeout records existing semantic evidence only; no visual asset, renderer or creative-quality claim is used.",
                                 "dependent_implementation_blocked":  false,
                                 "receipts":  [
 
@@ -140,94 +142,97 @@
                               "tiers_completed":  [
                                                       {
                                                           "tier":  "static_reasoning",
-                                                          "result":  "The owner-authorized boundary fixes five authored situations, exact domain facets, resolution cardinality, threat limits and GP0-only consequence references.",
-                                                          "evidence":  "owner-authorized GP3 encounter grammar"
+                                                          "result":  "The owner-authorized boundary fixes one Signal Anchor temporary-rescue bundle, exact dual-world replay semantics, dependency references, return/restart and runtime nonclaims.",
+                                                          "evidence":  "owner-authorized GP4 runtime-independent vertical"
                                                       }
                                                   ],
                               "expensive_execution_planned":  false,
-                              "unresolved_risk":  "A grammar could fabricate generation authority, map directly to GP2, make force universally sufficient or promote optional threat into a terminal requirement.",
-                              "expected_information_gain":  "Determine whether five materially distinct authored encounters can be strict, readable and consequence-bound without generation or runtime authority.",
-                              "estimated_cost":  "One bounded readiness/design pair, test-first implementation, hostile matrix, independent review and one registered complete gate.",
-                              "regression_guard":  "No GP4, runtime, procedural generation, weights, random selection, C3B, Greenfield or automatic GP2 mapping.",
-                              "stop_condition":  "Stop after the GP3 recorded result; do not start GP4 or runtime.",
-                              "final_integration_gate":  "Focused GP3, retained GP0/GP1/GP2, independent review, workspace and one registered complete Forge gate."
+                              "unresolved_risk":  "A future worker could mistake the bounded evidence receipt for broad G1 closure or runtime-selection authority.",
+                              "expected_information_gain":  "Retain one exact machine-verifiable completion boundary for the proven Signal Anchor vertical.",
+                              "estimated_cost":  "Recorded; no further execution is authorized in this package.",
+                              "regression_guard":  "No engine, runtime implementation or promotion, broad C4, C3B, Companion, Greenfield, procedural generation, persistence expansion, filesystem, network, process or Kernel mutation.",
+                              "stop_condition":  "Receipt recorded; wait for an owner-authorized successor.",
+                              "final_integration_gate":  "Passed as run-7e5c44dc8f48424a8cec42da756e3127 in 590582 ms."
                           },
     "exit_criteria":  [
                           {
-                              "id":  "five-fixed-situations",
-                              "label":  "Exactly five strict authored situations bind domain facets, evidence, risk and one GP0 session.",
+                              "id":  "dual-world-semantic-equivalence",
+                              "label":  "One exact C3A-backed C4V run and one authority-lowering authored shadow replay share a digest covering every BaseLoopState field except world_context.",
                               "status":  "verified",
                               "evidence_ids":  [
-                                                   "docs/canonical-system/G1_GP3_ENCOUNTER_GRAMMAR_READINESS.md",
-                                                   "docs/canonical-system/G1_GP3_ENCOUNTER_GRAMMAR_DESIGN.md",
-                                                   "docs/canonical-system/G1_GP3_ENCOUNTER_GRAMMAR_FIXED_REGISTRY.md"
+                                                   "docs/canonical-system/G1_C4V_VERTICAL_PERSISTENCE_RESULT.md",
+                                                   "crates/mindwarp-gameplay-foundation/src/base_loop.rs"
                                                ]
                           },
                           {
-                              "id":  "resolution-and-threat-boundary",
-                              "label":  "Every situation has at least two threat-free resolutions plus retreat; S3 force is partial and threat is optional nonterminal only in S2, S4 and S5.",
+                              "id":  "exact-dependency-bindings",
+                              "label":  "The bundle binds real C4V receipts and snapshots, exact GP3 situation/approach/threat references and exact GP2 emissions without invented labels or digests.",
                               "status":  "verified",
                               "evidence_ids":  [
-                                                   "crates/mindwarp-gameplay-foundation/tests/gp3_encounter_grammar.rs",
-                                                   "tools/verify-g1-gp3-encounter-grammar.ps1"
+                                                   "docs/canonical-system/G1_GP4_SIGNAL_ANCHOR_RESULT.md"
                                                ]
                           },
                           {
-                              "id":  "exact-gp0-consequences",
-                              "label":  "Resolution consequences reference exact GP0 outcome records and never map to GP2 progression.",
+                              "id":  "return-restart-and-neutral-contract",
+                              "label":  "C4V return and final restart reproduce exact semantics while presentation/accessibility remain neutral slots and adapter/performance requirements remain explicitly unmeasured.",
                               "status":  "verified",
                               "evidence_ids":  [
-                                                   "crates/mindwarp-gameplay-foundation/src/encounter_grammar.rs",
-                                                   "docs/canonical-system/G1_GP3_ENCOUNTER_GRAMMAR_RESULT.md"
+                                                   "docs/canonical-system/G1_GP4_SIGNAL_ANCHOR_RESULT.md"
                                                ]
                           },
                           {
-                              "id":  "gp3-authority-boundary",
-                              "label":  "Strict codecs, bounds and internal registry add no generation, weights, runtime, GP4, C3B or Kernel authority.",
+                              "id":  "bounded-closeout-without-runtime",
+                              "label":  "A strict bundle no larger than 8 MiB survives hostile decoding and produces a G1-VERTICAL-CLOSEOUT receipt without broad G1 closure or runtime promotion.",
                               "status":  "verified",
                               "evidence_ids":  [
-                                                   "docs/canonical-system/G1_GP3_ENCOUNTER_GRAMMAR_DESIGN.md",
-                                                   "run-50a8c78043eb46c483f1f655d3793f9b"
+                                                   "docs/canonical-system/G1_VERTICAL_CLOSEOUT_RECEIPT.json"
                                                ]
                           }
                       ],
     "unresolved_risks":  [
-                             "domain facets could become procedural-generation inputs",
-                             "force could be mislabeled as a complete S3 resolution",
-                             "optional threat could become terminal or mandatory",
-                             "consequence references could leak automatic GP2 mapping"
+                             "A future successor could confuse this bounded evidence-only receipt with broad G1 closure or runtime promotion.",
+                             "Runtime containment remains pending and requires a separate owner-authorized successor."
                          ],
     "evidence_requirements":  [
-                                  "freeze five fixed situation identities and per-domain facet schemas",
-                                  "prove evidence and risk references resolve inside each exact GP0 session",
-                                  "prove at least two threat-free resolutions plus retreat per situation",
-                                  "prove S3 force partial and optional nonterminal threat only S2 S4 S5",
-                                  "prove strict codec bounds internal registry and no GP2 GP4 runtime generation weights or C3B authority"
+                                  "retain the exact typed receipt and its domain-and-length-framed hash",
+                                  "retain exact ordered C3A, C4V and GP0-GP4 proof references",
+                                  "keep broad G1-CLOSEOUT and R1 gated and unchanged",
+                                  "require a new owner-authorized successor before any runtime or promotion work"
                               ],
     "verification_plan":  [
-                              "retain independently accepted readiness design and fixed registry before source",
-                              "write adversarial tests before implementation",
-                              "implement the smallest authored-only grammar in the gameplay foundation or a context-justified sibling",
-                              "run focused retained independent workspace and one registered complete gate"
+                              "verify the typed canonical receipt and all hostile mutations",
+                              "verify exact registered metric outcome, duration and checkpoint binding",
+                              "verify closeout is sole active item while broad G1-CLOSEOUT and R1 remain pinned",
+                              "wait for an owner-authorized successor"
                           ],
-    "resume_after":  "GP3 is closed. Resume only after explicit owner authorization for GP4 or another queued master-program item; do not infer runtime authority.",
+    "resume_after":  "Wait for an owner-authorized successor; do not infer broad G1 closure, R1 activation or runtime authority from this recorded receipt.",
     "evidence":  [
+                     "GP3 closed cleanly in commit 7f29f6b and registered run-50a8c78043eb46c483f1f655d3793f9b.",
                      "C4V closed cleanly in commit 34f2213 and registered run-fa6334a300e04d409dd5cddb4f22542e.",
-                     "Owner authorized the queued game-first GP3 route with exactly five fixed authored situations.",
-                     "Every situation requires domain facets, evidence/risk references, two threat-free resolutions and retreat.",
-                     "S3 force is partial; optional nonterminal threat contribution is limited to S2, S4 and S5.",
-                     "Consequences reference exact GP0 outcomes; GP2 mapping, generation, weights, runtime, GP4 and C3B remain excluded.",
-                     "Independent pre-source review accepted the typed multi-facet registry, exact digest framing, prerequisites, causal explanations, complete consequence references and hostile bounds.",
-                     "Independent candidate review accepted exact helper authority, direct-situation bounds, 18 hostile tests, retained regressions, workspace check, module context and record roles.",
-                     "Registered complete Forge gate run-50a8c78043eb46c483f1f655d3793f9b passed in 490027 ms."
+                     "Owner authorized only the bounded runtime-independent Signal Anchor temporary-rescue GP4 vertical.",
+                     "The authored shadow lowers world authority and must match the C3A-backed run across every semantic BaseLoopState field except world_context.",
+                     "Runtime selection and implementation, broad C4, C3B, Companion and Greenfield remain excluded.",
+                     "Independent GP4 pre-source acceptance recorded after the composed readiness gate passed in 73.9 seconds with the source crate absent and all exact hostile mutations failing closed.",
+                     "Both independent reviewers accepted the source candidate after 9 of 9 focused hostile tests, strict received-evidence replay, capability audit, formatting and focused clippy passed.",
+                     "The 100.8-second GP4 focused integration verifier passed formatting, clippy, 9 hostile vertical tests, retained GP0-GP3 and C4V tests, computation readiness and all readiness hostiles.",
+                     "Registered invocation run-fd385f42fd5a4ee68b5e965463e2d8f1 was deliberately aborted and recorded failed after 310191 ms when pre-closeout audit found missing successor-route verifier coverage; it is superseded and is not completion evidence.",
+                     "Replacement invocation run-7d55ecad743f45bf9be1f115694738d0 was immediately aborted and recorded failed after 26038 ms before canonical mutation when final preflight found stale GP3 successor wording; it is superseded and is not completion evidence.",
+                     "Registered invocation run-7e5c44dc8f48424a8cec42da756e3127 passed the complete Forge gate in 590582 ms.",
+                     "G1_VERTICAL_CLOSEOUT_RECEIPT.json records the exact typed bounded receipt; broad G1-CLOSEOUT and R1 remain gated."
                  ],
     "verification_receipts":  [
-                                  "dependency:gp0-gp1-gp2-c4v:verified",
-                                  "authority:gp3-authored-only:owner-authorized",
-                                  "boundary:gp4-runtime-generation-c3b:excluded",
-                                  "review:gp3-pre-source:independently-accepted",
-                                  "review:gp3-candidate:independently-accepted",
-                                  "run-50a8c78043eb46c483f1f655d3793f9b:passed:490027ms"
+                                  "dependency:gp0-gp1-gp2-gp3-c4v:verified",
+                                  "authority:gp4-signal-anchor-runtime-independent:owner-authorized",
+                                  "boundary:runtime-broad-c4-c3b-companion-greenfield:excluded",
+                                  "independent-review:gp4-pre-source:accepted",
+                                  "gate:gp4-composed-readiness:pass:73.9s",
+                                  "independent-review:gp4-source-candidate:accepted",
+                                  "gate:gp4-focused-hostile:pass:9-of-9",
+                                  "gate:gp4-focused-integration:pass:100.8s",
+                                  "registered-full-gate:run-fd385f42fd5a4ee68b5e965463e2d8f1:failed:superseded-transition-preflight",
+                                  "registered-full-gate:run-7d55ecad743f45bf9be1f115694738d0:failed:superseded-stale-gp3-wording",
+                                  "registered-full-gate:run-7e5c44dc8f48424a8cec42da756e3127:passed",
+                                  "receipt:G1-VERTICAL-CLOSEOUT:recorded"
                               ],
     "metrics":  {
                     "token_cost":  {
@@ -236,8 +241,10 @@
                                    },
                     "elapsed_time":  {
                                          "status":  "measured",
-                                         "value":  "490027 ms registered complete run run-50a8c78043eb46c483f1f655d3793f9b"
+                                         "value":  590582,
+                                         "unit":  "ms",
+                                         "receipt":  "run-7e5c44dc8f48424a8cec42da756e3127"
                                      }
                 },
-    "transition":  "GP2 promoted -\u003e C4V promoted after registered closure -\u003e owner-authorized GP3 activated -\u003e independently accepted readiness -\u003e red-first implementation -\u003e independently accepted candidate -\u003e registered verification passed -\u003e GP3 promoted and recorded"
+    "transition":  "GP4 verified and complete -\u003e registered complete gate passed -\u003e typed bounded G1 vertical closeout receipt recorded; wait for owner-authorized successor"
 }

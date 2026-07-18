@@ -7,6 +7,7 @@
                                      "removal_target":  "schema_version_3",
                                      "mapping":  {
                                                      "promoted":  "complete",
+                                                     "verified":  "complete",
                                                      "executing":  "active",
                                                      "ready_for_owner":  "owner_gated",
                                                      "designed":  "design_gated",
@@ -602,8 +603,8 @@
         {
             "id":  "C4V",
             "milestone":  "G1",
-            "state":  "executing",
-            "status":  "active",
+            "state":  "verified",
+            "status":  "complete",
                       "depends_on":  [
                                          "C2",
                                          "C3A",
@@ -611,7 +612,7 @@
                                      ],
             "gate":  "recorded",
             "next_action":  "Retain the bounded C4V seam as a verified GP4 dependency; do not broaden it into runtime or broad C4.",
-            "proof":  "The isolated mindwarp-vertical-persistence crate, seven adversarial tests, strict semantic replay, framed V1-to-V2 migration/rollback, module integration, workspace regression and independent candidate review pass. Registered complete gate run-fa6334a300e04d409dd5cddb4f22542e passed in 511311 ms; C4V is a closed bounded seam and GP3 is its authorized successor route.",
+            "proof":  "The isolated mindwarp-vertical-persistence crate, seven adversarial tests, strict semantic replay, framed V1-to-V2 migration/rollback, module integration, workspace regression and independent candidate review pass. Registered complete gate run-fa6334a300e04d409dd5cddb4f22542e passed in 511311 ms; C4V is a closed bounded dependency of the verified GP4 Signal Anchor vertical.",
                       "sources":  [
                                       "G1_C4V_VERTICAL_PERSISTENCE_READINESS.md",
                                       "G1_C4V_VERTICAL_PERSISTENCE_DESIGN.md",
@@ -786,7 +787,7 @@
                                          "GP2"
                                      ],
                       "gate":  "recorded",
-            "next_action":  "Retain verified GP3 as a closed GP4 dependency; do not start GP4 or runtime without explicit owner authorization.",
+            "next_action":  "Retain verified GP3 as a closed dependency of the owner-authorized bounded GP4 Signal Anchor vertical; do not broaden into runtime, procedural generation or automatic GP2 progression.",
             "proof":  "Exactly five fixed authored multi-domain situations, 18 exact approaches, strict codecs, complete GP0 consequence references, an 18-test hostile matrix, retained GP0-GP2 regressions, workspace integration and independent review pass. Registered complete gate run-50a8c78043eb46c483f1f655d3793f9b passed in 490027 ms; GP3 is closed without generation, runtime, GP2 mapping, GP4 or C3B authority.",
             "sources":  [
                         "MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",
@@ -799,18 +800,46 @@
                   {
                       "id":  "GP4",
                       "milestone":  "G1",
-                      "state":  "proposed",
-                      "status":  "gated",
+                      "state":  "verified",
+                      "status":  "complete",
                       "depends_on":  [
                                          "GP3",
                                          "C4V"
                                      ],
-                      "gate":  "design",
-                      "next_action":  "Freeze one runtime-independent living hub to remembered-response vertical experience contract and adversarial fixture set.",
-                      "proof":  "Interaction/state specification and runtime requirement list prove one consumer without authorizing an engine.",
+                      "gate":  "recorded",
+                      "next_action":  "Retain verified GP4 as the closed dependency of the recorded bounded G1 vertical closeout; do not select or implement a runtime without a new owner-authorized successor.",
+                      "proof":  "The isolated Signal Anchor crate passes 9 hostile tests, strict received-evidence replay, exact dual-world semantics, GP3 and GP2 binding, C4V prefix/final restart, 25 semantic slots, 29 unmeasured rows, focused clippy, retained integration and independent review. Registered complete gate run-7e5c44dc8f48424a8cec42da756e3127 passed in 590582 ms.",
                       "sources":  [
                                       "MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",
-                                      "G1_PRODUCT_PORTFOLIO_AND_C3_DEPENDENCY_REBASELINE.md"
+                                      "G1_PRODUCT_PORTFOLIO_AND_C3_DEPENDENCY_REBASELINE.md",
+                                      "G1_GP4_SIGNAL_ANCHOR_READINESS.md",
+                                      "G1_GP4_SIGNAL_ANCHOR_DESIGN.md",
+                                      "G1_GP4_SIGNAL_ANCHOR_FIXED_REGISTRY.md"
+                                      ,"G1_GP4_SIGNAL_ANCHOR_RESULT.md"
+                                  ]
+                  },
+                  {
+                      "id":  "G1-VERTICAL-CLOSEOUT",
+                      "milestone":  "G1",
+                      "state":  "executing",
+                      "status":  "active",
+                      "depends_on":  [
+                                         "C3A",
+                                         "C4V",
+                                         "GP0",
+                                         "GP1",
+                                         "GP2",
+                                         "GP3",
+                                         "GP4"
+                                     ],
+                      "gate":  "recorded",
+                      "next_action":  "Retain the recorded bounded receipt as the sole active item until an owner-authorized successor is activated; broad G1-CLOSEOUT and R1 remain gated.",
+                      "proof":  "G1_VERTICAL_CLOSEOUT_RECEIPT.json records the exact typed C3A, C4V and GP0-GP4 evidence set plus registered gate run-7e5c44dc8f48424a8cec42da756e3127 with broad_g1=false, runtime_selected=false, runtime_containment_pending=true, evidence_only=true and promotion_authority=false.",
+                      "sources":  [
+                                      "MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",
+                                      "G1_PRODUCT_PORTFOLIO_AND_C3_DEPENDENCY_REBASELINE.md",
+                                      "G1_GP4_SIGNAL_ANCHOR_RESULT.md",
+                                      "G1_VERTICAL_CLOSEOUT_RECEIPT.json"
                                   ]
                   }
               ]

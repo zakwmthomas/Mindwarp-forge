@@ -44,6 +44,7 @@ Strict causal field-to-world packets for physical palette bounds and environment
 - forge-desktop
 - macro-lineage-binding
 - mindwarp-gameplay-foundation
+- mindwarp-signal-anchor-vertical
 - mindwarp-vertical-persistence
 - niche-graph-binding
 - organism-niche-binding
