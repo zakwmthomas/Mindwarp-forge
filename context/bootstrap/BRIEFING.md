@@ -5,11 +5,11 @@
 ## Active route
 
 - Work package: **G1-GP0-PLAYER-FANTASY-BOUNDARY-V1**
-- Objective: Adjudicate the Mind Warp player promise, explicit non-goals and five representative session stories before any runtime or broad procedural implementation.
+- Objective: Verify and record the owner-authorized GP0 causal-explorer-maker contract, five corrected authored sessions and deterministic capability-free replay before any GP1 or runtime work.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Risk/research gate: **bounded-clean-room-gameplay-adjudication / The owner-approved product rebaseline and clean-room gameplay recovery map establish the candidate space; historical code, runtime claims, Quantum Tunnel product assumptions and unadjudicated assistant proposals remain evidence only.**
-- Exact next action: Produce one concise GP0 player-promise package with primary and supporting fantasies, explicit non-goals, default session assumptions and five fixed session stories that all express the same game; stop before GP1 implementation.
+- Exact next action: Retain the verified GP0 result and stop before GP1; the root owner lane must make the canonical GP0-to-GP1 transition without granting runtime implementation.
 
 ## Approved operating policies
 

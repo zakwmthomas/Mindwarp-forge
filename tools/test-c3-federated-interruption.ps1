@@ -36,8 +36,10 @@ $controlPlaneConsolidationRoute =
 $gameplayFoundationRoute =
   $Checkpoint.batch_id -eq 'G1-GP0-PLAYER-FANTASY-BOUNDARY-V1' -and
   $Checkpoint.master_program_item -eq 'GP0' -and
-  $Checkpoint.substage_id -eq 'gp0-product-player-fantasy-boundary' -and
-  $Checkpoint.authority_lane -like '*Clean-room gameplay design*No historical source code*runtime*engine*network*monetization*'
+  (($Checkpoint.substage_id -eq 'gp0-product-player-fantasy-boundary' -and
+    $Checkpoint.authority_lane -like '*Clean-room gameplay design*No historical source code*runtime*engine*network*monetization*') -or
+   ($Checkpoint.substage_id -eq 'gp0-gameplay-foundation-verification' -and
+    $Checkpoint.authority_lane -like '*Owner-authorized clean-room GP0 typed contracts*No GP1*runtime*engine*database*network*monetization*Greenfield dependency*C3B substitution*'))
 $c3DesignRoute =
   $Checkpoint.batch_id -eq 'G1-C3-WHOLE-CELL-RECEIVER-COUPLING-MATHEMATICAL-DESIGN-V1' -and
   $Checkpoint.master_program_item -eq 'C3' -and

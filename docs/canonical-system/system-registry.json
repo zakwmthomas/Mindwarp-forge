@@ -573,15 +573,18 @@
                     {
                         "id":  "mindwarp-gameplay-foundation",
                         "layer":  "game-product",
-                        "status":  "specified",
+                        "status":  "prototype_tested",
                         "depends_on":  [
                                            "causal-world-packet-seam"
                                        ],
                         "purpose":  "Define the player promise, fixed base loop, progression, encounter grammar and one runtime-independent vertical through GP0-GP4.",
-                        "proof":  "GP0 requires one promise, explicit non-goals and five coherent sessions; later proofs remain dependency-gated.",
+                        "proof":  "GP0 now has one strict causal_explorer_maker concept, five corrected authored sessions, deterministic typed reducer/history, path-free exact C3A binding and 14 focused hostile/replay tests. This is a capability-free prototype only; GP1-GP4 and runtime remain dependency-gated.",
                         "references":  [
                                            "docs/canonical-system/MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",
-                                           "docs/canonical-system/G1_PRODUCT_PORTFOLIO_AND_C3_DEPENDENCY_REBASELINE.md"
+                                           "docs/canonical-system/G1_PRODUCT_PORTFOLIO_AND_C3_DEPENDENCY_REBASELINE.md",
+                                           "contracts/mindwarp-gameplay-foundation-contract.md",
+                                           "docs/canonical-system/G1_GP0_GAMEPLAY_FOUNDATION_RESULT.md",
+                                           "crates/mindwarp-gameplay-foundation/src/lib.rs"
                                        ]
                     }
                 ]

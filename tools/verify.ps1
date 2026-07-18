@@ -194,6 +194,8 @@ Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-c3-cross-b
 if (!$?) { throw 'G1 C3 cross-boundary ecotone disposable oracle verification failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-product-portfolio-rebaseline.ps1'
 if (!$?) { throw 'G1 product-portfolio and C3 dependency rebaseline verification failed.' }
+Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-gp0-gameplay-foundation.ps1'
+if (!$?) { throw 'G1 GP0 gameplay-foundation verification failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-p7b1b-loader-surface.ps1'
 if (!$?) { throw 'P7b-1b loader-surface proof verification failed.' }
 

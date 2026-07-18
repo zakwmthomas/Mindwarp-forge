@@ -39,6 +39,7 @@ Capability-free fixed-point field recipes and stateless deterministic sampling r
 - derived-world-rules
 - forge-desktop
 - macro-lineage-binding
+- mindwarp-gameplay-foundation
 - niche-graph-binding
 - organism-niche-binding
 - physical-region-partition

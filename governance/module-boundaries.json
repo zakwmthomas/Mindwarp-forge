@@ -377,6 +377,19 @@
       ]
     },
     {
+      "id": "mindwarp-gameplay-foundation",
+      "root": "crates/mindwarp-gameplay-foundation",
+      "dependencies": ["derived-world-rules", "field-basis"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "GP0 gameplay proof cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "GP0 gameplay proof cannot depend on desktop or UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "GP0 gameplay proof cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "GP0 gameplay proof cannot access files or processes"},
+        {"pattern": "\\b(?:physical_path_substrate|visible_radiance|optical_phase_space)(?:::|\\s*=)", "reason": "GP0 may consume only the promoted C3A seam and cannot import deferred C3B owners"}
+      ]
+    },
+    {
       "id": "entity-lifecycle",
       "root": "crates/entity-lifecycle",
       "dependencies": [],
