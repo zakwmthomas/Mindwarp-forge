@@ -4,12 +4,12 @@
 
 - **Maturity:** prototype_tested
 - **Root:** `crates/mindwarp-gameplay-foundation`
-- **Source fingerprint:** `340f5117ff2a44b7fbe5eccb4236d5c4997938840840768740c78d7023d29453`
+- **Source fingerprint:** `061f09b199d5fba7a310a860dfd9c2476324234a0b275cb8d6d94bc482f796a2`
 - **Live project state:** read `context/active/CURRENT_STATE.md`; active status is never duplicated here.
 
 ## Purpose
 
-Prove the GP0 causal-explorer-maker player promise through five fixed authored sessions, strict typed outcomes and deterministic capability-free replay.
+Prove the GP0 causal-explorer-maker player promise and GP1 fixed six-phase base loop through five authored sessions, strict typed outcomes and deterministic capability-free replay.
 
 ## Owns
 
@@ -17,6 +17,8 @@ Prove the GP0 causal-explorer-maker player promise through five fixed authored s
 - strict concept session C3A reference state and history codecs
 - pure action reducer deterministic replay and text projection
 - typed mutations memories rights permissions services knowledge and branch decisions
+- engine-neutral prepare depart encounter consequence return and remembered-response reducer
+- repairable encounter failure stable stops and run-to-history append receipts
 
 ## Does not own
 
@@ -30,7 +32,9 @@ Prove the GP0 causal-explorer-maker player promise through five fixed authored s
 
 - `src/lib.rs`
 - `src/fixtures.rs`
+- `src/base_loop.rs`
 - `tests/gp0_contract.rs`
+- `tests/gp1_base_loop.rs`
 
 ## Upstream neighbours
 
@@ -50,11 +54,17 @@ Prove the GP0 causal-explorer-maker player promise through five fixed authored s
 - public state and history must equal deterministic trace replay before serialization or append
 - ObservedC3AOutput facts require a path-free typed reference derived from an exact replay-validated WorldGenerationInput and CausalWorldPacket pair
 - authored fixture facts remain explicitly authority-negative and non-C3B
+- preparation is session-bound and cannot select a terminal outcome before encounter
+- three recoveries are allowed and a fourth failure rejects before mutation
+- every event at or after the GP1 event floor has exactly one typed run receipt
+- S5 deterministically uses the latest admitted S1 event and rejects a latest retreat
+- decoded loop state requires the externally expected authored or exact C3A world context
 
 ## Verification
 
 - `cargo test -p mindwarp-gameplay-foundation`
 - `tools/verify-g1-gp0-gameplay-foundation.ps1`
+- `tools/verify-g1-gp1-fixed-base-loop.ps1`
 - `tools/verify-module-context.ps1`
 
 ## Canonical references
@@ -63,6 +73,8 @@ Prove the GP0 causal-explorer-maker player promise through five fixed authored s
 - `docs/canonical-system/MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md`
 - `docs/canonical-system/G1_PRODUCT_PORTFOLIO_AND_C3_DEPENDENCY_REBASELINE.md`
 - `docs/canonical-system/G1_GP0_GAMEPLAY_FOUNDATION_RESULT.md`
+- `docs/canonical-system/G1_GP1_FIXED_BASE_LOOP_READINESS.md`
+- `docs/canonical-system/G1_GP1_FIXED_BASE_LOOP_RESULT.md`
 
 ## Update rule
 

@@ -45,5 +45,5 @@ Do not activate F5 until A1-A4/B1-B3 are closed or explicitly owner-gated.
 
 - C3A is the promoted dependency-sufficient seam: validated `WorldGenerationInput` -> replayed `CausalWorldPacket` v1 with nested identity and provenance.
 - C3B remains evidence-blocked on physical scale, coefficients, applicability, visibility and presentation fidelity; it is not full C3 closure and does not block GP0-GP4.
-- C4 depends on C2 and C3A only. GP0 is the sole active execution item; GP1-GP4 remain dependency-gated.
+- C4 depends on C2 and C3A only. GP0 is structurally verified without gameplay-system promotion; GP1 is independently and completely verified as a capability-free fixed-loop proof and remains the sole active owner-review checkpoint; GP2-GP4 remain dependency-gated.
 - Yard Atlas is evidence-linked but independent; no repository, database, UI, authentication, billing or release authority transfers.

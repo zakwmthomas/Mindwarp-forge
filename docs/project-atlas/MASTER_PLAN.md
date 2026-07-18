@@ -2,7 +2,7 @@
 
 > GENERATED from `docs/canonical-system/MASTER_PROGRAM.json`. Do not edit this view directly.
 
-Canonical lifecycle: schema v2; executing item: `GP0`.
+Canonical lifecycle: schema v2; executing item: `GP1`.
 Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
 
 ## F4
@@ -67,10 +67,10 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
   Next: Promote representation contracts and prove asset, animation, aesthetic, visual-fitness and phone-to-high-end fidelity recipes from the same canonical organism/world state.
 - **G1-CLOSEOUT** - proposed; gate: owner; depends on: C3A, C4, C5, C6, C7, GP4.
   Next: Run the whole deterministic universe-to-representation chain, adversarial seed portfolio, recovery, quality-diversity, visual-fitness and simulated fidelity evidence before preparing one G1 promotion package.
-- **GP0** - executing; gate: design; depends on: C3A.
-  Next: Adjudicate one player promise, explicit non-goals and five representative session stories that all express the same Mind Warp game.
-- **GP1** - proposed; gate: design; depends on: GP0.
-  Next: Prove the preparation, departure, encounter, consequence and return loop with fixed authored examples.
+- **GP0** - promoted; gate: design; depends on: C3A.
+  Next: Retain the structurally verified causal_explorer_maker promise, five fixed sessions and deterministic consequence/history proof as the exact GP1 input; do not treat GP0 closure as gameplay-system or runtime promotion.
+- **GP1** - executing; gate: design; depends on: GP0.
+  Next: Hold the independently accepted and completely verified six-phase fixed-loop result at the owner-review checkpoint; do not begin GP2 without a separate canonical transition.
 - **GP2** - proposed; gate: design; depends on: GP1.
   Next: Separate knowledge, access, relationship, construction and power progression; model sources, sinks, exploits and resets.
 - **GP3** - proposed; gate: design; depends on: GP2.

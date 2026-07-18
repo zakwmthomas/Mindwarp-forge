@@ -2,11 +2,11 @@
 
 ```mermaid
 flowchart LR
-  F1["F1 Kernel\nverified"] --> F2["F2 Continuity\nverified"] --> F3["F3 Atlas\nverified"] --> F4["F4 Canonical registry\nverified"] --> F5["F5 Reference proof studio\nverified"] --> C3A["C3A causal-world seam\npromoted"] --> GP0["GP0 player promise\nactive"] --> GP4["GP4 vertical contract\ngated"] --> R1["R1 Runtime adapter\ngated"]
+  F1["F1 Kernel\nverified"] --> F2["F2 Continuity\nverified"] --> F3["F3 Atlas\nverified"] --> F4["F4 Canonical registry\nverified"] --> F5["F5 Reference proof studio\nverified"] --> C3A["C3A causal-world seam\npromoted"] --> GP0["GP0 player promise\nstructurally verified"] --> GP1["GP1 fixed base loop\nverified owner checkpoint"] --> GP2["GP2 progression\ngated"] --> GP4["GP4 vertical contract\ngated"] --> R1["R1 Runtime adapter\ngated"]
   C3A -. independent evidence gate .-> C3B["C3B physical/presentation fidelity\nblocked"]
 ```
 
-The current active milestone is **G1: Canonical production system**, now driven by the GP0-GP4 product
+The current active milestone is **G1: Canonical production system**. GP1 remains active only as the verified owner-review checkpoint and GP2 remains gated in the GP0-GP4 product
 route. C3A exposes the exact validated causal-world seam needed downstream;
 C3B remains visibly blocked and does not prevent the first fixed-content
 vertical. Runtime selection remains at R1. The F5 engine-neutral proof

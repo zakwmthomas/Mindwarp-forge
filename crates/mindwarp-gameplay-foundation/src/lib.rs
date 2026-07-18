@@ -11,6 +11,8 @@ use serde::{Deserialize, Serialize};
 
 mod fixtures;
 pub use fixtures::{fixed_concept, fixed_sessions};
+mod base_loop;
+pub use base_loop::*;
 
 pub const CONTRACT_VERSION: u16 = 1;
 

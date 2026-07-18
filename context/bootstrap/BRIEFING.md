@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **G1-GP0-PLAYER-FANTASY-BOUNDARY-V1**
-- Objective: Verify and record the owner-authorized GP0 causal-explorer-maker contract, five corrected authored sessions and deterministic capability-free replay before any GP1 or runtime work.
+- Work package: **G1-GP1-FIXED-BASE-LOOP-V1**
+- Objective: Implement and prove one engine-neutral deterministic prepare, depart, encounter, consequence, return and remembered-response loop across all five structurally verified GP0 sessions.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **bounded-clean-room-gameplay-adjudication / The owner-approved product rebaseline and clean-room gameplay recovery map establish the candidate space; historical code, runtime claims, Quantum Tunnel product assumptions and unadjudicated assistant proposals remain evidence only.**
-- Exact next action: Retain the verified GP0 result and stop before GP1; the root owner lane must make the canonical GP0-to-GP1 transition without granting runtime implementation.
+- Risk/research gate: **bounded-engine-neutral-gp1-base-loop / GP0 is structurally verified and the owner authorized GP1. The readiness record fixes one shared six-phase loop and adversarial matrix; historical code, runtime claims and unadjudicated feature breadth remain evidence only.**
+- Exact next action: Retain the verified GP1 result and stop for root review; do not begin GP2, GP3, runtime or Greenfield work without a separate canonical transition.
 
 ## Approved operating policies
 

@@ -686,6 +686,8 @@ Gameplay recovery and development proposal:
      exact live claim; source and disposable proof precede separately gated
      live database registration.
 199. `G1_GP0_GAMEPLAY_FOUNDATION_RESULT.md`
+200. `G1_GP1_FIXED_BASE_LOOP_READINESS.md`
+201. `G1_GP1_FIXED_BASE_LOOP_RESULT.md`
      - records the bounded capability-free player-promise proof, five authored
      fixed sessions, strict deterministic reducer/history, typed C3A identity
      seam, adversarial failures and retained no-runtime/no-C3B boundary.

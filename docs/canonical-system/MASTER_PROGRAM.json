@@ -703,32 +703,37 @@
                   {
                       "id":  "GP0",
                       "milestone":  "G1",
-                      "state":  "executing",
-                      "status":  "active",
+                      "state":  "promoted",
+                      "status":  "complete",
                       "depends_on":  [
                                          "C3A"
                                      ],
                       "gate":  "design",
-                      "next_action":  "Adjudicate one player promise, explicit non-goals and five representative session stories that all express the same Mind Warp game.",
-                      "proof":  "Owner-approved product route and clean-room gameplay recovery map; no historical code or runtime authority.",
+                      "next_action":  "Retain the structurally verified causal_explorer_maker promise, five fixed sessions and deterministic consequence/history proof as the exact GP1 input; do not treat GP0 closure as gameplay-system or runtime promotion.",
+                      "proof":  "The GP0 crate passes 14 focused tests, workspace integration, independent review and complete run run-79fca2c134994b76a119aebc0987a4fd. This closes the structural player-promise package only; mindwarp-gameplay-foundation remains prototype_tested.",
                       "sources":  [
                                       "MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",
-                                      "G1_PRODUCT_PORTFOLIO_AND_C3_DEPENDENCY_REBASELINE.md"
+                                      "G1_PRODUCT_PORTFOLIO_AND_C3_DEPENDENCY_REBASELINE.md",
+                                      "G1_GP0_GAMEPLAY_FOUNDATION_RESULT.md",
+                                      "mindwarp-gameplay-foundation-contract.md"
                                   ]
                   },
                   {
                       "id":  "GP1",
                       "milestone":  "G1",
-                      "state":  "proposed",
-                      "status":  "gated",
+                      "state":  "executing",
+                      "status":  "active",
                       "depends_on":  [
                                          "GP0"
                                      ],
                       "gate":  "design",
-                      "next_action":  "Prove the preparation, departure, encounter, consequence and return loop with fixed authored examples.",
-                      "proof":  "Paper-model choices remain meaningful without procedural breadth, graphics, grinding or multiplayer.",
+                      "next_action":  "Hold the independently accepted and completely verified six-phase fixed-loop result at the owner-review checkpoint; do not begin GP2 without a separate canonical transition.",
+                      "proof":  "GP1 passes seven focused tests, all fourteen GP0 regressions, workspace integration, independent review and complete run run-26b8424e488b4d838eb51cc928675224. This promotes only the capability-free fixed-loop proof; runtime, graphics, procedural breadth, grind, network, Greenfield, C3B and GP2 remain excluded.",
                       "sources":  [
-                                      "MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md"
+                                      "MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",
+                                      "G1_GP0_GAMEPLAY_FOUNDATION_RESULT.md",
+                                      "G1_GP1_FIXED_BASE_LOOP_READINESS.md",
+                                      "G1_GP1_FIXED_BASE_LOOP_RESULT.md"
                                   ]
                   },
                   {

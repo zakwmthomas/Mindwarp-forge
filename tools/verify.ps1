@@ -196,6 +196,8 @@ Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-product-po
 if (!$?) { throw 'G1 product-portfolio and C3 dependency rebaseline verification failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-gp0-gameplay-foundation.ps1'
 if (!$?) { throw 'G1 GP0 gameplay-foundation verification failed.' }
+Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-gp1-fixed-base-loop.ps1'
+if (!$?) { throw 'G1 GP1 fixed-base-loop verification failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-p7b1b-loader-surface.ps1'
 if (!$?) { throw 'P7b-1b loader-surface proof verification failed.' }
 

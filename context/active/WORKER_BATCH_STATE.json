@@ -1,85 +1,85 @@
 ﻿{
     "schema_version":  3,
     "canonical_role":  "sole-active-work-checkpoint",
-    "batch_id":  "G1-GP0-PLAYER-FANTASY-BOUNDARY-V1",
-    "master_program_item":  "GP0",
-    "state":  "executing",
-    "previous_state":  "ready",
-    "objective":  "Verify and record the owner-authorized GP0 causal-explorer-maker contract, five corrected authored sessions and deterministic capability-free replay before any GP1 or runtime work.",
-    "next_action":  "Retain the verified GP0 result and stop before GP1; the root owner lane must make the canonical GP0-to-GP1 transition without granting runtime implementation.",
-    "substage_id":  "gp0-gameplay-foundation-verification",
+    "batch_id":  "G1-GP1-FIXED-BASE-LOOP-V1",
+    "master_program_item":  "GP1",
+    "state":  "recorded",
+    "previous_state":  "verifying",
+    "objective":  "Implement and prove one engine-neutral deterministic prepare, depart, encounter, consequence, return and remembered-response loop across all five structurally verified GP0 sessions.",
+    "next_action":  "Retain the verified GP1 result and stop for root review; do not begin GP2, GP3, runtime or Greenfield work without a separate canonical transition.",
+    "substage_id":  "gp1-fixed-base-loop-verified-result",
     "handoff_section_receipts":  {
                                      "objective":  {
-                                                       "stage_id":  "gp0-gameplay-foundation-verification",
-                                                       "content_sha256":  "ff4ce97d48d5c84b55c6719be8ed638d052f991b3b628c937a167126287532c9",
+                                                       "stage_id":  "gp1-fixed-base-loop-verified-result",
+                                                       "content_sha256":  "dee503e3518ea04a4cacfcd286068789107ec28c1429de4d9f8187e1e289a1da",
                                                        "review_disposition":  "revised",
-                                                       "review_note":  "Reviewed the final GP0 handoff sections against focused, failed-complete and passing-complete verification receipts."
+                                                       "review_note":  "Reviewed all handoff sections against the active substage."
                                                    },
                                      "next_action":  {
-                                                         "stage_id":  "gp0-gameplay-foundation-verification",
-                                                         "content_sha256":  "09cee87a2b73cb78386ebb50a8eeead01edbaf745998125261d040dc0281813c",
+                                                         "stage_id":  "gp1-fixed-base-loop-verified-result",
+                                                         "content_sha256":  "4034a675c3e86403bb978dba65c5a3c7c21af59bf49ae9c430370f393aa25e9f",
                                                          "review_disposition":  "revised",
-                                                         "review_note":  "Reviewed the final GP0 handoff sections against focused, failed-complete and passing-complete verification receipts."
+                                                         "review_note":  "Reviewed all handoff sections against the active substage."
                                                      },
                                      "stage_context":  {
-                                                           "stage_id":  "gp0-gameplay-foundation-verification",
-                                                           "content_sha256":  "3cefb2790a21bd05b1595174ed78a28e5798a23b7af505f1f832a4faebfc906c",
+                                                           "stage_id":  "gp1-fixed-base-loop-verified-result",
+                                                           "content_sha256":  "bec94ba63d13dd0f74b53daf59194b88629a24a278288b7d525a72e21cadfe08",
                                                            "review_disposition":  "revised",
-                                                           "review_note":  "Reviewed the final GP0 handoff sections against focused, failed-complete and passing-complete verification receipts."
+                                                           "review_note":  "Reviewed all handoff sections against the active substage."
                                                        },
                                      "visual_quality_gate":  {
-                                                                 "stage_id":  "gp0-gameplay-foundation-verification",
-                                                                 "content_sha256":  "d5c7eb3f08a6e225cc27e20441343d8b4e4a12d05960dcac9891261cc66d5c90",
+                                                                 "stage_id":  "gp1-fixed-base-loop-verified-result",
+                                                                 "content_sha256":  "fb097da100c015462a62e2b572f982fd9df5e77ad1085e47c714d34e11acd596",
                                                                  "review_disposition":  "revised",
-                                                                 "review_note":  "Reviewed the final GP0 handoff sections against focused, failed-complete and passing-complete verification receipts."
+                                                                 "review_note":  "Reviewed all handoff sections against the active substage."
                                                              },
                                      "simulation_ladder":  {
-                                                               "stage_id":  "gp0-gameplay-foundation-verification",
-                                                               "content_sha256":  "349721464538947251d88f65182092c045fc207e7aed5f600448e8fc39789342",
+                                                               "stage_id":  "gp1-fixed-base-loop-verified-result",
+                                                               "content_sha256":  "3893fa3c52fa69341b91acd0e8cea6ec02acc65387dd6a42f21513b44fb0367f",
                                                                "review_disposition":  "revised",
-                                                               "review_note":  "Reviewed the final GP0 handoff sections against focused, failed-complete and passing-complete verification receipts."
+                                                               "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "unresolved_risks":  {
-                                                              "stage_id":  "gp0-gameplay-foundation-verification",
-                                                              "content_sha256":  "49cf01fe3195057f1e76cff0810ac2d436110e7f5a5e8c9ebd5de7f136e244fe",
+                                                              "stage_id":  "gp1-fixed-base-loop-verified-result",
+                                                              "content_sha256":  "c360b037d6dfdae919b19dbb85a215f9dc5c14939a3f2c2e202aee6e47a26d79",
                                                               "review_disposition":  "revised",
-                                                              "review_note":  "Reviewed the final GP0 handoff sections against focused, failed-complete and passing-complete verification receipts."
+                                                              "review_note":  "Reviewed all handoff sections against the active substage."
                                                           },
                                      "evidence_requirements":  {
-                                                                   "stage_id":  "gp0-gameplay-foundation-verification",
-                                                                   "content_sha256":  "bab64e35ee301d2a0cb1756150342b718c249eb4fa40bb963341f7f213edebba",
+                                                                   "stage_id":  "gp1-fixed-base-loop-verified-result",
+                                                                   "content_sha256":  "00ee58b2ae909a573aba4d3d656891a9088132ddf2097114cd6f7d6024f8cdd1",
                                                                    "review_disposition":  "revised",
-                                                                   "review_note":  "Reviewed the final GP0 handoff sections against focused, failed-complete and passing-complete verification receipts."
+                                                                   "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "verification_plan":  {
-                                                               "stage_id":  "gp0-gameplay-foundation-verification",
-                                                               "content_sha256":  "59b7921bb3c9f0f12c88934c8de19cc2ee400277351c3ff8398d20bf54b3a932",
+                                                               "stage_id":  "gp1-fixed-base-loop-verified-result",
+                                                               "content_sha256":  "4a6e86587ac6bb5f88f889a76cd3f90e7a05aa438a35882d91b508c326658736",
                                                                "review_disposition":  "revised",
-                                                               "review_note":  "Reviewed the final GP0 handoff sections against focused, failed-complete and passing-complete verification receipts."
+                                                               "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "resume_after":  {
-                                                          "stage_id":  "gp0-gameplay-foundation-verification",
-                                                          "content_sha256":  "f3f88462ce9967f7cc0f5ea0690b8e0027f50e0665874f97059799ec4ebfc25a",
+                                                          "stage_id":  "gp1-fixed-base-loop-verified-result",
+                                                          "content_sha256":  "d1655ec91a839f894624ba118327ea9198c45de2dd5a84955b837217aebacc1f",
                                                           "review_disposition":  "revised",
-                                                          "review_note":  "Reviewed the final GP0 handoff sections against focused, failed-complete and passing-complete verification receipts."
+                                                          "review_note":  "Reviewed all handoff sections against the active substage."
                                                       },
                                      "evidence":  {
-                                                      "stage_id":  "gp0-gameplay-foundation-verification",
-                                                      "content_sha256":  "83a8562eeb1dac6020c726bce8157b7817f59a0d28b9040ba858e03616ba94da",
+                                                      "stage_id":  "gp1-fixed-base-loop-verified-result",
+                                                      "content_sha256":  "923887754eb9aba21102f30bbed0d0d55c06d7c77fda0d034d25b42a869bbf65",
                                                       "review_disposition":  "revised",
-                                                      "review_note":  "Reviewed the final GP0 handoff sections against focused, failed-complete and passing-complete verification receipts."
+                                                      "review_note":  "Reviewed all handoff sections against the active substage."
                                                   },
                                      "verification_receipts":  {
-                                                                   "stage_id":  "gp0-gameplay-foundation-verification",
-                                                                   "content_sha256":  "a34eafb95bc3216e494ec48633772c87157dabbd05a90d0290427a46796bb7b9",
+                                                                   "stage_id":  "gp1-fixed-base-loop-verified-result",
+                                                                   "content_sha256":  "5168ba42767147acec5e465097c6d4ff73f28542e0f3ea8027434b81a193b8d6",
                                                                    "review_disposition":  "revised",
-                                                                   "review_note":  "Reviewed the final GP0 handoff sections against focused, failed-complete and passing-complete verification receipts."
+                                                                   "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "transition":  {
-                                                        "stage_id":  "gp0-gameplay-foundation-verification",
-                                                        "content_sha256":  "903b1928d4a3866ea81d212fc4ba2edc8cda6483cd9437ff0ca474b8bcbace52",
+                                                        "stage_id":  "gp1-fixed-base-loop-verified-result",
+                                                        "content_sha256":  "fe0c2710c44d93973798cfb0ca9432667df0a9c3d7c624d3650037c6b1b71dbb",
                                                         "review_disposition":  "revised",
-                                                        "review_note":  "Reviewed the final GP0 handoff sections against focused, failed-complete and passing-complete verification receipts."
+                                                        "review_note":  "Reviewed all handoff sections against the active substage."
                                                     }
                                  },
     "consecutive_no_progress_limit":  1,
@@ -92,12 +92,12 @@
                                         "domain-creative-suites"
                                     ]
                     },
-    "risk_level":  "bounded-clean-room-gameplay-adjudication",
-    "research_gate":  "The owner-approved product rebaseline and clean-room gameplay recovery map establish the candidate space; historical code, runtime claims, Quantum Tunnel product assumptions and unadjudicated assistant proposals remain evidence only.",
-    "authority_lane":  "Owner-authorized clean-room GP0 typed contracts, five fixed authored fixtures, deterministic in-memory replay and verification only. No GP1, historical source code, runtime, engine, database, network, monetization, publishing, Greenfield dependency or C3B substitution authority.",
-    "context_health":  "GP0 implementation is isolated in mindwarp-gameplay-foundation, consumes only the promoted typed C3A seam, keeps authored facts non-C3B, and has a passing focused gate pending independent and workspace verification.",
+    "risk_level":  "bounded-engine-neutral-gp1-base-loop",
+    "research_gate":  "GP0 is structurally verified and the owner authorized GP1. The readiness record fixes one shared six-phase loop and adversarial matrix; historical code, runtime claims and unadjudicated feature breadth remain evidence only.",
+    "authority_lane":  "Owner-authorized GP1 engine-neutral deterministic base loop, stable stops, recovery and fixed-fixture verification only. No GP2, graphics, runtime, persistence, procedural breadth, grind, network, monetization, publishing, Greenfield dependency or C3B authority.",
+    "context_health":  "GP0 is structurally closed without gameplay-system promotion; GP1 is independently and completely verified as a capability-free fixed-loop proof and remains the sole active owner-review checkpoint; GP2 remains gated.",
     "stage_context":  {
-                          "stage_id":  "gp0-gameplay-foundation-verification",
+                          "stage_id":  "gp1-fixed-base-loop-verified-result",
                           "macro_sources":  [
                                                 "docs/canonical-system/G1_PRODUCT_PORTFOLIO_AND_C3_DEPENDENCY_REBASELINE.md",
                                                 "docs/canonical-system/MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",
@@ -106,106 +106,121 @@
                                                 "docs/canonical-system/G1_GP0_GAMEPLAY_FOUNDATION_RESULT.md"
                                             ],
                           "macro_findings":  [
-                                                 "Mind Warp game is the first product customer and GP0 is the sole executing item.",
+                                                 "Mind Warp game is the first product customer; GP0 is structurally verified, GP1 is closed at the fixed-loop proof boundary, and GP2 remains gated.",
                                                  "C3A is sufficient for this product-design route; C3B remains blocked and nonconflated.",
                                                  "Yard Atlas and Companion retain independent product authority."
                                              ],
                           "micro_sources":  [
                                                 "docs/canonical-system/G1_C4_ADDRESSABLE_WORLD_BINDING_RESULT.md",
+                                                "docs/canonical-system/G1_GP1_FIXED_BASE_LOOP_READINESS.md",
                                                 "crates/mindwarp-gameplay-foundation/src/lib.rs",
                                                 "crates/mindwarp-gameplay-foundation/src/fixtures.rs",
-                                                "crates/mindwarp-gameplay-foundation/tests/gp0_contract.rs"
+                                                "crates/mindwarp-gameplay-foundation/src/base_loop.rs",
+                                                "crates/mindwarp-gameplay-foundation/tests/gp0_contract.rs",
+                                                "crates/mindwarp-gameplay-foundation/tests/gp1_base_loop.rs",
+                                                "docs/canonical-system/G1_GP1_FIXED_BASE_LOOP_RESULT.md"
                                             ],
                           "micro_findings":  [
                                                  "The downstream code-facing seam is exactly WorldGenerationInput, CausalWorldPacket v1 and validate_world_packet.",
                                                  "Fourteen focused tests cover strict codecs, corrected sessions, deterministic reducer/history, hostile state, predecessor-sensitive S5 and foreign-packet rejection.",
-                                                 "No physical, optical, runtime, network, Greenfield or presentation implementation is admitted by GP0."
+                                                 "The selected GP1 contract is one shared prepare-depart-encounter-consequence-return-remembered-response loop with typed recovery and stable stops.",
+                                                 "No physical, optical, graphics, runtime, grind, network, Greenfield or presentation implementation is admitted by GP1.",
+                                                 "Seven GP1 tests and all fourteen retained GP0 tests pass; workspace Rust, module, record-role, route and independent hostile review are green."
                                              ]
                       },
     "visual_quality_gate":  {
                                 "asset_use_intent":  false,
                                 "status":  "not_applicable",
-                                "rationale":  "GP0 is a text and fixed-session design package with no admitted visual asset.",
+                                "rationale":  "GP1 is a typed in-memory loop package with no admitted visual asset.",
                                 "dependent_implementation_blocked":  false,
                                 "receipts":  [
 
                                              ]
                             },
     "simulation_ladder":  {
-                              "cheapest_sufficient_tier":  "in_memory_fixture",
+                              "cheapest_sufficient_tier":  "bounded_integrated_pc",
                               "tiers_completed":  [
                                                       {
                                                           "tier":  "static_reasoning",
-                                                          "result":  "The product topology, recovery map and five-session acceptance shape define the bounded adjudication problem.",
-                                                          "evidence":  "G1_PRODUCT_PORTFOLIO_AND_C3_DEPENDENCY_REBASELINE.md"
+                                                          "result":  "GP0 structural closure and the six-phase readiness design define one bounded shared-loop problem.",
+                                                          "evidence":  "G1_GP1_FIXED_BASE_LOOP_READINESS.md"
                                                       },
                                                       {
                                                           "tier":  "typed_model",
-                                                          "result":  "Strict concept, session, outcome, C3A reference, state and history records reject authority and currency drift.",
-                                                          "evidence":  "contracts/mindwarp-gameplay-foundation-contract.md"
+                                                          "result":  "The readiness record freezes phase, failure, recovery, stable-stop, C3A and later-state invariants before implementation.",
+                                                          "evidence":  "G1_GP1_FIXED_BASE_LOOP_READINESS.md"
                                                       },
                                                       {
                                                           "tier":  "in_memory_fixture",
-                                                          "result":  "Fourteen focused tests replay five corrected sessions, predecessor-sensitive S5 history and the hostile matrix deterministically.",
-                                                          "evidence":  "tools/verify-g1-gp0-gameplay-foundation.ps1"
+                                                          "result":  "Seven GP1 tests prove all five sessions, failure recovery, strict stops, append receipts, exact optional C3A context and S1-to-S5 consequence; fourteen GP0 regressions remain green.",
+                                                          "evidence":  "G1_GP1_FIXED_BASE_LOOP_RESULT.md"
+                                                      },
+                                                      {
+                                                          "tier":  "bounded_integrated_pc",
+                                                          "result":  "Workspace Rust, module context, record roles, product route and independent review pass without a capability-boundary finding.",
+                                                          "evidence":  "tools/verify-g1-gp1-fixed-base-loop.ps1"
                                                       }
                                                   ],
-                              "expensive_execution_planned":  false,
-                              "unresolved_risk":  "Repository-wide integration may expose stale context, module or cross-workspace assumptions not reached by the focused crate.",
-                              "expected_information_gain":  "Determine whether the isolated GP0 proof composes with every retained Forge invariant without broadening authority.",
-                              "estimated_cost":  "Focused, module and workspace preflight followed by one complete Forge gate.",
-                              "regression_guard":  "No runtime, historical code, engine, network, monetization or C3B claim enters GP0.",
-                              "stop_condition":  "Stop before GP1 or runtime work and repair any focused, module, workspace or complete-gate regression without broadening the package.",
-                              "final_integration_gate":  "Focused GP0 consistency, project topology, shared route, context and complete Forge verification."
+                              "expensive_execution_planned":  true,
+                              "unresolved_risk":  "No GP1 proof risk remains open; broader progression and runtime questions belong to separately gated future items.",
+                              "expected_information_gain":  "Determine whether all five GP0 sessions share one meaningful deterministic loop and whether an S1 choice changes S5 without procedural breadth.",
+                              "estimated_cost":  "One typed reducer extension, fixed fixture matrix and focused adversarial verifier before workspace integration.",
+                              "regression_guard":  "No GP2, graphics, runtime, persistence, procedural breadth, grind, network, Greenfield or C3B authority enters GP1.",
+                              "stop_condition":  "Stop if the shared loop erases typed outcomes, cannot resume exactly, overwrites history, or requires a runtime/progression system.",
+                              "final_integration_gate":  "One isolated measured complete Forge verification run."
                           },
     "exit_criteria":  [
                           {
-                              "id":  "player-promise",
-                              "label":  "One concise player promise selects the primary fantasy and supporting fantasies.",
+                              "id":  "six-phase-shared-loop",
+                              "label":  "All five GP0 sessions traverse one deterministic prepare, depart, encounter, consequence, return and remembered-response loop.",
                               "status":  "verified",
                               "evidence_ids":  [
-                                                   "contract:mindwarp-gameplay-foundation:v1",
-                                                   "test:concept-codec-and-reversible-assumptions"
+                                                   "test:gp1-base-loop:all-five:7-of-7"
                                                ]
                           },
                           {
-                              "id":  "explicit-non-goals",
-                              "label":  "Explicit non-goals prevent Quantum Tunnel, runtime, multiplayer and platform assumptions from entering GP0.",
+                              "id":  "recovery-and-stable-stops",
+                              "label":  "Typed failure and recovery preserve plan, C3A identity and history; every stable stop has an exact deterministic resume.",
                               "status":  "verified",
                               "evidence_ids":  [
-                                                   "type:NonGoal:exact-set",
-                                                   "test:negative-authority-currency-boundary"
+                                                   "test:gp1-base-loop:recovery-stops:7-of-7"
                                                ]
                           },
                           {
-                              "id":  "five-session-stories",
-                              "label":  "Five fixed representative sessions express one coherent game across multiple approaches.",
+                              "id":  "later-state-consequence",
+                              "label":  "At least one earlier decision changes a later fixed session while ordered remembered history remains append-only.",
                               "status":  "verified",
                               "evidence_ids":  [
-                                                   "fixture:gp0:s1-s5",
-                                                   "test:deterministic-replay-history"
+                                                   "test:gp1-base-loop:s1-to-s5:7-of-7"
+                                               ]
+                          },
+                          {
+                              "id":  "gp1-authority-boundary",
+                              "label":  "GP1 adds no GP2, graphics, runtime, procedural breadth, grind, network, Greenfield or C3B dependency.",
+                              "status":  "verified",
+                              "evidence_ids":  [
+                                                   "review:independent-gp1-accepted",
+                                                   "gate:workspace-cargo-test:pass"
                                                ]
                           }
                       ],
     "unresolved_risks":  [
-                             "candidate feature volume could obscure the primary player fantasy",
-                             "historical Quantum Tunnel assumptions could leak into Main Mind Warp",
-                             "five sessions could appear varied while requiring incompatible game structures",
-                             "procedural breadth could be used to avoid proving fixed-content enjoyment"
+                             "GP2 progression and runtime remain explicitly outside this closed GP1 package"
                          ],
     "evidence_requirements":  [
-                                  "preserve clean-room separation from all historical code",
-                                  "select one primary promise and explicit non-goals",
-                                  "define five fixed sessions with preparation encounter consequence return and remembered response",
-                                  "retain C3B Yard Atlas runtime network and monetization boundaries"
+                                  "reuse the exact five GP0 fixtures and typed C3A binding without reinterpretation",
+                                  "prove one ordered six-phase model across every session",
+                                  "prove deterministic failure recovery and resumable stable stops",
+                                  "prove S1 direct bypass or ration changes S5 while history remains append-only",
+                                  "retain GP2 C3B Greenfield graphics runtime grind network and monetization boundaries"
                               ],
     "verification_plan":  [
-                              "retain the passing focused GP0 consistency and hostile-matrix receipt",
-                              "obtain independent read-only review of strictness and authority boundaries",
-                              "run module-context and workspace preflight without starting the complete gate early",
-                              "refresh active context and run one complete Forge gate on the exact tree"
+                              "write failing six-phase recovery stable-stop and later-state tests from the readiness matrix",
+                              "implement the smallest pure reducer and strict codec extension",
+                              "run focused GP1 plus retained GP0 regression tests",
+                              "obtain independent review then run module workspace and one complete Forge gate"
                           ],
-    "resume_after":  "After GP0 is verified and recorded, begin GP1 fixed-content base-loop paper modeling. Do not begin runtime implementation.",
+    "resume_after":  "After GP1 is verified and recorded, stop for root review before any GP2 or runtime work.",
     "evidence":  [
                      "The owner approved the consolidated product-driven plan and implementation.",
                      "The product rebaseline defines Forge Core, proven reusable capabilities, domain creative suites and isolated product shells.",
@@ -213,13 +228,31 @@
                      "C3A is promoted as the exact dependency-sufficient causal-world seam while C3B remains evidence-blocked.",
                      "The owner selected causal_explorer_maker and authorized the isolated GP0 typed implementation.",
                      "Playtest corrections removed disguised currencies, made retreat deterministic, constrained combat and froze predecessor-sensitive S1-to-S5 consequences.",
-                     "The focused GP0 verifier passes fourteen integration tests."
+                     "The focused GP0 verifier passes fourteen integration tests.",
+                     "Complete GP0 run run-79fca2c134994b76a119aebc0987a4fd passed and the owner authorized the GP0-to-GP1 transition.",
+                     "G1_GP1_FIXED_BASE_LOOP_READINESS.md freezes the six-phase loop and adversarial matrix before source implementation.",
+                     "G1_GP1_FIXED_BASE_LOOP_RESULT.md records independent acceptance and the bounded implementation result.",
+                     "Complete registered run run-26b8424e488b4d838eb51cc928675224 passed in 402857 ms against checkpoint 5f63ea4d90fb0d950caf6bf131ef5ed40e21cabbf7fa309936384806c7365faa."
                  ],
     "verification_receipts":  [
-                                  "FOCUSED FAIL: first GP0 verifier attempt rejected a static Markdown token split across a line; no Rust or product failure; verifier token repaired.",
-                                  "FOCUSED PASS: tools/verify-g1-gp0-gameplay-foundation.ps1; 14 integration tests; strict deterministic replay/history and authority boundaries pass.",
-                                  "COMPLETE FAIL run-da155642b3694a85928325cebdfd6888: 42548 ms; shared C3 route policy retained only the former GP0 adjudication substage and rejected the authorized verification substage; bounded exact-route repair required.",
-                                  "COMPLETE PASS run-79fca2c134994b76a119aebc0987a4fd: 408744 ms; checkpoint 524a1d8ffaaaad2cc4981a2800c911fd025c6fc7195dbf488244053d96d36788; complete Forge verification passed after exact route repair."
+                                  "focused:gp1-base-loop:7-of-7",
+                                  "regression:gp0-contract:14-of-14",
+                                  "workspace:cargo-test:pass",
+                                  "review:independent-gp1:accepted",
+                                  "complete:run-26b8424e488b4d838eb51cc928675224:passed:402857ms"
                               ],
-    "transition":  "recorded Metrics package -\u003e preserved recovery baseline -\u003e accepted control-plane safety -\u003e product/C3 dependency rebaseline -\u003e GP0 clean-room gameplay adjudication -\u003e GP0 isolated implementation and verification"
+    "metrics":  {
+                    "token_cost":  {
+                                       "status":  "unknown",
+                                       "value":  null,
+                                       "unit":  "tokens"
+                                   },
+                    "elapsed_time":  {
+                                         "status":  "measured",
+                                         "value":  402857,
+                                         "unit":  "ms",
+                                         "evidence_id":  "run-26b8424e488b4d838eb51cc928675224"
+                                     }
+                },
+    "transition":  "recorded Metrics package -\u003e preserved recovery baseline -\u003e accepted control-plane safety -\u003e product/C3 dependency rebaseline -\u003e GP0 structurally verified without gameplay-system promotion -\u003e GP1 fixed base-loop independently accepted and completely verified -\u003e GP2 remains gated"
 }
