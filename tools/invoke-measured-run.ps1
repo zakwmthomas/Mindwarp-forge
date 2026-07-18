@@ -37,11 +37,19 @@ $runner = switch ([string]$definition.runner) {
 $checkpoint = Get-Content -Raw -LiteralPath $checkpointPath | ConvertFrom-Json
 $checkpointHash = (Get-FileHash -LiteralPath $checkpointPath -Algorithm SHA256).Hash.ToLowerInvariant()
 $runIdValue = 'run-' + [guid]::NewGuid().ToString('N')
+$runnerArguments = @($definition.arguments)
+if ($RunId -eq 'forge-full-gate-v1') {
+  if ([string]$definition.runner -ne 'powershell' -or
+      ($runnerArguments -join ' ') -notlike '*tools/verify.ps1*') {
+    throw 'Registered full gate does not target the canonical production verifier.'
+  }
+  $runnerArguments += @('-RegisteredRunId',$RunId,'-RegisteredInvocationId',$runIdValue)
+}
 $started = [DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()
 $exitCode = 1
 $timedOut = $false
 try {
-  $process = Start-Process -FilePath $runner -ArgumentList @($definition.arguments) -WorkingDirectory $working -NoNewWindow -PassThru
+  $process = Start-Process -FilePath $runner -ArgumentList $runnerArguments -WorkingDirectory $working -NoNewWindow -PassThru
   try {
     $process | Wait-Process -Timeout ([int]$definition.timeout_seconds) -ErrorAction Stop
     $exitCode = $process.ExitCode

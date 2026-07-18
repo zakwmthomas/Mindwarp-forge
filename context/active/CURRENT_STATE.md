@@ -5,36 +5,36 @@
 
 ## Active checkpoint
 
-- Package: **G1-GP1-FIXED-BASE-LOOP-V1**
-- Master item / milestone: **GP1 / G1**
-- State / substage: **recorded / gp1-fixed-base-loop-verified-result**
+- Package: **G1-GP2-PROGRESSION-DESIGN-V1**
+- Master item / milestone: **GP2 / G1**
+- State / substage: **executing / gp2-progression-readiness**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Objective: Implement and prove one engine-neutral deterministic prepare, depart, encounter, consequence, return and remembered-response loop across all five structurally verified GP0 sessions.
-- Context health: GP0 is structurally closed without gameplay-system promotion; GP1 is independently and completely verified as a capability-free fixed-loop proof and remains the sole active owner-review checkpoint; GP2 remains gated.
+- Objective: Design and later prove five distinct engine-neutral progression lanes for knowledge, access, relationship, construction and power without collapsing them into a universal economy.
+- Context health: GP1 passed focused, regression, workspace, independent and registered complete verification. GP2 is the unique executing item; its accepted design and readiness freeze exact typed progression semantics before source implementation.
 
 ## Durable evidence
 
-- `The owner approved the consolidated product-driven plan and implementation.`
-- `The product rebaseline defines Forge Core, proven reusable capabilities, domain creative suites and isolated product shells.`
-- `The gameplay recovery map provides clean-room candidate evidence and the GP0-GP4 route.`
-- `C3A is promoted as the exact dependency-sufficient causal-world seam while C3B remains evidence-blocked.`
-- `The owner selected causal_explorer_maker and authorized the isolated GP0 typed implementation.`
-- `Playtest corrections removed disguised currencies, made retreat deterministic, constrained combat and froze predecessor-sensitive S1-to-S5 consequences.`
-- `The focused GP0 verifier passes fourteen integration tests.`
-- `Complete GP0 run run-79fca2c134994b76a119aebc0987a4fd passed and the owner authorized the GP0-to-GP1 transition.`
+- `Owner authorized the game-first GP1-to-GP2 transition and design-first progression scope.`
+- `GP1 complete registered run run-26b8424e488b4d838eb51cc928675224 passed in 402857 ms.`
+- `The canonical full-gate launcher fixture passes and direct production verify.ps1 now rejects before expensive work.`
+- `G1_GP2_PROGRESSION_READINESS.md records the hostile matrix and frozen input-authority boundary.`
+- `G1_GP2_PROGRESSION_DESIGN.md records the accepted read-only typed design, flow rules, S1 capability allowlist and deterministic strategy proof.`
 
 ## Authority boundary
 
-Owner-authorized GP1 engine-neutral deterministic base loop, stable stops, recovery and fixed-fixture verification only. No GP2, graphics, runtime, persistence, procedural breadth, grind, network, monetization, publishing, Greenfield dependency or C3B authority.
+Owner-authorized GP2 design intake and readiness only. No source implementation, universal currency, positive cycle, dominant conversion, grind, graphics, runtime, persistence, network, monetization, Greenfield dependency, C3B authority, GP3 or GP4.
 
 ## Exact next action
 
-Retain the verified GP1 result and stop for root review; do not begin GP2, GP3, runtime or Greenfield work without a separate canonical transition.
+Report accepted GP2 readiness, then freeze failing tests from the exact design receipt before any source implementation.
 
 ## Unresolved risks
 
-- GP2 progression and runtime remain explicitly outside this closed GP1 package
+- lane types could become cosmetic wrappers over one fungible value
+- conversion or reset edges could duplicate progress or create a positive cycle
+- caller-supplied opportunity costs or tool text could fabricate durable progression
+- one strategy could dominate every named decision over the simulated horizon
 
 ## Resume after this package
 
-After GP1 is verified and recorded, stop for root review before any GP2 or runtime work.
+After the design receipt is reviewed, report revised GP2 readiness before any source implementation.

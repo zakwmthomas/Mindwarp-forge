@@ -721,13 +721,13 @@
                   {
                       "id":  "GP1",
                       "milestone":  "G1",
-                      "state":  "executing",
-                      "status":  "active",
+                      "state":  "promoted",
+                      "status":  "complete",
                       "depends_on":  [
                                          "GP0"
                                      ],
                       "gate":  "design",
-                      "next_action":  "Hold the independently accepted and completely verified six-phase fixed-loop result at the owner-review checkpoint; do not begin GP2 without a separate canonical transition.",
+                      "next_action":  "Retain the independently accepted and completely verified six-phase fixed-loop result as the exact GP2 input; do not reinterpret its typed outcomes, history or authority boundary.",
                       "proof":  "GP1 passes seven focused tests, all fourteen GP0 regressions, workspace integration, independent review and complete run run-26b8424e488b4d838eb51cc928675224. This promotes only the capability-free fixed-loop proof; runtime, graphics, procedural breadth, grind, network, Greenfield, C3B and GP2 remain excluded.",
                       "sources":  [
                                       "MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",
@@ -739,16 +739,19 @@
                   {
                       "id":  "GP2",
                       "milestone":  "G1",
-                      "state":  "proposed",
-                      "status":  "gated",
+                      "state":  "executing",
+                      "status":  "active",
                       "depends_on":  [
                                          "GP1"
                                      ],
                       "gate":  "design",
-                      "next_action":  "Separate knowledge, access, relationship, construction and power progression; model sources, sinks, exploits and resets.",
-                      "proof":  "Several simulated player paths remain viable and no one resource collapses all progression.",
+                      "next_action":  "Report the accepted GP2 design and revised readiness, then freeze failing tests for five distinct typed lanes, exact GP1 digest binding, explicit flow/exploit rules and deterministic incomparable strategies before source implementation.",
+                      "proof":  "The read-only GP2 design receipt is accepted and the readiness verifier freezes five distinct typed lanes, exact terminal GP1 digest authority, nonrecursive guarded flows, the S1 capability allowlist and three deterministic strategies; no source implementation, universal currency, positive cycle, dominant conversion, runtime, Greenfield, C3B, GP3 or GP4 authority is admitted.",
                       "sources":  [
-                                      "MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md"
+                                      "MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",
+                                      "G1_GP1_FIXED_BASE_LOOP_RESULT.md",
+                                      "G1_GP2_PROGRESSION_READINESS.md",
+                                      "G1_GP2_PROGRESSION_DESIGN.md"
                                   ]
                   },
                   {

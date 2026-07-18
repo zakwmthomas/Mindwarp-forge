@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **G1-GP1-FIXED-BASE-LOOP-V1**
-- Objective: Implement and prove one engine-neutral deterministic prepare, depart, encounter, consequence, return and remembered-response loop across all five structurally verified GP0 sessions.
+- Work package: **G1-GP2-PROGRESSION-DESIGN-V1**
+- Objective: Design and later prove five distinct engine-neutral progression lanes for knowledge, access, relationship, construction and power without collapsing them into a universal economy.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **bounded-engine-neutral-gp1-base-loop / GP0 is structurally verified and the owner authorized GP1. The readiness record fixes one shared six-phase loop and adversarial matrix; historical code, runtime claims and unadjudicated feature breadth remain evidence only.**
-- Exact next action: Retain the verified GP1 result and stop for root review; do not begin GP2, GP3, runtime or Greenfield work without a separate canonical transition.
+- Risk/research gate: **bounded-engine-neutral-gp2-progression-design / GP0 and GP1 are structurally complete. The read-only GP2 design receipt is accepted and semantics are frozen for red tests; source implementation remains paused until the readiness result is reported.**
+- Exact next action: Report accepted GP2 readiness, then freeze failing tests from the exact design receipt before any source implementation.
 
 ## Approved operating policies
 

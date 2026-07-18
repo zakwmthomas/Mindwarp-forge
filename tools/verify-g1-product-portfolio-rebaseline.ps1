@@ -29,16 +29,16 @@ if (@($c3).Count -ne 1 -or $c3.state -eq 'executing' -or $c3.proof -notlike '*do
 if (@($c4).Count -ne 1 -or @($c4.depends_on).Count -ne 2 -or @($c4.depends_on) -notcontains 'C2' -or @($c4.depends_on) -notcontains 'C3A') { throw 'C4 does not depend exactly on C2 and C3A.' }
 foreach ($id in @('GP0','GP1','GP2','GP3','GP4')) { if (@(One $id).Count -ne 1) { throw "Master program lacks gameplay item: $id" } }
 $executing = @($program.items | Where-Object state -eq 'executing')
-if ($executing.Count -ne 1 -or $executing[0].id -ne 'GP1') { throw 'GP1 is not the unique executing owner-review checkpoint.' }
+if ($executing.Count -ne 1 -or $executing[0].id -ne 'GP2') { throw 'GP2 is not the unique executing design-intake item.' }
 $gp0 = One 'GP0'
 if ($gp0.state -ne 'promoted' -or $gp0.proof -notlike '*structural player-promise package only*') { throw 'GP0 is not structurally closed with its no-system-promotion boundary.' }
 $gp1 = One 'GP1'
-if ($gp1.state -ne 'executing' -or $gp1.status -ne 'active' -or $gp1.proof -notlike '*capability-free fixed-loop proof*GP2 remain excluded*') { throw 'GP1 is not retained at the bounded verified owner-review checkpoint.' }
+if ($gp1.state -ne 'promoted' -or $gp1.status -ne 'complete' -or $gp1.proof -notlike '*capability-free fixed-loop proof*GP2 remain excluded*') { throw 'GP1 is not structurally closed at the bounded fixed-loop proof.' }
 $gp2 = One 'GP2'
-if ($gp2.state -ne 'proposed' -or $gp2.status -ne 'gated') { throw 'GP2 began without a separate canonical transition.' }
+if ($gp2.state -ne 'executing' -or $gp2.status -ne 'active' -or $gp2.proof -notlike '*readiness verifier freezes five distinct typed lanes*no source implementation*universal currency*') { throw 'GP2 is not bounded to accepted design and pre-source readiness.' }
 
 $binding = Get-Content -LiteralPath (Join-Path $root 'crates\addressable-world-binding\src\lib.rs') -Raw
 if ($binding -notmatch 'use derived_world_rules::\{CausalWorldPacket, WorldGenerationInput, validate_world_packet\};') { throw 'C3A lacks the exact C4 code-facing import seam.' }
 foreach ($forbidden in @('physical_path_substrate::','visible_radiance_','optical_phase_space_')) { if ($binding.Contains($forbidden)) { throw "C4 imports deferred C3B implementation: $forbidden" } }
 
-Write-Output 'G1 portfolio rebaseline verified: product topology, C3A/C3B split, C4 seam, GP0 structural closure, verified GP1 owner-review checkpoint and gated GP2 route are exact.'
+Write-Output 'G1 portfolio rebaseline verified: product topology, C3A/C3B split, C4 seam, GP0-GP1 structural closure and active design-first GP2 route are exact.'

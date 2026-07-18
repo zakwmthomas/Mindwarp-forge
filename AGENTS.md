@@ -6,18 +6,21 @@ planning, editing, or broad research:
 1. Run `powershell -NoProfile -ExecutionPolicy Bypass -File tools\verify-bootstrap.ps1 -Mode Check`. Use `-Mode Refresh` only when generated projections must be deliberately regenerated.
 2. Run `powershell -NoProfile -ExecutionPolicy Bypass -File tools\verify-atlas.ps1`.
 3. Run `powershell -NoProfile -ExecutionPolicy Bypass -File tools\verify-operating-system.ps1`.
-4. Read `context/bootstrap/BRIEFING.md`, `docs/project-atlas/ATLAS.md`,
+4. Never invoke the production-complete `tools\verify.ps1` directly. Launch it only through
+   `powershell -NoProfile -ExecutionPolicy Bypass -File tools\invoke-measured-run.ps1 -RunId forge-full-gate-v1`.
+   Direct invocation fails before expensive work. Focused verifier scripts and disposable fixtures remain directly runnable.
+5. Read `context/bootstrap/BRIEFING.md`, `docs/project-atlas/ATLAS.md`,
    `docs/project-atlas/ROADMAP.md`, `docs/project-atlas/FLOW.md`,
    `context/active/CURRENT_STATE.md`, and
    `docs/canonical-system/README.md`, `governance/RECORDING_PROTOCOL.md`, and
    `.local/forge-bootstrap/START_HERE.md`
    in that order.
-5. Read raw session transcripts only when the first-layer documents identify a
+6. Read raw session transcripts only when the first-layer documents identify a
    specific uncertainty.
-6. State a `BOOTSTRAP RECEIPT`: active objective, Atlas milestone ID, related
+7. State a `BOOTSTRAP RECEIPT`: active objective, Atlas milestone ID, related
    systems, context health, verification status, exact next action, and
    unresolved risks. Do not mutate the project before the receipt.
-7. Every session is read-only by default. Before any repository mutation, use
+8. Every session is read-only by default. Before any repository mutation, use
    `tools\forge-writer-lease.ps1 -Mode route` and then `-Mode claim` with the
    exact `CODEX_THREAD_ID`. Reassert the checkpoint-bound lease before each
    material mutation or long verification run, and release it at completion or

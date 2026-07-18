@@ -134,5 +134,9 @@ Optimization Protocol, then synchronize the automation prompt.
     `CODEX_THREAD_ID`; missing or reset counters remain unknown and cached input
     remains a subset of input. Invoke registered routine gates through
     `tools/invoke-measured-run.ps1` so duration and outcome become bounded local
-    receipts. Metrics are advisory evidence only: they never replace a gate,
+    receipts. The complete Forge gate has exactly one production launcher:
+    `tools/invoke-measured-run.ps1 -RunId forge-full-gate-v1`; direct
+    `tools/verify.ps1` invocation must fail before expensive work. Its run and
+    invocation IDs are public receipt bindings, never secrets or authority.
+    Focused scripts and disposable fixtures remain directly runnable. Metrics are advisory evidence only: they never replace a gate,
     authorize a change, or make an unverified criterion complete.

@@ -1,83 +1,83 @@
 ﻿{
     "schema_version":  3,
     "canonical_role":  "sole-active-work-checkpoint",
-    "batch_id":  "G1-GP1-FIXED-BASE-LOOP-V1",
-    "master_program_item":  "GP1",
-    "state":  "recorded",
-    "previous_state":  "verifying",
-    "objective":  "Implement and prove one engine-neutral deterministic prepare, depart, encounter, consequence, return and remembered-response loop across all five structurally verified GP0 sessions.",
-    "next_action":  "Retain the verified GP1 result and stop for root review; do not begin GP2, GP3, runtime or Greenfield work without a separate canonical transition.",
-    "substage_id":  "gp1-fixed-base-loop-verified-result",
+    "batch_id":  "G1-GP2-PROGRESSION-DESIGN-V1",
+    "master_program_item":  "GP2",
+    "state":  "executing",
+    "previous_state":  "ready",
+    "objective":  "Design and later prove five distinct engine-neutral progression lanes for knowledge, access, relationship, construction and power without collapsing them into a universal economy.",
+    "next_action":  "Report accepted GP2 readiness, then freeze failing tests from the exact design receipt before any source implementation.",
+    "substage_id":  "gp2-progression-readiness",
     "handoff_section_receipts":  {
                                      "objective":  {
-                                                       "stage_id":  "gp1-fixed-base-loop-verified-result",
-                                                       "content_sha256":  "dee503e3518ea04a4cacfcd286068789107ec28c1429de4d9f8187e1e289a1da",
+                                                       "stage_id":  "gp2-progression-readiness",
+                                                       "content_sha256":  "db422c1e9c0092b6f64b4d31c52043674dc44ab7896b2bbd9c192c6e1e645c15",
                                                        "review_disposition":  "revised",
                                                        "review_note":  "Reviewed all handoff sections against the active substage."
                                                    },
                                      "next_action":  {
-                                                         "stage_id":  "gp1-fixed-base-loop-verified-result",
-                                                         "content_sha256":  "4034a675c3e86403bb978dba65c5a3c7c21af59bf49ae9c430370f393aa25e9f",
+                                                         "stage_id":  "gp2-progression-readiness",
+                                                         "content_sha256":  "692deb6c27f1675caa537c0bf133547c616612b1b731ef5fb4d92dd8a401416c",
                                                          "review_disposition":  "revised",
                                                          "review_note":  "Reviewed all handoff sections against the active substage."
                                                      },
                                      "stage_context":  {
-                                                           "stage_id":  "gp1-fixed-base-loop-verified-result",
-                                                           "content_sha256":  "bec94ba63d13dd0f74b53daf59194b88629a24a278288b7d525a72e21cadfe08",
+                                                           "stage_id":  "gp2-progression-readiness",
+                                                           "content_sha256":  "bdfba2aafc7e39285909029521ff771dcf19f30bb332e5e34a2b3eb6777c5171",
                                                            "review_disposition":  "revised",
                                                            "review_note":  "Reviewed all handoff sections against the active substage."
                                                        },
                                      "visual_quality_gate":  {
-                                                                 "stage_id":  "gp1-fixed-base-loop-verified-result",
-                                                                 "content_sha256":  "fb097da100c015462a62e2b572f982fd9df5e77ad1085e47c714d34e11acd596",
+                                                                 "stage_id":  "gp2-progression-readiness",
+                                                                 "content_sha256":  "7a8837c08a848c1cc8eb40026bbdbbe9cdac82f0527b64d660b00c21adee3e42",
                                                                  "review_disposition":  "revised",
                                                                  "review_note":  "Reviewed all handoff sections against the active substage."
                                                              },
                                      "simulation_ladder":  {
-                                                               "stage_id":  "gp1-fixed-base-loop-verified-result",
-                                                               "content_sha256":  "3893fa3c52fa69341b91acd0e8cea6ec02acc65387dd6a42f21513b44fb0367f",
+                                                               "stage_id":  "gp2-progression-readiness",
+                                                               "content_sha256":  "84968082c4b91029755a97d0ba532f412c05e840dc8145eb698b1da9914c289c",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "unresolved_risks":  {
-                                                              "stage_id":  "gp1-fixed-base-loop-verified-result",
-                                                              "content_sha256":  "c360b037d6dfdae919b19dbb85a215f9dc5c14939a3f2c2e202aee6e47a26d79",
+                                                              "stage_id":  "gp2-progression-readiness",
+                                                              "content_sha256":  "ebff53d4652232135ab59d77f47c58f56bfa44605ae4cc516c4aeac70298a913",
                                                               "review_disposition":  "revised",
                                                               "review_note":  "Reviewed all handoff sections against the active substage."
                                                           },
                                      "evidence_requirements":  {
-                                                                   "stage_id":  "gp1-fixed-base-loop-verified-result",
-                                                                   "content_sha256":  "00ee58b2ae909a573aba4d3d656891a9088132ddf2097114cd6f7d6024f8cdd1",
+                                                                   "stage_id":  "gp2-progression-readiness",
+                                                                   "content_sha256":  "c1303ba8102325d4337d3af72f55a92cd18e2c7f0b9132f3eae35f7f78fcf084",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "verification_plan":  {
-                                                               "stage_id":  "gp1-fixed-base-loop-verified-result",
-                                                               "content_sha256":  "4a6e86587ac6bb5f88f889a76cd3f90e7a05aa438a35882d91b508c326658736",
+                                                               "stage_id":  "gp2-progression-readiness",
+                                                               "content_sha256":  "978a6f4a81b79b03c4ad4a23d8362f6e135075fb2a49ea824d5468fcd9a20596",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "resume_after":  {
-                                                          "stage_id":  "gp1-fixed-base-loop-verified-result",
-                                                          "content_sha256":  "d1655ec91a839f894624ba118327ea9198c45de2dd5a84955b837217aebacc1f",
+                                                          "stage_id":  "gp2-progression-readiness",
+                                                          "content_sha256":  "d2004615cc6ad11e04faf49002702db61b17134a505b958f5a44065e01309869",
                                                           "review_disposition":  "revised",
                                                           "review_note":  "Reviewed all handoff sections against the active substage."
                                                       },
                                      "evidence":  {
-                                                      "stage_id":  "gp1-fixed-base-loop-verified-result",
-                                                      "content_sha256":  "923887754eb9aba21102f30bbed0d0d55c06d7c77fda0d034d25b42a869bbf65",
+                                                      "stage_id":  "gp2-progression-readiness",
+                                                      "content_sha256":  "ab758763bb292686905427d1a3f1335b4f5b322235c1df313767e0e1378a6d63",
                                                       "review_disposition":  "revised",
                                                       "review_note":  "Reviewed all handoff sections against the active substage."
                                                   },
                                      "verification_receipts":  {
-                                                                   "stage_id":  "gp1-fixed-base-loop-verified-result",
-                                                                   "content_sha256":  "5168ba42767147acec5e465097c6d4ff73f28542e0f3ea8027434b81a193b8d6",
+                                                                   "stage_id":  "gp2-progression-readiness",
+                                                                   "content_sha256":  "f29e5b7da849c6a15323ea297c581e9a21cceccaaa2de6320a418b28fe2b617e",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "transition":  {
-                                                        "stage_id":  "gp1-fixed-base-loop-verified-result",
-                                                        "content_sha256":  "fe0c2710c44d93973798cfb0ca9432667df0a9c3d7c624d3650037c6b1b71dbb",
+                                                        "stage_id":  "gp2-progression-readiness",
+                                                        "content_sha256":  "b9fcb62679354f2d4419c08a6d47100103657fee660a1a0f1e730f86ec8e5c7d",
                                                         "review_disposition":  "revised",
                                                         "review_note":  "Reviewed all handoff sections against the active substage."
                                                     }
@@ -92,167 +92,133 @@
                                         "domain-creative-suites"
                                     ]
                     },
-    "risk_level":  "bounded-engine-neutral-gp1-base-loop",
-    "research_gate":  "GP0 is structurally verified and the owner authorized GP1. The readiness record fixes one shared six-phase loop and adversarial matrix; historical code, runtime claims and unadjudicated feature breadth remain evidence only.",
-    "authority_lane":  "Owner-authorized GP1 engine-neutral deterministic base loop, stable stops, recovery and fixed-fixture verification only. No GP2, graphics, runtime, persistence, procedural breadth, grind, network, monetization, publishing, Greenfield dependency or C3B authority.",
-    "context_health":  "GP0 is structurally closed without gameplay-system promotion; GP1 is independently and completely verified as a capability-free fixed-loop proof and remains the sole active owner-review checkpoint; GP2 remains gated.",
+    "risk_level":  "bounded-engine-neutral-gp2-progression-design",
+    "research_gate":  "GP0 and GP1 are structurally complete. The read-only GP2 design receipt is accepted and semantics are frozen for red tests; source implementation remains paused until the readiness result is reported.",
+    "authority_lane":  "Owner-authorized GP2 design intake and readiness only. No source implementation, universal currency, positive cycle, dominant conversion, grind, graphics, runtime, persistence, network, monetization, Greenfield dependency, C3B authority, GP3 or GP4.",
+    "context_health":  "GP1 passed focused, regression, workspace, independent and registered complete verification. GP2 is the unique executing item; its accepted design and readiness freeze exact typed progression semantics before source implementation.",
     "stage_context":  {
-                          "stage_id":  "gp1-fixed-base-loop-verified-result",
+                          "stage_id":  "gp2-progression-readiness",
                           "macro_sources":  [
                                                 "docs/canonical-system/G1_PRODUCT_PORTFOLIO_AND_C3_DEPENDENCY_REBASELINE.md",
                                                 "docs/canonical-system/MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",
                                                 "docs/canonical-system/MASTER_PROGRAM.json",
-                                                "contracts/mindwarp-gameplay-foundation-contract.md",
-                                                "docs/canonical-system/G1_GP0_GAMEPLAY_FOUNDATION_RESULT.md"
-                                            ],
-                          "macro_findings":  [
-                                                 "Mind Warp game is the first product customer; GP0 is structurally verified, GP1 is closed at the fixed-loop proof boundary, and GP2 remains gated.",
-                                                 "C3A is sufficient for this product-design route; C3B remains blocked and nonconflated.",
-                                                 "Yard Atlas and Companion retain independent product authority."
-                                             ],
-                          "micro_sources":  [
-                                                "docs/canonical-system/G1_C4_ADDRESSABLE_WORLD_BINDING_RESULT.md",
-                                                "docs/canonical-system/G1_GP1_FIXED_BASE_LOOP_READINESS.md",
-                                                "crates/mindwarp-gameplay-foundation/src/lib.rs",
-                                                "crates/mindwarp-gameplay-foundation/src/fixtures.rs",
-                                                "crates/mindwarp-gameplay-foundation/src/base_loop.rs",
-                                                "crates/mindwarp-gameplay-foundation/tests/gp0_contract.rs",
-                                                "crates/mindwarp-gameplay-foundation/tests/gp1_base_loop.rs",
                                                 "docs/canonical-system/G1_GP1_FIXED_BASE_LOOP_RESULT.md"
                                             ],
+                          "macro_findings":  [
+                                                 "Mind Warp remains the first product customer and GP2 follows the structurally complete GP0-GP1 path.",
+                                                 "Progress must unlock named decisions rather than merely accelerate repetition.",
+                                                 "GP3 encounter grammar, runtime, Companion and Greenfield authority remain separate."
+                                             ],
+                          "micro_sources":  [
+                                                "docs/canonical-system/G1_GP2_PROGRESSION_READINESS.md",
+                                                "docs/canonical-system/G1_GP2_PROGRESSION_DESIGN.md",
+                                                "crates/mindwarp-gameplay-foundation/src/base_loop.rs",
+                                                "crates/mindwarp-gameplay-foundation/src/fixtures.rs",
+                                                "crates/mindwarp-gameplay-foundation/tests/gp1_base_loop.rs"
+                                            ],
                           "micro_findings":  [
-                                                 "The downstream code-facing seam is exactly WorldGenerationInput, CausalWorldPacket v1 and validate_world_packet.",
-                                                 "Fourteen focused tests cover strict codecs, corrected sessions, deterministic reducer/history, hostile state, predecessor-sensitive S5 and foreign-packet rejection.",
-                                                 "The selected GP1 contract is one shared prepare-depart-encounter-consequence-return-remembered-response loop with typed recovery and stable stops.",
-                                                 "No physical, optical, graphics, runtime, grind, network, Greenfield or presentation implementation is admitted by GP1.",
-                                                 "Seven GP1 tests and all fourteen retained GP0 tests pass; workspace Rust, module, record-role, route and independent hostile review are green."
+                                                 "Durable progression must consume a replay-validated terminal BaseLoopStateV1 and bind its canonical digest.",
+                                                 "Only explicit per-session and per-outcome rules may create progression; caller-supplied opportunity costs and arbitrary tool IDs have no durable authority.",
+                                                 "Power grants require an exact allowlisted prepared tool and successful allowlisted outcome; combat diversion grants nothing.",
+                                                 "The accepted design freezes five distinct lane records, explicit per-session and per-outcome rules, typed receipts, guarded flows, three strategies and the S1 capability allowlist."
                                              ]
                       },
     "visual_quality_gate":  {
                                 "asset_use_intent":  false,
                                 "status":  "not_applicable",
-                                "rationale":  "GP1 is a typed in-memory loop package with no admitted visual asset.",
+                                "rationale":  "GP2 design intake is typed and engine-neutral with no admitted visual asset.",
                                 "dependent_implementation_blocked":  false,
                                 "receipts":  [
 
                                              ]
                             },
     "simulation_ladder":  {
-                              "cheapest_sufficient_tier":  "bounded_integrated_pc",
+                              "cheapest_sufficient_tier":  "in_memory_fixture",
                               "tiers_completed":  [
                                                       {
                                                           "tier":  "static_reasoning",
-                                                          "result":  "GP0 structural closure and the six-phase readiness design define one bounded shared-loop problem.",
-                                                          "evidence":  "G1_GP1_FIXED_BASE_LOOP_READINESS.md"
+                                                          "result":  "GP2 recovery-map scope, GP1 input authority and the provisional adversarial matrix define one bounded design problem.",
+                                                          "evidence":  "G1_GP2_PROGRESSION_READINESS.md"
                                                       },
                                                       {
                                                           "tier":  "typed_model",
-                                                          "result":  "The readiness record freezes phase, failure, recovery, stable-stop, C3A and later-state invariants before implementation.",
-                                                          "evidence":  "G1_GP1_FIXED_BASE_LOOP_READINESS.md"
-                                                      },
-                                                      {
-                                                          "tier":  "in_memory_fixture",
-                                                          "result":  "Seven GP1 tests prove all five sessions, failure recovery, strict stops, append receipts, exact optional C3A context and S1-to-S5 consequence; fourteen GP0 regressions remain green.",
-                                                          "evidence":  "G1_GP1_FIXED_BASE_LOOP_RESULT.md"
-                                                      },
-                                                      {
-                                                          "tier":  "bounded_integrated_pc",
-                                                          "result":  "Workspace Rust, module context, record roles, product route and independent review pass without a capability-boundary finding.",
-                                                          "evidence":  "tools/verify-g1-gp1-fixed-base-loop.ps1"
+                                                          "result":  "The accepted read-only receipt freezes five distinct record families, exact input and receipt authority, guarded flow rules, S1 capability rules and deterministic strategy proof obligations.",
+                                                          "evidence":  "G1_GP2_PROGRESSION_DESIGN.md"
                                                       }
                                                   ],
-                              "expensive_execution_planned":  true,
-                              "unresolved_risk":  "No GP1 proof risk remains open; broader progression and runtime questions belong to separately gated future items.",
-                              "expected_information_gain":  "Determine whether all five GP0 sessions share one meaningful deterministic loop and whether an S1 choice changes S5 without procedural breadth.",
-                              "estimated_cost":  "One typed reducer extension, fixed fixture matrix and focused adversarial verifier before workspace integration.",
-                              "regression_guard":  "No GP2, graphics, runtime, persistence, procedural breadth, grind, network, Greenfield or C3B authority enters GP1.",
-                              "stop_condition":  "Stop if the shared loop erases typed outcomes, cannot resume exactly, overwrites history, or requires a runtime/progression system.",
-                              "final_integration_gate":  "One isolated measured complete Forge verification run."
+                              "expensive_execution_planned":  false,
+                              "unresolved_risk":  "Implementation could drift from the frozen record families or fail to expose a dominance or conversion exploit in the deterministic matrix.",
+                              "expected_information_gain":  "Determine whether the frozen model rejects fabricated progress, positive cycles and dominant strategies under exact replay.",
+                              "estimated_cost":  "One red-test matrix and the smallest pure reducer extension after readiness reporting.",
+                              "regression_guard":  "No source implementation or GP3/runtime/Greenfield/C3B authority enters design intake.",
+                              "stop_condition":  "Stop if the design uses a universal currency, cannot bind exact GP1 outcome evidence, or admits a non-negative conversion cycle.",
+                              "final_integration_gate":  "Focused GP2, retained GP1 and GP0, workspace, independent and one registered complete Forge gate."
                           },
     "exit_criteria":  [
                           {
-                              "id":  "six-phase-shared-loop",
-                              "label":  "All five GP0 sessions traverse one deterministic prepare, depart, encounter, consequence, return and remembered-response loop.",
-                              "status":  "verified",
+                              "id":  "five-distinct-lanes",
+                              "label":  "Knowledge, access, relationship, construction and power remain typed and non-aliasing.",
+                              "status":  "planned",
                               "evidence_ids":  [
-                                                   "test:gp1-base-loop:all-five:7-of-7"
+
                                                ]
                           },
                           {
-                              "id":  "recovery-and-stable-stops",
-                              "label":  "Typed failure and recovery preserve plan, C3A identity and history; every stable stop has an exact deterministic resume.",
-                              "status":  "verified",
+                              "id":  "explicit-flow-boundaries",
+                              "label":  "Every source, sink, reset, conversion and exploit boundary is explicit and replay-bound.",
+                              "status":  "planned",
                               "evidence_ids":  [
-                                                   "test:gp1-base-loop:recovery-stops:7-of-7"
+
                                                ]
                           },
                           {
-                              "id":  "later-state-consequence",
-                              "label":  "At least one earlier decision changes a later fixed session while ordered remembered history remains append-only.",
-                              "status":  "verified",
+                              "id":  "strategy-viability",
+                              "label":  "Deterministic strategy simulations reject universal resources, positive cycles and a dominant conversion path.",
+                              "status":  "planned",
                               "evidence_ids":  [
-                                                   "test:gp1-base-loop:s1-to-s5:7-of-7"
+
                                                ]
                           },
                           {
-                              "id":  "gp1-authority-boundary",
-                              "label":  "GP1 adds no GP2, graphics, runtime, procedural breadth, grind, network, Greenfield or C3B dependency.",
-                              "status":  "verified",
+                              "id":  "gp2-authority-boundary",
+                              "label":  "GP2 adds no runtime, universal currency, grind, Greenfield, C3B, GP3 or GP4 authority.",
+                              "status":  "planned",
                               "evidence_ids":  [
-                                                   "review:independent-gp1-accepted",
-                                                   "gate:workspace-cargo-test:pass"
+
                                                ]
                           }
                       ],
     "unresolved_risks":  [
-                             "GP2 progression and runtime remain explicitly outside this closed GP1 package"
+                             "lane types could become cosmetic wrappers over one fungible value",
+                             "conversion or reset edges could duplicate progress or create a positive cycle",
+                             "caller-supplied opportunity costs or tool text could fabricate durable progression",
+                             "one strategy could dominate every named decision over the simulated horizon"
                          ],
     "evidence_requirements":  [
-                                  "reuse the exact five GP0 fixtures and typed C3A binding without reinterpretation",
-                                  "prove one ordered six-phase model across every session",
-                                  "prove deterministic failure recovery and resumable stable stops",
-                                  "prove S1 direct bypass or ration changes S5 while history remains append-only",
-                                  "retain GP2 C3B Greenfield graphics runtime grind network and monetization boundaries"
+                                  "review the read-only GP2 design receipt before freezing semantics",
+                                  "bind all durable changes to a canonical digest of replay-validated terminal GP1 state",
+                                  "enumerate explicit fixture-owned per-session and per-outcome progression rules",
+                                  "prove strategy viability and reject positive conversion cycles and dominant paths",
+                                  "retain GP3 runtime Greenfield C3B grind network and monetization exclusions"
                               ],
     "verification_plan":  [
-                              "write failing six-phase recovery stable-stop and later-state tests from the readiness matrix",
-                              "implement the smallest pure reducer and strict codec extension",
-                              "run focused GP1 plus retained GP0 regression tests",
-                              "obtain independent review then run module workspace and one complete Forge gate"
+                              "adjudicate the read-only design receipt against the readiness questions and hostile matrix",
+                              "revise readiness with exact typed semantics and simulation horizons",
+                              "write failing progression and exploit tests before source implementation",
+                              "run focused GP2, retained GP1 and GP0, workspace, independent and one registered complete gate"
                           ],
-    "resume_after":  "After GP1 is verified and recorded, stop for root review before any GP2 or runtime work.",
+    "resume_after":  "After the design receipt is reviewed, report revised GP2 readiness before any source implementation.",
     "evidence":  [
-                     "The owner approved the consolidated product-driven plan and implementation.",
-                     "The product rebaseline defines Forge Core, proven reusable capabilities, domain creative suites and isolated product shells.",
-                     "The gameplay recovery map provides clean-room candidate evidence and the GP0-GP4 route.",
-                     "C3A is promoted as the exact dependency-sufficient causal-world seam while C3B remains evidence-blocked.",
-                     "The owner selected causal_explorer_maker and authorized the isolated GP0 typed implementation.",
-                     "Playtest corrections removed disguised currencies, made retreat deterministic, constrained combat and froze predecessor-sensitive S1-to-S5 consequences.",
-                     "The focused GP0 verifier passes fourteen integration tests.",
-                     "Complete GP0 run run-79fca2c134994b76a119aebc0987a4fd passed and the owner authorized the GP0-to-GP1 transition.",
-                     "G1_GP1_FIXED_BASE_LOOP_READINESS.md freezes the six-phase loop and adversarial matrix before source implementation.",
-                     "G1_GP1_FIXED_BASE_LOOP_RESULT.md records independent acceptance and the bounded implementation result.",
-                     "Complete registered run run-26b8424e488b4d838eb51cc928675224 passed in 402857 ms against checkpoint 5f63ea4d90fb0d950caf6bf131ef5ed40e21cabbf7fa309936384806c7365faa."
+                     "Owner authorized the game-first GP1-to-GP2 transition and design-first progression scope.",
+                     "GP1 complete registered run run-26b8424e488b4d838eb51cc928675224 passed in 402857 ms.",
+                     "The canonical full-gate launcher fixture passes and direct production verify.ps1 now rejects before expensive work.",
+                     "G1_GP2_PROGRESSION_READINESS.md records the hostile matrix and frozen input-authority boundary.",
+                     "G1_GP2_PROGRESSION_DESIGN.md records the accepted read-only typed design, flow rules, S1 capability allowlist and deterministic strategy proof."
                  ],
     "verification_receipts":  [
-                                  "focused:gp1-base-loop:7-of-7",
-                                  "regression:gp0-contract:14-of-14",
-                                  "workspace:cargo-test:pass",
-                                  "review:independent-gp1:accepted",
-                                  "complete:run-26b8424e488b4d838eb51cc928675224:passed:402857ms"
+                                  "focused:registered-full-gate-launcher:pass",
+                                  "focused:gp2-progression-readiness:pass",
+                                  "review:gp2-read-only-design:accepted"
                               ],
-    "metrics":  {
-                    "token_cost":  {
-                                       "status":  "unknown",
-                                       "value":  null,
-                                       "unit":  "tokens"
-                                   },
-                    "elapsed_time":  {
-                                         "status":  "measured",
-                                         "value":  402857,
-                                         "unit":  "ms",
-                                         "evidence_id":  "run-26b8424e488b4d838eb51cc928675224"
-                                     }
-                },
-    "transition":  "recorded Metrics package -\u003e preserved recovery baseline -\u003e accepted control-plane safety -\u003e product/C3 dependency rebaseline -\u003e GP0 structurally verified without gameplay-system promotion -\u003e GP1 fixed base-loop independently accepted and completely verified -\u003e GP2 remains gated"
+    "transition":  "recorded Metrics package -\u003e preserved recovery baseline -\u003e accepted control-plane safety -\u003e product/C3 dependency rebaseline -\u003e GP0 structurally verified -\u003e GP1 fixed loop completely verified -\u003e canonical full-gate launcher enforced -\u003e GP2 design accepted and readiness frozen before source"
 }

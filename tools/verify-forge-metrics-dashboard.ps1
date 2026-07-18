@@ -6,6 +6,7 @@ foreach ($path in @(
   'governance\WORKER_METRIC_REGISTRY.md',
   'governance\routine-run-registry.json',
   'tools\invoke-measured-run.ps1',
+  'tools\test-registered-full-gate-launcher.ps1',
   'tools\forge-batch-metrics.ps1'
 )) { if (!(Test-Path -LiteralPath (Join-Path $root $path) -PathType Leaf)) { throw "Metrics package file is missing: $path" } }
 $registry=Get-Content -Raw (Join-Path $root 'governance\routine-run-registry.json')|ConvertFrom-Json
@@ -16,4 +17,6 @@ foreach($required in @('metrics_dashboard_snapshot','metrics_dashboard_projectio
 foreach($required in @('data-nav="metrics"','data-page="metrics"','ADVISORY NEXT STEPS','Unknown values stay unknown')){if(!$ui.Contains($required)){throw "Metrics UI is missing: $required"}}
 & (Join-Path $root 'tools\test-forge-metrics.ps1')
 if (!$?) { throw 'Forge metrics PowerShell fixtures failed.' }
+& (Join-Path $root 'tools\test-registered-full-gate-launcher.ps1')
+if (!$?) { throw 'Registered full-gate launcher fixtures failed.' }
 Write-Output 'Forge metrics dashboard static and PowerShell verification passed.'

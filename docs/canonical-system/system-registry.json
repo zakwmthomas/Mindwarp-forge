@@ -578,13 +578,15 @@
                                            "causal-world-packet-seam"
                                        ],
                         "purpose":  "Define the player promise, fixed base loop, progression, encounter grammar and one runtime-independent vertical through GP0-GP4.",
-                        "proof":  "GP0 fixes one strict causal_explorer_maker concept and five corrected authored sessions. GP1 adds one shared deterministic six-phase loop, repairable failure, typed stable stops, exact run/event/session/outcome append receipts, optional exact C3A context and predecessor-sensitive S1-to-S5 consequence. Seven GP1 tests, fourteen GP0 regressions, workspace integration, independent review and complete run run-26b8424e488b4d838eb51cc928675224 pass. This remains a capability-free prototype; GP2-GP4 and runtime remain dependency-gated.",
+                        "proof":  "GP0 fixes one strict causal_explorer_maker concept and five corrected authored sessions. GP1 adds one shared deterministic six-phase loop, repairable failure, typed stable stops, exact run/event/session/outcome append receipts, optional exact C3A context and predecessor-sensitive S1-to-S5 consequence. Seven GP1 tests, fourteen GP0 regressions, workspace integration, independent review and complete run run-26b8424e488b4d838eb51cc928675224 pass. GP2 now has an accepted design and verified pre-source readiness for five distinct typed progression lanes; no GP2 source exists. This remains a capability-free prototype; GP3-GP4 and runtime remain dependency-gated.",
                         "references":  [
                                            "docs/canonical-system/MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",
                                            "docs/canonical-system/G1_PRODUCT_PORTFOLIO_AND_C3_DEPENDENCY_REBASELINE.md",
                                            "contracts/mindwarp-gameplay-foundation-contract.md",
                                            "docs/canonical-system/G1_GP0_GAMEPLAY_FOUNDATION_RESULT.md",
                                            "docs/canonical-system/G1_GP1_FIXED_BASE_LOOP_RESULT.md",
+                                           "docs/canonical-system/G1_GP2_PROGRESSION_READINESS.md",
+                                           "docs/canonical-system/G1_GP2_PROGRESSION_DESIGN.md",
                                            "crates/mindwarp-gameplay-foundation/src/base_loop.rs",
                                            "crates/mindwarp-gameplay-foundation/src/lib.rs"
                                        ]

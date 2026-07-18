@@ -2,7 +2,7 @@
 
 > GENERATED from `docs/canonical-system/MASTER_PROGRAM.json`. Do not edit this view directly.
 
-Canonical lifecycle: schema v2; executing item: `GP1`.
+Canonical lifecycle: schema v2; executing item: `GP2`.
 Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
 
 ## F4
@@ -69,10 +69,10 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
   Next: Run the whole deterministic universe-to-representation chain, adversarial seed portfolio, recovery, quality-diversity, visual-fitness and simulated fidelity evidence before preparing one G1 promotion package.
 - **GP0** - promoted; gate: design; depends on: C3A.
   Next: Retain the structurally verified causal_explorer_maker promise, five fixed sessions and deterministic consequence/history proof as the exact GP1 input; do not treat GP0 closure as gameplay-system or runtime promotion.
-- **GP1** - executing; gate: design; depends on: GP0.
-  Next: Hold the independently accepted and completely verified six-phase fixed-loop result at the owner-review checkpoint; do not begin GP2 without a separate canonical transition.
-- **GP2** - proposed; gate: design; depends on: GP1.
-  Next: Separate knowledge, access, relationship, construction and power progression; model sources, sinks, exploits and resets.
+- **GP1** - promoted; gate: design; depends on: GP0.
+  Next: Retain the independently accepted and completely verified six-phase fixed-loop result as the exact GP2 input; do not reinterpret its typed outcomes, history or authority boundary.
+- **GP2** - executing; gate: design; depends on: GP1.
+  Next: Report the accepted GP2 design and revised readiness, then freeze failing tests for five distinct typed lanes, exact GP1 digest binding, explicit flow/exploit rules and deterministic incomparable strategies before source implementation.
 - **GP3** - proposed; gate: design; depends on: GP2.
   Next: Define explainable encounter grammar for environments, creatures, societies, anomalies and construction, including noncombat solutions.
 - **GP4** - proposed; gate: design; depends on: GP3, C4.

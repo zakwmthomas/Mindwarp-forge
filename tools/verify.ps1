@@ -1,4 +1,12 @@
+[CmdletBinding()]
+param(
+    [string]$RegisteredRunId,
+    [string]$RegisteredInvocationId
+)
 $ErrorActionPreference = 'Stop'
+if ($RegisteredRunId -ne 'forge-full-gate-v1' -or $RegisteredInvocationId -notmatch '^run-[0-9a-f]{32}$') {
+    throw 'Full Forge verification must use the registered launcher: tools/invoke-measured-run.ps1 -RunId forge-full-gate-v1. The invocation ID is public receipt identity, not a secret or authority token.'
+}
 . (Join-Path $PSScriptRoot 'verification-runner.ps1')
 
 $root = Split-Path -Parent $PSScriptRoot
@@ -69,6 +77,8 @@ Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-verify-runner-f
 if (!$?) { throw 'Verification runner fail-fast fixtures failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-measured-run-containment.ps1'
 if (!$?) { throw 'Measured-run containment fixtures failed.' }
+Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-registered-full-gate-launcher.ps1'
+if (!$?) { throw 'Registered full-gate launcher fixtures failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-c3-route-authorization.ps1'
 if (!$?) { throw 'Shared C3 route authorization fixtures failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-worker-selector.ps1'
@@ -198,6 +208,8 @@ Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-gp0-gamepl
 if (!$?) { throw 'G1 GP0 gameplay-foundation verification failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-gp1-fixed-base-loop.ps1'
 if (!$?) { throw 'G1 GP1 fixed-base-loop verification failed.' }
+Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-gp2-progression-readiness.ps1'
+if (!$?) { throw 'G1 GP2 progression readiness verification failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-p7b1b-loader-surface.ps1'
 if (!$?) { throw 'P7b-1b loader-surface proof verification failed.' }
 

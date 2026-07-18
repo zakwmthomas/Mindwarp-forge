@@ -33,17 +33,24 @@ $controlPlaneConsolidationRoute =
   $Checkpoint.master_program_item -eq 'B4' -and
   $Checkpoint.substage_id -in @('forge-consolidation-control-plane-implementation','forge-consolidation-control-plane-verification','forge-consolidation-control-plane-recorded') -and
   $Checkpoint.authority_lane -like '*Preserve accumulated Forge evidence*control-plane safety*No game feature*runtime*promotion*C3 closure*'
-$gameplayFoundationRoute =
-  (($Checkpoint.batch_id -eq 'G1-GP0-PLAYER-FANTASY-BOUNDARY-V1' -and
-    $Checkpoint.master_program_item -eq 'GP0' -and
-   (($Checkpoint.substage_id -eq 'gp0-product-player-fantasy-boundary' -and
-    $Checkpoint.authority_lane -like '*Clean-room gameplay design*No historical source code*runtime*engine*network*monetization*') -or
-   ($Checkpoint.substage_id -eq 'gp0-gameplay-foundation-verification' -and
-    $Checkpoint.authority_lane -like '*Owner-authorized clean-room GP0 typed contracts*No GP1*runtime*engine*database*network*monetization*Greenfield dependency*C3B substitution*'))) -or
-   ($Checkpoint.batch_id -eq 'G1-GP1-FIXED-BASE-LOOP-V1' -and
-    $Checkpoint.master_program_item -eq 'GP1' -and
-    $Checkpoint.substage_id -in @('gp1-fixed-base-loop-readiness','gp1-fixed-base-loop-implementation','gp1-fixed-base-loop-verification','gp1-fixed-base-loop-verified-result') -and
-    $Checkpoint.authority_lane -like '*Owner-authorized GP1 engine-neutral deterministic base loop*No GP2*graphics*runtime*procedural breadth*grind*network*Greenfield*C3B*'))
+$gp0GameplayRoute =
+  $Checkpoint.batch_id -eq 'G1-GP0-PLAYER-FANTASY-BOUNDARY-V1' -and
+  $Checkpoint.master_program_item -eq 'GP0' -and
+  (($Checkpoint.substage_id -eq 'gp0-product-player-fantasy-boundary' -and
+   $Checkpoint.authority_lane -like '*Clean-room gameplay design*No historical source code*runtime*engine*network*monetization*') -or
+  ($Checkpoint.substage_id -eq 'gp0-gameplay-foundation-verification' -and
+   $Checkpoint.authority_lane -like '*Owner-authorized clean-room GP0 typed contracts*No GP1*runtime*engine*database*network*monetization*Greenfield dependency*C3B substitution*'))
+$gp1GameplayRoute =
+  $Checkpoint.batch_id -eq 'G1-GP1-FIXED-BASE-LOOP-V1' -and
+  $Checkpoint.master_program_item -eq 'GP1' -and
+  $Checkpoint.substage_id -in @('gp1-fixed-base-loop-readiness','gp1-fixed-base-loop-implementation','gp1-fixed-base-loop-verification','gp1-fixed-base-loop-verified-result') -and
+  $Checkpoint.authority_lane -like '*Owner-authorized GP1 engine-neutral deterministic base loop*No GP2*graphics*runtime*procedural breadth*grind*network*Greenfield*C3B*'
+$gp2GameplayRoute =
+  $Checkpoint.batch_id -eq 'G1-GP2-PROGRESSION-DESIGN-V1' -and
+  $Checkpoint.master_program_item -eq 'GP2' -and
+  $Checkpoint.substage_id -in @('gp2-progression-design-intake','gp2-progression-readiness') -and
+  $Checkpoint.authority_lane -like '*Owner-authorized GP2 design intake*No source implementation*universal currency*positive cycle*dominant conversion*runtime*Greenfield*C3B*GP3*GP4*'
+$gameplayFoundationRoute = $gp0GameplayRoute -or $gp1GameplayRoute -or $gp2GameplayRoute
 $c3DesignRoute =
   $Checkpoint.batch_id -eq 'G1-C3-WHOLE-CELL-RECEIVER-COUPLING-MATHEMATICAL-DESIGN-V1' -and
   $Checkpoint.master_program_item -eq 'C3' -and
