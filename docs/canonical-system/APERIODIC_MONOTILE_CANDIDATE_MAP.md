@@ -149,13 +149,16 @@ lose this record.
   `surface-material-state`, `regional-environment-state`,
   `physical-region-partition`, `physical-path-substrate`,
   `visible-radiance-bulk-transfer`, `derived-world-rules`,
+  `causal-world-packet-seam`, `mindwarp-gameplay-foundation`,
   `lazy-universe-hierarchy`, `world-history-ledger`, `significance-system`,
   `streaming-scheduler`, `semantic-emergence`, `construction-language`,
   `organism-ecology`, `aesthetic-grammar`, `representation-selector`,
   `asset-factory`, `procedural-animation`.
 - Runtime registry: `runtime-adapter`.
 - Atlas surfaces: `forge-kernel`, `conversation-capture`, `task-bootstrap`,
-  `forge-dashboard`, `canonical-production-system`, `mindwarp-game`.
+  `forge-dashboard`, `canonical-production-system`, `reusable-capabilities`,
+  `domain-creative-suites`, `mindwarp-game`, `mindwarp-companion`,
+  `greenfield-yard-atlas`.
 
 ## Cross-layer compounding opportunities
 

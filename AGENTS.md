@@ -3,7 +3,7 @@
 This repository is the workspace for every Mind Warp Forge task. Before any
 planning, editing, or broad research:
 
-1. Run `powershell -NoProfile -ExecutionPolicy Bypass -File tools\verify-bootstrap.ps1`.
+1. Run `powershell -NoProfile -ExecutionPolicy Bypass -File tools\verify-bootstrap.ps1 -Mode Check`. Use `-Mode Refresh` only when generated projections must be deliberately regenerated.
 2. Run `powershell -NoProfile -ExecutionPolicy Bypass -File tools\verify-atlas.ps1`.
 3. Run `powershell -NoProfile -ExecutionPolicy Bypass -File tools\verify-operating-system.ps1`.
 4. Read `context/bootstrap/BRIEFING.md`, `docs/project-atlas/ATLAS.md`,

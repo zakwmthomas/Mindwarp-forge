@@ -55,3 +55,6 @@ the runtime adapter's dependencies are reference-proven.
   tiers; presentation may simplify but may not fork truth.
 - Natural and aesthetic mechanisms are scoped candidates governed by P16, not
   universal solvers.
+# G1 product dependency correction (2026-07-18)
+
+`C2 -> C3A -> C4 -> GP4`, while `C3A -> C3B (evidence blocked)` is a separate physical/presentation lane. GP0 depends on C3A; GP1 -> GP2 -> GP3 -> GP4 then supply the product vertical. C4 imports only the validated `WorldGenerationInput`, replayed `CausalWorldPacket` v1 and `validate_world_packet` seam; it does not depend on the C3B physical/optical chain.

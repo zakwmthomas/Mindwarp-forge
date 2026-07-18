@@ -4,7 +4,7 @@
 
 - **Maturity:** reference_proven
 - **Root:** `crates/forge-kernel`
-- **Source fingerprint:** `d6c5f82cbfc7e3db4726b562a20e2838d9ab25619d686447808a2af50d941f42`
+- **Source fingerprint:** `fad0f80fd6e6a813eab9611e3b150a161674daa4c25a63272cf8807218b48eac`
 - **Live project state:** read `context/active/CURRENT_STATE.md`; active status is never duplicated here.
 
 ## Purpose

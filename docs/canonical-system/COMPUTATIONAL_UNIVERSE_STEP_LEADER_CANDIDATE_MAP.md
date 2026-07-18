@@ -69,6 +69,8 @@ candidate experiment, never automatic adoption.
 | physical-path-substrate | Interest-bounded path queries and lazy witness generation | Existing fit; exact geometry cannot be replaced by representative rays |
 | visible-radiance-bulk-transfer | Batch only causally equivalent medium spans and evaluate requested channels | Low-medium; no observer-created propagation or hidden approximation |
 | derived-world-rules | Compile requested causal packets from deterministic baselines | High lazy-materialization fit; derived truth remains observer-independent |
+| causal-world-packet-seam | Validate and replay only the exact dependency-sufficient packet boundary | Existing narrow fit; never infer C3B fidelity or generalize from one consumer |
+| mindwarp-gameplay-foundation | Order bounded fixed-session design probes against one player promise | High product fit; no heuristic selects creative intent, runtime or promotion |
 | lazy-universe-hierarchy | Primary game candidate for addressable, on-demand materialization | Highest game fit; identity, overlap and eviction remain deterministic |
 | world-history-ledger | Baseline reconstruction plus sparse explicit world/player deltas | Highest existing fit; natural/player is not the persistence criterion—reconstructibility and semantic consequence are |
 | significance-system | Provide shared evidence for independent consumer fidelity | Highest existing fit; significance never becomes private per-consumer truth |

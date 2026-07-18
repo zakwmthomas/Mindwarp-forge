@@ -6,7 +6,7 @@ $program = Get-Content (Join-Path $root 'docs\canonical-system\MASTER_PROGRAM.js
 $active = @($program.items | Where-Object status -eq 'active')
 if (!$brief.Contains('Source fixity') -or !$brief.Contains('P10')) { throw 'Feedback brief lacks current governance data.' }
 if ($active.Count -eq 0 -or @($active | Where-Object { [string]::IsNullOrWhiteSpace($_.next_action) }).Count -gt 0) { throw 'Active master-program item lacks executable next action.' }
-if (@($program.items | Where-Object { $_.status -in @('gated','owner_gated','design_gated') -and $_.next_action -match 'Implement|Build' }).Count -gt 0) { throw 'Gated work is presented as implementation-ready.' }
+if (@($program.items | Where-Object { $_.status -in @('gated','owner_gated','design_gated') -and $_.next_action -match '\b(?:Implement|Build)\b' }).Count -gt 0) { throw 'Gated work is presented as implementation-ready.' }
 foreach ($item in $program.items) {
   foreach ($source in @($item.sources)) {
     $normalized = ([string]$source).Replace('/', [IO.Path]::DirectorySeparatorChar)

@@ -1,6 +1,6 @@
 # G1 C4 addressable-world-binding result
 
-Status: **bounded C4 proof component passed; C4 is incomplete and dependency-gated by reopened C3.**
+Status: **bounded C4 proof component passed; C4 is incomplete and depends on the promoted C3A seam, not C3B.**
 
 The 2026-07-15 adversarial repair now requires the exact
 `WorldGenerationInput` and replays the packet before binding. A schema number
@@ -15,8 +15,13 @@ history`'s `HierarchyDescriptor` already accepted an opaque
 `world_conditions_contract`/`world_conditions_fingerprint` pair as a
 dependency seam (`HIERARCHY_HISTORY_DESIGN_GATE.md`: "P4 does not implement
 or claim proof of derived-world rules"). This result proves a real
-`derived_world_rules::CausalWorldPacket` (bounded G1-C3 prototype evidence) can fill
+`derived_world_rules::CausalWorldPacket` (the promoted C3A dependency seam) can fill
 that seam correctly.
+
+The accepted dependency is exact: `WorldGenerationInput`, `CausalWorldPacket`
+v1 and `validate_world_packet`, preserving nested identity and provenance. This
+crate imports no physical-path, optical-transfer, visibility or presentation
+owner. C3B therefore remains a separate evidence-blocked fidelity lane.
 
 ## New component
 

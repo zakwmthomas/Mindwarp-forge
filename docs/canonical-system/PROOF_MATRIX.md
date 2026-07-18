@@ -43,3 +43,11 @@ Every canonical system advances only with a complete proof pack.
 
 Estimated or simulated thresholds must be labelled as such. Engine-specific
 performance claims remain provisional until the final runtime-adapter phase.
+# Product rebaseline proof rows (2026-07-18)
+
+| Item | Required proof | Current disposition |
+|---|---|---|
+| C3A | Exact input/packet validation, replay, nested identity and provenance, narrow C4 import surface | Promoted |
+| C3B | Authoritative scale, coefficient, applicability, visibility and presentation evidence | Blocked; not substituted |
+| GP0 | One player promise, explicit non-goals, five coherent session stories | Executing |
+| GP1-GP4 | Fixed loop, progression/economy, encounter grammar, runtime-independent vertical contract | Dependency-gated |

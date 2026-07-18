@@ -17,7 +17,17 @@ if ($definition.Count -ne 1) { throw "Unknown or duplicate registered routine ru
 $definition = $definition[0]
 if ($definition.timeout_seconds -lt 1 -or $definition.timeout_seconds -gt 1800) { throw 'Routine-run timeout is outside the bounded registry range.' }
 $working = [IO.Path]::GetFullPath((Join-Path $ProjectRoot ([string]$definition.working_directory)))
-if (!$working.StartsWith($ProjectRoot,[StringComparison]::OrdinalIgnoreCase)) { throw 'Routine-run working directory escapes the Forge repository.' }
+$projectRootPrefix = $ProjectRoot.TrimEnd([IO.Path]::DirectorySeparatorChar, [IO.Path]::AltDirectorySeparatorChar) + [IO.Path]::DirectorySeparatorChar
+if ($working -ne $ProjectRoot -and !$working.StartsWith($projectRootPrefix,[StringComparison]::OrdinalIgnoreCase)) { throw 'Routine-run working directory escapes the Forge repository.' }
+if (!(Test-Path -LiteralPath $working -PathType Container)) { throw 'Routine-run working directory is unavailable.' }
+$cursor = Get-Item -LiteralPath $working -Force
+while ($cursor.FullName -ne $ProjectRoot) {
+  if (($cursor.Attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0) { throw 'Routine-run working directory crosses a reparse point.' }
+  $cursor = $cursor.Parent
+  if ($null -eq $cursor -or (!$cursor.FullName.StartsWith($projectRootPrefix,[StringComparison]::OrdinalIgnoreCase) -and $cursor.FullName -ne $ProjectRoot)) {
+    throw 'Routine-run working directory escapes the Forge repository.'
+  }
+}
 $runner = switch ([string]$definition.runner) {
   'powershell' { 'powershell.exe' }
   'cargo' { Join-Path $env:USERPROFILE '.cargo\bin\cargo.exe' }

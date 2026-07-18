@@ -53,3 +53,8 @@
 - No Unity, Godot, or custom runtime project is created or modified.
 - Runtime selection is gated on the engine-neutral systems and the scored
   runtime-adapter decision package.
+# Product and fidelity gaps retained (2026-07-18)
+
+- C3B lacks authoritative project-specific physical scale, calibrated material coefficients, applicability, received-energy, visibility and presentation-fidelity evidence. Yard Atlas and disposable fixtures may not substitute for it.
+- GP0 still must adjudicate the primary player fantasy, promise, non-goals and five session stories. Historical gameplay evidence remains candidate-only and transfers no code.
+- Companion synchronization and garden-domain schemas remain later product contracts; repositories, databases, UI, authentication, billing and release authority remain isolated.

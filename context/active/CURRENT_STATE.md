@@ -5,39 +5,35 @@
 
 ## Active checkpoint
 
-- Package: **G1-FORGE-METRICS-DASHBOARD-V1**
-- Master item / milestone: **C3 / G1**
-- State / substage: **recorded / forge-metrics-dashboard-recorded**
-- Related systems: forge-kernel, conversation-capture, task-bootstrap, forge-dashboard
-- Objective: Implement the owner-approved Forge-workflow metrics pipeline, read-only desktop Metrics tab and evidence-backed advisory improvement recommendations without granting automated authority.
-- Context health: Fresh macro context binds the package to B4 phases four and five, P8/P10/P15, the measurement contract and the existing v1 event ledger; module context binds Kernel persistence, local capture, Tauri commands and the code-native desktop UI.
+- Package: **G1-GP0-PLAYER-FANTASY-BOUNDARY-V1**
+- Master item / milestone: **GP0 / G1**
+- State / substage: **executing / gp0-product-player-fantasy-boundary**
+- Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
+- Objective: Adjudicate the Mind Warp player promise, explicit non-goals and five representative session stories before any runtime or broad procedural implementation.
+- Context health: Fresh product topology binds GP0 to the promoted C3A seam, keeps C3B independently blocked, preserves Yard Atlas authority and routes one fixed vertical before reusable extraction.
 
 ## Durable evidence
 
-- `The owner explicitly approved and requested implementation of the Forge Metrics and Improvement Dashboard plan.`
-- `The owner selected worker-batch and routine-run layers, an owner summary with technical drilldown, Forge workflow first and advisory trials only.`
-- `The Kernel now persists replay-compatible v2 metric events and projects bounded time-window dashboard snapshots while retaining v1 meaning.`
-- `Local capture records exact-session token deltas without prompts; registered routine runs retain bounded pass, fail and timeout receipts.`
-- `The desktop Metrics tab was built and visually inspected; an initial UNKNOWN-card wrap was corrected and the final four-card row has no horizontal overflow.`
-- `The final complete Forge gate passed through the measured registered-run wrapper.`
+- `The owner approved the consolidated product-driven plan and implementation.`
+- `The product rebaseline defines Forge Core, proven reusable capabilities, domain creative suites and isolated product shells.`
+- `The gameplay recovery map provides clean-room candidate evidence and the GP0-GP4 route.`
+- `C3A is promoted as the exact dependency-sufficient causal-world seam while C3B remains evidence-blocked.`
 
 ## Authority boundary
 
-Owner-approved local Forge measurement and read-only dashboard implementation only. Metrics may observe, project and propose bounded experiments; they may not approve, execute, tune, reprioritize, promote, publish, spend, change security, cross an owner gate or instrument Mind Warp runtime behavior.
+Clean-room gameplay design and fixed-session adjudication only. No historical source code, runtime, engine, network, monetization, publishing, C3B substitution or implementation authority.
 
 ## Exact next action
 
-Stop after the recorded read-only Metrics dashboard result. Any automatic tuning, external telemetry, game/runtime instrumentation, pricing model or execution of an advisory experiment requires separate owner authorization.
+Produce one concise GP0 player-promise package with primary and supporting fantasies, explicit non-goals, default session assumptions and five fixed session stories that all express the same game; stop before GP1 implementation.
 
 ## Unresolved risks
 
-- cumulative token counters could be double-counted across cached input or linked child sessions
-- missing or reset counters must remain unknown instead of becoming zero
-- routine runs could be compared across incompatible versions platforms or verification scopes
-- activity counts could become a misleading productivity score
-- dashboard reads or inbox ingestion could hold SQLite locks on Windows
-- partial work could inflate progression unless only verified criteria count
+- candidate feature volume could obscure the primary player fantasy
+- historical Quantum Tunnel assumptions could leak into Main Mind Warp
+- five sessions could appear varied while requiring incompatible game structures
+- procedural breadth could be used to avoid proving fixed-content enjoyment
 
 ## Resume after this package
 
-Stop after the verified read-only Metrics tab and advisory recommendation result. Automatic tuning, currency pricing, external telemetry, game/runtime performance, policy promotion and any recommended experiment remain separately authorized work.
+After GP0 is verified and recorded, begin GP1 fixed-content base-loop paper modeling. Do not begin runtime implementation.

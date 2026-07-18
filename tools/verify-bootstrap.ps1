@@ -1,4 +1,7 @@
-param([string]$Root)
+param(
+    [string]$Root,
+    [ValidateSet('Check', 'Refresh')][string]$Mode = 'Check'
+)
 
 $ErrorActionPreference = 'Stop'
 
@@ -40,10 +43,12 @@ foreach ($session in @($manifest.sessions)) {
 
 & (Join-Path $PSScriptRoot 'verify-worker-batch-state.ps1')
 if (!$?) { throw 'Canonical active checkpoint validation failed.' }
-& (Join-Path $PSScriptRoot 'refresh-active-context.ps1')
-if (!$?) { throw 'Active-context projection refresh failed.' }
-& (Join-Path $PSScriptRoot 'refresh-worker-feedback.ps1')
-if (!$?) { throw 'Worker feedback refresh failed.' }
+if ($Mode -eq 'Refresh') {
+    & (Join-Path $PSScriptRoot 'refresh-active-context.ps1')
+    if (!$?) { throw 'Active-context projection refresh failed.' }
+    & (Join-Path $PSScriptRoot 'refresh-worker-feedback.ps1')
+    if (!$?) { throw 'Worker feedback refresh failed.' }
+}
 
 $work = Get-Content (Join-Path $root 'context\active\WORKER_BATCH_STATE.json') -Raw | ConvertFrom-Json
 $briefing = Get-Content (Join-Path $root 'context\bootstrap\BRIEFING.md') -Raw
@@ -52,5 +57,7 @@ if (!$briefing.Contains("Work package: **$($work.batch_id)**") -or !$briefing.Co
 }
 & (Join-Path $PSScriptRoot 'refresh-active-context.ps1') -Check
 if (!$?) { throw 'Generated active-context projection verification failed.' }
+& (Join-Path $PSScriptRoot 'verify-worker-feedback-freshness.ps1') -Root $root
+if (!$?) { throw 'Generated worker-feedback projection verification failed.' }
 
-Write-Output "Bootstrap verified: $($manifest.sessions.Count) session(s), $($manifest.events) event(s), capture updated $age second(s) ago."
+Write-Output "Bootstrap $($Mode.ToLowerInvariant()) verified: $($manifest.sessions.Count) session(s), $($manifest.events) event(s), capture updated $age second(s) ago."

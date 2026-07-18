@@ -279,3 +279,6 @@ artifacts changed; tests and disposable checks run; failures and limitations;
 authority boundaries; rollback branch/tag/commit; registry transition; and the
 single next decision requested. Missing evidence leaves the package
 `executing` or `blocked`; prose confidence cannot mark it verified.
+# Product-driven execution addendum (2026-07-18)
+
+Forge delivery follows `Forge Core -> proven reusable capabilities -> domain creative suites -> isolated product shells`. Work proceeds vertical-then-extract: GP0-GP4 define and prove one Mind Warp experience before additional platform generalization. C3A is the exact causal-world dependency seam. C3B stays evidence-blocked and independent from the first fixed-content vertical. Mind Warp Companion follows the playable game; Yard Atlas remains an independently releasable evidence-linked product.

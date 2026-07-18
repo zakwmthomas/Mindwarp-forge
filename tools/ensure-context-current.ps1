@@ -1,5 +1,7 @@
 [CmdletBinding()]
 param(
+    [ValidateSet('Check', 'Refresh')]
+    [string]$Mode = 'Check',
     [ValidateRange(1, 30)]
     [int]$WaitSeconds = 4,
     [ValidateRange(1, 60)]
@@ -42,7 +44,7 @@ if (!$?) {
 }
 
 $forgeProcess = Get-Process -Name 'forge-desktop' -ErrorAction SilentlyContinue | Select-Object -First 1
-if (!$forgeProcess) {
+if (!$forgeProcess -and $Mode -eq 'Refresh') {
     $app = @($workspaceReleaseApp, $workspaceDebugApp, $legacyReleaseApp, $legacyDebugApp) |
         Where-Object { Test-Path -LiteralPath $_ } |
         ForEach-Object { Get-Item -LiteralPath $_ } |
@@ -57,9 +59,11 @@ if (!$forgeProcess) {
     Start-Process -FilePath $app | Out-Null
 }
 
-# The Forge desktop watcher scans local Codex sessions every two seconds. Waiting
-# here is bounded and lets a just-created task become part of generated evidence.
-Start-Sleep -Seconds $WaitSeconds
+# The Forge desktop watcher scans local Codex sessions every two seconds. Only
+# explicit refresh mode may launch Forge or wait for new capture evidence.
+if ($Mode -eq 'Refresh') {
+    Start-Sleep -Seconds $WaitSeconds
+}
 
 $manifest = Get-CaptureManifest
 if (!$manifest) {
@@ -74,9 +78,9 @@ if ($age -lt 0 -or $age -gt $MaxCaptureAgeSeconds) {
     throw "Forge capture did not become current ($age seconds old). Do not continue with mutable work."
 }
 
-& (Join-Path $PSScriptRoot 'verify-bootstrap.ps1')
+& (Join-Path $PSScriptRoot 'verify-bootstrap.ps1') -Mode $Mode
 if (!$?) {
     throw 'Forge bootstrap verification failed after context refresh.'
 }
 
-Write-Output "Forge context gate passed: capture is running and $age second(s) old."
+Write-Output "Forge context $($Mode.ToLowerInvariant()) gate passed: capture is running and $age second(s) old."

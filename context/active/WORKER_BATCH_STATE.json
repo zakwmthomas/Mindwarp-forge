@@ -1,68 +1,201 @@
 {
-  "schema_version": 3,
-  "canonical_role": "sole-active-work-checkpoint",
-  "batch_id": "G1-FORGE-METRICS-DASHBOARD-V1",
-  "master_program_item": "C3",
-  "state": "recorded",
-  "previous_state": "verifying",
-  "objective": "Implement the owner-approved Forge-workflow metrics pipeline, read-only desktop Metrics tab and evidence-backed advisory improvement recommendations without granting automated authority.",
-  "next_action": "Stop after the recorded read-only Metrics dashboard result. Any automatic tuning, external telemetry, game/runtime instrumentation, pricing model or execution of an advisory experiment requires separate owner authorization.",
-  "substage_id": "forge-metrics-dashboard-recorded",
-  "handoff_section_receipts": {
-    "objective": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"bb3fa64a773852ebcba9a1ee4bba25182445db99e8b217634e9c3a59d466ad7f","review_disposition":"revised","review_note":"Reviewed the completed owner-approved metrics objective against the recorded evidence."},
-    "next_action": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"93c080a1d3615e3a4e3ca945620aa4f1d90405e556290c7e01622e71f11809c0","review_disposition":"revised","review_note":"Reviewed the terminal stop boundary and separate owner gates."},
-    "stage_context": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"040eb89d82b654218c0a41ae90d5d8c7f42344f27c3de67bb2221f4b979ff134","review_disposition":"revised","review_note":"Reviewed final macro and module-local context for the recorded package."},
-    "visual_quality_gate": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"1511ba38e79c16e66fff7a216e783290af4d976aaa77b49099e31d13a13a333a","review_disposition":"carried_forward","review_note":"Confirmed the code-native dashboard requires no admitted visual asset."},
-    "simulation_ladder": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"247a7b9b9dde62d7dd40edd174fe5f1f6832c9dfa5330dca2822bd97b51d0d0f","review_disposition":"revised","review_note":"Reviewed the completed cheapest-proof-first ladder and final integration result."},
-    "unresolved_risks": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"44eab2402ff57b29dafec8e9c8628d9d703d97c930baa0675fcaa087e24d68fe","review_disposition":"carried_forward","review_note":"Retained attribution, privacy, comparability, Goodhart and locking boundaries."},
-    "evidence_requirements": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"abaa068e1fb3a87776edd6504be8edfe7b5505151d67af870a5457ca1e8e3c2b","review_disposition":"revised","review_note":"Confirmed every bounded evidence requirement has a verification receipt."},
-    "verification_plan": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"7771d94b928048a48247ed81b8c99e94007016ed7dd08f65fd5ba058504c2dc4","review_disposition":"revised","review_note":"Confirmed focused, compatibility, UI, module and complete-gate verification passed."},
-    "resume_after": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"234e6ab6c90bf235c6a3f72e67e26fadde77f8fd0466be8c2533db4b1474c31b","review_disposition":"carried_forward","review_note":"Retained the advisory-only post-package authority boundary."},
-    "evidence": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"8162b3455bc2ff236e4ac75065c01a667c7a5842cb7fbfc76137d2f2f2a41037","review_disposition":"revised","review_note":"Reviewed implementation, visual inspection and measured full-gate evidence."},
-    "verification_receipts": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"2ee7f598b8800c98e990a2e06fc5c4e4be91193c03b028fb46accf99f806fd7f","review_disposition":"revised","review_note":"Reviewed the complete retained verification receipt set."},
-    "transition": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"611db310a22f18f8b71d4867ac09d9b4faad71d93dc2b1ebdfe74a3ea5157e5d","review_disposition":"revised","review_note":"Reviewed the evidence-bound transition to the recorded metrics result."}
-  },
-  "consecutive_no_progress_limit": 1,
-  "atlas_route": {"milestone":"G1","systems":["forge-kernel","conversation-capture","task-bootstrap","forge-dashboard"]},
-  "risk_level": "bounded-local-metrics-persistence-capture-and-read-only-dashboard",
-  "research_gate": "Existing B4 contracts and executable persistence fixtures establish the append-only telemetry basis; the owner explicitly selected Forge-workflow-first measurement, both worker and routine-run layers, summary plus drilldown, and advisory trials only.",
-  "authority_lane": "Owner-approved local Forge measurement and read-only dashboard implementation only. Metrics may observe, project and propose bounded experiments; they may not approve, execute, tune, reprioritize, promote, publish, spend, change security, cross an owner gate or instrument Mind Warp runtime behavior.",
-  "context_health": "Fresh macro context binds the package to B4 phases four and five, P8/P10/P15, the measurement contract and the existing v1 event ledger; module context binds Kernel persistence, local capture, Tauri commands and the code-native desktop UI.",
-  "stage_context": {
-    "stage_id":"forge-metrics-dashboard-recorded",
-    "macro_sources":["docs/canonical-system/WORKER_TELEMETRY_MODULE.md","governance/MEASUREMENT_AND_RECURSIVE_LEARNING_CONTRACT.md","governance/WORKER_METRIC_REGISTRY.md","governance/WORKER_FORGE_INTEGRATION_PLAN.md"],
-    "macro_findings":["B4 phases one through three already persist bounded append-only BatchEvent telemetry and deterministic advisory projections.","Dashboard trends and advisory planning recommendations are the named remaining read-only consumers.","Effectiveness is a local vector; unrelated modules may not be ranked by one global score and unknown cost remains unknown."],
-    "micro_sources":["crates/forge-kernel/MODULE.md","apps/forge-desktop/src-tauri/MODULE.md","apps/forge-desktop/ui/MODULE.md","contracts/batch-event-contract.md"],
-    "micro_findings":["The Kernel owns canonical local persistence and bounded projections.","The Tauri shell owns local capture and read-only command projection but not frontend or authority.","The UI owns presentation only and has no network or direct filesystem authority.","Current Codex rollout token-count records expose cumulative input cached output reasoning and total counters without requiring prompt capture."]
-  },
-  "visual_quality_gate": {"asset_use_intent":false,"status":"not_applicable","rationale":"The package adds a code-native accessible dashboard and no bitmap, human reference or visual asset.","dependent_implementation_blocked":false,"receipts":[]},
-  "simulation_ladder": {
-    "cheapest_sufficient_tier":"bounded_integrated_pc",
-    "tiers_completed":[{"tier":"static_reasoning","result":"The existing B4 contracts, registry and persistence code identify the minimal backward-compatible extension and advisory boundary.","evidence":"WORKER_TELEMETRY_MODULE.md"}],
-    "expensive_execution_planned":true,
-    "unresolved_risk":"A replay-incompatible event change, ambiguous token delta, mixed baseline or read-side SQLite lock could corrupt or misstate the dashboard.",
-    "expected_information_gain":"Determine whether explicit batch and routine-run measurements can be replayed, attributed and projected into an honest read-only dashboard without weakening existing Forge verification.",
-    "estimated_cost":"One bounded Kernel contract/persistence extension, one local metadata capture adapter, one registered-run wrapper, one Tauri projection, one code-native UI tab and focused plus complete verification.",
-    "regression_guard":"Every v1 telemetry fixture, authority-negative test, local capture invariant, desktop build and complete Forge gate must remain green.",
-    "stop_condition":"Stop if token attribution requires prompt capture, historical fabrication, external telemetry, mutable dashboard authority, incompatible event rewriting or unsafe database access.",
-    "final_integration_gate":"Focused telemetry, capture, wrapper, dashboard and recommendation fixtures plus module-context checks, UI build, Kernel tests and one complete Forge gate."
-  },
-  "exit_criteria": [
-    {"id":"telemetry-v2-replay","label":"Replay-compatible v2 batch and routine-run telemetry projects without changing v1 meaning.","status":"verified","evidence_ids":["test:forge-kernel:104-passed","test:v2-routine-runs"]},
-    {"id":"token-boundary-attribution","label":"Exact-session token deltas retain cached input separately and fail unknown on missing or reset counters.","status":"verified","evidence_ids":["test:forge-metrics-token-fixtures","metric:total_tokens:19615750"]},
-    {"id":"registered-routine-runs","label":"Allowlisted routine runs emit bounded pass or fail receipts without raw logs in dimensions.","status":"verified","evidence_ids":["run:run-b937ba2367184f4191b21265af0d81a6","test:registered-run-wrapper"]},
-    {"id":"verified-progression","label":"Current package progression counts only explicitly verified exit criteria.","status":"verified","evidence_ids":["test:worker-batch-structured-exit-criteria","command:metrics-dashboard-snapshot"]},
-    {"id":"read-only-dashboard","label":"The desktop Metrics tab shows summary, drilldown, filters and recent runs through a mutation-negative command.","status":"verified","evidence_ids":["test:forge-desktop:42-passed","build:forge-desktop-ui","visual:metrics-tab-browser-check"]},
-    {"id":"advisory-recommendations","label":"Recommendations retain sample, quality and completeness guards and cannot apply changes.","status":"verified","evidence_ids":["test:dashboard-projection-recommendations","test:mutation-negative-command"]},
-    {"id":"module-and-interface-context","label":"Kernel, desktop and UI module front doors match their new measurement interfaces.","status":"verified","evidence_ids":["module-context:52-current","verify:record-roles"]},
-    {"id":"complete-forge-verification","label":"Focused fixtures, UI build, Kernel tests and the complete Forge gate pass on the final package.","status":"verified","evidence_ids":["run:run-b937ba2367184f4191b21265af0d81a6","verify:complete-forge-gate:exit-0"]}
-  ],
-  "unresolved_risks":["cumulative token counters could be double-counted across cached input or linked child sessions","missing or reset counters must remain unknown instead of becoming zero","routine runs could be compared across incompatible versions platforms or verification scopes","activity counts could become a misleading productivity score","dashboard reads or inbox ingestion could hold SQLite locks on Windows","partial work could inflate progression unless only verified criteria count"],
-  "evidence_requirements":["preserve byte-compatible v1 event replay and idempotency","freeze registered raw measurement units sources states and bounded dimensions","prove exact-session token delta and unknown/reset behavior without retaining prompts","prove registered routine-run receipts for pass fail timeout and missing Forge states","prove structured verified exit-criterion progression without activity inflation","prove deterministic bounded dashboard snapshots and accessible read-only rendering","prove compatible local baselines insufficient-sample behavior and advisory-only recommendations","pass module context UI Kernel and complete Forge verification"],
-  "verification_plan":["extend Kernel telemetry fixtures before capture or UI integration","add disposable token and measured-run fixtures with no live-database dependency","add deterministic dashboard and recommendation projection tests","build the UI and run desktop command mutation-negative tests","refresh module context and run record-role modularity bootstrap and complete Forge gates"],
-  "resume_after":"Stop after the verified read-only Metrics tab and advisory recommendation result. Automatic tuning, currency pricing, external telemetry, game/runtime performance, policy promotion and any recommended experiment remain separately authorized work.",
-  "evidence":["The owner explicitly approved and requested implementation of the Forge Metrics and Improvement Dashboard plan.","The owner selected worker-batch and routine-run layers, an owner summary with technical drilldown, Forge workflow first and advisory trials only.","The Kernel now persists replay-compatible v2 metric events and projects bounded time-window dashboard snapshots while retaining v1 meaning.","Local capture records exact-session token deltas without prompts; registered routine runs retain bounded pass, fail and timeout receipts.","The desktop Metrics tab was built and visually inspected; an initial UNKNOWN-card wrap was corrected and the final four-card row has no horizontal overflow.","The final complete Forge gate passed through the measured registered-run wrapper."],
-  "verification_receipts":["Forge Kernel tests: 104 passed.","Forge desktop Rust tests: 42 passed.","Forge desktop UI production build passed.","Focused metrics fixtures passed exact, cached, reset-to-unknown, replay, projection, recommendation and registered-run cases.","All 36 C3 verifier routes use the shared interruption authority check; the 30-script shared-route inventory passed.","Module context is current for 52 modules.","Measured complete Forge gate run-b937ba2367184f4191b21265af0d81a6 passed in 486059 ms with exit 0."],
-  "transition":"recorded C3 ecotone evidence retained -> owner-approved metrics implementation -> focused and visual verification -> measured complete Forge gate -> recorded read-only Metrics dashboard result",
-  "metrics":{"token_cost":{"status":"measured","value":19615750,"unit":"tokens","source":"exact-session cumulative-counter delta; cached input retained separately"},"elapsed_time":{"status":"measured","value":2070013,"unit":"ms","source":"forge-batch-metrics start-to-finish boundary"},"complete_gate_elapsed_time":{"status":"measured","value":486059,"unit":"ms","source":"registered routine run run-b937ba2367184f4191b21265af0d81a6"}}
+    "schema_version":  3,
+    "canonical_role":  "sole-active-work-checkpoint",
+    "batch_id":  "G1-GP0-PLAYER-FANTASY-BOUNDARY-V1",
+    "master_program_item":  "GP0",
+    "state":  "executing",
+    "previous_state":  "ready",
+    "objective":  "Adjudicate the Mind Warp player promise, explicit non-goals and five representative session stories before any runtime or broad procedural implementation.",
+    "next_action":  "Produce one concise GP0 player-promise package with primary and supporting fantasies, explicit non-goals, default session assumptions and five fixed session stories that all express the same game; stop before GP1 implementation.",
+    "substage_id":  "gp0-product-player-fantasy-boundary",
+    "handoff_section_receipts":  {
+                                     "objective":  {
+                                                       "stage_id":  "gp0-product-player-fantasy-boundary",
+                                                       "content_sha256":  "bed8e276183e1c8ec3ca9c73f4693c9132c79ad6cbc9bbc17647a337f5a0787f",
+                                                       "review_disposition":  "revised",
+                                                       "review_note":  "Reviewed for the GP0 product and player-fantasy boundary after the product and C3 dependency rebaseline."
+                                                   },
+                                     "next_action":  {
+                                                         "stage_id":  "gp0-product-player-fantasy-boundary",
+                                                         "content_sha256":  "e35517e55557d92432d896a2eb7422cb5f8384740d26316a818d0ad6859e177a",
+                                                         "review_disposition":  "revised",
+                                                         "review_note":  "Reviewed for the GP0 product and player-fantasy boundary after the product and C3 dependency rebaseline."
+                                                     },
+                                     "stage_context":  {
+                                                           "stage_id":  "gp0-product-player-fantasy-boundary",
+                                                           "content_sha256":  "8b808b2f59fe8536f4852f7699d6c478cffe38917b61543ea329bca425a6db78",
+                                                           "review_disposition":  "revised",
+                                                           "review_note":  "Reviewed for the GP0 product and player-fantasy boundary after the product and C3 dependency rebaseline."
+                                                       },
+                                     "visual_quality_gate":  {
+                                                                 "stage_id":  "gp0-product-player-fantasy-boundary",
+                                                                 "content_sha256":  "d5c7eb3f08a6e225cc27e20441343d8b4e4a12d05960dcac9891261cc66d5c90",
+                                                                 "review_disposition":  "revised",
+                                                                 "review_note":  "Reviewed for the GP0 product and player-fantasy boundary after the product and C3 dependency rebaseline."
+                                                             },
+                                     "simulation_ladder":  {
+                                                               "stage_id":  "gp0-product-player-fantasy-boundary",
+                                                               "content_sha256":  "8e44c3381919c1910b3440b118075914995d6ce69f766a1eab143ee43545b981",
+                                                               "review_disposition":  "revised",
+                                                               "review_note":  "Reviewed for the GP0 product and player-fantasy boundary after the product and C3 dependency rebaseline."
+                                                           },
+                                     "unresolved_risks":  {
+                                                              "stage_id":  "gp0-product-player-fantasy-boundary",
+                                                              "content_sha256":  "49cf01fe3195057f1e76cff0810ac2d436110e7f5a5e8c9ebd5de7f136e244fe",
+                                                              "review_disposition":  "revised",
+                                                              "review_note":  "Reviewed for the GP0 product and player-fantasy boundary after the product and C3 dependency rebaseline."
+                                                          },
+                                     "evidence_requirements":  {
+                                                                   "stage_id":  "gp0-product-player-fantasy-boundary",
+                                                                   "content_sha256":  "bab64e35ee301d2a0cb1756150342b718c249eb4fa40bb963341f7f213edebba",
+                                                                   "review_disposition":  "revised",
+                                                                   "review_note":  "Reviewed for the GP0 product and player-fantasy boundary after the product and C3 dependency rebaseline."
+                                                               },
+                                     "verification_plan":  {
+                                                               "stage_id":  "gp0-product-player-fantasy-boundary",
+                                                               "content_sha256":  "fb6c0e60aab6d998ca0efbe27d32540dfcbed9e3ea17064e7c93fb8b60cc9ffd",
+                                                               "review_disposition":  "revised",
+                                                               "review_note":  "Reviewed for the GP0 product and player-fantasy boundary after the product and C3 dependency rebaseline."
+                                                           },
+                                     "resume_after":  {
+                                                          "stage_id":  "gp0-product-player-fantasy-boundary",
+                                                          "content_sha256":  "f3f88462ce9967f7cc0f5ea0690b8e0027f50e0665874f97059799ec4ebfc25a",
+                                                          "review_disposition":  "revised",
+                                                          "review_note":  "Reviewed for the GP0 product and player-fantasy boundary after the product and C3 dependency rebaseline."
+                                                      },
+                                     "evidence":  {
+                                                      "stage_id":  "gp0-product-player-fantasy-boundary",
+                                                      "content_sha256":  "54de10e9baa6a055dbaed0edeacad20844ba8b705b21356d1226819e85c18be1",
+                                                      "review_disposition":  "revised",
+                                                      "review_note":  "Reviewed for the GP0 product and player-fantasy boundary after the product and C3 dependency rebaseline."
+                                                  },
+                                     "verification_receipts":  {
+                                                                   "stage_id":  "gp0-product-player-fantasy-boundary",
+                                                                   "content_sha256":  "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+                                                                   "review_disposition":  "revised",
+                                                                   "review_note":  "Reviewed for the GP0 product and player-fantasy boundary after the product and C3 dependency rebaseline."
+                                                               },
+                                     "transition":  {
+                                                        "stage_id":  "gp0-product-player-fantasy-boundary",
+                                                        "content_sha256":  "bb836e6b5520e457a3a9a21ec6204abb3298384d583fe65568692986876b6755",
+                                                        "review_disposition":  "revised",
+                                                        "review_note":  "Reviewed for the GP0 product and player-fantasy boundary after the product and C3 dependency rebaseline."
+                                                    }
+                                 },
+    "consecutive_no_progress_limit":  1,
+    "atlas_route":  {
+                        "milestone":  "G1",
+                        "systems":  [
+                                        "canonical-production-system",
+                                        "mindwarp-game",
+                                        "reusable-capabilities",
+                                        "domain-creative-suites"
+                                    ]
+                    },
+    "risk_level":  "bounded-clean-room-gameplay-adjudication",
+    "research_gate":  "The owner-approved product rebaseline and clean-room gameplay recovery map establish the candidate space; historical code, runtime claims, Quantum Tunnel product assumptions and unadjudicated assistant proposals remain evidence only.",
+    "authority_lane":  "Clean-room gameplay design and fixed-session adjudication only. No historical source code, runtime, engine, network, monetization, publishing, C3B substitution or implementation authority.",
+    "context_health":  "Fresh product topology binds GP0 to the promoted C3A seam, keeps C3B independently blocked, preserves Yard Atlas authority and routes one fixed vertical before reusable extraction.",
+    "stage_context":  {
+                          "stage_id":  "gp0-product-player-fantasy-boundary",
+                          "macro_sources":  [
+                                                "docs/canonical-system/G1_PRODUCT_PORTFOLIO_AND_C3_DEPENDENCY_REBASELINE.md",
+                                                "docs/canonical-system/MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",
+                                                "docs/canonical-system/MASTER_PROGRAM.json"
+                                            ],
+                          "macro_findings":  [
+                                                 "Mind Warp game is the first product customer and GP0 is the sole executing item.",
+                                                 "C3A is sufficient for this product-design route; C3B remains blocked and nonconflated.",
+                                                 "Yard Atlas and Companion retain independent product authority."
+                                             ],
+                          "micro_sources":  [
+                                                "docs/canonical-system/G1_C4_ADDRESSABLE_WORLD_BINDING_RESULT.md",
+                                                "crates/addressable-world-binding/src/lib.rs"
+                                            ],
+                          "micro_findings":  [
+                                                 "The downstream code-facing seam is exactly WorldGenerationInput, CausalWorldPacket v1 and validate_world_packet.",
+                                                 "No physical, optical or presentation implementation is needed for GP0."
+                                             ]
+                      },
+    "visual_quality_gate":  {
+                                "asset_use_intent":  false,
+                                "status":  "not_applicable",
+                                "rationale":  "GP0 is a text and fixed-session design package with no admitted visual asset.",
+                                "dependent_implementation_blocked":  false,
+                                "receipts":  [
+
+                                             ]
+                            },
+    "simulation_ladder":  {
+                              "cheapest_sufficient_tier":  "static_reasoning",
+                              "tiers_completed":  [
+                                                      {
+                                                          "tier":  "static_reasoning",
+                                                          "result":  "The product topology, recovery map and five-session acceptance shape define the bounded adjudication problem.",
+                                                          "evidence":  "G1_PRODUCT_PORTFOLIO_AND_C3_DEPENDENCY_REBASELINE.md"
+                                                      }
+                                                  ],
+                              "expensive_execution_planned":  false,
+                              "unresolved_risk":  "A broad feature inventory could masquerade as a coherent player promise.",
+                              "expected_information_gain":  "Determine whether one primary fantasy and five sessions cohere before loop implementation.",
+                              "estimated_cost":  "One bounded owner-readable design record and adversarial consistency verifier.",
+                              "regression_guard":  "No runtime, historical code, engine, network, monetization or C3B claim enters GP0.",
+                              "stop_condition":  "Stop if the five sessions require incompatible primary fantasies or an owner-level creative choice not established by evidence.",
+                              "final_integration_gate":  "Focused GP0 consistency, project topology, shared route, context and complete Forge verification."
+                          },
+    "exit_criteria":  [
+                          {
+                              "id":  "player-promise",
+                              "label":  "One concise player promise selects the primary fantasy and supporting fantasies.",
+                              "status":  "planned",
+                              "evidence_ids":  [
+
+                                               ]
+                          },
+                          {
+                              "id":  "explicit-non-goals",
+                              "label":  "Explicit non-goals prevent Quantum Tunnel, runtime, multiplayer and platform assumptions from entering GP0.",
+                              "status":  "planned",
+                              "evidence_ids":  [
+
+                                               ]
+                          },
+                          {
+                              "id":  "five-session-stories",
+                              "label":  "Five fixed representative sessions express one coherent game across multiple approaches.",
+                              "status":  "planned",
+                              "evidence_ids":  [
+
+                                               ]
+                          }
+                      ],
+    "unresolved_risks":  [
+                             "candidate feature volume could obscure the primary player fantasy",
+                             "historical Quantum Tunnel assumptions could leak into Main Mind Warp",
+                             "five sessions could appear varied while requiring incompatible game structures",
+                             "procedural breadth could be used to avoid proving fixed-content enjoyment"
+                         ],
+    "evidence_requirements":  [
+                                  "preserve clean-room separation from all historical code",
+                                  "select one primary promise and explicit non-goals",
+                                  "define five fixed sessions with preparation encounter consequence return and remembered response",
+                                  "retain C3B Yard Atlas runtime network and monetization boundaries"
+                              ],
+    "verification_plan":  [
+                              "adjudicate a one-page promise from the recovery map",
+                              "run adversarial cross-session consistency review",
+                              "verify product topology C3A C3B and shared route invariants",
+                              "refresh active context and run focused plus complete Forge gates"
+                          ],
+    "resume_after":  "After GP0 is verified and recorded, begin GP1 fixed-content base-loop paper modeling. Do not begin runtime implementation.",
+    "evidence":  [
+                     "The owner approved the consolidated product-driven plan and implementation.",
+                     "The product rebaseline defines Forge Core, proven reusable capabilities, domain creative suites and isolated product shells.",
+                     "The gameplay recovery map provides clean-room candidate evidence and the GP0-GP4 route.",
+                     "C3A is promoted as the exact dependency-sufficient causal-world seam while C3B remains evidence-blocked."
+                 ],
+    "verification_receipts":  [
+
+                              ],
+    "transition":  "recorded Metrics package -\u003e preserved recovery baseline -\u003e accepted control-plane safety -\u003e product/C3 dependency rebaseline -\u003e GP0 clean-room gameplay adjudication"
 }

@@ -1,38 +1,588 @@
-{
-  "schema_version": 1,
-  "purpose": "Engine-neutral canonical system map for Mind Warp Forge Phase 0.",
-  "status_values": ["specified", "prototype_tested", "reference_proven", "production_candidate", "promoted", "gated"],
-  "systems": [
-    {"id":"forge-step-leader-controller","layer":"forge","status":"reference_proven","depends_on":["forge-research","forge-control-plane"],"purpose":"Validate bounded whole-system mechanism assessments, enforce hybrid divergence triggers and budgets, rank one target-local probe, and preserve deterministic mainline reconnection without execution or authority.","proof":"Eight deterministic fixtures cover three-batch and event triggers, complete registry mapping, ten-percent and one-batch budgets, VOI/local-net-gain ranking, malformed metaphors/probabilities, ordinary-edit non-triggering, aggregate-regression quarantine, two-module transfer eligibility, deterministic replay and checkpoint binding; the live-registry verifier checks all 31 systems.","references":["contracts/step-leader-controller-contract.md","crates/step-leader-controller/src/lib.rs","docs/canonical-system/COMPUTATIONAL_UNIVERSE_STEP_LEADER_CANDIDATE_MAP.md","docs/canonical-system/STEP_LEADER_CONTROLLER_RESULT.md"]},
-    {"id":"visible-radiance-interface-event","layer":"game-canonical","status":"prototype_tested","depends_on":["physical-path-substrate"],"purpose":"Reconstruct exact shared-face path evidence and declared conditional incident-direction boxes into bounded local three-band smooth-dielectric power and direction enclosures.","proof":"Warnings-denied native and executable i686 Windows lanes pass 12 unit, 7 interval integration and 1 point-v1 identity-lock test; Android ARM64 compiles. Point-v1 canonical bytes and IDs remain fixed. Conditional boxes fail closed on order, zero-vector, unit-sphere, orientation, codec, scale, volume and identity poison; RGB branches are independent; each uniform band executes once at fixed 160 under the derived 452/512-bit shield. Input/event bytes measure 1,741/2,803 against 16/64 KiB pre-decode caps, decoded structures measure 608/1,528 bytes, and the independent certificate passes 2,340 checks. Actual mobile-device execution and profiling remain later promotion gates.","references":["contracts/visible-radiance-interface-event-contract.md","crates/visible-radiance-interface-event/src/lib.rs","crates/visible-radiance-interface-event/src/arithmetic.rs","crates/visible-radiance-interface-event/src/interval.rs","docs/canonical-system/G1_C3_VISIBLE_RADIANCE_INTERFACE_ADAPTIVE_KERNEL_IMPLEMENTATION_READINESS.md","docs/canonical-system/G1_C3_VISIBLE_RADIANCE_INTERFACE_WIDE_NUMBER_DEPENDENCY_SPIKE_RESULT.md","docs/canonical-system/G1_C3_INTERVAL_INCIDENT_FIXED160_IMPLEMENTATION_READINESS.md","docs/canonical-system/G1_C3_INTERVAL_INCIDENT_FIXED160_IMPLEMENTATION_RESULT.md","docs/canonical-system/G1_C3_POST_FIXED160_INTERVAL_CONSUMER_REASSESSMENT.md"]},
-    {"id":"forge-truth-kernel","layer":"forge","status":"reference_proven","depends_on":[],"purpose":"Immutable evidence, content-addressed objects, authority separation, replay, and recovery.","proof":"Deterministic replay, forged-authority rejection, backup/recovery, and corruption tests.","references":["contracts/kernel-contract.md","crates/forge-kernel/src/lib.rs"]},
-    {"id":"forge-context-compiler","layer":"forge","status":"reference_proven","depends_on":["forge-truth-kernel"],"purpose":"Capture conversation evidence, expose source health, classify material knowledge for retrieval, and provide compact task context without treating chat as authority.","proof":"Versioned long-corpus replay, source-gap detection, legacy migration, portable path rejection, SQLite handle release, deterministic multi-facet knowledge routing, typed actor/category search, noise suppression, duplicate, correction, and approval-adversarial tests.","references":["contracts/conversation-compiler-contract.md","contracts/source-manifest-contract.md","contracts/codex-local-capture-contract.md","docs/canonical-system/CONVERSATION_COMPILER_READINESS.md","docs/canonical-system/KNOWLEDGE_INTAKE_V2_RESULT.md"]},
-    {"id":"forge-research","layer":"forge","status":"specified","depends_on":["forge-context-compiler"],"purpose":"Create bounded research briefs, source records, claims, contradictions, and discriminating experiments.","proof":"Citation traceability, cache/retry behavior, contradictory-source handling, and source-gap receipts.","references":["docs/canonical-system/PROOF_MATRIX.md"]},
-    {"id":"forge-control-plane","layer":"forge","status":"prototype_tested","depends_on":["forge-truth-kernel","forge-research"],"purpose":"Move work packages through research, design, adversarial review, readiness, verification, promotion, and rollback.","proof":"Dependency, authority-lane, lifecycle, owner-brief, failed-gate routing, and checkpoint-bound sole-writer lease tests.","references":["contracts/solo-studio-control-plane-contract.md","contracts/live-writer-lease-contract.md","crates/forge-kernel/src/control_plane.rs","crates/forge-kernel/src/federation.rs","docs/canonical-system/G1_FEDERATED_LIVE_WRITER_LEASE_INTEGRATION_RESULT.md"]},
-    {"id":"forge-reference-studio","layer":"forge","status":"specified","depends_on":["forge-control-plane"],"purpose":"Make canonical world, asset, scheduler, candidate, test, and failure state visible through inspectors and test viewports.","proof":"Every registry system has an evidence-linked inspector and reproducible test visualization.","references":["docs/canonical-system/DEPENDENCY_MAP.md"]},
-    {"id":"universe-identity","layer":"game-canonical","status":"prototype_tested","depends_on":[],"purpose":"One seeded universe, hierarchical addresses, generator versions, deterministic random streams, and stable object identities.","proof":"Strict canonical encoding, byte-exact fixed vectors, stream partitioning, migration, malformed-input, collision, boundary, and authority-negative tests; cross-platform receipts remain outstanding.","references":["contracts/universe-identity-contract.md","crates/universe-identity/src/lib.rs","docs/canonical-system/UNIVERSE_IDENTITY_DESIGN_GATE.md"]},
-    {"id":"field-basis","layer":"game-canonical","status":"prototype_tested","depends_on":["universe-identity"],"purpose":"Reusable mathematical basis functions, transforms, field packets, and cacheable recipes.","proof":"Philox known-answer, strict recipe bytes, repeatability, partitioning, cell continuity, composition, poison/overflow, cache binding, authority-negative, and read-only ProofReceipt integration tests; an independent fresh-process Python implementation reproduces committed Philox, canonical-CBOR, hash and signed-coordinate samples on the same Windows host; a bounded quality/cost/range/regional-variation portfolio and one locally supported P16 candidate case; second-platform, scientific and production-performance receipts remain open.","references":["contracts/field-basis-contract.md","crates/field-basis/src/lib.rs","crates/field-basis/examples/second_language_vectors.rs","crates/field-basis/examples/quality_cost_range_candidate.rs","docs/canonical-system/FIELD_BASIS_DESIGN_GATE.md","docs/canonical-system/G1_C3_QUALITY_COST_RANGE_CANDIDATE_RESULT.md","docs/canonical-system/G1_C3_SECOND_LANGUAGE_FIELD_RECEIPT_RESULT.md"]},
-    {"id":"stellar-orbital","layer":"game-canonical","status":"prototype_tested","depends_on":["universe-identity"],"purpose":"Compile explicit stellar source and bounded elliptical-orbit inputs into deterministic distance, irradiation and normalized-period-squared evidence before geological or atmospheric rules.","proof":"Seven focused tests cover strict canonical replay, circular and eccentric distance bounds, inverse-square irradiation, normalized Kepler period-squared behavior, luminosity/orbit separation, hostile ranges and bytes, claim/identity drift and plausible fabricated-state rejection; a read-only ProofReceipt/Reference Studio fixture passes without authority mutation. This is a bounded two-body integer reference only; multi-star dynamics, perturbations, phase, production ephemerides, stellar evolution, scientific validation and downstream planet layers remain open.","references":["contracts/stellar-orbital-contract.md","crates/stellar-orbital/src/lib.rs","docs/canonical-system/G1_C3_STELLAR_ORBITAL_RESULT.md"]},
-    {"id":"geological-atmospheric","layer":"game-canonical","status":"prototype_tested","depends_on":["stellar-orbital"],"purpose":"Compile exact stellar/orbital evidence and declared planetary bulk, column and attenuation inputs into bounded gravity, pressure, heat, substrate and direct-transmission evidence.","proof":"Seven focused tests cover strict canonical replay, earth-normalized gravity and pressure, independent mass/radius/column causality, per-band gas/aerosol attenuation, hostile ranges and bytes, foreign stellar state, plausible fabricated public state and claim drift; a read-only ProofReceipt passes without authority mutation. This is a bounded spherical gravity and column reference only; composition, vertical structure, weather, climate, hydrology, materials, tectonics, habitability, scientific validation and runtime simulation remain open.","references":["contracts/geological-atmospheric-contract.md","crates/geological-atmospheric/src/lib.rs","docs/canonical-system/G1_C3_GEOLOGICAL_ATMOSPHERIC_RESULT.md"]},
-    {"id":"hydrological-state","layer":"game-canonical","status":"prototype_tested","depends_on":["geological-atmospheric"],"purpose":"Compile exact planet evidence and declared total-water, phase-partition and surface-access inputs into bounded scaled hydrological reservoir evidence before climate rules.","proof":"Seven focused tests cover strict canonical replay, exact solid/liquid/vapor reservoir numerators, surface-access causality, dry-inventory contradictions, surface access without liquid, hostile ranges and bytes, foreign or fabricated planet state, plausible fabricated public state and claim drift; a read-only ProofReceipt passes without authority mutation. Phase equilibrium, precipitation, transport, terrain flow, salinity, climate, materials, habitability and runtime simulation remain open.","references":["contracts/hydrological-state-contract.md","crates/hydrological-state/src/lib.rs","docs/canonical-system/G1_C3_HYDROLOGICAL_STATE_RESULT.md"]},
-    {"id":"climate-state","layer":"game-canonical","status":"prototype_tested","depends_on":["hydrological-state"],"purpose":"Compile exact upstream evidence plus bounded albedo and longwave fractions into normalized absorbed-radiation and imbalance evidence for believable procedural generation.","proof":"Seven focused tests cover strict replay, exact driver causality, stellar scaling, hydrological provenance without fabricated flux change, hostile ranges and bytes, foreign or fabricated upstream state, and claim drift. This is a scalar plausibility seam only: temperature, greenhouse solving, weather, circulation, clouds, materials, habitability, scientific validation and runtime simulation remain open.","references":["contracts/climate-state-contract.md","crates/climate-state/src/lib.rs","docs/canonical-system/G1_C3_CLIMATE_STATE_RESULT.md"]},
-    {"id":"surface-material-state","layer":"game-canonical","status":"prototype_tested","depends_on":["climate-state"],"purpose":"Bind exact climate provenance to bounded three-band surface reflectance for coarse believable palette causality.","proof":"Seven focused tests cover strict replay, exact reflectance causality, climate provenance separation, hostile ranges and bytes, fabricated upstream state, public-state drift and claim drift. Composition, chemistry, BRDF, weathering, thermal/mechanical properties, crafting, visibility, traversability and runtime simulation remain open.","references":["contracts/surface-material-state-contract.md","crates/surface-material-state/src/lib.rs","docs/canonical-system/G1_C3_SURFACE_MATERIAL_STATE_RESULT.md"]},
-    {"id":"regional-environment-state","layer":"game-canonical","status":"prototype_tested","depends_on":["field-basis"],"purpose":"Compile exact deterministic field recipe, coordinate-free source binding and direct or spatially reconstructed coordinate evidence into normalized procedural regional exposure and moisture-potential fractions.","proof":"Ten focused tests cover strict point and coordinate-free binding replay, exact endpoint normalization, separate moisture source causality, coordinate-caused variation, spatial cell reconstruction, normalized-range rejection, missing identity, invalid recipe bytes, unknown/noncanonical bytes, fabricated state and claim drift. Partition ownership, terrain, weather, radiative transfer, physical visibility, biome, traversability and runtime claims remain open.","references":["contracts/field-basis-contract.md","contracts/spatial-domain-contract.md","contracts/regional-environment-state-contract.md","crates/regional-environment-state/src/lib.rs","docs/canonical-system/G1_C3_REGIONAL_EXPOSURE_RESULT.md","docs/canonical-system/G1_C3_PHYSICAL_REGION_PARTITION_RESULT.md"]},
-    {"id":"physical-region-partition","layer":"game-canonical","status":"prototype_tested","depends_on":["climate-state","regional-environment-state"],"purpose":"Classify exact regional physical evidence with a versioned total signature and reconstruct bounded deterministic shared-edge components before ecological meaning.","proof":"Ten focused tests cover strict replay, canonical dimension order, exact lower-cut boundaries, climate-derived unavailable versus numeric zero, deterministic exhaustive non-wrapping connectivity, disconnected equal-signature islands, traversal-order independence, reconstruction mismatch, a pre-sampling 65,536-cell ceiling, forged membership/identity/authority and strict decoding. Planet/sphere geometry, terrain, biome/habitat semantics, visibility, traversability, storage, streaming and runtime remain open.","references":["contracts/spatial-domain-contract.md","contracts/regional-environment-state-contract.md","contracts/physical-region-partition-contract.md","crates/physical-region-partition/src/lib.rs","docs/canonical-system/G1_C3_PHYSICAL_PARTITION_POLICY_DESIGN_AUDIT.md","docs/canonical-system/G1_C3_PHYSICAL_PARTITION_IMPLEMENTATION_READINESS.md","docs/canonical-system/G1_C3_PHYSICAL_REGION_PARTITION_RESULT.md"]},
-    {"id":"physical-path-substrate","layer":"game-canonical","status":"prototype_tested","depends_on":[],"purpose":"Reconstruct one finite cubic Q32.32 3D occupancy evidence volume and exact conservative interval-plus-contact path witnesses before channel, probe, ecology or runtime policy.","proof":"Thirteen focused tests cover strict recipe/volume/query/witness replay, unavailable/vacuum/substance separation, canonical sparse runs, ceiling and coordinate failures, closed outer endpoints, face/edge/vertex/endpoint contacts, stationary point evidence, exact reversal, thin-barrier crossing versus point contact, phantom-cell rejection, provenance-independent occupancy identity, forgery/noncanonical bytes, authority-negative claims and a measured 65,536-cell exhaustive cost receipt. The crate owns no sphere, planet, terrain, runtime voxels, propagation, visibility, passability, biome, ecotone, organism, approval or promotion semantics.","references":["contracts/physical-path-substrate-contract.md","crates/physical-path-substrate/src/lib.rs","docs/canonical-system/G1_C3_PHYSICAL_PATH_SUBSTRATE_DESIGN_GATE.md","docs/canonical-system/G1_C3_PATH_WITNESS_COUNTEREXAMPLE_RESULT.md","docs/canonical-system/G1_C3_PHYSICAL_PATH_SUBSTRATE_IMPLEMENTATION_READINESS.md","docs/canonical-system/G1_C3_PHYSICAL_PATH_SUBSTRATE_RESULT.md"]},
-    {"id":"visible-radiance-bulk-transfer","layer":"game-canonical","status":"prototype_tested","depends_on":["physical-path-substrate"],"purpose":"Reconstruct exact physical-path evidence into bounded three-band single-medium direct-beam optical-depth and transmission bounds before interface optics, perception or rendering.","proof":"Twelve warnings-denied Rust tests cover strict profile/query/transfer replay, complete canonical substance coverage, vacuum/finite/opaque evidence, same-substance subdivision, reversal, unavailable/ambiguous/interface outcomes, stationary and tangent contacts, directed length and arithmetic ceilings, monotonicity, seven exact Python-oracle vectors, forgery/noncanonical bytes, authority negatives and a measured 65,536-substance profile. The independent Python harness passes 1,570 exact/directed checks. Known v1 transfer contains vacuum or one exact substance only; coefficient catalogues, interfaces, scattering, perception, rendering, passage, biome, planet, runtime, approval and promotion remain absent.","references":["contracts/visible-radiance-bulk-transfer-contract.md","crates/visible-radiance-bulk-transfer/src/lib.rs","docs/canonical-system/G1_C3_POST_PATH_SUBSTRATE_CONSUMER_REASSESSMENT.md","docs/canonical-system/G1_C3_VISIBLE_RADIANCE_PATH_TRANSFER_MATHEMATICAL_DESIGN_AUDIT.md","docs/canonical-system/G1_C3_VISIBLE_RADIANCE_BULK_TRANSFER_ORACLE_RESULT.md","docs/canonical-system/G1_C3_VISIBLE_RADIANCE_BULK_TRANSFER_IMPLEMENTATION_READINESS.md","docs/canonical-system/G1_C3_VISIBLE_RADIANCE_BULK_TRANSFER_RESULT.md"]},
-    {"id":"derived-world-rules","layer":"game-canonical","status":"prototype_tested","depends_on":["field-basis","surface-material-state","regional-environment-state"],"purpose":"Compile strict physical-cause packets and derived environmental opportunities for world conditions, signals and palette bounds before organism ecology, aesthetics or representation.","proof":"Eleven world-packet tests require exact nested physical and regional contracts, reject reconstruction mismatch, fabricated state and legacy transmission fields, and prove bounded baseline-potential semantics plus coordinate-caused visible variation without changing unrelated pressure-wave output. Seven environmental-opportunity tests rebuild typed energy, liquid, atmosphere, substrate and signal nodes from the exact packet chain and reject absence contradictions, fabricated nodes and incomplete relations; five macro-lineage and 41 desktop integration tests pass. Signal propagation, biome structure, complete niches, physical visibility, traversability, scientific validation and second-platform evidence remain open.","references":["contracts/stellar-orbital-contract.md","contracts/geological-atmospheric-contract.md","contracts/hydrological-state-contract.md","contracts/climate-state-contract.md","contracts/surface-material-state-contract.md","contracts/regional-environment-state-contract.md","contracts/derived-world-rules-contract.md","contracts/environmental-opportunity-contract.md","crates/derived-world-rules/src/lib.rs","crates/niche-graph-binding/src/lib.rs","crates/derived-world-rules/examples/range_regional_cost_portfolio.rs","docs/canonical-system/G1_C3_STELLAR_ORBITAL_RESULT.md","docs/canonical-system/G1_C3_GEOLOGICAL_ATMOSPHERIC_RESULT.md","docs/canonical-system/G1_C3_HYDROLOGICAL_STATE_RESULT.md","docs/canonical-system/G1_C3_REGIONAL_EXPOSURE_RESULT.md","docs/canonical-system/G1_C3_SIGNAL_POTENTIAL_RESULT.md","docs/canonical-system/G1_C3_DERIVED_WORLD_CONTRACT_RESULT.md","docs/canonical-system/G1_C3_QUALITY_COST_RANGE_CANDIDATE_RESULT.md","docs/canonical-system/G1_C3_CLOSURE_READINESS_AUDIT.md","docs/canonical-system/G1_C3_ENVIRONMENTAL_OPPORTUNITY_RESULT.md"]},
-    {"id":"lazy-universe-hierarchy","layer":"game-canonical","status":"prototype_tested","depends_on":["universe-identity","derived-world-rules"],"purpose":"Addressable, lazy materialisation from galaxy to entity with cache and promotion policy.","proof":"Strict deterministic descriptors, explicit origin, stable finite windows capped at 256, stale/cancel/budget rejection, and residency-negative identity fixtures. addressable-world-binding now requires exact WorldGenerationInput/CausalWorldPacket replay and rejects a packet from another input (5 focused tests), with a read-only ProofReceipt and no Kernel lifecycle mutation. The lifecycle slice now validates public and reconstructed state, rejects ambient appearance locks and hostile stored values, continues sequence across drive batches, and suppresses no-op deltas. These are bounded components only: C4 is dependency-gated by reopened C3 and its full addressable-state/history scope, production generation and cross-platform receipts remain open.","references":["contracts/hierarchy-history-contract.md","crates/hierarchy-history/src/hierarchy.rs","crates/addressable-world-binding/src/lib.rs","docs/canonical-system/HIERARCHY_HISTORY_DESIGN_GATE.md","docs/canonical-system/G1_C4_ADDRESSABLE_WORLD_BINDING_RESULT.md","docs/canonical-system/G1_C4_AGE_LIFECYCLE_AND_PROOFRECEIPT_RESULT.md"]},
-    {"id":"world-history-ledger","layer":"game-canonical","status":"prototype_tested","depends_on":["lazy-universe-hierarchy","forge-truth-kernel"],"purpose":"Baseline reconstruction plus explicit mutable player and world deltas.","proof":"Canonical baseline binding, per-target ordered/idempotent replay, conflict/gap/corruption rejection, snapshot distrust, old/new generator coexistence, explicit migration, and authority-negative read-only ProofReceipt fixtures; production storage and cross-target transactions remain open.","references":["contracts/hierarchy-history-contract.md","crates/hierarchy-history/src/history.rs","docs/canonical-system/HIERARCHY_HISTORY_DESIGN_GATE.md"]},
-    {"id":"significance-system","layer":"game-canonical","status":"prototype_tested","depends_on":["lazy-universe-hierarchy"],"purpose":"Shared importance packet for rendering, simulation, AI, physics, animation, audio, streaming, and generation.","proof":"Strict packet encoding, asymmetric hysteresis, protection, monotone independent consumer maps, and authority-negative fixtures; a new 4-test multi-domain fixture proves named AI/animation/audio/rendering consumers diverge from one shared tier, stay stable together through a shared hysteresis-protected flap, are jointly forced to Critical by a protected threat flag, and never interfere with each other's fidelity map. Product signals, weights, and mappings remain open.","references":["contracts/significance-scheduler-contract.md","crates/significance-scheduler/src/significance.rs","crates/significance-scheduler/tests/multi_domain_consumer_fidelity.rs","docs/canonical-system/SIGNIFICANCE_SCHEDULER_DESIGN_GATE.md","docs/canonical-system/G1_C5_MULTI_DOMAIN_FIDELITY_RESULT.md"]},
-    {"id":"streaming-scheduler","layer":"game-canonical","status":"prototype_tested","depends_on":["significance-system","lazy-universe-hierarchy"],"purpose":"Predictive prefetch, pinning, cancellation, deadlines, fallback, and CPU/GPU/I/O/main-thread budgets.","proof":"Strict tickets, graph validation, safety admission, live priority donation, bounded fairness, deterministic traces, cancellation settlement, stale-output quarantine, fallback, and read-only ProofReceipt fixtures; runtime controllers, executors, cache policy, and performance remain open.","references":["contracts/significance-scheduler-contract.md","crates/significance-scheduler/src/scheduler.rs","docs/canonical-system/SIGNIFICANCE_SCHEDULER_DESIGN_GATE.md"]},
-    {"id":"semantic-emergence","layer":"game-canonical","status":"prototype_tested","depends_on":["derived-world-rules","world-history-ledger"],"purpose":"Derive roles, competing solution families, concepts, and capabilities from world pressures and gameplay needs.","proof":"Strict canonical records, label-independent concept identity, grounded acyclic justification, mechanism-evidence diversity, hard feasibility, bounded validation, poison text, homonym, cycle, drift, and authority-negative fixtures; product ontology and generation remain open.","references":["contracts/semantic-construction-contract.md","crates/semantic-construction/src/model.rs","docs/canonical-system/SEMANTIC_CONSTRUCTION_DESIGN_GATE.md"]},
-    {"id":"construction-language","layer":"game-canonical","status":"prototype_tested","depends_on":["semantic-emergence"],"purpose":"Universal part-role graphs, typed sockets, geometry operations, articulation, deformation, material regions, and validators.","proof":"Closed capability registry, typed part/socket graphs, connectivity and compatibility failures, exact ordered atomic recipe replay, stale/dangling rejection, deterministic fingerprints, and authority-negative fixtures; geometry, representation, physical validation, and runtime remain open.","references":["contracts/semantic-construction-contract.md","crates/semantic-construction/src/validate.rs","docs/canonical-system/SEMANTIC_CONSTRUCTION_DESIGN_GATE.md"]},
-    {"id":"organism-ecology","layer":"game-canonical","status":"specified","depends_on":["derived-world-rules","semantic-emergence","world-history-ledger","construction-language"],"purpose":"Compile organism niche roles and occupancy, planetary macro-lineages, biome ecomorphs, sensory channels, person-form eligibility, applicable dimorphism, age cohorts and selected-entity lifecycle state from C3 physical ecology evidence.","proof":"Causal niche coverage, related-but-diverse ecomorphs, unusual-sense and no-eye cases, grotesque-form rejection, paired dimorphism, deterministic cohorts, reversible post-adult presentation lock, replay and no-old-age-death tests. The age-cohort/lifecycle slice remains prototype_tested in entity-lifecycle and entity-lifecycle-history-binding. A 2026-07-15 logical audit invalidated earlier organism-capability, body-part-as-niche and world-evidence-as-lineage claims; the physical environmental-opportunity graph is now explicitly C3 evidence rather than a C6 completion claim. Bounded C6 proof components cover environmental support (5 tests), macro-lineage identity/hypothetical occupancy/body-plan-reference binding (5 tests), and structural person-form binding completeness (6 tests). Full organism niche roles and occupancy, body-plan anatomy, sensory physiology, species/ecomorphs, comparative person-form eligibility, grotesque structural rejection, applicable dimorphism and population sampling remain unimplemented, and C6 is dependency-gated by C4-C5.","references":["docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md","docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md","docs/canonical-system/MASTER_PLAN_V2.md","contracts/environmental-opportunity-contract.md","crates/entity-lifecycle/src/lib.rs","crates/entity-lifecycle-history-binding/src/lib.rs","crates/organism-niche-binding/src/lib.rs","crates/niche-graph-binding/src/lib.rs","crates/macro-lineage-binding/src/lib.rs","crates/person-form-eligibility/src/lib.rs","docs/canonical-system/G1_C3_ENVIRONMENTAL_OPPORTUNITY_RESULT.md","docs/canonical-system/G1_C4_AGE_LIFECYCLE_AND_PROOFRECEIPT_RESULT.md","docs/canonical-system/G1_C6_DISTANCE_SENSING_NICHE_BINDING_RESULT.md","docs/canonical-system/G1_C6_NICHE_GRAPH_BINDING_RESULT.md","docs/canonical-system/G1_C6_MACRO_LINEAGE_BINDING_RESULT.md","docs/canonical-system/G1_C6_PERSON_FORM_ELIGIBILITY_RESULT.md"]},
-    {"id":"aesthetic-grammar","layer":"game-canonical","status":"specified","depends_on":["derived-world-rules","semantic-emergence"],"purpose":"Compile physically caused palette bounds, macro-to-micro inheritance, multidimensional form intent, harmony and controlled semantic tension without a universal beauty score.","proof":"Material-cause precedence, physical-constraint priority, metric separation, applicability, negative-control, anti-oatmeal, palette inheritance, readability, visual-fitness and candidate-baseline tests.","references":["docs/canonical-system/MASTER_PLAN_V2.md","docs/canonical-system/FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md","governance/STAGE_QUALITY_PROTOCOL.md"]},
-    {"id":"representation-selector","layer":"game-canonical","status":"prototype_tested","depends_on":["construction-language"],"purpose":"Choose a neutral representation family from grounded functional requirements and explicit alternatives without category, format, renderer, or engine defaults.","proof":"Strict portfolios, content-bound lineage, hostile-reference rejection, P5-bound temporal plans, P7b-0 controlled-review protocol validation, and a deterministic built-in data-only wireframe viewport pass with read-only integration; general geometry, materials, rendering, perception, assets, animation, and external runtime compatibility remain open.","references":["contracts/representation-contract.md","contracts/perception-protocol-contract.md","contracts/reference-viewport-contract.md","crates/representation-contract/src/validate.rs","crates/perception-protocol/src/validate.rs","crates/reference-viewport/src/lib.rs","docs/canonical-system/P7B_CONTROLLED_PERCEPTION_DESIGN_GATE.md","docs/canonical-system/P7B_BUILTIN_REFERENCE_VIEWPORT_DECISION.md"]},
-    {"id":"asset-factory","layer":"game-canonical","status":"specified","depends_on":["construction-language","representation-selector","organism-ecology","aesthetic-grammar","forge-reference-studio"],"purpose":"Produce recipes, artifacts, materials, LODs, repair candidates, and structured visual review from one canonical world/organism state.","proof":"End-to-end prop, furniture, weapon, plant, creature, ship, building, environment, anti-oatmeal, palette, phone-legibility and fidelity validation atlas.","references":["docs/canonical-system/PROOF_MATRIX.md"]},
-    {"id":"procedural-animation","layer":"game-canonical","status":"specified","depends_on":["construction-language","organism-ecology","significance-system"],"purpose":"Articulation, deformation, contacts, locomotion, behaviour, interpolation, age/lineage expression, and temporal cadence.","proof":"Stability, purpose, contact, topology, recognisability, lineage/sex/age calibration, and temporal-LOD tests.","references":["docs/canonical-system/PROOF_MATRIX.md"]},
-    {"id":"runtime-adapter","layer":"runtime","status":"gated","depends_on":["asset-factory","procedural-animation","streaming-scheduler","world-history-ledger"],"purpose":"Import promoted canonical output into a future selected runtime engine.","proof":"Clean-project import, build, profiling, identifier preservation, and replay tests.","references":["docs/canonical-system/UNRESOLVED_GAPS.md"]}
-  ]
+﻿{
+    "schema_version":  1,
+    "purpose":  "Engine-neutral canonical system map for Mind Warp Forge Phase 0.",
+    "status_values":  [
+                          "specified",
+                          "prototype_tested",
+                          "reference_proven",
+                          "production_candidate",
+                          "promoted",
+                          "gated"
+                      ],
+    "systems":  [
+                    {
+                        "id":  "forge-step-leader-controller",
+                        "layer":  "forge",
+                        "status":  "reference_proven",
+                        "depends_on":  [
+                                           "forge-research",
+                                           "forge-control-plane"
+                                       ],
+                        "purpose":  "Validate bounded whole-system mechanism assessments, enforce hybrid divergence triggers and budgets, rank one target-local probe, and preserve deterministic mainline reconnection without execution or authority.",
+                        "proof":  "Eight deterministic fixtures cover three-batch and event triggers, complete registry mapping, ten-percent and one-batch budgets, VOI/local-net-gain ranking, malformed metaphors/probabilities, ordinary-edit non-triggering, aggregate-regression quarantine, two-module transfer eligibility, deterministic replay and checkpoint binding; the live-registry verifier checks all 31 systems.",
+                        "references":  [
+                                           "contracts/step-leader-controller-contract.md",
+                                           "crates/step-leader-controller/src/lib.rs",
+                                           "docs/canonical-system/COMPUTATIONAL_UNIVERSE_STEP_LEADER_CANDIDATE_MAP.md",
+                                           "docs/canonical-system/STEP_LEADER_CONTROLLER_RESULT.md"
+                                       ]
+                    },
+                    {
+                        "id":  "visible-radiance-interface-event",
+                        "layer":  "game-canonical",
+                        "status":  "prototype_tested",
+                        "depends_on":  [
+                                           "physical-path-substrate"
+                                       ],
+                        "purpose":  "Reconstruct exact shared-face path evidence and declared conditional incident-direction boxes into bounded local three-band smooth-dielectric power and direction enclosures.",
+                        "proof":  "Warnings-denied native and executable i686 Windows lanes pass 12 unit, 7 interval integration and 1 point-v1 identity-lock test; Android ARM64 compiles. Point-v1 canonical bytes and IDs remain fixed. Conditional boxes fail closed on order, zero-vector, unit-sphere, orientation, codec, scale, volume and identity poison; RGB branches are independent; each uniform band executes once at fixed 160 under the derived 452/512-bit shield. Input/event bytes measure 1,741/2,803 against 16/64 KiB pre-decode caps, decoded structures measure 608/1,528 bytes, and the independent certificate passes 2,340 checks. Actual mobile-device execution and profiling remain later promotion gates.",
+                        "references":  [
+                                           "contracts/visible-radiance-interface-event-contract.md",
+                                           "crates/visible-radiance-interface-event/src/lib.rs",
+                                           "crates/visible-radiance-interface-event/src/arithmetic.rs",
+                                           "crates/visible-radiance-interface-event/src/interval.rs",
+                                           "docs/canonical-system/G1_C3_VISIBLE_RADIANCE_INTERFACE_ADAPTIVE_KERNEL_IMPLEMENTATION_READINESS.md",
+                                           "docs/canonical-system/G1_C3_VISIBLE_RADIANCE_INTERFACE_WIDE_NUMBER_DEPENDENCY_SPIKE_RESULT.md",
+                                           "docs/canonical-system/G1_C3_INTERVAL_INCIDENT_FIXED160_IMPLEMENTATION_READINESS.md",
+                                           "docs/canonical-system/G1_C3_INTERVAL_INCIDENT_FIXED160_IMPLEMENTATION_RESULT.md",
+                                           "docs/canonical-system/G1_C3_POST_FIXED160_INTERVAL_CONSUMER_REASSESSMENT.md"
+                                       ]
+                    },
+                    {
+                        "id":  "forge-truth-kernel",
+                        "layer":  "forge",
+                        "status":  "reference_proven",
+                        "depends_on":  [
+
+                                       ],
+                        "purpose":  "Immutable evidence, content-addressed objects, authority separation, replay, and recovery.",
+                        "proof":  "Deterministic replay, forged-authority rejection, backup/recovery, and corruption tests.",
+                        "references":  [
+                                           "contracts/kernel-contract.md",
+                                           "crates/forge-kernel/src/lib.rs"
+                                       ]
+                    },
+                    {
+                        "id":  "forge-context-compiler",
+                        "layer":  "forge",
+                        "status":  "reference_proven",
+                        "depends_on":  [
+                                           "forge-truth-kernel"
+                                       ],
+                        "purpose":  "Capture conversation evidence, expose source health, classify material knowledge for retrieval, and provide compact task context without treating chat as authority.",
+                        "proof":  "Versioned long-corpus replay, source-gap detection, legacy migration, portable path rejection, SQLite handle release, deterministic multi-facet knowledge routing, typed actor/category search, noise suppression, duplicate, correction, and approval-adversarial tests.",
+                        "references":  [
+                                           "contracts/conversation-compiler-contract.md",
+                                           "contracts/source-manifest-contract.md",
+                                           "contracts/codex-local-capture-contract.md",
+                                           "docs/canonical-system/CONVERSATION_COMPILER_READINESS.md",
+                                           "docs/canonical-system/KNOWLEDGE_INTAKE_V2_RESULT.md"
+                                       ]
+                    },
+                    {
+                        "id":  "forge-research",
+                        "layer":  "forge",
+                        "status":  "specified",
+                        "depends_on":  [
+                                           "forge-context-compiler"
+                                       ],
+                        "purpose":  "Create bounded research briefs, source records, claims, contradictions, and discriminating experiments.",
+                        "proof":  "Citation traceability, cache/retry behavior, contradictory-source handling, and source-gap receipts.",
+                        "references":  [
+                                           "docs/canonical-system/PROOF_MATRIX.md"
+                                       ]
+                    },
+                    {
+                        "id":  "forge-control-plane",
+                        "layer":  "forge",
+                        "status":  "prototype_tested",
+                        "depends_on":  [
+                                           "forge-truth-kernel",
+                                           "forge-research"
+                                       ],
+                        "purpose":  "Move work packages through research, design, adversarial review, readiness, verification, promotion, and rollback.",
+                        "proof":  "Dependency, authority-lane, lifecycle, owner-brief, failed-gate routing, and checkpoint-bound sole-writer lease tests.",
+                        "references":  [
+                                           "contracts/solo-studio-control-plane-contract.md",
+                                           "contracts/live-writer-lease-contract.md",
+                                           "crates/forge-kernel/src/control_plane.rs",
+                                           "crates/forge-kernel/src/federation.rs",
+                                           "docs/canonical-system/G1_FEDERATED_LIVE_WRITER_LEASE_INTEGRATION_RESULT.md"
+                                       ]
+                    },
+                    {
+                        "id":  "forge-reference-studio",
+                        "layer":  "forge",
+                        "status":  "specified",
+                        "depends_on":  [
+                                           "forge-control-plane"
+                                       ],
+                        "purpose":  "Make canonical world, asset, scheduler, candidate, test, and failure state visible through inspectors and test viewports.",
+                        "proof":  "Every registry system has an evidence-linked inspector and reproducible test visualization.",
+                        "references":  [
+                                           "docs/canonical-system/DEPENDENCY_MAP.md"
+                                       ]
+                    },
+                    {
+                        "id":  "universe-identity",
+                        "layer":  "game-canonical",
+                        "status":  "prototype_tested",
+                        "depends_on":  [
+
+                                       ],
+                        "purpose":  "One seeded universe, hierarchical addresses, generator versions, deterministic random streams, and stable object identities.",
+                        "proof":  "Strict canonical encoding, byte-exact fixed vectors, stream partitioning, migration, malformed-input, collision, boundary, and authority-negative tests; cross-platform receipts remain outstanding.",
+                        "references":  [
+                                           "contracts/universe-identity-contract.md",
+                                           "crates/universe-identity/src/lib.rs",
+                                           "docs/canonical-system/UNIVERSE_IDENTITY_DESIGN_GATE.md"
+                                       ]
+                    },
+                    {
+                        "id":  "field-basis",
+                        "layer":  "game-canonical",
+                        "status":  "prototype_tested",
+                        "depends_on":  [
+                                           "universe-identity"
+                                       ],
+                        "purpose":  "Reusable mathematical basis functions, transforms, field packets, and cacheable recipes.",
+                        "proof":  "Philox known-answer, strict recipe bytes, repeatability, partitioning, cell continuity, composition, poison/overflow, cache binding, authority-negative, and read-only ProofReceipt integration tests; an independent fresh-process Python implementation reproduces committed Philox, canonical-CBOR, hash and signed-coordinate samples on the same Windows host; a bounded quality/cost/range/regional-variation portfolio and one locally supported P16 candidate case; second-platform, scientific and production-performance receipts remain open.",
+                        "references":  [
+                                           "contracts/field-basis-contract.md",
+                                           "crates/field-basis/src/lib.rs",
+                                           "crates/field-basis/examples/second_language_vectors.rs",
+                                           "crates/field-basis/examples/quality_cost_range_candidate.rs",
+                                           "docs/canonical-system/FIELD_BASIS_DESIGN_GATE.md",
+                                           "docs/canonical-system/G1_C3_QUALITY_COST_RANGE_CANDIDATE_RESULT.md",
+                                           "docs/canonical-system/G1_C3_SECOND_LANGUAGE_FIELD_RECEIPT_RESULT.md"
+                                       ]
+                    },
+                    {
+                        "id":  "stellar-orbital",
+                        "layer":  "game-canonical",
+                        "status":  "prototype_tested",
+                        "depends_on":  [
+                                           "universe-identity"
+                                       ],
+                        "purpose":  "Compile explicit stellar source and bounded elliptical-orbit inputs into deterministic distance, irradiation and normalized-period-squared evidence before geological or atmospheric rules.",
+                        "proof":  "Seven focused tests cover strict canonical replay, circular and eccentric distance bounds, inverse-square irradiation, normalized Kepler period-squared behavior, luminosity/orbit separation, hostile ranges and bytes, claim/identity drift and plausible fabricated-state rejection; a read-only ProofReceipt/Reference Studio fixture passes without authority mutation. This is a bounded two-body integer reference only; multi-star dynamics, perturbations, phase, production ephemerides, stellar evolution, scientific validation and downstream planet layers remain open.",
+                        "references":  [
+                                           "contracts/stellar-orbital-contract.md",
+                                           "crates/stellar-orbital/src/lib.rs",
+                                           "docs/canonical-system/G1_C3_STELLAR_ORBITAL_RESULT.md"
+                                       ]
+                    },
+                    {
+                        "id":  "geological-atmospheric",
+                        "layer":  "game-canonical",
+                        "status":  "prototype_tested",
+                        "depends_on":  [
+                                           "stellar-orbital"
+                                       ],
+                        "purpose":  "Compile exact stellar/orbital evidence and declared planetary bulk, column and attenuation inputs into bounded gravity, pressure, heat, substrate and direct-transmission evidence.",
+                        "proof":  "Seven focused tests cover strict canonical replay, earth-normalized gravity and pressure, independent mass/radius/column causality, per-band gas/aerosol attenuation, hostile ranges and bytes, foreign stellar state, plausible fabricated public state and claim drift; a read-only ProofReceipt passes without authority mutation. This is a bounded spherical gravity and column reference only; composition, vertical structure, weather, climate, hydrology, materials, tectonics, habitability, scientific validation and runtime simulation remain open.",
+                        "references":  [
+                                           "contracts/geological-atmospheric-contract.md",
+                                           "crates/geological-atmospheric/src/lib.rs",
+                                           "docs/canonical-system/G1_C3_GEOLOGICAL_ATMOSPHERIC_RESULT.md"
+                                       ]
+                    },
+                    {
+                        "id":  "hydrological-state",
+                        "layer":  "game-canonical",
+                        "status":  "prototype_tested",
+                        "depends_on":  [
+                                           "geological-atmospheric"
+                                       ],
+                        "purpose":  "Compile exact planet evidence and declared total-water, phase-partition and surface-access inputs into bounded scaled hydrological reservoir evidence before climate rules.",
+                        "proof":  "Seven focused tests cover strict canonical replay, exact solid/liquid/vapor reservoir numerators, surface-access causality, dry-inventory contradictions, surface access without liquid, hostile ranges and bytes, foreign or fabricated planet state, plausible fabricated public state and claim drift; a read-only ProofReceipt passes without authority mutation. Phase equilibrium, precipitation, transport, terrain flow, salinity, climate, materials, habitability and runtime simulation remain open.",
+                        "references":  [
+                                           "contracts/hydrological-state-contract.md",
+                                           "crates/hydrological-state/src/lib.rs",
+                                           "docs/canonical-system/G1_C3_HYDROLOGICAL_STATE_RESULT.md"
+                                       ]
+                    },
+                    {
+                        "id":  "climate-state",
+                        "layer":  "game-canonical",
+                        "status":  "prototype_tested",
+                        "depends_on":  [
+                                           "hydrological-state"
+                                       ],
+                        "purpose":  "Compile exact upstream evidence plus bounded albedo and longwave fractions into normalized absorbed-radiation and imbalance evidence for believable procedural generation.",
+                        "proof":  "Seven focused tests cover strict replay, exact driver causality, stellar scaling, hydrological provenance without fabricated flux change, hostile ranges and bytes, foreign or fabricated upstream state, and claim drift. This is a scalar plausibility seam only: temperature, greenhouse solving, weather, circulation, clouds, materials, habitability, scientific validation and runtime simulation remain open.",
+                        "references":  [
+                                           "contracts/climate-state-contract.md",
+                                           "crates/climate-state/src/lib.rs",
+                                           "docs/canonical-system/G1_C3_CLIMATE_STATE_RESULT.md"
+                                       ]
+                    },
+                    {
+                        "id":  "surface-material-state",
+                        "layer":  "game-canonical",
+                        "status":  "prototype_tested",
+                        "depends_on":  [
+                                           "climate-state"
+                                       ],
+                        "purpose":  "Bind exact climate provenance to bounded three-band surface reflectance for coarse believable palette causality.",
+                        "proof":  "Seven focused tests cover strict replay, exact reflectance causality, climate provenance separation, hostile ranges and bytes, fabricated upstream state, public-state drift and claim drift. Composition, chemistry, BRDF, weathering, thermal/mechanical properties, crafting, visibility, traversability and runtime simulation remain open.",
+                        "references":  [
+                                           "contracts/surface-material-state-contract.md",
+                                           "crates/surface-material-state/src/lib.rs",
+                                           "docs/canonical-system/G1_C3_SURFACE_MATERIAL_STATE_RESULT.md"
+                                       ]
+                    },
+                    {
+                        "id":  "regional-environment-state",
+                        "layer":  "game-canonical",
+                        "status":  "prototype_tested",
+                        "depends_on":  [
+                                           "field-basis"
+                                       ],
+                        "purpose":  "Compile exact deterministic field recipe, coordinate-free source binding and direct or spatially reconstructed coordinate evidence into normalized procedural regional exposure and moisture-potential fractions.",
+                        "proof":  "Ten focused tests cover strict point and coordinate-free binding replay, exact endpoint normalization, separate moisture source causality, coordinate-caused variation, spatial cell reconstruction, normalized-range rejection, missing identity, invalid recipe bytes, unknown/noncanonical bytes, fabricated state and claim drift. Partition ownership, terrain, weather, radiative transfer, physical visibility, biome, traversability and runtime claims remain open.",
+                        "references":  [
+                                           "contracts/field-basis-contract.md",
+                                           "contracts/spatial-domain-contract.md",
+                                           "contracts/regional-environment-state-contract.md",
+                                           "crates/regional-environment-state/src/lib.rs",
+                                           "docs/canonical-system/G1_C3_REGIONAL_EXPOSURE_RESULT.md",
+                                           "docs/canonical-system/G1_C3_PHYSICAL_REGION_PARTITION_RESULT.md"
+                                       ]
+                    },
+                    {
+                        "id":  "physical-region-partition",
+                        "layer":  "game-canonical",
+                        "status":  "prototype_tested",
+                        "depends_on":  [
+                                           "climate-state",
+                                           "regional-environment-state"
+                                       ],
+                        "purpose":  "Classify exact regional physical evidence with a versioned total signature and reconstruct bounded deterministic shared-edge components before ecological meaning.",
+                        "proof":  "Ten focused tests cover strict replay, canonical dimension order, exact lower-cut boundaries, climate-derived unavailable versus numeric zero, deterministic exhaustive non-wrapping connectivity, disconnected equal-signature islands, traversal-order independence, reconstruction mismatch, a pre-sampling 65,536-cell ceiling, forged membership/identity/authority and strict decoding. Planet/sphere geometry, terrain, biome/habitat semantics, visibility, traversability, storage, streaming and runtime remain open.",
+                        "references":  [
+                                           "contracts/spatial-domain-contract.md",
+                                           "contracts/regional-environment-state-contract.md",
+                                           "contracts/physical-region-partition-contract.md",
+                                           "crates/physical-region-partition/src/lib.rs",
+                                           "docs/canonical-system/G1_C3_PHYSICAL_PARTITION_POLICY_DESIGN_AUDIT.md",
+                                           "docs/canonical-system/G1_C3_PHYSICAL_PARTITION_IMPLEMENTATION_READINESS.md",
+                                           "docs/canonical-system/G1_C3_PHYSICAL_REGION_PARTITION_RESULT.md"
+                                       ]
+                    },
+                    {
+                        "id":  "physical-path-substrate",
+                        "layer":  "game-canonical",
+                        "status":  "prototype_tested",
+                        "depends_on":  [
+
+                                       ],
+                        "purpose":  "Reconstruct one finite cubic Q32.32 3D occupancy evidence volume and exact conservative interval-plus-contact path witnesses before channel, probe, ecology or runtime policy.",
+                        "proof":  "Thirteen focused tests cover strict recipe/volume/query/witness replay, unavailable/vacuum/substance separation, canonical sparse runs, ceiling and coordinate failures, closed outer endpoints, face/edge/vertex/endpoint contacts, stationary point evidence, exact reversal, thin-barrier crossing versus point contact, phantom-cell rejection, provenance-independent occupancy identity, forgery/noncanonical bytes, authority-negative claims and a measured 65,536-cell exhaustive cost receipt. The crate owns no sphere, planet, terrain, runtime voxels, propagation, visibility, passability, biome, ecotone, organism, approval or promotion semantics.",
+                        "references":  [
+                                           "contracts/physical-path-substrate-contract.md",
+                                           "crates/physical-path-substrate/src/lib.rs",
+                                           "docs/canonical-system/G1_C3_PHYSICAL_PATH_SUBSTRATE_DESIGN_GATE.md",
+                                           "docs/canonical-system/G1_C3_PATH_WITNESS_COUNTEREXAMPLE_RESULT.md",
+                                           "docs/canonical-system/G1_C3_PHYSICAL_PATH_SUBSTRATE_IMPLEMENTATION_READINESS.md",
+                                           "docs/canonical-system/G1_C3_PHYSICAL_PATH_SUBSTRATE_RESULT.md"
+                                       ]
+                    },
+                    {
+                        "id":  "visible-radiance-bulk-transfer",
+                        "layer":  "game-canonical",
+                        "status":  "prototype_tested",
+                        "depends_on":  [
+                                           "physical-path-substrate"
+                                       ],
+                        "purpose":  "Reconstruct exact physical-path evidence into bounded three-band single-medium direct-beam optical-depth and transmission bounds before interface optics, perception or rendering.",
+                        "proof":  "Twelve warnings-denied Rust tests cover strict profile/query/transfer replay, complete canonical substance coverage, vacuum/finite/opaque evidence, same-substance subdivision, reversal, unavailable/ambiguous/interface outcomes, stationary and tangent contacts, directed length and arithmetic ceilings, monotonicity, seven exact Python-oracle vectors, forgery/noncanonical bytes, authority negatives and a measured 65,536-substance profile. The independent Python harness passes 1,570 exact/directed checks. Known v1 transfer contains vacuum or one exact substance only; coefficient catalogues, interfaces, scattering, perception, rendering, passage, biome, planet, runtime, approval and promotion remain absent.",
+                        "references":  [
+                                           "contracts/visible-radiance-bulk-transfer-contract.md",
+                                           "crates/visible-radiance-bulk-transfer/src/lib.rs",
+                                           "docs/canonical-system/G1_C3_POST_PATH_SUBSTRATE_CONSUMER_REASSESSMENT.md",
+                                           "docs/canonical-system/G1_C3_VISIBLE_RADIANCE_PATH_TRANSFER_MATHEMATICAL_DESIGN_AUDIT.md",
+                                           "docs/canonical-system/G1_C3_VISIBLE_RADIANCE_BULK_TRANSFER_ORACLE_RESULT.md",
+                                           "docs/canonical-system/G1_C3_VISIBLE_RADIANCE_BULK_TRANSFER_IMPLEMENTATION_READINESS.md",
+                                           "docs/canonical-system/G1_C3_VISIBLE_RADIANCE_BULK_TRANSFER_RESULT.md"
+                                       ]
+                    },
+                    {
+                        "id":  "derived-world-rules",
+                        "layer":  "game-canonical",
+                        "status":  "prototype_tested",
+                        "depends_on":  [
+                                           "field-basis",
+                                           "surface-material-state",
+                                           "regional-environment-state"
+                                       ],
+                        "purpose":  "Compile strict physical-cause packets and derived environmental opportunities for world conditions, signals and palette bounds before organism ecology, aesthetics or representation.",
+                        "proof":  "Eleven world-packet tests require exact nested physical and regional contracts, reject reconstruction mismatch, fabricated state and legacy transmission fields, and prove bounded baseline-potential semantics plus coordinate-caused visible variation without changing unrelated pressure-wave output. Seven environmental-opportunity tests rebuild typed energy, liquid, atmosphere, substrate and signal nodes from the exact packet chain and reject absence contradictions, fabricated nodes and incomplete relations; five macro-lineage and 41 desktop integration tests pass. Signal propagation, biome structure, complete niches, physical visibility, traversability, scientific validation and second-platform evidence remain open.",
+                        "references":  [
+                                           "contracts/stellar-orbital-contract.md",
+                                           "contracts/geological-atmospheric-contract.md",
+                                           "contracts/hydrological-state-contract.md",
+                                           "contracts/climate-state-contract.md",
+                                           "contracts/surface-material-state-contract.md",
+                                           "contracts/regional-environment-state-contract.md",
+                                           "contracts/derived-world-rules-contract.md",
+                                           "contracts/environmental-opportunity-contract.md",
+                                           "crates/derived-world-rules/src/lib.rs",
+                                           "crates/niche-graph-binding/src/lib.rs",
+                                           "crates/derived-world-rules/examples/range_regional_cost_portfolio.rs",
+                                           "docs/canonical-system/G1_C3_STELLAR_ORBITAL_RESULT.md",
+                                           "docs/canonical-system/G1_C3_GEOLOGICAL_ATMOSPHERIC_RESULT.md",
+                                           "docs/canonical-system/G1_C3_HYDROLOGICAL_STATE_RESULT.md",
+                                           "docs/canonical-system/G1_C3_REGIONAL_EXPOSURE_RESULT.md",
+                                           "docs/canonical-system/G1_C3_SIGNAL_POTENTIAL_RESULT.md",
+                                           "docs/canonical-system/G1_C3_DERIVED_WORLD_CONTRACT_RESULT.md",
+                                           "docs/canonical-system/G1_C3_QUALITY_COST_RANGE_CANDIDATE_RESULT.md",
+                                           "docs/canonical-system/G1_C3_CLOSURE_READINESS_AUDIT.md",
+                                           "docs/canonical-system/G1_C3_ENVIRONMENTAL_OPPORTUNITY_RESULT.md"
+                                       ]
+                    },
+                    {
+                        "id":  "lazy-universe-hierarchy",
+                        "layer":  "game-canonical",
+                        "status":  "prototype_tested",
+                        "depends_on":  [
+                                           "universe-identity",
+                                           "derived-world-rules"
+                                       ],
+                        "purpose":  "Addressable, lazy materialisation from galaxy to entity with cache and promotion policy.",
+                        "proof":  "Strict deterministic descriptors, explicit origin, stable finite windows capped at 256, stale/cancel/budget rejection, and residency-negative identity fixtures. addressable-world-binding now requires exact WorldGenerationInput/CausalWorldPacket replay and rejects a packet from another input (5 focused tests), with a read-only ProofReceipt and no Kernel lifecycle mutation. The lifecycle slice now validates public and reconstructed state, rejects ambient appearance locks and hostile stored values, continues sequence across drive batches, and suppresses no-op deltas. These are bounded components only: C4 is dependency-gated by reopened C3 and its full addressable-state/history scope, production generation and cross-platform receipts remain open.",
+                        "references":  [
+                                           "contracts/hierarchy-history-contract.md",
+                                           "crates/hierarchy-history/src/hierarchy.rs",
+                                           "crates/addressable-world-binding/src/lib.rs",
+                                           "docs/canonical-system/HIERARCHY_HISTORY_DESIGN_GATE.md",
+                                           "docs/canonical-system/G1_C4_ADDRESSABLE_WORLD_BINDING_RESULT.md",
+                                           "docs/canonical-system/G1_C4_AGE_LIFECYCLE_AND_PROOFRECEIPT_RESULT.md"
+                                       ]
+                    },
+                    {
+                        "id":  "world-history-ledger",
+                        "layer":  "game-canonical",
+                        "status":  "prototype_tested",
+                        "depends_on":  [
+                                           "lazy-universe-hierarchy",
+                                           "forge-truth-kernel"
+                                       ],
+                        "purpose":  "Baseline reconstruction plus explicit mutable player and world deltas.",
+                        "proof":  "Canonical baseline binding, per-target ordered/idempotent replay, conflict/gap/corruption rejection, snapshot distrust, old/new generator coexistence, explicit migration, and authority-negative read-only ProofReceipt fixtures; production storage and cross-target transactions remain open.",
+                        "references":  [
+                                           "contracts/hierarchy-history-contract.md",
+                                           "crates/hierarchy-history/src/history.rs",
+                                           "docs/canonical-system/HIERARCHY_HISTORY_DESIGN_GATE.md"
+                                       ]
+                    },
+                    {
+                        "id":  "significance-system",
+                        "layer":  "game-canonical",
+                        "status":  "prototype_tested",
+                        "depends_on":  [
+                                           "lazy-universe-hierarchy"
+                                       ],
+                        "purpose":  "Shared importance packet for rendering, simulation, AI, physics, animation, audio, streaming, and generation.",
+                        "proof":  "Strict packet encoding, asymmetric hysteresis, protection, monotone independent consumer maps, and authority-negative fixtures; a new 4-test multi-domain fixture proves named AI/animation/audio/rendering consumers diverge from one shared tier, stay stable together through a shared hysteresis-protected flap, are jointly forced to Critical by a protected threat flag, and never interfere with each other\u0027s fidelity map. Product signals, weights, and mappings remain open.",
+                        "references":  [
+                                           "contracts/significance-scheduler-contract.md",
+                                           "crates/significance-scheduler/src/significance.rs",
+                                           "crates/significance-scheduler/tests/multi_domain_consumer_fidelity.rs",
+                                           "docs/canonical-system/SIGNIFICANCE_SCHEDULER_DESIGN_GATE.md",
+                                           "docs/canonical-system/G1_C5_MULTI_DOMAIN_FIDELITY_RESULT.md"
+                                       ]
+                    },
+                    {
+                        "id":  "streaming-scheduler",
+                        "layer":  "game-canonical",
+                        "status":  "prototype_tested",
+                        "depends_on":  [
+                                           "significance-system",
+                                           "lazy-universe-hierarchy"
+                                       ],
+                        "purpose":  "Predictive prefetch, pinning, cancellation, deadlines, fallback, and CPU/GPU/I/O/main-thread budgets.",
+                        "proof":  "Strict tickets, graph validation, safety admission, live priority donation, bounded fairness, deterministic traces, cancellation settlement, stale-output quarantine, fallback, and read-only ProofReceipt fixtures; runtime controllers, executors, cache policy, and performance remain open.",
+                        "references":  [
+                                           "contracts/significance-scheduler-contract.md",
+                                           "crates/significance-scheduler/src/scheduler.rs",
+                                           "docs/canonical-system/SIGNIFICANCE_SCHEDULER_DESIGN_GATE.md"
+                                       ]
+                    },
+                    {
+                        "id":  "semantic-emergence",
+                        "layer":  "game-canonical",
+                        "status":  "prototype_tested",
+                        "depends_on":  [
+                                           "derived-world-rules",
+                                           "world-history-ledger"
+                                       ],
+                        "purpose":  "Derive roles, competing solution families, concepts, and capabilities from world pressures and gameplay needs.",
+                        "proof":  "Strict canonical records, label-independent concept identity, grounded acyclic justification, mechanism-evidence diversity, hard feasibility, bounded validation, poison text, homonym, cycle, drift, and authority-negative fixtures; product ontology and generation remain open.",
+                        "references":  [
+                                           "contracts/semantic-construction-contract.md",
+                                           "crates/semantic-construction/src/model.rs",
+                                           "docs/canonical-system/SEMANTIC_CONSTRUCTION_DESIGN_GATE.md"
+                                       ]
+                    },
+                    {
+                        "id":  "construction-language",
+                        "layer":  "game-canonical",
+                        "status":  "prototype_tested",
+                        "depends_on":  [
+                                           "semantic-emergence"
+                                       ],
+                        "purpose":  "Universal part-role graphs, typed sockets, geometry operations, articulation, deformation, material regions, and validators.",
+                        "proof":  "Closed capability registry, typed part/socket graphs, connectivity and compatibility failures, exact ordered atomic recipe replay, stale/dangling rejection, deterministic fingerprints, and authority-negative fixtures; geometry, representation, physical validation, and runtime remain open.",
+                        "references":  [
+                                           "contracts/semantic-construction-contract.md",
+                                           "crates/semantic-construction/src/validate.rs",
+                                           "docs/canonical-system/SEMANTIC_CONSTRUCTION_DESIGN_GATE.md"
+                                       ]
+                    },
+                    {
+                        "id":  "organism-ecology",
+                        "layer":  "game-canonical",
+                        "status":  "specified",
+                        "depends_on":  [
+                                           "derived-world-rules",
+                                           "semantic-emergence",
+                                           "world-history-ledger",
+                                           "construction-language"
+                                       ],
+                        "purpose":  "Compile organism niche roles and occupancy, planetary macro-lineages, biome ecomorphs, sensory channels, person-form eligibility, applicable dimorphism, age cohorts and selected-entity lifecycle state from C3 physical ecology evidence.",
+                        "proof":  "Causal niche coverage, related-but-diverse ecomorphs, unusual-sense and no-eye cases, grotesque-form rejection, paired dimorphism, deterministic cohorts, reversible post-adult presentation lock, replay and no-old-age-death tests. The age-cohort/lifecycle slice remains prototype_tested in entity-lifecycle and entity-lifecycle-history-binding. A 2026-07-15 logical audit invalidated earlier organism-capability, body-part-as-niche and world-evidence-as-lineage claims; the physical environmental-opportunity graph is now explicitly C3 evidence rather than a C6 completion claim. Bounded C6 proof components cover environmental support (5 tests), macro-lineage identity/hypothetical occupancy/body-plan-reference binding (5 tests), and structural person-form binding completeness (6 tests). Full organism niche roles and occupancy, body-plan anatomy, sensory physiology, species/ecomorphs, comparative person-form eligibility, grotesque structural rejection, applicable dimorphism and population sampling remain unimplemented, and C6 is dependency-gated by C4-C5.",
+                        "references":  [
+                                           "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md",
+                                           "docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md",
+                                           "docs/canonical-system/MASTER_PLAN_V2.md",
+                                           "contracts/environmental-opportunity-contract.md",
+                                           "crates/entity-lifecycle/src/lib.rs",
+                                           "crates/entity-lifecycle-history-binding/src/lib.rs",
+                                           "crates/organism-niche-binding/src/lib.rs",
+                                           "crates/niche-graph-binding/src/lib.rs",
+                                           "crates/macro-lineage-binding/src/lib.rs",
+                                           "crates/person-form-eligibility/src/lib.rs",
+                                           "docs/canonical-system/G1_C3_ENVIRONMENTAL_OPPORTUNITY_RESULT.md",
+                                           "docs/canonical-system/G1_C4_AGE_LIFECYCLE_AND_PROOFRECEIPT_RESULT.md",
+                                           "docs/canonical-system/G1_C6_DISTANCE_SENSING_NICHE_BINDING_RESULT.md",
+                                           "docs/canonical-system/G1_C6_NICHE_GRAPH_BINDING_RESULT.md",
+                                           "docs/canonical-system/G1_C6_MACRO_LINEAGE_BINDING_RESULT.md",
+                                           "docs/canonical-system/G1_C6_PERSON_FORM_ELIGIBILITY_RESULT.md"
+                                       ]
+                    },
+                    {
+                        "id":  "aesthetic-grammar",
+                        "layer":  "game-canonical",
+                        "status":  "specified",
+                        "depends_on":  [
+                                           "derived-world-rules",
+                                           "semantic-emergence"
+                                       ],
+                        "purpose":  "Compile physically caused palette bounds, macro-to-micro inheritance, multidimensional form intent, harmony and controlled semantic tension without a universal beauty score.",
+                        "proof":  "Material-cause precedence, physical-constraint priority, metric separation, applicability, negative-control, anti-oatmeal, palette inheritance, readability, visual-fitness and candidate-baseline tests.",
+                        "references":  [
+                                           "docs/canonical-system/MASTER_PLAN_V2.md",
+                                           "docs/canonical-system/FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md",
+                                           "governance/STAGE_QUALITY_PROTOCOL.md"
+                                       ]
+                    },
+                    {
+                        "id":  "representation-selector",
+                        "layer":  "game-canonical",
+                        "status":  "prototype_tested",
+                        "depends_on":  [
+                                           "construction-language"
+                                       ],
+                        "purpose":  "Choose a neutral representation family from grounded functional requirements and explicit alternatives without category, format, renderer, or engine defaults.",
+                        "proof":  "Strict portfolios, content-bound lineage, hostile-reference rejection, P5-bound temporal plans, P7b-0 controlled-review protocol validation, and a deterministic built-in data-only wireframe viewport pass with read-only integration; general geometry, materials, rendering, perception, assets, animation, and external runtime compatibility remain open.",
+                        "references":  [
+                                           "contracts/representation-contract.md",
+                                           "contracts/perception-protocol-contract.md",
+                                           "contracts/reference-viewport-contract.md",
+                                           "crates/representation-contract/src/validate.rs",
+                                           "crates/perception-protocol/src/validate.rs",
+                                           "crates/reference-viewport/src/lib.rs",
+                                           "docs/canonical-system/P7B_CONTROLLED_PERCEPTION_DESIGN_GATE.md",
+                                           "docs/canonical-system/P7B_BUILTIN_REFERENCE_VIEWPORT_DECISION.md"
+                                       ]
+                    },
+                    {
+                        "id":  "asset-factory",
+                        "layer":  "game-canonical",
+                        "status":  "specified",
+                        "depends_on":  [
+                                           "construction-language",
+                                           "representation-selector",
+                                           "organism-ecology",
+                                           "aesthetic-grammar",
+                                           "forge-reference-studio"
+                                       ],
+                        "purpose":  "Produce recipes, artifacts, materials, LODs, repair candidates, and structured visual review from one canonical world/organism state.",
+                        "proof":  "End-to-end prop, furniture, weapon, plant, creature, ship, building, environment, anti-oatmeal, palette, phone-legibility and fidelity validation atlas.",
+                        "references":  [
+                                           "docs/canonical-system/PROOF_MATRIX.md"
+                                       ]
+                    },
+                    {
+                        "id":  "procedural-animation",
+                        "layer":  "game-canonical",
+                        "status":  "specified",
+                        "depends_on":  [
+                                           "construction-language",
+                                           "organism-ecology",
+                                           "significance-system"
+                                       ],
+                        "purpose":  "Articulation, deformation, contacts, locomotion, behaviour, interpolation, age/lineage expression, and temporal cadence.",
+                        "proof":  "Stability, purpose, contact, topology, recognisability, lineage/sex/age calibration, and temporal-LOD tests.",
+                        "references":  [
+                                           "docs/canonical-system/PROOF_MATRIX.md"
+                                       ]
+                    },
+                    {
+                        "id":  "runtime-adapter",
+                        "layer":  "runtime",
+                        "status":  "gated",
+                        "depends_on":  [
+                                           "asset-factory",
+                                           "procedural-animation",
+                                           "streaming-scheduler",
+                                           "world-history-ledger"
+                                       ],
+                        "purpose":  "Import promoted canonical output into a future selected runtime engine.",
+                        "proof":  "Clean-project import, build, profiling, identifier preservation, and replay tests.",
+                        "references":  [
+                                           "docs/canonical-system/UNRESOLVED_GAPS.md"
+                                       ]
+                    },
+                    {
+                        "id":  "causal-world-packet-seam",
+                        "layer":  "game-canonical",
+                        "status":  "reference_proven",
+                        "depends_on":  [
+                                           "derived-world-rules"
+                                       ],
+                        "purpose":  "Expose the exact C3A dependency-sufficient validated WorldGenerationInput and replayed CausalWorldPacket v1 seam with nested identity and provenance.",
+                        "proof":  "addressable-world-binding imports only WorldGenerationInput, CausalWorldPacket and validate_world_packet; focused replay and hostile-input tests pass without physical or optical imports.",
+                        "references":  [
+                                           "docs/canonical-system/G1_PRODUCT_PORTFOLIO_AND_C3_DEPENDENCY_REBASELINE.md",
+                                           "docs/canonical-system/G1_C4_ADDRESSABLE_WORLD_BINDING_RESULT.md",
+                                           "crates/addressable-world-binding/src/lib.rs"
+                                       ]
+                    },
+                    {
+                        "id":  "mindwarp-gameplay-foundation",
+                        "layer":  "game-product",
+                        "status":  "specified",
+                        "depends_on":  [
+                                           "causal-world-packet-seam"
+                                       ],
+                        "purpose":  "Define the player promise, fixed base loop, progression, encounter grammar and one runtime-independent vertical through GP0-GP4.",
+                        "proof":  "GP0 requires one promise, explicit non-goals and five coherent sessions; later proofs remain dependency-gated.",
+                        "references":  [
+                                           "docs/canonical-system/MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",
+                                           "docs/canonical-system/G1_PRODUCT_PORTFOLIO_AND_C3_DEPENDENCY_REBASELINE.md"
+                                       ]
+                    }
+                ]
 }

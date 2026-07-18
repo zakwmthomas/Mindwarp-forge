@@ -1,188 +1,218 @@
-{
-  "schema_version": 2,
-  "purpose": "Classification and coverage map from planning sources to the sole canonical execution registry.",
-  "sources": [
-    {
-      "path": "docs/canonical-system/MASTER_PLAN_V2.md",
-      "role": "canonical_planning_doctrine",
-      "coverage": "covered",
-      "items": [
-        "F5"
-      ]
-    },
-    {
-      "path": "docs/project-atlas/ROADMAP.md",
-      "coverage": "covered",
-      "items": [
-        "F4-MODULARITY",
-        "F5",
-        "C1",
-        "C2",
-        "C3",
-        "C4",
-        "C5",
-        "C6",
-        "C7",
-        "R1"
-      ],
-      "role": "superseded_navigation_plan"
-    },
-    {
-      "path": "docs/canonical-system/MASTER_CLOSURE_REGISTER.md",
-      "coverage": "covered",
-      "items": [
-        "A1",
-        "A2",
-        "A3",
-        "A4",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "B5",
-        "C1",
-        "C2",
-        "C3",
-        "C4",
-        "C5",
-        "C6",
-        "C7"
-      ],
-      "role": "retained_closure_evidence"
-    },
-    {
-      "path": "docs/canonical-system/F5_READINESS_GATE.md",
-      "coverage": "covered",
-      "items": [
-        "F5",
-        "C1",
-        "C2",
-        "C3",
-        "C4",
-        "C5",
-        "C6",
-        "C7"
-      ],
-      "role": "retained_readiness_evidence"
-    },
-    {
-      "path": "governance/WORKER_FORGE_INTEGRATION_PLAN.md",
-      "coverage": "partial",
-      "items": [
-        "W1",
-        "W2",
-        "B4"
-      ],
-      "role": "retained_governance_plan"
-    },
-    {
-      "path": "docs/canonical-system/CONVERSATION_COMPILER_READINESS.md",
-      "coverage": "covered",
-      "items": [
-        "A1",
-        "A2"
-      ],
-      "role": "retained_verified_evidence"
-    },
-    {
-      "path": "docs/canonical-system/RESEARCH_RECORD_READINESS.md",
-      "coverage": "partial",
-      "items": [
-        "B1"
-      ],
-      "role": "retained_readiness_evidence"
-    },
-    {
-      "path": "docs/canonical-system/CONTROL_PLANE_READINESS.md",
-      "coverage": "partial",
-      "items": [
-        "B2"
-      ],
-      "role": "retained_readiness_evidence"
-    },
-    {
-      "path": "docs/canonical-system/REFERENCE_STUDIO_READINESS.md",
-      "coverage": "partial",
-      "items": [
-        "B3"
-      ],
-      "role": "retained_readiness_evidence"
-    },
-    {
-      "path": "docs/canonical-system/UNIVERSE_IDENTITY_READINESS.md",
-      "coverage": "partial",
-      "items": [
-        "C2"
-      ],
-      "role": "retained_readiness_evidence"
-    },
-    {
-      "path": "docs/canonical-system/FIELD_BASIS_READINESS.md",
-      "coverage": "partial",
-      "items": [
-        "C3",
-        "C4",
-        "C5",
-        "C6",
-        "C7"
-      ],
-      "role": "retained_readiness_evidence"
-    },
-    {
-      "path": "docs/canonical-system/HIERARCHY_HISTORY_READINESS.md",
-      "coverage": "partial",
-      "items": [
-        "C3",
-        "C4",
-        "C5",
-        "C6",
-        "C7"
-      ],
-      "role": "retained_readiness_evidence"
-    },
-    {
-      "path": "docs/canonical-system/SIGNIFICANCE_SCHEDULER_READINESS.md",
-      "coverage": "partial",
-      "items": [
-        "C3",
-        "C4",
-        "C5",
-        "C6",
-        "C7"
-      ],
-      "role": "retained_readiness_evidence"
-    },
-    {
-      "path": "docs/canonical-system/SEMANTIC_CONSTRUCTION_READINESS.md",
-      "coverage": "partial",
-      "items": [
-        "C3",
-        "C4",
-        "C5",
-        "C6",
-        "C7"
-      ],
-      "role": "retained_readiness_evidence"
-    },
-    {
-      "path": "docs/canonical-system/REPRESENTATION_ASSET_ANIMATION_READINESS.md",
-      "coverage": "partial",
-      "items": [
-        "C3",
-        "C4",
-        "C5",
-        "C6",
-        "C7"
-      ],
-      "role": "retained_readiness_evidence"
-    },
-    {
-      "path": "contracts/knowledge-record-contract.md",
-      "coverage": "covered",
-      "items": [
-        "F5-COHERENCE"
-      ],
-      "role": "canonical_contract"
-    }
-  ]
+﻿{
+    "schema_version":  2,
+    "purpose":  "Classification and coverage map from planning sources to the sole canonical execution registry.",
+    "sources":  [
+                    {
+                        "path":  "docs/canonical-system/MASTER_PLAN_V2.md",
+                        "role":  "canonical_planning_doctrine",
+                        "coverage":  "covered",
+                        "items":  [
+                                      "F5"
+                                  ]
+                    },
+                    {
+                        "path":  "docs/project-atlas/ROADMAP.md",
+                        "coverage":  "covered",
+                        "items":  [
+                                      "F4-MODULARITY",
+                                      "F5",
+                                      "C1",
+                                      "C2",
+                                      "C3",
+                                      "C4",
+                                      "C5",
+                                      "C6",
+                                      "C7",
+                                      "R1",
+                                      "C3A",
+                                      "C3B",
+                                      "GP0",
+                                      "GP1",
+                                      "GP2",
+                                      "GP3",
+                                      "GP4"
+                                  ],
+                        "role":  "superseded_navigation_plan"
+                    },
+                    {
+                        "path":  "docs/canonical-system/MASTER_CLOSURE_REGISTER.md",
+                        "coverage":  "covered",
+                        "items":  [
+                                      "A1",
+                                      "A2",
+                                      "A3",
+                                      "A4",
+                                      "B1",
+                                      "B2",
+                                      "B3",
+                                      "B4",
+                                      "B5",
+                                      "C1",
+                                      "C2",
+                                      "C3",
+                                      "C4",
+                                      "C5",
+                                      "C6",
+                                      "C7",
+                                      "C3A",
+                                      "C3B",
+                                      "GP0",
+                                      "GP1",
+                                      "GP2",
+                                      "GP3",
+                                      "GP4"
+                                  ],
+                        "role":  "retained_closure_evidence"
+                    },
+                    {
+                        "path":  "docs/canonical-system/F5_READINESS_GATE.md",
+                        "coverage":  "covered",
+                        "items":  [
+                                      "F5",
+                                      "C1",
+                                      "C2",
+                                      "C3",
+                                      "C4",
+                                      "C5",
+                                      "C6",
+                                      "C7"
+                                  ],
+                        "role":  "retained_readiness_evidence"
+                    },
+                    {
+                        "path":  "governance/WORKER_FORGE_INTEGRATION_PLAN.md",
+                        "coverage":  "partial",
+                        "items":  [
+                                      "W1",
+                                      "W2",
+                                      "B4"
+                                  ],
+                        "role":  "retained_governance_plan"
+                    },
+                    {
+                        "path":  "docs/canonical-system/CONVERSATION_COMPILER_READINESS.md",
+                        "coverage":  "covered",
+                        "items":  [
+                                      "A1",
+                                      "A2"
+                                  ],
+                        "role":  "retained_verified_evidence"
+                    },
+                    {
+                        "path":  "docs/canonical-system/RESEARCH_RECORD_READINESS.md",
+                        "coverage":  "partial",
+                        "items":  [
+                                      "B1"
+                                  ],
+                        "role":  "retained_readiness_evidence"
+                    },
+                    {
+                        "path":  "docs/canonical-system/CONTROL_PLANE_READINESS.md",
+                        "coverage":  "partial",
+                        "items":  [
+                                      "B2"
+                                  ],
+                        "role":  "retained_readiness_evidence"
+                    },
+                    {
+                        "path":  "docs/canonical-system/REFERENCE_STUDIO_READINESS.md",
+                        "coverage":  "partial",
+                        "items":  [
+                                      "B3"
+                                  ],
+                        "role":  "retained_readiness_evidence"
+                    },
+                    {
+                        "path":  "docs/canonical-system/UNIVERSE_IDENTITY_READINESS.md",
+                        "coverage":  "partial",
+                        "items":  [
+                                      "C2"
+                                  ],
+                        "role":  "retained_readiness_evidence"
+                    },
+                    {
+                        "path":  "docs/canonical-system/FIELD_BASIS_READINESS.md",
+                        "coverage":  "partial",
+                        "items":  [
+                                      "C3",
+                                      "C4",
+                                      "C5",
+                                      "C6",
+                                      "C7"
+                                  ],
+                        "role":  "retained_readiness_evidence"
+                    },
+                    {
+                        "path":  "docs/canonical-system/HIERARCHY_HISTORY_READINESS.md",
+                        "coverage":  "partial",
+                        "items":  [
+                                      "C3",
+                                      "C4",
+                                      "C5",
+                                      "C6",
+                                      "C7"
+                                  ],
+                        "role":  "retained_readiness_evidence"
+                    },
+                    {
+                        "path":  "docs/canonical-system/SIGNIFICANCE_SCHEDULER_READINESS.md",
+                        "coverage":  "partial",
+                        "items":  [
+                                      "C3",
+                                      "C4",
+                                      "C5",
+                                      "C6",
+                                      "C7"
+                                  ],
+                        "role":  "retained_readiness_evidence"
+                    },
+                    {
+                        "path":  "docs/canonical-system/SEMANTIC_CONSTRUCTION_READINESS.md",
+                        "coverage":  "partial",
+                        "items":  [
+                                      "C3",
+                                      "C4",
+                                      "C5",
+                                      "C6",
+                                      "C7"
+                                  ],
+                        "role":  "retained_readiness_evidence"
+                    },
+                    {
+                        "path":  "docs/canonical-system/REPRESENTATION_ASSET_ANIMATION_READINESS.md",
+                        "coverage":  "partial",
+                        "items":  [
+                                      "C3",
+                                      "C4",
+                                      "C5",
+                                      "C6",
+                                      "C7"
+                                  ],
+                        "role":  "retained_readiness_evidence"
+                    },
+                    {
+                        "path":  "contracts/knowledge-record-contract.md",
+                        "coverage":  "covered",
+                        "items":  [
+                                      "F5-COHERENCE"
+                                  ],
+                        "role":  "canonical_contract"
+                    },
+                    {
+                        "path":  "docs/canonical-system/G1_PRODUCT_PORTFOLIO_AND_C3_DEPENDENCY_REBASELINE.md",
+                        "coverage":  "covered",
+                        "items":  [
+                                      "C3",
+                                      "C3A",
+                                      "C3B",
+                                      "C4",
+                                      "GP0",
+                                      "GP1",
+                                      "GP2",
+                                      "GP3",
+                                      "GP4"
+                                  ],
+                        "role":  "owner_authorized_program_adjudication"
+                    }
+                ]
 }

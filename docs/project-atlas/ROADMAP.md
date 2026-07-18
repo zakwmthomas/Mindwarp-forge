@@ -2,11 +2,15 @@
 
 ```mermaid
 flowchart LR
-  F1["F1 Kernel\nverified"] --> F2["F2 Continuity\nverified"] --> F3["F3 Atlas\nverified"] --> F4["F4 Canonical registry\nverified"] --> F5["F5 Reference proof studio\nverified"] --> G1["G1 Canonical production system\nactive"] --> R1["R1 Runtime adapter\ngated"]
+  F1["F1 Kernel\nverified"] --> F2["F2 Continuity\nverified"] --> F3["F3 Atlas\nverified"] --> F4["F4 Canonical registry\nverified"] --> F5["F5 Reference proof studio\nverified"] --> C3A["C3A causal-world seam\npromoted"] --> GP0["GP0 player promise\nactive"] --> GP4["GP4 vertical contract\ngated"] --> R1["R1 Runtime adapter\ngated"]
+  C3A -. independent evidence gate .-> C3B["C3B physical/presentation fidelity\nblocked"]
 ```
 
-The current active milestone is **G1: Canonical production system**. The F5
-engine-neutral proof milestone is verified. ProofReceipt P1, bounded
+The current active milestone is **G1: Canonical production system**, now driven by the GP0-GP4 product
+route. C3A exposes the exact validated causal-world seam needed downstream;
+C3B remains visibly blocked and does not prevent the first fixed-content
+vertical. Runtime selection remains at R1. The F5 engine-neutral proof
+milestone is verified. ProofReceipt P1, bounded
 universe-identity P2, bounded
 field-basis P3, capability-free hierarchy/history P4, and bounded
 significance/scheduler P5 reference prototypes are verified. P5 keeps shared

@@ -28,6 +28,16 @@ $forgeMetricsRoute =
   $Checkpoint.master_program_item -eq 'C3' -and
   $Checkpoint.substage_id -in @('forge-metrics-telemetry-and-projection-implementation','forge-metrics-dashboard-verification','forge-metrics-dashboard-recorded') -and
   $Checkpoint.authority_lane -like '*Owner-approved local Forge measurement*read-only dashboard*may not approve*execute*tune*promote*runtime*'
+$controlPlaneConsolidationRoute =
+  $Checkpoint.batch_id -eq 'G1-FORGE-CONSOLIDATION-CONTROL-PLANE-V1' -and
+  $Checkpoint.master_program_item -eq 'B4' -and
+  $Checkpoint.substage_id -in @('forge-consolidation-control-plane-implementation','forge-consolidation-control-plane-verification','forge-consolidation-control-plane-recorded') -and
+  $Checkpoint.authority_lane -like '*Preserve accumulated Forge evidence*control-plane safety*No game feature*runtime*promotion*C3 closure*'
+$gameplayFoundationRoute =
+  $Checkpoint.batch_id -eq 'G1-GP0-PLAYER-FANTASY-BOUNDARY-V1' -and
+  $Checkpoint.master_program_item -eq 'GP0' -and
+  $Checkpoint.substage_id -eq 'gp0-product-player-fantasy-boundary' -and
+  $Checkpoint.authority_lane -like '*Clean-room gameplay design*No historical source code*runtime*engine*network*monetization*'
 $c3DesignRoute =
   $Checkpoint.batch_id -eq 'G1-C3-WHOLE-CELL-RECEIVER-COUPLING-MATHEMATICAL-DESIGN-V1' -and
   $Checkpoint.master_program_item -eq 'C3' -and
@@ -154,7 +164,8 @@ $c3CrossBoundaryEcotoneOracle =
   $Checkpoint.substage_id -in @('c3-cross-boundary-ecotone-oracle-implementation','c3-cross-boundary-ecotone-oracle-verification','c3-cross-boundary-ecotone-oracle-result') -and
   $Checkpoint.authority_lane -like '*Owner-approved disposable C3 ecotone oracle implementation only*No crate*contract schema*dependency*production test*production source*downstream consumer*physical calibration*received energy*visibility*renderer*biome*organism*runtime*promotion*C3 closure*'
 $valid =
-  ($C3.next_action -like '*whole-cell receiver-coupling mathematical design*receiver-before-face ordering*' -or
+  ($C3.next_action -like '*Use C3A*Keep C3B*full C3 closure*' -or
+   $C3.next_action -like '*whole-cell receiver-coupling mathematical design*receiver-before-face ordering*' -or
    $C3.next_action -like '*code-free mathematical design*whole-cell dimensionless transfer*' -or
    $C3.next_action -like '*code-facing readiness/gap audit*whole-cell dimensionless-transfer*' -or
    $C3.next_action -like '*owner-authorized*whole-cell dimensionless-transfer*' -or
@@ -174,6 +185,6 @@ $valid =
    $C3.next_action -like '*material owner-direction gate*authoritative project-specific spatial and material evidence*leave physical applicability explicitly blocked*different dependency-ready C3 route*' -or
    $C3.next_action -like '*physical applicability*blocked*code-free*C3*ecotone*mathematical-design*' -or
    $C3.next_action -like '*physical applicability*blocked*ecotone oracle implementation verification*') -and
-  (($Checkpoint.master_program_item -eq 'G1-FEDERATED-CONTINUITY' -and ($implementationRoute -or $reconciliationRoute -or $acceptanceRoute)) -or $forgeMetricsRoute -or $c3DesignRoute -or $c3ReceiverOwnerGate -or $c3ReceiverImplementation -or $c3PostReceiverReassessment -or $c3WholeCellTransferDesign -or $c3WholeCellTransferReadiness -or $c3WholeCellTransferImplementation -or $c3PostWholeCellTransferReassessment -or $c3SourceDistributionMeasure -or $c3SourceQuantityGap -or $c3SourceQuantityBasis -or $c3CalibratedSpectralTimeBasis -or $c3CalibratedBasisGap -or $c3SourceCalibrationOwnerGate -or $c3SourceCalibrationImplementation -or $c3CalibratedSourceEnergyDistribution -or $c3CalibratedSourceEnergyDistributionReadiness -or $c3CalibratedSourceEnergyDistributionImplementation -or $c3CalibratedTransportApplicabilityGap -or $c3CalibratedTransportApplicabilityDesign -or $c3CalibratedTransportPhysicalEvidenceProtocol -or $c3PostPhysicalEvidenceResidualObligation -or $c3CrossBoundaryEcotoneDesign -or $c3CrossBoundaryEcotoneReadiness -or $c3CrossBoundaryEcotoneOracle)
+  (($Checkpoint.master_program_item -eq 'G1-FEDERATED-CONTINUITY' -and ($implementationRoute -or $reconciliationRoute -or $acceptanceRoute)) -or $forgeMetricsRoute -or $controlPlaneConsolidationRoute -or $gameplayFoundationRoute -or $c3DesignRoute -or $c3ReceiverOwnerGate -or $c3ReceiverImplementation -or $c3PostReceiverReassessment -or $c3WholeCellTransferDesign -or $c3WholeCellTransferReadiness -or $c3WholeCellTransferImplementation -or $c3PostWholeCellTransferReassessment -or $c3SourceDistributionMeasure -or $c3SourceQuantityGap -or $c3SourceQuantityBasis -or $c3CalibratedSpectralTimeBasis -or $c3CalibratedBasisGap -or $c3SourceCalibrationOwnerGate -or $c3SourceCalibrationImplementation -or $c3CalibratedSourceEnergyDistribution -or $c3CalibratedSourceEnergyDistributionReadiness -or $c3CalibratedSourceEnergyDistributionImplementation -or $c3CalibratedTransportApplicabilityGap -or $c3CalibratedTransportApplicabilityDesign -or $c3CalibratedTransportPhysicalEvidenceProtocol -or $c3PostPhysicalEvidenceResidualObligation -or $c3CrossBoundaryEcotoneDesign -or $c3CrossBoundaryEcotoneReadiness -or $c3CrossBoundaryEcotoneOracle)
 
 Write-Output ([bool]$valid)

@@ -24,4 +24,5 @@ const PROOF_RECEIPT_SYSTEM_IDS: &[&str] = &[
     "representation-selector",
     "asset-factory",
     "procedural-animation",
+    "causal-world-packet-seam",
 ];

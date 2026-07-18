@@ -2,7 +2,7 @@
 
 > GENERATED from `docs/canonical-system/MASTER_PROGRAM.json`. Do not edit this view directly.
 
-Canonical lifecycle: schema v2; executing item: `C3`.
+Canonical lifecycle: schema v2; executing item: `GP0`.
 Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
 
 ## F4
@@ -51,18 +51,32 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
   Next: Maintain the promoted logical/reconstruction identity split, strict codec, stream partitioning, explicit migration and collision failure rules; require C3-C7 consumers to retain those boundaries.
 - **G1-FEDERATED-CONTINUITY** - promoted; gate: implementation; depends on: F5-COHERENCE, C2.
   Next: Maintain the owner-accepted V4 receipt as the canonical live search baseline, retain every V1-V3 row and later append-only V4 capture, and keep repair, rollback, deletion and cache cleanup separately gated.
-- **C3** - executing; gate: design; depends on: C2.
-  Next: Keep physical applicability explicitly blocked, retain the completed code-free C3 cross-boundary ecotone mathematical-design audit, and at the exact ecotone-oracle implementation decision approve or reject one disposable stdlib-only Python proof package. Approval may add only the frozen oracle script, focused verifier, oracle-result record and route references; it must reproduce the exact pointwise palette relation, semantic and audit digests, dimension-local typed outcomes, positive grids, seven enumeration modes, nineteen hostile families, resource ceilings and deletion-only rollback. Stop before any contract schema, crate, dependency, production test, production source, downstream consumer, canonical material-interface owner, renderer, biome, organism, runtime, promotion or C3 closure. This continuation retains the earlier explicit owner decision for the evidence-acquisition and mathematical-design audit.
-- **C4** - proposed; gate: design; depends on: C2, C3.
-  Next: Wait for C3 closure. Retain the repaired addressable-world and lifecycle/history components as bounded evidence, then resume C4 against the full addressable-state and history scope.
+- **C3** - superseded; gate: design; depends on: C2.
+  Next: Keep physical applicability explicitly blocked, retain the code-free C3 ecotone mathematical-design result, and complete the owner-approved disposable stdlib-only ecotone oracle implementation verification through its focused, historical, context, record-role, modularity and complete Forge gates. Stop after the oracle result for reassessment. Do not add a contract schema, crate, dependency, production test, production source, downstream consumer, canonical material-interface owner, renderer, biome, organism, runtime, promotion or C3 closure. This continuation retains the earlier explicit owner decision for the evidence-acquisition and mathematical-design audit.
+- **C3A** - promoted; gate: hard; depends on: C2.
+  Next: Maintain the validated WorldGenerationInput to replayed CausalWorldPacket v1 seam for dependency-sufficient consumers.
+- **C3B** - blocked; gate: evidence; depends on: C3A.
+  Next: Wait for authoritative project-specific physical scale, calibrated coefficient, applicability, visibility and presentation fidelity evidence; do not substitute Yard Atlas or fixture data.
+- **C4** - proposed; gate: design; depends on: C2, C3A.
+  Next: Resume addressable-state and history work against the exact promoted C3A causal-world seam; do not import C3B physical or presentation claims.
 - **C5** - proposed; gate: design; depends on: C4.
   Next: Wait for C4 closure. Retain the shared-significance and four-domain fidelity-map fixture as bounded evidence, then prove scheduler dispatch and budget control across every named generation, simulation, AI, physics, animation, audio, rendering and streaming consumer before C5 completion.
 - **C6** - proposed; gate: design; depends on: C4, C5.
   Next: Wait for the reopened C3-C5 route. Retain the repaired C6 prototypes as bounded evidence only; do not continue body-plan work until the upstream causal-world, addressable-state and shared-scheduler packages satisfy their declared scopes.
 - **C7** - proposed; gate: design; depends on: C5, C6.
   Next: Promote representation contracts and prove asset, animation, aesthetic, visual-fitness and phone-to-high-end fidelity recipes from the same canonical organism/world state.
-- **G1-CLOSEOUT** - proposed; gate: owner; depends on: C3, C4, C5, C6, C7.
+- **G1-CLOSEOUT** - proposed; gate: owner; depends on: C3A, C4, C5, C6, C7, GP4.
   Next: Run the whole deterministic universe-to-representation chain, adversarial seed portfolio, recovery, quality-diversity, visual-fitness and simulated fidelity evidence before preparing one G1 promotion package.
+- **GP0** - executing; gate: design; depends on: C3A.
+  Next: Adjudicate one player promise, explicit non-goals and five representative session stories that all express the same Mind Warp game.
+- **GP1** - proposed; gate: design; depends on: GP0.
+  Next: Prove the preparation, departure, encounter, consequence and return loop with fixed authored examples.
+- **GP2** - proposed; gate: design; depends on: GP1.
+  Next: Separate knowledge, access, relationship, construction and power progression; model sources, sinks, exploits and resets.
+- **GP3** - proposed; gate: design; depends on: GP2.
+  Next: Define explainable encounter grammar for environments, creatures, societies, anomalies and construction, including noncombat solutions.
+- **GP4** - proposed; gate: design; depends on: GP3, C4.
+  Next: Freeze one runtime-independent living hub to remembered-response vertical experience contract and adversarial fixture set.
 
 ## R1
 

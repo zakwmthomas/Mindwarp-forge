@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **G1-FORGE-METRICS-DASHBOARD-V1**
-- Objective: Implement the owner-approved Forge-workflow metrics pipeline, read-only desktop Metrics tab and evidence-backed advisory improvement recommendations without granting automated authority.
+- Work package: **G1-GP0-PLAYER-FANTASY-BOUNDARY-V1**
+- Objective: Adjudicate the Mind Warp player promise, explicit non-goals and five representative session stories before any runtime or broad procedural implementation.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
-- Related systems: forge-kernel, conversation-capture, task-bootstrap, forge-dashboard
-- Risk/research gate: **bounded-local-metrics-persistence-capture-and-read-only-dashboard / Existing B4 contracts and executable persistence fixtures establish the append-only telemetry basis; the owner explicitly selected Forge-workflow-first measurement, both worker and routine-run layers, summary plus drilldown, and advisory trials only.**
-- Exact next action: Stop after the recorded read-only Metrics dashboard result. Any automatic tuning, external telemetry, game/runtime instrumentation, pricing model or execution of an advisory experiment requires separate owner authorization.
+- Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
+- Risk/research gate: **bounded-clean-room-gameplay-adjudication / The owner-approved product rebaseline and clean-room gameplay recovery map establish the candidate space; historical code, runtime claims, Quantum Tunnel product assumptions and unadjudicated assistant proposals remain evidence only.**
+- Exact next action: Produce one concise GP0 player-promise package with primary and supporting fantasies, explicit non-goals, default session assumptions and five fixed session stories that all express the same game; stop before GP1 implementation.
 
 ## Approved operating policies
 
