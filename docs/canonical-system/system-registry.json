@@ -580,7 +580,7 @@
                                            "causal-world-packet-seam"
                                        ],
                         "purpose":  "Define the player promise, fixed base loop, progression, encounter grammar and one runtime-independent vertical through GP0-GP4.",
-                        "proof":  "GP0 fixes one strict causal_explorer_maker concept and five corrected authored sessions. GP1 adds one shared deterministic six-phase loop, repairable failure, typed stable stops, exact run/event/session/outcome append receipts, optional exact C3A context and predecessor-sensitive S1-to-S5 consequence. GP2 implements eighteen private explicit rules across five typed nonfungible lanes with exact GP1 terminal digest authority and deterministic pairwise-incomparable strategies; focused, workspace, independent and registered full-gate verification passed in run-2dc3db644adc416a8ef56461dbb771b6. The additive C4V sibling binds C2/C3A/GP1 through seven adversarial vertical-persistence tests and independent candidate acceptance. GP3, GP4 and runtime remain dependency-gated.",
+                        "proof":  "GP0 fixes one strict causal_explorer_maker concept and five corrected authored sessions. GP1 adds one shared deterministic six-phase loop, repairable failure, typed stable stops, exact run/event/session/outcome append receipts, optional exact C3A context and predecessor-sensitive S1-to-S5 consequence. GP2 implements eighteen private explicit rules across five typed nonfungible lanes with exact GP1 terminal digest authority and deterministic pairwise-incomparable strategies; focused, workspace, independent and registered full-gate verification passed in run-2dc3db644adc416a8ef56461dbb771b6. The additive C4V sibling binds C2/C3A/GP1 through seven adversarial vertical-persistence tests and registered proof. GP3 is promoted with five fixed multi-domain authored situations, 18 exact approaches, complete GP0 consequence references, strict pinned codecs, exact predecessor authority and an 18-test hostile matrix; registered complete gate run-50a8c78043eb46c483f1f655d3793f9b passed in 490027 ms. GP4 and runtime remain owner-gated.",
                         "references":  [
                                            "docs/canonical-system/MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",
                                            "docs/canonical-system/G1_PRODUCT_PORTFOLIO_AND_C3_DEPENDENCY_REBASELINE.md",
@@ -591,6 +591,11 @@
                                            "docs/canonical-system/G1_GP2_PROGRESSION_DESIGN.md",
                                            "docs/canonical-system/G1_GP2_PROGRESSION_RESULT.md",
                                            "docs/canonical-system/G1_C4V_VERTICAL_PERSISTENCE_RESULT.md",
+                                           "docs/canonical-system/G1_GP3_ENCOUNTER_GRAMMAR_READINESS.md",
+                                           "docs/canonical-system/G1_GP3_ENCOUNTER_GRAMMAR_DESIGN.md",
+                                           "docs/canonical-system/G1_GP3_ENCOUNTER_GRAMMAR_FIXED_REGISTRY.md",
+                                           "docs/canonical-system/G1_GP3_ENCOUNTER_GRAMMAR_RESULT.md",
+                                           "crates/mindwarp-gameplay-foundation/src/encounter_grammar.rs",
                                            "crates/mindwarp-gameplay-foundation/src/base_loop.rs",
                                            "crates/mindwarp-gameplay-foundation/src/lib.rs"
                                        ]

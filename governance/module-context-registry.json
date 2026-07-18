@@ -1217,7 +1217,7 @@
         {
             "id": "mindwarp-gameplay-foundation",
             "maturity": "prototype_tested",
-            "purpose": "Prove the GP0 causal-explorer-maker promise, GP1 fixed six-phase loop and GP2 typed nonfungible progression through five authored sessions and deterministic strict replay.",
+            "purpose": "Prove the GP0 causal-explorer-maker promise, GP1 fixed six-phase loop, GP2 typed nonfungible progression and GP3 fixed authored encounter grammar through five sessions and deterministic strict replay.",
             "owns": [
                 "GameplayConceptRecordV1 and five fixed SessionRecordV1 fixtures",
                 "strict concept session C3A reference state and history codecs",
@@ -1226,7 +1226,9 @@
                 "engine-neutral prepare depart encounter consequence return and remembered-response reducer",
                 "repairable encounter failure stable stops and run-to-history append receipts",
                 "private fixed progression rules and digest-bound typed progression receipts",
-                "distinct knowledge access relationship construction capability and named-asset records"
+                "distinct knowledge access relationship construction capability and named-asset records",
+                "fixed GP3 multi-domain encounter facets with exact GP0 session evidence risk outcome and consequence digests",
+                "typed noncombat approaches ordered interventions exact prerequisites risk dispositions causal explanations retreat and optional nonterminal threat composition"
             ],
             "non_goals": [
                 "runtime engine persistence or procedural content",
@@ -1234,16 +1236,18 @@
                 "combat as a sufficient core-tension resolution",
                 "authored science facts as C3A or C3B proof",
                 "currency-shaped progression generic reputation bond trade meters XP levels or automatic conversion",
-                "GP3 encounter grammar or GP4 runtime-independent vertical promotion"
+                "GP4 runtime-independent vertical promotion or runtime encounter execution"
             ],
             "entrypoints": [
                 "src/lib.rs",
                 "src/fixtures.rs",
                 "src/base_loop.rs",
                 "src/progression.rs",
+                "src/encounter_grammar.rs",
                 "tests/gp0_contract.rs",
                 "tests/gp1_base_loop.rs",
-                "tests/gp2_progression.rs"
+                "tests/gp2_progression.rs",
+                "tests/gp3_encounter_grammar.rs"
             ],
             "invariants": [
                 "causal_explorer_maker is the exact primary fantasy and reversible session assumptions remain proposed",
@@ -1261,13 +1265,19 @@
                 "GP2 V1 accepts only strict replay-validated authored fixture terminal states and exact external base-loop history",
                 "the private registry covers all eighteen fixed outcomes with zero conversions and zero resets",
                 "caller failure costs arbitrary tools threats retreat and repetition cannot fabricate capability or durable progress",
-                "strategy comparison derives exact typed affordances decisions and liabilities and uses formal set dominance"
+                "strategy comparison derives exact typed affordances decisions and liabilities and uses formal set dominance",
+                "GP3 contains exactly five fixed authored situations with complete ordered multi-domain facets and only S4 carries anomaly",
+                "each GP3 approach binds exact authored tools steps prerequisites risk dispositions explanation limitation and complete GP0 consequence references",
+                "S3 force is partial only and optional threat composition remains nonterminal and approach-bound only in S2 S4 and S5",
+                "S5 GP3 context requires the exact latest replay-valid S1 direct bypass or ration event and rejects retreat stale foreign reordered or fabricated history",
+                "GP3 strict codecs pin five situation digests and one grammar digest with exhaustive nested bounds and no GP2 generation runtime or C3B authority"
             ],
             "verification": [
                 "cargo test -p mindwarp-gameplay-foundation",
                 "tools/verify-g1-gp0-gameplay-foundation.ps1",
                 "tools/verify-g1-gp1-fixed-base-loop.ps1",
                 "tools/verify-g1-gp2-progression.ps1",
+                "tools/verify-g1-gp3-encounter-grammar.ps1",
                 "tools/verify-module-context.ps1"
             ],
             "references": [
@@ -1278,7 +1288,11 @@
                 "docs/canonical-system/G1_GP1_FIXED_BASE_LOOP_READINESS.md",
                 "docs/canonical-system/G1_GP1_FIXED_BASE_LOOP_RESULT.md",
                 "docs/canonical-system/G1_GP2_PROGRESSION_DESIGN.md",
-                "docs/canonical-system/G1_GP2_PROGRESSION_RESULT.md"
+                "docs/canonical-system/G1_GP2_PROGRESSION_RESULT.md",
+                "docs/canonical-system/G1_GP3_ENCOUNTER_GRAMMAR_READINESS.md",
+                "docs/canonical-system/G1_GP3_ENCOUNTER_GRAMMAR_DESIGN.md",
+                "docs/canonical-system/G1_GP3_ENCOUNTER_GRAMMAR_FIXED_REGISTRY.md",
+                "docs/canonical-system/G1_GP3_ENCOUNTER_GRAMMAR_RESULT.md"
             ]
         },
         {

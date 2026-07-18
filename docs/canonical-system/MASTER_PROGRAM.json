@@ -610,8 +610,8 @@
                                          "GP1"
                                      ],
             "gate":  "recorded",
-            "next_action":  "C4V is recorded and closed. Await explicit owner authorization before activating queued GP3; do not start GP3 or GP4 from this checkpoint.",
-            "proof":  "The isolated mindwarp-vertical-persistence crate, seven adversarial tests, strict semantic replay, framed V1-to-V2 migration/rollback, module integration, workspace regression and independent candidate review pass. Registered complete gate run-fa6334a300e04d409dd5cddb4f22542e passed in 511311 ms; C4V is closed while remaining the non-executing-work cursor until the owner authorizes a successor.",
+            "next_action":  "Retain the bounded C4V seam as a verified GP4 dependency; do not broaden it into runtime or broad C4.",
+            "proof":  "The isolated mindwarp-vertical-persistence crate, seven adversarial tests, strict semantic replay, framed V1-to-V2 migration/rollback, module integration, workspace regression and independent candidate review pass. Registered complete gate run-fa6334a300e04d409dd5cddb4f22542e passed in 511311 ms; C4V is a closed bounded seam and GP3 is its authorized successor route.",
                       "sources":  [
                                       "G1_C4V_VERTICAL_PERSISTENCE_READINESS.md",
                                       "G1_C4V_VERTICAL_PERSISTENCE_DESIGN.md",
@@ -767,7 +767,7 @@
                                          "GP1"
                                      ],
             "gate":  "recorded",
-            "next_action":  "Retain the verified GP2 result as GP3 input; do not reopen progression while C4V is active.",
+            "next_action":  "Retain the verified GP2 result as typed context for GP3 without reopening progression or authorizing automatic encounter-to-progression mapping.",
             "proof":  "GP2 implements eighteen private explicit rules across five typed nonfungible lanes, exact GP1 terminal digest authority, guarded nonrecursive flows, the S1 capability allowlist and deterministic pairwise-incomparable strategies; focused, workspace, independent and registered verification passed in run-2dc3db644adc416a8ef56461dbb771b6.",
                       "sources":  [
                                       "MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",
@@ -777,20 +777,24 @@
                         "G1_GP2_PROGRESSION_RESULT.md"
                                   ]
                   },
-                  {
-                      "id":  "GP3",
-                      "milestone":  "G1",
-                      "state":  "proposed",
-                      "status":  "gated",
+        {
+            "id":  "GP3",
+            "milestone":  "G1",
+            "state":  "promoted",
+            "status":  "complete",
                       "depends_on":  [
                                          "GP2"
                                      ],
-                      "gate":  "design",
-                      "next_action":  "Define explainable encounter grammar for environments, creatures, societies, anomalies and construction, including noncombat solutions.",
-                      "proof":  "Fixed fixtures yield materially different readable encounters bound to causal evidence.",
-                      "sources":  [
-                                      "MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md"
-                                  ]
+                      "gate":  "recorded",
+            "next_action":  "Retain verified GP3 as a closed GP4 dependency; do not start GP4 or runtime without explicit owner authorization.",
+            "proof":  "Exactly five fixed authored multi-domain situations, 18 exact approaches, strict codecs, complete GP0 consequence references, an 18-test hostile matrix, retained GP0-GP2 regressions, workspace integration and independent review pass. Registered complete gate run-50a8c78043eb46c483f1f655d3793f9b passed in 490027 ms; GP3 is closed without generation, runtime, GP2 mapping, GP4 or C3B authority.",
+            "sources":  [
+                        "MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",
+                        "G1_GP3_ENCOUNTER_GRAMMAR_READINESS.md",
+                        "G1_GP3_ENCOUNTER_GRAMMAR_DESIGN.md",
+                        "G1_GP3_ENCOUNTER_GRAMMAR_FIXED_REGISTRY.md",
+                        "G1_GP3_ENCOUNTER_GRAMMAR_RESULT.md"
+                    ]
                   },
                   {
                       "id":  "GP4",

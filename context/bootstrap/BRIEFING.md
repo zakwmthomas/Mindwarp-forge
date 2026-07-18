@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **G1-C4V-VERTICAL-PERSISTENCE-V1**
-- Objective: Prove one isolated engine-neutral stable-stop-to-stable-stop vertical persistence seam without authorizing a save engine or runtime.
+- Work package: **G1-GP3-ENCOUNTER-GRAMMAR-V1**
+- Objective: Prove exactly five fixed authored encounter situations with explainable evidence and risk facets, multiple noncombat resolutions, retreat and exact GP0 consequence references.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **bounded-engine-neutral-c4v-persistence-proof / C2, C3A and GP1 are complete. C4V source, seven adversarial tests and independent candidate review are green; broad C4, C3B, D4 and R1 remain unchanged.**
-- Exact next action: C4V is recorded and closed. Await explicit owner authorization before activating queued GP3; do not start GP3 or GP4.
+- Risk/research gate: **bounded-authored-gp3-encounter-grammar-proof / GP0, GP1 and GP2 are complete and C4V is promoted. GP3 is game-first and authored-only: readiness and adversarial gates precede source; GP4, runtime, generation, weights and C3B remain blocked.**
+- Exact next action: GP3 is recorded and closed. Await explicit owner authorization before GP4; do not start GP4 or runtime.
 
 ## Approved operating policies
 

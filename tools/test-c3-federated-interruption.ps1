@@ -56,7 +56,12 @@ $c4vGameplayRoute =
   $Checkpoint.master_program_item -eq 'C4V' -and
   $Checkpoint.substage_id -in @('c4v-vertical-persistence-readiness','c4v-implementation-verification','c4v-verified-result') -and
   $Checkpoint.authority_lane -like '*Owner-authorized isolated C4V engine-neutral persistence proof only*No broad C4*production filesystem*runtime*GP2*GP3*C3B*Greenfield*Kernel mutation*'
-$gameplayFoundationRoute = $gp0GameplayRoute -or $gp1GameplayRoute -or $gp2GameplayRoute -or $c4vGameplayRoute
+$gp3GameplayRoute =
+  $Checkpoint.batch_id -eq 'G1-GP3-ENCOUNTER-GRAMMAR-V1' -and
+  $Checkpoint.master_program_item -eq 'GP3' -and
+  $Checkpoint.substage_id -in @('gp3-encounter-grammar-readiness','gp3-encounter-grammar-implementation','gp3-encounter-grammar-verification','gp3-encounter-grammar-recorded') -and
+  $Checkpoint.authority_lane -like '*Owner-authorized bounded GP3 authored encounter grammar only*Exactly five fixed situations*No procedural generation*weights*random selection*runtime*GP4*C3B*Greenfield*persistence expansion*combat resolver*economy mapping*automatic GP2 progression*Kernel mutation*'
+$gameplayFoundationRoute = $gp0GameplayRoute -or $gp1GameplayRoute -or $gp2GameplayRoute -or $c4vGameplayRoute -or $gp3GameplayRoute
 $c3DesignRoute =
   $Checkpoint.batch_id -eq 'G1-C3-WHOLE-CELL-RECEIVER-COUPLING-MATHEMATICAL-DESIGN-V1' -and
   $Checkpoint.master_program_item -eq 'C3' -and

@@ -15,6 +15,8 @@ mod base_loop;
 pub use base_loop::*;
 mod progression;
 pub use progression::*;
+mod encounter_grammar;
+pub use encounter_grammar::*;
 
 pub const CONTRACT_VERSION: u16 = 1;
 
