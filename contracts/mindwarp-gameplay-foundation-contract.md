@@ -1,7 +1,7 @@
 # Mind Warp gameplay foundation contract
 
-Status: GP0 player-promise plus GP1 fixed-loop capability-free reference
-contract, schema version 1.
+Status: GP0 player-promise, GP1 fixed-loop, and GP2 typed progression
+reference contract, schema version 1.
 
 ## Player promise
 
@@ -58,6 +58,25 @@ fixtures instead use `AuthoredGameplayNonC3B`: their storms, crystals, colonies,
 signals, materials, timings, and consequences are authored gameplay premises,
 not C3A or C3B scientific proof.
 
+## Typed progression
+
+`ProgressionLedgerV1` consumes only a strict replay-validated authored-fixture
+terminal loop state and externally validated prior base-loop history. A private
+canonical registry contains exactly one rule for each of the eighteen fixed
+session outcomes. Receipts bind domain-separated digests of the source ledger,
+terminal state, fixed session, and private registry plus exact history event,
+world transitions, emissions, and next decision.
+
+Knowledge, access, relationship events, construction, capabilities, and named
+unique assets remain distinct typed records. There are no conversion or reset
+rules. Caller failure costs, non-allowlisted free-form tools outside the exact
+fixed allowlist, threat-only contributions, and repetition grant nothing
+durable. Exact allowlisted prepared tools can grant a scoped capability only
+with their matching successful outcome. Services are fulfilled rather than reusable;
+only explicitly named rights remain active with obligations. The three S1
+capabilities require an exact successful outcome and its exact allowlisted
+tool, have horizontal named scope, and expose no magnitude or spend surface.
+
 ## Fixed-session invariants
 
 - S1 uses Keeper Mara's signed permission and typed direct, bypass, ration, and
@@ -75,5 +94,6 @@ not C3A or C3B scientific proof.
 ## Explicit non-goals
 
 No runtime, engine, database, filesystem, network, monetization, publishing,
-Greenfield dependency, procedural breadth, C3B substitution, or currency-shaped
-progression is authorized by this contract. GP2 progression is not begun.
+Greenfield dependency, procedural breadth, C3B substitution, universal
+currency, XP, levels, grind, positive conversion cycles, GP3, or GP4 is
+authorized by this contract.

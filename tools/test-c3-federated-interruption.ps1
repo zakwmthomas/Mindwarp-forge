@@ -46,10 +46,11 @@ $gp1GameplayRoute =
   $Checkpoint.substage_id -in @('gp1-fixed-base-loop-readiness','gp1-fixed-base-loop-implementation','gp1-fixed-base-loop-verification','gp1-fixed-base-loop-verified-result') -and
   $Checkpoint.authority_lane -like '*Owner-authorized GP1 engine-neutral deterministic base loop*No GP2*graphics*runtime*procedural breadth*grind*network*Greenfield*C3B*'
 $gp2GameplayRoute =
-  $Checkpoint.batch_id -eq 'G1-GP2-PROGRESSION-DESIGN-V1' -and
+  $Checkpoint.batch_id -in @('G1-GP2-PROGRESSION-DESIGN-V1','G1-GP2-PROGRESSION-IMPLEMENTATION-V1') -and
   $Checkpoint.master_program_item -eq 'GP2' -and
-  $Checkpoint.substage_id -in @('gp2-progression-design-intake','gp2-progression-readiness') -and
-  $Checkpoint.authority_lane -like '*Owner-authorized GP2 design intake*No source implementation*universal currency*positive cycle*dominant conversion*runtime*Greenfield*C3B*GP3*GP4*'
+  $Checkpoint.substage_id -in @('gp2-progression-design-intake','gp2-progression-readiness','gp2-progression-verification','gp2-progression-verified-result') -and
+  (($Checkpoint.authority_lane -like '*Owner-authorized GP2 design intake*No source implementation*universal currency*positive cycle*dominant conversion*runtime*Greenfield*C3B*GP3*GP4*') -or
+   ($Checkpoint.authority_lane -like '*Owner-authorized bounded GP2 implementation*No universal currency*positive cycle*dominant conversion*runtime*Greenfield*C3B*GP3*GP4*'))
 $gameplayFoundationRoute = $gp0GameplayRoute -or $gp1GameplayRoute -or $gp2GameplayRoute
 $c3DesignRoute =
   $Checkpoint.batch_id -eq 'G1-C3-WHOLE-CELL-RECEIVER-COUPLING-MATHEMATICAL-DESIGN-V1' -and

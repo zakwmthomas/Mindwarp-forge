@@ -39,7 +39,7 @@ foreach ($token in @(
 }
 foreach ($token in @(
     'Preparation selects', 'Exactly three recoveries are allowed',
-    'typed completed run ID', 'GP2 progression is not begun'
+    'typed completed run ID', 'GP0 player-promise, GP1 fixed-loop, and GP2 typed progression'
 )) {
     if (!$contract.Contains($token)) { throw "GP1 contract is missing: $token" }
 }

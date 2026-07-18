@@ -1,16 +1,18 @@
 # G1 GP2 progression design
 
-Status: accepted read-only design receipt; implementation authority remains
-separate and no source was changed by this receipt.
+Status: accepted design receipt, implemented by the bounded result recorded in
+`G1_GP2_PROGRESSION_RESULT.md`.
 
 ## Canonical input and ledger
 
 `apply_progression` consumes a session record, a replay-validated terminal
-`BaseLoopStateV1`, the fixed progression-rule registry, and a prior
+`BaseLoopStateV1` and a prior
 `ProgressionLedgerV1`. The ledger binds the canonical digest of its source
 `BaseLoopLedgerV1` plus processed progression receipts. Each new receipt binds
 run ID, event sequence, session, outcome, terminal-state digest, rule ID,
 emitted record IDs, exact world transitions, and the opened named decision.
+The fixed rule registry is private canonical authority and is never supplied
+by the caller.
 
 Only explicit per-session and per-outcome rules exist. There is no recursive or
 automatic conversion. GP1 failure costs remain attempt-local. Caller-supplied

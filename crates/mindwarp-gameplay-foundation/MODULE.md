@@ -4,12 +4,12 @@
 
 - **Maturity:** prototype_tested
 - **Root:** `crates/mindwarp-gameplay-foundation`
-- **Source fingerprint:** `061f09b199d5fba7a310a860dfd9c2476324234a0b275cb8d6d94bc482f796a2`
+- **Source fingerprint:** `a64c756f8f3e0292c577a06b2082724f66feb78c20d93622dceeb583f306a4e9`
 - **Live project state:** read `context/active/CURRENT_STATE.md`; active status is never duplicated here.
 
 ## Purpose
 
-Prove the GP0 causal-explorer-maker player promise and GP1 fixed six-phase base loop through five authored sessions, strict typed outcomes and deterministic capability-free replay.
+Prove the GP0 causal-explorer-maker promise, GP1 fixed six-phase loop and GP2 typed nonfungible progression through five authored sessions and deterministic strict replay.
 
 ## Owns
 
@@ -19,6 +19,8 @@ Prove the GP0 causal-explorer-maker player promise and GP1 fixed six-phase base 
 - typed mutations memories rights permissions services knowledge and branch decisions
 - engine-neutral prepare depart encounter consequence return and remembered-response reducer
 - repairable encounter failure stable stops and run-to-history append receipts
+- private fixed progression rules and digest-bound typed progression receipts
+- distinct knowledge access relationship construction capability and named-asset records
 
 ## Does not own
 
@@ -26,15 +28,18 @@ Prove the GP0 causal-explorer-maker player promise and GP1 fixed six-phase base 
 - network monetization publishing or Greenfield integration
 - combat as a sufficient core-tension resolution
 - authored science facts as C3A or C3B proof
-- currency-shaped progression or generic reputation bond access and trade meters
+- currency-shaped progression generic reputation bond trade meters XP levels or automatic conversion
+- GP3 encounter grammar or GP4 runtime-independent vertical promotion
 
 ## Primary entry points
 
 - `src/lib.rs`
 - `src/fixtures.rs`
 - `src/base_loop.rs`
+- `src/progression.rs`
 - `tests/gp0_contract.rs`
 - `tests/gp1_base_loop.rs`
+- `tests/gp2_progression.rs`
 
 ## Upstream neighbours
 
@@ -59,12 +64,17 @@ Prove the GP0 causal-explorer-maker player promise and GP1 fixed six-phase base 
 - every event at or after the GP1 event floor has exactly one typed run receipt
 - S5 deterministically uses the latest admitted S1 event and rejects a latest retreat
 - decoded loop state requires the externally expected authored or exact C3A world context
+- GP2 V1 accepts only strict replay-validated authored fixture terminal states and exact external base-loop history
+- the private registry covers all eighteen fixed outcomes with zero conversions and zero resets
+- caller failure costs arbitrary tools threats retreat and repetition cannot fabricate capability or durable progress
+- strategy comparison derives exact typed affordances decisions and liabilities and uses formal set dominance
 
 ## Verification
 
 - `cargo test -p mindwarp-gameplay-foundation`
 - `tools/verify-g1-gp0-gameplay-foundation.ps1`
 - `tools/verify-g1-gp1-fixed-base-loop.ps1`
+- `tools/verify-g1-gp2-progression.ps1`
 - `tools/verify-module-context.ps1`
 
 ## Canonical references
@@ -75,6 +85,8 @@ Prove the GP0 causal-explorer-maker player promise and GP1 fixed six-phase base 
 - `docs/canonical-system/G1_GP0_GAMEPLAY_FOUNDATION_RESULT.md`
 - `docs/canonical-system/G1_GP1_FIXED_BASE_LOOP_READINESS.md`
 - `docs/canonical-system/G1_GP1_FIXED_BASE_LOOP_RESULT.md`
+- `docs/canonical-system/G1_GP2_PROGRESSION_DESIGN.md`
+- `docs/canonical-system/G1_GP2_PROGRESSION_RESULT.md`
 
 ## Update rule
 

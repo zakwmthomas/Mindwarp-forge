@@ -25,8 +25,4 @@ foreach ($forbidden in @(
 )) {
     if ($joined.Contains($forbidden)) { throw "GP2 readiness crosses its authority boundary: $forbidden" }
 }
-if (Test-Path -LiteralPath (Join-Path $root 'crates\mindwarp-gameplay-foundation\src\progression.rs')) {
-    throw 'GP2 source implementation began before the readiness report.'
-}
-
-Write-Output 'G1 GP2 progression readiness verified: five typed lanes, exact GP1 digest authority, explicit flow/exploit rules, S1 capability allowlist and deterministic incomparable strategies are frozen before source.'
+Write-Output 'G1 GP2 progression readiness verified: five typed lanes, exact GP1 digest authority, explicit flow/exploit rules, S1 capability allowlist and deterministic incomparable strategies remain frozen.'
