@@ -1,0 +1,2070 @@
+{
+    "schema_version": 1,
+    "purpose": "Canonical human and AI context for every declared Forge module. MODULE.md files are generated projections.",
+    "modules": [
+        {
+            "id": "calibrated-spectral-time-basis",
+            "maturity": "prototype_tested",
+            "purpose": "Bind one exact physical RGB wavelength partition and one exact time cell into a calibrated-basis identity and unchanged legacy band/time commitments without granting source or transport authority.",
+            "owns": [
+                "strict source-calibration input and result codecs and identities",
+                "canonical reduced unsigned u128 wavelength and tick-scale rationals",
+                "stateless calibrated-basis to legacy-time to legacy-band/time identity graph",
+                "fixed byte and aggregate-live-canonical ceilings"
+            ],
+            "non_goals": [
+                "source energy allocation emission spectrum or magnitude",
+                "transport coefficients spatial calibration or transport applicability",
+                "received energy detector response visibility rendering or gameplay",
+                "runtime persistence approval promotion C3 closure or external capabilities",
+                "modification by its additive source-energy distribution consumer"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "quantity is radiant energy in joules with vacuum-wavelength unit-energy integration",
+                "exactly three ordered contiguous nonempty half-open blue green and red intervals and one nonempty time cell are admitted",
+                "rational components are reduced canonical unsigned u128 decimals with no float conversion",
+                "derived identities are reconstructed under frozen domains and three legacy band-time IDs remain byte-compatible",
+                "strict canonical JSON rejects aliases unknown or duplicate fields invalid UTF-8 trailing bytes and forged identities",
+                "input result and aggregate live canonical bytes are capped at 16 KiB 32 KiB and 64 KiB",
+                "production dependencies remain only serde serde_json and sha2 while the additive calibrated source-energy distribution is its first consumer",
+                "evidence has no source transport detector visibility runtime promotion or C3 closure effect"
+            ],
+            "verification": [
+                "cargo test -p calibrated-spectral-time-basis --all-targets",
+                "cargo test -p calibrated-spectral-time-basis --target i686-pc-windows-msvc",
+                "cargo check -p calibrated-spectral-time-basis --target aarch64-linux-android",
+                "tools/verify-g1-c3-source-calibration-implementation.ps1",
+                "tools/verify-module-context.ps1",
+                "tools/verify.ps1"
+            ],
+            "references": [
+                "contracts/calibrated-spectral-time-basis-contract.md",
+                "docs/canonical-system/G1_C3_SOURCE_CALIBRATION_IMPLEMENTATION_READINESS.md",
+                "docs/canonical-system/G1_C3_SOURCE_CALIBRATION_IMPLEMENTATION_RESULT.md"
+            ]
+        },
+        {
+            "id": "calibrated-source-energy-distribution",
+            "maturity": "prototype_tested",
+            "purpose": "Compile one validated calibration and one replayed optical phase-space root into an immutable closed frontier of exact radiant-energy allocations without granting transport or runtime authority.",
+            "owns": [
+                "strict source-energy query result and replay codecs and identities",
+                "exact reduced unsigned u128 radiant-energy allocations in joules",
+                "atomic upstream axis split replay and local exact energy conservation receipts",
+                "bounded closed prefix-free frontier and immutable correction-by-new-revision evidence"
+            ],
+            "non_goals": [
+                "normative source emission discovery spectrum inference or radiance",
+                "transport applicability attenuation receiver coupling detector response or visibility",
+                "density as stored identity or uniformity inside unresolved cells",
+                "runtime persistence approval promotion supersession selection C3 closure or external capabilities",
+                "downstream consumers or modification of calibration cell or arithmetic owner behavior"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "calibration and complete depth-zero optical root replay before subject derivation",
+                "source provenance is nonzero and cannot alias calibration provenance",
+                "every directive names one current unresolved frontier allocation and only supplies an upstream axis ordered child energies and resolutions",
+                "upstream split replay derives both child cells and phase split identity while checked Signed512 arithmetic proves exact local energy conservation",
+                "frontier order is complete axis then side path order and identities are non-circular",
+                "energy decimals are reduced canonical unsigned u128 values and local equality remains within a 385-bit shield",
+                "at most 63 directives 64 frontier allocations 128 KiB query 256 KiB result and 4 MiB conservative live canonical bytes are admitted",
+                "strict canonical JSON rejects unknown fields trailing content stale claims and replay mismatch",
+                "evidence has no transport detector visibility runtime promotion supersession or C3 closure effect"
+            ],
+            "verification": [
+                "cargo test -p calibrated-source-energy-distribution --all-targets",
+                "cargo test -p calibrated-source-energy-distribution --target i686-pc-windows-msvc",
+                "cargo check -p calibrated-source-energy-distribution --target aarch64-linux-android",
+                "tools/verify-g1-c3-calibrated-source-energy-distribution-implementation.ps1",
+                "tools/verify-module-context.ps1",
+                "tools/verify.ps1"
+            ],
+            "references": [
+                "contracts/calibrated-source-energy-distribution-contract.md",
+                "docs/canonical-system/G1_C3_CALIBRATED_SOURCE_ENERGY_DISTRIBUTION_IMPLEMENTATION_READINESS.md",
+                "docs/canonical-system/G1_C3_CALIBRATED_SOURCE_ENERGY_DISTRIBUTION_IMPLEMENTATION_RESULT.md"
+            ]
+        },
+        {
+            "id": "optical-phase-space-receiver-coupling",
+            "maturity": "prototype_tested",
+            "purpose": "Replay one exact phase-space cell, immutable-origin transport certificate, selected same-medium face segment and receiver AABB into conservative full, zero or unresolved whole-cell receiver-before-face evidence.",
+            "owns": [
+                "strict whole-cell receiver-coupling input and result codecs and identities",
+                "immutable-origin shared-symbol receiver and physical face plane algebra",
+                "conservative complete-cell full zero and unresolved classification",
+                "exact accepted zero and unresolved measure allocation"
+            ],
+            "non_goals": [
+                "partial accepted fractions sampling corner or central-ray inference",
+                "source magnitude radiance attenuation power detector visibility or perception",
+                "runtime scheduling promotion persistence C3 closure or external capabilities",
+                "modifying phase-space transport physical-path receiver-arrival or arithmetic owners"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "complete nested transport and receiver owners replay before classification",
+                "independently reduced public transport forms are never multiplied",
+                "the immutable 64-bit origin and physical volume bounds retain a 391-bit live shield in opaque signed-512 storage",
+                "only strict uniform start-inside or receiver-face proofs certify full and only strict swept separation certifies zero",
+                "every failed strict proof remains unresolved and exactly one measure bucket equals the complete cell measure",
+                "canonical identities bind the selected step receiver arithmetic receipt limitations and authority",
+                "existing owner source and V1 behavior remain unchanged and evidence has no authority effect"
+            ],
+            "verification": [
+                "cargo test -p optical-phase-space-receiver-coupling --all-targets",
+                "cargo test -p optical-phase-space-receiver-coupling --target i686-pc-windows-msvc",
+                "cargo check -p optical-phase-space-receiver-coupling --target aarch64-linux-android",
+                "tools/verify-g1-c3-whole-cell-receiver-coupling-implementation.ps1",
+                "tools/verify-module-context.ps1",
+                "tools/verify.ps1"
+            ],
+            "references": [
+                "contracts/optical-phase-space-receiver-coupling-contract.md",
+                "docs/canonical-system/G1_C3_WHOLE_CELL_RECEIVER_COUPLING_MATHEMATICAL_DESIGN_AUDIT.md",
+                "docs/canonical-system/G1_C3_WHOLE_CELL_RECEIVER_COUPLING_ORACLE_RESULT.md",
+                "docs/canonical-system/G1_C3_WHOLE_CELL_RECEIVER_COUPLING_WIDTH_SPIKE_RESULT.md",
+                "docs/canonical-system/G1_C3_WHOLE_CELL_RECEIVER_COUPLING_IMPLEMENTATION_READINESS.md"
+            ]
+        },
+        {
+            "id": "optical-phase-space-dimensionless-transfer",
+            "maturity": "prototype_tested",
+            "purpose": "Replay verified whole-cell receiver coupling and per-step bulk optical depth into conservative dimensionless transfer evidence for one exact band/time identity.",
+            "owns": [
+                "strict whole-cell dimensionless-transfer input and result codecs and identities",
+                "deterministic RGB band and nonzero time-basis binding",
+                "mandatory-prefix and selected-partial optical-depth composition",
+                "exact accepted zero and unresolved measure retention with typed finite opaque and widened transfer outcomes"
+            ],
+            "non_goals": [
+                "source magnitude radiance emission inverse-square spreading or energy transport",
+                "detector response detectability visibility perception rendering or gameplay line of sight",
+                "interface reflection refraction scattering or direction mutation",
+                "runtime persistence scheduling approval promotion C3 closure or external capabilities",
+                "modifying bulk transport receiver-coupling physical-path or arithmetic owners"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "complete bulk profile receiver coupling and nested transport owners replay before composition",
+                "band/time identity equals both transport input and certificate and zero time basis fails closed",
+                "mandatory prefix steps contribute full depth while a selected receiver-face step contributes zero through its full upper depth",
+                "start-inside and partial opaque cases widen conservatively and projected zero lower transfer remains underflow not opacity",
+                "zero and unresolved coupling preserve exact measure and emit no transfer",
+                "at most 64 steps 128 additions 118 raw optical-depth bits and the frozen byte and live-memory ceilings are admitted",
+                "identities bind every nested owner receipt outcome measure limitation and authority",
+                "evidence has no source detector visibility runtime promotion or C3 closure effect"
+            ],
+            "verification": [
+                "cargo test -p optical-phase-space-dimensionless-transfer --all-targets",
+                "cargo test -p optical-phase-space-dimensionless-transfer --target i686-pc-windows-msvc",
+                "cargo check -p optical-phase-space-dimensionless-transfer --target aarch64-linux-android",
+                "tools/verify-g1-c3-whole-cell-dimensionless-transfer-implementation.ps1",
+                "tools/verify-module-context.ps1",
+                "tools/verify.ps1"
+            ],
+            "references": [
+                "contracts/optical-phase-space-dimensionless-transfer-contract.md",
+                "docs/canonical-system/G1_C3_WHOLE_CELL_DIMENSIONLESS_TRANSFER_MATHEMATICAL_DESIGN_AUDIT.md",
+                "docs/canonical-system/G1_C3_WHOLE_CELL_DIMENSIONLESS_TRANSFER_ORACLE_RESULT.md",
+                "docs/canonical-system/G1_C3_WHOLE_CELL_DIMENSIONLESS_TRANSFER_IMPLEMENTATION_READINESS.md",
+                "docs/canonical-system/G1_C3_WHOLE_CELL_DIMENSIONLESS_TRANSFER_IMPLEMENTATION_RESULT.md"
+            ]
+        },
+        {
+            "id": "optical-phase-space-transport-certificate",
+            "maturity": "prototype_tested",
+            "purpose": "Replay one exact optical phase-space cell through a bounded ordered run of same-medium physical cell faces while deriving every correlated face form from the immutable origin.",
+            "owns": [
+                "strict origin-anchored transport input step and certificate codecs and identities",
+                "same-medium ordered physical interval cell-step replay",
+                "exact correlated direct-face forms and outward Q160 projections",
+                "typed interface topology arithmetic projection and work terminals"
+            ],
+            "non_goals": [
+                "reflection refraction total internal reflection scattering or direction mutation",
+                "source emission radiance attenuation power coupling receiver arrival visibility or perception",
+                "runtime persistence approval promotion C3 closure or external capabilities",
+                "modifying optical cell physical path or fixed arithmetic owner behavior"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "the complete optical cell physical recipe and volume replay before transport",
+                "all immutable-origin form scalars are at most 64 bits and live arithmetic is shielded at 490 bits in opaque signed-512 storage",
+                "every face form derives directly from the immutable origin and never from a reduced predecessor",
+                "the unchanged physical owner certifies topology and direct projections remain contained by its face receipt",
+                "only equal complete medium evidence may continue and at most 64 ordered faces are admitted",
+                "strict canonical codecs bind complete nested inputs events forms order receipts terminals limitations and authority",
+                "no existing owner imports this additive sibling and evidence has no authority effect"
+            ],
+            "verification": [
+                "cargo test -p optical-phase-space-transport-certificate --all-targets",
+                "cargo test -p optical-phase-space-transport-certificate --target i686-pc-windows-msvc",
+                "cargo check -p optical-phase-space-transport-certificate --target aarch64-linux-android",
+                "tools/verify-g1-c3-optical-phase-space-transport-certificate-implementation.ps1",
+                "tools/verify-module-context.ps1",
+                "tools/verify.ps1"
+            ],
+            "references": [
+                "contracts/optical-phase-space-transport-certificate-contract.md",
+                "docs/canonical-system/G1_C3_OPTICAL_PHASE_SPACE_TRANSPORT_CERTIFICATE_MATHEMATICAL_DESIGN_AUDIT.md",
+                "docs/canonical-system/G1_C3_OPTICAL_PHASE_SPACE_TRANSPORT_CERTIFICATE_ORACLE_RESULT.md",
+                "docs/canonical-system/G1_C3_OPTICAL_PHASE_SPACE_TRANSPORT_WIDTH_SPIKE_RESULT.md",
+                "docs/canonical-system/G1_C3_OPTICAL_PHASE_SPACE_TRANSPORT_ORIGIN_ANCHORED_DESIGN_AUDIT.md",
+                "docs/canonical-system/G1_C3_OPTICAL_PHASE_SPACE_TRANSPORT_ORIGIN_ANCHORED_ORACLE_RESULT.md",
+                "docs/canonical-system/G1_C3_OPTICAL_PHASE_SPACE_TRANSPORT_CERTIFICATE_IMPLEMENTATION_READINESS.md"
+            ]
+        },
+        {
+            "id": "step-leader-controller",
+            "maturity": "reference_proven",
+            "purpose": "Validate complete whole-system method assessments and select at most one bounded target-local divergence while preserving the exact mainline checkpoint.",
+            "owns": [
+                "hybrid cadence and event-trigger eligibility",
+                "ten-percent and one-batch probe budget enforcement",
+                "production-safe VOI and local-net-gain ranking",
+                "regression-masking rejection and deterministic reconnection advice"
+            ],
+            "non_goals": [
+                "research execution web access or source discovery",
+                "domain objectives metrics validity parameters or universal utility",
+                "automatic implementation approval promotion policy mutation or owner authority",
+                "game truth runtime scheduling P2P persistence blockchain or observer-created state"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "every registered system has exactly one assessment",
+                "metaphors require mathematical abstraction baseline counterexample falsifier and non-applicable scope",
+                "ordinary edits do not trigger divergence",
+                "a probe costs at most ten percent of the prior three batches and at most one normal batch",
+                "one target regression cannot be hidden by aggregate gain",
+                "two independent successes are required before a transfer candidate",
+                "every decision resumes the exact bound mainline checkpoint and has no authority effect"
+            ],
+            "verification": [
+                "cargo test -p step-leader-controller",
+                "tools/verify-step-leader-framework.ps1",
+                "tools/verify-module-context.ps1"
+            ],
+            "references": [
+                "contracts/step-leader-controller-contract.md",
+                "contracts/federated-improvement-contract.md",
+                "docs/canonical-system/COMPUTATIONAL_UNIVERSE_STEP_LEADER_CANDIDATE_MAP.md",
+                "docs/canonical-system/STEP_LEADER_CONTROLLER_RESULT.md",
+                "governance/WORKER_OPTIMIZATION_PROTOCOL.md"
+            ]
+        },
+        {
+            "id": "swept-aabb-passage",
+            "maturity": "prototype_tested",
+            "purpose": "Reconstruct exact fixed-orientation translated-AABB contact and strict-interior passage evidence over one validated bounded physical volume.",
+            "owns": [
+                "strict swept-AABB query and result replay",
+                "checked Minkowski-expanded cell bounds and contracted outer domain",
+                "exact contact-only versus strict interior classification",
+                "explicit subject-specific translation dispositions and typed evidence gaps"
+            ],
+            "non_goals": [
+                "runtime collision response forces friction restitution support buoyancy drag or depenetration",
+                "navigation walkability route cost or organism capability",
+                "planet sphere terrain biome ecotone material rendering or presentation meaning",
+                "approval promotion persistence or external capabilities"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "the physical recipe and volume replay before passage evidence",
+                "probe half extents are positive and rotation is unsupported in v1",
+                "phase never implies mechanics and missing exact subjects fail typed",
+                "positive-duration face or edge sliding remains contact-only",
+                "simultaneous entry axes are an unordered bit mask",
+                "unavailable evidence never becomes vacuum or passage",
+                "65,536 witnesses and 32 MiB canonical output are hard ceilings",
+                "validation recompiles exact canonical output"
+            ],
+            "verification": [
+                "cargo test -p swept-aabb-passage",
+                "tools/prove-g1-c3-swept-aabb.py",
+                "tools/verify-g1-c3-swept-aabb.ps1",
+                "tools/verify-module-context.ps1"
+            ],
+            "references": [
+                "contracts/physical-path-substrate-contract.md",
+                "contracts/swept-aabb-passage-contract.md",
+                "docs/canonical-system/G1_C3_GENERIC_PHYSICAL_PROBE_SWEPT_PASSAGE_MATHEMATICAL_DESIGN_AUDIT.md",
+                "docs/canonical-system/G1_C3_SWEPT_AABB_IMPLEMENTATION_READINESS.md",
+                "docs/canonical-system/G1_C3_SWEPT_AABB_REFERENCE_RESULT.md"
+            ]
+        },
+        {
+            "id": "visible-radiance-interface-event",
+            "maturity": "prototype_tested",
+            "purpose": "Reconstruct exact point-path shared-face evidence and declared conditional incident-direction boxes into bounded three-band local smooth-dielectric power and direction enclosures.",
+            "owns": [
+                "strict face-bound point and conditional-interval input and event replay",
+                "exact unique-face transition reconstruction",
+                "checked fixed-width 96 128 160 adaptive point enclosures",
+                "fixed-160 conditional interval classification and enclosures",
+                "typed local optical outcomes target-neutral decimal codecs and strict byte caps"
+            ],
+            "non_goals": [
+                "coefficient discovery catalogues SI calibration or metre mapping",
+                "downstream refracted path composition point-position lineage or endpoint arrival",
+                "perception rendering gameplay passage navigation or visibility",
+                "biome palette sphere planet terrain storage streaming runtime approval promotion persistence or external capabilities"
+            ],
+            "entrypoints": [
+                "src/lib.rs",
+                "src/arithmetic.rs",
+                "src/interval.rs"
+            ],
+            "invariants": [
+                "occupancy never implies interface behavior without an explicit face-bound record",
+                "point evidence requires one distinct positive-length shared-face transition while interval evidence remains explicitly conditional",
+                "exact TIR classification precedes roots and rounded Fresnel work",
+                "conditional boxes pass exact order zero-vector unit-sphere and strict oriented-face validation",
+                "all arithmetic is fixed 512-bit checked and hard capped at 160 fractional bits",
+                "interval production evaluates once at fixed 160 and cannot consult reference precision or adaptive stopping",
+                "interval codecs cap input at 16 KiB and events at 64 KiB before decode",
+                "point-v1 canonical bytes and identities remain locked across additive interval changes",
+                "nonconvergence is typed and never becomes darkness opacity or total reflection",
+                "signed directed division uses unsigned magnitudes and codecs never expose native limbs",
+                "continuous biome presentation cannot be inferred from categorical physical cells"
+            ],
+            "verification": [
+                "cargo test -p visible-radiance-interface-event",
+                "cargo test -p visible-radiance-interface-event --target i686-pc-windows-msvc",
+                "cargo check -p visible-radiance-interface-event --target aarch64-linux-android",
+                "tools/verify-g1-c3-interval-interface-implementation.ps1",
+                "tools/verify-g1-c3-interval-numerical-certificate.ps1",
+                "tools/verify-g1-c3-derived-world.ps1",
+                "tools/verify-module-context.ps1"
+            ],
+            "references": [
+                "contracts/physical-path-substrate-contract.md",
+                "contracts/visible-radiance-bulk-transfer-contract.md",
+                "contracts/visible-radiance-interface-event-contract.md",
+                "docs/canonical-system/G1_C3_VISIBLE_RADIANCE_INTERFACE_ADAPTIVE_KERNEL_IMPLEMENTATION_READINESS.md",
+                "docs/canonical-system/G1_C3_VISIBLE_RADIANCE_INTERFACE_WIDE_NUMBER_DEPENDENCY_SPIKE_RESULT.md",
+                "docs/canonical-system/G1_C3_INTERVAL_INCIDENT_FIXED160_IMPLEMENTATION_READINESS.md",
+                "docs/canonical-system/G1_C3_INTERVAL_INCIDENT_FIXED160_IMPLEMENTATION_RESULT.md"
+            ]
+        },
+        {
+            "id": "forge-kernel",
+            "maturity": "reference_proven",
+            "purpose": "Protected content-addressed evidence, event, candidate, authority, persistence, recovery, research, federation, telemetry projection and control-plane foundation.",
+            "owns": [
+                "immutable Kernel objects and events",
+                "candidate lifecycle and explicit authority transitions",
+                "SQLite persistence, verified backup and authority-negative projections",
+                "atomic multi-reference knowledge records and FTS indexes",
+                "project, workstream and session-route records",
+                "checkpoint-bound project-wide live writer leases",
+                "compact managed inventories, archive receipts and cleanup previews",
+                "append-only worker and routine-run telemetry plus deterministic advisory metric projections"
+            ],
+            "non_goals": [
+                "game generation",
+                "desktop presentation",
+                "automatic approval or promotion",
+                "automatic evidence or cache deletion",
+                "cross-project authority transfer",
+                "live knowledge migration without a separately authorized promotion package"
+            ],
+            "entrypoints": [
+                "src/lib.rs",
+                "src/persistence.rs",
+                "src/federation.rs",
+                "src/contracts.rs",
+                "src/bin/forge-query.rs",
+                "src/bin/forge-federate.rs",
+                "src/bin/forge-storage.rs"
+            ],
+            "invariants": [
+                "imported or AI actors never gain owner authority",
+                "history is append-only and replayable",
+                "projections never replace protected truth",
+                "knowledge text is stored once per source span while evolving project workstream and session bindings remain normalized references",
+                "a partial higher classifier version never becomes current without a complete generation receipt",
+                "ambiguous routing never assigns a project",
+                "repository mutation requires one unexpired routed holder bound to the current canonical checkpoint",
+                "archives retain their verified raw source",
+                "cache cleanup is preview-only until a separate approval",
+                "routine-run activity cannot count as worker-batch completion and metric recommendations cannot grant authority"
+            ],
+            "verification": [
+                "cargo test -p forge-kernel --all-targets",
+                "tools/verify-federated-routing-storage-v1.ps1",
+                "tools/verify-live-writer-lease-integration.ps1",
+                "tools/verify-f5-proof-receipt.ps1",
+                "tools/verify-forge-metrics-dashboard.ps1"
+            ],
+            "references": [
+                "contracts/kernel-contract.md",
+                "contracts/proof-receipt-projection-contract.md",
+                "contracts/knowledge-record-contract.md",
+                "contracts/federated-project-routing-contract.md",
+                "contracts/live-writer-lease-contract.md",
+                "contracts/indexed-knowledge-v4-contract.md",
+                "contracts/storage-archive-contract.md",
+                "contracts/managed-source-and-cleanup-preview-contract.md",
+                "contracts/batch-event-contract.md",
+                "governance/MEASUREMENT_AND_RECURSIVE_LEARNING_CONTRACT.md"
+            ]
+        },
+        {
+            "id": "universe-identity",
+            "maturity": "promoted_g1_foundation",
+            "purpose": "Stable logical universe identity, versioned reconstruction identity and traversal-independent deterministic stream keys.",
+            "owns": [
+                "strict address codec",
+                "logical and reconstruction fingerprints",
+                "stream-key and counter reference vectors"
+            ],
+            "non_goals": [
+                "bulk field generation",
+                "mutable history",
+                "runtime identity objects"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "generator version never changes logical identity",
+                "no ambient latest version",
+                "collisions fail visibly"
+            ],
+            "verification": [
+                "cargo test -p universe-identity",
+                "tools/verify-f5-universe-identity-readiness.ps1"
+            ],
+            "references": [
+                "contracts/universe-identity-contract.md",
+                "docs/canonical-system/G1_C2_UNIVERSE_IDENTITY_RESULT.md"
+            ]
+        },
+        {
+            "id": "forge-desktop",
+            "maturity": "prototype_tested",
+            "purpose": "Bounded local desktop command and integration surface over Forge Kernel, proof modules, capture, measured-run intake, Metrics and Reference Studio views.",
+            "owns": [
+                "Tauri command boundary",
+                "local capture scanner",
+                "desktop integration fixtures and compact read-only projections",
+                "metadata-only measured-run receipt intake and read-only metric dashboard command"
+            ],
+            "non_goals": [
+                "canonical truth outside Kernel",
+                "frontend implementation",
+                "runtime game execution",
+                "launching installing updating or downloading any AI assistant client"
+            ],
+            "entrypoints": [
+                "src/main.rs",
+                "src/codex_capture.rs",
+                "src/run_metrics_capture.rs",
+                "build.rs"
+            ],
+            "invariants": [
+                "frontend cannot bypass bounded commands",
+                "capture is evidence-only",
+                "inspection cannot mutate authority",
+                "Forge startup never invokes an assistant application CLI browser installer or updater",
+                "bootstrap knowledge files remain compact pointers to SQLite FTS",
+                "workspace binding excludes derived cache roots from per-file hashing",
+                "metrics intake accepts only bounded local schema-v2 metadata receipts and cannot mutate authority"
+            ],
+            "verification": [
+                "cargo test -p forge-desktop",
+                "cargo build -p forge-desktop",
+                "npm run build in apps/forge-desktop/ui",
+                "tools/verify-forge-startup-idempotency.ps1",
+                "tools/verify-forge-metrics-dashboard.ps1"
+            ],
+            "references": [
+                "contracts/codex-local-capture-contract.md",
+                "contracts/reference-studio-inspector-contract.md",
+                "contracts/indexed-knowledge-v4-contract.md",
+                "contracts/managed-source-and-cleanup-preview-contract.md",
+                "docs/canonical-system/FORGE_STARTUP_DUPLICATE_CHATGPT_INSTALLER_REPAIR.md",
+                "docs/canonical-system/KNOWLEDGE_INTAKE_V3_ATOMIC_MULTI_REFERENCE_RESULT.md",
+                "contracts/batch-event-contract.md",
+                "docs/canonical-system/WORKER_TELEMETRY_MODULE.md"
+            ]
+        },
+        {
+            "id": "field-basis",
+            "maturity": "prototype_tested",
+            "purpose": "Capability-free fixed-point field recipes and stateless deterministic sampling reference.",
+            "owns": [
+                "strict field recipe codec",
+                "fixed-point reference math",
+                "Philox mapping and cache fingerprints"
+            ],
+            "non_goals": [
+                "scientific world rules",
+                "GPU or production performance",
+                "visual quality",
+                "second-platform proof from a same-platform language receipt"
+            ],
+            "entrypoints": [
+                "src/lib.rs",
+                "examples/second_language_vectors.rs"
+            ],
+            "invariants": [
+                "canonical math is checked integer-only",
+                "cache never changes canonical samples",
+                "accelerators cannot silently replace reference output",
+                "Rust and independent Python implementations reproduce the committed exact receipt while same-platform limits remain explicit"
+            ],
+            "verification": [
+                "cargo test -p field-basis",
+                "tools/verify-f5-field-basis-readiness.ps1",
+                "tools/verify-field-basis-second-language.py",
+                "cargo run --release -p field-basis --example quality_cost_range_candidate (disposable evidence, non-gating)"
+            ],
+            "references": [
+                "contracts/field-basis-contract.md",
+                "docs/canonical-system/FIELD_BASIS_DESIGN_GATE.md",
+                "docs/canonical-system/G1_C3_QUALITY_COST_RANGE_CANDIDATE_RESULT.md",
+                "docs/canonical-system/G1_C3_SECOND_LANGUAGE_FIELD_RECEIPT_RESULT.md"
+            ]
+        },
+        {
+            "id": "spatial-domain",
+            "maturity": "prototype_tested",
+            "purpose": "Bind exact world and reconstruction identity to one finite non-wrapping rectified Q32.32 sampling domain with reconstructed cells and shared-edge adjacency.",
+            "owns": [
+                "strict SpatialDomainInput and SpatialDomain replay",
+                "checked cell-index to Q32.32 sample-coordinate mapping",
+                "domain and cell identities",
+                "canonical bounded shared-edge neighbour reconstruction"
+            ],
+            "non_goals": [
+                "planet sphere projection or global tessellation",
+                "terrain mesh or runtime map",
+                "physical region partition or biome semantics",
+                "storage layout or production world-size policy",
+                "approval promotion persistence or external capabilities"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "origin step counts coordinate frame adjacency and boundary mode bind domain identity",
+                "cell coordinates identities and neighbours are rebuilt rather than trusted as caller facts",
+                "all coordinates fit signed Q32.32 before domain admission",
+                "v1 edges are bounded absent and never wrap",
+                "proof cell ceiling is not a production geometry claim",
+                "public limitations and authority remain exact"
+            ],
+            "verification": [
+                "cargo test -p spatial-domain",
+                "cargo test -p regional-environment-state",
+                "tools/verify-g1-c3-derived-world.ps1",
+                "tools/verify-module-context.ps1"
+            ],
+            "references": [
+                "contracts/field-basis-contract.md",
+                "contracts/spatial-domain-contract.md",
+                "docs/canonical-system/G1_C3_SPATIAL_DOMAIN_DESIGN.md",
+                "docs/canonical-system/G1_C3_SPATIAL_DOMAIN_RESULT.md"
+            ]
+        },
+        {
+            "id": "fixed-interval-arithmetic",
+            "maturity": "prototype_tested",
+            "purpose": "Provide semantic-neutral target-independent checked signed-512 and fixed-interval arithmetic to physical-path and interval-bulk consumers without exposing native limbs or owning consumer policy.",
+            "owns": [
+                "opaque checked signed-magnitude 512-bit values",
+                "canonical signed decimal parse and format",
+                "mathematical floor and ceiling division",
+                "explicit-scale interval arithmetic intersection projection and directed square root",
+                "magnitude-bit accounting"
+            ],
+            "non_goals": [
+                "physical coordinates cells paths faces or topology",
+                "spectral bands media coefficients optical kernels or visibility",
+                "domain identities semantic codecs lineage endpoints or authority",
+                "filesystem network process persistence UI runtime or external capabilities"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "native limbs word order and endianness remain inaccessible",
+                "zero has one canonical nonnegative representation",
+                "all overflow division scale order root and projection defects fail typed",
+                "arithmetic operations allocate no dynamic collections",
+                "only bounded canonical decimal conversion allocates strings",
+                "fractional precision is explicit and physical-path-substrate and visible-radiance-bulk-transfer retain admitted precision policy"
+            ],
+            "verification": [
+                "cargo test -p fixed-interval-arithmetic",
+                "cargo test -p fixed-interval-arithmetic --target i686-pc-windows-msvc",
+                "cargo check -p fixed-interval-arithmetic --target aarch64-linux-android",
+                "tools/verify-g1-c3-fixed-interval-arithmetic-implementation.ps1",
+                "tools/verify-module-context.ps1",
+                "tools/verify.ps1"
+            ],
+            "references": [
+                "docs/canonical-system/G1_C3_INTERVAL_BULK_TRANSFER_ORACLE_RESULT.md",
+                "docs/canonical-system/G1_C3_FIXED_INTERVAL_ARITHMETIC_CONSOLIDATION_DESIGN_AUDIT.md",
+                "docs/canonical-system/G1_C3_FIXED_INTERVAL_ARITHMETIC_CONSOLIDATION_IMPLEMENTATION_READINESS.md",
+                "docs/canonical-system/G1_C3_INTERVAL_BULK_TRANSFER_IMPLEMENTATION_READINESS.md"
+            ]
+        },
+        {
+            "id": "physical-path-substrate",
+            "maturity": "prototype_tested",
+            "purpose": "Reconstruct one finite cubic Q32.32 3D occupancy evidence volume, exact conservative path witnesses and one channel-neutral conditional fixed-160 interval cell step.",
+            "owns": [
+                "strict physical volume recipe volume query and witness replay",
+                "canonical sparse column-run evidence reconstruction",
+                "checked 3D cell bounds identities and occupancy fingerprint",
+                "reduced exact rational path parameters and exhaustive slab intersection",
+                "bounded proof-cell run and witness ceilings",
+                "strict conditional point-direction box and cell-step event replay",
+                "fixed-160 whole-box face certification and typed local outcomes"
+            ],
+            "non_goals": [
+                "generic fixed-width arithmetic representation",
+                "planet sphere projection terrain or global topology",
+                "production voxel storage streaming meshing or runtime map",
+                "opacity propagation visibility detectability or signal range",
+                "optical lineage interval bulk transfer path composition or endpoint arrival",
+                "collision clearance passability walkability navigation or route cost",
+                "biome ecotone organism palette material presentation approval promotion persistence or external capabilities"
+            ],
+            "entrypoints": [
+                "src/lib.rs",
+                "src/interval.rs"
+            ],
+            "invariants": [
+                "the 3D frame is separate from promoted 2D SpatialDomain identity",
+                "unavailable remains distinct from vacuum and non-vacuum phases bind substance identity",
+                "canonical runs are sorted nonoverlapping maximal and nondefault",
+                "closed in-domain endpoints generate no phantom outer cells",
+                "stationary paths are point evidence despite full parameter preimage",
+                "simultaneous crossings are exact and semantically unordered",
+                "witness records are unique bounded and rebuilt by the exhaustive oracle",
+                "interval face certification uses fixed-160 strict whole-box ordering only",
+                "shared arithmetic defects map into existing physical error categories",
+                "interval arithmetic stays within 414 signed bits in fixed 512-bit storage",
+                "interval codecs cap input at 16 KiB and events at 32 KiB before decode",
+                "five exact-path and seven interval cell-step families prevent byte or identity drift",
+                "consumer and biome policy never becomes substrate truth"
+            ],
+            "verification": [
+                "cargo test -p physical-path-substrate",
+                "cargo test -p physical-path-substrate --target i686-pc-windows-msvc",
+                "cargo check -p physical-path-substrate --target aarch64-linux-android",
+                "tools/verify-g1-c3-interval-optical-cell-step.ps1",
+                "tools/verify-g1-c3-interval-cell-step-implementation.ps1",
+                "tools/verify-g1-c3-fixed-interval-arithmetic-implementation.ps1",
+                "tools/verify-g1-c3-derived-world.ps1",
+                "tools/verify-module-context.ps1",
+                "tools/verify.ps1"
+            ],
+            "references": [
+                "contracts/physical-path-substrate-contract.md",
+                "docs/canonical-system/G1_C3_PHYSICAL_PATH_SUBSTRATE_DESIGN_GATE.md",
+                "docs/canonical-system/G1_C3_PATH_WITNESS_COUNTEREXAMPLE_RESULT.md",
+                "docs/canonical-system/G1_C3_PHYSICAL_PATH_SUBSTRATE_IMPLEMENTATION_READINESS.md",
+                "docs/canonical-system/G1_C3_PHYSICAL_PATH_SUBSTRATE_RESULT.md",
+                "docs/canonical-system/G1_C3_INTERVAL_OPTICAL_CELL_STEP_ORACLE_RESULT.md",
+                "docs/canonical-system/G1_C3_INTERVAL_OPTICAL_CELL_STEP_IMPLEMENTATION_READINESS.md",
+                "docs/canonical-system/G1_C3_INTERVAL_OPTICAL_CELL_STEP_IMPLEMENTATION_RESULT.md",
+                "docs/canonical-system/G1_C3_FIXED_INTERVAL_ARITHMETIC_CONSOLIDATION_DESIGN_AUDIT.md",
+                "docs/canonical-system/G1_C3_FIXED_INTERVAL_ARITHMETIC_CONSOLIDATION_IMPLEMENTATION_READINESS.md",
+                "docs/canonical-system/MASTER_PLAN_V2.md"
+            ]
+        },
+        {
+            "id": "visible-radiance-bulk-transfer",
+            "maturity": "prototype_tested",
+            "purpose": "Reconstruct exact physical-path evidence into bounded three-band exact-path or additive one-band conditional cell-step direct-beam bulk-transfer bounds and evaluate already-derived Q64.64 optical depth through its owned kernel.",
+            "owns": [
+                "strict volume-bound bulk interaction profiles",
+                "exact path-witness reconstruction and open-span classification",
+                "one-band conditional cell-step query transfer and dual Q160 length certificate",
+                "checked Q64.64 optical-depth and Q0.48 transmission enclosures",
+                "read-only optical-depth evaluation receipts over the unchanged exponential kernel",
+                "vacuum finite opaque unavailable ambiguous terminal and interface-required evidence",
+                "permanent Rust and independent Python arithmetic equivalence"
+            ],
+            "non_goals": [
+                "coefficient discovery catalogues SI calibration or metre mapping",
+                "surface interface reflection refraction scattering emission or full radiative transfer",
+                "ordered optical lineage composition endpoint arrival or visibility",
+                "biological perception detectability rendering gameplay line of sight",
+                "collision passage navigation organism biome palette or presentation meaning",
+                "sphere planet terrain storage streaming runtime approval promotion or external capabilities"
+            ],
+            "entrypoints": [
+                "src/lib.rs",
+                "src/interval.rs"
+            ],
+            "invariants": [
+                "callers never submit cells spans optical depth transmission classification or output state except through the isolated already-derived optical-depth evaluator",
+                "the additive evaluator accepts ordered Q64.64 endpoints below 118 raw bits calls the unchanged kernel twice and caps input and result at 4 KiB",
+                "legacy known transfer contains vacuum or one exact substance only",
+                "conditional transfer binds one validated cell-step input event and exactly one spectral band",
+                "conditional length intersects speed-time and start-hit displacement enclosures without a representative ray",
+                "current-cell transfer is retained before known unavailable or outer terminal disposition",
+                "fixed interval arithmetic comes from fixed-interval-arithmetic with a 414-magnitude-bit intermediate and 192-bit final-length shield",
+                "conditional codecs cap queries at 64 KiB and transfers at 16 KiB before decode",
+                "pre-existing eight-family V1 bytes and identities remain locked",
+                "phase and surface reflectance never imply opacity or interface behavior",
+                "same-substance cell subdivision is erased before rounding",
+                "unavailable and overlapping closed-boundary lanes fail as typed evidence",
+                "all fixed arithmetic is directed checked and enclosed by permanent Python oracles",
+                "categorical cells and regions cannot create biome presentation seams"
+            ],
+            "verification": [
+                "cargo test -p visible-radiance-bulk-transfer",
+                "cargo test -p visible-radiance-bulk-transfer --target i686-pc-windows-msvc",
+                "cargo check -p visible-radiance-bulk-transfer --target aarch64-linux-android",
+                "tools/prove-g1-c3-visible-radiance-math.py",
+                "tools/prove-g1-c3-interval-bulk-transfer.py",
+                "tools/verify-g1-c3-interval-bulk-implementation.ps1",
+                "tools/verify-g1-c3-whole-cell-dimensionless-transfer-implementation.ps1",
+                "tools/verify-g1-c3-derived-world.ps1",
+                "tools/verify-module-context.ps1",
+                "tools/verify.ps1"
+            ],
+            "references": [
+                "contracts/visible-radiance-bulk-transfer-contract.md",
+                "docs/canonical-system/G1_C3_POST_PATH_SUBSTRATE_CONSUMER_REASSESSMENT.md",
+                "docs/canonical-system/G1_C3_VISIBLE_RADIANCE_PATH_TRANSFER_MATHEMATICAL_DESIGN_AUDIT.md",
+                "docs/canonical-system/G1_C3_VISIBLE_RADIANCE_BULK_TRANSFER_ORACLE_RESULT.md",
+                "docs/canonical-system/G1_C3_VISIBLE_RADIANCE_BULK_TRANSFER_IMPLEMENTATION_READINESS.md",
+                "docs/canonical-system/G1_C3_INTERVAL_BULK_TRANSFER_ORACLE_RESULT.md",
+                "docs/canonical-system/G1_C3_INTERVAL_BULK_TRANSFER_IMPLEMENTATION_READINESS.md",
+                "docs/canonical-system/G1_C3_INTERVAL_BULK_TRANSFER_IMPLEMENTATION_RESULT.md",
+                "docs/canonical-system/G1_C3_POST_INTERVAL_BULK_TRANSFER_CONSUMER_REASSESSMENT.md",
+                "docs/canonical-system/G1_C3_WHOLE_CELL_DIMENSIONLESS_TRANSFER_IMPLEMENTATION_RESULT.md",
+                "docs/canonical-system/MASTER_PLAN_V2.md"
+            ]
+        },
+        {
+            "id": "optical-lineage-binding",
+            "maturity": "prototype_tested",
+            "purpose": "Bind ordered already-validated one-band cell-transfer and local interface evidence into a strict capability-free optical-opportunity lineage transcript.",
+            "owns": [
+                "lane step bundle and transcript identities",
+                "exact source point direction cell band and predecessor adjacency",
+                "typed terminal preservation across local owners",
+                "strict bundle receipts codecs and resource ceilings"
+            ],
+            "non_goals": [
+                "physical traversal or interface and attenuation arithmetic",
+                "cumulative power source emission receiver arrival or visibility",
+                "coefficient catalogues perception rendering gameplay passage navigation or biome meaning",
+                "persistence runtime approval promotion or external capabilities"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "every nested physical bulk and interface object replays through its owner",
+                "later input source revision point cell and direction derive from the exact predecessor",
+                "same-medium continuation cannot carry interface evidence and changed-medium continuation requires it",
+                "ten terminal families remain typed and no terminal admits later evidence",
+                "work exhaustion occurs only after exactly 64 valid continuations",
+                "bundle and manifest codecs reconstruct and compare under 16 MiB and 1 MiB ceilings",
+                "at most 384 nested objects are admitted",
+                "the binder has no fixed arithmetic dependency and performs no numerical fold",
+                "evidence has no authority effect"
+            ],
+            "verification": [
+                "cargo test -p optical-lineage-binding --all-targets",
+                "cargo test -p optical-lineage-binding --target i686-pc-windows-msvc",
+                "cargo check -p optical-lineage-binding --target aarch64-linux-android",
+                "tools/verify-g1-c3-optical-lineage-binding.ps1",
+                "tools/verify-module-context.ps1",
+                "tools/verify.ps1"
+            ],
+            "references": [
+                "contracts/optical-lineage-binding-contract.md",
+                "docs/canonical-system/G1_C3_OPTICAL_LINEAGE_BINDING_IMPLEMENTATION_READINESS.md",
+                "docs/canonical-system/G1_C3_OPTICAL_LINEAGE_BINDING_IMPLEMENTATION_RESULT.md"
+            ]
+        },
+        {
+            "id": "optical-lane-transfer-binding",
+            "maturity": "prototype_tested",
+            "purpose": "Derive and accumulate the exact ordered same-band transfer factors of one validated optical lineage into a strict dimensionless Q0.160 enclosure.",
+            "owns": [
+                "compiler-derived ordered factor receipts",
+                "directed Q0.160 cumulative transfer arithmetic",
+                "final Q0.48 outward projection",
+                "cumulative result and transcript identities"
+            ],
+            "non_goals": [
+                "source emission inverse-square spreading receiver geometry or endpoint arrival",
+                "detector response detectability visibility or perception",
+                "rendering gameplay line of sight runtime persistence approval promotion or C3 closure",
+                "modifying or replacing any physical bulk interface or lineage owner"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "the complete bundle and manifest replay through optical-lineage-binding before factor extraction",
+                "known-current-cell steps contribute one same-band bulk factor while upstream unevaluated terminals contribute none",
+                "only continue-after-interface contributes the selected transmitted same-band interface factor",
+                "the caller supplies no factors cumulative endpoints terminal receipt or identity",
+                "directed arithmetic retains Q0.160 until one final Q0.48 projection",
+                "at most 128 factors and 209 live bits are admitted in 512-bit checked storage",
+                "input output and live canonical bytes are capped at 18 MiB 256 KiB and 32 MiB",
+                "physical-path-substrate is test-only fixture construction and is not imported by library source",
+                "strict codecs reconstruct and compare the complete result",
+                "evidence has no authority effect"
+            ],
+            "verification": [
+                "cargo test -p optical-lane-transfer-binding --all-targets",
+                "cargo test -p optical-lane-transfer-binding --target i686-pc-windows-msvc",
+                "cargo check -p optical-lane-transfer-binding --target aarch64-linux-android",
+                "tools/verify-g1-c3-cumulative-lane-transfer-binding.ps1",
+                "tools/verify-module-context.ps1",
+                "tools/verify.ps1"
+            ],
+            "references": [
+                "contracts/optical-lane-transfer-binding-contract.md",
+                "docs/canonical-system/G1_C3_CUMULATIVE_LANE_TRANSFER_IMPLEMENTATION_READINESS.md",
+                "docs/canonical-system/G1_C3_CUMULATIVE_LANE_TRANSFER_IMPLEMENTATION_RESULT.md"
+            ]
+        },
+        {
+            "id": "stellar-orbital",
+            "maturity": "prototype_tested",
+            "purpose": "Compile a strict bounded two-body stellar/orbital contract into distance, irradiation and normalized-period-squared evidence before downstream world rules.",
+            "owns": [
+                "StellarOrbitalInput and exact input/state replay",
+                "periapsis and apoapsis distance bounds",
+                "inverse-square irradiation bounds",
+                "normalized Kepler period-squared evidence",
+                "bounded stellar RGB irradiance for the downstream synthetic palette seam"
+            ],
+            "non_goals": [
+                "multi-star dynamics or perturbations",
+                "orbital phase or production ephemerides",
+                "stellar evolution",
+                "geology atmosphere hydrology climate or habitability",
+                "scientific validation or runtime simulation"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "all units and scales are explicit integers",
+                "reconstruction and stellar source identities are nonzero",
+                "elliptical eccentricity is below one and periapsis remains representable",
+                "public state and authority claims validate before serialization",
+                "the exact input must replay before downstream use"
+            ],
+            "verification": [
+                "cargo test -p stellar-orbital",
+                "cargo test -p forge-desktop stellar_orbital_vector_persists_as_read_only_proof_receipt"
+            ],
+            "references": [
+                "contracts/stellar-orbital-contract.md",
+                "docs/canonical-system/G1_C3_STELLAR_ORBITAL_RESULT.md",
+                "docs/canonical-system/MASTER_PLAN_V2.md"
+            ]
+        },
+        {
+            "id": "geological-atmospheric",
+            "maturity": "prototype_tested",
+            "purpose": "Compile a strict bounded geological/atmospheric contract from exact stellar/orbital evidence and declared planetary bulk, column and attenuation inputs.",
+            "owns": [
+                "GeologicalAtmosphericInput and exact input/state replay",
+                "earth-normalized spherical surface gravity",
+                "atmospheric column pressure",
+                "three-band gas and aerosol direct transmission",
+                "declared internal heat flux and solid-surface fraction provenance"
+            ],
+            "non_goals": [
+                "composition or vertical atmospheric structure",
+                "weather climate or hydrology",
+                "materials tectonics or habitability",
+                "scientific validation or runtime simulation"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "all units and scales are explicit integers",
+                "reconstruction and planetary identities are nonzero",
+                "the nested stellar/orbital input and state replay exactly",
+                "surface pressure derives from declared column mass and derived gravity",
+                "gas and aerosol attenuation compose independently per band",
+                "public state limitations and authority claims validate before serialization"
+            ],
+            "verification": [
+                "cargo test -p geological-atmospheric",
+                "cargo test -p forge-desktop geological_atmospheric_vector_persists_as_read_only_proof_receipt"
+            ],
+            "references": [
+                "contracts/stellar-orbital-contract.md",
+                "contracts/geological-atmospheric-contract.md",
+                "docs/canonical-system/G1_C3_GEOLOGICAL_ATMOSPHERIC_RESULT.md",
+                "docs/canonical-system/MASTER_PLAN_V2.md"
+            ]
+        },
+        {
+            "id": "hydrological-state",
+            "maturity": "prototype_tested",
+            "purpose": "Compile exact geological/atmospheric evidence and declared total-water, phase-partition and surface-access inputs into strict scaled hydrological reservoir evidence.",
+            "owns": [
+                "HydrologicalInput and exact input/state replay",
+                "declared total water column",
+                "solid liquid and vapor reservoir numerators",
+                "surface-accessible liquid inventory evidence"
+            ],
+            "non_goals": [
+                "temperature-derived phase equilibrium",
+                "precipitation weather or climate",
+                "terrain flow groundwater dynamics or salinity",
+                "materials habitability ecology or runtime simulation"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "all units and scales are explicit integers",
+                "reconstruction and hydrological source identities are nonzero",
+                "the nested geological/atmospheric input and state replay exactly",
+                "nonzero inventory partitions exactly to one thousand permille",
+                "dry inventory has zero partition and access",
+                "surface access cannot exist without a liquid reservoir",
+                "public state limitations and authority claims validate before serialization"
+            ],
+            "verification": [
+                "cargo test -p hydrological-state",
+                "cargo test -p forge-desktop hydrological_vector_persists_as_read_only_proof_receipt"
+            ],
+            "references": [
+                "contracts/geological-atmospheric-contract.md",
+                "contracts/hydrological-state-contract.md",
+                "docs/canonical-system/G1_C3_HYDROLOGICAL_STATE_RESULT.md",
+                "docs/canonical-system/MASTER_PLAN_V2.md"
+            ]
+        },
+        {
+            "id": "climate-state",
+            "maturity": "prototype_tested",
+            "purpose": "Compile exact upstream evidence plus two bounded dimensionless radiation-budget scalars into a normalized climate plausibility signal without simulation depth.",
+            "owns": [
+                "ClimateInput and exact input/state replay",
+                "declared Bond albedo fraction",
+                "declared outgoing-longwave fraction",
+                "normalized absorbed shortwave and signed radiation imbalance"
+            ],
+            "non_goals": [
+                "temperature or greenhouse solving",
+                "weather circulation clouds or time evolution",
+                "phase equilibrium materials habitability or runtime simulation",
+                "scientific validation"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "the nested hydrological chain replays exactly",
+                "albedo and longwave fractions are bounded permille scalars",
+                "stellar irradiance scales both derived flux numerators",
+                "hydrology changes provenance without fabricating radiation change",
+                "public state limitations and authority claims validate before serialization"
+            ],
+            "verification": [
+                "cargo test -p climate-state",
+                "cargo test -p derived-world-rules"
+            ],
+            "references": [
+                "contracts/climate-state-contract.md",
+                "docs/canonical-system/G1_C3_CLIMATE_STATE_RESULT.md",
+                "docs/canonical-system/MASTER_PLAN_V2.md"
+            ]
+        },
+        {
+            "id": "surface-material-state",
+            "maturity": "prototype_tested",
+            "purpose": "Bind exact climate provenance to the one coarse material property currently consumed by world generation: three-band dominant surface reflectance.",
+            "owns": [
+                "SurfaceMaterialInput and exact replay",
+                "material source provenance",
+                "bounded three-band surface reflectance"
+            ],
+            "non_goals": [
+                "composition chemistry mixtures or spectral libraries",
+                "roughness BRDF weathering thermal or mechanical simulation",
+                "crafting biomes visibility traversability habitability or runtime"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "the nested climate chain replays exactly",
+                "reflectance channels are integer permille fractions",
+                "climate changes provenance without fabricating reflectance",
+                "public state limitations and authority validate before serialization"
+            ],
+            "verification": [
+                "cargo test -p surface-material-state",
+                "cargo test -p derived-world-rules"
+            ],
+            "references": [
+                "contracts/surface-material-state-contract.md",
+                "docs/canonical-system/G1_C3_SURFACE_MATERIAL_STATE_RESULT.md",
+                "docs/canonical-system/MASTER_PLAN_V2.md"
+            ]
+        },
+        {
+            "id": "regional-environment-state",
+            "maturity": "prototype_tested",
+            "purpose": "Bind exact field-basis recipes, reconstruction and separately keyed source identity plus direct or spatial-domain-reconstructed Q32.32 coordinates into normalized procedural regional exposure and moisture-potential fractions.",
+            "owns": [
+                "RegionalEnvironmentInput and exact input/state replay",
+                "strict coordinate-free RegionalFieldBindingV1 source binding",
+                "strict exposure and moisture recipe and coordinate provenance",
+                "bounded regional exposure and moisture-potential normalization",
+                "reconstruction-matched spatial-cell coordinate binding"
+            ],
+            "non_goals": [
+                "measured terrain slope aspect shadow or clouds",
+                "rainfall humidity soil moisture groundwater or local water quantity",
+                "partition classification or connected-component ownership",
+                "weather radiative transfer or physical visibility distance",
+                "biomes traversability habitability or runtime simulation"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "both field recipes decode strictly and canonically",
+                "coordinate-free binding is owned here and reconstructs point inputs without semantic duplication",
+                "exposure retains the reconstruction stream key while moisture uses a separately domain-keyed source identity",
+                "spatial-cell binding rebuilds the cell and requires exact reconstruction identity",
+                "raw samples outside signed unit range fail closed",
+                "exposure and moisture remain separate integer permille fractions",
+                "public state limitations and authority validate before serialization"
+            ],
+            "verification": [
+                "cargo test -p regional-environment-state",
+                "cargo test -p physical-region-partition",
+                "cargo test -p derived-world-rules",
+                "cargo test -p niche-graph-binding"
+            ],
+            "references": [
+                "contracts/field-basis-contract.md",
+                "contracts/spatial-domain-contract.md",
+                "contracts/regional-environment-state-contract.md",
+                "contracts/physical-region-partition-contract.md",
+                "docs/canonical-system/G1_C3_REGIONAL_EXPOSURE_RESULT.md",
+                "docs/canonical-system/G1_C3_REGIONAL_PHYSICAL_ENVELOPE_DESIGN.md",
+                "docs/canonical-system/G1_C3_REGIONAL_PHYSICAL_ENVELOPE_RESULT.md",
+                "docs/canonical-system/G1_C3_SPATIAL_DOMAIN_DESIGN.md",
+                "docs/canonical-system/G1_C3_PHYSICAL_REGION_PARTITION_RESULT.md",
+                "docs/canonical-system/MASTER_PLAN_V2.md"
+            ]
+        },
+        {
+            "id": "physical-region-partition",
+            "maturity": "prototype_tested",
+            "purpose": "Classify exact regional physical evidence with one versioned total-signature recipe and reconstruct deterministic bounded shared-edge connected components.",
+            "owns": [
+                "strict PhysicalPartitionRecipeV1 and input replay",
+                "closed exposure and moisture classifiers",
+                "climate-derived dimension availability",
+                "deterministic shared-edge component membership identity and boundary evidence",
+                "bounded proof-cell ceiling"
+            ],
+            "non_goals": [
+                "planet sphere projection terrain watershed or global tessellation",
+                "biome habitat organism or ecological semantics",
+                "fuzzy local-tolerance clustering or weighted quality scores",
+                "runtime map streaming storage or production geometry policy",
+                "visibility traversability approval promotion persistence or external capabilities"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "the exact spatial domain regional field binding climate contract and recipe replay before partitioning",
+                "dimension rules have one canonical order and cuts are strict lower bounds",
+                "unavailable evidence remains distinct from an available numeric zero",
+                "equal signatures join only through bounded shared edges and never wrap",
+                "disconnected equal-signature islands remain distinct components",
+                "membership is exhaustive unique and rebuilt from the domain",
+                "component and partition identities bind exact evidence and public nonclaims",
+                "the proof ceiling is not a production world-size claim"
+            ],
+            "verification": [
+                "cargo test -p physical-region-partition",
+                "cargo test -p regional-environment-state",
+                "tools/verify-g1-c3-derived-world.ps1",
+                "tools/verify-module-context.ps1"
+            ],
+            "references": [
+                "contracts/physical-region-partition-contract.md",
+                "docs/canonical-system/G1_C3_PHYSICAL_PARTITION_POLICY_DESIGN_AUDIT.md",
+                "docs/canonical-system/G1_C3_PHYSICAL_PARTITION_IMPLEMENTATION_READINESS.md",
+                "docs/canonical-system/G1_C3_PHYSICAL_REGION_PARTITION_RESULT.md",
+                "docs/canonical-system/MASTER_PLAN_V2.md"
+            ]
+        },
+        {
+            "id": "derived-world-rules",
+            "maturity": "prototype_tested",
+            "purpose": "Strict causal field-to-world packets for physical palette bounds and environmental signal availability, consuming exact surface-material and regional-environment contracts.",
+            "owns": [
+                "WorldGenerationInput",
+                "CausalWorldPacket",
+                "physical palette and signal/media validation"
+            ],
+            "non_goals": [
+                "complete scientific planet simulation",
+                "signal propagation distance attenuation or biological detectability",
+                "terrain weather physical visibility ecology or aesthetics",
+                "runtime generation"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "the nested surface-material climate hydrological geological/atmospheric and stellar/orbital inputs and states replay exactly",
+                "the regional environment contract replays exactly",
+                "all nested and world reconstruction identities match",
+                "regional exposure affects palette and visible radiance only",
+                "signal inputs are bounded baseline potentials with no caller-authored universal transmission",
+                "physical causes precede aesthetic intent",
+                "medium contradictions fail closed",
+                "signal-potential ordering is canonical",
+                "packet content and authority fields validate before serialization",
+                "visible light and eyes are optional"
+            ],
+            "verification": [
+                "cargo test -p derived-world-rules",
+                "tools/verify-g1-c3-derived-world.ps1",
+                "cargo run --release -p derived-world-rules --example range_regional_cost_portfolio (disposable evidence, non-gating)"
+            ],
+            "references": [
+                "contracts/stellar-orbital-contract.md",
+                "contracts/geological-atmospheric-contract.md",
+                "contracts/hydrological-state-contract.md",
+                "contracts/climate-state-contract.md",
+                "contracts/surface-material-state-contract.md",
+                "contracts/regional-environment-state-contract.md",
+                "contracts/derived-world-rules-contract.md",
+                "docs/canonical-system/G1_C3_STELLAR_ORBITAL_RESULT.md",
+                "docs/canonical-system/G1_C3_GEOLOGICAL_ATMOSPHERIC_RESULT.md",
+                "docs/canonical-system/G1_C3_HYDROLOGICAL_STATE_RESULT.md",
+                "docs/canonical-system/G1_C3_REGIONAL_EXPOSURE_RESULT.md",
+                "docs/canonical-system/G1_C3_SIGNAL_POTENTIAL_RESULT.md",
+                "docs/canonical-system/G1_C3_DERIVED_WORLD_CONTRACT_RESULT.md",
+                "docs/canonical-system/G1_C3_QUALITY_COST_RANGE_CANDIDATE_RESULT.md"
+            ]
+        },
+        {
+            "id": "addressable-world-binding",
+            "maturity": "proof_component",
+            "purpose": "Prove that an input-validated derived-world-rules CausalWorldPacket can fill hierarchy-history's opaque world-conditions seam without either module depending on the other's internals.",
+            "owns": [
+                "world-conditions contract/packet fingerprint functions",
+                "the bind_addressable_world_package integration function"
+            ],
+            "non_goals": [
+                "save/storage engine",
+                "runtime residency",
+                "age cohorts or entity lifecycle",
+                "a physical-only provenance-independent fingerprint"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "hierarchy-history and derived-world-rules keep no production dependency on each other",
+                "the exact WorldGenerationInput and packet must replay before binding",
+                "unsupported packet schema versions fail closed",
+                "identity (logical_id/reconstruction_fingerprint) never moves when only physical drivers change"
+            ],
+            "verification": [
+                "cargo test -p addressable-world-binding"
+            ],
+            "references": [
+                "docs/canonical-system/HIERARCHY_HISTORY_DESIGN_GATE.md",
+                "docs/canonical-system/G1_C3_QUALITY_COST_RANGE_CANDIDATE_RESULT.md"
+            ]
+        },
+        {
+            "id": "entity-lifecycle",
+            "maturity": "prototype_tested",
+            "purpose": "Strict typed age-cohort and selected-entity lifecycle records plus a pure, capability-free state-transition and presentation table for SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md.",
+            "owns": [
+                "AgeCohort/LifecycleMode/LifecycleState records",
+                "the apply state-transition function",
+                "the present projection function"
+            ],
+            "non_goals": [
+                "population sampling",
+                "PresentationProfile visual curves",
+                "mesh/shader/animation work",
+                "any mortality or death path",
+                "a wall clock or runtime"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "all public state is range and phase validated before transition",
+                "ambient entities never tick or use the tracked appearance lock",
+                "progress values never decrease",
+                "appearance lock never changes canonical state",
+                "reload is a true no-op"
+            ],
+            "verification": [
+                "cargo test -p entity-lifecycle"
+            ],
+            "references": [
+                "docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md",
+                "docs/canonical-system/G1_C4_AGE_LIFECYCLE_AND_PROOFRECEIPT_RESULT.md"
+            ]
+        },
+        {
+            "id": "entity-lifecycle-history-binding",
+            "maturity": "proof_component",
+            "purpose": "Prove selected-entity lifecycle deltas replay through hierarchy-history's existing generic delta/replay machinery and recover without continuous ambient simulation.",
+            "owns": [
+                "the lifecycle-event-to-ReferenceOperation key mapping",
+                "the drive/reconstruct integration functions"
+            ],
+            "non_goals": [
+                "a production save-record schema",
+                "a new operation schema in hierarchy-history",
+                "mortality or population sampling"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "multiple drive batches continue the existing sequence",
+                "Reload and zero-change events produce no delta",
+                "hostile stored values fail before integer conversion",
+                "hierarchy-history's existing Gap/replay checks are reused unmodified",
+                "storage round-tripped deltas reconstruct exact lifecycle state"
+            ],
+            "verification": [
+                "cargo test -p entity-lifecycle-history-binding"
+            ],
+            "references": [
+                "docs/canonical-system/HIERARCHY_HISTORY_DESIGN_GATE.md",
+                "docs/canonical-system/G1_C4_AGE_LIFECYCLE_AND_PROOFRECEIPT_RESULT.md"
+            ]
+        },
+        {
+            "id": "hierarchy-history",
+            "maturity": "prototype_tested",
+            "purpose": "Lazy addressable hierarchy descriptors plus baseline-bound append-only world delta replay and recovery.",
+            "owns": [
+                "bounded child windows and residency-neutral descriptors",
+                "ordered idempotent deltas",
+                "migration and snapshot verification"
+            ],
+            "non_goals": [
+                "derived world physics",
+                "runtime streaming execution",
+                "eager universe materialization"
+            ],
+            "entrypoints": [
+                "src/hierarchy.rs",
+                "src/history.rs",
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "residency never changes identity",
+                "snapshots are verified against replay",
+                "old baselines remain recoverable"
+            ],
+            "verification": [
+                "cargo test -p hierarchy-history",
+                "tools/verify-f5-hierarchy-history-readiness.ps1"
+            ],
+            "references": [
+                "contracts/hierarchy-history-contract.md",
+                "docs/canonical-system/HIERARCHY_HISTORY_DESIGN_GATE.md"
+            ]
+        },
+        {
+            "id": "organism-niche-binding",
+            "maturity": "proof_component",
+            "purpose": "Prove a disposable environmental-support gate for sensory-mechanism candidates from an exact validated WorldGenerationInput and CausalWorldPacket pair, without claiming organism capability or constructing organs.",
+            "owns": [
+                "the causal signal-measurement-to-candidate-support mapping",
+                "the disposable sensory-candidate vocabulary and threshold"
+            ],
+            "non_goals": [
+                "biological mechanism feasibility",
+                "organs, body plans, niche graphs, macro-lineages, ecomorphs, person-form eligibility, or dimorphism",
+                "population sampling",
+                "the Mind Warp content grammar"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "the exact source input and packet replay before any support claim",
+                "observed claims describe packet signal measurements, not organism possession",
+                "candidate feasibility means environmental support only",
+                "no organ node is fabricated",
+                "semantic-construction's validator is reused unmodified"
+            ],
+            "verification": [
+                "cargo test -p organism-niche-binding"
+            ],
+            "references": [
+                "docs/canonical-system/SEMANTIC_CONSTRUCTION_DESIGN_GATE.md",
+                "docs/canonical-system/G1_C6_DISTANCE_SENSING_NICHE_BINDING_RESULT.md"
+            ]
+        },
+        {
+            "id": "niche-graph-binding",
+            "maturity": "prototype_tested",
+            "purpose": "Build and validate a deterministic C3 physical environmental-opportunity graph from an exact validated WorldGenerationInput and CausalWorldPacket pair, with separate place-bound and exact physical-regime identities.",
+            "owns": [
+                "typed radiant-energy liquid regional-moisture atmosphere solid-substrate and signal opportunity nodes",
+                "same-world coavailability edges and their strict validator",
+                "provenance-independent exact physical-regime identity"
+            ],
+            "non_goals": [
+                "a complete ecological niche graph or biome model",
+                "fuzzy similarity clustering or a quality score",
+                "habitat suitability hazards trophic roles or competition",
+                "organism capabilities occupancy organs bodies or physical joints",
+                "macro-lineages ecomorphs person-form eligibility dimorphism or population sampling",
+                "the Mind Warp content grammar"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "the graph is rebuilt from the exact validated input and packet rather than trusted as caller data",
+                "every physical node is backed by its owning nested contract or packet signal",
+                "regional moisture appears only with exact surface-liquid evidence",
+                "unlike opportunity kinds retain distinct typed evidence rather than one universal scalar",
+                "the physical-regime identity excludes place provenance while the graph fingerprint retains it",
+                "edges mean coavailability only and form the complete unordered relation over retained nodes",
+                "no habitat organism organ body or lineage is fabricated",
+                "serialization and fingerprints are deterministic"
+            ],
+            "verification": [
+                "cargo test -p niche-graph-binding",
+                "cargo test -p macro-lineage-binding",
+                "cargo test -p forge-desktop"
+            ],
+            "references": [
+                "contracts/derived-world-rules-contract.md",
+                "contracts/environmental-opportunity-contract.md",
+                "docs/canonical-system/G1_C3_CLOSURE_READINESS_AUDIT.md",
+                "docs/canonical-system/G1_C3_ENVIRONMENTAL_OPPORTUNITY_RESULT.md",
+                "docs/canonical-system/G1_C3_REGIONAL_PHYSICAL_ENVELOPE_RESULT.md",
+                "docs/canonical-system/G1_C3_PHYSICAL_REGIME_IDENTITY_DESIGN.md",
+                "docs/canonical-system/G1_C3_PHYSICAL_REGIME_IDENTITY_RESULT.md",
+                "docs/canonical-system/G1_C6_NICHE_GRAPH_BINDING_RESULT.md"
+            ]
+        },
+        {
+            "id": "macro-lineage-binding",
+            "maturity": "proof_component",
+            "purpose": "Bind one hypothetical native macro-lineage identity to an exact validated world input/packet pair, rebuilt environmental-opportunity graph and exact physical regime, occupied opportunity subset, lineage seed, optional parent and opaque body-plan reference.",
+            "owns": [
+                "macro-lineage candidate identity derivation",
+                "strict world/graph/physical-regime/occupancy/body-plan reference binding"
+            ],
+            "non_goals": [
+                "body-plan anatomy or body-region placement",
+                "biological viability or evolution",
+                "biome classification or physical similarity scoring",
+                "species, ecomorphs, sensory organs, person-form eligibility, dimorphism, assets or visual quality",
+                "the Mind Warp content grammar"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "the exact input/packet pair and rebuilt opportunity graph validate before lineage binding",
+                "world and opportunity graph identities match exactly",
+                "the physical-regime reference matches the rebuilt graph without replacing place identity",
+                "occupied opportunities are non-empty and belong to the bound graph",
+                "body-plan identity is explicit while region modeling remains deferred",
+                "occupancy is labelled hypothesis rather than biological truth"
+            ],
+            "verification": [
+                "cargo test -p macro-lineage-binding"
+            ],
+            "references": [
+                "docs/canonical-system/MASTER_PLAN_V2.md",
+                "docs/canonical-system/G1_C3_PHYSICAL_REGIME_IDENTITY_RESULT.md",
+                "docs/canonical-system/G1_C6_NICHE_GRAPH_BINDING_RESULT.md",
+                "docs/canonical-system/G1_C6_MACRO_LINEAGE_BINDING_RESULT.md"
+            ]
+        },
+        {
+            "id": "person-form-eligibility",
+            "maturity": "prerequisite_contract",
+            "purpose": "Fail closed before future comparative person-form evaluation by checking only the structural completeness of explicit lineage, body-plan and five-dimension evidence bindings without claiming grounding, readiness or eligibility.",
+            "owns": [
+                "the five named comparison dimensions",
+                "the explicit lineage/body-plan/capacity binding structure"
+            ],
+            "non_goals": [
+                "evidence truth or provenance validation",
+                "comparative readiness",
+                "person-form eligibility or lineage ranking",
+                "structural compatibility or grotesque-retrofit evaluation",
+                "deriving any capacity",
+                "any biological or perceptual-realism claim",
+                "the Mind Warp content grammar"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "zero lineage and body-plan identities fail closed",
+                "claim identifiers and capacity-concept bindings are explicit and non-duplicated",
+                "foreign-lineage evidence cannot fill the assessed lineage's dimension",
+                "all five valid bindings yield structural completeness only, never readiness or eligibility"
+            ],
+            "verification": [
+                "cargo test -p person-form-eligibility"
+            ],
+            "references": [
+                "docs/canonical-system/MASTER_PLAN_V2.md",
+                "docs/canonical-system/G1_C6_PERSON_FORM_ELIGIBILITY_RESULT.md"
+            ]
+        },
+        {
+            "id": "significance-scheduler",
+            "maturity": "prototype_tested",
+            "purpose": "Shared significance packets and deterministic bounded scheduling reference across future fidelity consumers.",
+            "owns": [
+                "significance tiers and hysteresis",
+                "dependency-aware work tickets",
+                "admission, cancellation, fairness and fallback traces"
+            ],
+            "non_goals": [
+                "runtime executors",
+                "product-specific weights",
+                "private subsystem priority systems"
+            ],
+            "entrypoints": [
+                "src/significance.rs",
+                "src/scheduler.rs",
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "safety work is admitted before dispatch",
+                "late output is quarantined",
+                "consumer fidelity remains monotone",
+                "named consumer domains never interfere with each other's fidelity map"
+            ],
+            "verification": [
+                "cargo test -p significance-scheduler",
+                "cargo test -p significance-scheduler --test multi_domain_consumer_fidelity",
+                "tools/verify-f5-significance-scheduler-readiness.ps1"
+            ],
+            "references": [
+                "contracts/significance-scheduler-contract.md",
+                "docs/canonical-system/SIGNIFICANCE_SCHEDULER_DESIGN_GATE.md",
+                "docs/canonical-system/G1_C5_MULTI_DOMAIN_FIDELITY_RESULT.md"
+            ]
+        },
+        {
+            "id": "semantic-construction",
+            "maturity": "prototype_tested",
+            "purpose": "Causal semantic alternatives, closed capabilities and deterministic part-role construction recipes.",
+            "owns": [
+                "label-independent concept identity",
+                "causal justification and feasibility",
+                "typed graphs, sockets and atomic recipe replay"
+            ],
+            "non_goals": [
+                "proposal generation",
+                "general geometry",
+                "representation or rendering selection"
+            ],
+            "entrypoints": [
+                "src/model.rs",
+                "src/validate.rs",
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "hard feasibility precedes trade comparison",
+                "labels never define identity",
+                "recipe application is atomic"
+            ],
+            "verification": [
+                "cargo test -p semantic-construction",
+                "tools/verify-f5-semantic-construction-readiness.ps1"
+            ],
+            "references": [
+                "contracts/semantic-construction-contract.md",
+                "docs/canonical-system/SEMANTIC_CONSTRUCTION_DESIGN_GATE.md"
+            ]
+        },
+        {
+            "id": "grounded-search-protocol",
+            "maturity": "prototype_tested",
+            "purpose": "Capability-free case portfolio for testing target-grounded and nature-inspired search against simple local baselines.",
+            "owns": [
+                "bounded search traces",
+                "case-local adapters",
+                "negative-transfer and cost comparisons"
+            ],
+            "non_goals": [
+                "universal solver",
+                "production proposal generation",
+                "cross-domain parameter transfer"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "every method is case-local",
+                "hard constraints dominate attractiveness",
+                "natural resemblance grants no fitness"
+            ],
+            "verification": [
+                "cargo test -p grounded-search-protocol",
+                "tools/verify-f5-natural-function-reassessment.ps1"
+            ],
+            "references": [
+                "docs/canonical-system/GROUNDED_SEARCH_CASE_RESULT.md",
+                "docs/canonical-system/FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md"
+            ]
+        },
+        {
+            "id": "representation-contract",
+            "maturity": "prototype_tested",
+            "purpose": "Engine-neutral representation portfolios, derivative lineage, material/articulation plans and controlled review bindings.",
+            "owns": [
+                "representation selection records",
+                "artifact and derivative identity",
+                "repair and temporal plan validation"
+            ],
+            "non_goals": [
+                "general geometry generation",
+                "rendering implementation",
+                "visual preference inference"
+            ],
+            "entrypoints": [
+                "src/lib.rs",
+                "src/validate.rs",
+                "src/neutral_humanoid.rs"
+            ],
+            "invariants": [
+                "selection requires explicit alternatives",
+                "references cannot become hidden assets",
+                "repair remains in lineage and scope"
+            ],
+            "verification": [
+                "cargo test -p representation-contract",
+                "tools/verify-f5-representation-asset-animation-readiness.ps1"
+            ],
+            "references": [
+                "contracts/representation-contract.md",
+                "docs/canonical-system/REPRESENTATION_ASSET_ANIMATION_DESIGN_GATE.md"
+            ]
+        },
+        {
+            "id": "humanoid-generation",
+            "maturity": "proof_component",
+            "purpose": "Deterministic capability-free generation of the exact neutral H3 structural humanoid candidate.",
+            "owns": [
+                "H3 input binding",
+                "17-joint structural candidate generation",
+                "bounded structural proof evidence"
+            ],
+            "non_goals": [
+                "surface mesh or anatomy",
+                "population rules",
+                "asset or runtime generation"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "P6 and H2 bindings are exact",
+                "generation has no external capability",
+                "negative claims remain attached"
+            ],
+            "verification": [
+                "cargo test -p humanoid-generation",
+                "tools/verify-h3-humanoid-generation.ps1"
+            ],
+            "references": [
+                "contracts/humanoid-generation-contract.md",
+                "docs/canonical-system/H3_NEUTRAL_HUMANOID_GENERATION_RESULT.md"
+            ]
+        },
+        {
+            "id": "control-calibration",
+            "maturity": "proof_component",
+            "purpose": "Exact synthetic controls for broken connection, silhouette collapse and articulation drift in the H3 fixture.",
+            "owns": [
+                "orthogonal control matrix",
+                "metric applicability and non-detections",
+                "control/reference fingerprints"
+            ],
+            "non_goals": [
+                "visual beauty scoring",
+                "general anatomy metrics",
+                "production acceptance thresholds"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "controls are fixed before observation",
+                "metrics remain fixture-local",
+                "post-hoc or cross-sensitive claims fail"
+            ],
+            "verification": [
+                "cargo test -p control-calibration",
+                "tools/verify-h4-control-calibration.ps1"
+            ],
+            "references": [
+                "contracts/control-calibration-contract.md",
+                "docs/canonical-system/H4_HUMANOID_FUNCTIONAL_CONTROLS_RESULT.md"
+            ]
+        },
+        {
+            "id": "humanoid-proof-chain",
+            "maturity": "promoted_proof_baseline_component",
+            "purpose": "Reconstruct and validate the exact H1-H6 evidence chain and narrow H7 promotion package.",
+            "owns": [
+                "proof-chain manifest",
+                "H7 package claims and nonclaims",
+                "capability-free lifecycle simulation"
+            ],
+            "non_goals": [
+                "protected Kernel transitions",
+                "asset generation",
+                "runtime or production claims"
+            ],
+            "entrypoints": [
+                "src/lib.rs",
+                "src/promotion.rs"
+            ],
+            "invariants": [
+                "stage fingerprints are exact",
+                "six claims and eight nonclaims cannot drift",
+                "evidence never grants authority"
+            ],
+            "verification": [
+                "cargo test -p humanoid-proof-chain",
+                "tools/verify-h7-humanoid-promotion-readiness.ps1"
+            ],
+            "references": [
+                "contracts/humanoid-proof-chain-contract.md",
+                "contracts/humanoid-promotion-readiness-contract.md"
+            ]
+        },
+        {
+            "id": "humanoid-proof-chain-integration",
+            "maturity": "reference_integration",
+            "purpose": "Read-only and disposable integration between the humanoid proof chain and protected Kernel persistence/lifecycle boundaries.",
+            "owns": [
+                "H6 backup/reopen proof",
+                "H7 disposable candidate fixtures",
+                "exact downstream H7 dependency validator"
+            ],
+            "non_goals": [
+                "production API",
+                "asset application",
+                "automatic lifecycle transitions"
+            ],
+            "entrypoints": [
+                "src/lib.rs",
+                "tests/h6_humanoid_recovery.rs",
+                "tests/h7_dependency_consumer.rs"
+            ],
+            "invariants": [
+                "generic promoted state cannot substitute for H7",
+                "nonclaims return as blockers",
+                "integration effects remain explicit"
+            ],
+            "verification": [
+                "cargo test -p humanoid-proof-chain-integration",
+                "tools/verify-h7-humanoid-promotion-readiness.ps1"
+            ],
+            "references": [
+                "docs/canonical-system/G1_C1_PROOFRECEIPT_AND_H7_CONSUMER_RESULT.md",
+                "contracts/humanoid-promotion-readiness-contract.md"
+            ]
+        },
+        {
+            "id": "perception-protocol",
+            "maturity": "prototype_tested",
+            "purpose": "Strict controlled-stimulus and human-observation protocol with metric and authority separation.",
+            "owns": [
+                "stimulus plan and observation records",
+                "blind/repeat/control requirements",
+                "indeterminate and contradiction outcomes"
+            ],
+            "non_goals": [
+                "automatic aesthetic judgment",
+                "population preference inference",
+                "external renderer execution"
+            ],
+            "entrypoints": [
+                "src/lib.rs",
+                "src/proof.rs"
+            ],
+            "invariants": [
+                "assertions precede stimuli",
+                "human and metric disagreement is retained",
+                "observation never promotes"
+            ],
+            "verification": [
+                "cargo test -p perception-protocol",
+                "tools/verify-f5-representation-asset-animation-readiness.ps1"
+            ],
+            "references": [
+                "contracts/perception-protocol-contract.md",
+                "docs/canonical-system/P7B_CONTROLLED_PERCEPTION_DESIGN_GATE.md"
+            ]
+        },
+        {
+            "id": "reference-intake",
+            "maturity": "proof_component",
+            "purpose": "Strict provenance, duplication, poison and fitness-bound intake for recovered and Forge-owned references.",
+            "owns": [
+                "reference identities and provenance",
+                "duplicate/rejection dispositions",
+                "minimal diverse reference suite"
+            ],
+            "non_goals": [
+                "asset import",
+                "license inference",
+                "visual approval from metadata"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "duplicates are not independent evidence",
+                "unsafe or ambiguous references fail closed",
+                "intake grants no authority"
+            ],
+            "verification": [
+                "cargo test -p reference-intake",
+                "tools/verify-h1-reference-intake.ps1"
+            ],
+            "references": [
+                "contracts/reference-intake-contract.md",
+                "docs/canonical-system/H1_REFERENCE_INTAKE_RESULT.md"
+            ]
+        },
+        {
+            "id": "reference-viewport",
+            "maturity": "prototype_tested",
+            "purpose": "Deterministic built-in data-only wireframe projection and controlled negative geometry fixtures.",
+            "owns": [
+                "front, side and top projection",
+                "pose-frame projection",
+                "structural negative controls"
+            ],
+            "non_goals": [
+                "surface rendering",
+                "external execution",
+                "visual quality approval"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "projection is read-only and deterministic",
+                "segment lengths remain stable across articulation",
+                "unsafe path or markup tokens fail"
+            ],
+            "verification": [
+                "cargo test -p reference-viewport",
+                "tools/verify-f5-representation-asset-animation-readiness.ps1"
+            ],
+            "references": [
+                "contracts/reference-viewport-contract.md",
+                "docs/canonical-system/P7B_BUILTIN_REFERENCE_VIEWPORT_DECISION.md"
+            ]
+        },
+        {
+            "id": "viewport-stimulus",
+            "maturity": "prototype_tested",
+            "purpose": "Bind exact viewport artifacts and controls into owner-observation stimuli and authority-negative receipts.",
+            "owns": [
+                "stimulus bundle binding",
+                "step progress and direct observation receipts",
+                "stale fixture rejection"
+            ],
+            "non_goals": [
+                "owner judgment inference",
+                "promotion",
+                "screen capture implementation"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "no observation is fabricated",
+                "controls remain exact and distinct",
+                "receipts have no authority effect"
+            ],
+            "verification": [
+                "cargo test -p viewport-stimulus",
+                "tools/verify-f5-representation-asset-animation-readiness.ps1"
+            ],
+            "references": [
+                "contracts/viewport-stimulus-contract.md",
+                "docs/canonical-system/P7B_BUILTIN_VIEWPORT_CONTROLLED_STIMULUS_RESULT.md"
+            ]
+        },
+        {
+            "id": "containment-profile",
+            "maturity": "policy_proof",
+            "purpose": "Capability-free policy model for future isolated untrusted executable containment and recovery.",
+            "owns": [
+                "deny set and resource bounds",
+                "quarantine and cleanup requirements",
+                "strict policy receipt"
+            ],
+            "non_goals": [
+                "actual containment execution",
+                "tool selection",
+                "security-boundary proof"
+            ],
+            "entrypoints": [
+                "src/lib.rs",
+                "src/proof.rs"
+            ],
+            "invariants": [
+                "policy cannot bind a runner",
+                "all resource dimensions are bounded",
+                "quarantine cannot become durable input"
+            ],
+            "verification": [
+                "cargo test -p containment-profile"
+            ],
+            "references": [
+                "contracts/containment-profile-contract.md",
+                "docs/canonical-system/P7B1_CONTAINMENT_DESIGN_GATE.md"
+            ]
+        },
+        {
+            "id": "containment-denial-canary",
+            "maturity": "diagnostic_fixture",
+            "purpose": "Tiny independent Windows denial canary used only by separately gated containment diagnostics.",
+            "owns": [
+                "minimal prohibited-operation probes",
+                "fixed exit/report surface"
+            ],
+            "non_goals": [
+                "parsing or policy",
+                "network access",
+                "Forge authority or production work"
+            ],
+            "entrypoints": [
+                "src/main.rs",
+                "build.rs"
+            ],
+            "invariants": [
+                "remains independent of Forge parsers and policy",
+                "no async or network stack",
+                "cannot be reached from desktop UI"
+            ],
+            "verification": [
+                "cargo test -p containment-denial-canary"
+            ],
+            "references": [
+                "docs/canonical-system/P7B1B_DENIAL_CANARY_DESIGN_GATE.md"
+            ]
+        },
+        {
+            "id": "containment-canary-runner",
+            "maturity": "blocked_diagnostic_runner",
+            "purpose": "Separately owner-gated Windows launcher/observer for the denial canary with bounded diagnostic receipts.",
+            "owns": [
+                "Windows launch and debug observation",
+                "cleanup and trace-bounded reports"
+            ],
+            "non_goals": [
+                "general process execution",
+                "desktop reachability",
+                "containment proof from one run"
+            ],
+            "entrypoints": [
+                "src/lib.rs",
+                "src/main.rs"
+            ],
+            "invariants": [
+                "requires explicit external gate",
+                "cleanup is independently verifiable",
+                "diagnostic events never become authority"
+            ],
+            "verification": [
+                "cargo test -p containment-canary-runner",
+                "tools/test-p7b1b-loader-surface.ps1"
+            ],
+            "references": [
+                "docs/canonical-system/P7B1B_ROUTINE_TEST_DELEGATION_AND_DYNAMIC_OBSERVATION.md",
+                "docs/canonical-system/P7B1B_REPAIRED_OBSERVER_VALIDATION_RESULT.md"
+            ]
+        },
+        {
+            "id": "forge-desktop-ui",
+            "maturity": "prototype_tested",
+            "purpose": "Local human-facing Forge interface for evidence intake, Reference Studio, explicit authority commands, bounded previews and read-only workflow metrics.",
+            "owns": [
+                "browser UI presentation",
+                "Tauri command invocation",
+                "read-only evidence and status rendering",
+                "owner-facing metric scorecards, verified progression, filters, routine-run history and advisory recommendations"
+            ],
+            "non_goals": [
+                "direct filesystem, process or network access",
+                "canonical state mutation outside commands",
+                "automatic owner decisions"
+            ],
+            "entrypoints": [
+                "src/main.ts",
+                "src/app.css",
+                "index.html"
+            ],
+            "invariants": [
+                "no direct network fetch",
+                "no backend source import",
+                "authority phrases remain exact and separate",
+                "knowledge category filters resolve role references without duplicating source text",
+                "metrics render unknown separately from zero and expose no apply, tune, approve or promote control"
+            ],
+            "verification": [
+                "npm run build",
+                "tools/verify.ps1"
+            ],
+            "references": [
+                "contracts/reference-studio-inspector-contract.md",
+                "docs/canonical-system/REFERENCE_STUDIO_READINESS.md",
+                "contracts/knowledge-record-contract.md",
+                "contracts/batch-event-contract.md",
+                "governance/MEASUREMENT_AND_RECURSIVE_LEARNING_CONTRACT.md"
+            ]
+        },
+        {
+            "id": "receiver-arrival-geometry-binding",
+            "maturity": "prototype_tested",
+            "purpose": "Classify exact-ray strict-interior arrival at one bounded Cartesian Q160 AABB receiver over a validated optical lineage.",
+            "owns": [
+                "strict receiver AABB identity and physical-volume binding",
+                "exact ordered within-step slab intersection",
+                "start-inside strict-arrival contact and face-tie classification",
+                "receiver result transcript and arithmetic receipts"
+            ],
+            "non_goals": [
+                "conditional point or direction box arrival",
+                "source emission spreading received power or detector response",
+                "visibility detectability darkness perception rendering or gameplay line of sight",
+                "runtime persistence approval promotion or C3 closure",
+                "modifying physical bulk interface lineage cumulative or arithmetic owners"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "the complete lineage bundle and manifest replay before geometry",
+                "only degenerate Q160 point Q1.62 direction and required Q160 face-time evidence is classified",
+                "strict interior uses open receiver slabs and 0 <= t < t_face",
+                "start-inside is explicit while tangent point and face-tie contact are not arrival",
+                "receiver bounds are positive-volume and contained by the closed reconstructed physical volume",
+                "checked signed-512 arithmetic remains inside the 414-bit shield",
+                "at most 64 steps 384 divisions 768 comparisons and 64 intersections are admitted",
+                "input output and live canonical bytes are capped at 18 MiB 256 KiB and 32 MiB",
+                "strict codecs reconstruct and compare the complete result",
+                "evidence has no authority effect"
+            ],
+            "verification": [
+                "cargo test -p receiver-arrival-geometry-binding --all-targets",
+                "cargo test -p receiver-arrival-geometry-binding --target i686-pc-windows-msvc",
+                "cargo check -p receiver-arrival-geometry-binding --target aarch64-linux-android",
+                "tools/verify-g1-c3-receiver-arrival-geometry-binding.ps1",
+                "tools/verify-module-context.ps1",
+                "tools/verify.ps1"
+            ],
+            "references": [
+                "contracts/receiver-arrival-geometry-binding-contract.md",
+                "docs/canonical-system/G1_C3_RECEIVER_ARRIVAL_GEOMETRY_MATHEMATICAL_DESIGN_AUDIT.md",
+                "docs/canonical-system/G1_C3_RECEIVER_ARRIVAL_GEOMETRY_ORACLE_RESULT.md",
+                "docs/canonical-system/G1_C3_RECEIVER_ARRIVAL_GEOMETRY_IMPLEMENTATION_READINESS.md",
+                "docs/canonical-system/G1_C3_RECEIVER_ARRIVAL_GEOMETRY_IMPLEMENTATION_RESULT.md"
+            ]
+        },
+        {
+            "id": "optical-phase-space-cell-binding",
+            "maturity": "prototype_tested",
+            "purpose": "Bind one declared four-symbol optical phase-space root into exact positive-measure binary cells, correlated affine output forms and authority-negative directed fixed-point projection receipts.",
+            "owns": [
+                "strict root cell split and projection codecs and identities",
+                "exact reduced phase-space measure and deterministic binary ancestry",
+                "six correlated common-denominator affine output forms",
+                "outward Q160 position and Q1.62 direction projection receipts"
+            ],
+            "non_goals": [
+                "optical coupling receiver coverage lineage composition or transfer magnitude",
+                "physical correctness of declared source measure or forms",
+                "emission radiance spreading received power detector response visibility or perception",
+                "runtime persistence approval promotion or external capabilities"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "the parameterization has exactly four symbols and six fixed-order output roles",
+                "root scalars are at most 192 bits depth is at most 12 and live arithmetic is shielded at 368 bits",
+                "split children conserve exact reduced measure and preserve shared-symbol correlation",
+                "strict canonical JSON rejects aliases unknown fields trailing content and stale identities",
+                "Q160 and Q1.62 projections round outward and direction endpoints remain within the unit fixed-point range",
+                "only fixed-interval-arithmetic serde serde_json and sha2 are dependencies",
+                "the additive calibrated source-energy distribution is the first consumer and evidence has no authority effect"
+            ],
+            "verification": [
+                "cargo test -p optical-phase-space-cell-binding --all-targets",
+                "cargo test -p optical-phase-space-cell-binding --target i686-pc-windows-msvc",
+                "cargo check -p optical-phase-space-cell-binding --target aarch64-linux-android",
+                "tools/verify-g1-c3-optical-phase-space-cell-implementation.ps1",
+                "tools/verify-module-context.ps1",
+                "tools/verify.ps1"
+            ],
+            "references": [
+                "contracts/optical-phase-space-cell-binding-contract.md",
+                "docs/canonical-system/G1_C3_OPTICAL_PHASE_SPACE_CELL_PROVENANCE_MATHEMATICAL_DESIGN_AUDIT.md",
+                "docs/canonical-system/G1_C3_OPTICAL_PHASE_SPACE_CELL_PROVENANCE_ORACLE_RESULT.md",
+                "docs/canonical-system/G1_C3_OPTICAL_PHASE_SPACE_CELL_PROVENANCE_IMPLEMENTATION_READINESS.md"
+            ]
+        }
+    ]
+}

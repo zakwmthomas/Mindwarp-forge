@@ -2,13 +2,13 @@
 
 Mind Warp has two connected horizons: Forge is the active foundation; the
 Mind Warp game is the destination. Forge exists so a solo creative director
-can work continuously with Codex without losing project truth, workflow, or
+can work continuously with an AI assistant without losing project truth, workflow, or
 reasoning at context boundaries.
 
 ```mermaid
 flowchart LR
-  Owner["Creative Director\nvision and approvals"] --> Codex["Codex\nresearch, design, implementation"]
-  Codex --> Forge["Forge\nevidence, provenance, verification"]
+  Owner["Creative Director\nvision and approvals"] --> Agent["Active AI assistant\nresearch, design, implementation"]
+  Agent --> Forge["Forge\nevidence, provenance, verification"]
   Forge --> Game["Mind Warp game\nfuture gated product work"]
   Forge --> Owner
 ```

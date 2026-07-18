@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "project-56b2c4780da98bfbaf216613c281ec28e2eb61a2a22733dee34c0efcba357349",
+  "revision": 1,
+  "canonical_name": "Greenfield",
+  "aliases": ["Greenfeld", "Greenfield"],
+  "repository_uri": "C:\\Users\\zakwm\\CascadeProjects\\greenfield",
+  "bootstrap_uri": "AGENTS.md",
+  "authority_boundary": "Independent product repository. Forge may index evidence and propose reuse, but cannot merge, release, publish or transfer authority.",
+  "status": "active",
+  "related_project_ids": ["project-33deae303ed7d669d97c7fe3ab4507c15dc4e7aae54e3ac328b23e79f6a2f0fe"],
+  "evidence_ids": ["codex-session:019f6cc7-f99f-7781-81f9-88ef1d4b5121"]
+}

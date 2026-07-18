@@ -77,3 +77,26 @@ advisory projection. Focused fixtures cover the required replay,
 privacy/cardinality, denominator/sample, projection, bounded-read,
 mutation-negative, and Goodhart cases. Dashboard trends and governance
 recommendations remain later read-only consumers, not B4 closure requirements.
+
+## Owner-approved dashboard and recommendation continuation
+
+The owner released the remaining B4 phases as one bounded Forge-workflow-first
+package. It measures meaningful worker batches and registered routine runs,
+projects them into one read-only desktop Metrics tab, and produces advisory
+local improvement trials. It does not instrument Mind Warp runtime performance,
+invent unavailable history, calculate currency cost, or automate an
+improvement decision.
+
+The continuation must preserve every v1 event byte; distinguish measured,
+estimated, unknown and not-applicable values; collect only metadata from local
+Codex token-count records; register routine runs before invocation; and compare
+only compatible metric, run-definition, module, platform and gate scopes.
+Prompts, paths, raw logs and errors remain prohibited metric dimensions.
+
+The first dashboard opens with `insufficient_sample`. Five comparable samples
+establish a local baseline. A cost or flow regression may become a proposed
+experiment only when it is at least 20 percent, verification does not improve,
+and the proposal records expected verified local gain, total cost, uncertainty,
+regression guard, falsifier, rollback trigger and stop/refocus condition.
+Every projection and recommendation remains advisory and incapable of mutation,
+approval, priority change, promotion or owner-gate traversal.

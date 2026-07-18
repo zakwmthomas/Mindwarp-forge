@@ -62,6 +62,25 @@ state so later turns resume directly. Promote a communication or workflow
 improvement into policy, guidance, a template, or a test only after recording
 the problem it solves and how future work will detect regression.
 
+## Token-efficient package execution
+
+Use one parent writer and zero specialists by default. Use at most two
+concurrent read-only specialists only when they own distinct unresolved
+questions and their expected information gain exceeds their context and token
+cost. Never commission duplicate inventories or broad reviews. Bound every
+specialist with exact files, a stop condition, and a compact return schema, and
+keep its output in the parent result unless it creates a distinct reusable
+evidence class.
+
+Close a stable package with the smallest focused gate set, a programmatic
+route-shield inventory, and then one complete Forge gate. Retain concise
+checksums, counts, timings, and failure classifications rather than raw-log
+repetition. This order changes cost and timing only: it never removes or
+weakens bootstrap, hostile, platform, owner, provenance, or final integration
+requirements. If the default misses a material contradiction that a bounded
+independent review would probably have found, restore one targeted specialist
+for that risk class.
+
 ## Simulation-first execution ladder
 
 Before implementation, choose the cheapest tier capable of falsifying the
@@ -85,6 +104,17 @@ route one labelled comparison to the owner and pause the dependent work.
 
 ## Natural-method candidate gate
 
+Before localizing an owner-supplied reusable mathematical, natural,
+architectural, or systemic mechanism, run a **whole-system discovery audit**.
+Extract separable abstractions, enumerate every registered Forge,
+game-canonical, and runtime system, and record fit, non-fit, duplication,
+possible shared utilities, and cross-layer feedback. Rank experiments only
+after that complete registry pass. Broad discovery is not universal adoption:
+the P16 target-local transfer gate still owns every application, and no
+implementation, parameter, objective, conclusion, dependency, or authority
+transfers from the map. Skip the whole-system pass only when the owner
+explicitly limits the scope.
+
 Translate every nature-inspired proposal into a mathematical or engineering
 abstraction before treating it as a method. Record assumptions, the receiving
 domain's metric and constraints, a simple baseline, implementation and
@@ -103,6 +133,24 @@ compare planned versus completed exit criteria, redundant narration/tool work,
 verification failures and repair loops, context rediscovery, handoff quality,
 and whether the batch state let work resume directly. Keep improvements that
 have evidence; revert or revise changes that did not improve the workflow.
+
+## Hybrid step-leader divergence
+
+After every third meaningful completed batch, or earlier on a verification
+failure, two repeated workarounds, milestone transition, stagnation, or a new
+mechanism applicable to at least three registered systems, run one bounded
+step-leader assessment. Preserve the exact mainline checkpoint. Complete the
+P18 registry map, calculate target-local VOI and local net gain, and select at
+most one positive target under the capability-free controller.
+
+The proposed probe may consume no more than ten percent of the measured prior
+three-batch cost and no more than one normal batch. Repository evidence comes
+before capped external research. Ordinary edits and heartbeat wakes are not triggers.
+Missing registry coverage, failed budget, non-positive value, a
+fired falsifier or any participating regression reconnects to mainline without
+adoption. Two independent successful modules are still required before B5 may
+publish a transfer candidate. No controller decision executes work or grants
+authority.
 
 ## Adaptive recovery cadence
 

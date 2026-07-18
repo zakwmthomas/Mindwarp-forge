@@ -61,7 +61,7 @@ if ($policy.verify_cargo_dependencies -ne $false) {
         $manifest = (Resolve-Path (Join-Path (Join-Path $root $module.root) 'Cargo.toml')).Path
         $package = @($metadata.packages | Where-Object { [IO.Path]::GetFullPath($_.manifest_path) -eq $manifest }) | Select-Object -First 1
         if (!$package) { $errors.Add("$($module.id): Cargo package not found in workspace metadata"); continue }
-        $actual = @($package.dependencies | Where-Object { $_.path -and $workspaceNames.ContainsKey($_.name) } | ForEach-Object name | Sort-Object -Unique)
+        $actual = @($package.dependencies | Where-Object { ($_.PSObject.Properties.Name -contains 'path') -and $_.path -and $workspaceNames.ContainsKey($_.name) } | ForEach-Object name | Sort-Object -Unique)
         $declared = @($module.dependencies | Sort-Object -Unique)
         if (($actual -join ',') -ne ($declared -join ',')) {
           $errors.Add("$($module.id): declared dependencies [$($declared -join ', ')] differ from Cargo workspace dependencies [$($actual -join ', ')]")

@@ -1,4 +1,4 @@
-# Mind Warp Forge: Mandatory Task Startup
+# Mind Warp Forge: Mandatory AI Task Startup
 
 This repository is the workspace for every Mind Warp Forge task. Before any
 planning, editing, or broad research:
@@ -17,6 +17,11 @@ planning, editing, or broad research:
 6. State a `BOOTSTRAP RECEIPT`: active objective, Atlas milestone ID, related
    systems, context health, verification status, exact next action, and
    unresolved risks. Do not mutate the project before the receipt.
+7. Every session is read-only by default. Before any repository mutation, use
+   `tools\forge-writer-lease.ps1 -Mode route` and then `-Mode claim` with the
+   exact `CODEX_THREAD_ID`. Reassert the checkpoint-bound lease before each
+   material mutation or long verification run, and release it at completion or
+   an owner gate. A missing, stale, conflicting, or expired lease forbids writes.
 
 Operating rules: research -> design -> adversarial review -> readiness gate ->
 explicit implementation authorization -> verification -> promotion. Imported
@@ -34,6 +39,12 @@ At every package transition, update only the canonical
 
 Keep modules small, preserve provenance, avoid unrelated edits, and run the
 relevant verification gate before handing work over.
+
+Before reading or changing a declared module, read its root `MODULE.md` first.
+When module purpose, ownership, non-goals, interfaces, dependencies, invariants,
+risks, verification, or canonical references change, update
+`governance/module-context-registry.json` and run
+`tools\refresh-module-context.ps1`. Never hand-edit generated `MODULE.md` files.
 
 At every material substage, refresh the macro and micro context recorded in the
 canonical Worker Batch State before implementation. Apply the simulation-first

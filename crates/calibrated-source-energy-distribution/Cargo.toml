@@ -1,0 +1,13 @@
+[package]
+name = "calibrated-source-energy-distribution"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+calibrated-spectral-time-basis = { path = "../calibrated-spectral-time-basis" }
+fixed-interval-arithmetic = { path = "../fixed-interval-arithmetic" }
+optical-phase-space-cell-binding = { path = "../optical-phase-space-cell-binding" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"

@@ -3,6 +3,102 @@
   "verify_cargo_dependencies": true,
   "modules": [
     {
+      "id": "calibrated-spectral-time-basis",
+      "root": "crates/calibrated-spectral-time-basis",
+      "dependencies": ["optical-phase-space-dimensionless-transfer", "visible-radiance-bulk-transfer"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "source calibration evidence cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "source calibration evidence cannot depend on desktop or UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "source calibration evidence cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "source calibration evidence cannot access files or processes"},
+        {"pattern": "\\b(?:f32|f64)\\b", "reason": "physical calibration identity cannot depend on floating-point semantics"}
+      ]
+    },
+    {
+      "id": "calibrated-source-energy-distribution",
+      "root": "crates/calibrated-source-energy-distribution",
+      "dependencies": ["calibrated-spectral-time-basis", "fixed-interval-arithmetic", "optical-phase-space-cell-binding"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "source-energy evidence cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "source-energy evidence cannot depend on desktop or UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "source-energy evidence cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "source-energy evidence cannot access files or processes"},
+        {"pattern": "\\b(?:visible_radiance|optical_lineage_binding|optical_lane_transfer_binding|receiver_arrival_geometry_binding)(?:::|\\s*=)", "reason": "source allocation cannot acquire transport receiver or visibility authority"},
+        {"pattern": "\\b(?:crypto_bigint|num_bigint)(?:::|\\s*=)", "reason": "source-energy equality must use the opaque shared checked arithmetic owner"},
+        {"pattern": "\\b(?:f32|f64)\\b", "reason": "source-energy identities and conservation are exact integer-only"}
+      ]
+    },
+    {
+      "id": "optical-phase-space-receiver-coupling",
+      "root": "crates/optical-phase-space-receiver-coupling",
+      "dependencies": ["fixed-interval-arithmetic", "optical-phase-space-cell-binding", "optical-phase-space-transport-certificate", "physical-path-substrate", "receiver-arrival-geometry-binding"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "receiver-coupling evidence cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "receiver-coupling evidence cannot depend on desktop or UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "receiver-coupling evidence cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "receiver-coupling evidence cannot access files or processes"},
+        {"pattern": "\\b(?:visible_radiance|optical_lineage_binding|optical_lane_transfer_binding)(?:::|\\s*=)", "reason": "receiver coupling cannot acquire source power lineage or runtime authority"},
+        {"pattern": "\\b(?:crypto_bigint|num_bigint)(?:::|\\s*=)", "reason": "receiver coupling must use only the opaque shared checked arithmetic owner"},
+        {"pattern": "\\b(?:f32|f64)\\b", "reason": "receiver-coupling arithmetic is exact checked integer-only"}
+      ]
+    },
+    {
+      "id": "optical-phase-space-transport-certificate",
+      "root": "crates/optical-phase-space-transport-certificate",
+      "dependencies": ["fixed-interval-arithmetic", "optical-phase-space-cell-binding", "physical-path-substrate"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "transport evidence cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "transport evidence cannot depend on desktop or UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "transport evidence cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "transport evidence cannot access files or processes"},
+        {"pattern": "\\b(?:visible_radiance|optical_lineage_binding|optical_lane_transfer_binding|receiver_arrival_geometry_binding)(?:::|\\s*=)", "reason": "transport remains a capability-free prerequisite and cannot become a coupling or arrival consumer"},
+        {"pattern": "\\b(?:crypto_bigint|num_bigint)(?:::|\\s*=)", "reason": "transport must use only the opaque shared checked arithmetic owner"},
+        {"pattern": "\\b(?:f32|f64)\\b", "reason": "transport arithmetic is exact checked integer-only"}
+      ]
+    },
+    {
+      "id": "optical-phase-space-dimensionless-transfer",
+      "root": "crates/optical-phase-space-dimensionless-transfer",
+      "dependencies": ["fixed-interval-arithmetic", "optical-phase-space-cell-binding", "optical-phase-space-receiver-coupling", "optical-phase-space-transport-certificate", "physical-path-substrate", "receiver-arrival-geometry-binding", "visible-radiance-bulk-transfer"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "dimensionless transfer evidence cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "dimensionless transfer evidence cannot depend on desktop or UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "dimensionless transfer evidence cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "dimensionless transfer evidence cannot access files or processes"},
+        {"pattern": "\\b(?:f32|f64)\\b", "reason": "dimensionless transfer composition is checked fixed-point only"}
+      ]
+    },
+    {
+      "id": "step-leader-controller",
+      "root": "crates/step-leader-controller",
+      "dependencies": [],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "the advisory controller cannot depend on protected authority or persistence"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "the controller cannot depend on desktop or UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "the controller cannot initiate external research or network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "the controller cannot edit files or execute work"}
+      ]
+    },
+    {
+      "id": "visible-radiance-interface-event",
+      "root": "crates/visible-radiance-interface-event",
+      "dependencies": ["physical-path-substrate"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "local physical interface evidence cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "local physical interface evidence cannot depend on desktop or UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "local physical interface evidence cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "local physical interface evidence cannot access files or processes"},
+        {"pattern": "\\bvisible_radiance_bulk_transfer(?:::|\\s*=)", "reason": "the local interface event stays additive and cannot alter bulk-transfer semantics"}
+      ]
+    },
+    {
       "id": "forge-kernel",
       "root": "crates/forge-kernel",
       "dependencies": [],
@@ -27,7 +123,7 @@
     {
       "id": "forge-desktop",
       "root": "apps/forge-desktop/src-tauri",
-      "dependencies": ["forge-kernel", "universe-identity", "field-basis", "hierarchy-history", "significance-scheduler", "semantic-construction", "representation-contract", "perception-protocol", "reference-viewport", "viewport-stimulus", "containment-profile"],
+      "dependencies": ["forge-kernel", "universe-identity", "field-basis", "derived-world-rules", "hierarchy-history", "addressable-world-binding", "entity-lifecycle", "entity-lifecycle-history-binding", "organism-niche-binding", "niche-graph-binding", "macro-lineage-binding", "person-form-eligibility", "significance-scheduler", "semantic-construction", "representation-contract", "perception-protocol", "reference-viewport", "viewport-stimulus", "containment-profile"],
       "source_extensions": [".rs"],
       "forbidden_imports": [
         {"pattern": "(?:^|[\\/])ui(?:[\\/])src", "reason": "desktop backend cannot import frontend source"}
@@ -46,6 +142,217 @@
       ]
     },
     {
+      "id": "spatial-domain",
+      "root": "crates/spatial-domain",
+      "dependencies": ["field-basis"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "spatial sampling domains cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "spatial sampling domains cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "spatial sampling domains cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "spatial sampling domains cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "fixed-interval-arithmetic",
+      "root": "crates/fixed-interval-arithmetic",
+      "dependencies": [],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "semantic-neutral arithmetic cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "semantic-neutral arithmetic cannot depend on desktop or UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "semantic-neutral arithmetic cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "semantic-neutral arithmetic cannot access files or processes"},
+        {"pattern": "\\b(?:serde|serde_json|sha2)(?:::|\\s*=)", "reason": "semantic-neutral arithmetic cannot own semantic codecs or identities"}
+      ]
+    },
+    {
+      "id": "physical-path-substrate",
+      "root": "crates/physical-path-substrate",
+      "dependencies": ["fixed-interval-arithmetic"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "physical path evidence cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "physical path evidence cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "physical path evidence cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "physical path evidence cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "optical-phase-space-cell-binding",
+      "root": "crates/optical-phase-space-cell-binding",
+      "dependencies": ["fixed-interval-arithmetic"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "phase-space provenance cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "phase-space provenance cannot depend on desktop or UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "phase-space provenance cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "phase-space provenance cannot access files or processes"},
+        {"pattern": "\\b(?:physical_path_substrate|visible_radiance|optical_lineage_binding|optical_lane_transfer_binding|receiver_arrival_geometry_binding)(?:::|\\s*=)", "reason": "phase-space provenance remains an independent prerequisite and cannot become a coupling consumer"},
+        {"pattern": "\\b(?:f32|f64)\\b", "reason": "phase-space cell arithmetic is exact checked integer-only"}
+      ]
+    },
+    {
+      "id": "swept-aabb-passage",
+      "root": "crates/swept-aabb-passage",
+      "dependencies": ["physical-path-substrate"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "passage evidence cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "passage evidence cannot depend on desktop or UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "passage evidence cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "passage evidence cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "visible-radiance-bulk-transfer",
+      "root": "crates/visible-radiance-bulk-transfer",
+      "dependencies": ["fixed-interval-arithmetic", "physical-path-substrate"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "radiance transfer evidence cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "radiance transfer evidence cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "radiance transfer evidence cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "radiance transfer evidence cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "optical-lineage-binding",
+      "root": "crates/optical-lineage-binding",
+      "dependencies": ["physical-path-substrate", "visible-radiance-bulk-transfer", "visible-radiance-interface-event"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "optical lineage evidence cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "optical lineage evidence cannot depend on desktop or UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "optical lineage evidence cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "optical lineage evidence cannot access files or processes"},
+        {"pattern": "\\bfixed_interval_arithmetic(?:::|\\s*=)", "reason": "the binder owns no numerical fold or arithmetic kernel"}
+      ]
+    },
+    {
+      "id": "optical-lane-transfer-binding",
+      "root": "crates/optical-lane-transfer-binding",
+      "dependencies": ["optical-lineage-binding", "physical-path-substrate", "visible-radiance-bulk-transfer", "visible-radiance-interface-event", "fixed-interval-arithmetic"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "cumulative lane transfer evidence cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "cumulative lane transfer evidence cannot depend on desktop or UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "cumulative lane transfer evidence cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "cumulative lane transfer evidence cannot access files or processes"},
+        {"pattern": "\\b(?:f32|f64)\\b", "reason": "cumulative lane transfer arithmetic is checked integer-only"}
+      ]
+    },
+    {
+      "id": "receiver-arrival-geometry-binding",
+      "root": "crates/receiver-arrival-geometry-binding",
+      "dependencies": ["optical-lineage-binding", "physical-path-substrate", "fixed-interval-arithmetic", "visible-radiance-bulk-transfer"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "receiver geometry evidence cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "receiver geometry evidence cannot depend on desktop or UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "receiver geometry evidence cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "receiver geometry evidence cannot access files or processes"},
+        {"pattern": "\\b(?:f32|f64)\\b", "reason": "receiver geometry arithmetic is exact checked integer-only"},
+        {"pattern": "\\boptical_lane_transfer_binding(?:::|\\s*=)", "reason": "receiver geometry remains independent from cumulative magnitude"}
+      ]
+    },
+    {
+      "id": "stellar-orbital",
+      "root": "crates/stellar-orbital",
+      "dependencies": [],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "stellar/orbital rules cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "stellar/orbital rules cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "stellar/orbital rules cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "stellar/orbital rules cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "geological-atmospheric",
+      "root": "crates/geological-atmospheric",
+      "dependencies": ["stellar-orbital"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "geological/atmospheric rules cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "geological/atmospheric rules cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "geological/atmospheric rules cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "geological/atmospheric rules cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "hydrological-state",
+      "root": "crates/hydrological-state",
+      "dependencies": ["geological-atmospheric"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "hydrological state cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "hydrological state cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "hydrological state cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "hydrological state cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "climate-state",
+      "root": "crates/climate-state",
+      "dependencies": ["geological-atmospheric", "hydrological-state", "stellar-orbital"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "climate state cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "climate state cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "climate state cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "climate state cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "surface-material-state",
+      "root": "crates/surface-material-state",
+      "dependencies": ["climate-state", "geological-atmospheric", "hydrological-state", "stellar-orbital"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "surface material state cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "surface material state cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "surface material state cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "surface material state cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "regional-environment-state",
+      "root": "crates/regional-environment-state",
+      "dependencies": ["field-basis", "spatial-domain"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "regional environment state cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "regional environment state cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "regional environment state cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "regional environment state cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "physical-region-partition",
+      "root": "crates/physical-region-partition",
+      "dependencies": ["climate-state", "field-basis", "geological-atmospheric", "hydrological-state", "regional-environment-state", "spatial-domain", "stellar-orbital"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "physical region partition cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "physical region partition cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "physical region partition cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "physical region partition cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "derived-world-rules",
+      "root": "crates/derived-world-rules",
+      "dependencies": ["climate-state", "field-basis", "geological-atmospheric", "hydrological-state", "regional-environment-state", "stellar-orbital", "surface-material-state"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "derived world rules cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "derived world rules cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "derived world rules cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "derived world rules cannot access files or processes"}
+      ]
+    },
+    {
       "id": "hierarchy-history",
       "root": "crates/hierarchy-history",
       "dependencies": [],
@@ -55,6 +362,90 @@
         {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "canonical hierarchy and history cannot depend on desktop/UI capabilities"},
         {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "canonical hierarchy and history cannot initiate network access"},
         {"pattern": "\\bstd::(?:fs|process)::", "reason": "canonical hierarchy and history cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "addressable-world-binding",
+      "root": "crates/addressable-world-binding",
+      "dependencies": ["derived-world-rules", "field-basis", "hierarchy-history"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "world-package binding proof cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "world-package binding proof cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "world-package binding proof cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "world-package binding proof cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "entity-lifecycle",
+      "root": "crates/entity-lifecycle",
+      "dependencies": [],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "lifecycle typed model cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "lifecycle typed model cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "lifecycle typed model cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "lifecycle typed model cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "entity-lifecycle-history-binding",
+      "root": "crates/entity-lifecycle-history-binding",
+      "dependencies": ["entity-lifecycle", "hierarchy-history"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "lifecycle/history binding proof cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "lifecycle/history binding proof cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "lifecycle/history binding proof cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "lifecycle/history binding proof cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "organism-niche-binding",
+      "root": "crates/organism-niche-binding",
+      "dependencies": ["derived-world-rules", "semantic-construction", "field-basis"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "niche binding proof cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "niche binding proof cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "niche binding proof cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "niche binding proof cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "niche-graph-binding",
+      "root": "crates/niche-graph-binding",
+      "dependencies": ["derived-world-rules", "field-basis"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "niche graph binding proof cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "niche graph binding proof cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "niche graph binding proof cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "niche graph binding proof cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "macro-lineage-binding",
+      "root": "crates/macro-lineage-binding",
+      "dependencies": ["derived-world-rules", "niche-graph-binding", "field-basis"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "macro-lineage binding proof cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "macro-lineage binding proof cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "macro-lineage binding proof cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "macro-lineage binding proof cannot access files or processes"}
+      ]
+    },
+    {
+      "id": "person-form-eligibility",
+      "root": "crates/person-form-eligibility",
+      "dependencies": ["semantic-construction"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "person-form eligibility proof cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "person-form eligibility proof cannot depend on desktop/UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "person-form eligibility proof cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "person-form eligibility proof cannot access files or processes"}
       ]
     },
     {

@@ -209,6 +209,56 @@ pub struct BatchMetricProjection {
     pub recommendation: String,
 }
 
+#[derive(Clone, Debug, Eq, PartialEq, serde::Serialize)]
+pub struct TokenUsageProjection {
+    pub input_tokens: Option<i64>,
+    pub cached_input_tokens: Option<i64>,
+    pub output_tokens: Option<i64>,
+    pub reasoning_output_tokens: Option<i64>,
+    pub total_tokens: Option<i64>,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq, serde::Serialize)]
+pub struct RecentRoutineRun {
+    pub run_id: String,
+    pub definition_id: String,
+    pub batch_id: String,
+    pub module_id: String,
+    pub verification_scope: String,
+    pub started_at_ms: i64,
+    pub ended_at_ms: i64,
+    pub duration_ms: i64,
+    pub outcome: String,
+    pub evidence_ids: Vec<String>,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq, serde::Serialize)]
+pub struct AdvisoryMetricRecommendation {
+    pub code: String,
+    pub state: String,
+    pub title: String,
+    pub reason: String,
+    pub evidence_ids: Vec<String>,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq, serde::Serialize)]
+pub struct MetricsDashboardProjection {
+    pub schema_version: u16,
+    pub read_only: bool,
+    pub event_count: usize,
+    pub completed_batches: usize,
+    pub verified_batches: usize,
+    pub failed_or_blocked_batches: usize,
+    pub rework_events: usize,
+    pub verified_closure_percent: Option<u32>,
+    pub sample_state: String,
+    pub data_completeness_percent: Option<u32>,
+    pub measured_wall_time_ms: Option<i64>,
+    pub token_usage: TokenUsageProjection,
+    pub recent_runs: Vec<RecentRoutineRun>,
+    pub recommendations: Vec<AdvisoryMetricRecommendation>,
+}
+
 #[derive(Clone, Debug, Eq, PartialEq, serde::Deserialize, serde::Serialize)]
 pub struct ImprovementExperimentRecord {
     pub schema_version: u16,

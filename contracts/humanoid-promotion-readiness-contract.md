@@ -54,6 +54,17 @@ The readiness proof alone does not authorize candidate approval, promotion,
 asset import, application, execution, publishing, acquisition, or runtime
 selection. The later direct owner response authorized approval only.
 
+Every future G1 consumer must call the read-only integration validator before
+depending on H7. The validator accepts only the exact real Kernel candidate ID,
+exact canonical evidence bytes, candidate type
+`engine-neutral-humanoid-proof-baseline-v1`, `Promoted` and non-superseded
+lifecycle state, the direct-owner promotion event, six exact claims, and eight
+exact non-claims. It returns the non-claims as retained blockers. A different
+promoted candidate, Proposed or Approved H7 candidate, superseded H7 candidate,
+missing evidence, package drift, or lifecycle-event drift fails closed. Passing
+this check is read-only and grants no asset, application, runtime, or production
+authority.
+
 After the exact live candidate was explained in plain language—including what
 H1-H6 tested and the missing asset, anatomy, rigging, ageing, graphics, and
 device-performance evidence—the owner directly replied, "Yeah sweet, I

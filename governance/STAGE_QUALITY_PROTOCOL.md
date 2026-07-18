@@ -19,6 +19,19 @@ canonical Worker Batch State with `stage_context`:
 Empty lists or a stale stage ID fail closed. Generated briefings remain views,
 not a second authored context record.
 
+Worker Batch State schema 3 binds every handoff-critical section through
+`handoff_section_receipts`: objective, next action, two-scale context, visual
+gate, simulation ladder, unresolved risks, evidence requirements, verification
+plan, resume condition, evidence, verification receipts, and transition. One
+shared integrity helper defines that section set for both enforcement and
+fixtures. Each receipt names the active substage, hashes the section's canonical
+JSON content, classifies it as `revised` or `carried_forward`, and records a
+specific review note. Missing, unknown, stale, malformed, or content-mismatched
+receipts fail bootstrap before generated handover views refresh. Hashes prove
+fixity after attestation; they do not prove semantic comprehension, so bulk
+retagging or dishonest review remains prohibited rather than falsely claimed
+as mechanically solved.
+
 ## 2. Visual asset fitness gate
 
 `visual_quality_gate.asset_use_intent` declares whether the current substage
@@ -67,3 +80,5 @@ early falsification tool; it never erases the package's final integration gate.
 `tools/verify-stage-quality-gates.ps1` validates the active record.
 `tools/test-stage-quality-gates.ps1` proves stale context, metadata-only visual
 admission, and unjustified expensive escalation fail closed.
+`tools/test-worker-batch-state.ps1` proves old schemas, partial transitions,
+post-review edits, and missing or unknown handoff receipts fail closed.

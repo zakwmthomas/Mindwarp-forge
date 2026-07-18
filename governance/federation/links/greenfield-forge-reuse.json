@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "id": "cross-project-991b0a0083c709ef73ebe979478d53e8c9db143ded30a5ec01496bdd8b1b86eb",
+  "left_project_id": "project-56b2c4780da98bfbaf216613c281ec28e2eb61a2a22733dee34c0efcba357349",
+  "right_project_id": "project-33deae303ed7d669d97c7fe3ab4507c15dc4e7aae54e3ac328b23e79f6a2f0fe",
+  "relation": "reuse_candidate",
+  "state": "evidence_only",
+  "required_gate": "target-local-design-verification-and-explicit-owner-approval",
+  "evidence_ids": ["owner-authorization:federated-continuity:2026-07-17"]
+}

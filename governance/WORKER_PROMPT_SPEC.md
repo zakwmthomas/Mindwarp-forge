@@ -80,3 +80,59 @@ Optimization Protocol, then synchronize the automation prompt.
     Never infer correctness, universality, fitness, or authority from natural
     resemblance, and never transfer domain objectives, heuristics, parameters,
     or conclusions as a shared protocol.
+20. When the owner supplies an interesting mathematical, natural,
+    architectural, or systemic mechanism without explicitly limiting scope,
+    run a whole-system discovery audit before localization. Extract separable
+    abstractions; enumerate every registered Forge, game-canonical, and runtime system;
+    record fit, non-fit, duplication, possible shared utilities, and
+    cross-layer feedback; then rank bounded target-local trials under P16.
+    Broad mapping is not universal adoption, and no implementation, parameter,
+    objective, conclusion, dependency, or authority transfers without local
+    evidence and its normal gate.
+21. Before working in any declared module, read its root `MODULE.md`. If the
+    work changes purpose, ownership, non-goals, interfaces, dependencies,
+    invariants, risks, verification, or canonical references, update the
+    canonical module-context registry and regenerate every affected front door.
+    Missing or stale module context fails the package gate.
+22. At a substage transition, review every handoff-critical Batch State section
+    and update its schema-3 `handoff_section_receipts` entry individually with
+    the active stage, exact content hash, `revised` or `carried_forward`
+    disposition, and a specific review note. Never recompute or bulk-retag
+    receipts merely to satisfy the verifier. Bootstrap must fail for an old
+    schema or any missing, unknown, stale, malformed, or content-mismatched
+    receipt. Receipt hashes prove post-review fixity, not semantic correctness.
+23. Use hybrid step-leader divergence: audit after every third meaningful
+    completed batch, or earlier for a verification failure, two repeated
+    workarounds, milestone change, stagnation, or high-leverage input fitting
+    at least three registered systems. Preserve the exact mainline checkpoint,
+    complete the P18 map, spend at most ten percent of the prior three-batch
+    cost and no more than one normal batch, and run at most one positive local
+    probe. Ordinary edits and heartbeats do not trigger it. Any target regression blocks reuse;
+    every outcome resumes mainline and grants no
+    execution or authority.
+24. Every Forge session is read-only by default. Use the exact
+    `CODEX_THREAD_ID` to run `tools/forge-writer-lease.ps1 -Mode route` and
+    then `-Mode claim` before any repository mutation. Reassert the
+    checkpoint-bound lease before each material mutation or long verification
+    run. A missing, expired, stale, conflicting, or mismatched lease forbids
+    writes. Release the lease at completion or an owner gate; routing and a
+    lease never grant approval, promotion, or owner authority.
+25. Use one parent writer and zero specialists by default. Add at most two
+    concurrent read-only specialists only for distinct unresolved questions
+    whose expected information gain exceeds their context and token cost;
+    never duplicate an inventory or broad review. Give each specialist exact
+    files, a stop condition, and a compact return schema. During package
+    closure, run the smallest focused gate set, then a programmatic
+    route-shield inventory, then one complete Forge gate after the route is
+    stable. Retain concise checksums, counts, timings, and failure
+    classifications instead of repeating raw logs. This sequencing never
+    reduces bootstrap, hostile, platform, owner, provenance, or final
+    integration requirements.
+26. Measure meaningful Forge work at its real boundaries. Run
+    `tools/forge-batch-metrics.ps1 -Mode start` when a bounded batch begins and
+    `-Mode finish` at its terminal checkpoint, using the exact
+    `CODEX_THREAD_ID`; missing or reset counters remain unknown and cached input
+    remains a subset of input. Invoke registered routine gates through
+    `tools/invoke-measured-run.ps1` so duration and outcome become bounded local
+    receipts. Metrics are advisory evidence only: they never replace a gate,
+    authorize a change, or make an unverified criterion complete.

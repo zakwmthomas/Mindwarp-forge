@@ -13,6 +13,13 @@ undeclared Cargo workspace dependencies, forbidden imports, or dependency
 cycles. It reports every detected module violation before failing so one
 broken module cannot hide a neighbour failure.
 
+Every declared module also has a generated root `MODULE.md` front door sourced
+from `governance/module-context-registry.json`. It explains purpose, ownership,
+non-goals, entry points, invariants, direct upstream and downstream neighbours,
+verification and canonical references. The front door includes a deterministic
+source-tree fingerprint and is read before module work. It is regenerated, not
+hand-edited, whenever the module boundary or context changes.
+
 `tools/test-modularity.ps1` proves the live graph, two simultaneous forbidden
 imports, dependency-cycle rejection, and retained multi-module diagnostics.
 The boundary grants no execution, approval, promotion, credential, spending,

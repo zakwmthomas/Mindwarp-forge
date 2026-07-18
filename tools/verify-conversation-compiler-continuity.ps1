@@ -6,7 +6,8 @@ $admission = Get-Content -LiteralPath (Join-Path $root 'crates\forge-kernel\src\
 $contract = Get-Content -LiteralPath (Join-Path $root 'contracts\conversation-compiler-contract.md') -Raw
 $readiness = Get-Content -LiteralPath (Join-Path $root 'docs\canonical-system\CONVERSATION_COMPILER_READINESS.md') -Raw
 $knowledge = Get-Content -LiteralPath (Join-Path $root 'crates\forge-kernel\src\knowledge.rs') -Raw
-$knowledgeResult = Get-Content -LiteralPath (Join-Path $root 'docs\canonical-system\KNOWLEDGE_INTAKE_V2_RESULT.md') -Raw
+$knowledgeContract = Get-Content -LiteralPath (Join-Path $root 'contracts\knowledge-record-contract.md') -Raw
+$knowledgeResult = Get-Content -LiteralPath (Join-Path $root 'docs\canonical-system\KNOWLEDGE_INTAKE_V3_ATOMIC_MULTI_REFERENCE_RESULT.md') -Raw
 $capture = Get-Content -LiteralPath (Join-Path $root 'apps\forge-desktop\src-tauri\src\codex_capture.rs') -Raw
 $ui = Get-Content -LiteralPath (Join-Path $root 'apps\forge-desktop\ui\index.html') -Raw
 $finder = Get-Content -LiteralPath (Join-Path $root 'tools\find-knowledge.ps1') -Raw
@@ -35,11 +36,11 @@ foreach ($required in @('long_labeled_corpus_preserves_order_and_candidate_count
 foreach ($required in @('1,024','512','sqlite','legacy','platform-independent')) {
   if (!$contract.ToLowerInvariant().Contains($required) -or !$readiness.ToLowerInvariant().Contains($required)) { throw "Compiler continuity record is incomplete: $required" }
 }
-foreach ($required in @('Philosophy','Requirement','Constraint','Preference','Risk','Question','Observation','Context','deterministic_multi_facet_rules','ordinary_owner_language_yields_multiple_material_facets','continuity_request_retains_philosophy_requirement_risk_and_task','acknowledgements_and_operational_receipts_do_not_flood_intake')) {
-  if (!$knowledge.Contains($required)) { throw "Knowledge intake v2 proof surface is missing: $required" }
+foreach ($required in @('Philosophy','Requirement','Constraint','Preference','Risk','Question','Observation','Context','deterministic_atomic_multi_reference_rules','multiple_facets_reference_one_atomic_span_instead_of_copying_it','mentioning_philosophies_does_not_create_a_philosophy_record','one_record_can_reference_multiple_atlas_systems','decimal_points_do_not_split_atomic_source_spans','acknowledgements_and_operational_receipts_do_not_flood_intake')) {
+  if (!$knowledge.Contains($required)) { throw "Knowledge intake v3 proof surface is missing: $required" }
 }
-foreach ($required in @('Canonical routing','Every non-noise message','evidence_only','whole-message facets','does not replace validation')) {
-  if (!$knowledgeResult.Contains($required)) { throw "Knowledge intake v2 result is incomplete: $required" }
+foreach ($required in @('v3 repair','facet_types','system_refs','append-only','evidence_only','not semantic truth')) {
+  if (!$knowledgeResult.Contains($required)) { throw "Knowledge intake v3 result is incomplete: $required" }
 }
 foreach ($required in @('KNOWLEDGE_INDEX.md','KNOWLEDGE_CATALOG.json','knowledge_classifier_version')) {
   if (!$capture.Contains($required)) { throw "Knowledge bootstrap projection is missing: $required" }
@@ -47,9 +48,13 @@ foreach ($required in @('KNOWLEDGE_INDEX.md','KNOWLEDGE_CATALOG.json','knowledge
 foreach ($required in @('data-knowledge-filter="philosophy"','data-knowledge-filter="requirement"','data-knowledge-filter="constraint"','data-knowledge-filter="preference"','data-knowledge-filter="risk"')) {
   if (!$ui.Contains($required)) { throw "Knowledge library filter is missing: $required" }
 }
-foreach ($required in @('KNOWLEDGE_CATALOG.json','classifier_version','record_type','source_actor')) {
-  if (!$finder.Contains($required)) { throw "Typed knowledge finder is missing: $required" }
+foreach ($required in @('forge-query','--project','--workstream','--entity','--system','--actor','--state')) {
+  if (!$finder.ToLowerInvariant().Contains($required)) { throw "Indexed knowledge finder is missing: $required" }
+}
+if ($finder.Contains('KNOWLEDGE_CATALOG.json')) { throw 'Indexed knowledge finder still parses the generated catalogue.' }
+foreach ($required in @('primary operational consumer','active AI assistant','optional secondary projection','deterministic local search','without requiring')) {
+  if (!$knowledgeContract.Contains($required)) { throw "AI-first knowledge consumer invariant is missing: $required" }
 }
 $system = @($registry.systems | Where-Object id -eq 'forge-context-compiler')
 if ($system.Count -ne 1 -or $system[0].status -ne 'reference_proven') { throw 'Context compiler is not projected as reference-proven.' }
-Write-Output 'Conversation compiler continuity verified: fixed long corpus, replay, migration, portable paths, SQLite release, multi-facet v2 knowledge routing, typed search, and authority-negative state retained.'
+Write-Output 'Conversation compiler continuity verified: fixed long corpus, replay, migration, portable paths, SQLite release, atomic multi-reference v3 knowledge routing, typed and Atlas-system search, and authority-negative state retained.'

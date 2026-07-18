@@ -23,7 +23,15 @@ tauri-plugin-single-instance = "2"
 [dev-dependencies]
 universe-identity = { path = "../../../crates/universe-identity" }
 field-basis = { path = "../../../crates/field-basis" }
+derived-world-rules = { path = "../../../crates/derived-world-rules" }
 hierarchy-history = { path = "../../../crates/hierarchy-history" }
+addressable-world-binding = { path = "../../../crates/addressable-world-binding" }
+entity-lifecycle = { path = "../../../crates/entity-lifecycle" }
+entity-lifecycle-history-binding = { path = "../../../crates/entity-lifecycle-history-binding" }
+organism-niche-binding = { path = "../../../crates/organism-niche-binding" }
+niche-graph-binding = { path = "../../../crates/niche-graph-binding" }
+macro-lineage-binding = { path = "../../../crates/macro-lineage-binding" }
+person-form-eligibility = { path = "../../../crates/person-form-eligibility" }
 significance-scheduler = { path = "../../../crates/significance-scheduler" }
 semantic-construction = { path = "../../../crates/semantic-construction" }
 representation-contract = { path = "../../../crates/representation-contract" }

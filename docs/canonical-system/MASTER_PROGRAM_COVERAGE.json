@@ -18,7 +18,11 @@
         "F5",
         "C1",
         "C2",
-        "C3-C7",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
         "R1"
       ],
       "role": "superseded_navigation_plan"
@@ -38,7 +42,11 @@
         "B5",
         "C1",
         "C2",
-        "C3-C7"
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
       ],
       "role": "retained_closure_evidence"
     },
@@ -49,7 +57,11 @@
         "F5",
         "C1",
         "C2",
-        "C3-C7"
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
       ],
       "role": "retained_readiness_evidence"
     },
@@ -108,7 +120,11 @@
       "path": "docs/canonical-system/FIELD_BASIS_READINESS.md",
       "coverage": "partial",
       "items": [
-        "C3-C7"
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
       ],
       "role": "retained_readiness_evidence"
     },
@@ -116,7 +132,11 @@
       "path": "docs/canonical-system/HIERARCHY_HISTORY_READINESS.md",
       "coverage": "partial",
       "items": [
-        "C3-C7"
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
       ],
       "role": "retained_readiness_evidence"
     },
@@ -124,7 +144,11 @@
       "path": "docs/canonical-system/SIGNIFICANCE_SCHEDULER_READINESS.md",
       "coverage": "partial",
       "items": [
-        "C3-C7"
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
       ],
       "role": "retained_readiness_evidence"
     },
@@ -132,7 +156,11 @@
       "path": "docs/canonical-system/SEMANTIC_CONSTRUCTION_READINESS.md",
       "coverage": "partial",
       "items": [
-        "C3-C7"
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
       ],
       "role": "retained_readiness_evidence"
     },
@@ -140,7 +168,11 @@
       "path": "docs/canonical-system/REPRESENTATION_ASSET_ANIMATION_READINESS.md",
       "coverage": "partial",
       "items": [
-        "C3-C7"
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
       ],
       "role": "retained_readiness_evidence"
     },

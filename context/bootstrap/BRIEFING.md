@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **G1-C1-PROOFRECEIPT-STORAGE-REASSESSMENT**
-- Objective: Reassess the inherited G1 C1 ProofReceipt storage gate against the already verified F5 ProofReceipt decision and the promoted H7 typed-consumer requirement before asking the owner to repeat or make any choice.
+- Work package: **G1-FORGE-METRICS-DASHBOARD-V1**
+- Objective: Implement the owner-approved Forge-workflow metrics pipeline, read-only desktop Metrics tab and evidence-backed advisory improvement recommendations without granting automated authority.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
-- Related systems: canonical-production-system, forge-truth-kernel, forge-control-plane, forge-reference-studio
-- Risk/research gate: **stale-owner-gate-duplication-and-generic-promotion-consumption / Use the committed F5 ProofReceipt decision, Kernel persistence, H7 promotion result, and master-program provenance first. External research is unnecessary unless these sources expose a standards-specific unresolved storage question.**
-- Exact next action: Audit C1 provenance, compare it with F5_PROOF_RECEIPT_DECISION and current Kernel persistence, remove or consolidate any redundant decision, and present at most one plain owner gate only if a material unresolved choice remains.
+- Related systems: forge-kernel, conversation-capture, task-bootstrap, forge-dashboard
+- Risk/research gate: **bounded-local-metrics-persistence-capture-and-read-only-dashboard / Existing B4 contracts and executable persistence fixtures establish the append-only telemetry basis; the owner explicitly selected Forge-workflow-first measurement, both worker and routine-run layers, summary plus drilldown, and advisory trials only.**
+- Exact next action: Stop after the recorded read-only Metrics dashboard result. Any automatic tuning, external telemetry, game/runtime instrumentation, pricing model or execution of an advisory experiment requires separate owner authorization.
 
 ## Approved operating policies
 
@@ -29,6 +29,9 @@
 - **P14:** At every material substage transition, refresh context at both scales before implementation: macro project objective, dependency route, authority and neighbouring contracts; micro current inputs, invariants, failures, tests, and exact next action. The recorded context stage must equal the active substage, so stale context fails closed.
 - **P15:** Use the cheapest sufficient falsification and proof tier before implementation or expensive PC execution: static reasoning, typed model, in-memory fixture, and disposable simulation precede bounded integrated or external runs whenever logically possible. Escalation requires retained lower-tier results, a named unresolved risk, expected information gain, cost, and a stop condition; passing simulations never replace a required final integration gate.
 - **P16:** Treat every nature-inspired mechanism as a scoped hypothesis, not a universal default: record its mathematical abstraction, assumptions, target-local metric, simple baseline, cost, falsifier, counterexample, and non-applicable scope; require deterministic disposable and target-local evidence before application. Natural resemblance never proves correctness, efficiency, universality, fitness, or authority, and domain objectives, heuristics, parameters, and conclusions may not transfer as a shared protocol.
+- **P17:** Every declared module has one generated MODULE.md front door. Read it before module work and update the canonical module-context registry whenever purpose, ownership, non-goals, interfaces, dependencies, invariants, risks, verification or canonical references materially change; regenerate the front door before verification.
+- **P18:** When the owner submits an interesting mathematical, natural, architectural or systemic mechanism without explicitly limiting scope, perform a whole-system discovery audit before localization: extract separable abstractions, enumerate every registered Forge, game-canonical and runtime system, record fit, non-fit, duplication, possible shared utilities and cross-layer feedback, then rank bounded target-local trials under P16. Broad mapping is mandatory discovery, not universal adoption; no implementation, parameter, objective, conclusion, dependency or authority transfers without local evidence and its normal gate.
+- **P19:** Preserve the exact mainline checkpoint and run a capability-free step-leader assessment after every third meaningful completed batch or earlier for a verification failure, two repeated workarounds, milestone change, stagnation, or a high-leverage input applicable to at least three registered systems. Complete P18 coverage, spend at most ten percent of the prior three-batch cost and no more than one normal batch, and select at most one target with positive local VOI and net gain. Ordinary edits and heartbeat wakes are not triggers; missing coverage, failed budgets, non-positive evidence, fired falsifiers or any participating regression reconnect to mainline without adoption. Controller output never executes work or grants authority.
 
 ## Navigation
 

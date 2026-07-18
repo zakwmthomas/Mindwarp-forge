@@ -137,4 +137,8 @@ read-only ProofReceipt projection without adding Kernel events or candidates.
 
 This result is `prototype_tested`, not `reference_proven`: the v1 alphabet is
 intentionally small, comparative quality/cost expansion and a second-platform
-receipt remain open, and no runtime/GPU path is authorized.
+receipt remain open, and no runtime/GPU path is authorized. A permanent
+same-Windows-host Python oracle now independently reproduces exact Philox,
+canonical recipe, fingerprint/cache-key and signed-coordinate sample vectors
+in a fresh process. It advances the second-language evidence only and is
+explicitly prohibited from standing in for the second-platform requirement.

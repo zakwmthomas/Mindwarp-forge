@@ -1,0 +1,14 @@
+[package]
+name = "calibrated-spectral-time-basis"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+
+[dev-dependencies]
+optical-phase-space-dimensionless-transfer = { path = "../optical-phase-space-dimensionless-transfer" }
+visible-radiance-bulk-transfer = { path = "../visible-radiance-bulk-transfer" }

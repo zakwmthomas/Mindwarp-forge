@@ -26,6 +26,9 @@ foreach ($required in @('refresh and record both context scales','actual pixels 
 foreach ($required in @('nature-inspired mechanisms as scoped hypotheses','baseline, cost, falsifier','counterexample','Never infer correctness')) {
     if (!$prompt.Contains($required)) { throw "Canonical worker prompt lacks natural-method guard: $required" }
 }
+foreach ($required in @('whole-system discovery audit before localization','every registered Forge, game-canonical, and runtime system','Broad mapping is not universal adoption')) {
+    if (!$prompt.Contains($required)) { throw "Canonical worker prompt lacks whole-system discovery guard: $required" }
+}
 $protocol = Get-Content -LiteralPath (Join-Path $root $manifest.protocol) -Raw
 foreach ($required in @('Five-wake owner-wait safety fallback','full dependency closure is already satisfied','never infer owner input','Immediate owner-wait suspension','one labelled side-by-side image','never the whole desktop','does not resume the scheduler')) {
     if (!$protocol.Contains($required)) { throw "Worker optimization protocol lacks owner-wait fallback guard: $required" }
@@ -36,5 +39,26 @@ foreach ($required in @('Simulation-first execution ladder','cheapest tier capab
 }
 foreach ($required in @('Natural-method candidate gate','abstraction before treating it as a method','target-local transfer gate','objectives, resistance heuristics')) {
     if (!$protocol.Contains($required)) { throw "Worker optimization protocol lacks natural-method guard: $required" }
+}
+foreach ($required in @('whole-system discovery audit','complete registry pass','Broad discovery is not universal adoption')) {
+    if (!$protocol.Contains($required)) { throw "Worker optimization protocol lacks whole-system discovery guard: $required" }
+}
+foreach ($required in @('Hybrid step-leader divergence','ten percent','Ordinary edits and heartbeat wakes are not triggers','Two independent successful modules')) {
+    if (!$protocol.Contains($required)) { throw "Worker optimization protocol lacks bounded step-leader guard: $required" }
+}
+foreach ($required in @('hybrid step-leader divergence','every third meaningful','ten percent','Any target regression blocks reuse')) {
+    if (!$prompt.Contains($required)) { throw "Canonical worker prompt lacks bounded step-leader guard: $required" }
+}
+foreach ($required in @('read-only by default','CODEX_THREAD_ID','forge-writer-lease.ps1','Reassert the','Release the lease')) {
+    if (!$prompt.Contains($required)) { throw "Canonical worker prompt lacks sole-writer lease guard: $required" }
+}
+foreach ($required in @('one parent writer and zero specialists by default','at most two','never duplicate an inventory or broad review','smallest focused gate set','route-shield inventory','one complete Forge gate','concise checksums, counts, timings','reduces bootstrap, hostile, platform, owner, provenance, or final')) {
+    if (!$prompt.Contains($required)) { throw "Canonical worker prompt lacks token-efficiency guard: $required" }
+}
+foreach ($required in @('forge-batch-metrics.ps1 -Mode start','invoke-measured-run.ps1','Metrics are advisory evidence only')) {
+    if (!$prompt.Contains($required)) { throw "Canonical worker prompt lacks metrics-boundary guard: $required" }
+}
+foreach ($required in @('Token-efficient package execution','zero specialists by default','Never commission duplicate inventories or broad reviews','smallest focused gate set','route-shield inventory','one complete Forge gate','weakens bootstrap, hostile, platform, owner, provenance, or final integration')) {
+    if (!$protocol.Contains($required)) { throw "Worker optimization protocol lacks token-efficiency guard: $required" }
 }
 Write-Output "Worker governance verified: $(@($manifest.required_policies).Count) required policies and $(@($manifest.PSObject.Properties).Count - 2) linked records."

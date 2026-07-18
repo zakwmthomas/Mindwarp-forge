@@ -1,0 +1,17 @@
+{
+  "calibrated_basis_id": "a9913e0d498c2e686574b1a755675d32ce0be3bdc59bf3335cb8d40716684a22",
+  "derived_legacy_band_time_ids": {
+    "blue": "6ba64d5c9bc8a2ac97dbb83725ae7de4023194187a2693e73204ad81209fe951",
+    "green": "bbf46da98bd7492ba9e0766f30701e53642a0ae61821a6bdfbda579470de7c79",
+    "red": "d80738a5589306c4f08162009ea705444cb1cfda16bd78d37d8dc1a79bbca52c"
+  },
+  "derived_legacy_time_basis_id": "d70f6c4760dbcbd7be0e091c6473082b3b88f11dc9920940bd91c4d8e8c96a79",
+  "input": {
+    "bytes": 896,
+    "sha256": "c28511856b8f17725deed954f9617a9097342716f8a2cae9349dd1e05ebeb727"
+  },
+  "result": {
+    "bytes": 1786,
+    "sha256": "ad6c05e1c5ec1c80060b58b989a6290cec342e50815eddeb271ca23ed54a821f"
+  }
+}

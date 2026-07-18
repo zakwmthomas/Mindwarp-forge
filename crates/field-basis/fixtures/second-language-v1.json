@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "receipt_scope": "same-platform second-language",
+  "philox_zero": [1713891541, 3781805453, 3159862348, 2600524760],
+  "philox_mapped": [1759823174, 1155147255, 2244099449, 981052278],
+  "recipe_bytes_hex": "8301828401021b00010000000000000782040001",
+  "recipe_fingerprint_hex": "87168af950c2afd4228a5a8c926edd3054551cb07ad8c937d169fa3b925ae86b",
+  "cache_key_hex": "a57b5db83bd0a5a726456f037adcd95163712d080f0da04f6601764e2957ac58",
+  "samples": [
+    {"x_q32_32": 0, "y_q32_32": 0, "value_q16_48": 72006413320192},
+    {"x_q32_32": 4294967296, "y_q32_32": 0, "value_q16_48": 223385651249152},
+    {"x_q32_32": 123456789, "y_q32_32": -987654321, "value_q16_48": 122223410119263},
+    {"x_q32_32": -4294967296, "y_q32_32": 2147483665, "value_q16_48": 84182224076800}
+  ],
+  "limitations": ["same Windows host", "not a second-platform receipt", "not reference_proven"]
+}

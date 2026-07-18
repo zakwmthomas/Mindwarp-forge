@@ -7,12 +7,13 @@ publishing, credential, runtime, or protected-Kernel authority.
 
 ## North star
 
-Forge must prove that it can generate, retain, inspect, reproduce, and safely
-improve an engine-neutral articulated humanoid through a traceable chain from
-source evidence to deterministic artifact, controlled stimulus, owner
-observation, and explicit promotion decision. The first target is structurally
-and functionally legible in a neutral appearance. It is not a production art
-quality claim, a population-preference claim, or an engine-selection claim.
+Forge must prove that it can compile, retain, inspect, reproduce, and safely
+improve a causal engine-neutral universe from deterministic identity through
+physical worlds, histories, ecologies, organisms, aesthetics, representation,
+animation, and scalable fidelity. Every output remains traceable to versioned
+inputs, evidence, constraints, tests, and explicit promotion decisions. The H1-H7
+humanoid chain is the first promoted structural proof baseline; it is not a
+finished asset, a population rule, or an engine-selection claim.
 
 ## Operating doctrine
 
@@ -76,6 +77,134 @@ projection for existing readers. `verify-master-program.ps1` requires exact
 state/status agreement. The projection is scheduled for removal in schema v3;
 new logic must read `state`.
 
+## Unified G1 production route
+
+`MASTER_PROGRAM.json` selects one dependency-ready item at a time. G1 is one
+route, not separate organism, aesthetics, natural-function, or game roadmaps:
+
+1. **C1 continuity binding:** retain the verified F5 versioned ProofReceipt
+   projection and require exact typed H7 consumption. Generic promoted state is
+   never sufficient.
+2. **C2 deterministic identity:** settle universe address, seed, generator and
+   semantic versions, stream partitioning, stable identity, collision and
+   migration behavior.
+3. **C3 causal physical worlds:** compile stellar, orbital, geological,
+   atmospheric, hydrological and climate conditions, then materials, energy,
+   signals, visibility, traversability, biomes, niches and physically caused
+   palette bounds.
+4. **C4 addressable state and history:** materialize the lazy hierarchy, world
+   baselines, explicit deltas, stable ambient cohorts and selected-entity
+   lifecycle state without simulating every lifetime continuously.
+5. **C5 shared significance and fidelity:** one importance packet and scheduler
+   govern generation, simulation, AI, physics, animation, audio, rendering and
+   streaming budgets. Reduced fidelity never forks canonical gameplay truth.
+6. **C6 meaning and construction:** compile niche roles, macro-lineages,
+   biome ecomorphs, sensory channels, person-form eligibility, applicable sexual
+   dimorphism, aging presentation, part-role construction, and aesthetic intent.
+7. **C7 representation and proof:** select representations, artifacts,
+   materials, animation and fidelity tiers; run calibrated visual, anti-oatmeal,
+   repair and cost evidence.
+8. **G1 closeout:** prove the complete identity-to-representation chain before
+   preparing one owner promotion package. Only then may R1 adapter selection be
+   considered.
+
+### Typed generation order
+
+The Forge compiler produces recipes in this causal order: universe identity;
+stellar/orbital/geological/atmospheric/hydrological/climate state; materials,
+energy and signals; biomes and niche graph; macro-lineages and body plans;
+sensory channels; species and ecomorphs; person-form eligibility; applicable
+sex, age, individual and cultural variation; then aesthetic, representation,
+animation and fidelity recipes. Runtime may materialize addressed promoted
+recipes and explicit deltas, but it does not become the canonical generator.
+
+Planned strict/versioned records include `GenerationRecipeEnvelope`,
+`WorldGenerationContract`, `PlanetaryEcologyRecipe`, `SensoryChannelSet`,
+`PersonFormEligibility`, `AgeState`, `AgingPresentationPolicy`,
+`AestheticIntentProfile`, `PhysicalCoherenceEnvelope`,
+`PaletteCausalityGraph`, `AestheticConstraintSet`, `RepresentationRecipe`,
+`FidelityProfile`, and an authority-negative `AestheticEvaluationReceipt` using
+the existing ProofReceipt projection. Each record enters only at its owning C
+package after cheaper typed proofs establish the minimum safe schema.
+
+### Organism and aging defaults
+
+Planetary macro-lineages fill locally generated niche graphs; biome ecomorphs
+remain recognizably related. Sensory channels derive from useful environmental
+signals, so eyes and Earth senses are optional. The most manipulation,
+locomotion, communication, cognition and tool-use compatible native lineage is
+eligible for person form; Forge must reject grotesque retrofits rather than add
+arbitrary grasping parts to an unsuitable lineage.
+
+For lineages using the approved dimorphic model, paired male and female
+structural envelopes share semantic topology while retaining distinct anatomy,
+proportion, locomotion and animation calibration. Neither sex is a singleton
+universal baseline and human-binary shape language does not automatically bind
+non-human lineages.
+
+Ambient populations receive stable age distributions. Bred companions and
+children may retain continuous chronological age. The setting is named by its
+effect: `AllowVisibleAgingBeyondAdulthood`. Juveniles always mature; when false,
+eligible post-adult presentation is clamped to adult while chronological state
+continues; when true again, presentation reveals the current stage. Old age
+never causes automatic death.
+
+### Palette and physical-aesthetics defaults
+
+Palette causality flows from star, atmosphere, material, liquid, weather and
+biology, then inherits from planet to biome, settlement/species, object/material
+and detail. Native sensory truth remains separate from an accessible
+player-facing rendering.
+
+Biome membership must never become an automatic hard visual or material seam.
+Where the causal environmental fields vary continuously, biome influence is a
+deterministic spatial mixture or ecotone: palette bounds, surface materials,
+vegetation and population tendencies fade across the transition at their own
+physically meaningful scales. A categorical region or biome identity may remain
+useful for indexing, provenance and gameplay queries, but it cannot replace the
+underlying continuous evidence or directly paint every cell to one side of a
+boundary. Sharp transitions are allowed only when supported by a sharp physical
+cause, such as an actual material interface, barrier or disturbance; blending
+must not average through such evidence. Later C3, C6 and C7 proofs must include
+cross-boundary gradient, no-visible-seam, sharp-cause retention and reversal
+fixtures so this rule survives ecology and representation.
+
+There is no universal beauty score. Evaluation keeps physical coherence,
+organized complexity, symmetry/asymmetry, curvature/angularity,
+repetition/variation, hierarchy/scale, familiarity/novelty, palette
+harmony/tension and intentional disruption separate. Physical feasibility,
+material causality, functional fit, lineage continuity, structural consistency
+and readability are hard constraints. Organized complexity, proportion,
+hierarchy and contrast are cross-domain hypotheses. Anatomy allometry, load
+paths and erosion are domain-local. Golden ratio, Fibonacci/log spirals, rule of
+thirds, fixed fractal dimensions, perfect symmetry and 60-30-10 palettes are
+case-local tools only. Disharmony is controlled semantic tension, never random
+uglification.
+
+Every nature-inspired or aesthetic mechanism follows P16: explicit abstraction,
+assumptions, local metric, simple baseline, cost, falsifier, counterexample and
+non-applicable scope. Passing a disposable simulation does not promote it or
+replace required integration, visual or device evidence.
+
+P18 supplies the complementary discovery order for owner-submitted reusable
+mathematics and systemic mechanisms: map separable abstractions across every
+registered Forge, game-canonical and runtime system before narrowing to the
+active package. Record fit, non-fit, duplicates, possible shared utilities and
+cross-layer feedback, then apply P16 independently to each receiving target.
+This whole-system pass preserves the recursively modular architecture; it is
+not permission to impose one algorithm, objective, parameter set or code module
+everywhere.
+
+P19 operationalizes that discovery order as a bounded, capability-free
+step-leader controller. It may diverge after every third meaningful batch, a
+verification failure, two repeated workarounds, a milestone boundary,
+stagnation, or a high-leverage input applicable to at least three registered
+systems. It must map every registered system, rank only positive local VOI and
+local-net-gain candidates, spend at most ten percent of the prior three batches
+and no more than one normal batch, and then resume the exact saved checkpoint.
+Any target regression blocks reuse; two independent local successes are needed
+before a transfer candidate enters the federated-improvement protocol.
+
 ## Rebaseline package R0
 
 R0.1 Preserve the inherited working state on a named branch, commit, and
@@ -131,33 +260,17 @@ canonical promotion candidate.
 ## Later horizons
 
 G1 promotes the engine-neutral proof packs bottom-up without collapsing their
-local gates. A G1 consumer may depend on the promoted H7 humanoid proof
-baseline only after verifying its exact package type, identity, lifecycle
-state, claims, non-claims, supersession status, and retained blockers; generic
-`Promoted` state is insufficient. R1 runtime-adapter selection remains
-owner-gated until the G1
+local gates. R1 runtime-adapter selection remains owner-gated until the G1
 chain is reference-proven and clean import, official provenance, build,
 profiling, identifier preservation, replay, rollback, cost, and maintenance
 evidence exist. The repeatedly failing external containment route remains
 retained evidence and deferred research; it is not allowed to block the safe
 built-in proof path unless its risk becomes critical.
 
-The humanoid proof is the smallest articulated reference, not the final game
-population architecture. Later G1 packages must generalize the verified
-identity, lineage, representation, articulation, observation, and recovery
-contracts into organism lifecycle and morphology growth for humanoids and
-structurally distinct creatures. Presentation and simulation fidelity must
-derive from one canonical organism state across constrained phone hardware and
-high-end PCs; LOD may reduce geometry, materials, animation, AI, physics, and
-update cadence, but it may not fork gameplay truth. The detailed requirement
-and cheap proof order are retained in
-`ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md`.
-Selective aging is further bounded by
-`SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md`: ambient populations receive stable
-age diversity without continuous lifetime simulation; bred companions and
-children age continuously, a reversible per-save adult-appearance lock affects
-only eligible post-adult presentation, disabling it reveals the current true
-stage, and old age never causes death.
+Networking, gossip ledgers, cryptographic commerce, distributed AI, infinite
+SDF worlds and serverless-runtime claims are independent future proposals. They
+require their own threat model, baseline, proof and owner gate and cannot enter
+G1 merely because they appeared in imported evidence.
 
 ## Material-package receipt
 

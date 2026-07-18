@@ -1,6 +1,6 @@
 # Recording Protocol
 
-This protocol makes work findable for the owner, a future Codex task, and the
+This protocol makes work findable for the owner, a future AI task, and the
 Forge. It applies to every material research, design, implementation, test, or
 decision-preparation action.
 

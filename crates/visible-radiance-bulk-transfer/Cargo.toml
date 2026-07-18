@@ -1,0 +1,12 @@
+[package]
+name = "visible-radiance-bulk-transfer"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+fixed-interval-arithmetic = { path = "../fixed-interval-arithmetic" }
+physical-path-substrate = { path = "../physical-path-substrate" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"

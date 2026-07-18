@@ -3,6 +3,16 @@
 version = 4
 
 [[package]]
+name = "addressable-world-binding"
+version = "0.1.0"
+dependencies = [
+ "derived-world-rules",
+ "field-basis",
+ "hierarchy-history",
+ "sha2",
+]
+
+[[package]]
 name = "adler2"
 version = "2.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -380,6 +390,29 @@ dependencies = [
 ]
 
 [[package]]
+name = "calibrated-source-energy-distribution"
+version = "0.1.0"
+dependencies = [
+ "calibrated-spectral-time-basis",
+ "fixed-interval-arithmetic",
+ "optical-phase-space-cell-binding",
+ "serde",
+ "serde_json",
+ "sha2",
+]
+
+[[package]]
+name = "calibrated-spectral-time-basis"
+version = "0.1.0"
+dependencies = [
+ "optical-phase-space-dimensionless-transfer",
+ "serde",
+ "serde_json",
+ "sha2",
+ "visible-radiance-bulk-transfer",
+]
+
+[[package]]
 name = "camino"
 version = "1.2.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -475,6 +508,24 @@ dependencies = [
  "serde",
  "windows-link 0.2.1",
 ]
+
+[[package]]
+name = "climate-state"
+version = "0.1.0"
+dependencies = [
+ "geological-atmospheric",
+ "hydrological-state",
+ "serde",
+ "serde_json",
+ "sha2",
+ "stellar-orbital",
+]
+
+[[package]]
+name = "cmov"
+version = "0.5.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0c9ea0ac24bc397ab3c98583a3c9ba74fa56b09a4449bbe172b9b1ddb016027a"
 
 [[package]]
 name = "combine"
@@ -581,6 +632,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "cpubits"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "15b85f9c39137c3a891689859392b1bd49812121d0d61c9caf00d46ed5ce06ae"
+
+[[package]]
 name = "cpufeatures"
 version = "0.2.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -612,6 +669,17 @@ name = "crossbeam-utils"
 version = "0.8.22"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "61803da095bee82a81bb1a452ecc25d3b2f1416d1897eb86430c6159ef717c17"
+
+[[package]]
+name = "crypto-bigint"
+version = "0.7.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1a52aa3fcda4e6302a9f48734f234d35d4721b96f8fe07d073f07ce9df4f0271"
+dependencies = [
+ "cpubits",
+ "ctutils",
+ "num-traits",
+]
 
 [[package]]
 name = "crypto-common"
@@ -661,6 +729,15 @@ name = "ctor-proc-macro"
 version = "0.0.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "52560adf09603e58c9a7ee1fe1dcb95a16927b17c127f0ac02d6e768a0e25bc1"
+
+[[package]]
+name = "ctutils"
+version = "0.4.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7d5515a3834141de9eafb9717ad39eea8247b5674e6066c404e8c4b365d2a29e"
+dependencies = [
+ "cmov",
+]
 
 [[package]]
 name = "darling"
@@ -735,6 +812,22 @@ dependencies = [
  "quote",
  "rustc_version",
  "syn 2.0.118",
+]
+
+[[package]]
+name = "derived-world-rules"
+version = "0.1.0"
+dependencies = [
+ "climate-state",
+ "field-basis",
+ "geological-atmospheric",
+ "hydrological-state",
+ "regional-environment-state",
+ "serde",
+ "serde_json",
+ "sha2",
+ "stellar-orbital",
+ "surface-material-state",
 ]
 
 [[package]]
@@ -928,6 +1021,21 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "66b7e2430c6dff6a955451e2cfc438f09cea1965a9d6f87f7e3b90decc014099"
 
 [[package]]
+name = "entity-lifecycle"
+version = "0.1.0"
+dependencies = [
+ "serde",
+]
+
+[[package]]
+name = "entity-lifecycle-history-binding"
+version = "0.1.0"
+dependencies = [
+ "entity-lifecycle",
+ "hierarchy-history",
+]
+
+[[package]]
 name = "enumflags2"
 version = "0.7.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1051,6 +1159,13 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5baebc0774151f905a1a2cc41989300b1e6fbb29aff0ceffa1064fdd3088d582"
 
 [[package]]
+name = "fixed-interval-arithmetic"
+version = "0.1.0"
+dependencies = [
+ "crypto-bigint",
+]
+
+[[package]]
 name = "flate2"
 version = "1.1.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1109,11 +1224,19 @@ checksum = "aa9a19cbb55df58761df49b23516a86d432839add4af60fc256da840f66ed35b"
 name = "forge-desktop"
 version = "0.1.0"
 dependencies = [
+ "addressable-world-binding",
  "containment-profile",
+ "derived-world-rules",
+ "entity-lifecycle",
+ "entity-lifecycle-history-binding",
  "field-basis",
  "forge-kernel",
  "hierarchy-history",
+ "macro-lineage-binding",
+ "niche-graph-binding",
+ "organism-niche-binding",
  "perception-protocol",
+ "person-form-eligibility",
  "reference-viewport",
  "representation-contract",
  "semantic-construction",
@@ -1133,6 +1256,7 @@ dependencies = [
 name = "forge-kernel"
 version = "0.1.0"
 dependencies = [
+ "flate2",
  "rusqlite",
  "serde",
  "serde_json",
@@ -1339,6 +1463,16 @@ checksum = "85649ca51fd72272d7821adaf274ad91c288277713d9c18820d8499a7ff69e9a"
 dependencies = [
  "typenum",
  "version_check",
+]
+
+[[package]]
+name = "geological-atmospheric"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "serde_json",
+ "sha2",
+ "stellar-orbital",
 ]
 
 [[package]]
@@ -1694,6 +1828,16 @@ dependencies = [
  "forge-kernel",
  "humanoid-proof-chain",
  "serde_json",
+]
+
+[[package]]
+name = "hydrological-state"
+version = "0.1.0"
+dependencies = [
+ "geological-atmospheric",
+ "serde",
+ "serde_json",
+ "sha2",
 ]
 
 [[package]]
@@ -2134,6 +2278,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0ceec5bc11778974d1bcb055b18002eba7f4b3518b6a0081b3af5f21666da9ad"
 
 [[package]]
+name = "macro-lineage-binding"
+version = "0.1.0"
+dependencies = [
+ "derived-world-rules",
+ "field-basis",
+ "niche-graph-binding",
+ "serde",
+ "serde_json",
+ "sha2",
+]
+
+[[package]]
 name = "markup5ever"
 version = "0.38.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2256,6 +2412,17 @@ name = "new_debug_unreachable"
 version = "1.0.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "650eef8c711430f1a879fdd01d4745a7deea475becfb90269c06775983bbf086"
+
+[[package]]
+name = "niche-graph-binding"
+version = "0.1.0"
+dependencies = [
+ "derived-world-rules",
+ "field-basis",
+ "serde",
+ "serde_json",
+ "sha2",
+]
 
 [[package]]
 name = "num-conv"
@@ -2496,6 +2663,84 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9f7c3e4beb33f85d45ae3e3a1792185706c8e16d043238c593331cc7cd313b50"
 
 [[package]]
+name = "optical-lane-transfer-binding"
+version = "0.1.0"
+dependencies = [
+ "fixed-interval-arithmetic",
+ "optical-lineage-binding",
+ "physical-path-substrate",
+ "serde",
+ "serde_json",
+ "sha2",
+ "visible-radiance-bulk-transfer",
+ "visible-radiance-interface-event",
+]
+
+[[package]]
+name = "optical-lineage-binding"
+version = "0.1.0"
+dependencies = [
+ "physical-path-substrate",
+ "serde",
+ "serde_json",
+ "sha2",
+ "visible-radiance-bulk-transfer",
+ "visible-radiance-interface-event",
+]
+
+[[package]]
+name = "optical-phase-space-cell-binding"
+version = "0.1.0"
+dependencies = [
+ "fixed-interval-arithmetic",
+ "serde",
+ "serde_json",
+ "sha2",
+]
+
+[[package]]
+name = "optical-phase-space-dimensionless-transfer"
+version = "0.1.0"
+dependencies = [
+ "fixed-interval-arithmetic",
+ "optical-phase-space-cell-binding",
+ "optical-phase-space-receiver-coupling",
+ "optical-phase-space-transport-certificate",
+ "physical-path-substrate",
+ "receiver-arrival-geometry-binding",
+ "serde",
+ "serde_json",
+ "sha2",
+ "visible-radiance-bulk-transfer",
+]
+
+[[package]]
+name = "optical-phase-space-receiver-coupling"
+version = "0.1.0"
+dependencies = [
+ "fixed-interval-arithmetic",
+ "optical-phase-space-cell-binding",
+ "optical-phase-space-transport-certificate",
+ "physical-path-substrate",
+ "receiver-arrival-geometry-binding",
+ "serde",
+ "serde_json",
+ "sha2",
+]
+
+[[package]]
+name = "optical-phase-space-transport-certificate"
+version = "0.1.0"
+dependencies = [
+ "fixed-interval-arithmetic",
+ "optical-phase-space-cell-binding",
+ "physical-path-substrate",
+ "serde",
+ "serde_json",
+ "sha2",
+]
+
+[[package]]
 name = "option-ext"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2509,6 +2754,16 @@ checksum = "9aa2b01e1d916879f73a53d01d1d6cee68adbb31d6d9177a8cfce093cced1d50"
 dependencies = [
  "futures-core",
  "pin-project-lite",
+]
+
+[[package]]
+name = "organism-niche-binding"
+version = "0.1.0"
+dependencies = [
+ "derived-world-rules",
+ "field-basis",
+ "semantic-construction",
+ "sha2",
 ]
 
 [[package]]
@@ -2581,6 +2836,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "person-form-eligibility"
+version = "0.1.0"
+dependencies = [
+ "semantic-construction",
+ "serde",
+ "sha2",
+]
+
+[[package]]
 name = "phf"
 version = "0.13.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2631,6 +2895,32 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e57fef6bc5981e38c2ce2d63bfa546861309f875b8a75f092d1d54ae2d64f266"
 dependencies = [
  "siphasher",
+]
+
+[[package]]
+name = "physical-path-substrate"
+version = "0.1.0"
+dependencies = [
+ "fixed-interval-arithmetic",
+ "serde",
+ "serde_json",
+ "sha2",
+]
+
+[[package]]
+name = "physical-region-partition"
+version = "0.1.0"
+dependencies = [
+ "climate-state",
+ "field-basis",
+ "geological-atmospheric",
+ "hydrological-state",
+ "regional-environment-state",
+ "serde",
+ "serde_json",
+ "sha2",
+ "spatial-domain",
+ "stellar-orbital",
 ]
 
 [[package]]
@@ -2829,6 +3119,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "20675572f6f24e9e76ef639bc5552774ed45f1c30e2951e1e99c59888861c539"
 
 [[package]]
+name = "receiver-arrival-geometry-binding"
+version = "0.1.0"
+dependencies = [
+ "fixed-interval-arithmetic",
+ "optical-lineage-binding",
+ "physical-path-substrate",
+ "serde",
+ "serde_json",
+ "sha2",
+ "visible-radiance-bulk-transfer",
+]
+
+[[package]]
 name = "redox_syscall"
 version = "0.5.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2926,6 +3229,17 @@ name = "regex-syntax"
 version = "0.8.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d6f6ff9a378485b298a5286656da665ba74413d36db0979633275d2e708145d4"
+
+[[package]]
+name = "regional-environment-state"
+version = "0.1.0"
+dependencies = [
+ "field-basis",
+ "serde",
+ "serde_json",
+ "sha2",
+ "spatial-domain",
+]
 
 [[package]]
 name = "representation-contract"
@@ -3402,10 +3716,37 @@ dependencies = [
 ]
 
 [[package]]
+name = "spatial-domain"
+version = "0.1.0"
+dependencies = [
+ "field-basis",
+ "serde",
+ "serde_json",
+ "sha2",
+]
+
+[[package]]
 name = "stable_deref_trait"
 version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6ce2be8dc25455e1f91df71bfa12ad37d7af1092ae736f3a6cd0e37bc7810596"
+
+[[package]]
+name = "stellar-orbital"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "serde_json",
+ "sha2",
+]
+
+[[package]]
+name = "step-leader-controller"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "sha2",
+]
 
 [[package]]
 name = "string_cache"
@@ -3442,6 +3783,29 @@ name = "subtle"
 version = "2.6.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "13c2bddecc57b384dee18652358fb23172facb8a2c51ccc10d74c157bdea3292"
+
+[[package]]
+name = "surface-material-state"
+version = "0.1.0"
+dependencies = [
+ "climate-state",
+ "geological-atmospheric",
+ "hydrological-state",
+ "serde",
+ "serde_json",
+ "sha2",
+ "stellar-orbital",
+]
+
+[[package]]
+name = "swept-aabb-passage"
+version = "0.1.0"
+dependencies = [
+ "physical-path-substrate",
+ "serde",
+ "serde_json",
+ "sha2",
+]
 
 [[package]]
 name = "swift-rs"
@@ -4347,6 +4711,28 @@ dependencies = [
  "perception-protocol",
  "reference-viewport",
  "serde",
+ "sha2",
+]
+
+[[package]]
+name = "visible-radiance-bulk-transfer"
+version = "0.1.0"
+dependencies = [
+ "fixed-interval-arithmetic",
+ "physical-path-substrate",
+ "serde",
+ "serde_json",
+ "sha2",
+]
+
+[[package]]
+name = "visible-radiance-interface-event"
+version = "0.1.0"
+dependencies = [
+ "crypto-bigint",
+ "physical-path-substrate",
+ "serde",
+ "serde_json",
  "sha2",
 ]
 

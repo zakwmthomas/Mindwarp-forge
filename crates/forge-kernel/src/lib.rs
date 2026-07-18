@@ -14,6 +14,7 @@ pub mod code_admission;
 pub mod compiler;
 pub mod contracts;
 pub mod control_plane;
+pub mod federation;
 pub mod knowledge;
 pub mod persistence;
 

@@ -23,6 +23,11 @@ Forge validation/projection -> next worker batch`
 | I4 | Desktop read-only governance dashboard | Mutation-negative UI tests | No edit/approve/promote controls |
 | I5 | Worker effectiveness metrics and three-batch audit projection | Metrics/threshold provenance and regression tests | Metrics advise; they do not self-authorize |
 
+The owner-approved B4 continuation implements I4 and I5 as one
+Forge-workflow-first package: the desktop consumer is read-only, routine runs
+are allowlisted, token values come only from exact local metadata deltas, and
+every recommendation remains an experiment proposal under the normal gate.
+
 ## I1 closure batch
 
 1. Define a machine-readable governance manifest that names the canonical

@@ -1,108 +1,68 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "canonical_role": "sole-active-work-checkpoint",
-  "batch_id": "G1-C1-PROOFRECEIPT-STORAGE-REASSESSMENT",
-  "master_program_item": "C1",
-  "state": "checkpoint",
-  "objective": "Reassess the inherited G1 C1 ProofReceipt storage gate against the already verified F5 ProofReceipt decision and the promoted H7 typed-consumer requirement before asking the owner to repeat or make any choice.",
-  "next_action": "Audit C1 provenance, compare it with F5_PROOF_RECEIPT_DECISION and current Kernel persistence, remove or consolidate any redundant decision, and present at most one plain owner gate only if a material unresolved choice remains.",
-  "substage_id": "G1-C1-entry-redundancy-and-dependency-audit",
+  "batch_id": "G1-FORGE-METRICS-DASHBOARD-V1",
+  "master_program_item": "C3",
+  "state": "recorded",
+  "previous_state": "verifying",
+  "objective": "Implement the owner-approved Forge-workflow metrics pipeline, read-only desktop Metrics tab and evidence-backed advisory improvement recommendations without granting automated authority.",
+  "next_action": "Stop after the recorded read-only Metrics dashboard result. Any automatic tuning, external telemetry, game/runtime instrumentation, pricing model or execution of an advisory experiment requires separate owner authorization.",
+  "substage_id": "forge-metrics-dashboard-recorded",
+  "handoff_section_receipts": {
+    "objective": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"bb3fa64a773852ebcba9a1ee4bba25182445db99e8b217634e9c3a59d466ad7f","review_disposition":"revised","review_note":"Reviewed the completed owner-approved metrics objective against the recorded evidence."},
+    "next_action": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"93c080a1d3615e3a4e3ca945620aa4f1d90405e556290c7e01622e71f11809c0","review_disposition":"revised","review_note":"Reviewed the terminal stop boundary and separate owner gates."},
+    "stage_context": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"040eb89d82b654218c0a41ae90d5d8c7f42344f27c3de67bb2221f4b979ff134","review_disposition":"revised","review_note":"Reviewed final macro and module-local context for the recorded package."},
+    "visual_quality_gate": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"1511ba38e79c16e66fff7a216e783290af4d976aaa77b49099e31d13a13a333a","review_disposition":"carried_forward","review_note":"Confirmed the code-native dashboard requires no admitted visual asset."},
+    "simulation_ladder": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"247a7b9b9dde62d7dd40edd174fe5f1f6832c9dfa5330dca2822bd97b51d0d0f","review_disposition":"revised","review_note":"Reviewed the completed cheapest-proof-first ladder and final integration result."},
+    "unresolved_risks": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"44eab2402ff57b29dafec8e9c8628d9d703d97c930baa0675fcaa087e24d68fe","review_disposition":"carried_forward","review_note":"Retained attribution, privacy, comparability, Goodhart and locking boundaries."},
+    "evidence_requirements": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"abaa068e1fb3a87776edd6504be8edfe7b5505151d67af870a5457ca1e8e3c2b","review_disposition":"revised","review_note":"Confirmed every bounded evidence requirement has a verification receipt."},
+    "verification_plan": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"7771d94b928048a48247ed81b8c99e94007016ed7dd08f65fd5ba058504c2dc4","review_disposition":"revised","review_note":"Confirmed focused, compatibility, UI, module and complete-gate verification passed."},
+    "resume_after": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"234e6ab6c90bf235c6a3f72e67e26fadde77f8fd0466be8c2533db4b1474c31b","review_disposition":"carried_forward","review_note":"Retained the advisory-only post-package authority boundary."},
+    "evidence": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"8162b3455bc2ff236e4ac75065c01a667c7a5842cb7fbfc76137d2f2f2a41037","review_disposition":"revised","review_note":"Reviewed implementation, visual inspection and measured full-gate evidence."},
+    "verification_receipts": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"2ee7f598b8800c98e990a2e06fc5c4e4be91193c03b028fb46accf99f806fd7f","review_disposition":"revised","review_note":"Reviewed the complete retained verification receipt set."},
+    "transition": {"stage_id":"forge-metrics-dashboard-recorded","content_sha256":"611db310a22f18f8b71d4867ac09d9b4faad71d93dc2b1ebdfe74a3ea5157e5d","review_disposition":"revised","review_note":"Reviewed the evidence-bound transition to the recorded metrics result."}
+  },
   "consecutive_no_progress_limit": 1,
-  "atlas_route": {
-    "milestone": "G1",
-    "systems": ["canonical-production-system", "forge-truth-kernel", "forge-control-plane", "forge-reference-studio"]
-  },
-  "risk_level": "stale-owner-gate-duplication-and-generic-promotion-consumption",
-  "research_gate": "Use the committed F5 ProofReceipt decision, Kernel persistence, H7 promotion result, and master-program provenance first. External research is unnecessary unless these sources expose a standards-specific unresolved storage question.",
-  "authority_lane": "The owner authorized and Forge completed only the exact H7 proof-baseline promotion. C1 has no new owner decision yet. Research, redundancy removal, and decision preparation are authority-negative; no asset, runtime, engine, spending, publishing, application, or production action is authorized.",
-  "context_health": "Green at G1 entry: F5 is verified; H7 is Promoted after one backup-first event; immediate and post-restart retries add zero; no application/runtime effect occurred; stale F5-only milestone guards were extended without weakening their earlier-state checks; the post-promotion complete Forge gate passes; heartbeat remains paused.",
+  "atlas_route": {"milestone":"G1","systems":["forge-kernel","conversation-capture","task-bootstrap","forge-dashboard"]},
+  "risk_level": "bounded-local-metrics-persistence-capture-and-read-only-dashboard",
+  "research_gate": "Existing B4 contracts and executable persistence fixtures establish the append-only telemetry basis; the owner explicitly selected Forge-workflow-first measurement, both worker and routine-run layers, summary plus drilldown, and advisory trials only.",
+  "authority_lane": "Owner-approved local Forge measurement and read-only dashboard implementation only. Metrics may observe, project and propose bounded experiments; they may not approve, execute, tune, reprioritize, promote, publish, spend, change security, cross an owner gate or instrument Mind Warp runtime behavior.",
+  "context_health": "Fresh macro context binds the package to B4 phases four and five, P8/P10/P15, the measurement contract and the existing v1 event ledger; module context binds Kernel persistence, local capture, Tauri commands and the code-native desktop UI.",
   "stage_context": {
-    "stage_id": "G1-C1-entry-redundancy-and-dependency-audit",
-    "macro_sources": [
-      "docs/canonical-system/MASTER_PLAN_V2.md",
-      "docs/canonical-system/MASTER_PROGRAM.json",
-      "docs/project-atlas/ROADMAP.md",
-      "governance/WORKING_COVENANT.md",
-      "governance/STAGE_QUALITY_PROTOCOL.md"
-    ],
-    "macro_findings": [
-      "F5 is complete and G1 is the active milestone.",
-      "G1 promotes neutral proof packs bottom-up without collapsing local gates.",
-      "The inherited C1 owner gate may duplicate an already verified F5 ProofReceipt storage decision and must be audited before consuming owner attention."
-    ],
-    "micro_sources": [
-      "docs/canonical-system/F5_PROOF_RECEIPT_DECISION.md",
-      "docs/canonical-system/PROOF_RECEIPT_READINESS.md",
-      "docs/canonical-system/H7_HUMANOID_PROMOTION_READINESS.md",
-      "contracts/proof-receipt-projection-contract.md",
-      "contracts/humanoid-promotion-readiness-contract.md",
-      "crates/forge-kernel/src/persistence.rs"
-    ],
-    "micro_findings": [
-      "H7 candidate c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433 is Promoted with exact proof-baseline scope only.",
-      "Future G1 consumers must validate H7 package type, identity, claims, non-claims, lifecycle and supersession state, and retained blockers; generic Promoted state is insufficient.",
-      "C1 currently says to choose a ProofReceipt storage boundary even though F5 records an owner decision and verified persistence, so novelty and provenance are unresolved."
-    ]
+    "stage_id":"forge-metrics-dashboard-recorded",
+    "macro_sources":["docs/canonical-system/WORKER_TELEMETRY_MODULE.md","governance/MEASUREMENT_AND_RECURSIVE_LEARNING_CONTRACT.md","governance/WORKER_METRIC_REGISTRY.md","governance/WORKER_FORGE_INTEGRATION_PLAN.md"],
+    "macro_findings":["B4 phases one through three already persist bounded append-only BatchEvent telemetry and deterministic advisory projections.","Dashboard trends and advisory planning recommendations are the named remaining read-only consumers.","Effectiveness is a local vector; unrelated modules may not be ranked by one global score and unknown cost remains unknown."],
+    "micro_sources":["crates/forge-kernel/MODULE.md","apps/forge-desktop/src-tauri/MODULE.md","apps/forge-desktop/ui/MODULE.md","contracts/batch-event-contract.md"],
+    "micro_findings":["The Kernel owns canonical local persistence and bounded projections.","The Tauri shell owns local capture and read-only command projection but not frontend or authority.","The UI owns presentation only and has no network or direct filesystem authority.","Current Codex rollout token-count records expose cumulative input cached output reasoning and total counters without requiring prompt capture."]
   },
-  "visual_quality_gate": {
-    "asset_use_intent": false,
-    "status": "not_applicable",
-    "rationale": "C1 audits records, storage, and dependency contracts and uses no visual asset.",
-    "dependent_implementation_blocked": false,
-    "receipts": []
-  },
+  "visual_quality_gate": {"asset_use_intent":false,"status":"not_applicable","rationale":"The package adds a code-native accessible dashboard and no bitmap, human reference or visual asset.","dependent_implementation_blocked":false,"receipts":[]},
   "simulation_ladder": {
-    "cheapest_sufficient_tier": "static_reasoning",
-    "tiers_completed": [
-      {
-        "tier": "static_reasoning",
-        "result": "Macro/micro refresh identified a likely redundant inherited C1 owner gate and a required typed H7 consumer check before any G1 dependency application.",
-        "evidence": "MASTER_PROGRAM C1; F5_PROOF_RECEIPT_DECISION; H7 promotion result; MASTER_PLAN_V2"
-      }
-    ],
-    "expensive_execution_planned": false,
-    "unresolved_risk": "C1 may ask the owner to repeat a decision already made in F5, while a generic promoted-state consumer could omit H7 scope validation.",
-    "expected_information_gain": "A bounded provenance and contract comparison can determine whether C1 is new, redundant, or needs one narrowed residual decision.",
-    "estimated_cost": "Static document and code audit followed by a small typed fixture only if a real consumer gap remains.",
-    "regression_guard": "Do not reopen or weaken H7, fabricate a C1 decision, or let generic lifecycle state substitute for typed package verification.",
-    "stop_condition": "Stop at one plain owner gate only if the audit finds a material unresolved storage choice; otherwise consolidate the duplicate and continue through the verified route.",
-    "final_integration_gate": "Pending C1 audit; no implementation is yet justified."
+    "cheapest_sufficient_tier":"bounded_integrated_pc",
+    "tiers_completed":[{"tier":"static_reasoning","result":"The existing B4 contracts, registry and persistence code identify the minimal backward-compatible extension and advisory boundary.","evidence":"WORKER_TELEMETRY_MODULE.md"}],
+    "expensive_execution_planned":true,
+    "unresolved_risk":"A replay-incompatible event change, ambiguous token delta, mixed baseline or read-side SQLite lock could corrupt or misstate the dashboard.",
+    "expected_information_gain":"Determine whether explicit batch and routine-run measurements can be replayed, attributed and projected into an honest read-only dashboard without weakening existing Forge verification.",
+    "estimated_cost":"One bounded Kernel contract/persistence extension, one local metadata capture adapter, one registered-run wrapper, one Tauri projection, one code-native UI tab and focused plus complete verification.",
+    "regression_guard":"Every v1 telemetry fixture, authority-negative test, local capture invariant, desktop build and complete Forge gate must remain green.",
+    "stop_condition":"Stop if token attribution requires prompt capture, historical fabrication, external telemetry, mutable dashboard authority, incompatible event rewriting or unsafe database access.",
+    "final_integration_gate":"Focused telemetry, capture, wrapper, dashboard and recommendation fixtures plus module-context checks, UI build, Kernel tests and one complete Forge gate."
   },
-  "unresolved_risks": [
-    "The inherited C1 gate may be stale or redundant with the verified F5 ProofReceipt decision.",
-    "No downstream G1 consumer yet enforces the exact H7 proof-baseline type and limitations.",
-    "G1 must not reinterpret F5 proof promotion as an asset, runtime, or production baseline."
+  "exit_criteria": [
+    {"id":"telemetry-v2-replay","label":"Replay-compatible v2 batch and routine-run telemetry projects without changing v1 meaning.","status":"verified","evidence_ids":["test:forge-kernel:104-passed","test:v2-routine-runs"]},
+    {"id":"token-boundary-attribution","label":"Exact-session token deltas retain cached input separately and fail unknown on missing or reset counters.","status":"verified","evidence_ids":["test:forge-metrics-token-fixtures","metric:total_tokens:19615750"]},
+    {"id":"registered-routine-runs","label":"Allowlisted routine runs emit bounded pass or fail receipts without raw logs in dimensions.","status":"verified","evidence_ids":["run:run-b937ba2367184f4191b21265af0d81a6","test:registered-run-wrapper"]},
+    {"id":"verified-progression","label":"Current package progression counts only explicitly verified exit criteria.","status":"verified","evidence_ids":["test:worker-batch-structured-exit-criteria","command:metrics-dashboard-snapshot"]},
+    {"id":"read-only-dashboard","label":"The desktop Metrics tab shows summary, drilldown, filters and recent runs through a mutation-negative command.","status":"verified","evidence_ids":["test:forge-desktop:42-passed","build:forge-desktop-ui","visual:metrics-tab-browser-check"]},
+    {"id":"advisory-recommendations","label":"Recommendations retain sample, quality and completeness guards and cannot apply changes.","status":"verified","evidence_ids":["test:dashboard-projection-recommendations","test:mutation-negative-command"]},
+    {"id":"module-and-interface-context","label":"Kernel, desktop and UI module front doors match their new measurement interfaces.","status":"verified","evidence_ids":["module-context:52-current","verify:record-roles"]},
+    {"id":"complete-forge-verification","label":"Focused fixtures, UI build, Kernel tests and the complete Forge gate pass on the final package.","status":"verified","evidence_ids":["run:run-b937ba2367184f4191b21265af0d81a6","verify:complete-forge-gate:exit-0"]}
   ],
-  "evidence_requirements": [
-    "exact provenance comparison between C1 and the F5 ProofReceipt owner decision",
-    "current storage and recovery behavior from contracts, code, and retained receipts",
-    "explicit novelty or redundancy finding with no repeated owner question",
-    "typed H7 dependency-consumption rule before any G1 consumer application"
-  ],
-  "verification_plan": [
-    "audit C1 source lineage and claimed unresolved decision",
-    "compare C1 options with the already verified F5 ProofReceipt storage and recovery path",
-    "test any remaining typed consumer rule cheaply before implementation",
-    "run canonical, context, dependency, and complete Forge gates before advancing C1"
-  ],
-  "resume_after": "Continue at the G1 C1 redundancy and dependency audit; do not reopen H7 or infer a new owner choice.",
-  "evidence": [
-    "docs/canonical-system/H7_HUMANOID_PROMOTION_READINESS.md",
-    "docs/canonical-system/H7_OWNER_ACTION_PACKAGE.md",
-    "docs/canonical-system/F5_PROOF_RECEIPT_DECISION.md",
-    "docs/canonical-system/MASTER_PROGRAM.json"
-  ],
-  "verification_receipts": [
-    "H7 disposable promotion tests pass for pre-approval failure, exact one-event transition, verified backup, reopen, idempotent retry, and no code-application workspace",
-    "clean complete Forge gate passed before live promotion",
-    "live CandidatePromoted event a3ed68febb622762c5b1ca34fae232221b7ba0fff917032fd8be63790d11a7ad added exactly once",
-    "pre-promotion backup ba4d4ef46fb9ecbbbe011c2b254d29709ecb2d1687991b6f5ce276e9fb436801 reopens at Approved",
-    "live reopen and post-restart retry reproduce Promoted with zero new events; application_effect=false; runtime_effect=false"
-    ,"post-promotion complete Forge gate passes in 74.9 seconds after extending stale F4/F5 verifiers to retain their proofs through the valid G1/R1 route"
-  ],
-  "transition": "F5 H7 approved proof baseline -> research-backed owner promotion authorization -> disposable and complete preflight verification -> backup-first one-event Promoted transition -> restart and idempotency verification -> F5 complete -> G1 C1 redundancy and typed-dependency audit",
-  "metrics": {
-    "token_cost": {"status": "unknown", "value": null},
-    "elapsed_time": {"status": "unknown", "value": null}
-  }
+  "unresolved_risks":["cumulative token counters could be double-counted across cached input or linked child sessions","missing or reset counters must remain unknown instead of becoming zero","routine runs could be compared across incompatible versions platforms or verification scopes","activity counts could become a misleading productivity score","dashboard reads or inbox ingestion could hold SQLite locks on Windows","partial work could inflate progression unless only verified criteria count"],
+  "evidence_requirements":["preserve byte-compatible v1 event replay and idempotency","freeze registered raw measurement units sources states and bounded dimensions","prove exact-session token delta and unknown/reset behavior without retaining prompts","prove registered routine-run receipts for pass fail timeout and missing Forge states","prove structured verified exit-criterion progression without activity inflation","prove deterministic bounded dashboard snapshots and accessible read-only rendering","prove compatible local baselines insufficient-sample behavior and advisory-only recommendations","pass module context UI Kernel and complete Forge verification"],
+  "verification_plan":["extend Kernel telemetry fixtures before capture or UI integration","add disposable token and measured-run fixtures with no live-database dependency","add deterministic dashboard and recommendation projection tests","build the UI and run desktop command mutation-negative tests","refresh module context and run record-role modularity bootstrap and complete Forge gates"],
+  "resume_after":"Stop after the verified read-only Metrics tab and advisory recommendation result. Automatic tuning, currency pricing, external telemetry, game/runtime performance, policy promotion and any recommended experiment remain separately authorized work.",
+  "evidence":["The owner explicitly approved and requested implementation of the Forge Metrics and Improvement Dashboard plan.","The owner selected worker-batch and routine-run layers, an owner summary with technical drilldown, Forge workflow first and advisory trials only.","The Kernel now persists replay-compatible v2 metric events and projects bounded time-window dashboard snapshots while retaining v1 meaning.","Local capture records exact-session token deltas without prompts; registered routine runs retain bounded pass, fail and timeout receipts.","The desktop Metrics tab was built and visually inspected; an initial UNKNOWN-card wrap was corrected and the final four-card row has no horizontal overflow.","The final complete Forge gate passed through the measured registered-run wrapper."],
+  "verification_receipts":["Forge Kernel tests: 104 passed.","Forge desktop Rust tests: 42 passed.","Forge desktop UI production build passed.","Focused metrics fixtures passed exact, cached, reset-to-unknown, replay, projection, recommendation and registered-run cases.","All 36 C3 verifier routes use the shared interruption authority check; the 30-script shared-route inventory passed.","Module context is current for 52 modules.","Measured complete Forge gate run-b937ba2367184f4191b21265af0d81a6 passed in 486059 ms with exit 0."],
+  "transition":"recorded C3 ecotone evidence retained -> owner-approved metrics implementation -> focused and visual verification -> measured complete Forge gate -> recorded read-only Metrics dashboard result",
+  "metrics":{"token_cost":{"status":"measured","value":19615750,"unit":"tokens","source":"exact-session cumulative-counter delta; cached input retained separately"},"elapsed_time":{"status":"measured","value":2070013,"unit":"ms","source":"forge-batch-metrics start-to-finish boundary"},"complete_gate_elapsed_time":{"status":"measured","value":486059,"unit":"ms","source":"registered routine run run-b937ba2367184f4191b21265af0d81a6"}}
 }

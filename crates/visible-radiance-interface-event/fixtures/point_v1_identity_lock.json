@@ -1,0 +1,47 @@
+[
+  {
+    "name": "normal_incidence",
+    "input_bytes": 2220,
+    "input_bytes_sha256": "b326ea42c2824926d8b8791ece75186ed0818d39c2a688a21689e75f6920854b",
+    "event_bytes": 2547,
+    "event_bytes_sha256": "4ea5fb35af21e8eefa97e419453a9ea4dd84f2653debb94317e5bac818dadec8",
+    "interface_input_id_hex": "73f9a6d6c2c09e5154947298e32b39d576dc89fe62d0c2194a3cb1dd9b33eabd",
+    "event_id_hex": "69c45f83c650c51f6a227e0c263951b4a1d038795fed0fba18df9b3791112006"
+  },
+  {
+    "name": "index_match",
+    "input_bytes": 2220,
+    "input_bytes_sha256": "33b9da4d382560aabe13f8ad0f39eb3ee905bc75128798208be7eea464e68f4a",
+    "event_bytes": 2696,
+    "event_bytes_sha256": "26408a176e4fb35c75a4fb1a0c2ca2a6c3b0cc82bb02ed8812b58cd0ce87a28f",
+    "interface_input_id_hex": "d6748bc9a788eb542bed4346c89f98ee5a09cf35f74e8a31a07051925509c8f7",
+    "event_id_hex": "8018bfe9012f3158e0e2858a88a09f6647272b85f5ff77d94810e4563546c6c2"
+  },
+  {
+    "name": "reverse_direction",
+    "input_bytes": 2220,
+    "input_bytes_sha256": "599500d0e0eba8af5fc6c8996acba3acb09f3d2c1aa369dba04bb768879748a7",
+    "event_bytes": 2713,
+    "event_bytes_sha256": "ce74acb4767e7185745346587a9d4ded960521973c4037d863b17f1130a90308",
+    "interface_input_id_hex": "8938a5556ce77dff1c6535e8c4838d180d98732d6bfca380d69d8d78351c4feb",
+    "event_id_hex": "9e01ce89c2c52fb4c8b4b948699ae26d29506553ae00864122df4243a4e0b0d0"
+  },
+  {
+    "name": "critical_tir",
+    "input_bytes": 2388,
+    "input_bytes_sha256": "91670874868ac8baaebf008d94622e2dc8998f4609f72d174e21d51afbd26591",
+    "event_bytes": 2101,
+    "event_bytes_sha256": "c0ec41c48772943ca9064262e02e3132fa0135a466fb417b3512e90ac51bf497",
+    "interface_input_id_hex": "27715b058afdae6c8569c27ec349f15b76d2aca7a771e02aea9c1dc3eba61b59",
+    "event_id_hex": "a5f567520903f456b95379ebec39daa2db52a447ee17a28bfb7ff7a4bdb3a853"
+  },
+  {
+    "name": "unsupported_model",
+    "input_bytes": 2072,
+    "input_bytes_sha256": "7801e42a8a8c113e52ef6e6efc183fb70734db74ee8a8a3f5d8517fe089c1fcd",
+    "event_bytes": 598,
+    "event_bytes_sha256": "71178eaac588e696621b3c44723c24b6913b7e1d2646c84a356d7622f19dc839",
+    "interface_input_id_hex": "3eb894e9d895b82cf307a8c169c3a55fe487ec50a9d38288811cec9ec73d44d2",
+    "event_id_hex": "1e4d66d7099ad6461764c8aea508a3a1d9384f59c2065aff5e9055d1703099a1"
+  }
+]

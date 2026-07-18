@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "forge-filing-improvements",
+  "project_id": "project-33deae303ed7d669d97c7fe3ab4507c15dc4e7aae54e3ac328b23e79f6a2f0fe",
+  "title": "Federated filing, retrieval and storage improvements",
+  "stage": "implementation",
+  "status": "active",
+  "authority_lane": "delegated",
+  "dependencies": [],
+  "blockers": [],
+  "checkpoint_uri": "context/active/WORKER_BATCH_STATE.json",
+  "next_action": "Complete indexed retrieval migration, compact projections and whole-system verification.",
+  "revision": 1,
+  "lease": null,
+  "evidence_ids": ["owner-authorization:federated-continuity:2026-07-17"]
+}

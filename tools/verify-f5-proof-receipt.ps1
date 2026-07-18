@@ -6,6 +6,7 @@ $registry = Get-Content (Join-Path $root 'docs\canonical-system\system-registry.
 $source = Get-Content (Join-Path $root 'crates\forge-kernel\src\persistence.rs') -Raw
 $contracts = Get-Content (Join-Path $root 'crates\forge-kernel\src\contracts.rs') -Raw
 $ui = Get-Content (Join-Path $root 'apps\forge-desktop\ui\src\main.ts') -Raw
+& (Join-Path $root 'tools\refresh-proof-receipt-system-ids.ps1') -Check
 $items = @{}; foreach ($item in $program.items) { $items[$item.id] = $item }
 
 $f4Items = @($program.items | Where-Object milestone -eq 'F4')
@@ -19,9 +20,6 @@ foreach ($relative in @('contracts\proof-receipt-projection-contract.md','docs\c
 }
 foreach ($token in @('pub struct ProofReceiptRecord','CREATE TABLE IF NOT EXISTS proof_receipts','proof_receipt_evidence_refs','canonical_proof_receipt_id','proof_receipts_fail_closed_and_survive_backup_reopen')) {
   if (!$source.Contains($token) -and !$contracts.Contains($token)) { throw "ProofReceipt implementation shield missing: $token" }
-}
-foreach ($system in @($registry.systems | Where-Object layer -eq 'game-canonical')) {
-  if (!$source.Contains(('"' + $system.id + '"'))) { throw "ProofReceipt schema lacks canonical system: $($system.id)" }
 }
 if (!$ui.Contains('records.proof_receipts') -or !$ui.Contains('Equivalence:')) { throw 'Reference Studio does not render ProofReceipt evidence.' }
 if ((Get-Content (Join-Path $root 'crates\forge-kernel\src\lib.rs') -Raw).Contains('ProofReceipt')) { throw 'ProofReceipt leaked into the protected Kernel module.' }

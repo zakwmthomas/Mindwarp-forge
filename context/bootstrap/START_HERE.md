@@ -1,6 +1,7 @@
 # Mind Warp Forge Bootstrap
 
-This is the stable navigation layer for a new Codex task.
+This is the stable navigation layer for a new AI task. Start with the root
+`AI_HANDOFF.md`, then follow the repository `AGENTS.md` procedure below.
 
 1. Follow the repository `AGENTS.md` startup procedure.
 2. Treat `context/active/WORKER_BATCH_STATE.json` as the exact active checkpoint

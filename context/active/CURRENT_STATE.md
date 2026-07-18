@@ -5,34 +5,39 @@
 
 ## Active checkpoint
 
-- Package: **G1-C1-PROOFRECEIPT-STORAGE-REASSESSMENT**
-- Master item / milestone: **C1 / G1**
-- State / substage: **checkpoint / G1-C1-entry-redundancy-and-dependency-audit**
-- Related systems: canonical-production-system, forge-truth-kernel, forge-control-plane, forge-reference-studio
-- Objective: Reassess the inherited G1 C1 ProofReceipt storage gate against the already verified F5 ProofReceipt decision and the promoted H7 typed-consumer requirement before asking the owner to repeat or make any choice.
-- Context health: Green at G1 entry: F5 is verified; H7 is Promoted after one backup-first event; immediate and post-restart retries add zero; no application/runtime effect occurred; stale F5-only milestone guards were extended without weakening their earlier-state checks; the post-promotion complete Forge gate passes; heartbeat remains paused.
+- Package: **G1-FORGE-METRICS-DASHBOARD-V1**
+- Master item / milestone: **C3 / G1**
+- State / substage: **recorded / forge-metrics-dashboard-recorded**
+- Related systems: forge-kernel, conversation-capture, task-bootstrap, forge-dashboard
+- Objective: Implement the owner-approved Forge-workflow metrics pipeline, read-only desktop Metrics tab and evidence-backed advisory improvement recommendations without granting automated authority.
+- Context health: Fresh macro context binds the package to B4 phases four and five, P8/P10/P15, the measurement contract and the existing v1 event ledger; module context binds Kernel persistence, local capture, Tauri commands and the code-native desktop UI.
 
 ## Durable evidence
 
-- `docs/canonical-system/H7_HUMANOID_PROMOTION_READINESS.md`
-- `docs/canonical-system/H7_OWNER_ACTION_PACKAGE.md`
-- `docs/canonical-system/F5_PROOF_RECEIPT_DECISION.md`
-- `docs/canonical-system/MASTER_PROGRAM.json`
+- `The owner explicitly approved and requested implementation of the Forge Metrics and Improvement Dashboard plan.`
+- `The owner selected worker-batch and routine-run layers, an owner summary with technical drilldown, Forge workflow first and advisory trials only.`
+- `The Kernel now persists replay-compatible v2 metric events and projects bounded time-window dashboard snapshots while retaining v1 meaning.`
+- `Local capture records exact-session token deltas without prompts; registered routine runs retain bounded pass, fail and timeout receipts.`
+- `The desktop Metrics tab was built and visually inspected; an initial UNKNOWN-card wrap was corrected and the final four-card row has no horizontal overflow.`
+- `The final complete Forge gate passed through the measured registered-run wrapper.`
 
 ## Authority boundary
 
-The owner authorized and Forge completed only the exact H7 proof-baseline promotion. C1 has no new owner decision yet. Research, redundancy removal, and decision preparation are authority-negative; no asset, runtime, engine, spending, publishing, application, or production action is authorized.
+Owner-approved local Forge measurement and read-only dashboard implementation only. Metrics may observe, project and propose bounded experiments; they may not approve, execute, tune, reprioritize, promote, publish, spend, change security, cross an owner gate or instrument Mind Warp runtime behavior.
 
 ## Exact next action
 
-Audit C1 provenance, compare it with F5_PROOF_RECEIPT_DECISION and current Kernel persistence, remove or consolidate any redundant decision, and present at most one plain owner gate only if a material unresolved choice remains.
+Stop after the recorded read-only Metrics dashboard result. Any automatic tuning, external telemetry, game/runtime instrumentation, pricing model or execution of an advisory experiment requires separate owner authorization.
 
 ## Unresolved risks
 
-- The inherited C1 gate may be stale or redundant with the verified F5 ProofReceipt decision.
-- No downstream G1 consumer yet enforces the exact H7 proof-baseline type and limitations.
-- G1 must not reinterpret F5 proof promotion as an asset, runtime, or production baseline.
+- cumulative token counters could be double-counted across cached input or linked child sessions
+- missing or reset counters must remain unknown instead of becoming zero
+- routine runs could be compared across incompatible versions platforms or verification scopes
+- activity counts could become a misleading productivity score
+- dashboard reads or inbox ingestion could hold SQLite locks on Windows
+- partial work could inflate progression unless only verified criteria count
 
 ## Resume after this package
 
-Continue at the G1 C1 redundancy and dependency audit; do not reopen H7 or infer a new owner choice.
+Stop after the verified read-only Metrics tab and advisory recommendation result. Automatic tuning, currency pricing, external telemetry, game/runtime performance, policy promotion and any recommended experiment remain separately authorized work.

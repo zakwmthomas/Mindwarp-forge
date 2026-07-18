@@ -12,6 +12,7 @@ use std::{
 
 mod codex_capture;
 mod owner_presentation;
+mod run_metrics_capture;
 
 use forge_kernel::{
     ActorKind, AuthorityBasis, CandidateState, EventType, ForgeKernel,
@@ -19,7 +20,7 @@ use forge_kernel::{
     contracts::{BridgeReceipt, ImportReport},
     persistence::{
         AppliedCodeReceipt, BackupReceipt, PersistentForge, ReferenceStudioRecords, WorkspaceFile,
-        inventory_workspace,
+        inventory_managed_workspace, inventory_workspace,
     },
 };
 use sha2::{Digest, Sha256};
@@ -40,6 +41,10 @@ struct AppState {
 struct WorkspaceBinding {
     canonical_root: PathBuf,
     inventory: Vec<WorkspaceFile>,
+    #[serde(default)]
+    excluded_roots: Vec<String>,
+    #[serde(default)]
+    root_digest: String,
 }
 
 #[derive(serde::Serialize)]
@@ -521,6 +526,69 @@ fn owner_dashboard_snapshot(
 }
 
 #[tauri::command]
+fn metrics_dashboard_snapshot(
+    state: State<'_, AppState>,
+    since_ms: Option<i64>,
+) -> Result<serde_json::Value, String> {
+    let forge = state
+        .forge
+        .lock()
+        .map_err(|_| "The local Forge state lock is unavailable.".to_owned())?;
+    let projection = forge
+        .metrics_dashboard_projection_since(since_ms)
+        .map_err(|error| format!("Metrics projection is unavailable: {error:?}"))?;
+    let checkpoint: serde_json::Value = serde_json::from_slice(
+        &fs::read(
+            state
+                .project_root
+                .join("context/active/WORKER_BATCH_STATE.json"),
+        )
+        .map_err(|error| format!("Active checkpoint is unavailable: {error}"))?,
+    )
+    .map_err(|error| format!("Active checkpoint is invalid: {error}"))?;
+    let criteria = checkpoint["exit_criteria"]
+        .as_array()
+        .cloned()
+        .unwrap_or_else(|| {
+            checkpoint["evidence_requirements"]
+                .as_array()
+                .map(|requirements| {
+                    requirements
+                        .iter()
+                        .enumerate()
+                        .map(|(index, label)| {
+                            serde_json::json!({
+                                "id": format!("legacy-criterion-{}", index + 1),
+                                "label": label.as_str().unwrap_or("Unnamed criterion"),
+                                "status": "planned",
+                                "evidence_ids": [],
+                            })
+                        })
+                        .collect()
+                })
+                .unwrap_or_default()
+        });
+    let verified = criteria
+        .iter()
+        .filter(|criterion| criterion["status"] == "verified")
+        .count();
+    Ok(serde_json::json!({
+        "schema_version": 1,
+        "read_only": true,
+        "current": {
+            "batch_id": checkpoint["batch_id"],
+            "state": checkpoint["state"],
+            "substage_id": checkpoint["substage_id"],
+            "objective": checkpoint["objective"],
+            "verified_criteria": verified,
+            "total_criteria": criteria.len(),
+            "criteria": criteria,
+        },
+        "projection": projection,
+    }))
+}
+
+#[tauri::command]
 fn forge_snapshot(state: State<'_, AppState>) -> Result<ForgeSnapshot, String> {
     let forge = state
         .forge
@@ -784,30 +852,6 @@ fn scan_capture(
     Ok(())
 }
 
-/// Launch the supported Codex Desktop workspace entry point once per Forge
-/// process. Codex itself owns any existing-instance handling.
-fn launch_codex_workspace(project_root: PathBuf) {
-    let Some(local_app_data) = std::env::var_os("LOCALAPPDATA") else {
-        return;
-    };
-    let bin_root = PathBuf::from(local_app_data)
-        .join("OpenAI")
-        .join("Codex")
-        .join("bin");
-    let mut candidates: Vec<_> = fs::read_dir(&bin_root)
-        .ok()
-        .into_iter()
-        .flatten()
-        .filter_map(Result::ok)
-        .map(|entry| entry.path().join("codex.exe"))
-        .filter(|path| path.is_file())
-        .collect();
-    candidates.sort();
-    if let Some(codex) = candidates.pop() {
-        let _ = Command::new(codex).arg("app").arg(project_root).spawn();
-    }
-}
-
 fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_single_instance::init(|app, _args, _cwd| {
@@ -841,7 +885,6 @@ fn main() {
             let capture_enabled = Arc::new(AtomicBool::new(true));
             let project_root = fs::canonicalize(r"C:\Users\zakwm\Desktop\Mindwarp forge")?;
             let watcher_project_root = project_root.clone();
-            let launcher_root = project_root.clone();
             let binding_root = project_root.clone();
             app.manage(AppState {
                 forge: forge.clone(),
@@ -853,14 +896,12 @@ fn main() {
                 codex_sessions_root: codex_sessions_root.clone(),
             });
             thread::spawn(move || {
-                thread::sleep(Duration::from_secs(1));
-                launch_codex_workspace(launcher_root);
-            });
-            thread::spawn(move || {
-                if let Ok(inventory) = inventory_workspace(&binding_root) {
+                if let Ok(inventory) = inventory_managed_workspace(&binding_root) {
                     let binding = WorkspaceBinding {
                         canonical_root: binding_root.clone(),
-                        inventory,
+                        inventory: inventory.files,
+                        excluded_roots: inventory.excluded_roots,
+                        root_digest: inventory.root_digest,
                     };
                     let binding_directory = binding_root.join(".local");
                     if fs::create_dir_all(&binding_directory).is_ok() {
@@ -884,6 +925,9 @@ fn main() {
                             &codex_sessions_root,
                             &watcher_project_root,
                         );
+                    }
+                    if let Ok(forge) = watcher_forge.lock() {
+                        let _ = run_metrics_capture::scan_inbox(&forge, &watcher_project_root);
                     }
                     thread::sleep(Duration::from_secs(2));
                 }
@@ -917,6 +961,7 @@ fn main() {
             project_atlas,
             operating_system_snapshot,
             owner_dashboard_snapshot,
+            metrics_dashboard_snapshot,
             forge_snapshot,
             workspace_binding,
             apply_to_approved_forge_workspace,
@@ -929,6 +974,112 @@ fn main() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    fn stellar_contract(
+        reconstruction_id: [u8; 32],
+    ) -> derived_world_rules::StellarOrbitalContract {
+        derived_world_rules::compile_stellar_orbital(&derived_world_rules::StellarOrbitalInput {
+            schema_version: 1,
+            reconstruction_id,
+            stellar_source_id: [3; 32],
+            primary_mass_milli_solar: 1_000,
+            stellar_luminosity_millionths_solar: 1_000_000,
+            stellar_spectrum_rgb_permille: [400, 350, 250],
+            semi_major_axis_milli_au: 1_000,
+            eccentricity_millionths: 0,
+        })
+        .unwrap()
+    }
+
+    fn geological_contract(
+        reconstruction_id: [u8; 32],
+    ) -> derived_world_rules::GeologicalAtmosphericContract {
+        derived_world_rules::compile_geological_atmospheric(
+            &derived_world_rules::GeologicalAtmosphericInput {
+                schema_version: 1,
+                reconstruction_id,
+                planetary_body_id: [4; 32],
+                stellar_orbital: stellar_contract(reconstruction_id),
+                planet_mass_milli_earth: 1_000,
+                planet_radius_milli_earth: 1_000,
+                internal_heat_flux_milli_w_m2: 87,
+                solid_surface_fraction_permille: 600,
+                atmospheric_column_mass_g_m2: 10_332_000,
+                gas_transmission_rgb_permille: [800, 900, 950],
+                aerosol_transmission_rgb_permille: [1_000; 3],
+            },
+        )
+        .unwrap()
+    }
+
+    fn hydrological_contract(
+        reconstruction_id: [u8; 32],
+    ) -> derived_world_rules::HydrologicalContract {
+        derived_world_rules::compile_hydrological(&derived_world_rules::HydrologicalInput {
+            schema_version: 1,
+            reconstruction_id,
+            hydrological_source_id: [5; 32],
+            geological_atmospheric: geological_contract(reconstruction_id),
+            total_water_column_g_m2: 2_000_000,
+            phase_partition_permille: [100, 850, 50],
+            surface_accessible_liquid_fraction_permille: 700,
+        })
+        .unwrap()
+    }
+
+    fn climate_contract(reconstruction_id: [u8; 32]) -> derived_world_rules::ClimateContract {
+        derived_world_rules::compile_climate(&derived_world_rules::ClimateInput {
+            schema_version: 1,
+            reconstruction_id,
+            climate_source_id: [6; 32],
+            hydrological: hydrological_contract(reconstruction_id),
+            bond_albedo_permille: 300,
+            outgoing_longwave_fraction_of_incident_permille: 700,
+        })
+        .unwrap()
+    }
+
+    fn surface_material_contract(
+        reconstruction_id: [u8; 32],
+    ) -> derived_world_rules::SurfaceMaterialContract {
+        derived_world_rules::compile_surface_material(&derived_world_rules::SurfaceMaterialInput {
+            schema_version: 1,
+            reconstruction_id,
+            material_source_id: [7; 32],
+            climate: climate_contract(reconstruction_id),
+            dominant_surface_reflectance_rgb_permille: [500, 400, 300],
+        })
+        .unwrap()
+    }
+
+    fn regional_environment_contract(
+        reconstruction_id: [u8; 32],
+    ) -> derived_world_rules::RegionalEnvironmentContract {
+        derived_world_rules::compile_regional_environment(
+            &derived_world_rules::RegionalEnvironmentInput {
+                schema_version: 1,
+                reconstruction_id,
+                regional_source_id: [8; 32],
+                field_recipe_bytes: field_basis::FieldRecipe::new(
+                    vec![field_basis::Term::Constant(field_basis::ONE)],
+                    0,
+                )
+                .unwrap()
+                .encode_canonical()
+                .unwrap(),
+                moisture_source_id: [9; 32],
+                moisture_field_recipe_bytes: field_basis::FieldRecipe::new(
+                    vec![field_basis::Term::Constant(0)],
+                    0,
+                )
+                .unwrap()
+                .encode_canonical()
+                .unwrap(),
+                coordinate_q32_32: [0, 0],
+            },
+        )
+        .unwrap()
+    }
 
     #[test]
     fn unified_snapshot_is_revisioned_read_only_and_contains_typed_knowledge() {
@@ -1589,6 +1740,311 @@ mod tests {
     }
 
     #[test]
+    fn stellar_orbital_vector_persists_as_read_only_proof_receipt() {
+        use forge_kernel::contracts::{NamedVersion, ProofMeasurement, ProofReceiptRecord};
+        use forge_kernel::persistence::canonical_proof_receipt_id;
+
+        let mut forge = PersistentForge::in_memory().unwrap();
+        let contract = stellar_contract([1; 32]);
+        let input = forge
+            .kernel_mut()
+            .put_object(contract.input.to_bytes().unwrap());
+        let output = forge
+            .kernel_mut()
+            .put_object(contract.state.to_bytes().unwrap());
+        forge.commit().unwrap();
+        let before = (
+            forge.kernel().object_count(),
+            forge.kernel().events().len(),
+            forge.kernel().candidate_count(),
+        );
+        let mut receipt = ProofReceiptRecord {
+            schema_version: 1,
+            receipt_id: String::new(),
+            system_id: "stellar-orbital".into(),
+            proof_id: "bounded-two-body-vector".into(),
+            status: "pass".into(),
+            failure_classification: None,
+            input_refs: vec![input],
+            fixture_id: "stellar-orbital-v1/earth-normalized".into(),
+            generator_versions: vec![NamedVersion {
+                name: "stellar-orbital-compiler".into(),
+                version: "1".into(),
+            }],
+            contract_versions: vec![NamedVersion {
+                name: "stellar-orbital".into(),
+                version: "1".into(),
+            }],
+            output_refs: vec![output],
+            equivalence_method: "exact canonical bytes and input replay".into(),
+            measurements: vec![ProofMeasurement {
+                name: "mean_distance_irradiance".into(),
+                value: contract
+                    .state
+                    .content
+                    .irradiance_mean_distance_millionths_earth
+                    .to_string(),
+                unit: "millionths_earth_flux".into(),
+                method: "bounded-integer-inverse-square-reference".into(),
+                classification: "simulated".into(),
+            }],
+            warnings: vec![],
+            limitations: contract.state.content.limitations.clone(),
+            created_at: "2026-07-15T00:00:00Z".into(),
+            runner_identity: "forge-desktop-stellar-orbital-test".into(),
+        };
+        receipt.receipt_id = canonical_proof_receipt_id(&receipt).unwrap();
+        forge.record_proof_receipt(&receipt).unwrap();
+        assert_eq!(
+            reference_studio_for(&forge, 1, 9002)
+                .unwrap()
+                .records
+                .proof_receipts,
+            vec![receipt]
+        );
+        assert_eq!(
+            before,
+            (
+                forge.kernel().object_count(),
+                forge.kernel().events().len(),
+                forge.kernel().candidate_count()
+            )
+        );
+    }
+
+    #[test]
+    fn geological_atmospheric_vector_persists_as_read_only_proof_receipt() {
+        use forge_kernel::contracts::{NamedVersion, ProofMeasurement, ProofReceiptRecord};
+        use forge_kernel::persistence::canonical_proof_receipt_id;
+
+        let mut forge = PersistentForge::in_memory().unwrap();
+        let contract = geological_contract([1; 32]);
+        let input = forge
+            .kernel_mut()
+            .put_object(contract.input.to_bytes().unwrap());
+        let output = forge
+            .kernel_mut()
+            .put_object(contract.state.to_bytes().unwrap());
+        forge.commit().unwrap();
+        let before = (
+            forge.kernel().object_count(),
+            forge.kernel().events().len(),
+            forge.kernel().candidate_count(),
+        );
+        let mut receipt = ProofReceiptRecord {
+            schema_version: 1,
+            receipt_id: String::new(),
+            system_id: "geological-atmospheric".into(),
+            proof_id: "bounded-gravity-column-transmission-vector".into(),
+            status: "pass".into(),
+            failure_classification: None,
+            input_refs: vec![input],
+            fixture_id: "geological-atmospheric-v1/earth-normalized".into(),
+            generator_versions: vec![NamedVersion {
+                name: "geological-atmospheric-compiler".into(),
+                version: "1".into(),
+            }],
+            contract_versions: vec![NamedVersion {
+                name: "geological-atmospheric".into(),
+                version: "1".into(),
+            }],
+            output_refs: vec![output],
+            equivalence_method: "exact canonical bytes and input replay".into(),
+            measurements: vec![
+                ProofMeasurement {
+                    name: "surface_gravity".into(),
+                    value: contract.state.content.surface_gravity_mm_s2.to_string(),
+                    unit: "millimetres_per_second_squared".into(),
+                    method: "earth-normalized-spherical-gravity-reference".into(),
+                    classification: "simulated".into(),
+                },
+                ProofMeasurement {
+                    name: "surface_pressure".into(),
+                    value: contract.state.content.surface_pressure_pa.to_string(),
+                    unit: "pascal".into(),
+                    method: "column-mass-times-surface-gravity".into(),
+                    classification: "simulated".into(),
+                },
+            ],
+            warnings: vec![],
+            limitations: contract.state.content.limitations.clone(),
+            created_at: "2026-07-15T00:00:00Z".into(),
+            runner_identity: "forge-desktop-geological-atmospheric-test".into(),
+        };
+        receipt.receipt_id = canonical_proof_receipt_id(&receipt).unwrap();
+        forge.record_proof_receipt(&receipt).unwrap();
+        assert_eq!(
+            reference_studio_for(&forge, 1, 9002)
+                .unwrap()
+                .records
+                .proof_receipts,
+            vec![receipt]
+        );
+        assert_eq!(
+            before,
+            (
+                forge.kernel().object_count(),
+                forge.kernel().events().len(),
+                forge.kernel().candidate_count()
+            )
+        );
+    }
+
+    #[test]
+    fn hydrological_vector_persists_as_read_only_proof_receipt() {
+        use forge_kernel::contracts::{NamedVersion, ProofMeasurement, ProofReceiptRecord};
+        use forge_kernel::persistence::canonical_proof_receipt_id;
+
+        let mut forge = PersistentForge::in_memory().unwrap();
+        let contract = hydrological_contract([1; 32]);
+        let input = forge
+            .kernel_mut()
+            .put_object(contract.input.to_bytes().unwrap());
+        let output = forge
+            .kernel_mut()
+            .put_object(contract.state.to_bytes().unwrap());
+        forge.commit().unwrap();
+        let before = (
+            forge.kernel().object_count(),
+            forge.kernel().events().len(),
+            forge.kernel().candidate_count(),
+        );
+        let mut receipt = ProofReceiptRecord {
+            schema_version: 1,
+            receipt_id: String::new(),
+            system_id: "hydrological-state".into(),
+            proof_id: "bounded-water-inventory-vector".into(),
+            status: "pass".into(),
+            failure_classification: None,
+            input_refs: vec![input],
+            fixture_id: "hydrological-state-v1/declared-reservoirs".into(),
+            generator_versions: vec![NamedVersion {
+                name: "hydrological-state-compiler".into(),
+                version: "1".into(),
+            }],
+            contract_versions: vec![NamedVersion {
+                name: "hydrological-state".into(),
+                version: "1".into(),
+            }],
+            output_refs: vec![output],
+            equivalence_method: "exact canonical bytes and input replay".into(),
+            measurements: vec![ProofMeasurement {
+                name: "surface_accessible_liquid_column".into(),
+                value: contract
+                    .state
+                    .content
+                    .surface_accessible_liquid_column_millionths_g_m2
+                    .to_string(),
+                unit: "millionths_gram_per_square_metre".into(),
+                method: "declared-inventory-partition-and-access-product".into(),
+                classification: "simulated".into(),
+            }],
+            warnings: vec![],
+            limitations: contract.state.content.limitations.clone(),
+            created_at: "2026-07-15T00:00:00Z".into(),
+            runner_identity: "forge-desktop-hydrological-state-test".into(),
+        };
+        receipt.receipt_id = canonical_proof_receipt_id(&receipt).unwrap();
+        forge.record_proof_receipt(&receipt).unwrap();
+        assert_eq!(
+            reference_studio_for(&forge, 1, 9002)
+                .unwrap()
+                .records
+                .proof_receipts,
+            vec![receipt]
+        );
+        assert_eq!(
+            before,
+            (
+                forge.kernel().object_count(),
+                forge.kernel().events().len(),
+                forge.kernel().candidate_count()
+            )
+        );
+    }
+
+    #[test]
+    fn derived_world_vector_persists_as_read_only_proof_receipt() {
+        use derived_world_rules::{
+            SignalChannel, SignalPotential, WorldGenerationInput, compile_world,
+        };
+        use forge_kernel::contracts::{NamedVersion, ProofMeasurement, ProofReceiptRecord};
+        use forge_kernel::persistence::canonical_proof_receipt_id;
+
+        let mut forge = PersistentForge::in_memory().unwrap();
+        let world_input = WorldGenerationInput {
+            schema_version: 1,
+            field_contract_version: field_basis::CONTRACT_VERSION,
+            reconstruction_id: [1; 32],
+            surface_material: surface_material_contract([1; 32]),
+            regional_environment: regional_environment_contract([1; 32]),
+            signal_potentials: vec![SignalPotential {
+                channel: SignalChannel::MagneticField,
+                baseline_strength_permille: 800,
+            }],
+        };
+        let packet = compile_world(&world_input).unwrap();
+        let input = forge
+            .kernel_mut()
+            .put_object(world_input.to_bytes().unwrap());
+        let output = forge.kernel_mut().put_object(packet.to_bytes().unwrap());
+        forge.commit().unwrap();
+        let before = (
+            forge.kernel().object_count(),
+            forge.kernel().events().len(),
+            forge.kernel().candidate_count(),
+        );
+        let mut receipt = ProofReceiptRecord {
+            schema_version: 1,
+            receipt_id: String::new(),
+            system_id: "derived-world-rules".into(),
+            proof_id: "causal-world-vector".into(),
+            status: "pass".into(),
+            failure_classification: None,
+            input_refs: vec![input],
+            fixture_id: "derived-world-rules-v1/causal-world".into(),
+            generator_versions: vec![NamedVersion {
+                name: "derived-world-compiler".into(),
+                version: "1".into(),
+            }],
+            contract_versions: vec![NamedVersion {
+                name: "derived-world-rules".into(),
+                version: "1".into(),
+            }],
+            output_refs: vec![output],
+            equivalence_method: "exact canonical bytes".into(),
+            measurements: vec![ProofMeasurement {
+                name: "fixture_duration".into(),
+                value: "0".into(),
+                unit: "ms".into(),
+                method: "deterministic-test-harness".into(),
+                classification: "simulated".into(),
+            }],
+            warnings: vec![],
+            limitations: packet.content.limitations.clone(),
+            created_at: "2026-07-15T00:00:00Z".into(),
+            runner_identity: "forge-desktop-derived-world-test".into(),
+        };
+        receipt.receipt_id = canonical_proof_receipt_id(&receipt).unwrap();
+        forge.record_proof_receipt(&receipt).unwrap();
+        assert_eq!(
+            reference_studio_for(&forge, 1, 9003)
+                .unwrap()
+                .records
+                .proof_receipts,
+            vec![receipt]
+        );
+        assert_eq!(
+            before,
+            (
+                forge.kernel().object_count(),
+                forge.kernel().events().len(),
+                forge.kernel().candidate_count()
+            )
+        );
+    }
+
+    #[test]
     fn hierarchy_history_vector_persists_as_read_only_proof_receipt() {
         use forge_kernel::contracts::{NamedVersion, ProofMeasurement, ProofReceiptRecord};
         use forge_kernel::persistence::canonical_proof_receipt_id;
@@ -1642,6 +2098,430 @@ mod tests {
             limitations: evidence.limitations.clone(),
             created_at: "2026-07-13T07:18:00Z".into(),
             runner_identity: "forge-desktop-hierarchy-history-test".into(),
+        };
+        receipt.receipt_id = canonical_proof_receipt_id(&receipt).unwrap();
+        forge.record_proof_receipt(&receipt).unwrap();
+        assert_eq!(
+            reference_studio_for(&forge, 1, 9003)
+                .unwrap()
+                .records
+                .proof_receipts,
+            vec![receipt]
+        );
+        assert_eq!(
+            before,
+            (
+                forge.kernel().object_count(),
+                forge.kernel().events().len(),
+                forge.kernel().candidate_count()
+            )
+        );
+    }
+
+    #[test]
+    fn organism_niche_binding_vector_persists_as_read_only_proof_receipt() {
+        use derived_world_rules::{
+            SignalChannel, SignalPotential, WorldGenerationInput, compile_world,
+        };
+        use forge_kernel::contracts::{NamedVersion, ProofMeasurement, ProofReceiptRecord};
+        use forge_kernel::persistence::canonical_proof_receipt_id;
+        use organism_niche_binding::build_distance_sensing_niche_package;
+        use semantic_construction::validate_package;
+
+        let mut forge = PersistentForge::in_memory().unwrap();
+        let world_input = WorldGenerationInput {
+            schema_version: 1,
+            field_contract_version: field_basis::CONTRACT_VERSION,
+            reconstruction_id: [5; 32],
+            surface_material: surface_material_contract([5; 32]),
+            regional_environment: regional_environment_contract([5; 32]),
+            signal_potentials: vec![SignalPotential {
+                channel: SignalChannel::VisibleRadiance,
+                baseline_strength_permille: 900,
+            }],
+        };
+        let packet = compile_world(&world_input).unwrap();
+        let package = build_distance_sensing_niche_package(&world_input, &packet).unwrap();
+        let report = validate_package(&package, 512);
+
+        let input = forge.kernel_mut().put_object(packet.to_bytes().unwrap());
+        let output = forge.kernel_mut().put_object(package.to_bytes().unwrap());
+        forge.commit().unwrap();
+        let before = (
+            forge.kernel().object_count(),
+            forge.kernel().events().len(),
+            forge.kernel().candidate_count(),
+        );
+        let feasible_count = package
+            .solutions
+            .families
+            .iter()
+            .filter(|item| item.feasible)
+            .count();
+        let mut receipt = ProofReceiptRecord {
+            schema_version: 1,
+            receipt_id: String::new(),
+            system_id: "organism-ecology".into(),
+            proof_id: "distance-sensing-environmental-support-prerequisite".into(),
+            status: "pass".into(),
+            failure_classification: None,
+            input_refs: vec![input],
+            fixture_id: "organism-niche-binding-v1/distance-sensing-niche".into(),
+            generator_versions: vec![NamedVersion {
+                name: "organism-niche-binding".into(),
+                version: "1".into(),
+            }],
+            contract_versions: vec![
+                NamedVersion {
+                    name: "derived-world-rules".into(),
+                    version: "1".into(),
+                },
+                NamedVersion {
+                    name: "semantic-construction".into(),
+                    version: "1".into(),
+                },
+            ],
+            output_refs: vec![output],
+            equivalence_method: "exact canonical bytes".into(),
+            measurements: vec![
+                ProofMeasurement {
+                    name: "environmentally_supported_candidate_count".into(),
+                    value: feasible_count.to_string(),
+                    unit: "mechanisms".into(),
+                    method: "deterministic-test-harness".into(),
+                    classification: "simulated".into(),
+                },
+                ProofMeasurement {
+                    name: "validation_examined".into(),
+                    value: report.examined.to_string(),
+                    unit: "fixture_items".into(),
+                    method: "bounded-integer-reference-validator".into(),
+                    classification: "simulated".into(),
+                },
+            ],
+            warnings: vec![],
+            limitations: vec![
+                "tiny disposable sensory-mechanism fixture vocabulary; not the Mind Warp content grammar".into(),
+                "environmental support only; sensory physiology, person-form eligibility and applicable dimorphism remain open".into(),
+                "no biological, physiological, or perceptual-realism claim".into(),
+            ],
+            created_at: "2026-07-15T00:00:00Z".into(),
+            runner_identity: "forge-desktop-organism-niche-binding-test".into(),
+        };
+        receipt.receipt_id = canonical_proof_receipt_id(&receipt).unwrap();
+        forge.record_proof_receipt(&receipt).unwrap();
+        assert_eq!(
+            reference_studio_for(&forge, 1, 9003)
+                .unwrap()
+                .records
+                .proof_receipts,
+            vec![receipt]
+        );
+        assert_eq!(
+            before,
+            (
+                forge.kernel().object_count(),
+                forge.kernel().events().len(),
+                forge.kernel().candidate_count()
+            )
+        );
+    }
+
+    #[test]
+    fn niche_graph_binding_vector_persists_as_read_only_proof_receipt() {
+        use derived_world_rules::{
+            SignalChannel, SignalPotential, WorldGenerationInput, compile_world,
+        };
+        use forge_kernel::contracts::{NamedVersion, ProofMeasurement, ProofReceiptRecord};
+        use forge_kernel::persistence::canonical_proof_receipt_id;
+        use niche_graph_binding::{
+            build_environmental_opportunity_graph, validate_environmental_opportunity_graph,
+        };
+
+        let mut forge = PersistentForge::in_memory().unwrap();
+        let world_input = WorldGenerationInput {
+            schema_version: 1,
+            field_contract_version: field_basis::CONTRACT_VERSION,
+            reconstruction_id: [7; 32],
+            surface_material: surface_material_contract([7; 32]),
+            regional_environment: regional_environment_contract([7; 32]),
+            signal_potentials: vec![
+                SignalPotential {
+                    channel: SignalChannel::VisibleRadiance,
+                    baseline_strength_permille: 900,
+                },
+                SignalPotential {
+                    channel: SignalChannel::ElectricField,
+                    baseline_strength_permille: 800,
+                },
+            ],
+        };
+        let packet = compile_world(&world_input).unwrap();
+        let graph = build_environmental_opportunity_graph(&world_input, &packet).unwrap();
+        validate_environmental_opportunity_graph(&world_input, &packet, &graph).unwrap();
+
+        let input = forge.kernel_mut().put_object(packet.to_bytes().unwrap());
+        let output = forge.kernel_mut().put_object(graph.to_bytes().unwrap());
+        forge.commit().unwrap();
+        let before = (
+            forge.kernel().object_count(),
+            forge.kernel().events().len(),
+            forge.kernel().candidate_count(),
+        );
+        let mut receipt = ProofReceiptRecord {
+            schema_version: 1,
+            receipt_id: String::new(),
+            system_id: "organism-ecology".into(),
+            proof_id: "environmental-opportunity-graph-precursor".into(),
+            status: "pass".into(),
+            failure_classification: None,
+            input_refs: vec![input],
+            fixture_id: "niche-graph-binding-v1/two-signal-coavailability".into(),
+            generator_versions: vec![NamedVersion {
+                name: "niche-graph-binding".into(),
+                version: "1".into(),
+            }],
+            contract_versions: vec![NamedVersion {
+                name: "derived-world-rules".into(),
+                version: "1".into(),
+            }],
+            output_refs: vec![output],
+            equivalence_method: "exact canonical bytes".into(),
+            measurements: vec![
+                ProofMeasurement {
+                    name: "environmental_opportunity_count".into(),
+                    value: graph.nodes.len().to_string(),
+                    unit: "opportunities".into(),
+                    method: "deterministic-test-harness".into(),
+                    classification: "simulated".into(),
+                },
+                ProofMeasurement {
+                    name: "coavailability_edge_count".into(),
+                    value: graph.coavailability_edges.len().to_string(),
+                    unit: "relations".into(),
+                    method: "deterministic-graph-construction".into(),
+                    classification: "simulated".into(),
+                },
+            ],
+            warnings: vec![],
+            limitations: vec![
+                "signal co-availability is an environmental opportunity only, not organism capability".into(),
+                "no organ, body, lineage, habitat, resource, hazard, trophic role or competition claim".into(),
+                "precursor graph only; not a complete ecological niche graph or the Mind Warp content grammar".into(),
+            ],
+            created_at: "2026-07-15T00:00:00Z".into(),
+            runner_identity: "forge-desktop-niche-graph-binding-test".into(),
+        };
+        receipt.receipt_id = canonical_proof_receipt_id(&receipt).unwrap();
+        forge.record_proof_receipt(&receipt).unwrap();
+        assert_eq!(
+            reference_studio_for(&forge, 1, 9004)
+                .unwrap()
+                .records
+                .proof_receipts,
+            vec![receipt]
+        );
+        assert_eq!(
+            before,
+            (
+                forge.kernel().object_count(),
+                forge.kernel().events().len(),
+                forge.kernel().candidate_count()
+            )
+        );
+    }
+
+    #[test]
+    fn macro_lineage_binding_vector_persists_as_read_only_proof_receipt() {
+        use derived_world_rules::{
+            SignalChannel, SignalPotential, WorldGenerationInput, compile_world,
+        };
+        use forge_kernel::contracts::{NamedVersion, ProofMeasurement, ProofReceiptRecord};
+        use forge_kernel::persistence::canonical_proof_receipt_id;
+        use macro_lineage_binding::build_macro_lineage_candidate;
+        use niche_graph_binding::build_environmental_opportunity_graph;
+
+        let mut forge = PersistentForge::in_memory().unwrap();
+        let world_input = WorldGenerationInput {
+            schema_version: 1,
+            field_contract_version: field_basis::CONTRACT_VERSION,
+            reconstruction_id: [14; 32],
+            surface_material: surface_material_contract([14; 32]),
+            regional_environment: regional_environment_contract([14; 32]),
+            signal_potentials: vec![SignalPotential {
+                channel: SignalChannel::ChemicalGradient,
+                baseline_strength_permille: 900,
+            }],
+        };
+        let packet = compile_world(&world_input).unwrap();
+        let graph = build_environmental_opportunity_graph(&world_input, &packet).unwrap();
+        let candidate = build_macro_lineage_candidate(
+            &world_input,
+            &packet,
+            &graph,
+            [16; 32],
+            None,
+            [17; 32],
+            vec![graph.nodes[0].id],
+        )
+        .unwrap();
+
+        let input = forge.kernel_mut().put_object(packet.to_bytes().unwrap());
+        let output = forge.kernel_mut().put_object(candidate.to_bytes().unwrap());
+        forge.commit().unwrap();
+        let before = (
+            forge.kernel().object_count(),
+            forge.kernel().events().len(),
+            forge.kernel().candidate_count(),
+        );
+        let mut receipt = ProofReceiptRecord {
+            schema_version: 1,
+            receipt_id: String::new(),
+            system_id: "organism-ecology".into(),
+            proof_id: "macro-lineage-identity-occupancy-seam".into(),
+            status: "pass".into(),
+            failure_classification: None,
+            input_refs: vec![input],
+            fixture_id: "macro-lineage-binding-v1/one-opportunity-hypothesis".into(),
+            generator_versions: vec![NamedVersion {
+                name: "macro-lineage-binding".into(),
+                version: "1".into(),
+            }],
+            contract_versions: vec![
+                NamedVersion {
+                    name: "derived-world-rules".into(),
+                    version: "1".into(),
+                },
+                NamedVersion {
+                    name: "niche-graph-binding".into(),
+                    version: "1".into(),
+                },
+            ],
+            output_refs: vec![output],
+            equivalence_method: "exact deterministic candidate bytes".into(),
+            measurements: vec![
+                ProofMeasurement {
+                    name: "occupied_opportunity_count".into(),
+                    value: candidate.occupied_opportunity_ids.len().to_string(),
+                    unit: "opportunities".into(),
+                    method: "deterministic-binding".into(),
+                    classification: "simulated".into(),
+                },
+                ProofMeasurement {
+                    name: "body_region_fields_authored".into(),
+                    value: "0".into(),
+                    unit: "fields".into(),
+                    method: "strict-schema-inspection".into(),
+                    classification: "simulated".into(),
+                },
+            ],
+            warnings: vec![],
+            limitations: candidate.limitations.clone(),
+            created_at: "2026-07-15T00:00:00Z".into(),
+            runner_identity: "forge-desktop-macro-lineage-binding-test".into(),
+        };
+        receipt.receipt_id = canonical_proof_receipt_id(&receipt).unwrap();
+        forge.record_proof_receipt(&receipt).unwrap();
+        assert_eq!(
+            reference_studio_for(&forge, 1, 9010)
+                .unwrap()
+                .records
+                .proof_receipts,
+            vec![receipt]
+        );
+        assert_eq!(
+            before,
+            (
+                forge.kernel().object_count(),
+                forge.kernel().events().len(),
+                forge.kernel().candidate_count()
+            )
+        );
+    }
+
+    #[test]
+    fn addressable_world_binding_vector_persists_as_read_only_proof_receipt() {
+        use addressable_world_binding::bind_addressable_world_package;
+        use derived_world_rules::{
+            SignalChannel, SignalPotential, WorldGenerationInput, compile_world,
+        };
+        use forge_kernel::contracts::{NamedVersion, ProofMeasurement, ProofReceiptRecord};
+        use forge_kernel::persistence::canonical_proof_receipt_id;
+
+        let mut forge = PersistentForge::in_memory().unwrap();
+        let world_input = WorldGenerationInput {
+            schema_version: 1,
+            field_contract_version: field_basis::CONTRACT_VERSION,
+            reconstruction_id: [3; 32],
+            surface_material: surface_material_contract([3; 32]),
+            regional_environment: regional_environment_contract([3; 32]),
+            signal_potentials: vec![SignalPotential {
+                channel: SignalChannel::VisibleRadiance,
+                baseline_strength_permille: 900,
+            }],
+        };
+        let packet = compile_world(&world_input).unwrap();
+        let descriptor =
+            bind_addressable_world_package([9; 32], None, [10; 32], &world_input, &packet, vec![7])
+                .unwrap();
+
+        let input = forge.kernel_mut().put_object(packet.to_bytes().unwrap());
+        let output = forge
+            .kernel_mut()
+            .put_object(descriptor.encode_canonical().unwrap());
+        forge.commit().unwrap();
+        let before = (
+            forge.kernel().object_count(),
+            forge.kernel().events().len(),
+            forge.kernel().candidate_count(),
+        );
+        let mut receipt = ProofReceiptRecord {
+            schema_version: 1,
+            receipt_id: String::new(),
+            system_id: "lazy-universe-hierarchy".into(),
+            proof_id: "addressable-world-package-binding".into(),
+            status: "pass".into(),
+            failure_classification: None,
+            input_refs: vec![input],
+            fixture_id: "addressable-world-binding-v1/causal-packet-to-descriptor".into(),
+            generator_versions: vec![NamedVersion {
+                name: "addressable-world-binding".into(),
+                version: "1".into(),
+            }],
+            contract_versions: vec![
+                NamedVersion {
+                    name: "derived-world-rules".into(),
+                    version: "1".into(),
+                },
+                NamedVersion {
+                    name: "hierarchy-history".into(),
+                    version: hierarchy_history::CONTRACT_VERSION.to_string(),
+                },
+            ],
+            output_refs: vec![output],
+            equivalence_method: "exact canonical bytes".into(),
+            measurements: vec![
+                ProofMeasurement {
+                    name: "bound_signal_count".into(),
+                    value: packet.content.signals.len().to_string(),
+                    unit: "signals".into(),
+                    method: "deterministic-test-harness".into(),
+                    classification: "simulated".into(),
+                },
+                ProofMeasurement {
+                    name: "descriptor_recipe_bytes".into(),
+                    value: descriptor.recipe.len().to_string(),
+                    unit: "bytes".into(),
+                    method: "deterministic-test-harness".into(),
+                    classification: "simulated".into(),
+                },
+            ],
+            warnings: vec![],
+            limitations: vec![
+                "world_conditions_fingerprint is provenance-sensitive; no physical-only fingerprint exists for future dedup/cache consumers".into(),
+            ],
+            created_at: "2026-07-15T00:00:00Z".into(),
+            runner_identity: "forge-desktop-addressable-world-binding-test".into(),
         };
         receipt.receipt_id = canonical_proof_receipt_id(&receipt).unwrap();
         forge.record_proof_receipt(&receipt).unwrap();
@@ -2038,6 +2918,107 @@ mod tests {
         forge.record_proof_receipt(&receipt).unwrap();
         assert_eq!(
             reference_studio_for(&forge, 1, 9008)
+                .unwrap()
+                .records
+                .proof_receipts,
+            vec![receipt]
+        );
+        assert_eq!(
+            before,
+            (
+                forge.kernel().object_count(),
+                forge.kernel().events().len(),
+                forge.kernel().candidate_count()
+            )
+        );
+    }
+
+    #[test]
+    fn person_form_prerequisite_vector_persists_as_read_only_proof_receipt() {
+        use forge_kernel::contracts::{NamedVersion, ProofMeasurement, ProofReceiptRecord};
+        use forge_kernel::persistence::canonical_proof_receipt_id;
+        use person_form_eligibility::{
+            CapacityGrounding, PersonFormCapacity, PrerequisiteStatus, capacity_concept_id,
+            evaluate_person_form_prerequisites,
+        };
+        use semantic_construction::{Claim, ClaimClass};
+
+        let mut forge = PersistentForge::in_memory().unwrap();
+        let assessed_lineage_id = [9; 32];
+        let groundings = vec![CapacityGrounding {
+            capacity: PersonFormCapacity::Communication,
+            lineage_id: assessed_lineage_id,
+            claim: Claim {
+                id: [10; 32],
+                concept_id: capacity_concept_id(PersonFormCapacity::Communication),
+                class: ClaimClass::Hypothesis,
+                evidence_ref: [12; 32],
+            },
+        }];
+        let report =
+            evaluate_person_form_prerequisites(assessed_lineage_id, Some([13; 32]), &groundings);
+        assert_eq!(report.status, PrerequisiteStatus::IncompleteBindings);
+
+        let input = forge
+            .kernel_mut()
+            .put_object(serde_json::to_vec(&groundings).unwrap());
+        let output = forge
+            .kernel_mut()
+            .put_object(serde_json::to_vec(&report).unwrap());
+        forge.commit().unwrap();
+        let before = (
+            forge.kernel().object_count(),
+            forge.kernel().events().len(),
+            forge.kernel().candidate_count(),
+        );
+        let mut receipt = ProofReceiptRecord {
+            schema_version: 1,
+            receipt_id: String::new(),
+            system_id: "organism-ecology".into(),
+            proof_id: "person-form-comparative-prerequisite-contract".into(),
+            status: "pass".into(),
+            failure_classification: None,
+            input_refs: vec![input],
+            fixture_id: "person-form-eligibility-v1/partial-synthetic-prerequisites".into(),
+            generator_versions: vec![NamedVersion {
+                name: "person-form-eligibility".into(),
+                version: "1".into(),
+            }],
+            contract_versions: vec![NamedVersion {
+                name: "semantic-construction".into(),
+                version: "1".into(),
+            }],
+            output_refs: vec![output],
+            equivalence_method: "exact canonical bytes".into(),
+            measurements: vec![
+                ProofMeasurement {
+                    name: "structurally_bound_comparison_dimension_count".into(),
+                    value: report.bound_dimensions.len().to_string(),
+                    unit: "dimensions".into(),
+                    method: "deterministic-test-harness".into(),
+                    classification: "simulated".into(),
+                },
+                ProofMeasurement {
+                    name: "missing_comparison_dimension_count".into(),
+                    value: report.missing_dimensions.len().to_string(),
+                    unit: "dimensions".into(),
+                    method: "deterministic-test-harness".into(),
+                    classification: "simulated".into(),
+                },
+            ],
+            warnings: vec![],
+            limitations: vec![
+                "synthetic prerequisite contract only; no real macro-lineage or body-plan input exists yet".into(),
+                "structurally complete bindings would still require owning-module evidence validation before comparison and never mean person-form eligible".into(),
+                "no compatibility score, structural retrofit test, winning lineage, biological claim or content grammar".into(),
+            ],
+            created_at: "2026-07-15T00:00:00Z".into(),
+            runner_identity: "forge-desktop-person-form-eligibility-test".into(),
+        };
+        receipt.receipt_id = canonical_proof_receipt_id(&receipt).unwrap();
+        forge.record_proof_receipt(&receipt).unwrap();
+        assert_eq!(
+            reference_studio_for(&forge, 1, 9009)
                 .unwrap()
                 .records
                 .proof_receipts,

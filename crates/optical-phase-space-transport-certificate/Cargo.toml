@@ -1,0 +1,13 @@
+[package]
+name = "optical-phase-space-transport-certificate"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+fixed-interval-arithmetic = { path = "../fixed-interval-arithmetic" }
+optical-phase-space-cell-binding = { path = "../optical-phase-space-cell-binding" }
+physical-path-substrate = { path = "../physical-path-substrate" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"

@@ -26,8 +26,18 @@ Every canonical system advances only with a complete proof pack.
   authority-negative tests.
 - **Semantics/construction:** poison words, alternatives, causal explanation,
   connectivity, support, socket, collision, and recipe-replay tests.
+- **World/ecology:** physical causality, biome/niche coverage, deterministic
+  ecotone gradients, sharp-cause boundary retention, macro-lineage relation,
+  ecomorph diversity, unusual senses, person-form rejection, dimorphism, stable
+  cohorts, reversible adult-presentation lock, and no-old-age death tests.
+- **Aesthetics/palette:** material-cause precedence, macro-to-micro inheritance,
+  cross-biome fading without categorical visible seams, no blending through
+  physical discontinuities, harmony/tension readability, metric separation,
+  negative controls, anti-oatmeal variation, and candidate-versus-simple-baseline
+  tests.
 - **Asset/animation:** silhouette, recognisability, material boundaries,
-  topology, contact, articulation, LOD, and cost tests.
+  topology, contact, articulation, LOD identity, mobile/high-end simulated cost,
+  pixel fitness, phone-legible comparison, and bounded owner-observation tests.
 - **Forge/control:** source gap, authority forgery, replay, dependency stage,
   candidate quarantine, rollback, and recovery tests.
 

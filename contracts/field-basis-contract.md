@@ -17,4 +17,6 @@ bind cache keys. Cache contents remain disposable.
 The Rust CPU implementation is a correctness reference, not a production,
 visual-quality, GPU, SIMD, or engine-performance claim. Accelerated previews
 are non-canonical until exact or explicitly bounded semantic equivalence is
-proved. Cross-platform receipts remain required before `reference_proven`.
+proved. A same-Windows-host Python receipt independently reproduces committed
+Philox, recipe, hash and sample vectors, but it is not a second-platform
+receipt. Cross-platform receipts remain required before `reference_proven`.

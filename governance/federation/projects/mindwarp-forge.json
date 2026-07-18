@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "project-33deae303ed7d669d97c7fe3ab4507c15dc4e7aae54e3ac328b23e79f6a2f0fe",
+  "revision": 1,
+  "canonical_name": "Mindwarp Forge",
+  "aliases": ["Forge", "Mindwarp Forge"],
+  "repository_uri": "C:\\Users\\zakwm\\Desktop\\Mindwarp forge",
+  "bootstrap_uri": "AI_HANDOFF.md",
+  "authority_boundary": "Forge evidence, governance and production system; authority transitions remain owner-gated.",
+  "status": "active",
+  "related_project_ids": ["project-56b2c4780da98bfbaf216613c281ec28e2eb61a2a22733dee34c0efcba357349"],
+  "evidence_ids": ["owner-authorization:federated-continuity:2026-07-17"]
+}

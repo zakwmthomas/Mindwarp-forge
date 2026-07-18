@@ -166,3 +166,22 @@
   overflow: hidden;
   grid-template-rows: 46px minmax(0, 1fr);
 }
+
+.metrics-toolbar { display: flex; gap: 8px; margin: -8px 0 18px; flex-wrap: wrap; }
+.metrics-toolbar button.is-selected { border-color: var(--red); background: #32141a; }
+.metric-card-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.metric-card strong { display: block; margin: 14px 0 8px; font-size: clamp(1.5rem, 2.2vw, 2rem); overflow-wrap: normal; word-break: normal; }
+.metrics-progress .progress-track { display: block; width: 100%; margin: 18px 0; }
+.metric-recommendations { display: grid; gap: 12px; padding: 0; list-style: none; }
+.metric-recommendations li { padding: 16px; border: 1px solid var(--line); border-left: 3px solid var(--red); border-radius: 6px; background: #0b0d11; }
+.metric-recommendations strong, .metric-recommendations span { display: block; }
+.metric-recommendations span { margin-top: 7px; color: var(--muted); }
+.metrics-table-wrap { overflow-x: auto; }
+.metrics-table { width: 100%; border-collapse: collapse; }
+.metrics-table th, .metrics-table td { padding: 12px 10px; border-bottom: 1px solid var(--line); text-align: left; }
+.metrics-table th { color: var(--muted); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.metrics-token-breakdown { display: grid; grid-template-columns: minmax(160px, 240px) 1fr; gap: 10px; }
+.metrics-token-breakdown dd { margin: 0; }
+
+@media (max-width: 1050px) { .metric-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .metric-card-grid { grid-template-columns: 1fr; } .metrics-token-breakdown { grid-template-columns: 1fr; } }

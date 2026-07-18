@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "session_id": "019f6cc7-f99f-7781-81f9-88ef1d4b5121",
+  "revision": 1,
+  "state": "routed",
+  "candidate_project_ids": ["project-56b2c4780da98bfbaf216613c281ec28e2eb61a2a22733dee34c0efcba357349"],
+  "project_id": "project-56b2c4780da98bfbaf216613c281ec28e2eb61a2a22733dee34c0efcba357349",
+  "workstream_id": "greenfield-release-readiness",
+  "method": "explicit_owner_task_binding",
+  "confidence": 100,
+  "evidence_ids": ["codex-session:019f6cc7-f99f-7781-81f9-88ef1d4b5121"]
+}

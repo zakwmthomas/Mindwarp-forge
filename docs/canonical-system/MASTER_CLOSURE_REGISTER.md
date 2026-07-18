@@ -21,18 +21,20 @@ it needs retained evidence and its stated test gate.
 | B3 | Read-only Reference Studio proof inspector | Mutation-negative, source-gap, version/failure view tests | Verified: schema-versioned verified-local projection exposes empty, failure, blocker, rollback, source-gap, and version-mismatch states; hostile text is inert, full record/kernel counts remain unchanged, UI has refresh only, and the full Forge gate passes |
 | B4 | Worker telemetry and efficiency module | Append-only traced events, metric registry, recomputable projections, privacy/cardinality/Goodhart guards, read-only trends | Complete; v1 SQLite events, bounded registered metrics, deterministic advisory projection, replay/privacy/cardinality/sample/Goodhart fixtures, and full gate pass |
 | B5 | Federated Universal Improvement Kernel | Shared observation/hypothesis/experiment/result/rollback protocol; replay, local isolation, aggregate-masking, transfer-isolation, outage, and authority-negative tests | Complete; append-only local experiment/result/decision and transfer-gate records pass replay, isolation, semantic mismatch, aggregate masking, rollback, outage, schema, and authority-negative fixtures |
+| B6 | Federated project routing, indexed retrieval and lossless storage V1 | Project/workstream/session isolation, V4 preservation and indexed query, verified archive replay, managed inventory and preview-only cleanup tests | Complete: revisioned projects/workstreams, closed session routing, normalized V4 references, FTS5 filters/ranking, generation receipts, verified archives, Git-bound inventory, compact bootstrap and approval-negative cleanup plans pass 102 Kernel tests and the complete Forge gate; the owner accepted the independently reproduced V4 receipt as the live search baseline while V1-V3 retention and cleanup/deletion shields remain enforced |
 
 ## C. Canonical game foundations
 
 | ID | Fix | Closure gate | State |
 |---|---|---|---|
-| C1 | ProofReceipt storage binding | Owner decision plus contract/recovery tests | Owner-gated |
-| C2 | Universe identity policy | Fixed-vector/migration/collision tests | Design-gated |
-| C3 | Field numerical policy | Determinism/range/cache/poison tests | Depends on C2 |
-| C4 | Hierarchy/history semantics | Residency/delta/migration/corruption tests | Depends on C2-C3 |
-| C5 | Significance/scheduler | Pressure/cancellation/starvation/thrash tests | Depends on C4 |
-| C6 | Semantic/construction | Causal/diversity/replay/validator tests | Depends on C4 |
+| C1 | ProofReceipt storage binding and exact H7 dependency consumption | F5 provenance comparison, contract/recovery evidence, exact/generic/stale/superseded consumer tests | Verified: inherited owner gate consolidated into the implemented versioned projection; typed read-only H7 consumer fails closed and retains all non-claims |
+| C2 | Universe identity policy | Fixed-vector/migration/collision tests | Verified: approved logical/reconstruction split retained; seven focused tests and complete Forge gate pass; cross-platform and performance limits remain explicit |
+| C3 | Field numerical policy and causal derived-world contract | Determinism/range/cache/poison/causality/candidate-baseline tests | Executing. The residual-obligation audit confirms physical applicability remains evidence-blocked. The owner-approved result proves the selected evidence-preserving typed-boundary witness through one disposable independent ecotone oracle twice byte-identically: exact integer/Fraction arithmetic, separate semantic/audit digests, dimension-local outcomes, aligned refinement, seven real cell/edge enumeration modes, nineteen executable hostile families and the 65,536-cell/130,560-edge ceilings survive isolated stdlib proof. This is proof-tool evidence only. No canonical 2D material-interface join, blend scale, rendered-seam claim, schema, crate, dependency, production source, downstream consumer, runtime, promotion or C3 closure is authorized. |
+| C4 | Hierarchy/history semantics | Residency/delta/migration/corruption tests | Dependency-gated by C3: bounded addressable-world and lifecycle/history components retained; multi-batch replay and hostile stored-value defects repaired; full C4 closure remains open |
+| C5 | Significance/scheduler | Pressure/cancellation/starvation/thrash tests | Dependency-gated by C4: scheduler reference and four-domain fidelity fixture retained; full named-domain dispatch/budget proof remains open |
+| C6 | Semantic/construction and organism ecology | Causal/diversity/replay/validator tests | Dependency-gated by C4-C5: repaired prototypes now reject forged causal inputs and report person-form structural bindings only; full niches, body plans, physiology, species/ecomorphs, comparison, dimorphism and aesthetic grammar remain open |
 | C7 | Representation/assets/animation | Structural/temporal/perception/repair tests | Depends on C5-C6 |
+| G1-CLOSEOUT | Whole-chain promotion readiness | Replay/integration/recovery/quality-diversity/visual/simulated-fidelity proof | Depends on C3-C7 |
 
 ## Operating rule
 

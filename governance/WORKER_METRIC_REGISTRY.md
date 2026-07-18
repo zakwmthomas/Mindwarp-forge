@@ -22,3 +22,20 @@ No metric is valid until it has all fields below.
 
 All metrics are advisory, carry `insufficient_sample` until their threshold,
 and link to event references rather than raw prompts, paths, or free text.
+
+## Registered raw observations
+
+Raw observations are inputs to the derived metrics above, not productivity
+scores. Their registry definitions are:
+
+| Observation | Unit | Valid source | Interpretation guard |
+|---|---|---|---|
+| input, cached-input, output, reasoning-output, total tokens | tokens | exact local Codex cumulative-counter delta across one session/batch boundary | cached input is a subset of input and is never added twice; missing/reset counters are unknown |
+| wall, active, machine, idle/recovery, owner-wait duration | milliseconds | registered wrapper or explicit worker boundary | external wait remains separate from active work |
+| planned, completed, verified criteria | count | canonical structured batch criteria | only verified criteria contribute to progress |
+| applicable, passed, failed gates | count | registered verification receipt | splitting a test does not improve coverage |
+| repair loops, interruptions | count | retained batch/run event | discovery and legitimate falsification remain visible context |
+
+Every raw observation carries a versioned measurement source. Routine-run
+comparison additionally requires matching run definition, module, platform and
+verification scope. Currency cost is not registered in v1.

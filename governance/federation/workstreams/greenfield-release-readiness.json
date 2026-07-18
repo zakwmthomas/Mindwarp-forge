@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "greenfield-release-readiness",
+  "project_id": "project-56b2c4780da98bfbaf216613c281ec28e2eb61a2a22733dee34c0efcba357349",
+  "title": "Greenfield Android release readiness",
+  "stage": "verification",
+  "status": "blocked",
+  "authority_lane": "immediate_authorization",
+  "dependencies": [],
+  "blockers": ["owner-controlled-release-steps"],
+  "checkpoint_uri": "C:\\Users\\zakwm\\CascadeProjects\\greenfield\\docs\\RELEASE_AUDIT_2026-07-17.md",
+  "next_action": "Owner completes the release checklist and owner-controlled publishing steps.",
+  "revision": 1,
+  "lease": null,
+  "evidence_ids": ["codex-session:019f6cc7-f99f-7781-81f9-88ef1d4b5121"]
+}

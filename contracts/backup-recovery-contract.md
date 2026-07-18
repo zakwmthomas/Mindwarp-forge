@@ -21,3 +21,7 @@ wrong-count artifacts fail closed and never replace the live journal.
 A backup failure must return an error rather than claim recovery is possible.
 The module has no network, deletion, approval, promotion, code-execution, or
 external-publishing authority.
+
+Verified lossless cold copies may additionally be created under
+`storage-archive-contract.md`. Archive creation never replaces this online
+backup receipt, deletes the original backup or restores over the live journal.

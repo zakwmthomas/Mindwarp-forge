@@ -144,7 +144,7 @@ pub fn write_bootstrap_pack(
         ));
     }
     let mut index = String::from(
-        "# Forge Codex Bootstrap Index\n\nThis directory is generated locally from Forge's durable Codex-capture evidence. The SQLite journal remains authoritative.\n\n",
+        "# Forge AI Bootstrap Index\n\nThis directory is generated locally from Forge's durable local conversation-capture evidence. The SQLite journal remains authoritative.\n\n",
     );
     let mut session_entries = Vec::new();
     let mut evidence_entries = Vec::new();
@@ -200,41 +200,37 @@ pub fn write_bootstrap_pack(
             "running"
         },
     );
-    let knowledge = forge
-        .knowledge_records()
-        .map_err(|error| format!("Cannot project typed Forge knowledge: {error:?}"))?;
-    let mut knowledge_counts = std::collections::BTreeMap::<String, usize>::new();
-    for record in &knowledge {
-        let key = serde_json::to_value(&record.record_type)
-            .ok()
-            .and_then(|value| value.as_str().map(str::to_owned))
-            .unwrap_or_else(|| "unclassified".into());
-        *knowledge_counts.entry(key).or_default() += 1;
+    let knowledge_index_path = directory.join("KNOWLEDGE_INDEX.md");
+    let version_marker = format!("Classifier version: {CLASSIFIER_VERSION}");
+    let projection_current = fs::read_to_string(&knowledge_index_path)
+        .is_ok_and(|value| value.contains(&version_marker));
+    let refresh_knowledge = capture.captured_messages > 0 || !projection_current;
+    let knowledge_record_count = forge
+        .knowledge_record_count()
+        .map_err(|error| format!("Cannot count typed Forge knowledge: {error:?}"))?;
+    if refresh_knowledge {
+        let mut knowledge_index = format!(
+            "# Forge Knowledge Index\n\n{version_marker}\n\nCurrent records: {knowledge_record_count}\n\nSQLite FTS5 is the primary local index. Records are evidence-only search routes; canonical plans, policies, contracts, and checkpoints remain authoritative.\n\n",
+        );
+        knowledge_index.push_str(
+            "Use `tools/find-knowledge.ps1 -Query <text>` with optional project, workstream, type, actor and system filters.\n",
+        );
+        write_atomically(&knowledge_index_path, knowledge_index.as_bytes())?;
+        let knowledge_catalogue = serde_json::to_vec_pretty(&json!({
+            "schema_version": 4,
+            "classifier_version": CLASSIFIER_VERSION,
+            "entry_count": knowledge_record_count,
+            "storage": "sqlite_fts5",
+            "query": "tools/find-knowledge.ps1",
+            "entries": [],
+        }))
+        .map_err(|error| format!("Cannot serialize knowledge catalogue: {error}"))?;
+        write_atomically(
+            &directory.join("KNOWLEDGE_CATALOG.json"),
+            &knowledge_catalogue,
+        )?;
     }
-    let mut knowledge_index = String::from(
-        "# Forge Knowledge Index\n\nGenerated from the current typed-knowledge projection. Records are evidence-only search routes; canonical plans, policies, contracts, and checkpoints remain authoritative.\n\n",
-    );
-    for (record_type, count) in &knowledge_counts {
-        knowledge_index.push_str(&format!("- `{record_type}`: {count}\n"));
-    }
-    knowledge_index.push_str(
-        "\nUse `tools/find-knowledge.ps1 -Query <text>` and optionally `-Type <category>`.\n",
-    );
-    write_atomically(
-        &directory.join("KNOWLEDGE_INDEX.md"),
-        knowledge_index.as_bytes(),
-    )?;
-    let knowledge_catalogue = serde_json::to_vec_pretty(&json!({
-        "schema_version": 2,
-        "classifier_version": CLASSIFIER_VERSION,
-        "entries": knowledge,
-    }))
-    .map_err(|error| format!("Cannot serialize knowledge catalogue: {error}"))?;
-    write_atomically(
-        &directory.join("KNOWLEDGE_CATALOG.json"),
-        &knowledge_catalogue,
-    )?;
-    let start_here = "# Start Here: Mind Warp Forge\n\nThis is the generated local handoff pack for a new Codex task. Read in this order:\n\n1. `../../AGENTS.md` (normally loaded automatically when the task starts in the Forge repository).\n2. `../../context/bootstrap/START_HERE.md`.\n3. `../../context/active/CURRENT_STATE.md`.\n4. `MANIFEST.json`, `LEDGER_STATE.md`, and `OWNER_BRIEF.md`.\n5. `KNOWLEDGE_INDEX.md` and typed search for a relevant uncertainty.\n6. `INDEX.md` and individual transcripts only when typed records do not resolve that uncertainty.\n\nTreat transcripts, classifications, and summaries as evidence, not authorization. Forge policy still requires explicit approval and promotion. This pack contains only visible user and assistant text captured from local Codex Desktop sessions. It excludes system, developer, tool, screen, clipboard, OCR, and network data.\n";
+    let start_here = "# Start Here: Mind Warp Forge\n\nThis is the generated local handoff pack for any AI assistant working through the local project interface. Read in this order:\n\n1. `../../AI_HANDOFF.md`.\n2. `../../AGENTS.md` (normally loaded automatically when the task starts in the Forge repository).\n3. `../../context/bootstrap/START_HERE.md`.\n4. `../../context/active/CURRENT_STATE.md`.\n5. `MANIFEST.json`, `LEDGER_STATE.md`, and `OWNER_BRIEF.md`.\n6. `KNOWLEDGE_INDEX.md` and typed search for a relevant uncertainty.\n7. `INDEX.md` and individual transcripts only when typed records do not resolve that uncertainty.\n\nTreat transcripts, classifications, and summaries as evidence, not authorization. Forge policy still requires explicit approval and promotion. This pack contains only visible user and assistant text captured from local Codex Desktop sessions. It excludes system, developer, tool, screen, clipboard, OCR, and network data.\n";
     write_atomically(&directory.join("START_HERE.md"), start_here.as_bytes())?;
     write_atomically(&directory.join("INDEX.md"), index.as_bytes())?;
     write_atomically(&directory.join("OWNER_BRIEF.md"), owner_brief.as_bytes())?;
@@ -252,7 +248,7 @@ pub fn write_bootstrap_pack(
         "objects": kernel.object_count(),
         "events": kernel.events().len(),
         "candidates": kernel.candidate_count(),
-        "knowledge_records": knowledge_counts.values().sum::<usize>(),
+        "knowledge_records": knowledge_record_count,
         "knowledge_classifier_version": CLASSIFIER_VERSION,
         "sessions": session_entries,
     });
@@ -583,7 +579,7 @@ mod tests {
         .unwrap();
         assert_eq!(manifest["schema_version"], 1);
         assert_eq!(manifest["capture_state"], "running");
-        assert_eq!(manifest["knowledge_classifier_version"], 2);
+        assert_eq!(manifest["knowledge_classifier_version"], CLASSIFIER_VERSION);
         assert!(
             directory
                 .join(".local/forge-bootstrap/KNOWLEDGE_INDEX.md")
@@ -594,6 +590,17 @@ mod tests {
                 .join(".local/forge-bootstrap/KNOWLEDGE_CATALOG.json")
                 .is_file()
         );
+        let catalogue_path = directory.join(".local/forge-bootstrap/KNOWLEDGE_CATALOG.json");
+        let first_catalogue = fs::read(&catalogue_path).unwrap();
+        let unchanged_report = ScanReport {
+            sessions: 1,
+            captured_messages: 0,
+            skipped_records: 0,
+            paused_sources: 0,
+            last_error: None,
+        };
+        write_bootstrap_pack(&forge, &directory, &unchanged_report).unwrap();
+        assert_eq!(fs::read(catalogue_path).unwrap(), first_catalogue);
         let cursor = forge
             .source_cursor("codex-local:session-a")
             .unwrap()

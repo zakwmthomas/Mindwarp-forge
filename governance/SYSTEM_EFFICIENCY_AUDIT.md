@@ -83,3 +83,41 @@ it toward the estimate; if it is materially longer than a short verified batch,
 decrease it toward the estimate. After the batch, record actual duration and
 estimate error. Future cadence changes must use this estimate-versus-actual
 history, not intuition alone.
+
+## 2026-07-18 token-efficiency control
+
+Baseline: the calibrated source-energy readiness package used nine specialist
+audits across two waves. The first wave found a material axis/path mismatch;
+parts of the second wave repeated already-converged ownership and gate evidence.
+Integration then updated many historical C3 prose matchers, and one missed
+matcher forced a second complete Forge gate.
+
+Adopted operating defaults under P8 and P10:
+
+- use one parent writer and zero subagents by default;
+- use at most two concurrent read-only specialists only for distinct unresolved
+  questions whose expected information gain exceeds their context/token cost;
+- never ask two specialists for the same inventory or broad review;
+- give specialists exact files, stop conditions and compact return schemas;
+- keep specialist output in the parent result unless it establishes a distinct
+  reusable evidence class;
+- run the smallest focused gate set, then a programmatic route-shield inventory,
+  then one complete Forge gate after the package is stable; and
+- retain concise checksums, counts, timings and failure classifications instead
+  of repeating raw logs in chat or canonical records.
+
+Expected gain: materially fewer duplicated model tokens, startup/context reads,
+chat narration and full-gate retries while preserving the same owner, hostile,
+platform and complete-integration evidence. Recurring cost is one short
+parallel-value decision and one route inventory per material transition.
+
+Regression guard: no reduced bootstrap authority, hostile coverage, platform
+gate, complete Forge gate, owner boundary or provenance requirement. If a
+single-worker package misses a material contradiction that bounded independent
+review would probably have found, restore one targeted specialist for that
+risk class.
+
+Deferred high-gain candidate: replace repeated historical C3 prose wildcards
+with one typed, versioned route/checkpoint compatibility helper and migrate
+verifiers incrementally. Do not combine that governance refactor with the
+active source-energy implementation; it needs its own fixtures and rollback.

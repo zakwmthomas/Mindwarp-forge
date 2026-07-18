@@ -1,0 +1,19 @@
+[package]
+name = "optical-phase-space-dimensionless-transfer"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+optical-phase-space-receiver-coupling = { path = "../optical-phase-space-receiver-coupling" }
+optical-phase-space-transport-certificate = { path = "../optical-phase-space-transport-certificate" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+visible-radiance-bulk-transfer = { path = "../visible-radiance-bulk-transfer" }
+
+[dev-dependencies]
+fixed-interval-arithmetic = { path = "../fixed-interval-arithmetic" }
+optical-phase-space-cell-binding = { path = "../optical-phase-space-cell-binding" }
+physical-path-substrate = { path = "../physical-path-substrate" }
+receiver-arrival-geometry-binding = { path = "../receiver-arrival-geometry-binding" }

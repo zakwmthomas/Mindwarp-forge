@@ -1,31 +1,42 @@
 param(
-  [string]$Query = '',
+  [Parameter(Mandatory=$true)][ValidateNotNullOrEmpty()][string]$Query,
+  [string]$Project = 'any',
+  [string]$Workstream = 'any',
+  [string]$Entity = 'any',
   [ValidateSet('any','idea','plan','decision','task','research','correction','philosophy','requirement','constraint','preference','risk','question','observation','context')]
   [string]$Type = 'any',
+  [string]$System = 'any',
   [ValidateSet('any','captured_user','assistant','direct_project_user','imported_content','external_tool','system','legacy_unknown')]
   [string]$Actor = 'any',
-  [ValidateRange(1,100)]
-  [int]$Limit = 20
+  [ValidateSet('any','detected','triaged','awaiting_owner','approved','promoted','superseded','rejected','archived')]
+  [string]$State = 'any',
+  [ValidateRange(1,500)][int]$Limit = 20,
+  [string]$Database = ''
 )
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
-$cataloguePath = Join-Path $root '.local\forge-bootstrap\KNOWLEDGE_CATALOG.json'
-if (!(Test-Path -LiteralPath $cataloguePath)) {
-  throw 'Typed knowledge catalogue is unavailable. Run tools/ensure-context-current.ps1 with the current Forge build.'
+if ([string]::IsNullOrWhiteSpace($Database)) {
+  $Database = Join-Path ([Environment]::GetFolderPath('ApplicationData')) 'com.mindwarp.forge\forge.sqlite3'
 }
-$catalogue = Get-Content -LiteralPath $cataloguePath -Raw | ConvertFrom-Json
-if ($catalogue.schema_version -ne 2 -or $catalogue.classifier_version -lt 2) {
-  throw 'Typed knowledge catalogue is stale or unsupported.'
+if (!(Test-Path -LiteralPath $Database)) {
+  throw "Forge knowledge database was not found: $Database"
 }
-$entries = @($catalogue.entries)
-if ($Type -ne 'any') { $entries = @($entries | Where-Object record_type -eq $Type) }
-if ($Actor -ne 'any') { $entries = @($entries | Where-Object source_actor -eq $Actor) }
-if (![string]::IsNullOrWhiteSpace($Query)) {
-  $escaped = [regex]::Escape($Query)
-  $entries = @($entries | Where-Object { $_.title -match $escaped -or $_.summary -match $escaped })
+$arguments = @($Query, '--database', $Database, '--limit', [string]$Limit)
+if ($Project -ne 'any') { $arguments += @('--project', $Project) }
+if ($Workstream -ne 'any') { $arguments += @('--workstream', $Workstream) }
+if ($Entity -ne 'any') { $arguments += @('--entity', $Entity) }
+if ($Type -ne 'any') { $arguments += @('--type', $Type) }
+if ($System -ne 'any') { $arguments += @('--system', $System) }
+if ($Actor -ne 'any') { $arguments += @('--actor', $Actor) }
+if ($State -ne 'any') { $arguments += @('--state', $State) }
+$binary = Join-Path $root 'target\debug\forge-query.exe'
+if (Test-Path -LiteralPath $binary) {
+  $json = & $binary @arguments
+} else {
+  $json = & cargo run --quiet -p forge-kernel --bin forge-query -- @arguments
 }
-$entries |
-  Sort-Object classifier_confidence -Descending |
-  Select-Object -First $Limit record_type,source_actor,classifier_confidence,title,summary,source_evidence_ids |
+if ($LASTEXITCODE -ne 0) { throw 'Indexed knowledge query failed.' }
+$records = ($json -join "`n") | ConvertFrom-Json
+@($records) |
+  Select-Object project_refs,workstream_refs,entity_refs,system_refs,lifecycle_state,source_actor,title,summary,source_session_id |
   Format-Table -Wrap -AutoSize
-

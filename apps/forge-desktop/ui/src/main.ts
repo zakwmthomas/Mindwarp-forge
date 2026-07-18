@@ -164,12 +164,59 @@ type OwnerDashboardSnapshot = {
   health: { label: string; summary: string; repository: string; integrity: string; authority: string };
 };
 
+type MetricsDashboardSnapshot = {
+  schema_version: number;
+  read_only: boolean;
+  current: {
+    batch_id: string;
+    state: string;
+    substage_id: string;
+    objective: string;
+    verified_criteria: number;
+    total_criteria: number;
+    criteria: { id: string; label: string; status: string; evidence_ids: string[] }[];
+  };
+  projection: {
+    schema_version: number;
+    read_only: boolean;
+    event_count: number;
+    completed_batches: number;
+    verified_batches: number;
+    failed_or_blocked_batches: number;
+    rework_events: number;
+    verified_closure_percent: number | null;
+    sample_state: string;
+    data_completeness_percent: number | null;
+    measured_wall_time_ms: number | null;
+    token_usage: {
+      input_tokens: number | null;
+      cached_input_tokens: number | null;
+      output_tokens: number | null;
+      reasoning_output_tokens: number | null;
+      total_tokens: number | null;
+    };
+    recent_runs: {
+      run_id: string;
+      definition_id: string;
+      batch_id: string;
+      module_id: string;
+      verification_scope: string;
+      started_at_ms: number;
+      ended_at_ms: number;
+      duration_ms: number;
+      outcome: string;
+      evidence_ids: string[];
+    }[];
+    recommendations: { code: string; state: string; title: string; reason: string; evidence_ids: string[] }[];
+  };
+};
+
 type AuthorizationReceipt = { action: string; candidate_id: string; event_id: string };
 
 type CodePreview = { candidate: string; relative_path: string; language: string; code: string; code_object: string };
 type AppliedCodeReceipt = { candidate_id: string; path: string; event_id: string };
 type WorkspaceFile = { relative_path: string; bytes: number; sha256: string };
-type KnowledgeRecord = { id: string; record_type: string; state: string; title: string; summary: string; source_evidence_ids: string[]; source_actor: string; classifier_confidence: number; authority_lane: string };
+type KnowledgeRecord = { id: string; record_type: string; facet_types: string[]; system_refs: string[]; state: string; title: string; summary: string; source_evidence_ids: string[]; source_actor: string; classifier_confidence: number; authority_lane: string };
 type ForgeSnapshot = { schema_version: number; revision: string; read_only: boolean; master_program: { items: { id: string; status: string }[] }; active_checkpoint: { batch_id: string; next_action: string }; atlas: ProjectAtlas; knowledge_records: KnowledgeRecord[] };
 
 const statusElement = document.querySelector<HTMLParagraphElement>("#status");
@@ -177,10 +224,29 @@ const knowledgeSummary = document.querySelector<HTMLParagraphElement>("#knowledg
 const knowledgeList = document.querySelector<HTMLOListElement>("#knowledge-list");
 const refreshKnowledge = document.querySelector<HTMLButtonElement>("#refresh-knowledge");
 const knowledgeSearch = document.querySelector<HTMLInputElement>("#knowledge-search");
+const knowledgeSystem = document.createElement("select");
+knowledgeSystem.id = "knowledge-system-filter";
+knowledgeSystem.setAttribute("aria-label", "Project area");
+for (const [value, label] of [
+  ["any", "All project areas"],
+  ["forge-kernel", "Forge core and storage"],
+  ["conversation-capture", "Conversation and classification"],
+  ["task-bootstrap", "Continuity and handoff"],
+  ["forge-dashboard", "Forge interface and search"],
+  ["canonical-production-system", "Production system and world generation"],
+  ["mindwarp-game", "Mind Warp game and platforms"],
+]) {
+  const option = document.createElement("option");
+  option.value = value;
+  option.textContent = label;
+  knowledgeSystem.append(option);
+}
+knowledgeSearch?.closest("label")?.insertAdjacentElement("afterend", knowledgeSystem);
 const knowledgeMore = document.querySelector<HTMLParagraphElement>("#knowledge-more");
 const knowledgeFilters = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-knowledge-filter]"));
 let currentKnowledge: KnowledgeRecord[] = [];
 let currentKnowledgeFilter = "none";
+let currentKnowledgeSystem = "any";
 let currentKnowledgeSearch = "";
 let currentOwnerAction: OwnerAction | null = null;
 let currentReviewStep = 0;
@@ -292,8 +358,32 @@ const workOpenAction = document.querySelector<HTMLButtonElement>("#work-open-act
 const evidenceOwnerSummary = document.querySelector<HTMLParagraphElement>("#evidence-owner-summary");
 const captureChip = document.querySelector<HTMLElement>("#capture-chip");
 const workCount = document.querySelector<HTMLElement>("#work-count");
+const refreshMetrics = document.querySelector<HTMLButtonElement>("#refresh-metrics");
+const metricsProgressTitle = document.querySelector<HTMLElement>("#metrics-progress-title");
+const metricsProgressLabel = document.querySelector<HTMLElement>("#metrics-progress-label");
+const metricsProgressFill = document.querySelector<HTMLElement>("#metrics-progress-fill");
+const metricsObjective = document.querySelector<HTMLElement>("#metrics-objective");
+const metricsCriteria = document.querySelector<HTMLUListElement>("#metrics-criteria");
+const metricTotalTokens = document.querySelector<HTMLElement>("#metric-total-tokens");
+const metricTokenDetail = document.querySelector<HTMLElement>("#metric-token-detail");
+const metricWallTime = document.querySelector<HTMLElement>("#metric-wall-time");
+const metricClosure = document.querySelector<HTMLElement>("#metric-closure");
+const metricClosureDetail = document.querySelector<HTMLElement>("#metric-closure-detail");
+const metricCompleteness = document.querySelector<HTMLElement>("#metric-completeness");
+const metricRecommendations = document.querySelector<HTMLUListElement>("#metric-recommendations");
+const metricRunRows = document.querySelector<HTMLTableSectionElement>("#metric-run-rows");
+const metricsEmptyRuns = document.querySelector<HTMLElement>("#metrics-empty-runs");
+const metricsModuleFilter = document.querySelector<HTMLSelectElement>("#metrics-module-filter");
+const metricsTechnicalSummary = document.querySelector<HTMLElement>("#metrics-technical-summary");
+const metricInputTokens = document.querySelector<HTMLElement>("#metric-input-tokens");
+const metricCachedTokens = document.querySelector<HTMLElement>("#metric-cached-tokens");
+const metricOutputTokens = document.querySelector<HTMLElement>("#metric-output-tokens");
+const metricReasoningTokens = document.querySelector<HTMLElement>("#metric-reasoning-tokens");
+const metricsRangeButtons = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-metrics-range]"));
 const navButtons = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-nav]"));
 const pages = Array.from(document.querySelectorAll<HTMLElement>("[data-page]"));
+let currentMetrics: MetricsDashboardSnapshot | null = null;
+let currentMetricsRange = "today";
 
 function navigate(pageName: string): void {
   const destination = pages.find((page) => page.dataset.page === pageName);
@@ -338,7 +428,7 @@ function friendlyRecordTitle(record: KnowledgeRecord): string {
   const withoutReceipt = record.title
     .replace(/^BOOTSTRAP RECEIPT\s*[—-]?\s*/i, "")
     .replace(/^Active objective:\s*/i, "");
-  return shorten(withoutReceipt || `${record.record_type} record`, 110);
+  return shorten(withoutReceipt || `${record.facet_types.join(" / ")} record`, 110);
 }
 
 function renderKnowledge(): void {
@@ -347,17 +437,22 @@ function renderKnowledge(): void {
     ? []
     : currentKnowledgeFilter === "all"
     ? currentKnowledge
-    : currentKnowledge.filter((record) => record.record_type === currentKnowledgeFilter);
+    : currentKnowledge.filter((record) => record.facet_types.includes(currentKnowledgeFilter));
   const query = currentKnowledgeSearch.toLocaleLowerCase();
-  const searchPool = query && currentKnowledgeFilter === "none" ? currentKnowledge : filteredByType;
+  const filteredBySystem = currentKnowledgeSystem === "any"
+    ? filteredByType
+    : filteredByType.filter((record) => record.system_refs.includes(currentKnowledgeSystem));
+  const searchPool = query && currentKnowledgeFilter === "none"
+    ? currentKnowledge.filter((record) => currentKnowledgeSystem === "any" || record.system_refs.includes(currentKnowledgeSystem))
+    : filteredBySystem;
   const matches = query
-    ? searchPool.filter((record) => `${record.title} ${record.summary}`.toLocaleLowerCase().includes(query))
+    ? searchPool.filter((record) => `${record.title} ${record.summary} ${record.system_refs.join(" ")}`.toLocaleLowerCase().includes(query))
     : filteredByType;
   const visible = matches.slice(0, 30);
   knowledgeList.replaceChildren(...visible.map((record) => {
     const item = document.createElement("li");
     const heading = document.createElement("strong");
-    heading.textContent = `${record.record_type.toUpperCase()} — ${friendlyRecordTitle(record)}`;
+    heading.textContent = `${record.facet_types.join(" + ").toUpperCase()} — ${friendlyRecordTitle(record)}`;
     const detail = document.createElement("p");
     detail.textContent = shorten(record.summary, 240);
     const technical = document.createElement("details");
@@ -365,7 +460,7 @@ function renderKnowledge(): void {
     const summary = document.createElement("summary");
     summary.textContent = "Technical details";
     const exact = document.createElement("p");
-    exact.textContent = `Record ${record.id}; source ${record.source_actor}; state ${record.state}; authority ${record.authority_lane}; evidence links ${record.source_evidence_ids.length}.`;
+    exact.textContent = `Record ${record.id}; systems ${record.system_refs.join(", ") || "unscoped"}; source ${record.source_actor}; state ${record.state}; authority ${record.authority_lane}; evidence links ${record.source_evidence_ids.length}.`;
     technical.append(summary, exact);
     item.append(heading, detail, technical);
     return item;
@@ -399,6 +494,10 @@ knowledgeFilters.forEach((button) => button.addEventListener("click", () => {
 }));
 knowledgeSearch?.addEventListener("input", () => {
   currentKnowledgeSearch = knowledgeSearch.value;
+  renderKnowledge();
+});
+knowledgeSystem.addEventListener("change", () => {
+  currentKnowledgeSystem = knowledgeSystem.value;
   renderKnowledge();
 });
 
@@ -476,6 +575,104 @@ deferAction?.addEventListener("click", () => {
   if (homeAttention) homeAttention.textContent = "Your action is still safely waiting; nothing was approved or advanced.";
 });
 workOpenAction?.addEventListener("click", openCurrentOwnerAction);
+
+function metricNumber(value: number | null): string {
+  return value === null ? "Unknown" : new Intl.NumberFormat().format(value);
+}
+
+function metricDuration(value: number | null): string {
+  if (value === null) return "Unknown";
+  const seconds = Math.round(value / 1000);
+  if (seconds < 60) return `${seconds}s`;
+  const minutes = Math.floor(seconds / 60);
+  return `${minutes}m ${seconds % 60}s`;
+}
+
+function metricsCutoff(): number {
+  const now = new Date();
+  if (currentMetricsRange === "all") return 0;
+  if (currentMetricsRange === "today") return new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+  const days = currentMetricsRange === "7d" ? 7 : 30;
+  return now.getTime() - days * 24 * 60 * 60 * 1000;
+}
+
+function renderMetricsRuns(): void {
+  if (!currentMetrics || !metricRunRows || !metricsEmptyRuns) return;
+  const moduleFilter = metricsModuleFilter?.value ?? "all";
+  const runs = currentMetrics.projection.recent_runs.filter((run) =>
+    run.ended_at_ms >= metricsCutoff() && (moduleFilter === "all" || run.module_id === moduleFilter));
+  metricRunRows.replaceChildren();
+  for (const run of runs) {
+    const row = document.createElement("tr");
+    for (const value of [run.definition_id, run.module_id, run.verification_scope, metricDuration(run.duration_ms), run.outcome.toUpperCase()]) {
+      const cell = document.createElement("td");
+      cell.textContent = value;
+      row.append(cell);
+    }
+    metricRunRows.append(row);
+  }
+  metricsEmptyRuns.textContent = runs.length ? "" : "No measured routine runs match this range and module. Unknown history is not treated as zero activity.";
+}
+
+function renderMetrics(snapshot: MetricsDashboardSnapshot): void {
+  currentMetrics = snapshot;
+  const current = snapshot.current;
+  const projection = snapshot.projection;
+  const progress = current.total_criteria ? Math.round((current.verified_criteria / current.total_criteria) * 100) : 0;
+  if (metricsProgressTitle) metricsProgressTitle.textContent = `${current.batch_id} · ${current.state}`;
+  if (metricsProgressLabel) metricsProgressLabel.textContent = `${current.verified_criteria} OF ${current.total_criteria} VERIFIED`;
+  if (metricsProgressFill) metricsProgressFill.style.width = `${progress}%`;
+  if (metricsObjective) metricsObjective.textContent = current.objective;
+  if (metricsCriteria) {
+    metricsCriteria.replaceChildren();
+    for (const criterion of current.criteria) {
+      const item = document.createElement("li");
+      item.textContent = `${criterion.status.toUpperCase()} — ${criterion.label}`;
+      metricsCriteria.append(item);
+    }
+  }
+  if (metricTotalTokens) metricTotalTokens.textContent = projection.token_usage.total_tokens === null ? "UNKNOWN" : metricNumber(projection.token_usage.total_tokens);
+  if (metricTokenDetail) metricTokenDetail.textContent = projection.token_usage.total_tokens === null ? "Awaiting an exact session and batch boundary." : "Exact locally reported batch deltas; cached input is a subset, not added twice.";
+  if (metricWallTime) metricWallTime.textContent = metricDuration(projection.measured_wall_time_ms).toUpperCase();
+  if (metricClosure) metricClosure.textContent = projection.verified_closure_percent === null ? "NO SAMPLE" : `${projection.verified_closure_percent}%`;
+  if (metricClosureDetail) metricClosureDetail.textContent = `${projection.verified_batches} verified of ${projection.completed_batches} completed batches; ${projection.rework_events} retained rework events.`;
+  if (metricCompleteness) metricCompleteness.textContent = projection.data_completeness_percent === null ? "NO SAMPLE" : `${projection.data_completeness_percent}%`;
+  if (metricInputTokens) metricInputTokens.textContent = metricNumber(projection.token_usage.input_tokens);
+  if (metricCachedTokens) metricCachedTokens.textContent = metricNumber(projection.token_usage.cached_input_tokens);
+  if (metricOutputTokens) metricOutputTokens.textContent = metricNumber(projection.token_usage.output_tokens);
+  if (metricReasoningTokens) metricReasoningTokens.textContent = metricNumber(projection.token_usage.reasoning_output_tokens);
+  if (metricsTechnicalSummary) metricsTechnicalSummary.textContent = `Read-only projection schema ${projection.schema_version}; ${projection.event_count} bounded events; sample state ${projection.sample_state}. Values are local evidence and cannot grant authority.`;
+  if (metricRecommendations) {
+    metricRecommendations.replaceChildren();
+    for (const recommendation of projection.recommendations) {
+      const item = document.createElement("li");
+      const title = document.createElement("strong");
+      title.textContent = `${recommendation.state.toUpperCase()} — ${recommendation.title}`;
+      const reason = document.createElement("span");
+      reason.textContent = recommendation.reason;
+      item.append(title, reason);
+      metricRecommendations.append(item);
+    }
+  }
+  if (metricsModuleFilter) {
+    const selected = metricsModuleFilter.value;
+    const modules = [...new Set(projection.recent_runs.map((run) => run.module_id))].sort();
+    metricsModuleFilter.replaceChildren(new Option("All modules", "all"), ...modules.map((module) => new Option(module, module)));
+    metricsModuleFilter.value = modules.includes(selected) ? selected : "all";
+  }
+  renderMetricsRuns();
+}
+
+async function loadMetrics(): Promise<void> {
+  try {
+    const cutoff = metricsCutoff();
+    renderMetrics(await invokeForge<MetricsDashboardSnapshot>("metrics_dashboard_snapshot", {
+      sinceMs: cutoff === 0 ? null : cutoff,
+    }));
+  } catch (error) {
+    if (metricsTechnicalSummary) metricsTechnicalSummary.textContent = `Metrics are unavailable: ${String(error)}`;
+  }
+}
 
 async function loadStatus(): Promise<void> {
   if (!statusElement) return;
@@ -893,6 +1090,13 @@ referenceObservationForm?.addEventListener("submit", async (event) => {
 });
 refreshAtlas?.addEventListener("click", () => void loadAtlas());
 refreshOperating?.addEventListener("click", () => void loadOperating());
+refreshMetrics?.addEventListener("click", () => void loadMetrics());
+metricsModuleFilter?.addEventListener("change", renderMetricsRuns);
+metricsRangeButtons.forEach((button) => button.addEventListener("click", () => {
+  currentMetricsRange = button.dataset.metricsRange ?? "today";
+  metricsRangeButtons.forEach((candidate) => candidate.classList.toggle("is-selected", candidate === button));
+  void loadMetrics();
+}));
 refreshBrief?.addEventListener("click", () => void loadOwnerBrief());
 refreshCodexCapture?.addEventListener("click", () => void loadCodexCapture());
 pauseCodexCapture?.addEventListener("click", async () => {
@@ -1081,4 +1285,5 @@ void loadReferenceViewport();
 void loadOwnerBrief();
 void loadKnowledge();
 void loadOwnerDashboard();
+void loadMetrics();
 navigate(window.location.hash.slice(1) || "home");

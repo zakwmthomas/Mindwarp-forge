@@ -2,7 +2,7 @@
 
 > GENERATED from `docs/canonical-system/MASTER_PROGRAM.json`. Do not edit this view directly.
 
-Canonical lifecycle: schema v2; executing item: `F5`.
+Canonical lifecycle: schema v2; executing item: `C3`.
 Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
 
 ## F4
@@ -38,21 +38,33 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
 
 ## F5
 
-- **F5** - executing; gate: hard; depends on: F5-OWNER-GATE.
-  Next: Execute the H7 promotion-readiness audit: distinguish the verified H1-H6 proof-chain baseline from any unbuilt surface asset, map every candidate claim and non-claim to retained evidence, and prepare no owner action until scope, rollback, and authority tests pass.
+- **F5** - promoted; gate: hard; depends on: F5-OWNER-GATE.
+  Next: Enter G1 through C1 without collapsing local gates. Before any G1 consumer depends on H7, require exact typed verification of promoted candidate c8df5d20b7bd87e09288689e6ef44ab56cabc3c8ce9a3ff95271262b3e9f4433, its claims, non-claims, supersession status, and retained blockers; generic promoted state is insufficient.
 - **F5-COHERENCE** - promoted; gate: hard; depends on: F4-CLOSEOUT.
   Next: Implement the owner-approved typed knowledge intake, canonical role registry, recoverability baseline, unified snapshot, and generated knowledge views without crossing the independent F5 owner-observation gate.
 
 ## G1
 
-- **C1** - ready_for_owner; gate: owner; depends on: F5.
-  Next: Choose ProofReceipt storage boundary.
-- **C2** - designed; gate: design; depends on: C1.
-  Next: Resolve universe identity policy.
-- **C3-C7** - proposed; gate: design; depends on: C2.
-  Next: Advance canonical modules bottom-up with local proof packs.
+- **C1** - promoted; gate: hard; depends on: F5.
+  Next: Maintain the verified F5 versioned ProofReceipt projection and require exact read-only H7 dependency verification before any G1 consumer uses that baseline.
+- **C2** - promoted; gate: hard; depends on: C1.
+  Next: Maintain the promoted logical/reconstruction identity split, strict codec, stream partitioning, explicit migration and collision failure rules; require C3-C7 consumers to retain those boundaries.
+- **G1-FEDERATED-CONTINUITY** - promoted; gate: implementation; depends on: F5-COHERENCE, C2.
+  Next: Maintain the owner-accepted V4 receipt as the canonical live search baseline, retain every V1-V3 row and later append-only V4 capture, and keep repair, rollback, deletion and cache cleanup separately gated.
+- **C3** - executing; gate: design; depends on: C2.
+  Next: Keep physical applicability explicitly blocked, retain the completed code-free C3 cross-boundary ecotone mathematical-design audit, and at the exact ecotone-oracle implementation decision approve or reject one disposable stdlib-only Python proof package. Approval may add only the frozen oracle script, focused verifier, oracle-result record and route references; it must reproduce the exact pointwise palette relation, semantic and audit digests, dimension-local typed outcomes, positive grids, seven enumeration modes, nineteen hostile families, resource ceilings and deletion-only rollback. Stop before any contract schema, crate, dependency, production test, production source, downstream consumer, canonical material-interface owner, renderer, biome, organism, runtime, promotion or C3 closure. This continuation retains the earlier explicit owner decision for the evidence-acquisition and mathematical-design audit.
+- **C4** - proposed; gate: design; depends on: C2, C3.
+  Next: Wait for C3 closure. Retain the repaired addressable-world and lifecycle/history components as bounded evidence, then resume C4 against the full addressable-state and history scope.
+- **C5** - proposed; gate: design; depends on: C4.
+  Next: Wait for C4 closure. Retain the shared-significance and four-domain fidelity-map fixture as bounded evidence, then prove scheduler dispatch and budget control across every named generation, simulation, AI, physics, animation, audio, rendering and streaming consumer before C5 completion.
+- **C6** - proposed; gate: design; depends on: C4, C5.
+  Next: Wait for the reopened C3-C5 route. Retain the repaired C6 prototypes as bounded evidence only; do not continue body-plan work until the upstream causal-world, addressable-state and shared-scheduler packages satisfy their declared scopes.
+- **C7** - proposed; gate: design; depends on: C5, C6.
+  Next: Promote representation contracts and prove asset, animation, aesthetic, visual-fitness and phone-to-high-end fidelity recipes from the same canonical organism/world state.
+- **G1-CLOSEOUT** - proposed; gate: owner; depends on: C3, C4, C5, C6, C7.
+  Next: Run the whole deterministic universe-to-representation chain, adversarial seed portfolio, recovery, quality-diversity, visual-fitness and simulated fidelity evidence before preparing one G1 promotion package.
 
 ## R1
 
-- **R1** - proposed; gate: owner; depends on: C3-C7.
+- **R1** - proposed; gate: owner; depends on: G1-CLOSEOUT.
   Next: Prepare runtime-adapter selection package.

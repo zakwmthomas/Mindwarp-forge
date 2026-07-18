@@ -4,11 +4,13 @@
 //! policy, interpret messages, or materialize projections.
 
 use std::{
-    fs,
+    fs::{self, File, OpenOptions},
+    io::{Read, Seek},
     path::{Path, PathBuf},
+    process::Command,
 };
 
-use rusqlite::{Connection, OptionalExtension, backup::Backup, params};
+use rusqlite::{Connection, OpenFlags, OptionalExtension, backup::Backup, params};
 use sha2::{Digest, Sha256};
 
 use crate::{
@@ -19,13 +21,22 @@ use crate::{
     },
     compiler::ConversationCompiler,
     contracts::{
-        BatchEventRecord, BatchMetricProjection, BlockerRecord, BridgeReceipt, GateReceiptRecord,
-        ImportReport, ImprovementDecisionRecord, ImprovementExperimentRecord,
-        ImprovementResultRecord, ProofReceiptProjection, ProofReceiptRecord, ResearchClaimRecord,
+        AdvisoryMetricRecommendation, BatchEventRecord, BatchMetricProjection, BlockerRecord,
+        BridgeReceipt, GateReceiptRecord, ImportReport, ImprovementDecisionRecord,
+        ImprovementExperimentRecord, ImprovementResultRecord, MetricsDashboardProjection,
+        ProofReceiptProjection, ProofReceiptRecord, RecentRoutineRun, ResearchClaimRecord,
         ResearchContradictionRecord, ResearchSourceRecord, RollbackRecord, SourceGapReceipt,
-        TransferAssessment, TransferCandidateRecord, TransferGateRecord, WorkPackageRecord,
+        TokenUsageProjection, TransferAssessment, TransferCandidateRecord, TransferGateRecord,
+        WorkPackageRecord,
     },
-    knowledge::{KnowledgeRecord, classify_knowledge},
+    federation::{
+        CrossProjectLink, ProjectRecord, SessionRouteReceipt, WorkstreamRecord,
+        assert_writer_lease as validate_writer_lease, claim_writer_lease as next_writer_claim,
+        normalize_alias, release_writer_lease as next_writer_release, validate_cross_project_link,
+        validate_project, validate_project_successor, validate_session_route, validate_workstream,
+        validate_workstream_successor,
+    },
+    knowledge::{KnowledgeRecord, classify_knowledge, classify_knowledge_scoped},
 };
 
 pub struct SqliteJournal {
@@ -109,6 +120,31 @@ pub struct BackupReceipt {
 }
 
 #[derive(Clone, Debug, Eq, PartialEq, serde::Serialize)]
+pub struct ArchiveReceipt {
+    pub source_path: PathBuf,
+    pub archive_path: PathBuf,
+    pub source_sha256: String,
+    pub archive_sha256: String,
+    pub source_bytes: u64,
+    pub archive_bytes: u64,
+    pub object_count: usize,
+    pub event_count: usize,
+    pub candidate_count: usize,
+    pub codec: String,
+    pub raw_source_retained: bool,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq, serde::Deserialize, serde::Serialize)]
+pub struct KnowledgeGenerationReceipt {
+    pub generation_id: String,
+    pub classifier_version: u16,
+    pub expected_record_count: usize,
+    pub written_record_count: usize,
+    pub evidence_count: usize,
+    pub digest: String,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq, serde::Serialize)]
 pub struct AppliedCodeReceipt {
     pub candidate_id: String,
     pub path: PathBuf,
@@ -141,6 +177,63 @@ pub struct WorkspaceFile {
     pub sha256: String,
 }
 
+#[derive(Clone, Debug, Eq, PartialEq, serde::Deserialize, serde::Serialize)]
+pub struct ManagedWorkspaceInventory {
+    pub repository_kind: String,
+    pub commit_identity: Option<String>,
+    pub dirty_paths: Vec<String>,
+    pub files: Vec<WorkspaceFile>,
+    pub excluded_roots: Vec<String>,
+    pub root_digest: String,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq, serde::Deserialize, serde::Serialize)]
+pub struct CacheCleanupCandidate {
+    pub relative_path: String,
+    pub canonical_path: PathBuf,
+    pub bytes: u64,
+    pub file_count: u64,
+    pub fingerprint: String,
+    pub reason: String,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq, serde::Deserialize, serde::Serialize)]
+pub struct CacheCleanupPlan {
+    pub root: PathBuf,
+    pub candidates: Vec<CacheCleanupCandidate>,
+    pub reclaimable_bytes: u64,
+    pub plan_hash: String,
+    pub approval_required: bool,
+    pub executed: bool,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq, serde::Deserialize, serde::Serialize)]
+pub struct KnowledgeSearchQuery {
+    pub text: String,
+    pub facet_type: Option<String>,
+    pub project_id: Option<String>,
+    pub workstream_id: Option<String>,
+    pub entity_id: Option<String>,
+    pub system_id: Option<String>,
+    pub source_actor: Option<String>,
+    pub lifecycle_state: Option<String>,
+    pub limit: usize,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq, serde::Deserialize, serde::Serialize)]
+pub struct KnowledgeSearchHit {
+    pub id: String,
+    pub title: String,
+    pub summary: String,
+    pub source_actor: String,
+    pub source_session_id: Option<String>,
+    pub project_refs: Vec<String>,
+    pub workstream_refs: Vec<String>,
+    pub entity_refs: Vec<String>,
+    pub system_refs: Vec<String>,
+    pub lifecycle_state: String,
+}
+
 impl SqliteJournal {
     pub fn open(path: impl AsRef<Path>) -> Result<Self, PersistenceError> {
         let connection = Connection::open(path)?;
@@ -166,67 +259,652 @@ impl SqliteJournal {
     }
 
     pub fn put_knowledge_record(&self, record: &KnowledgeRecord) -> Result<(), PersistenceError> {
-        if !matches!(record.schema_version, 1 | 2)
-            || record.id.trim().is_empty()
-            || record.source_evidence_ids.is_empty()
-            || record.authority_lane != "evidence_only"
+        self.put_knowledge_records(std::slice::from_ref(record))
+    }
+
+    pub fn put_knowledge_records(
+        &self,
+        records: &[KnowledgeRecord],
+    ) -> Result<(), PersistenceError> {
+        let transaction = self.connection.unchecked_transaction()?;
+        put_knowledge_records_transaction(&transaction, records)?;
+        transaction.commit()?;
+        Ok(())
+    }
+
+    pub fn put_knowledge_generation(
+        &self,
+        classifier_version: u16,
+        evidence_count: usize,
+        records: &[KnowledgeRecord],
+    ) -> Result<KnowledgeGenerationReceipt, PersistenceError> {
+        if records
+            .iter()
+            .any(|record| record.classifier_version != classifier_version)
         {
-            return Err(PersistenceError::InvalidKnowledgeRecord(record.id.clone()));
+            return Err(PersistenceError::InvalidKnowledgeGeneration);
         }
-        let encoded = serde_json::to_string(record)
-            .map_err(|error| PersistenceError::Serialization(error.to_string()))?;
-        let existing: Option<String> = self
-            .connection
+        let mut identities = records
+            .iter()
+            .map(|record| format!("{}:{}", record.id, record.content_fingerprint))
+            .collect::<Vec<_>>();
+        identities.sort();
+        if identities.windows(2).any(|pair| pair[0] == pair[1]) {
+            return Err(PersistenceError::InvalidKnowledgeGeneration);
+        }
+        let mut digest = Sha256::new();
+        digest.update(b"forge-knowledge-generation:v1\0");
+        digest.update(classifier_version.to_le_bytes());
+        digest.update(evidence_count.to_le_bytes());
+        for identity in &identities {
+            digest.update(identity.as_bytes());
+            digest.update(b"\0");
+        }
+        let digest = format!("{:x}", digest.finalize());
+        let generation_id = format!(
+            "knowledge-generation-{:x}",
+            Sha256::digest(
+                format!(
+                    "{classifier_version}:{}:{evidence_count}:{digest}",
+                    records.len()
+                )
+                .as_bytes()
+            )
+        );
+        let receipt = KnowledgeGenerationReceipt {
+            generation_id,
+            classifier_version,
+            expected_record_count: records.len(),
+            written_record_count: records.len(),
+            evidence_count,
+            digest,
+        };
+        let existing_generation_rows = {
+            let mut statement = self.connection.prepare(
+                "SELECT id, record_json FROM knowledge_records WHERE classifier_version=?1",
+            )?;
+            statement
+                .query_map(params![classifier_version], |row| {
+                    Ok((row.get::<_, String>(0)?, row.get::<_, String>(1)?))
+                })?
+                .collect::<Result<std::collections::BTreeMap<_, _>, _>>()?
+        };
+        let mut missing_records = Vec::new();
+        for record in records {
+            match existing_generation_rows.get(&record.id) {
+                Some(encoded)
+                    if same_knowledge_identity(&decode::<KnowledgeRecord>(encoded)?, record) => {}
+                Some(_) => {
+                    return Err(PersistenceError::KnowledgeRecordConflict(record.id.clone()));
+                }
+                None => missing_records.push(record.clone()),
+            }
+        }
+        let transaction = self.connection.unchecked_transaction()?;
+        put_knowledge_records_transaction(&transaction, &missing_records)?;
+        let encoded = encode(&receipt)?;
+        let existing: Option<String> = transaction
             .query_row(
-                "SELECT record_json FROM knowledge_records WHERE id = ?1",
-                params![record.id],
+                "SELECT receipt_json FROM knowledge_generations WHERE generation_id=?1",
+                params![&receipt.generation_id],
                 |row| row.get(0),
             )
             .optional()?;
         if let Some(existing) = existing {
-            let existing: KnowledgeRecord = serde_json::from_str(&existing)
-                .map_err(|error| PersistenceError::Serialization(error.to_string()))?;
-            if existing.id != record.id
-                || existing.content_fingerprint != record.content_fingerprint
-                || existing.classifier_version != record.classifier_version
-            {
-                return Err(PersistenceError::KnowledgeRecordConflict(record.id.clone()));
+            if existing != encoded {
+                return Err(PersistenceError::InvalidKnowledgeGeneration);
             }
-            return Ok(());
+        } else {
+            transaction.execute(
+                "INSERT INTO knowledge_generations
+                 (generation_id, classifier_version, expected_record_count, written_record_count, evidence_count, digest, receipt_json)
+                 VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)",
+                params![
+                    &receipt.generation_id,
+                    receipt.classifier_version,
+                    receipt.expected_record_count,
+                    receipt.written_record_count,
+                    receipt.evidence_count,
+                    &receipt.digest,
+                    encoded
+                ],
+            )?;
+        }
+        transaction.commit()?;
+        Ok(receipt)
+    }
+
+    pub fn latest_knowledge_generation(
+        &self,
+    ) -> Result<Option<KnowledgeGenerationReceipt>, PersistenceError> {
+        self.connection
+            .query_row(
+                "SELECT receipt_json FROM knowledge_generations ORDER BY sequence DESC LIMIT 1",
+                [],
+                |row| decode(&row.get::<_, String>(0)?),
+            )
+            .optional()
+            .map_err(Into::into)
+    }
+
+    pub fn knowledge_records(&self) -> Result<Vec<KnowledgeRecord>, PersistenceError> {
+        let Some(current_version) = self.knowledge_classifier_version()? else {
+            return Ok(Vec::new());
+        };
+        let mut statement = self.connection.prepare(
+            "SELECT record_json FROM knowledge_records WHERE classifier_version=?1 ORDER BY id",
+        )?;
+        let rows = statement.query_map(params![current_version], |row| {
+            decode(&row.get::<_, String>(0)?)
+        })?;
+        let mut records = rows.collect::<Result<Vec<KnowledgeRecord>, _>>()?;
+        drop(statement);
+        for record in &mut records {
+            record.project_refs = string_refs(
+                &self.connection,
+                "knowledge_project_refs",
+                "project_id",
+                &record.id,
+            )?;
+            record.workstream_refs = string_refs(
+                &self.connection,
+                "knowledge_workstream_refs",
+                "workstream_id",
+                &record.id,
+            )?;
+            record.entity_refs = string_refs(
+                &self.connection,
+                "knowledge_entity_refs",
+                "entity_id",
+                &record.id,
+            )?;
+            record.source_session_id = string_refs(
+                &self.connection,
+                "knowledge_session_refs",
+                "session_id",
+                &record.id,
+            )?
+            .into_iter()
+            .next()
+            .or(record.source_session_id.take());
+        }
+        Ok(records)
+    }
+
+    pub fn knowledge_record_count(&self) -> Result<usize, PersistenceError> {
+        let Some(current_version) = self.knowledge_classifier_version()? else {
+            return Ok(0);
+        };
+        self.connection
+            .query_row(
+                "SELECT COUNT(*) FROM knowledge_records WHERE classifier_version=?1",
+                params![current_version],
+                |row| row.get(0),
+            )
+            .map_err(PersistenceError::from)
+    }
+
+    pub fn knowledge_classifier_version(&self) -> Result<Option<u16>, PersistenceError> {
+        if let Some(receipt) = self.latest_knowledge_generation()? {
+            return Ok(Some(receipt.classifier_version));
+        }
+        self.connection
+            .query_row(
+                "SELECT MIN(classifier_version) FROM knowledge_records",
+                [],
+                |row| row.get(0),
+            )
+            .map_err(Into::into)
+    }
+
+    pub fn search_knowledge(
+        &self,
+        query: &KnowledgeSearchQuery,
+    ) -> Result<Vec<KnowledgeSearchHit>, PersistenceError> {
+        let filters_valid = [
+            query.facet_type.as_ref(),
+            query.project_id.as_ref(),
+            query.workstream_id.as_ref(),
+            query.entity_id.as_ref(),
+            query.system_id.as_ref(),
+            query.source_actor.as_ref(),
+            query.lifecycle_state.as_ref(),
+        ]
+        .into_iter()
+        .flatten()
+        .all(|value| !value.trim().is_empty() && value.len() <= 4_096);
+        let lifecycle_state = query
+            .lifecycle_state
+            .as_ref()
+            .map(|value| format!("\"{}\"", value));
+        if query.text.trim().is_empty()
+            || query.text.len() > 4_096
+            || query.limit == 0
+            || query.limit > 500
+            || !filters_valid
+            || query.lifecycle_state.as_deref().is_some_and(|state| {
+                !matches!(
+                    state,
+                    "detected"
+                        | "triaged"
+                        | "awaiting_owner"
+                        | "approved"
+                        | "promoted"
+                        | "superseded"
+                        | "rejected"
+                        | "archived"
+                )
+            })
+        {
+            return Err(PersistenceError::InvalidKnowledgeQuery);
+        }
+        let Some(current_version) = self.knowledge_classifier_version()? else {
+            return Ok(Vec::new());
+        };
+        let mut statement = self.connection.prepare(
+            "SELECT k.record_json
+             FROM knowledge_fts f
+             JOIN knowledge_records k ON k.id = f.knowledge_id
+             WHERE knowledge_fts MATCH ?1
+               AND k.classifier_version = ?9
+               AND (?2 IS NULL OR EXISTS (SELECT 1 FROM knowledge_project_refs p WHERE p.knowledge_id=k.id AND p.project_id=?2))
+               AND (?3 IS NULL OR EXISTS (SELECT 1 FROM knowledge_workstream_refs w WHERE w.knowledge_id=k.id AND w.workstream_id=?3))
+               AND (?4 IS NULL OR EXISTS (SELECT 1 FROM knowledge_system_refs s WHERE s.knowledge_id=k.id AND s.system_id=?4))
+               AND (?5 IS NULL OR EXISTS (SELECT 1 FROM knowledge_facets t WHERE t.knowledge_id=k.id AND t.facet_type=?5))
+               AND (?6 IS NULL OR EXISTS (SELECT 1 FROM knowledge_entity_refs e WHERE e.knowledge_id=k.id AND e.entity_id=?6))
+               AND (?7 IS NULL OR EXISTS (SELECT 1 FROM knowledge_actor_refs a WHERE a.knowledge_id=k.id AND a.source_actor=?7))
+               AND (?8 IS NULL OR k.state=?8)
+             ORDER BY CASE
+                WHEN EXISTS (SELECT 1 FROM knowledge_actor_refs a WHERE a.knowledge_id=k.id AND a.source_actor IN ('captured_user','direct_project_user')) THEN 0
+                WHEN EXISTS (SELECT 1 FROM knowledge_actor_refs a WHERE a.knowledge_id=k.id AND a.source_actor='assistant') THEN 2
+                ELSE 1 END,
+                bm25(knowledge_fts), k.id
+             LIMIT ?10",
+        )?;
+        let rows = statement
+            .query_map(
+                params![
+                    query.text.trim(),
+                    query.project_id.as_deref(),
+                    query.workstream_id.as_deref(),
+                    query.system_id.as_deref(),
+                    query.facet_type.as_deref(),
+                    query.entity_id.as_deref(),
+                    query.source_actor.as_deref(),
+                    lifecycle_state.as_deref(),
+                    current_version,
+                    query.limit,
+                ],
+                |row| decode::<KnowledgeRecord>(&row.get::<_, String>(0)?),
+            )
+            .map_err(|_| PersistenceError::InvalidKnowledgeQuery)?;
+        let records = rows
+            .collect::<Result<Vec<_>, _>>()
+            .map_err(|_| PersistenceError::InvalidKnowledgeQuery)?;
+        drop(statement);
+        let mut hits = Vec::new();
+        for record in records {
+            let project_refs = string_refs(
+                &self.connection,
+                "knowledge_project_refs",
+                "project_id",
+                &record.id,
+            )?;
+            let workstream_refs = string_refs(
+                &self.connection,
+                "knowledge_workstream_refs",
+                "workstream_id",
+                &record.id,
+            )?;
+            let entity_refs = string_refs(
+                &self.connection,
+                "knowledge_entity_refs",
+                "entity_id",
+                &record.id,
+            )?;
+            let source_session_id = string_refs(
+                &self.connection,
+                "knowledge_session_refs",
+                "session_id",
+                &record.id,
+            )?
+            .into_iter()
+            .next()
+            .or(record.source_session_id);
+            hits.push(KnowledgeSearchHit {
+                id: record.id,
+                title: record.title,
+                summary: record.summary,
+                source_actor: record.source_actor,
+                source_session_id,
+                project_refs,
+                workstream_refs,
+                entity_refs,
+                system_refs: record.system_refs,
+                lifecycle_state: encode(&record.state)?.trim_matches('"').to_owned(),
+            });
+        }
+        Ok(hits)
+    }
+
+    pub fn put_project(&self, record: &ProjectRecord) -> Result<(), PersistenceError> {
+        validate_project(record)
+            .map_err(|_| PersistenceError::InvalidFederatedRecord(record.id.clone()))?;
+        let encoded = encode(record)?;
+        let transaction = self.connection.unchecked_transaction()?;
+        let existing: Option<ProjectRecord> = transaction
+            .query_row(
+                "SELECT record_json FROM projects WHERE id=?1 ORDER BY revision DESC LIMIT 1",
+                params![&record.id],
+                |row| decode(&row.get::<_, String>(0)?),
+            )
+            .optional()?;
+        if let Some(existing) = &existing {
+            if existing == record {
+                return Ok(());
+            }
+            validate_project_successor(existing, record)
+                .map_err(|_| PersistenceError::FederatedRecordConflict(record.id.clone()))?;
+        } else if record.revision != 1 {
+            return Err(PersistenceError::InvalidFederatedRecord(record.id.clone()));
+        }
+        transaction.execute(
+            "INSERT INTO projects (id, revision, record_json) VALUES (?1, ?2, ?3)",
+            params![&record.id, record.revision, encoded],
+        )?;
+        for alias in &record.aliases {
+            let normalized = normalize_alias(alias);
+            let owner: Option<String> = transaction
+                .query_row(
+                    "SELECT project_id FROM project_aliases WHERE normalized_alias=?1",
+                    params![&normalized],
+                    |row| row.get(0),
+                )
+                .optional()?;
+            if owner.as_ref().is_some_and(|owner| owner != &record.id) {
+                return Err(PersistenceError::FederatedRecordConflict(normalized));
+            }
+            transaction.execute(
+                "INSERT OR IGNORE INTO project_aliases (normalized_alias, project_id) VALUES (?1, ?2)",
+                params![normalized, &record.id],
+            )?;
+        }
+        transaction.commit()?;
+        Ok(())
+    }
+
+    pub fn project_by_alias(&self, alias: &str) -> Result<Option<ProjectRecord>, PersistenceError> {
+        self.connection
+            .query_row(
+                "SELECT p.record_json FROM project_aliases a JOIN projects p ON p.id=a.project_id
+                 WHERE a.normalized_alias=?1 ORDER BY p.revision DESC LIMIT 1",
+                params![normalize_alias(alias)],
+                |row| decode(&row.get::<_, String>(0)?),
+            )
+            .optional()
+            .map_err(Into::into)
+    }
+
+    pub fn put_workstream(
+        &self,
+        record: &WorkstreamRecord,
+        now_unix_ms: u64,
+    ) -> Result<(), PersistenceError> {
+        validate_workstream(record)
+            .map_err(|_| PersistenceError::InvalidFederatedRecord(record.id.clone()))?;
+        let project_exists: bool = self.connection.query_row(
+            "SELECT EXISTS(SELECT 1 FROM projects WHERE id=?1)",
+            params![&record.project_id],
+            |row| row.get(0),
+        )?;
+        if !project_exists {
+            return Err(PersistenceError::InvalidFederatedRecord(record.id.clone()));
+        }
+        let current: Option<WorkstreamRecord> = self
+            .connection
+            .query_row(
+                "SELECT record_json FROM workstreams WHERE id=?1 ORDER BY revision DESC LIMIT 1",
+                params![&record.id],
+                |row| decode(&row.get::<_, String>(0)?),
+            )
+            .optional()?;
+        if let Some(current) = &current {
+            if current == record {
+                return Ok(());
+            }
+            validate_workstream_successor(current, record, now_unix_ms)
+                .map_err(|_| PersistenceError::FederatedRecordConflict(record.id.clone()))?;
+        } else if record.revision != 1 {
+            return Err(PersistenceError::InvalidFederatedRecord(record.id.clone()));
+        }
+        let mut pending = record.dependencies.clone();
+        let mut visited = std::collections::BTreeSet::new();
+        while let Some(dependency_id) = pending.pop() {
+            if dependency_id == record.id {
+                return Err(PersistenceError::FederatedRecordConflict(record.id.clone()));
+            }
+            if !visited.insert(dependency_id.clone()) {
+                continue;
+            }
+            let dependency: Option<WorkstreamRecord> = self
+                .connection
+                .query_row(
+                    "SELECT record_json FROM workstreams WHERE id=?1 ORDER BY revision DESC LIMIT 1",
+                    params![&dependency_id],
+                    |row| decode(&row.get::<_, String>(0)?),
+                )
+                .optional()?;
+            let Some(dependency) = dependency else {
+                return Err(PersistenceError::InvalidFederatedRecord(record.id.clone()));
+            };
+            if dependency.project_id != record.project_id {
+                return Err(PersistenceError::InvalidFederatedRecord(record.id.clone()));
+            }
+            pending.extend(dependency.dependencies);
         }
         self.connection.execute(
-            "INSERT INTO knowledge_records
-             (id, record_type, state, content_fingerprint, classifier_version, record_json)
-             VALUES (?1, ?2, ?3, ?4, ?5, ?6)",
-            params![
-                record.id,
-                serde_json::to_string(&record.record_type)
-                    .map_err(|error| PersistenceError::Serialization(error.to_string()))?,
-                serde_json::to_string(&record.state)
-                    .map_err(|error| PersistenceError::Serialization(error.to_string()))?,
-                record.content_fingerprint,
-                record.classifier_version,
-                encoded
-            ],
+            "INSERT INTO workstreams (id, revision, project_id, record_json) VALUES (?1, ?2, ?3, ?4)",
+            params![&record.id, record.revision, &record.project_id, encode(record)?],
         )?;
         Ok(())
     }
 
-    pub fn knowledge_records(&self) -> Result<Vec<KnowledgeRecord>, PersistenceError> {
+    pub fn workstream(
+        &self,
+        workstream_id: &str,
+    ) -> Result<Option<WorkstreamRecord>, PersistenceError> {
+        self.connection
+            .query_row(
+                "SELECT record_json FROM workstreams WHERE id=?1 ORDER BY revision DESC LIMIT 1",
+                params![workstream_id],
+                |row| decode(&row.get::<_, String>(0)?),
+            )
+            .optional()
+            .map_err(Into::into)
+    }
+
+    pub fn put_session_route(&self, record: &SessionRouteReceipt) -> Result<(), PersistenceError> {
+        validate_session_route(record)
+            .map_err(|_| PersistenceError::InvalidFederatedRecord(record.session_id.clone()))?;
+        for candidate in &record.candidate_project_ids {
+            let exists: bool = self.connection.query_row(
+                "SELECT EXISTS(SELECT 1 FROM projects WHERE id=?1)",
+                params![candidate],
+                |row| row.get(0),
+            )?;
+            if !exists {
+                return Err(PersistenceError::InvalidFederatedRecord(
+                    record.session_id.clone(),
+                ));
+            }
+        }
+        if let Some(project_id) = &record.project_id {
+            let exists: bool = self.connection.query_row(
+                "SELECT EXISTS(SELECT 1 FROM projects WHERE id=?1)",
+                params![project_id],
+                |row| row.get(0),
+            )?;
+            if !exists {
+                return Err(PersistenceError::InvalidFederatedRecord(
+                    record.session_id.clone(),
+                ));
+            }
+            if let Some(workstream_id) = &record.workstream_id {
+                let matches_project: bool = self.connection.query_row(
+                    "SELECT EXISTS(SELECT 1 FROM workstreams WHERE id=?1 AND project_id=?2)",
+                    params![workstream_id, project_id],
+                    |row| row.get(0),
+                )?;
+                if !matches_project {
+                    return Err(PersistenceError::InvalidFederatedRecord(
+                        record.session_id.clone(),
+                    ));
+                }
+            }
+        }
+        let latest: Option<(u64, String)> = self.connection
+            .query_row(
+                "SELECT revision, record_json FROM session_routes WHERE session_id=?1 ORDER BY revision DESC LIMIT 1",
+                params![&record.session_id],
+                |row| Ok((row.get(0)?, row.get(1)?)),
+            )
+            .optional()?;
+        let encoded = encode(record)?;
+        if let Some((revision, existing)) = latest {
+            if revision == record.revision && existing == encoded {
+                return Ok(());
+            }
+            if record.revision != revision + 1 {
+                return Err(PersistenceError::FederatedRecordConflict(
+                    record.session_id.clone(),
+                ));
+            }
+        } else if record.revision != 1 {
+            return Err(PersistenceError::InvalidFederatedRecord(
+                record.session_id.clone(),
+            ));
+        }
+        self.connection.execute(
+            "INSERT INTO session_routes (session_id, revision, project_id, workstream_id, record_json) VALUES (?1, ?2, ?3, ?4, ?5)",
+            params![&record.session_id, record.revision, &record.project_id, &record.workstream_id, encoded],
+        )?;
+        Ok(())
+    }
+
+    pub fn session_route(
+        &self,
+        session_id: &str,
+    ) -> Result<Option<SessionRouteReceipt>, PersistenceError> {
+        self.connection
+            .query_row(
+                "SELECT record_json FROM session_routes WHERE session_id=?1 ORDER BY revision DESC LIMIT 1",
+                params![session_id],
+                |row| decode(&row.get::<_, String>(0)?),
+            )
+            .optional()
+            .map_err(Into::into)
+    }
+
+    pub fn put_cross_project_link(
+        &self,
+        record: &CrossProjectLink,
+    ) -> Result<(), PersistenceError> {
+        validate_cross_project_link(record)
+            .map_err(|_| PersistenceError::InvalidFederatedRecord(record.id.clone()))?;
+        for project_id in [&record.left_project_id, &record.right_project_id] {
+            let exists: bool = self.connection.query_row(
+                "SELECT EXISTS(SELECT 1 FROM projects WHERE id=?1)",
+                params![project_id],
+                |row| row.get(0),
+            )?;
+            if !exists {
+                return Err(PersistenceError::InvalidFederatedRecord(record.id.clone()));
+            }
+        }
+        put_federated_record(
+            &self.connection,
+            "cross_project_links",
+            &record.id,
+            &encode(record)?,
+            &[
+                ("left_project_id", &record.left_project_id),
+                ("right_project_id", &record.right_project_id),
+            ],
+        )
+    }
+
+    fn refresh_knowledge_scope_indexes(&self, events: &[Event]) -> Result<(), PersistenceError> {
+        let Some(current_version) = self.knowledge_classifier_version()? else {
+            return Ok(());
+        };
+        let mut routes = std::collections::BTreeMap::new();
+        {
+            let mut statement = self
+                .connection
+                .prepare("SELECT record_json FROM session_routes ORDER BY session_id, revision")?;
+            for row in statement.query_map([], |row| {
+                decode::<SessionRouteReceipt>(&row.get::<_, String>(0)?)
+            })? {
+                let route = row?;
+                routes.insert(route.session_id.clone(), route);
+            }
+        }
+        let mut evidence_sessions = std::collections::BTreeMap::new();
+        for event in events {
+            if event.event_type != crate::EventType::EvidenceRegistered {
+                continue;
+            }
+            let Some(session_id) = event
+                .correlation_id
+                .strip_prefix("codex:")
+                .and_then(|value| value.split_once(':').map(|(session, _)| session))
+            else {
+                continue;
+            };
+            if !routes.contains_key(session_id) {
+                continue;
+            }
+            let Some(evidence_id) = event.input_objects.first() else {
+                continue;
+            };
+            evidence_sessions.insert(evidence_id.clone(), session_id.to_owned());
+        }
         let mut statement = self
             .connection
-            .prepare("SELECT record_json FROM knowledge_records ORDER BY id")?;
-        let rows = statement.query_map([], |row| decode(&row.get::<_, String>(0)?))?;
-        let records = rows.collect::<Result<Vec<KnowledgeRecord>, _>>()?;
-        let current_version = records
-            .iter()
-            .map(|record| record.classifier_version)
-            .max()
-            .unwrap_or(0);
-        Ok(records
-            .into_iter()
-            .filter(|record| record.classifier_version == current_version)
-            .collect())
+            .prepare("SELECT record_json FROM knowledge_records WHERE classifier_version=?1")?;
+        let records = statement
+            .query_map(params![current_version], |row| {
+                decode::<KnowledgeRecord>(&row.get::<_, String>(0)?)
+            })?
+            .collect::<Result<Vec<_>, _>>()?;
+        drop(statement);
+        let transaction = self.connection.unchecked_transaction()?;
+        for record in records {
+            for evidence_id in &record.source_evidence_ids {
+                let Some(session_id) = evidence_sessions.get(evidence_id) else {
+                    continue;
+                };
+                let route = &routes[session_id];
+                transaction.execute(
+                    "INSERT OR IGNORE INTO knowledge_session_refs (knowledge_id, session_id) VALUES (?1, ?2)",
+                    params![&record.id, session_id],
+                )?;
+                if let Some(project_id) = &route.project_id {
+                    transaction.execute(
+                        "INSERT OR IGNORE INTO knowledge_project_refs (knowledge_id, project_id) VALUES (?1, ?2)",
+                        params![&record.id, project_id],
+                    )?;
+                }
+                if let Some(workstream_id) = &route.workstream_id {
+                    transaction.execute(
+                        "INSERT OR IGNORE INTO knowledge_workstream_refs (knowledge_id, workstream_id) VALUES (?1, ?2)",
+                        params![&record.id, workstream_id],
+                    )?;
+                }
+            }
+        }
+        transaction.commit()?;
+        Ok(())
     }
 
     pub fn object(&self, id: &str) -> Result<Option<StoredObject>, PersistenceError> {
@@ -509,8 +1187,144 @@ impl SqliteJournal {
                 ON knowledge_records(id, classifier_version);
             CREATE INDEX IF NOT EXISTS knowledge_record_type_state
                 ON knowledge_records(record_type, state);
+            CREATE TABLE IF NOT EXISTS knowledge_generations (
+                sequence INTEGER PRIMARY KEY AUTOINCREMENT,
+                generation_id TEXT NOT NULL UNIQUE,
+                classifier_version INTEGER NOT NULL,
+                expected_record_count INTEGER NOT NULL,
+                written_record_count INTEGER NOT NULL,
+                evidence_count INTEGER NOT NULL,
+                digest TEXT NOT NULL,
+                receipt_json TEXT NOT NULL
+            );
+            CREATE TABLE IF NOT EXISTS knowledge_project_refs (
+                knowledge_id TEXT NOT NULL,
+                project_id TEXT NOT NULL,
+                PRIMARY KEY (knowledge_id, project_id)
+            );
+            CREATE INDEX IF NOT EXISTS knowledge_project_refs_project
+                ON knowledge_project_refs(project_id, knowledge_id);
+            CREATE TABLE IF NOT EXISTS knowledge_workstream_refs (
+                knowledge_id TEXT NOT NULL,
+                workstream_id TEXT NOT NULL,
+                PRIMARY KEY (knowledge_id, workstream_id)
+            );
+            CREATE INDEX IF NOT EXISTS knowledge_workstream_refs_workstream
+                ON knowledge_workstream_refs(workstream_id, knowledge_id);
+            CREATE TABLE IF NOT EXISTS knowledge_system_refs (
+                knowledge_id TEXT NOT NULL,
+                system_id TEXT NOT NULL,
+                PRIMARY KEY (knowledge_id, system_id)
+            );
+            CREATE INDEX IF NOT EXISTS knowledge_system_refs_system
+                ON knowledge_system_refs(system_id, knowledge_id);
+            CREATE TABLE IF NOT EXISTS knowledge_entity_refs (
+                knowledge_id TEXT NOT NULL,
+                entity_id TEXT NOT NULL,
+                PRIMARY KEY (knowledge_id, entity_id)
+            );
+            CREATE INDEX IF NOT EXISTS knowledge_entity_refs_entity
+                ON knowledge_entity_refs(entity_id, knowledge_id);
+            CREATE TABLE IF NOT EXISTS knowledge_actor_refs (
+                knowledge_id TEXT PRIMARY KEY,
+                source_actor TEXT NOT NULL
+            );
+            CREATE INDEX IF NOT EXISTS knowledge_actor_refs_actor
+                ON knowledge_actor_refs(source_actor, knowledge_id);
+            CREATE TABLE IF NOT EXISTS knowledge_facets (
+                knowledge_id TEXT NOT NULL,
+                facet_type TEXT NOT NULL,
+                PRIMARY KEY (knowledge_id, facet_type)
+            );
+            CREATE INDEX IF NOT EXISTS knowledge_facets_type
+                ON knowledge_facets(facet_type, knowledge_id);
+            CREATE TABLE IF NOT EXISTS knowledge_session_refs (
+                knowledge_id TEXT NOT NULL,
+                session_id TEXT NOT NULL,
+                PRIMARY KEY (knowledge_id, session_id)
+            );
+            CREATE INDEX IF NOT EXISTS knowledge_session_refs_session
+                ON knowledge_session_refs(session_id, knowledge_id);
+            CREATE VIRTUAL TABLE IF NOT EXISTS knowledge_fts USING fts5(
+                knowledge_id UNINDEXED, title, summary
+            );
+            CREATE TABLE IF NOT EXISTS projects (
+                id TEXT NOT NULL,
+                revision INTEGER NOT NULL,
+                record_json TEXT NOT NULL,
+                PRIMARY KEY (id, revision)
+            );
+            CREATE TABLE IF NOT EXISTS project_aliases (
+                normalized_alias TEXT PRIMARY KEY,
+                project_id TEXT NOT NULL
+            );
+            CREATE TABLE IF NOT EXISTS workstreams (
+                id TEXT NOT NULL,
+                revision INTEGER NOT NULL,
+                project_id TEXT NOT NULL,
+                record_json TEXT NOT NULL,
+                PRIMARY KEY (id, revision)
+            );
+            CREATE INDEX IF NOT EXISTS workstreams_project
+                ON workstreams(project_id, id, revision);
+            CREATE TABLE IF NOT EXISTS session_routes (
+                session_id TEXT NOT NULL,
+                revision INTEGER NOT NULL,
+                project_id TEXT,
+                workstream_id TEXT,
+                record_json TEXT NOT NULL,
+                PRIMARY KEY (session_id, revision)
+            );
+            CREATE TABLE IF NOT EXISTS cross_project_links (
+                id TEXT PRIMARY KEY,
+                left_project_id TEXT NOT NULL,
+                right_project_id TEXT NOT NULL,
+                record_json TEXT NOT NULL
+            );
             ",
         )?;
+        let project_columns = {
+            let mut statement = self.connection.prepare("PRAGMA table_info(projects)")?;
+            let rows = statement.query_map([], |row| row.get::<_, String>(1))?;
+            rows.collect::<Result<Vec<_>, _>>()?
+        };
+        if !project_columns.iter().any(|column| column == "revision") {
+            self.connection.execute_batch(
+                "ALTER TABLE projects RENAME TO projects_legacy_v1;
+                 CREATE TABLE projects (
+                    id TEXT NOT NULL,
+                    revision INTEGER NOT NULL,
+                    record_json TEXT NOT NULL,
+                    PRIMARY KEY (id, revision)
+                 );
+                 INSERT INTO projects (id, revision, record_json)
+                    SELECT id, 1, record_json FROM projects_legacy_v1;
+                 DROP TABLE projects_legacy_v1;",
+            )?;
+        }
+        let missing_actor_rows = {
+            let mut statement = self.connection.prepare(
+                "SELECT k.record_json FROM knowledge_records k
+                 LEFT JOIN knowledge_actor_refs a ON a.knowledge_id=k.id
+                 WHERE a.knowledge_id IS NULL",
+            )?;
+            statement
+                .query_map([], |row| row.get::<_, String>(0))?
+                .collect::<Result<Vec<_>, _>>()?
+        };
+        for encoded in missing_actor_rows {
+            let record: KnowledgeRecord = decode(&encoded)?;
+            self.connection.execute(
+                "INSERT INTO knowledge_actor_refs (knowledge_id, source_actor) VALUES (?1, ?2)",
+                params![&record.id, &record.source_actor],
+            )?;
+            for entity_id in &record.entity_refs {
+                self.connection.execute(
+                    "INSERT OR IGNORE INTO knowledge_entity_refs (knowledge_id, entity_id) VALUES (?1, ?2)",
+                    params![&record.id, entity_id],
+                )?;
+            }
+        }
         Ok(())
     }
 
@@ -1240,6 +2054,45 @@ impl SqliteJournal {
         Ok(())
     }
 
+    /// Append an intake event whose canonical sequence is assigned by this
+    /// ledger. Retries with the same ID and otherwise identical content are
+    /// idempotent even when the intake record still carries sequence zero.
+    pub fn append_batch_event_auto_sequence(
+        &self,
+        intake: &BatchEventRecord,
+    ) -> Result<BatchEventRecord, PersistenceError> {
+        if intake.sequence != 0 {
+            return Err(PersistenceError::InvalidBatchEvent(intake.id.clone()));
+        }
+        let existing: Option<String> = self
+            .connection
+            .query_row(
+                "SELECT record_json FROM batch_events WHERE id = ?1",
+                params![intake.id],
+                |row| row.get(0),
+            )
+            .optional()?;
+        if let Some(existing) = existing {
+            let existing: BatchEventRecord = decode(&existing)?;
+            let mut comparable = intake.clone();
+            comparable.sequence = existing.sequence;
+            return if comparable == existing {
+                Ok(existing)
+            } else {
+                Err(PersistenceError::BatchEventConflict(intake.id.clone()))
+            };
+        }
+        let next_sequence: u64 = self.connection.query_row(
+            "SELECT COALESCE(MAX(sequence), 0) + 1 FROM batch_events",
+            [],
+            |row| row.get(0),
+        )?;
+        let mut record = intake.clone();
+        record.sequence = next_sequence;
+        self.append_batch_event(&record)?;
+        Ok(record)
+    }
+
     /// Bounded replay in canonical append order.
     pub fn batch_events(&self, limit: usize) -> Result<Vec<BatchEventRecord>, PersistenceError> {
         if limit == 0 || limit > 1000 {
@@ -1252,62 +2105,178 @@ impl SqliteJournal {
         rows.collect::<Result<Vec<_>, _>>().map_err(Into::into)
     }
 
+    /// Bounded replay of the newest events, returned in canonical ascending
+    /// order so projections never depend on query direction.
+    pub fn recent_batch_events(
+        &self,
+        limit: usize,
+    ) -> Result<Vec<BatchEventRecord>, PersistenceError> {
+        if limit == 0 || limit > 1000 {
+            return Err(PersistenceError::InvalidTelemetryQuery);
+        }
+        let mut statement = self
+            .connection
+            .prepare("SELECT record_json FROM batch_events ORDER BY sequence DESC LIMIT ?1")?;
+        let rows = statement.query_map(params![limit], |row| decode(&row.get::<_, String>(0)?))?;
+        let mut events = rows.collect::<Result<Vec<_>, _>>()?;
+        events.reverse();
+        Ok(events)
+    }
+
     /// Deterministic advisory projection. Activity alone never improves the
     /// recommendation: a batch counts as verified only when it has both a
     /// passed verification event and a completed terminal event.
     pub fn batch_metric_projection(&self) -> Result<BatchMetricProjection, PersistenceError> {
         let events = self.batch_events(1000)?;
-        let mut batches = std::collections::BTreeMap::<String, (bool, bool, bool)>::new();
-        let mut rework_events = 0;
+        Ok(project_batch_metrics(&events))
+    }
+
+    pub fn metrics_dashboard_projection(
+        &self,
+    ) -> Result<MetricsDashboardProjection, PersistenceError> {
+        self.metrics_dashboard_projection_since(None)
+    }
+
+    pub fn metrics_dashboard_projection_since(
+        &self,
+        since_ms: Option<i64>,
+    ) -> Result<MetricsDashboardProjection, PersistenceError> {
+        let mut events = self.recent_batch_events(1000)?;
+        if let Some(since_ms) = since_ms {
+            events.retain(|event| event.ended_at_ms >= since_ms);
+        }
+        let batch = project_batch_metrics(&events);
+        let mut tokens = std::collections::BTreeMap::<String, i64>::new();
+        let mut wall_time_ms = 0_i64;
+        let mut wall_time_seen = false;
+        let mut measured_by_batch = std::collections::BTreeMap::<String, (bool, bool)>::new();
+        let mut completed = std::collections::BTreeSet::<String>::new();
+        let mut recent_runs = Vec::new();
         for event in &events {
-            let state = batches.entry(event.batch_id.clone()).or_default();
-            if event.event_type == "verification_completed" && event.outcome == "passed" {
-                state.0 = true;
-            }
             if event.event_type == "batch_completed" && event.outcome == "completed" {
-                state.1 = true;
+                completed.insert(event.batch_id.clone());
             }
-            if event.outcome == "failed" || event.outcome == "blocked" {
-                state.2 = true;
+            if let (Some(name), Some(value)) = (&event.metric_name, event.metric_value) {
+                match name.as_str() {
+                    "input_tokens"
+                    | "cached_input_tokens"
+                    | "output_tokens"
+                    | "reasoning_output_tokens"
+                    | "total_tokens" => {
+                        *tokens.entry(name.clone()).or_default() += value;
+                        if name == "total_tokens" {
+                            measured_by_batch
+                                .entry(event.batch_id.clone())
+                                .or_default()
+                                .0 = true;
+                        }
+                    }
+                    "wall_duration_ms" => {
+                        wall_time_ms += value;
+                        wall_time_seen = true;
+                        measured_by_batch
+                            .entry(event.batch_id.clone())
+                            .or_default()
+                            .1 = true;
+                    }
+                    _ => {}
+                }
             }
-            if event.outcome == "reworked"
-                || (event.event_type == "verification_completed" && event.outcome == "failed")
-            {
-                rework_events += 1;
+            if event.schema_version == 2 && event.event_type == "routine_run_completed" {
+                let dimension = |name: &str| {
+                    event
+                        .metric_dimensions
+                        .iter()
+                        .find(|dimension| dimension.name == name)
+                        .map(|dimension| dimension.value.clone())
+                        .unwrap_or_else(|| "unknown".into())
+                };
+                recent_runs.push(RecentRoutineRun {
+                    run_id: event.trace_id.clone(),
+                    definition_id: dimension("run_definition"),
+                    batch_id: event.batch_id.clone(),
+                    module_id: dimension("module"),
+                    verification_scope: dimension("verification_scope"),
+                    started_at_ms: event.started_at_ms,
+                    ended_at_ms: event.ended_at_ms,
+                    duration_ms: event.ended_at_ms - event.started_at_ms,
+                    outcome: event.outcome.clone(),
+                    evidence_ids: event.evidence_ids.clone(),
+                });
             }
         }
-        let completed_batches = batches.values().filter(|state| state.1).count();
-        let verified_batches = batches
-            .values()
-            .filter(|state| state.0 && state.1 && !state.2)
+        recent_runs.sort_by_key(|run| std::cmp::Reverse(run.ended_at_ms));
+        recent_runs.truncate(50);
+        let complete_measurements = completed
+            .iter()
+            .filter(|id| {
+                measured_by_batch
+                    .get(*id)
+                    .is_some_and(|seen| seen.0 && seen.1)
+            })
             .count();
-        let failed_or_blocked_batches = batches.values().filter(|state| state.2).count();
-        let verified_closure_percent = if completed_batches > 0 {
-            Some(((verified_batches * 100) / completed_batches) as u32)
-        } else {
+        let data_completeness_percent = if completed.is_empty() {
             None
-        };
-        let sample_state = if completed_batches < 5 {
-            "insufficient_sample"
         } else {
-            "sufficient_sample"
+            Some(((complete_measurements * 100) / completed.len()) as u32)
         };
-        let recommendation = if failed_or_blocked_batches > 0 || verified_batches == 0 {
-            "hold"
-        } else if completed_batches < 5 {
-            "observe"
-        } else {
-            "advisory_improvement"
-        };
-        Ok(BatchMetricProjection {
+        let mut recommendations = Vec::new();
+        if batch.failed_or_blocked_batches > 0 {
+            recommendations.push(AdvisoryMetricRecommendation {
+                code: "hold_for_quality".into(),
+                state: "hold".into(),
+                title: "Repair retained failures before optimizing".into(),
+                reason: "A failed or blocked batch is retained in the measurement window; lower cost cannot offset it.".into(),
+                evidence_ids: vec!["contract:batch-event-v2".into()],
+            });
+        }
+        if data_completeness_percent.is_some_and(|value| value < 80) {
+            recommendations.push(AdvisoryMetricRecommendation {
+                code: "improve_measurement_coverage".into(),
+                state: "instrument".into(),
+                title: "Complete cost measurement before comparing runs".into(),
+                reason: "Fewer than 80 percent of completed batches have both token and wall-time evidence.".into(),
+                evidence_ids: vec!["metric:cost-data-completeness".into()],
+            });
+        }
+        if batch.completed_batches < 5 {
+            recommendations.push(AdvisoryMetricRecommendation {
+                code: "collect_local_baseline".into(),
+                state: "insufficient_sample".into(),
+                title: "Collect five comparable verified batches".into(),
+                reason: "Forge does not infer an improvement trend before the registered minimum sample is met.".into(),
+                evidence_ids: vec!["registry:worker-metrics".into()],
+            });
+        } else if recommendations.is_empty() {
+            recommendations.push(AdvisoryMetricRecommendation {
+                code: "review_compatible_cost_trends".into(),
+                state: "advisory".into(),
+                title: "Review the highest-cost compatible local run".into(),
+                reason: "The local sample is sufficient for a bounded experiment proposal; no change is automatic.".into(),
+                evidence_ids: vec!["policy:P10".into()],
+            });
+        }
+        Ok(MetricsDashboardProjection {
+            schema_version: 1,
+            read_only: true,
             event_count: events.len(),
-            completed_batches,
-            verified_batches,
-            failed_or_blocked_batches,
-            rework_events,
-            verified_closure_percent,
-            sample_state: sample_state.into(),
-            recommendation: recommendation.into(),
+            completed_batches: batch.completed_batches,
+            verified_batches: batch.verified_batches,
+            failed_or_blocked_batches: batch.failed_or_blocked_batches,
+            rework_events: batch.rework_events,
+            verified_closure_percent: batch.verified_closure_percent,
+            sample_state: batch.sample_state,
+            data_completeness_percent,
+            measured_wall_time_ms: wall_time_seen.then_some(wall_time_ms),
+            token_usage: TokenUsageProjection {
+                input_tokens: tokens.get("input_tokens").copied(),
+                cached_input_tokens: tokens.get("cached_input_tokens").copied(),
+                output_tokens: tokens.get("output_tokens").copied(),
+                reasoning_output_tokens: tokens.get("reasoning_output_tokens").copied(),
+                total_tokens: tokens.get("total_tokens").copied(),
+            },
+            recent_runs,
+            recommendations,
         })
     }
 
@@ -1738,6 +2707,24 @@ fn valid_metric_name(name: &str) -> bool {
             | "cost_data_completeness"
             | "transfer_success_rate"
             | "negative_transfer_incidence"
+            | "input_tokens"
+            | "cached_input_tokens"
+            | "output_tokens"
+            | "reasoning_output_tokens"
+            | "total_tokens"
+            | "wall_duration_ms"
+            | "active_duration_ms"
+            | "machine_duration_ms"
+            | "idle_recovery_ms"
+            | "owner_wait_ms"
+            | "planned_criteria"
+            | "completed_criteria"
+            | "verified_criteria"
+            | "applicable_gates"
+            | "passed_gates"
+            | "failed_gates"
+            | "repair_loops"
+            | "interruptions"
     )
 }
 
@@ -1898,6 +2885,16 @@ fn research_records<T: serde::de::DeserializeOwned>(
 }
 
 impl PersistentForge {
+    pub fn search_database(
+        path: impl AsRef<Path>,
+        query: &KnowledgeSearchQuery,
+    ) -> Result<Vec<KnowledgeSearchHit>, PersistenceError> {
+        let connection = Connection::open_with_flags(
+            path,
+            OpenFlags::SQLITE_OPEN_READ_ONLY | OpenFlags::SQLITE_OPEN_NO_MUTEX,
+        )?;
+        SqliteJournal { connection }.search_knowledge(query)
+    }
     pub fn open(path: impl AsRef<Path>) -> Result<Self, PersistenceError> {
         let journal = SqliteJournal::open(path)?;
         let kernel = journal.hydrate()?;
@@ -1990,12 +2987,32 @@ impl PersistentForge {
         self.journal.append_batch_event(record)
     }
 
+    pub fn record_batch_event_auto_sequence(
+        &self,
+        record: &BatchEventRecord,
+    ) -> Result<BatchEventRecord, PersistenceError> {
+        self.journal.append_batch_event_auto_sequence(record)
+    }
+
     pub fn batch_events(&self, limit: usize) -> Result<Vec<BatchEventRecord>, PersistenceError> {
         self.journal.batch_events(limit)
     }
 
     pub fn batch_metric_projection(&self) -> Result<BatchMetricProjection, PersistenceError> {
         self.journal.batch_metric_projection()
+    }
+
+    pub fn metrics_dashboard_projection(
+        &self,
+    ) -> Result<MetricsDashboardProjection, PersistenceError> {
+        self.journal.metrics_dashboard_projection()
+    }
+
+    pub fn metrics_dashboard_projection_since(
+        &self,
+        since_ms: Option<i64>,
+    ) -> Result<MetricsDashboardProjection, PersistenceError> {
+        self.journal.metrics_dashboard_projection_since(since_ms)
     }
 
     pub fn record_improvement_experiment(
@@ -2150,17 +3167,36 @@ impl PersistentForge {
         actor: crate::ActorKind,
         bytes: &[u8],
     ) -> Result<BridgeReceipt, PersistenceError> {
+        let thread_id = thread_id.into();
         let knowledge_actor = actor.clone();
         let receipt = ConversationCompiler::ingest_codex_message(
             &mut self.kernel,
-            thread_id,
+            thread_id.clone(),
             message_id,
             actor,
             bytes,
         )?;
         self.commit()?;
         if !receipt.already_recorded {
-            for record in classify_knowledge(&receipt.evidence, &knowledge_actor, bytes) {
+            let route = self.journal.session_route(&thread_id)?;
+            let project_refs = route
+                .as_ref()
+                .and_then(|route| route.project_id.clone())
+                .into_iter()
+                .collect::<Vec<_>>();
+            let workstream_refs = route
+                .as_ref()
+                .and_then(|route| route.workstream_id.clone())
+                .into_iter()
+                .collect::<Vec<_>>();
+            for record in classify_knowledge_scoped(
+                &receipt.evidence,
+                &knowledge_actor,
+                bytes,
+                Some(&thread_id),
+                &project_refs,
+                &workstream_refs,
+            ) {
                 self.journal.put_knowledge_record(&record)?;
             }
         }
@@ -2169,6 +3205,123 @@ impl PersistentForge {
 
     pub fn knowledge_records(&self) -> Result<Vec<KnowledgeRecord>, PersistenceError> {
         self.journal.knowledge_records()
+    }
+
+    pub fn knowledge_record_count(&self) -> Result<usize, PersistenceError> {
+        self.journal.knowledge_record_count()
+    }
+
+    pub fn search_knowledge(
+        &self,
+        query: &KnowledgeSearchQuery,
+    ) -> Result<Vec<KnowledgeSearchHit>, PersistenceError> {
+        self.journal.search_knowledge(query)
+    }
+
+    pub fn record_project(&self, record: &ProjectRecord) -> Result<(), PersistenceError> {
+        self.journal.put_project(record)
+    }
+
+    pub fn project_by_alias(&self, alias: &str) -> Result<Option<ProjectRecord>, PersistenceError> {
+        self.journal.project_by_alias(alias)
+    }
+
+    pub fn record_workstream(
+        &self,
+        record: &WorkstreamRecord,
+        now_unix_ms: u64,
+    ) -> Result<(), PersistenceError> {
+        self.journal.put_workstream(record, now_unix_ms)
+    }
+
+    pub fn workstream(
+        &self,
+        workstream_id: &str,
+    ) -> Result<Option<WorkstreamRecord>, PersistenceError> {
+        self.journal.workstream(workstream_id)
+    }
+
+    pub fn claim_writer_lease(
+        &self,
+        workstream_id: &str,
+        session_id: &str,
+        checkpoint_sha256: &str,
+        now_unix_ms: u64,
+        ttl_ms: u64,
+    ) -> Result<WorkstreamRecord, PersistenceError> {
+        let current = self.routed_workstream(workstream_id, session_id)?;
+        let next = next_writer_claim(&current, session_id, checkpoint_sha256, now_unix_ms, ttl_ms)
+            .map_err(|_| PersistenceError::FederatedRecordConflict(workstream_id.into()))?;
+        self.journal.put_workstream(&next, now_unix_ms)?;
+        Ok(next)
+    }
+
+    pub fn assert_writer_lease(
+        &self,
+        workstream_id: &str,
+        session_id: &str,
+        checkpoint_sha256: &str,
+        now_unix_ms: u64,
+    ) -> Result<(), PersistenceError> {
+        let current = self.routed_workstream(workstream_id, session_id)?;
+        validate_writer_lease(&current, session_id, checkpoint_sha256, now_unix_ms)
+            .map_err(|_| PersistenceError::FederatedRecordConflict(workstream_id.into()))
+    }
+
+    pub fn release_writer_lease(
+        &self,
+        workstream_id: &str,
+        session_id: &str,
+        now_unix_ms: u64,
+    ) -> Result<WorkstreamRecord, PersistenceError> {
+        let current = self.routed_workstream(workstream_id, session_id)?;
+        let next = next_writer_release(&current, session_id, now_unix_ms)
+            .map_err(|_| PersistenceError::FederatedRecordConflict(workstream_id.into()))?;
+        self.journal.put_workstream(&next, now_unix_ms)?;
+        Ok(next)
+    }
+
+    pub fn record_session_route(
+        &self,
+        record: &SessionRouteReceipt,
+    ) -> Result<(), PersistenceError> {
+        self.journal.put_session_route(record)
+    }
+
+    pub fn session_route(
+        &self,
+        session_id: &str,
+    ) -> Result<Option<SessionRouteReceipt>, PersistenceError> {
+        self.journal.session_route(session_id)
+    }
+
+    fn routed_workstream(
+        &self,
+        workstream_id: &str,
+        session_id: &str,
+    ) -> Result<WorkstreamRecord, PersistenceError> {
+        let route = self
+            .journal
+            .session_route(session_id)?
+            .filter(|route| {
+                route.state == "routed" && route.workstream_id.as_deref() == Some(workstream_id)
+            })
+            .ok_or_else(|| PersistenceError::FederatedRecordConflict(session_id.into()))?;
+        let workstream = self
+            .journal
+            .workstream(workstream_id)?
+            .ok_or_else(|| PersistenceError::InvalidFederatedRecord(workstream_id.into()))?;
+        if route.project_id.as_deref() != Some(workstream.project_id.as_str()) {
+            return Err(PersistenceError::FederatedRecordConflict(session_id.into()));
+        }
+        Ok(workstream)
+    }
+
+    pub fn record_cross_project_link(
+        &self,
+        record: &CrossProjectLink,
+    ) -> Result<(), PersistenceError> {
+        self.journal.put_cross_project_link(record)
     }
 
     fn persist_knowledge_for_evidence(
@@ -2197,6 +3350,33 @@ impl PersistentForge {
     }
 
     pub fn backfill_knowledge_records(&self) -> Result<(), PersistenceError> {
+        let evidence_count = self
+            .kernel
+            .events()
+            .iter()
+            .filter(|event| event.event_type == crate::EventType::EvidenceRegistered)
+            .filter_map(|event| event.input_objects.first())
+            .collect::<std::collections::BTreeSet<_>>()
+            .len();
+        if self
+            .journal
+            .latest_knowledge_generation()?
+            .is_some_and(|receipt| {
+                receipt.classifier_version == crate::knowledge::CLASSIFIER_VERSION
+                    && receipt.evidence_count == evidence_count
+                    && receipt.expected_record_count == receipt.written_record_count
+            })
+        {
+            return self
+                .journal
+                .refresh_knowledge_scope_indexes(self.kernel.events());
+        }
+        let mut records = Vec::new();
+        let objects = self
+            .kernel
+            .objects()
+            .map(|object| (object.id.as_str(), object))
+            .collect::<std::collections::BTreeMap<_, _>>();
         for event in self.kernel.events() {
             if event.event_type != crate::EventType::EvidenceRegistered {
                 continue;
@@ -2204,14 +3384,93 @@ impl PersistentForge {
             let Some(evidence_id) = event.input_objects.first() else {
                 continue;
             };
-            let Some(object) = self.kernel.object(evidence_id) else {
+            let Some(object) = objects.get(evidence_id.as_str()) else {
                 continue;
             };
-            for record in classify_knowledge(evidence_id, &event.actor, &object.bytes) {
-                self.journal.put_knowledge_record(&record)?;
+            records.extend(classify_knowledge(evidence_id, &event.actor, &object.bytes));
+        }
+        let mut unique_records = std::collections::BTreeMap::new();
+        for record in records {
+            if unique_records
+                .insert(record.id.clone(), record.clone())
+                .is_some_and(|existing| existing != record)
+            {
+                return Err(PersistenceError::InvalidKnowledgeGeneration);
             }
         }
-        Ok(())
+        let records = unique_records.into_values().collect::<Vec<_>>();
+        self.journal.put_knowledge_generation(
+            crate::knowledge::CLASSIFIER_VERSION,
+            evidence_count,
+            &records,
+        )?;
+        self.journal
+            .refresh_knowledge_scope_indexes(self.kernel.events())
+    }
+
+    /// Finalize a previously written additive classifier generation after
+    /// validating every retained row and evidence reference. This is the
+    /// bounded recovery path for databases created before generation receipts.
+    pub fn finalize_existing_knowledge_generation(&self) -> Result<(), PersistenceError> {
+        let mut statement = self.journal.connection.prepare(
+            "SELECT record_json FROM knowledge_records WHERE classifier_version=?1 ORDER BY id",
+        )?;
+        let records = statement
+            .query_map(params![crate::knowledge::CLASSIFIER_VERSION], |row| {
+                decode::<KnowledgeRecord>(&row.get::<_, String>(0)?)
+            })?
+            .collect::<Result<Vec<_>, _>>()?;
+        let evidence_ids = self
+            .kernel
+            .events()
+            .iter()
+            .filter(|event| event.event_type == crate::EventType::EvidenceRegistered)
+            .filter_map(|event| event.input_objects.first())
+            .collect::<std::collections::BTreeSet<_>>();
+        let objects = self
+            .kernel
+            .objects()
+            .map(|object| (object.id.as_str(), object))
+            .collect::<std::collections::BTreeMap<_, _>>();
+        let mut expected = std::collections::BTreeMap::new();
+        for event in self.kernel.events() {
+            if event.event_type != crate::EventType::EvidenceRegistered {
+                continue;
+            }
+            let Some(evidence_id) = event.input_objects.first() else {
+                continue;
+            };
+            let Some(object) = objects.get(evidence_id.as_str()) else {
+                return Err(PersistenceError::InvalidKnowledgeGeneration);
+            };
+            for record in classify_knowledge(evidence_id, &event.actor, &object.bytes) {
+                if expected
+                    .insert(record.id.clone(), record.clone())
+                    .is_some_and(|existing| !same_knowledge_content(&existing, &record))
+                {
+                    return Err(PersistenceError::InvalidKnowledgeGeneration);
+                }
+            }
+        }
+        if records.is_empty()
+            || records.len() != expected.len()
+            || records
+                .iter()
+                .zip(expected.keys())
+                .any(|(stored, expected_id)| {
+                    !valid_knowledge_record(stored) || &stored.id != expected_id
+                })
+        {
+            return Err(PersistenceError::InvalidKnowledgeGeneration);
+        }
+        let evidence_count = evidence_ids.len();
+        self.journal.put_knowledge_generation(
+            crate::knowledge::CLASSIFIER_VERSION,
+            evidence_count,
+            &records,
+        )?;
+        self.journal
+            .refresh_knowledge_scope_indexes(self.kernel.events())
     }
 
     pub fn source_cursor(&self, source_id: &str) -> Result<Option<SourceCursor>, PersistenceError> {
@@ -2287,6 +3546,108 @@ impl PersistentForge {
             return Err(PersistenceError::BackupVerificationFailed);
         }
         Ok(())
+    }
+
+    /// Losslessly compress a previously verified backup. The source is always
+    /// retained; archive creation never grants deletion authority.
+    pub fn archive_verified_backup(
+        receipt: &BackupReceipt,
+        destination: impl AsRef<Path>,
+    ) -> Result<ArchiveReceipt, PersistenceError> {
+        Self::verify_backup(receipt)?;
+        let destination = destination.as_ref().to_path_buf();
+        if destination.exists() {
+            return Err(PersistenceError::BackupDestinationExists(destination));
+        }
+        let temporary = unique_sibling_path(&destination, "archive-partial")?;
+        let source = File::open(&receipt.path)?;
+        let output = OpenOptions::new()
+            .write(true)
+            .create_new(true)
+            .open(&temporary)?;
+        let mut encoder = flate2::write::GzEncoder::new(output, flate2::Compression::new(6));
+        let creation = (|| -> Result<ArchiveReceipt, PersistenceError> {
+            std::io::copy(&mut std::io::BufReader::new(source), &mut encoder)?;
+            encoder.finish()?.sync_all()?;
+            let archive = ArchiveReceipt {
+                source_path: receipt.path.clone(),
+                archive_path: temporary.clone(),
+                source_sha256: receipt.sha256.clone(),
+                archive_sha256: sha256_file(&temporary)?,
+                source_bytes: receipt.bytes,
+                archive_bytes: fs::metadata(&temporary)?.len(),
+                object_count: receipt.object_count,
+                event_count: receipt.event_count,
+                candidate_count: receipt.candidate_count,
+                codec: "gzip-level-6".into(),
+                raw_source_retained: true,
+            };
+            Self::verify_archive(&archive)?;
+            fs::rename(&temporary, &destination)?;
+            let mut final_receipt = archive;
+            final_receipt.archive_path = destination;
+            Self::verify_archive(&final_receipt)?;
+            Ok(final_receipt)
+        })();
+        if creation.is_err() && temporary.exists() {
+            let _ = fs::remove_file(&temporary);
+        }
+        creation
+    }
+
+    pub fn verify_archive(receipt: &ArchiveReceipt) -> Result<(), PersistenceError> {
+        if receipt.codec != "gzip-level-6"
+            || !receipt.raw_source_retained
+            || fs::metadata(&receipt.archive_path)
+                .map(|value| value.len())
+                .ok()
+                != Some(receipt.archive_bytes)
+            || fs::metadata(&receipt.source_path)
+                .map(|value| value.len())
+                .ok()
+                != Some(receipt.source_bytes)
+            || sha256_file(&receipt.archive_path).ok().as_deref()
+                != Some(receipt.archive_sha256.as_str())
+            || sha256_file(&receipt.source_path).ok().as_deref()
+                != Some(receipt.source_sha256.as_str())
+        {
+            return Err(PersistenceError::BackupVerificationFailed);
+        }
+        let verification_path = unique_sibling_path(&receipt.archive_path, "archive-verify")?;
+        let verification_result = (|| -> Result<(), PersistenceError> {
+            let archive = File::open(&receipt.archive_path)?;
+            let mut decoder = flate2::bufread::GzDecoder::new(std::io::BufReader::new(archive));
+            let mut restored = OpenOptions::new()
+                .write(true)
+                .create_new(true)
+                .open(&verification_path)?;
+            let copied = std::io::copy(
+                &mut decoder
+                    .by_ref()
+                    .take(receipt.source_bytes.saturating_add(1)),
+                &mut restored,
+            )?;
+            restored.sync_all()?;
+            let mut compressed = decoder.into_inner();
+            let consumed = compressed
+                .stream_position()?
+                .saturating_sub(compressed.buffer().len() as u64);
+            if copied != receipt.source_bytes || consumed != receipt.archive_bytes {
+                return Err(PersistenceError::BackupVerificationFailed);
+            }
+            Self::verify_backup(&BackupReceipt {
+                path: verification_path.clone(),
+                sha256: receipt.source_sha256.clone(),
+                bytes: receipt.source_bytes,
+                object_count: receipt.object_count,
+                event_count: receipt.event_count,
+                candidate_count: receipt.candidate_count,
+            })
+        })();
+        if verification_path.exists() {
+            fs::remove_file(&verification_path)?;
+        }
+        verification_result
     }
 
     pub fn apply_promoted_code(
@@ -2484,10 +3845,34 @@ fn verify_canonical_parent(root: &Path, target: &Path) -> Result<(), Persistence
 }
 
 fn sha256_file(path: &Path) -> Result<String, PersistenceError> {
-    let bytes = fs::read(path)?;
+    let mut file = File::open(path)?;
     let mut hasher = Sha256::new();
-    hasher.update(bytes);
+    let mut buffer = [0_u8; 64 * 1024];
+    loop {
+        let read = file.read(&mut buffer)?;
+        if read == 0 {
+            break;
+        }
+        hasher.update(&buffer[..read]);
+    }
     Ok(format!("{:x}", hasher.finalize()))
+}
+
+fn unique_sibling_path(path: &Path, role: &str) -> Result<PathBuf, PersistenceError> {
+    let parent = path
+        .parent()
+        .ok_or_else(|| PersistenceError::UnsafeApplyTarget(path.to_path_buf()))?;
+    let name = path
+        .file_name()
+        .and_then(|value| value.to_str())
+        .ok_or_else(|| PersistenceError::UnsafeApplyTarget(path.to_path_buf()))?;
+    for attempt in 0..64_u8 {
+        let candidate = parent.join(format!(".{name}.{role}.{}.{attempt}", std::process::id()));
+        if !candidate.exists() {
+            return Ok(candidate);
+        }
+    }
+    Err(PersistenceError::BackupVerificationFailed)
 }
 
 pub fn inventory_workspace(root: &Path) -> Result<Vec<WorkspaceFile>, PersistenceError> {
@@ -2499,6 +3884,252 @@ pub fn inventory_workspace(root: &Path) -> Result<Vec<WorkspaceFile>, Persistenc
     inventory_directory(&root, &root, &mut files)?;
     files.sort_by(|left, right| left.relative_path.cmp(&right.relative_path));
     Ok(files)
+}
+
+/// Compact source-of-truth inventory. Build output, VCS internals and generated
+/// local projections are intentionally represented as exclusions, not millions
+/// of per-file hashes.
+pub fn inventory_managed_workspace(
+    root: &Path,
+) -> Result<ManagedWorkspaceInventory, PersistenceError> {
+    const EXCLUDED: &[&str] = &[".git", ".local", "target", "node_modules", "artifacts"];
+    if !root.exists() {
+        return Err(PersistenceError::InvalidManagedWorkspace(
+            root.to_path_buf(),
+        ));
+    }
+    let root = fs::canonicalize(root)?;
+    let git_root = git_output(&root, &["rev-parse", "--show-toplevel"])?;
+    let declared_root = fs::canonicalize(String::from_utf8_lossy(&git_root).trim())?;
+    if declared_root != root {
+        return Err(PersistenceError::InvalidManagedWorkspace(root));
+    }
+    let commit_identity = Command::new("git")
+        .args(["-C"])
+        .arg(&root)
+        .args(["rev-parse", "--verify", "HEAD"])
+        .output()
+        .ok()
+        .filter(|output| output.status.success())
+        .map(|output| String::from_utf8_lossy(&output.stdout).trim().to_owned());
+    let listed = git_output(
+        &root,
+        &[
+            "ls-files",
+            "--cached",
+            "--others",
+            "--exclude-standard",
+            "-z",
+        ],
+    )?;
+    let mut files = Vec::new();
+    for raw_path in listed
+        .split(|byte| *byte == 0)
+        .filter(|value| !value.is_empty())
+    {
+        let relative_path = String::from_utf8_lossy(raw_path).replace('\\', "/");
+        let relative = Path::new(&relative_path);
+        if relative.is_absolute()
+            || relative
+                .components()
+                .any(|component| !matches!(component, std::path::Component::Normal(_)))
+        {
+            return Err(PersistenceError::InvalidManagedWorkspace(root));
+        }
+        let first = relative
+            .components()
+            .next()
+            .and_then(|component| component.as_os_str().to_str())
+            .unwrap_or_default();
+        if EXCLUDED
+            .iter()
+            .any(|excluded| first.eq_ignore_ascii_case(excluded))
+        {
+            continue;
+        }
+        let path = root.join(relative);
+        if !path.exists() {
+            continue;
+        }
+        let metadata = fs::symlink_metadata(&path)?;
+        if metadata.file_type().is_symlink() || !metadata.is_file() {
+            return Err(PersistenceError::InvalidManagedWorkspace(path));
+        }
+        let canonical = fs::canonicalize(&path)?;
+        if !canonical.starts_with(&root) {
+            return Err(PersistenceError::InvalidManagedWorkspace(canonical));
+        }
+        files.push(WorkspaceFile {
+            relative_path,
+            bytes: metadata.len(),
+            sha256: sha256_file(&canonical)?,
+        });
+    }
+    files.sort_by(|left, right| left.relative_path.cmp(&right.relative_path));
+    files.dedup_by(|left, right| left.relative_path == right.relative_path);
+    let mut dirty_paths = parse_git_status(&git_output(
+        &root,
+        &["status", "--porcelain=v1", "-z", "--untracked-files=all"],
+    )?);
+    dirty_paths.sort();
+    dirty_paths.dedup();
+    let mut digest = Sha256::new();
+    digest.update(b"managed-workspace-inventory:v1\0");
+    digest.update(commit_identity.as_deref().unwrap_or("unborn").as_bytes());
+    digest.update(b"\0");
+    for dirty_path in &dirty_paths {
+        digest.update(dirty_path.as_bytes());
+        digest.update(b"\0");
+    }
+    for file in &files {
+        digest.update(file.relative_path.as_bytes());
+        digest.update(b"\0");
+        digest.update(file.bytes.to_le_bytes());
+        digest.update(file.sha256.as_bytes());
+    }
+    Ok(ManagedWorkspaceInventory {
+        repository_kind: "git".into(),
+        commit_identity,
+        dirty_paths,
+        files,
+        excluded_roots: EXCLUDED.iter().map(|value| (*value).into()).collect(),
+        root_digest: format!("{:x}", digest.finalize()),
+    })
+}
+
+fn git_output(root: &Path, args: &[&str]) -> Result<Vec<u8>, PersistenceError> {
+    let output = Command::new("git")
+        .arg("-C")
+        .arg(root)
+        .args(args)
+        .output()
+        .map_err(|_| PersistenceError::InvalidManagedWorkspace(root.to_path_buf()))?;
+    if !output.status.success() || output.stdout.len() > 64 * 1024 * 1024 {
+        return Err(PersistenceError::InvalidManagedWorkspace(
+            root.to_path_buf(),
+        ));
+    }
+    Ok(output.stdout)
+}
+
+fn parse_git_status(status: &[u8]) -> Vec<String> {
+    let fields = status
+        .split(|byte| *byte == 0)
+        .filter(|value| !value.is_empty())
+        .collect::<Vec<_>>();
+    let mut paths = Vec::new();
+    let mut index = 0;
+    while index < fields.len() {
+        let field = fields[index];
+        if field.len() >= 4 {
+            paths.push(String::from_utf8_lossy(&field[3..]).replace('\\', "/"));
+            if matches!(field[0], b'R' | b'C') || matches!(field[1], b'R' | b'C') {
+                index += 1;
+            }
+        }
+        index += 1;
+    }
+    paths
+}
+
+/// Read-only cleanup preview. Execution is deliberately absent from this API.
+pub fn preview_cache_cleanup(root: &Path) -> Result<CacheCleanupPlan, PersistenceError> {
+    let root = fs::canonicalize(root)?;
+    let mut candidates = Vec::new();
+    for (relative_path, reason) in [("target", "rebuildable Rust build cache")] {
+        let path = root.join(relative_path);
+        if !path.exists() {
+            continue;
+        }
+        let metadata = fs::symlink_metadata(&path)?;
+        if metadata.file_type().is_symlink() || !metadata.is_dir() {
+            return Err(PersistenceError::UnsafeApplyTarget(path));
+        }
+        let canonical_path = fs::canonicalize(&path)?;
+        if !canonical_path.starts_with(&root) {
+            return Err(PersistenceError::UnsafeApplyTarget(canonical_path));
+        }
+        let (bytes, file_count, fingerprint) = strict_directory_measure(&canonical_path)?;
+        candidates.push(CacheCleanupCandidate {
+            relative_path: relative_path.into(),
+            canonical_path,
+            bytes,
+            file_count,
+            fingerprint,
+            reason: reason.into(),
+        });
+    }
+    candidates.sort_by(|left, right| left.relative_path.cmp(&right.relative_path));
+    let mut plan_digest = Sha256::new();
+    plan_digest.update(b"forge-cache-cleanup-plan:v1\0");
+    plan_digest.update(root.to_string_lossy().as_bytes());
+    plan_digest.update(b"\0");
+    for candidate in &candidates {
+        plan_digest.update(candidate.relative_path.as_bytes());
+        plan_digest.update(b"\0");
+        plan_digest.update(candidate.bytes.to_le_bytes());
+        plan_digest.update(candidate.file_count.to_le_bytes());
+        plan_digest.update(candidate.fingerprint.as_bytes());
+        plan_digest.update(b"\0");
+    }
+    Ok(CacheCleanupPlan {
+        root,
+        reclaimable_bytes: candidates.iter().map(|candidate| candidate.bytes).sum(),
+        candidates,
+        plan_hash: format!("{:x}", plan_digest.finalize()),
+        approval_required: true,
+        executed: false,
+    })
+}
+
+fn strict_directory_measure(path: &Path) -> Result<(u64, u64, String), PersistenceError> {
+    let mut bytes = 0_u64;
+    let mut files = 0_u64;
+    let mut entries = Vec::new();
+    strict_directory_entries(path, path, &mut entries)?;
+    entries.sort_by(|left, right| left.0.cmp(&right.0));
+    let mut digest = Sha256::new();
+    digest.update(b"forge-cache-tree:v1\0");
+    for (relative_path, size, metadata_fingerprint) in entries {
+        bytes = bytes.saturating_add(size);
+        files = files.saturating_add(1);
+        digest.update(relative_path.as_bytes());
+        digest.update(b"\0");
+        digest.update(size.to_le_bytes());
+        digest.update(metadata_fingerprint.as_bytes());
+    }
+    Ok((bytes, files, format!("{:x}", digest.finalize())))
+}
+
+fn strict_directory_entries(
+    root: &Path,
+    path: &Path,
+    entries: &mut Vec<(String, u64, String)>,
+) -> Result<(), PersistenceError> {
+    for entry in fs::read_dir(path)? {
+        let entry = entry?;
+        let metadata = fs::symlink_metadata(entry.path())?;
+        if metadata.file_type().is_symlink() {
+            return Err(PersistenceError::UnsafeApplyTarget(entry.path()));
+        }
+        if metadata.is_dir() {
+            strict_directory_entries(root, &entry.path(), entries)?;
+        } else if metadata.is_file() {
+            let relative_path = entry
+                .path()
+                .strip_prefix(root)
+                .map_err(|_| PersistenceError::UnsafeApplyTarget(entry.path()))?
+                .to_string_lossy()
+                .replace('\\', "/");
+            let modified = metadata
+                .modified()?
+                .duration_since(std::time::UNIX_EPOCH)
+                .unwrap_or_default()
+                .as_nanos();
+            entries.push((relative_path, metadata.len(), modified.to_string()));
+        }
+    }
+    Ok(())
 }
 
 fn inventory_directory(
@@ -2531,6 +4162,61 @@ fn inventory_directory(
     Ok(())
 }
 
+fn project_batch_metrics(events: &[BatchEventRecord]) -> BatchMetricProjection {
+    let mut batches = std::collections::BTreeMap::<String, (bool, bool, bool)>::new();
+    let mut rework_events = 0;
+    for event in events {
+        let state = batches.entry(event.batch_id.clone()).or_default();
+        if event.event_type == "verification_completed" && event.outcome == "passed" {
+            state.0 = true;
+        }
+        if event.event_type == "batch_completed" && event.outcome == "completed" {
+            state.1 = true;
+        }
+        if event.outcome == "failed" || event.outcome == "blocked" {
+            state.2 = true;
+        }
+        if event.outcome == "reworked"
+            || (event.event_type == "verification_completed" && event.outcome == "failed")
+        {
+            rework_events += 1;
+        }
+    }
+    let completed_batches = batches.values().filter(|state| state.1).count();
+    let verified_batches = batches
+        .values()
+        .filter(|state| state.0 && state.1 && !state.2)
+        .count();
+    let failed_or_blocked_batches = batches.values().filter(|state| state.2).count();
+    let verified_closure_percent = if completed_batches > 0 {
+        Some(((verified_batches * 100) / completed_batches) as u32)
+    } else {
+        None
+    };
+    let sample_state = if completed_batches < 5 {
+        "insufficient_sample"
+    } else {
+        "sufficient_sample"
+    };
+    let recommendation = if failed_or_blocked_batches > 0 || verified_batches == 0 {
+        "hold"
+    } else if completed_batches < 5 {
+        "observe"
+    } else {
+        "advisory_improvement"
+    };
+    BatchMetricProjection {
+        event_count: events.len(),
+        completed_batches,
+        verified_batches,
+        failed_or_blocked_batches,
+        rework_events,
+        verified_closure_percent,
+        sample_state: sample_state.into(),
+        recommendation: recommendation.into(),
+    }
+}
+
 fn validate_batch_event_shape(record: &BatchEventRecord) -> Result<(), PersistenceError> {
     let valid_event_type = matches!(
         record.event_type.as_str(),
@@ -2543,6 +4229,10 @@ fn validate_batch_event_shape(record: &BatchEventRecord) -> Result<(), Persisten
             | "governance_change_proposed"
             | "governance_change_verified"
             | "projection_rebuilt"
+            | "routine_run_completed"
+            | "metric_observed"
+            | "criterion_completed"
+            | "criterion_verified"
     );
     let valid_outcome = matches!(
         record.outcome.as_str(),
@@ -2581,12 +4271,18 @@ fn validate_batch_event_shape(record: &BatchEventRecord) -> Result<(), Persisten
         && record.metric_dimensions.iter().all(|dimension| {
             matches!(
                 dimension.name.as_str(),
-                "module" | "result_class" | "measurement_source"
+                "module"
+                    | "result_class"
+                    | "measurement_source"
+                    | "run_definition"
+                    | "platform"
+                    | "verification_scope"
+                    | "metric_version"
             ) && !dimension.value.trim().is_empty()
                 && dimension.value.len() <= 64
                 && !dimension.value.contains(['/', '\\', '\n', '\r'])
         });
-    if record.schema_version != 1
+    if !matches!(record.schema_version, 1 | 2)
         || record.sequence == 0
         || required
             .iter()
@@ -2651,21 +4347,23 @@ fn decode<T: serde::de::DeserializeOwned>(value: &str) -> Result<T, rusqlite::Er
     })
 }
 
+fn string_refs(
+    connection: &Connection,
+    table: &str,
+    column: &str,
+    knowledge_id: &str,
+) -> Result<Vec<String>, PersistenceError> {
+    let mut statement = connection.prepare(&format!(
+        "SELECT {column} FROM {table} WHERE knowledge_id=?1 ORDER BY {column}"
+    ))?;
+    statement
+        .query_map(params![knowledge_id], |row| row.get(0))?
+        .collect::<Result<Vec<_>, _>>()
+        .map_err(Into::into)
+}
+
 const PROOF_RECEIPT_SCHEMA_VERSION: u16 = 1;
-const PROOF_RECEIPT_SYSTEM_IDS: &[&str] = &[
-    "universe-identity",
-    "field-basis",
-    "derived-world-rules",
-    "lazy-universe-hierarchy",
-    "world-history-ledger",
-    "significance-system",
-    "streaming-scheduler",
-    "semantic-emergence",
-    "construction-language",
-    "representation-selector",
-    "asset-factory",
-    "procedural-animation",
-];
+include!("generated_proof_receipt_system_ids.rs");
 
 pub fn canonical_proof_receipt_id(record: &ProofReceiptRecord) -> Result<String, PersistenceError> {
     let mut canonical = record.clone();
@@ -2760,6 +4458,201 @@ fn validate_proof_receipt(
     Ok(())
 }
 
+fn put_knowledge_records_transaction(
+    transaction: &rusqlite::Transaction<'_>,
+    records: &[KnowledgeRecord],
+) -> Result<(), PersistenceError> {
+    for record in records {
+        if !valid_knowledge_record(record) {
+            return Err(PersistenceError::InvalidKnowledgeRecord(record.id.clone()));
+        }
+        let encoded = encode(record)?;
+        let existing: Option<String> = transaction
+            .query_row(
+                "SELECT record_json FROM knowledge_records WHERE id=?1",
+                params![&record.id],
+                |row| row.get(0),
+            )
+            .optional()?;
+        if let Some(existing) = existing {
+            if decode::<KnowledgeRecord>(&existing)? != *record {
+                return Err(PersistenceError::KnowledgeRecordConflict(record.id.clone()));
+            }
+            continue;
+        }
+        for project_id in &record.project_refs {
+            let exists: bool = transaction.query_row(
+                "SELECT EXISTS(SELECT 1 FROM projects WHERE id=?1)",
+                params![project_id],
+                |row| row.get(0),
+            )?;
+            if !exists {
+                return Err(PersistenceError::InvalidKnowledgeRecord(record.id.clone()));
+            }
+        }
+        for workstream_id in &record.workstream_refs {
+            let project_id: Option<String> = transaction
+                .query_row(
+                    "SELECT project_id FROM workstreams WHERE id=?1 ORDER BY revision DESC LIMIT 1",
+                    params![workstream_id],
+                    |row| row.get(0),
+                )
+                .optional()?;
+            if project_id
+                .as_ref()
+                .is_none_or(|project_id| !record.project_refs.contains(project_id))
+            {
+                return Err(PersistenceError::InvalidKnowledgeRecord(record.id.clone()));
+            }
+        }
+        transaction.execute(
+            "INSERT INTO knowledge_records
+             (id, record_type, state, content_fingerprint, classifier_version, record_json)
+             VALUES (?1, ?2, ?3, ?4, ?5, ?6)",
+            params![
+                &record.id,
+                encode(&record.record_type)?,
+                encode(&record.state)?,
+                &record.content_fingerprint,
+                record.classifier_version,
+                encoded
+            ],
+        )?;
+        for project_id in &record.project_refs {
+            transaction.execute(
+                "INSERT OR IGNORE INTO knowledge_project_refs (knowledge_id, project_id) VALUES (?1, ?2)",
+                params![&record.id, project_id],
+            )?;
+        }
+        for workstream_id in &record.workstream_refs {
+            transaction.execute(
+                "INSERT OR IGNORE INTO knowledge_workstream_refs (knowledge_id, workstream_id) VALUES (?1, ?2)",
+                params![&record.id, workstream_id],
+            )?;
+        }
+        for system_id in &record.system_refs {
+            transaction.execute(
+                "INSERT OR IGNORE INTO knowledge_system_refs (knowledge_id, system_id) VALUES (?1, ?2)",
+                params![&record.id, system_id],
+            )?;
+        }
+        for entity_id in &record.entity_refs {
+            transaction.execute(
+                "INSERT OR IGNORE INTO knowledge_entity_refs (knowledge_id, entity_id) VALUES (?1, ?2)",
+                params![&record.id, entity_id],
+            )?;
+        }
+        transaction.execute(
+            "INSERT OR IGNORE INTO knowledge_actor_refs (knowledge_id, source_actor) VALUES (?1, ?2)",
+            params![&record.id, &record.source_actor],
+        )?;
+        if let Some(session_id) = &record.source_session_id {
+            transaction.execute(
+                "INSERT OR IGNORE INTO knowledge_session_refs (knowledge_id, session_id) VALUES (?1, ?2)",
+                params![&record.id, session_id],
+            )?;
+        }
+        for facet in &record.facet_types {
+            let encoded_facet = encode(facet)?;
+            transaction.execute(
+                "INSERT OR IGNORE INTO knowledge_facets (knowledge_id, facet_type) VALUES (?1, ?2)",
+                params![&record.id, encoded_facet.trim_matches('"')],
+            )?;
+        }
+        transaction.execute(
+            "INSERT INTO knowledge_fts (knowledge_id, title, summary) VALUES (?1, ?2, ?3)",
+            params![&record.id, &record.title, &record.summary],
+        )?;
+    }
+    Ok(())
+}
+
+fn same_knowledge_content(left: &KnowledgeRecord, right: &KnowledgeRecord) -> bool {
+    let mut left = left.clone();
+    let mut right = right.clone();
+    left.project_refs.clear();
+    right.project_refs.clear();
+    left.workstream_refs.clear();
+    right.workstream_refs.clear();
+    left.source_session_id = None;
+    right.source_session_id = None;
+    left == right
+}
+
+fn same_knowledge_identity(left: &KnowledgeRecord, right: &KnowledgeRecord) -> bool {
+    left.id == right.id
+        && left.schema_version == right.schema_version
+        && left.classifier_version == right.classifier_version
+        && left.content_fingerprint == right.content_fingerprint
+        && left.source_evidence_ids == right.source_evidence_ids
+        && left.source_spans == right.source_spans
+}
+
+fn valid_knowledge_record(record: &KnowledgeRecord) -> bool {
+    fn canonical_optional(values: &[String]) -> bool {
+        values.len() <= 1_024
+            && values
+                .iter()
+                .all(|value| !value.trim().is_empty() && value.len() <= 4_096)
+            && values.windows(2).all(|pair| pair[0] < pair[1])
+    }
+
+    let spans_valid = record.source_spans.windows(2).all(|pair| {
+        (
+            pair[0].evidence_id.as_str(),
+            pair[0].start_byte,
+            pair[0].end_byte,
+        ) < (
+            pair[1].evidence_id.as_str(),
+            pair[1].start_byte,
+            pair[1].end_byte,
+        )
+    }) && record.source_spans.iter().all(|span| {
+        span.start_byte < span.end_byte
+            && record
+                .source_evidence_ids
+                .binary_search(&span.evidence_id)
+                .is_ok()
+    });
+    let v4_identity_valid = if record.classifier_version == crate::knowledge::CLASSIFIER_VERSION {
+        if record.schema_version != 4 || record.source_spans.len() != 1 {
+            false
+        } else {
+            let span = &record.source_spans[0];
+            let expected = format!(
+                "knowledge:v4:{}:{}:{}:{}",
+                span.evidence_id, span.start_byte, span.end_byte, record.content_fingerprint
+            );
+            record.id == format!("{:x}", Sha256::digest(expected.as_bytes()))
+        }
+    } else {
+        matches!(record.schema_version, 1 | 2 | 3)
+            && record.classifier_version == record.schema_version
+    };
+
+    v4_identity_valid
+        && !record.id.trim().is_empty()
+        && record.authority_lane == "evidence_only"
+        && record.classifier_confidence <= 100
+        && !record.title.trim().is_empty()
+        && !record.summary.trim().is_empty()
+        && !record.content_fingerprint.trim().is_empty()
+        && !record.required_gate.trim().is_empty()
+        && !record.classifier_method.trim().is_empty()
+        && canonical_optional(&record.project_refs)
+        && canonical_optional(&record.workstream_refs)
+        && canonical_optional(&record.entity_refs)
+        && canonical_optional(&record.system_refs)
+        && !record.source_evidence_ids.is_empty()
+        && canonical_optional(&record.source_evidence_ids)
+        && spans_valid
+        && record
+            .source_session_id
+            .as_ref()
+            .is_none_or(|session| !session.trim().is_empty() && session.len() <= 4_096)
+        && serde_json::to_vec(record).is_ok_and(|encoded| encoded.len() <= 4 * 1024 * 1024)
+}
+
 #[derive(Debug)]
 pub enum PersistenceError {
     Sqlite(rusqlite::Error),
@@ -2784,6 +4677,9 @@ pub enum PersistenceError {
     ProofReceiptConflict(String),
     InvalidKnowledgeRecord(String),
     KnowledgeRecordConflict(String),
+    InvalidKnowledgeGeneration,
+    InvalidKnowledgeQuery,
+    InvalidManagedWorkspace(PathBuf),
     ExistingApplyTarget(PathBuf),
     UnsafeApplyTarget(PathBuf),
     UnknownApplication(String),
@@ -2936,29 +4832,80 @@ mod tests {
     }
 
     #[test]
+    fn knowledge_identity_cannot_silently_change_scope_or_spans() {
+        let journal = SqliteJournal::in_memory().unwrap();
+        let record = classify_knowledge(
+            "evidence-scope",
+            &ActorKind::ImportedContent,
+            b"Keep project routing explicit.",
+        )
+        .pop()
+        .unwrap();
+        journal.put_knowledge_record(&record).unwrap();
+
+        let mut changed_scope = record.clone();
+        changed_scope.project_refs = vec!["project-forged".into()];
+        assert!(matches!(
+            journal.put_knowledge_record(&changed_scope),
+            Err(PersistenceError::KnowledgeRecordConflict(_))
+        ));
+
+        let mut forged_span = record;
+        forged_span.source_spans[0].end_byte -= 1;
+        assert!(matches!(
+            journal.put_knowledge_record(&forged_span),
+            Err(PersistenceError::InvalidKnowledgeRecord(_))
+        ));
+    }
+
+    #[test]
+    fn knowledge_backfill_batch_is_atomic_on_invalid_record() {
+        let journal = SqliteJournal::in_memory().unwrap();
+        let mut records = classify_knowledge(
+            "evidence-batch",
+            &ActorKind::ImportedContent,
+            b"We need one record. I am concerned about partial writes.",
+        );
+        assert_eq!(records.len(), 2);
+        records[1].authority_lane = "forged_authority".into();
+        assert!(journal.put_knowledge_records(&records).is_err());
+        assert!(journal.knowledge_records().unwrap().is_empty());
+    }
+
+    #[test]
     fn current_knowledge_projection_hides_but_does_not_delete_legacy_rows() {
         let journal = SqliteJournal::in_memory().unwrap();
-        let mut current = classify_knowledge(
+        let current = classify_knowledge(
             "evidence-current",
             &ActorKind::ImportedContent,
             b"Efficiency is important to me and we need cheap tests.",
         );
-        assert!(current.len() > 1);
+        assert_eq!(current.len(), 1);
         let mut legacy = current[0].clone();
         legacy.id = "legacy-row".into();
         legacy.schema_version = 1;
         legacy.classifier_version = 1;
         legacy.source_actor = "legacy_unknown".into();
         journal.put_knowledge_record(&legacy).unwrap();
-        for record in current.drain(..) {
-            journal.put_knowledge_record(&record).unwrap();
-        }
+        journal.put_knowledge_records(&current).unwrap();
+        let unpromoted = journal.knowledge_records().unwrap();
+        assert_eq!(unpromoted.len(), 1);
+        assert_eq!(unpromoted[0].classifier_version, 1);
+        let receipt = journal
+            .put_knowledge_generation(crate::knowledge::CLASSIFIER_VERSION, 1, &current)
+            .unwrap();
+        assert_eq!(receipt.expected_record_count, current.len());
+        assert_eq!(receipt.expected_record_count, receipt.written_record_count);
+        assert_eq!(
+            journal.latest_knowledge_generation().unwrap(),
+            Some(receipt)
+        );
         let projected = journal.knowledge_records().unwrap();
-        assert!(projected.len() > 1);
+        assert_eq!(projected.len(), 1);
         assert!(
             projected
                 .iter()
-                .all(|record| record.classifier_version == 2)
+                .all(|record| record.classifier_version == crate::knowledge::CLASSIFIER_VERSION)
         );
         let stored: usize = journal
             .connection
@@ -2967,6 +4914,47 @@ mod tests {
             })
             .unwrap();
         assert_eq!(stored, projected.len() + 1);
+    }
+
+    #[test]
+    fn incomplete_existing_generation_cannot_be_finalized() {
+        let mut forge = PersistentForge::in_memory().unwrap();
+        forge
+            .ingest_codex_bridge_message(
+                "generation-fixture",
+                "message-1",
+                ActorKind::ImportedContent,
+                b"Preserve the complete migration evidence.",
+            )
+            .unwrap();
+        forge
+            .ingest_codex_bridge_message(
+                "generation-fixture",
+                "message-2",
+                ActorKind::ImportedContent,
+                b"Reject partial classifier generations.",
+            )
+            .unwrap();
+        let removed = forge.knowledge_records().unwrap()[0].id.clone();
+        forge
+            .journal
+            .connection
+            .execute(
+                "DELETE FROM knowledge_records WHERE id=?1",
+                params![removed],
+            )
+            .unwrap();
+        assert!(matches!(
+            forge.finalize_existing_knowledge_generation(),
+            Err(PersistenceError::InvalidKnowledgeGeneration)
+        ));
+        assert!(
+            forge
+                .journal
+                .latest_knowledge_generation()
+                .unwrap()
+                .is_none()
+        );
     }
 
     #[test]
@@ -4662,7 +6650,7 @@ mod tests {
             Err(PersistenceError::InvalidBatchEvent(_))
         ));
         event.metric_name = Some("verified_closure_rate".into());
-        event.schema_version = 2;
+        event.schema_version = 3;
         assert!(matches!(
             forge.record_batch_event(&event),
             Err(PersistenceError::InvalidBatchEvent(_))
@@ -4673,6 +6661,54 @@ mod tests {
         ));
         assert_eq!(forge.kernel().events().len(), kernel_events);
         assert_eq!(forge.kernel().candidate_count(), candidates);
+    }
+
+    #[test]
+    fn v2_routine_runs_and_raw_costs_project_without_counting_as_batch_completion() {
+        let forge = PersistentForge::in_memory().unwrap();
+        let mut routine = telemetry_event(
+            "routine-1",
+            1,
+            "routine_run_completed",
+            "passed",
+            "batch-metrics",
+        );
+        routine.schema_version = 2;
+        routine.trace_id = "run-full-gate-1".into();
+        routine.started_at_ms = 1_000;
+        routine.ended_at_ms = 7_000;
+        routine.metric_name = Some("wall_duration_ms".into());
+        routine.metric_value = Some(6_000);
+        routine.metric_unit = Some("ms".into());
+        routine.metric_dimensions = vec![
+            crate::contracts::MetricDimension {
+                name: "module".into(),
+                value: "forge-kernel".into(),
+            },
+            crate::contracts::MetricDimension {
+                name: "run_definition".into(),
+                value: "forge-full-gate-v1".into(),
+            },
+            crate::contracts::MetricDimension {
+                name: "verification_scope".into(),
+                value: "complete".into(),
+            },
+        ];
+        forge.record_batch_event(&routine).unwrap();
+        let dashboard = forge.metrics_dashboard_projection().unwrap();
+        assert!(dashboard.read_only);
+        assert_eq!(dashboard.completed_batches, 0);
+        assert_eq!(dashboard.measured_wall_time_ms, Some(6_000));
+        assert_eq!(dashboard.recent_runs.len(), 1);
+        assert_eq!(dashboard.recent_runs[0].definition_id, "forge-full-gate-v1");
+        assert_eq!(dashboard.sample_state, "insufficient_sample");
+        assert_eq!(dashboard.recommendations[0].code, "collect_local_baseline");
+        let excluded = forge
+            .metrics_dashboard_projection_since(Some(7_001))
+            .unwrap();
+        assert_eq!(excluded.event_count, 0);
+        assert_eq!(excluded.measured_wall_time_ms, None);
+        assert!(excluded.recent_runs.is_empty());
     }
 
     #[test]
@@ -5056,6 +7092,27 @@ mod tests {
     }
 
     #[test]
+    fn proof_receipt_schema_accepts_every_canonical_game_system() {
+        let mut forge = PersistentForge::in_memory().unwrap();
+        let input = forge.kernel_mut().put_object(b"canonical-system-input");
+        let output = forge.kernel_mut().put_object(b"canonical-system-output");
+        forge.commit().unwrap();
+
+        for system_id in PROOF_RECEIPT_SYSTEM_IDS {
+            let mut receipt = proof_receipt(input.clone(), output.clone());
+            receipt.system_id = (*system_id).into();
+            receipt.proof_id = format!("{system_id}-registry-alignment");
+            receipt.receipt_id = canonical_proof_receipt_id(&receipt).unwrap();
+            forge.record_proof_receipt(&receipt).unwrap();
+        }
+
+        assert_eq!(
+            forge.proof_receipt_projection(1).unwrap().receipts.len(),
+            PROOF_RECEIPT_SYSTEM_IDS.len()
+        );
+    }
+
+    #[test]
     fn proof_receipts_fail_closed_and_survive_backup_reopen() {
         let directory = std::env::temp_dir().join(format!(
             "mindwarp-forge-proof-receipts-{}",
@@ -5124,6 +7181,261 @@ mod tests {
             Err(PersistenceError::InvalidProofReceipt(_))
         ));
         drop(reopened);
+        fs::remove_dir_all(directory).unwrap();
+    }
+}
+
+#[cfg(test)]
+mod federation_storage_tests {
+    use super::*;
+
+    fn project(name: &str) -> ProjectRecord {
+        let repository_uri = format!(r"C:\projects\{name}");
+        ProjectRecord {
+            schema_version: 1,
+            id: crate::federation::project_id_for(name, &repository_uri),
+            revision: 1,
+            canonical_name: name.into(),
+            aliases: vec![name.into()],
+            repository_uri,
+            bootstrap_uri: "AGENTS.md".into(),
+            authority_boundary: "Evidence only; no runtime authority.".into(),
+            status: "active".into(),
+            related_project_ids: vec![],
+            evidence_ids: vec!["evidence-project".into()],
+        }
+    }
+
+    fn workstream(id: &str, project_id: &str, dependencies: Vec<String>) -> WorkstreamRecord {
+        WorkstreamRecord {
+            schema_version: 1,
+            id: id.into(),
+            project_id: project_id.into(),
+            title: format!("Workstream {id}"),
+            stage: "implementation".into(),
+            status: "active".into(),
+            authority_lane: "delegated".into(),
+            dependencies,
+            blockers: vec![],
+            checkpoint_uri: "context/checkpoint.json".into(),
+            next_action: "Continue bounded implementation.".into(),
+            revision: 1,
+            lease: None,
+            evidence_ids: vec!["evidence-workstream".into()],
+        }
+    }
+
+    #[test]
+    fn workstream_dependencies_are_existing_local_and_acyclic() {
+        let journal = SqliteJournal::in_memory().unwrap();
+        let left = project("Left");
+        let right = project("Right");
+        journal.put_project(&left).unwrap();
+        journal.put_project(&right).unwrap();
+
+        let missing = workstream("missing-child", &left.id, vec!["not-recorded".into()]);
+        assert!(matches!(
+            journal.put_workstream(&missing, 0),
+            Err(PersistenceError::InvalidFederatedRecord(_))
+        ));
+
+        let base = workstream("base", &left.id, vec![]);
+        journal.put_workstream(&base, 0).unwrap();
+        let foreign = workstream("foreign", &right.id, vec![]);
+        journal.put_workstream(&foreign, 0).unwrap();
+        let cross_project = workstream("cross", &left.id, vec![foreign.id.clone()]);
+        assert!(matches!(
+            journal.put_workstream(&cross_project, 0),
+            Err(PersistenceError::InvalidFederatedRecord(_))
+        ));
+
+        let child = workstream("child", &left.id, vec![base.id.clone()]);
+        journal.put_workstream(&child, 0).unwrap();
+        let mut cycle = base;
+        cycle.revision = 2;
+        cycle.dependencies = vec![child.id];
+        assert!(matches!(
+            journal.put_workstream(&cycle, 0),
+            Err(PersistenceError::FederatedRecordConflict(_))
+        ));
+    }
+
+    #[test]
+    fn greenfield_route_scopes_fts_without_keyword_guessing_and_survives_reopen() {
+        let directory =
+            std::env::temp_dir().join(format!("forge-greenfield-route-{}", std::process::id()));
+        fs::create_dir_all(&directory).unwrap();
+        let database = directory.join("forge.sqlite3");
+        let mut forge = PersistentForge::open(&database).unwrap();
+        let repository_uri = r"C:\Users\zakwm\CascadeProjects\greenfield".to_string();
+        let project_id = crate::federation::project_id_for("Greenfield", &repository_uri);
+        let project = ProjectRecord {
+            schema_version: 1,
+            id: project_id.clone(),
+            revision: 1,
+            canonical_name: "Greenfield".into(),
+            aliases: vec!["Greenfeld".into(), "Greenfield".into()],
+            repository_uri,
+            bootstrap_uri: "AGENTS.md".into(),
+            authority_boundary: "Independent project; Forge evidence grants no authority.".into(),
+            status: "active".into(),
+            related_project_ids: vec!["mindwarp-forge".into()],
+            evidence_ids: vec!["evidence:owner-route".into()],
+        };
+        forge.record_project(&project).unwrap();
+        assert_eq!(forge.project_by_alias("Greenfeld").unwrap(), Some(project));
+        forge
+            .record_session_route(&SessionRouteReceipt {
+                schema_version: 1,
+                session_id: "session-greenfield".into(),
+                revision: 1,
+                state: "routed".into(),
+                candidate_project_ids: vec![project_id.clone()],
+                project_id: Some(project_id.clone()),
+                workstream_id: None,
+                method: "explicit_owner_task_binding".into(),
+                confidence: 100,
+                evidence_ids: vec!["evidence:owner-route".into()],
+            })
+            .unwrap();
+        forge
+            .ingest_codex_bridge_message(
+                "session-greenfield",
+                "message-1",
+                crate::ActorKind::ImportedContent,
+                b"Prepare the Android release checklist and mobile signing review.",
+            )
+            .unwrap();
+        drop(forge);
+
+        let hits = PersistentForge::search_database(
+            &database,
+            &KnowledgeSearchQuery {
+                text: "Android".into(),
+                facet_type: None,
+                project_id: Some(project_id.clone()),
+                workstream_id: None,
+                entity_id: None,
+                system_id: None,
+                source_actor: Some("captured_user".into()),
+                lifecycle_state: Some("detected".into()),
+                limit: 20,
+            },
+        )
+        .unwrap();
+        assert_eq!(hits.len(), 1);
+        assert_eq!(hits[0].project_refs, vec![project_id]);
+        assert_eq!(hits[0].lifecycle_state, "detected");
+        assert_eq!(
+            hits[0].source_session_id.as_deref(),
+            Some("session-greenfield")
+        );
+        assert!(matches!(
+            PersistentForge::search_database(
+                &database,
+                &KnowledgeSearchQuery {
+                    text: "\"unterminated".into(),
+                    facet_type: None,
+                    project_id: None,
+                    workstream_id: None,
+                    entity_id: None,
+                    system_id: None,
+                    source_actor: None,
+                    lifecycle_state: None,
+                    limit: 20,
+                }
+            ),
+            Err(PersistenceError::InvalidKnowledgeQuery)
+        ));
+        fs::remove_dir_all(directory).unwrap();
+    }
+
+    #[test]
+    fn managed_inventory_excludes_caches_and_cleanup_is_preview_only() {
+        let directory =
+            std::env::temp_dir().join(format!("forge-managed-inventory-{}", std::process::id()));
+        fs::create_dir_all(directory.join("src")).unwrap();
+        fs::create_dir_all(directory.join("target/debug")).unwrap();
+        assert!(
+            Command::new("git")
+                .args(["init", "--quiet"])
+                .arg(&directory)
+                .status()
+                .unwrap()
+                .success()
+        );
+        fs::write(directory.join("src/lib.rs"), b"source").unwrap();
+        fs::write(directory.join("target/debug/cache.bin"), vec![0_u8; 32]).unwrap();
+        let inventory = inventory_managed_workspace(&directory).unwrap();
+        assert_eq!(inventory.files.len(), 1);
+        assert_eq!(inventory.repository_kind, "git");
+        assert!(inventory.dirty_paths.contains(&"src/lib.rs".into()));
+        assert_eq!(inventory.files[0].relative_path, "src/lib.rs");
+        assert!(inventory.excluded_roots.contains(&"target".into()));
+        let plan = preview_cache_cleanup(&directory).unwrap();
+        assert_eq!(plan.candidates.len(), 1);
+        assert_eq!(plan.reclaimable_bytes, 32);
+        assert!(plan.approval_required);
+        assert!(!plan.executed);
+        assert_eq!(
+            plan.candidates[0].canonical_path,
+            fs::canonicalize(directory.join("target")).unwrap()
+        );
+        assert!(!plan.candidates[0].fingerprint.is_empty());
+        assert_eq!(
+            preview_cache_cleanup(&directory).unwrap().plan_hash,
+            plan.plan_hash
+        );
+        fs::write(directory.join("target/debug/cache.bin"), vec![1_u8; 33]).unwrap();
+        assert_ne!(
+            preview_cache_cleanup(&directory).unwrap().plan_hash,
+            plan.plan_hash
+        );
+        assert!(directory.join("target/debug/cache.bin").exists());
+        fs::remove_dir_all(directory).unwrap();
+    }
+
+    #[test]
+    fn managed_inventory_rejects_an_unbound_non_git_root() {
+        let directory =
+            std::env::temp_dir().join(format!("forge-unmanaged-inventory-{}", std::process::id()));
+        fs::create_dir_all(&directory).unwrap();
+        fs::write(directory.join("source.txt"), b"unbound").unwrap();
+        assert!(matches!(
+            inventory_managed_workspace(&directory),
+            Err(PersistenceError::InvalidManagedWorkspace(_))
+        ));
+        fs::remove_dir_all(directory).unwrap();
+    }
+
+    #[test]
+    fn verified_archive_is_lossless_and_retains_raw_backup() {
+        let directory = std::env::temp_dir().join(format!("forge-archive-{}", std::process::id()));
+        fs::create_dir_all(&directory).unwrap();
+        let database = directory.join("forge.sqlite3");
+        let backup = directory.join("backup.sqlite3");
+        let archive = directory.join("backup.sqlite3.gz");
+        let mut forge = PersistentForge::open(&database).unwrap();
+        let receipt = forge.backup_to(&backup).unwrap();
+        drop(forge);
+        let archived = PersistentForge::archive_verified_backup(&receipt, &archive).unwrap();
+        assert!(archived.raw_source_retained);
+        assert!(backup.exists());
+        assert!(archive.exists());
+        assert_eq!(archived.source_sha256, receipt.sha256);
+        PersistentForge::verify_archive(&archived).unwrap();
+        use std::io::Write;
+        OpenOptions::new()
+            .append(true)
+            .open(&archive)
+            .unwrap()
+            .write_all(b"trailing-poison")
+            .unwrap();
+        assert!(matches!(
+            PersistentForge::verify_archive(&archived),
+            Err(PersistenceError::BackupVerificationFailed)
+        ));
+        assert!(backup.exists());
         fs::remove_dir_all(directory).unwrap();
     }
 }

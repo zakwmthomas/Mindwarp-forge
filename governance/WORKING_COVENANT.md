@@ -3,7 +3,7 @@
 ## Roles
 
 - The project owner is Creative Director: vision, priorities, taste, and high-impact permission.
-- Codex is technical lead: research, architecture, implementation within authorized scope, testing, diagnosis, and documentation.
+- The active AI assistant is technical lead within the current authorized package: research, architecture, implementation, testing, diagnosis, and documentation. This role is model-independent and grants no owner authority.
 - Forge automation performs only bounded, logged, policy-valid work.
 
 ## Operating rule

@@ -300,46 +300,112 @@
     {
       "id": "C1",
       "milestone": "G1",
-      "state": "executing",
-      "status": "active",
+      "state": "promoted",
+      "status": "complete",
       "depends_on": ["F5"],
-      "gate": "owner",
-      "next_action": "Reassess the inherited C1 ProofReceipt storage choice against the already verified F5 ProofReceipt decision and H7 typed-consumer requirement; consolidate any duplicate gate before presenting one plain owner decision.",
-      "proof": "Contract, recovery, validator tests.",
-      "sources": ["MASTER_CLOSURE_REGISTER.md"]
+      "gate": "hard",
+      "next_action": "Maintain the verified F5 versioned ProofReceipt projection and require exact read-only H7 dependency verification before any G1 consumer uses that baseline.",
+      "proof": "F5 provenance comparison, current persistence/recovery evidence, and focused exact/generic/stale/superseded H7 consumer tests.",
+      "sources": ["MASTER_CLOSURE_REGISTER.md", "F5_PROOF_RECEIPT_DECISION.md", "G1_C1_PROOFRECEIPT_AND_H7_CONSUMER_RESULT.md", "humanoid-promotion-readiness-contract.md"]
     },
     {
       "id": "C2",
       "milestone": "G1",
-      "state": "designed",
-      "status": "design_gated",
+      "state": "promoted",
+      "status": "complete",
       "depends_on": ["C1"],
-      "gate": "design",
-      "next_action": "Resolve universe identity policy.",
-      "proof": "Fixed-vector, migration, collision tests.",
-      "sources": ["MASTER_CLOSURE_REGISTER.md"]
+      "gate": "hard",
+      "next_action": "Maintain the promoted logical/reconstruction identity split, strict codec, stream partitioning, explicit migration and collision failure rules; require C3-C7 consumers to retain those boundaries.",
+      "proof": "Seven focused fixed-vector, codec, partition, migration, collision and authority-negative tests plus the complete Forge gate.",
+      "sources": ["MASTER_CLOSURE_REGISTER.md", "UNIVERSE_IDENTITY_DESIGN_GATE.md", "universe-identity-contract.md", "G1_C2_UNIVERSE_IDENTITY_RESULT.md"]
     },
     {
-      "id": "C3-C7",
+      "id": "G1-FEDERATED-CONTINUITY",
+      "milestone": "G1",
+      "state": "promoted",
+      "status": "complete",
+      "depends_on": ["F5-COHERENCE", "C2"],
+      "gate": "implementation",
+      "next_action": "Maintain the owner-accepted V4 receipt as the canonical live search baseline, retain every V1-V3 row and later append-only V4 capture, and keep repair, rollback, deletion and cache cleanup separately gated.",
+      "proof": "Complete: 102 Kernel tests, closed routing, Greenfield alias and independent-project fixtures, parallel-workstream isolation and stale-lease rejection, V3-to-V4 evidence preservation, FTS filters/ranking, exact generation receipts, verified compressed archive replay, managed-source exclusions, cleanup-plan shields, 48 current modules and complete Forge gates pass. Read-only live reconciliation returned SQLite quick_check ok, independently reproduced the 26,707-row receipt boundary and exact digest over the first 3,790 evidence objects, and explained every additional row as 260 V4 rows from 39 later evidence objects. The owner accepted V4 on 2026-07-17; the post-acceptance complete Forge gate passed in 255.7 seconds without a database rewrite or authority expansion.",
+      "sources": ["G1_FEDERATED_PROJECT_ROUTING_AND_STORAGE_V1_RESULT.md", "G1_FEDERATED_LIVE_STATE_RECONCILIATION_AUDIT.md", "federated-project-routing-contract.md", "indexed-knowledge-v4-contract.md", "storage-archive-contract.md", "managed-source-and-cleanup-preview-contract.md"]
+    },
+    {
+      "id": "C3",
+      "milestone": "G1",
+      "state": "executing",
+      "status": "active",
+      "depends_on": ["C2"],
+      "gate": "design",
+      "next_action": "Keep physical applicability explicitly blocked, retain the code-free C3 ecotone mathematical-design result, and complete the owner-approved disposable stdlib-only ecotone oracle implementation verification through its focused, historical, context, record-role, modularity and complete Forge gates. Stop after the oracle result for reassessment. Do not add a contract schema, crate, dependency, production test, production source, downstream consumer, canonical material-interface owner, renderer, biome, organism, runtime, promotion or C3 closure. This continuation retains the earlier explicit owner decision for the evidence-acquisition and mathematical-design audit.",
+      "proof": "The residual-obligation audit keeps physical visibility C3-owned and evidence-blocked. The owner-approved independent ecotone oracle passes twice with byte-identical canonical stdout around the selected evidence-preserving typed-boundary witness. Exact integer and Fraction arithmetic, separate causal semantic and provenance-sensitive audit digests, dimension-local typed outcomes, aligned refinement, seven real cell and edge enumeration modes, nineteen executable hostile families, the 65,536-cell and 130,560-edge ceilings, isolated stdlib execution and deletion-only rollback survive. The semantic digest excludes category labels while exact sharp causes and unavailable, unsupported, contradictory and provenance-mismatch outcomes remain typed. This is disposable proof-tool evidence only. The missing canonical material join retains unavailable_evidence. Scale ambiguity, spectral/time ambiguity, subject mismatch and the separate capability-free applicability sibling remain unresolved. Exact cell identity is necessary but insufficient. Physical calibration, received energy, visible seamlessness, biome meaning, visibility, rendering, runtime, promotion and C3 closure remain blocked.",
+      "sources": ["G1_C3_POST_PHYSICAL_EVIDENCE_RESIDUAL_OBLIGATION_AND_CLOSURE_ADMISSIBILITY_AUDIT.md", "G1_C3_CALIBRATED_TRANSPORT_APPLICABILITY_PHYSICAL_EVIDENCE_ACQUISITION_PROTOCOL_RESULT.md", "G1_C3_CALIBRATED_TRANSPORT_APPLICABILITY_WITNESS_MATHEMATICAL_DESIGN_AUDIT.md", "MASTER_CLOSURE_REGISTER.md", "G1_C3_CLOSURE_READINESS_AUDIT.md", "G1_C3_PHYSICAL_BIOME_READINESS_AUDIT.md", "G1_C3_SPATIAL_DOMAIN_DESIGN.md", "G1_C3_SPATIAL_DOMAIN_RESULT.md", "G1_C3_PHYSICAL_PARTITION_POLICY_DESIGN_AUDIT.md", "G1_C3_PHYSICAL_PARTITION_IMPLEMENTATION_READINESS.md", "G1_C3_PHYSICAL_REGION_PARTITION_RESULT.md", "G1_C3_POST_PARTITION_CLOSURE_REASSESSMENT.md", "G1_C3_PHYSICAL_PATH_SUBSTRATE_DESIGN_GATE.md", "G1_C3_PATH_WITNESS_COUNTEREXAMPLE_RESULT.md", "G1_C3_PHYSICAL_PATH_SUBSTRATE_IMPLEMENTATION_READINESS.md", "G1_C3_PHYSICAL_PATH_SUBSTRATE_RESULT.md", "G1_C3_POST_PATH_SUBSTRATE_CONSUMER_REASSESSMENT.md", "G1_C3_VISIBLE_RADIANCE_PATH_TRANSFER_MATHEMATICAL_DESIGN_AUDIT.md", "G1_C3_VISIBLE_RADIANCE_BULK_TRANSFER_ORACLE_RESULT.md", "G1_C3_VISIBLE_RADIANCE_BULK_TRANSFER_IMPLEMENTATION_READINESS.md", "G1_C3_VISIBLE_RADIANCE_BULK_TRANSFER_RESULT.md", "G1_C3_POST_TRANSFER_CONSUMER_REASSESSMENT.md", "G1_C3_VISIBLE_RADIANCE_INTERFACE_EVENT_MATHEMATICAL_DESIGN_AUDIT.md", "G1_C3_VISIBLE_RADIANCE_INTERFACE_EVENT_ORACLE_RESULT.md", "G1_C3_VISIBLE_RADIANCE_INTERFACE_NUMERICAL_KERNEL_DESIGN_AUDIT.md", "G1_C3_VISIBLE_RADIANCE_INTERFACE_STAGED_KERNEL_ORACLE_RESULT.md", "G1_C3_VISIBLE_RADIANCE_INTERFACE_POST_ORACLE_STRATEGY_REASSESSMENT.md", "G1_C3_VISIBLE_RADIANCE_INTERFACE_ADAPTIVE_REFINEMENT_ORACLE_RESULT.md", "G1_C3_VISIBLE_RADIANCE_INTERFACE_ADAPTIVE_KERNEL_IMPLEMENTATION_READINESS.md", "G1_C3_VISIBLE_RADIANCE_INTERFACE_WIDE_NUMBER_DEPENDENCY_SPIKE_RESULT.md", "G1_C3_VISIBLE_RADIANCE_INTERFACE_EVENT_IMPLEMENTATION_RESULT.md", "G1_C3_POST_INTERFACE_CONSUMER_REASSESSMENT.md", "visible-radiance-bulk-transfer-contract.md", "visible-radiance-interface-event-contract.md", "G1_C3_VISIBILITY_TRAVERSABILITY_CONSUMER_AUDIT.md", "G1_C3_SECOND_LANGUAGE_FIELD_RECEIPT_RESULT.md", "G1_C3_ENVIRONMENTAL_OPPORTUNITY_RESULT.md", "FIELD_BASIS_DESIGN_GATE.md", "FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md", "APERIODIC_MONOTILE_CANDIDATE_MAP.md", "G1_C3_INTERVAL_INCIDENT_INTERFACE_ORACLE_RESULT.md", "G1_C3_INTERVAL_INCIDENT_INTERFACE_IMPLEMENTATION_READINESS.md", "stellar-orbital-contract.md", "geological-atmospheric-contract.md", "hydrological-state-contract.md", "climate-state-contract.md", "surface-material-state-contract.md", "spatial-domain-contract.md", "physical-path-substrate-contract.md", "regional-environment-state-contract.md", "physical-region-partition-contract.md", "derived-world-rules-contract.md", "environmental-opportunity-contract.md", "G1_C3_STELLAR_ORBITAL_RESULT.md", "G1_C3_GEOLOGICAL_ATMOSPHERIC_RESULT.md", "G1_C3_HYDROLOGICAL_STATE_RESULT.md", "G1_C3_CLIMATE_STATE_RESULT.md", "G1_C3_SURFACE_MATERIAL_STATE_RESULT.md", "G1_C3_REGIONAL_EXPOSURE_RESULT.md", "G1_C3_SIGNAL_POTENTIAL_RESULT.md", "G1_C3_DERIVED_WORLD_CONTRACT_RESULT.md", "G1_C3_QUALITY_COST_RANGE_CANDIDATE_RESULT.md", "G1_C3_INTERVAL_NUMERICAL_CERTIFICATE_ORACLE_RESULT.md", "G1_C3_INTERVAL_INCIDENT_FIXED160_IMPLEMENTATION_READINESS.md", "G1_C3_INTERVAL_INCIDENT_FIXED160_IMPLEMENTATION_RESULT.md", "G1_C3_POST_FIXED160_INTERVAL_CONSUMER_REASSESSMENT.md", "G1_C3_INTERVAL_OPTICAL_CELL_STEP_ORACLE_RESULT.md", "G1_C3_INTERVAL_OPTICAL_CELL_STEP_IMPLEMENTATION_READINESS.md", "G1_C3_INTERVAL_OPTICAL_CELL_STEP_IMPLEMENTATION_RESULT.md", "G1_C3_POST_INTERVAL_CELL_STEP_CONSUMER_REASSESSMENT.md", "G1_C3_INTERVAL_BULK_TRANSFER_ORACLE_RESULT.md", "G1_C3_FIXED_INTERVAL_ARITHMETIC_CONSOLIDATION_DESIGN_AUDIT.md", "G1_C3_FIXED_INTERVAL_ARITHMETIC_CONSOLIDATION_IMPLEMENTATION_READINESS.md", "fixed-interval-arithmetic-contract.md", "G1_C3_FIXED_INTERVAL_ARITHMETIC_CONSOLIDATION_RESULT.md", "G1_C3_POST_FIXED_INTERVAL_ARITHMETIC_CONSOLIDATION_REASSESSMENT.md", "G1_C3_INTERVAL_BULK_TRANSFER_IMPLEMENTATION_READINESS.md", "G1_C3_INTERVAL_BULK_TRANSFER_IMPLEMENTATION_RESULT.md", "G1_C3_POST_INTERVAL_BULK_TRANSFER_CONSUMER_REASSESSMENT.md", "G1_C3_OPTICAL_LINEAGE_COMPOSITION_DESIGN_REASSESSMENT.md", "G1_C3_OPTICAL_LINEAGE_COUNTEREXAMPLE_ORACLE_RESULT.md", "G1_C3_OPTICAL_LINEAGE_BINDING_IMPLEMENTATION_READINESS.md", "G1_C3_OPTICAL_LINEAGE_BINDING_IMPLEMENTATION_RESULT.md", "G1_C3_POST_OPTICAL_LINEAGE_BINDING_CONSUMER_REASSESSMENT.md", "G1_C3_RECEIVER_ARRIVAL_GEOMETRY_IMPLEMENTATION_RESULT.md", "G1_C3_POST_RECEIVER_ARRIVAL_GEOMETRY_CONSUMER_REASSESSMENT.md", "G1_C3_OPTICAL_LANE_COUPLING_MEASURE_MATHEMATICAL_DESIGN_AUDIT.md", "G1_C3_OPTICAL_LANE_COUPLING_MEASURE_ORACLE_RESULT.md", "G1_C3_POST_OPTICAL_LANE_COUPLING_ORACLE_REASSESSMENT.md", "G1_C3_WHOLE_CELL_OPTICAL_COUPLING_MATHEMATICAL_DESIGN_AUDIT.md", "G1_C3_WHOLE_CELL_OPTICAL_COUPLING_ORACLE_RESULT.md", "G1_C3_WHOLE_CELL_COUPLING_PROVENANCE_CORRELATION_GAP_AUDIT.md", "G1_C3_OPTICAL_PHASE_SPACE_CELL_PROVENANCE_MATHEMATICAL_DESIGN_AUDIT.md", "G1_C3_OPTICAL_PHASE_SPACE_CELL_PROVENANCE_ORACLE_RESULT.md", "G1_C3_OPTICAL_PHASE_SPACE_CELL_PROVENANCE_IMPLEMENTATION_READINESS.md", "G1_C3_POST_OPTICAL_PHASE_SPACE_TRANSPORT_CONSUMER_REASSESSMENT.md", "G1_C3_WHOLE_CELL_RECEIVER_COUPLING_MATHEMATICAL_DESIGN_AUDIT.md", "G1_C3_WHOLE_CELL_RECEIVER_COUPLING_ORACLE_RESULT.md", "G1_C3_WHOLE_CELL_RECEIVER_COUPLING_WIDTH_SPIKE_RESULT.md", "G1_C3_WHOLE_CELL_RECEIVER_COUPLING_IMPLEMENTATION_READINESS.md", "G1_C3_WHOLE_CELL_RECEIVER_COUPLING_IMPLEMENTATION_RESULT.md", "G1_C3_POST_WHOLE_CELL_RECEIVER_COUPLING_CONSUMER_REASSESSMENT.md", "G1_C3_OPTICAL_PHASE_SPACE_CELL_PROVENANCE_IMPLEMENTATION_RESULT.md", "G1_C3_POST_OPTICAL_PHASE_SPACE_PROVENANCE_CONSUMER_REASSESSMENT.md", "G1_C3_OPTICAL_PHASE_SPACE_TRANSPORT_CERTIFICATE_MATHEMATICAL_DESIGN_AUDIT.md", "G1_C3_OPTICAL_PHASE_SPACE_TRANSPORT_CERTIFICATE_ORACLE_RESULT.md", "G1_C3_OPTICAL_PHASE_SPACE_TRANSPORT_WIDTH_SPIKE_RESULT.md", "G1_C3_OPTICAL_PHASE_SPACE_TRANSPORT_CERTIFICATE_IMPLEMENTATION_READINESS.md", "G1_C3_OPTICAL_PHASE_SPACE_TRANSPORT_CERTIFICATE_IMPLEMENTATION_RESULT.md", "G1_C3_WHOLE_CELL_DIMENSIONLESS_TRANSFER_MATHEMATICAL_DESIGN_AUDIT.md", "G1_C3_WHOLE_CELL_DIMENSIONLESS_TRANSFER_ORACLE_RESULT.md", "G1_C3_WHOLE_CELL_DIMENSIONLESS_TRANSFER_IMPLEMENTATION_READINESS.md", "G1_C3_WHOLE_CELL_DIMENSIONLESS_TRANSFER_IMPLEMENTATION_RESULT.md", "G1_C3_POST_WHOLE_CELL_DIMENSIONLESS_TRANSFER_CONSUMER_REASSESSMENT.md", "G1_C3_SOURCE_DISTRIBUTION_MEASURE_MATHEMATICAL_DESIGN_AUDIT.md", "G1_C3_SOURCE_DISTRIBUTION_MEASURE_ORACLE_RESULT.md", "G1_C3_SOURCE_QUANTITY_BASIS_SCHEMA_GAP_AUDIT.md", "G1_C3_SOURCE_QUANTITY_BASIS_MATHEMATICAL_DESIGN_AUDIT.md", "G1_C3_SOURCE_QUANTITY_BASIS_ORACLE_RESULT.md", "G1_C3_CALIBRATED_SPECTRAL_TIME_BASIS_MATHEMATICAL_DESIGN_AUDIT.md", "G1_C3_CALIBRATED_SPECTRAL_TIME_BASIS_ORACLE_RESULT.md", "G1_C3_SOURCE_CALIBRATION_IMPLEMENTATION_READINESS.md", "G1_C3_SOURCE_CALIBRATION_IMPLEMENTATION_RESULT.md", "G1_C3_POST_SOURCE_CALIBRATION_CONSUMER_REASSESSMENT.md", "G1_C3_CALIBRATED_SOURCE_ENERGY_DISTRIBUTION_MATHEMATICAL_DESIGN_AUDIT.md", "G1_C3_CALIBRATED_SOURCE_ENERGY_DISTRIBUTION_ORACLE_RESULT.md", "G1_C3_CALIBRATED_SOURCE_ENERGY_DISTRIBUTION_IMPLEMENTATION_READINESS.md", "calibrated-source-energy-distribution-contract.md", "G1_C3_CALIBRATED_SOURCE_ENERGY_DISTRIBUTION_IMPLEMENTATION_RESULT.md", "G1_C3_POST_CALIBRATED_SOURCE_ENERGY_DISTRIBUTION_CONSUMER_REASSESSMENT.md", "G1_C3_CALIBRATED_TRANSPORT_APPLICABILITY_WITNESS_SCHEMA_GAP_AUDIT.md"]
+    },
+    {
+      "id": "C4",
       "milestone": "G1",
       "state": "proposed",
       "status": "gated",
-      "depends_on": ["C2"],
+      "depends_on": ["C2", "C3"],
       "gate": "design",
-      "next_action": "Advance canonical modules bottom-up with local proof packs.",
-      "proof": "Determinism, adversarial, recovery, cost, integration and perception proofs.",
-      "sources": ["MASTER_CLOSURE_REGISTER.md"]
+      "next_action": "Wait for C3 closure. Retain the repaired addressable-world and lifecycle/history components as bounded evidence, then resume C4 against the full addressable-state and history scope.",
+      "proof": "Bounded components pass, including exact input/packet binding, lifecycle state validation, hostile stored-value rejection and multi-batch replay. C4 is not complete and remains dependency-gated by C3.",
+      "sources": ["MASTER_CLOSURE_REGISTER.md", "HIERARCHY_HISTORY_DESIGN_GATE.md", "SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md", "APERIODIC_MONOTILE_CANDIDATE_MAP.md", "G1_C4_ADDRESSABLE_WORLD_BINDING_RESULT.md", "G1_C4_AGE_LIFECYCLE_AND_PROOFRECEIPT_RESULT.md"]
+    },
+    {
+      "id": "C5",
+      "milestone": "G1",
+      "state": "proposed",
+      "status": "gated",
+      "depends_on": ["C4"],
+      "gate": "design",
+      "next_action": "Wait for C4 closure. Retain the shared-significance and four-domain fidelity-map fixture as bounded evidence, then prove scheduler dispatch and budget control across every named generation, simulation, AI, physics, animation, audio, rendering and streaming consumer before C5 completion.",
+      "proof": "The scheduler reference and four-domain fidelity fixture pass, but the fixture does not exercise cross-system dispatch/admission and omits four master-plan domains. C5 is not complete and remains dependency-gated by C4.",
+      "sources": ["MASTER_CLOSURE_REGISTER.md", "SIGNIFICANCE_SCHEDULER_DESIGN_GATE.md", "ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md", "APERIODIC_MONOTILE_CANDIDATE_MAP.md", "G1_C5_MULTI_DOMAIN_FIDELITY_RESULT.md"]
+    },
+    {
+      "id": "C6",
+      "milestone": "G1",
+      "state": "proposed",
+      "status": "gated",
+      "depends_on": ["C4", "C5"],
+      "gate": "design",
+      "next_action": "Wait for the reopened C3-C5 route. Retain the repaired C6 prototypes as bounded evidence only; do not continue body-plan work until the upstream causal-world, addressable-state and shared-scheduler packages satisfy their declared scopes.",
+      "proof": "Repaired prerequisites now require exact input/packet replay, rebuild opportunity graphs from causal inputs, reject fabricated nodes and lineage occupancy, and report person-form structural binding completeness without grounding or comparison readiness. C6 remains incomplete and dependency-gated.",
+      "sources": ["MASTER_CLOSURE_REGISTER.md", "SEMANTIC_CONSTRUCTION_DESIGN_GATE.md", "SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md", "FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md", "APERIODIC_MONOTILE_CANDIDATE_MAP.md", "G1_C6_DISTANCE_SENSING_NICHE_BINDING_RESULT.md", "G1_C6_NICHE_GRAPH_BINDING_RESULT.md", "G1_C6_MACRO_LINEAGE_BINDING_RESULT.md", "G1_C6_PERSON_FORM_ELIGIBILITY_RESULT.md"]
+    },
+    {
+      "id": "C7",
+      "milestone": "G1",
+      "state": "proposed",
+      "status": "gated",
+      "depends_on": ["C5", "C6"],
+      "gate": "design",
+      "next_action": "Promote representation contracts and prove asset, animation, aesthetic, visual-fitness and phone-to-high-end fidelity recipes from the same canonical organism/world state.",
+      "proof": "Structural, temporal, perception, repair, anti-oatmeal, palette, LOD identity, simulated cost and bounded visual tests.",
+      "sources": ["MASTER_CLOSURE_REGISTER.md", "REPRESENTATION_ASSET_ANIMATION_DESIGN_GATE.md", "ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md", "APERIODIC_MONOTILE_CANDIDATE_MAP.md"]
+    },
+    {
+      "id": "G1-CLOSEOUT",
+      "milestone": "G1",
+      "state": "proposed",
+      "status": "gated",
+      "depends_on": ["C3", "C4", "C5", "C6", "C7"],
+      "gate": "owner",
+      "next_action": "Run the whole deterministic universe-to-representation chain, adversarial seed portfolio, recovery, quality-diversity, visual-fitness and simulated fidelity evidence before preparing one G1 promotion package.",
+      "proof": "Exact replay, integration, provenance, recovery, anti-oatmeal, scoped-candidate, phone-legible visual and simulated performance receipts.",
+      "sources": ["MASTER_PLAN_V2.md", "PROOF_MATRIX.md", "MASTER_CLOSURE_REGISTER.md", "APERIODIC_MONOTILE_CANDIDATE_MAP.md"]
     },
     {
       "id": "R1",
       "milestone": "R1",
       "state": "proposed",
       "status": "gated",
-      "depends_on": ["C3-C7"],
+      "depends_on": ["G1-CLOSEOUT"],
       "gate": "owner",
       "next_action": "Prepare runtime-adapter selection package.",
       "proof": "Clean import, build, profiling, identifier preservation, replay.",
-      "sources": ["ROADMAP.md"]
+      "sources": ["ROADMAP.md", "APERIODIC_MONOTILE_CANDIDATE_MAP.md"]
     }
   ]
 }

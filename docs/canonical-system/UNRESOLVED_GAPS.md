@@ -28,6 +28,25 @@
 - Visual recognisability, player value, and hardware cost require structured
   review; numerical success alone is insufficient.
 
+## Main Mind Warp gameplay foundation
+
+- Forge has no promoted player-experience contract, base gameplay loop or
+  player-facing system ownership map.
+- Main Mind Warp and the smaller Quantum Tunnel product must remain separate;
+  product-specific currencies, balance, scope and implementation shortcuts are
+  not transferable by default.
+- Historical gameplay code is explicitly rejected for reuse. Concepts require
+  clean-room adjudication through
+  `MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md`.
+- The primary player fantasy, default verbs, home/hub structure, failure model,
+  combat weight, progression shape, authored/emergent narrative boundary,
+  economy scope and multiplayer necessity remain owner-level design decisions.
+- Gameplay concepts are not ready for runtime work until a small fixed-content
+  paper model proves that the base loop is meaningful without procedural scale,
+  multiplayer or visual spectacle.
+- No gameplay candidate may treat Forge complexity as player value without a
+  legible decision, consequence and cheapest falsifier.
+
 ## Runtime
 
 - No game engine is selected.

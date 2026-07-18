@@ -14,6 +14,8 @@ $workspaceReleaseApp = Join-Path $root 'target\release\forge-desktop.exe'
 $workspaceDebugApp = Join-Path $root 'target\debug\forge-desktop.exe'
 $legacyReleaseApp = Join-Path $root 'apps\forge-desktop\src-tauri\target\release\forge-desktop.exe'
 $legacyDebugApp = Join-Path $root 'apps\forge-desktop\src-tauri\target\debug\forge-desktop.exe'
+$desktopStartupSource = Join-Path $root 'apps\forge-desktop\src-tauri\src\main.rs'
+$startupVerifier = Join-Path $root 'tools\verify-forge-startup-idempotency.ps1'
 
 function Get-CaptureManifest {
     if (!(Test-Path -LiteralPath $manifestPath)) {
@@ -31,6 +33,14 @@ if ($manifest -and $manifest.capture_state -eq 'paused') {
     throw 'Forge capture is paused. It must be explicitly resumed; this safety gate will not override that decision.'
 }
 
+# Forge owns its own process and local capture only. Verify this boundary before
+# considering a launch so a source regression cannot invoke an assistant app,
+# browser download, installer or updater even once before bootstrap fails.
+& $startupVerifier
+if (!$?) {
+    throw 'Forge startup idempotency verification failed.'
+}
+
 $forgeProcess = Get-Process -Name 'forge-desktop' -ErrorAction SilentlyContinue | Select-Object -First 1
 if (!$forgeProcess) {
     $app = @($workspaceReleaseApp, $workspaceDebugApp, $legacyReleaseApp, $legacyDebugApp) |
@@ -40,6 +50,9 @@ if (!$forgeProcess) {
         Select-Object -First 1 -ExpandProperty FullName
     if (!$app) {
         throw 'Forge Desktop is not running and no built Forge executable was found. Build or open Forge Desktop, then retry.'
+    }
+    if ((Get-Item -LiteralPath $app).LastWriteTimeUtc -lt (Get-Item -LiteralPath $desktopStartupSource).LastWriteTimeUtc) {
+        throw 'Forge Desktop is older than its startup source. Rebuild it before launch; stale startup behavior is rejected.'
     }
     Start-Process -FilePath $app | Out-Null
 }

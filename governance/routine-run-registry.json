@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "runs": [
+    {
+      "id": "forge-full-gate-v1",
+      "label": "Complete Forge verification",
+      "runner": "powershell",
+      "working_directory": ".",
+      "arguments": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "tools/verify.ps1"],
+      "module": "forge-dashboard",
+      "verification_scope": "complete",
+      "timeout_seconds": 1800
+    },
+    {
+      "id": "forge-metrics-focused-v1",
+      "label": "Forge metrics focused verification",
+      "runner": "powershell",
+      "working_directory": ".",
+      "arguments": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "tools/verify-forge-metrics-dashboard.ps1"],
+      "module": "forge-dashboard",
+      "verification_scope": "focused",
+      "timeout_seconds": 300
+    },
+    {
+      "id": "forge-kernel-tests-v1",
+      "label": "Forge Kernel tests",
+      "runner": "cargo",
+      "working_directory": ".",
+      "arguments": ["test", "-p", "forge-kernel"],
+      "module": "forge-kernel",
+      "verification_scope": "module",
+      "timeout_seconds": 600
+    },
+    {
+      "id": "forge-ui-build-v1",
+      "label": "Forge desktop UI build",
+      "runner": "npm",
+      "working_directory": "apps/forge-desktop/ui",
+      "arguments": ["run", "build"],
+      "module": "forge-dashboard",
+      "verification_scope": "ui-build",
+      "timeout_seconds": 300
+    }
+  ]
+}
