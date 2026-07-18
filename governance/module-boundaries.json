@@ -390,6 +390,20 @@
       ]
     },
     {
+      "id": "mindwarp-vertical-persistence",
+      "root": "crates/mindwarp-vertical-persistence",
+      "dependencies": ["addressable-world-binding", "derived-world-rules", "field-basis", "hierarchy-history", "mindwarp-gameplay-foundation", "universe-identity"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "C4V persistence evidence cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "C4V persistence evidence cannot depend on desktop or UI capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "C4V persistence evidence cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process)::", "reason": "C4V persistence evidence cannot access files or processes"},
+        {"pattern": "\\b(?:ReferenceOperation|ReferenceState|identity_reference|Snapshot::build_reference)\\b", "reason": "C4V must use its isolated operation and consequence contract rather than hierarchy-history reference fixtures"},
+        {"pattern": "\\b(?:physical_path_substrate|visible_radiance|optical_phase_space)(?:::|\\s*=)", "reason": "C4V consumes C3A only and cannot import deferred C3B owners"}
+      ]
+    },
+    {
       "id": "entity-lifecycle",
       "root": "crates/entity-lifecycle",
       "dependencies": [],

@@ -5,36 +5,36 @@
 
 ## Active checkpoint
 
-- Package: **G1-GP2-PROGRESSION-IMPLEMENTATION-V1**
-- Master item / milestone: **GP2 / G1**
-- State / substage: **recorded / gp2-progression-verified-result**
+- Package: **G1-C4V-VERTICAL-PERSISTENCE-V1**
+- Master item / milestone: **C4V / G1**
+- State / substage: **recorded / c4v-verified-result**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Objective: Close the bounded GP2 implementation after proving five distinct engine-neutral progression lanes without a universal economy.
-- Context health: GP2 is the unique recorded item. Its 18-rule typed progression implementation passes 7 GP2, 7 GP1 and 14 GP0 tests, independent acceptance and registered complete run run-2dc3db644adc416a8ef56461dbb771b6. Generated context is current; stop before GP3.
+- Objective: Prove one isolated engine-neutral stable-stop-to-stable-stop vertical persistence seam without authorizing a save engine or runtime.
+- Context health: C4V is recorded from clean GP2 closure a55391d. Source, result, focused tests, module integration, workspace regression, independent candidate acceptance and registered gate run-fa6334a300e04d409dd5cddb4f22542e are current. GP3 is queued only.
 
 ## Durable evidence
 
-- `Owner authorized the game-first GP1-to-GP2 transition and design-first progression scope.`
-- `GP1 complete registered run run-26b8424e488b4d838eb51cc928675224 passed in 402857 ms.`
-- `The canonical full-gate launcher fixture passes and direct production verify.ps1 now rejects before expensive work.`
-- `G1_GP2_PROGRESSION_READINESS.md records the hostile matrix and frozen input-authority boundary.`
-- `G1_GP2_PROGRESSION_DESIGN.md records the accepted typed design, flow rules, S1 capability allowlist and deterministic strategy proof.`
-- `G1_GP2_PROGRESSION_RESULT.md records the bounded 18-rule implementation and strict historical reconstruction.`
-- `Focused verification passes 7 GP2, 7 GP1 and 14 GP0 tests; module context and launcher preflight pass.`
-- `Independent GP2 review accepted the implementation with no remaining blocker.`
+- `Owner authorized C4V as a new additive engine-neutral sibling from clean GP2 closure a55391d.`
+- `C4V depends exactly on complete C2, C3A and GP1; broad C4 remains unchanged.`
+- `The decision-complete audit is durable in G1_C4V_VERTICAL_PERSISTENCE_READINESS.md and G1_C4V_VERTICAL_PERSISTENCE_DESIGN.md.`
+- `GP4 now depends on C4V plus GP3 while C5/C6, D4, R1 and C3B retain their existing routes.`
+- `The isolated crate, seven adversarial tests, 54-module integration, workspace suite and independent candidate acceptance pass.`
+- `Registered complete gate run-fa6334a300e04d409dd5cddb4f22542e passed in 511311 ms after two retained fail-closed governance receipts.`
 
 ## Authority boundary
 
-Owner-authorized bounded GP2 implementation and closure only. No universal currency, positive cycle, dominant conversion, grind, graphics, runtime, persistence, network, monetization, Greenfield dependency, C3B authority, GP3 or GP4.
+Owner-authorized isolated C4V engine-neutral persistence proof only. No broad C4, production filesystem/database/cloud, save slots, runtime, cache, population, multiplayer, merge, CRDT, clocks, compaction, deletion, generic migration, GP2/GP3 expansion, C3B, Greenfield, authentication or Kernel mutation.
 
 ## Exact next action
 
-Retain the bounded GP2 result and stop for reassessment before any GP3, C4V, runtime, Greenfield or broader progression work.
+C4V is recorded and closed. Await explicit owner authorization before activating queued GP3; do not start GP3 or GP4.
 
 ## Unresolved risks
 
-- engineering debt: exact-token continuity verifiers can stale when a later stage legitimately updates a shared contract
+- production storage and runtime remain separately gated
+- GP3 and GP4 remain queued and unimplemented
+- broad C4, C3B, D4, R1 and Greenfield remain unchanged
 
 ## Resume after this package
 
-Only after a new explicit owner-authorized reassessment; do not infer GP3, C4V, runtime, Greenfield or broader progression authority from GP2 closure.
+C4V is closed. Await explicit owner authorization with GP3 queued only; do not start GP3 or GP4.

@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **G1-GP2-PROGRESSION-IMPLEMENTATION-V1**
-- Objective: Close the bounded GP2 implementation after proving five distinct engine-neutral progression lanes without a universal economy.
+- Work package: **G1-C4V-VERTICAL-PERSISTENCE-V1**
+- Objective: Prove one isolated engine-neutral stable-stop-to-stable-stop vertical persistence seam without authorizing a save engine or runtime.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **bounded-engine-neutral-gp2-progression-verification / GP2 source, hostile tests, contract and module context implement the accepted design. Focused, retained, independent and registered complete verification pass. GP2 is bounded closed and no later package is authorized.**
-- Exact next action: Retain the bounded GP2 result and stop for reassessment before any GP3, C4V, runtime, Greenfield or broader progression work.
+- Risk/research gate: **bounded-engine-neutral-c4v-persistence-proof / C2, C3A and GP1 are complete. C4V source, seven adversarial tests and independent candidate review are green; broad C4, C3B, D4 and R1 remain unchanged.**
+- Exact next action: C4V is recorded and closed. Await explicit owner authorization before activating queued GP3; do not start GP3 or GP4.
 
 ## Approved operating policies
 

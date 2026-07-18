@@ -36,6 +36,7 @@ Prove that an input-validated derived-world-rules CausalWorldPacket can fill hie
 ## Downstream neighbours
 
 - forge-desktop
+- mindwarp-vertical-persistence
 
 ## Invariants and failure boundaries
 

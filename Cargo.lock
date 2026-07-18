@@ -2333,6 +2333,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "mindwarp-vertical-persistence"
+version = "0.1.0"
+dependencies = [
+ "addressable-world-binding",
+ "derived-world-rules",
+ "field-basis",
+ "hierarchy-history",
+ "mindwarp-gameplay-foundation",
+ "serde",
+ "serde_json",
+ "sha2",
+ "universe-identity",
+]
+
+[[package]]
 name = "minicbor"
 version = "0.26.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"

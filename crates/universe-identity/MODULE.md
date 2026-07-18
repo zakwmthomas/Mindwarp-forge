@@ -35,6 +35,7 @@ Stable logical universe identity, versioned reconstruction identity and traversa
 
 - field-basis
 - forge-desktop
+- mindwarp-vertical-persistence
 
 ## Invariants and failure boundaries
 

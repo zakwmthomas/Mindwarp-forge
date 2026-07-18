@@ -369,10 +369,12 @@
                                            "forge-truth-kernel"
                                        ],
                         "purpose":  "Baseline reconstruction plus explicit mutable player and world deltas.",
-                        "proof":  "Canonical baseline binding, per-target ordered/idempotent replay, conflict/gap/corruption rejection, snapshot distrust, old/new generator coexistence, explicit migration, and authority-negative read-only ProofReceipt fixtures; production storage and cross-target transactions remain open.",
+                        "proof":  "Canonical baseline binding, per-target ordered/idempotent replay, conflict/gap/corruption rejection, snapshot distrust, old/new generator coexistence, explicit migration, and authority-negative read-only ProofReceipt fixtures. The additive C4V seam binds exact C2 hub/place/player identity, exact C3A world authority and GP1 stable-stop batches through strict semantic restart, atomic retry-safe append, replay-verified snapshots and one framed codec-only V1-to-V2 migration with byte-identical V1 rollback. Registered complete gate run-fa6334a300e04d409dd5cddb4f22542e passed; production storage, runtime and cross-target transactions remain open.",
                         "references":  [
                                            "contracts/hierarchy-history-contract.md",
                                            "crates/hierarchy-history/src/history.rs",
+                                           "crates/mindwarp-vertical-persistence/src/lib.rs",
+                                           "docs/canonical-system/G1_C4V_VERTICAL_PERSISTENCE_RESULT.md",
                                            "docs/canonical-system/HIERARCHY_HISTORY_DESIGN_GATE.md"
                                        ]
                     },
@@ -578,7 +580,7 @@
                                            "causal-world-packet-seam"
                                        ],
                         "purpose":  "Define the player promise, fixed base loop, progression, encounter grammar and one runtime-independent vertical through GP0-GP4.",
-                        "proof":  "GP0 fixes one strict causal_explorer_maker concept and five corrected authored sessions. GP1 adds one shared deterministic six-phase loop, repairable failure, typed stable stops, exact run/event/session/outcome append receipts, optional exact C3A context and predecessor-sensitive S1-to-S5 consequence. Seven GP1 tests, fourteen GP0 regressions, workspace integration, independent review and complete run run-26b8424e488b4d838eb51cc928675224 pass. GP2 now has an accepted design and verified pre-source readiness for five distinct typed progression lanes; no GP2 source exists. This remains a capability-free prototype; GP3-GP4 and runtime remain dependency-gated.",
+                        "proof":  "GP0 fixes one strict causal_explorer_maker concept and five corrected authored sessions. GP1 adds one shared deterministic six-phase loop, repairable failure, typed stable stops, exact run/event/session/outcome append receipts, optional exact C3A context and predecessor-sensitive S1-to-S5 consequence. GP2 implements eighteen private explicit rules across five typed nonfungible lanes with exact GP1 terminal digest authority and deterministic pairwise-incomparable strategies; focused, workspace, independent and registered full-gate verification passed in run-2dc3db644adc416a8ef56461dbb771b6. The additive C4V sibling binds C2/C3A/GP1 through seven adversarial vertical-persistence tests and independent candidate acceptance. GP3, GP4 and runtime remain dependency-gated.",
                         "references":  [
                                            "docs/canonical-system/MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",
                                            "docs/canonical-system/G1_PRODUCT_PORTFOLIO_AND_C3_DEPENDENCY_REBASELINE.md",
@@ -587,6 +589,8 @@
                                            "docs/canonical-system/G1_GP1_FIXED_BASE_LOOP_RESULT.md",
                                            "docs/canonical-system/G1_GP2_PROGRESSION_READINESS.md",
                                            "docs/canonical-system/G1_GP2_PROGRESSION_DESIGN.md",
+                                           "docs/canonical-system/G1_GP2_PROGRESSION_RESULT.md",
+                                           "docs/canonical-system/G1_C4V_VERTICAL_PERSISTENCE_RESULT.md",
                                            "crates/mindwarp-gameplay-foundation/src/base_loop.rs",
                                            "crates/mindwarp-gameplay-foundation/src/lib.rs"
                                        ]

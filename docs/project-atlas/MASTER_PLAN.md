@@ -2,7 +2,7 @@
 
 > GENERATED from `docs/canonical-system/MASTER_PROGRAM.json`. Do not edit this view directly.
 
-Canonical lifecycle: schema v2; executing item: `GP2`.
+Canonical lifecycle: schema v2; executing item: `C4V`.
 Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
 
 ## F4
@@ -59,6 +59,8 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
   Next: Wait for authoritative project-specific physical scale, calibrated coefficient, applicability, visibility and presentation fidelity evidence; do not substitute Yard Atlas or fixture data.
 - **C4** - proposed; gate: design; depends on: C2, C3A.
   Next: Resume addressable-state and history work against the exact promoted C3A causal-world seam; do not import C3B physical or presentation claims.
+- **C4V** - executing; gate: recorded; depends on: C2, C3A, GP1.
+  Next: C4V is recorded and closed. Await explicit owner authorization before activating queued GP3; do not start GP3 or GP4 from this checkpoint.
 - **C5** - proposed; gate: design; depends on: C4.
   Next: Wait for C4 closure. Retain the shared-significance and four-domain fidelity-map fixture as bounded evidence, then prove scheduler dispatch and budget control across every named generation, simulation, AI, physics, animation, audio, rendering and streaming consumer before C5 completion.
 - **C6** - proposed; gate: design; depends on: C4, C5.
@@ -71,11 +73,11 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
   Next: Retain the structurally verified causal_explorer_maker promise, five fixed sessions and deterministic consequence/history proof as the exact GP1 input; do not treat GP0 closure as gameplay-system or runtime promotion.
 - **GP1** - promoted; gate: design; depends on: GP0.
   Next: Retain the independently accepted and completely verified six-phase fixed-loop result as the exact GP2 input; do not reinterpret its typed outcomes, history or authority boundary.
-- **GP2** - executing; gate: design; depends on: GP1.
-  Next: Report the accepted GP2 design and revised readiness, then freeze failing tests for five distinct typed lanes, exact GP1 digest binding, explicit flow/exploit rules and deterministic incomparable strategies before source implementation.
+- **GP2** - promoted; gate: recorded; depends on: GP1.
+  Next: Retain the verified GP2 result as GP3 input; do not reopen progression while C4V is active.
 - **GP3** - proposed; gate: design; depends on: GP2.
   Next: Define explainable encounter grammar for environments, creatures, societies, anomalies and construction, including noncombat solutions.
-- **GP4** - proposed; gate: design; depends on: GP3, C4.
+- **GP4** - proposed; gate: design; depends on: GP3, C4V.
   Next: Freeze one runtime-independent living hub to remembered-response vertical experience contract and adversarial fixture set.
 
 ## R1

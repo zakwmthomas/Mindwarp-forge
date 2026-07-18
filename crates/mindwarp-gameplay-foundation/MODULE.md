@@ -48,7 +48,7 @@ Prove the GP0 causal-explorer-maker promise, GP1 fixed six-phase loop and GP2 ty
 
 ## Downstream neighbours
 
-- None declared.
+- mindwarp-vertical-persistence
 
 ## Invariants and failure boundaries
 

@@ -51,7 +51,12 @@ $gp2GameplayRoute =
   $Checkpoint.substage_id -in @('gp2-progression-design-intake','gp2-progression-readiness','gp2-progression-verification','gp2-progression-verified-result') -and
   (($Checkpoint.authority_lane -like '*Owner-authorized GP2 design intake*No source implementation*universal currency*positive cycle*dominant conversion*runtime*Greenfield*C3B*GP3*GP4*') -or
    ($Checkpoint.authority_lane -like '*Owner-authorized bounded GP2 implementation*No universal currency*positive cycle*dominant conversion*runtime*Greenfield*C3B*GP3*GP4*'))
-$gameplayFoundationRoute = $gp0GameplayRoute -or $gp1GameplayRoute -or $gp2GameplayRoute
+$c4vGameplayRoute =
+  $Checkpoint.batch_id -eq 'G1-C4V-VERTICAL-PERSISTENCE-V1' -and
+  $Checkpoint.master_program_item -eq 'C4V' -and
+  $Checkpoint.substage_id -in @('c4v-vertical-persistence-readiness','c4v-implementation-verification','c4v-verified-result') -and
+  $Checkpoint.authority_lane -like '*Owner-authorized isolated C4V engine-neutral persistence proof only*No broad C4*production filesystem*runtime*GP2*GP3*C3B*Greenfield*Kernel mutation*'
+$gameplayFoundationRoute = $gp0GameplayRoute -or $gp1GameplayRoute -or $gp2GameplayRoute -or $c4vGameplayRoute
 $c3DesignRoute =
   $Checkpoint.batch_id -eq 'G1-C3-WHOLE-CELL-RECEIVER-COUPLING-MATHEMATICAL-DESIGN-V1' -and
   $Checkpoint.master_program_item -eq 'C3' -and

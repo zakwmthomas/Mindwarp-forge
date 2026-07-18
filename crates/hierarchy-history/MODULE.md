@@ -38,6 +38,7 @@ Lazy addressable hierarchy descriptors plus baseline-bound append-only world del
 - addressable-world-binding
 - entity-lifecycle-history-binding
 - forge-desktop
+- mindwarp-vertical-persistence
 
 ## Invariants and failure boundaries
 

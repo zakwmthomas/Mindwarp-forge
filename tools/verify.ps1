@@ -210,6 +210,8 @@ Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-gp1-fixed-
 if (!$?) { throw 'G1 GP1 fixed-base-loop verification failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-gp2-progression-readiness.ps1'
 if (!$?) { throw 'G1 GP2 progression readiness verification failed.' }
+Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-c4v-vertical-persistence.ps1'
+if (!$?) { throw 'G1 C4V vertical-persistence verification failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-p7b1b-loader-surface.ps1'
 if (!$?) { throw 'P7b-1b loader-surface proof verification failed.' }
 

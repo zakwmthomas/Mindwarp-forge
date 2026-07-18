@@ -599,6 +599,28 @@
                                       "G1_C4_AGE_LIFECYCLE_AND_PROOFRECEIPT_RESULT.md"
                                   ]
                   },
+        {
+            "id":  "C4V",
+            "milestone":  "G1",
+            "state":  "executing",
+            "status":  "active",
+                      "depends_on":  [
+                                         "C2",
+                                         "C3A",
+                                         "GP1"
+                                     ],
+            "gate":  "recorded",
+            "next_action":  "C4V is recorded and closed. Await explicit owner authorization before activating queued GP3; do not start GP3 or GP4 from this checkpoint.",
+            "proof":  "The isolated mindwarp-vertical-persistence crate, seven adversarial tests, strict semantic replay, framed V1-to-V2 migration/rollback, module integration, workspace regression and independent candidate review pass. Registered complete gate run-fa6334a300e04d409dd5cddb4f22542e passed in 511311 ms; C4V is closed while remaining the non-executing-work cursor until the owner authorizes a successor.",
+                      "sources":  [
+                                      "G1_C4V_VERTICAL_PERSISTENCE_READINESS.md",
+                                      "G1_C4V_VERTICAL_PERSISTENCE_DESIGN.md",
+                                      "G1_GP1_FIXED_BASE_LOOP_RESULT.md",
+                        "G1_C4_ADDRESSABLE_WORLD_BINDING_RESULT.md",
+                        "G1_C4V_VERTICAL_PERSISTENCE_RESULT.md",
+                                      "hierarchy-history-contract.md"
+                                  ]
+                  },
                   {
                       "id":  "C5",
                       "milestone":  "G1",
@@ -736,22 +758,23 @@
                                       "G1_GP1_FIXED_BASE_LOOP_RESULT.md"
                                   ]
                   },
-                  {
-                      "id":  "GP2",
-                      "milestone":  "G1",
-                      "state":  "executing",
-                      "status":  "active",
+        {
+            "id":  "GP2",
+            "milestone":  "G1",
+            "state":  "promoted",
+            "status":  "complete",
                       "depends_on":  [
                                          "GP1"
                                      ],
-                      "gate":  "design",
-                      "next_action":  "Report the accepted GP2 design and revised readiness, then freeze failing tests for five distinct typed lanes, exact GP1 digest binding, explicit flow/exploit rules and deterministic incomparable strategies before source implementation.",
-                      "proof":  "The read-only GP2 design receipt is accepted and the readiness verifier freezes five distinct typed lanes, exact terminal GP1 digest authority, nonrecursive guarded flows, the S1 capability allowlist and three deterministic strategies; no source implementation, universal currency, positive cycle, dominant conversion, runtime, Greenfield, C3B, GP3 or GP4 authority is admitted.",
+            "gate":  "recorded",
+            "next_action":  "Retain the verified GP2 result as GP3 input; do not reopen progression while C4V is active.",
+            "proof":  "GP2 implements eighteen private explicit rules across five typed nonfungible lanes, exact GP1 terminal digest authority, guarded nonrecursive flows, the S1 capability allowlist and deterministic pairwise-incomparable strategies; focused, workspace, independent and registered verification passed in run-2dc3db644adc416a8ef56461dbb771b6.",
                       "sources":  [
                                       "MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",
                                       "G1_GP1_FIXED_BASE_LOOP_RESULT.md",
                                       "G1_GP2_PROGRESSION_READINESS.md",
-                                      "G1_GP2_PROGRESSION_DESIGN.md"
+                        "G1_GP2_PROGRESSION_DESIGN.md",
+                        "G1_GP2_PROGRESSION_RESULT.md"
                                   ]
                   },
                   {
@@ -776,7 +799,7 @@
                       "status":  "gated",
                       "depends_on":  [
                                          "GP3",
-                                         "C4"
+                                         "C4V"
                                      ],
                       "gate":  "design",
                       "next_action":  "Freeze one runtime-independent living hub to remembered-response vertical experience contract and adversarial fixture set.",
