@@ -6,78 +6,78 @@
     "state":  "executing",
     "previous_state":  "ready",
     "objective":  "Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.",
-    "next_action":  "Commit the verified C5 local platform observation, register the already frozen C5 workflow on the default branch, generate a fresh challenge bound to source 9e48dd1, and obtain the separately attested hosted execution. This ports only the game-facing proof contract, not Forge.",
-    "substage_id":  "c5-implementation",
+    "next_action":  "Implement the smallest read-only ProofReceipt integration for the verified C5 semantic receipt: bind receipt identity and semantic hash without changing canonical object, event or candidate counts, then run focused regressions and independent review. Do not close C5 or activate C6.",
+    "substage_id":  "c5-proofreceipt-integration",
     "handoff_section_receipts":  {
                                      "objective":  {
-                                                       "stage_id":  "c5-implementation",
+                                                       "stage_id":  "c5-proofreceipt-integration",
                                                        "content_sha256":  "31a2cdccf71602454fc21773b1d0076077682aa9831062db569ec25fb044ceea",
                                                        "review_disposition":  "revised",
                                                        "review_note":  "Reviewed all handoff sections against the active substage."
                                                    },
                                      "next_action":  {
-                                                         "stage_id":  "c5-implementation",
-                                                         "content_sha256":  "507d3a5e4c70e13d73232c97cde9dced05240012012d7b9b1a7b4fae5b7a0614",
+                                                         "stage_id":  "c5-proofreceipt-integration",
+                                                         "content_sha256":  "fcdf45de79e6504790549d7df63cb45d90af735c2f79a4b4d8de75adc5ccf590",
                                                          "review_disposition":  "revised",
                                                          "review_note":  "Reviewed all handoff sections against the active substage."
                                                      },
                                      "stage_context":  {
-                                                           "stage_id":  "c5-implementation",
+                                                           "stage_id":  "c5-proofreceipt-integration",
                                                            "content_sha256":  "b33f9422a8f38b19b5c6a0f7d655d80c3bbe5501aa8b2a3866b422c7f8322be4",
                                                            "review_disposition":  "revised",
                                                            "review_note":  "Reviewed all handoff sections against the active substage."
                                                        },
                                      "visual_quality_gate":  {
-                                                                 "stage_id":  "c5-implementation",
+                                                                 "stage_id":  "c5-proofreceipt-integration",
                                                                  "content_sha256":  "80ae5cd5e6cfb847218c27879744cfe9da5c36bd40124e6f700060f88c558739",
                                                                  "review_disposition":  "revised",
                                                                  "review_note":  "Reviewed all handoff sections against the active substage."
                                                              },
                                      "simulation_ladder":  {
-                                                               "stage_id":  "c5-implementation",
+                                                               "stage_id":  "c5-proofreceipt-integration",
                                                                "content_sha256":  "f773cf8a3969dd21e020acb308f6244a73f6dda7892236acf231eb59766fbac9",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "unresolved_risks":  {
-                                                              "stage_id":  "c5-implementation",
-                                                              "content_sha256":  "fa124a8d961ea32c7a1231e925e513df9cd9ad936e28c39bba7210d3d2cfab52",
+                                                              "stage_id":  "c5-proofreceipt-integration",
+                                                              "content_sha256":  "3da91aec04038a04c338c9d9819c527a4ce31d3a2ae94e5dbcba4d592515cffa",
                                                               "review_disposition":  "revised",
                                                               "review_note":  "Reviewed all handoff sections against the active substage."
                                                           },
                                      "evidence_requirements":  {
-                                                                   "stage_id":  "c5-implementation",
+                                                                   "stage_id":  "c5-proofreceipt-integration",
                                                                    "content_sha256":  "fee8b2b089c9ee9fd8607d84f31964a5e3a026625e9c90d93f3246844107e57a",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "verification_plan":  {
-                                                               "stage_id":  "c5-implementation",
+                                                               "stage_id":  "c5-proofreceipt-integration",
                                                                "content_sha256":  "bd8cb3648dbfdb6d3f832e3b2dfa18f80aa4c98563b3695d6866191a5f6f569c",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "resume_after":  {
-                                                          "stage_id":  "c5-implementation",
+                                                          "stage_id":  "c5-proofreceipt-integration",
                                                           "content_sha256":  "99bf48508c69c21d19f6a41be03dd0020e9861f909db0c510ac53f7f88d0fe5b",
                                                           "review_disposition":  "revised",
                                                           "review_note":  "Reviewed all handoff sections against the active substage."
                                                       },
                                      "evidence":  {
-                                                      "stage_id":  "c5-implementation",
-                                                      "content_sha256":  "9693e7d1ff02cac91315a1f2a79e7b69e2576a517076ca4d74fbb7bf83e74fc7",
+                                                      "stage_id":  "c5-proofreceipt-integration",
+                                                      "content_sha256":  "e33c3ee30d48016edc0d62ad2c681dc594820772b0ae6938ea114b5e8daf699d",
                                                       "review_disposition":  "revised",
                                                       "review_note":  "Reviewed all handoff sections against the active substage."
                                                   },
                                      "verification_receipts":  {
-                                                                   "stage_id":  "c5-implementation",
-                                                                   "content_sha256":  "9ba1f24b4febb80c8a9f86a35c9fbd725a4c613202743264a8eb46ea5cdb7ae9",
+                                                                   "stage_id":  "c5-proofreceipt-integration",
+                                                                   "content_sha256":  "eab299841a6164b5a9a70a10debf7f86e847cb3006c517c89b8438318507134b",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "transition":  {
-                                                        "stage_id":  "c5-implementation",
-                                                        "content_sha256":  "86eee471dc8b6873dd542dcbeb93d0926b6ee578ef792a95542b4d2ada6e960d",
+                                                        "stage_id":  "c5-proofreceipt-integration",
+                                                        "content_sha256":  "5eb7cbdad652434acc88665c360346d62fa4fdf951adc35772c87980f39c2db9",
                                                         "review_disposition":  "revised",
                                                         "review_note":  "Reviewed all handoff sections against the active substage."
                                                     }
@@ -92,10 +92,10 @@
                                         "domain-creative-suites"
                                     ]
                     },
-    "risk_level":  "bounded-c5-significance-scheduler-portability",
-    "research_gate":  "C4 is verified and complete. The hardened C5 candidate and isolated 38-field semantic receipt pass 90 tests, strict Clippy, all 92 hostile mappings, ten pressure transcripts, cross-target local execution/compile checks and a fresh hostile tooling review. Portability applies only to the game-facing proof contract; Forge remains the PC-first factory. Integration, closure, promotion and C6 authority remain withheld.",
+    "risk_level":  "bounded-c5-proofreceipt-read-only-integration",
+    "research_gate":  "C5 portability is independently verified for the isolated game-facing proof contract: clean Windows x64/i686 observations, Android compile-only evidence, hosted Linux run 29678602236, local Sigstore replay, 40 importer hostiles, 19 retained-replay hostiles and fresh independent review all pass. Forge itself was not ported. Only read-only ProofReceipt binding may proceed; closure, promotion and C6 authority remain withheld.",
     "authority_lane":  "Owner-authorized bounded C5 significance/scheduler implementation and capability-free closure proof only. Exact dependency C4. Frozen candidate G1_C5_CLOSURE_READINESS.md. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.",
-    "context_health":  "C4 remains verified and C5 remains the sole active item. C5 local hardening and portability tooling pass independent review, and a clean-commit observation at source 9e48dd1 retains exact Windows x64/i686 semantic evidence plus honest Android ARM64 compile-only classification. This is not a Forge port. Genuinely independent hosted evidence remains pending; integration, C5 closure, C6, C7, broad G1 closure and R1 remain gated.",
+    "context_health":  "C4 remains verified and C5 remains the sole active item. C5 local hardening and portability are independently verified at exact source 9e48dd1; the isolated proof contract, not Forge, reproduced semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb on hosted Linux. The active substage is now read-only ProofReceipt integration. C5 closure, C6, C7, broad G1 closure and R1 remain gated.",
     "stage_context":  {
                           "stage_id":  "c5-implementation",
                           "macro_sources":  [
@@ -252,7 +252,7 @@
                           }
                       ],
     "unresolved_risks":  [
-                             "The independently attested hosted execution must preserve semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb and exact source 9e48dd1 without treating the retained i686 or Android compile-only observations as independent evidence or porting Forge itself."
+                             "Read-only ProofReceipt integration must bind the verified C5 receipt identity and semantic hash without changing canonical object, event or candidate counts, importing runtime authority, or converting evidence into promotion or C6 authority."
                          ],
     "evidence_requirements":  [
                                   "retain exact verified C4 as C5\u0027s sole dependency",
@@ -296,7 +296,8 @@
                      "Three independent C5 audits reconciled canonical obligations, 2,134 lines of retained code and adversarial gaps; 18 focused tests and the historical F5 verifier pass but do not close C5.",
                      "G1_C5_CLOSURE_READINESS.md freezes exactly eight domains, superseding contract decisions, a minimal additive candidate, 92 hostile IDs and the capability-negative owner gate before source.",
                      "The hardened C5 candidate passes 90 Rust tests, strict Clippy, all 92 frozen hostile mappings and ten composed pressure scenarios; fresh independent re-review accepted advancement to portability only.",
-                     "C5 local portability observation at source 9e48dd1 retains semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb across two fresh Windows x64 processes and same-host i686, with Android ARM64 classified compile-only and all authority flags false."
+                     "C5 local portability observation at source 9e48dd1 retains semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb across two fresh Windows x64 processes and same-host i686, with Android ARM64 classified compile-only and all authority flags false.",
+                     "GitHub-hosted run 29678602236 executed exact source 9e48dd1 in two overlapping native Linux x64 processes; credential-separated attestation, local cryptographic replay and fresh independent review accepted portability for the isolated proof contract only."
                  ],
     "verification_receipts":  [
                                   "dependency:gp0-gp1-gp2-gp3-c4v:verified",
@@ -346,6 +347,9 @@
                                   "independent-review:c5-hardened-portability:accepted",
                                   "receipt:c5-local-platform-observations:source-9e48dd1:verified",
                                   "receipt:c5-semantic-sha256:88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb",
+                                  "external:c5-github-run-29678602236:hosted-linux-attested:passed",
+                                  "receipt:c5-independent-result-sha256:4dd77d3b16927644af2c9bb1b74f76e1dd7cc279a09a8297d10738a0efce1bf4",
+                                  "independent-review:c5-portability-receipt:accepted",
                                   "owner-route:c5-reconciliation-readiness:authorized",
                                   "registered-full-gate:run-9a18d3d8d3504cc4a3c57dec59d69c6c:failed:github-cli-path-missing",
                                   "registered-full-gate:run-d2952383a722420eaf5160c85d49268d:failed:worker-feedback-stale",
@@ -368,5 +372,5 @@
                                          "receipt":  "registered-full-gate:run-71ef6dfd6e2945ab9745c85f3dcf4d6b:passed"
                                      }
                 },
-    "transition":  "C4 verified and recorded -\u003e C5 local hostile candidate -\u003e first review blocked advancement -\u003e local hardening accepted -\u003e 38-field semantic receipt and complete portability tooling passed hostile re-review -\u003e clean-commit local and hosted evidence next; Forge port, integration, closure and C6 remain gated"
+    "transition":  "C4 verified and recorded -\u003e C5 local hardening accepted -\u003e isolated semantic portability verified locally and on hosted Linux run 29678602236 -\u003e read-only ProofReceipt integration active; Forge port, C5 closure and C6 remain gated"
 }

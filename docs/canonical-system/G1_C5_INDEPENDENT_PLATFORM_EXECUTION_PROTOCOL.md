@@ -1,6 +1,6 @@
 # G1 C5 independent platform execution protocol
 
-Status: **clean-commit local observation retained; no independent result imported**.
+Status: **independent hosted result imported and cryptographically replayed; portability only**.
 
 This protocol proves only the independent-platform portion of C5 portability. It grants no integration, promotion, C5 closure, C6 activation, repository mutation, runtime, cache, storage, network, rendering, AI-generation or publishing authority.
 
@@ -35,7 +35,7 @@ After the complete C5 portability tooling surface and local observation are comm
 4. Import them with `tools/verify-g1-c5-external-receipt.py`. The fixed create-only output is `docs/canonical-system/G1_C5_INDEPENDENT_PLATFORM_EXECUTION.json`, retaining exact request, result and bundle bytes in one self-hashed record.
 5. Replay the retained receipt with `tools/verify-g1-c5-independent-platform-result.ps1`. Missing GitHub CLI, missing evidence, altered embedded bytes or failed cryptographic replay must fail the exact `c5-independent-platform-gate`; unrelated substages do not acquire a permanent GitHub CLI dependency.
 
-The repository is public and connected to GitHub. The new C5 workflow still must be registered on the default branch before its first manual dispatch. No hosted run should start until every bounded file is committed and the local observation is bound to that exact clean source.
+The public repository registered the workflow on the default branch. GitHub-hosted run `29678602236` executed exact source `9e48dd1` on Linux x86_64, produced two overlapping byte-identical semantic receipts, separated unsigned execution from attestation authority, and was imported only after local cryptographic replay passed. The retained result is `G1_C5_INDEPENDENT_PLATFORM_EXECUTION.json`; it remains evidence-only.
 
 ## Remaining gates
 

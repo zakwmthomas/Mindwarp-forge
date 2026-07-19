@@ -7,10 +7,10 @@
 
 - Package: **G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1**
 - Master item / milestone: **C5 / G1**
-- State / substage: **executing / c5-implementation**
+- State / substage: **executing / c5-proofreceipt-integration**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Objective: Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.
-- Context health: C4 remains verified and C5 remains the sole active item. C5 local hardening and portability tooling pass independent review, and a clean-commit observation at source 9e48dd1 retains exact Windows x64/i686 semantic evidence plus honest Android ARM64 compile-only classification. This is not a Forge port. Genuinely independent hosted evidence remains pending; integration, C5 closure, C6, C7, broad G1 closure and R1 remain gated.
+- Context health: C4 remains verified and C5 remains the sole active item. C5 local hardening and portability are independently verified at exact source 9e48dd1; the isolated proof contract, not Forge, reproduced semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb on hosted Linux. The active substage is now read-only ProofReceipt integration. C5 closure, C6, C7, broad G1 closure and R1 remain gated.
 
 ## Durable evidence
 
@@ -29,11 +29,11 @@ Owner-authorized bounded C5 significance/scheduler implementation and capability
 
 ## Exact next action
 
-Commit the verified C5 local platform observation, register the already frozen C5 workflow on the default branch, generate a fresh challenge bound to source 9e48dd1, and obtain the separately attested hosted execution. This ports only the game-facing proof contract, not Forge.
+Implement the smallest read-only ProofReceipt integration for the verified C5 semantic receipt: bind receipt identity and semantic hash without changing canonical object, event or candidate counts, then run focused regressions and independent review. Do not close C5 or activate C6.
 
 ## Unresolved risks
 
-- The independently attested hosted execution must preserve semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb and exact source 9e48dd1 without treating the retained i686 or Android compile-only observations as independent evidence or porting Forge itself.
+- Read-only ProofReceipt integration must bind the verified C5 receipt identity and semantic hash without changing canonical object, event or candidate counts, importing runtime authority, or converting evidence into promotion or C6 authority.
 
 ## Resume after this package
 

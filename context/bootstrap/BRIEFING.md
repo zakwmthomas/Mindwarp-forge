@@ -8,8 +8,8 @@
 - Objective: Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **bounded-c5-significance-scheduler-portability / C4 is verified and complete. The hardened C5 candidate and isolated 38-field semantic receipt pass 90 tests, strict Clippy, all 92 hostile mappings, ten pressure transcripts, cross-target local execution/compile checks and a fresh hostile tooling review. Portability applies only to the game-facing proof contract; Forge remains the PC-first factory. Integration, closure, promotion and C6 authority remain withheld.**
-- Exact next action: Commit the verified C5 local platform observation, register the already frozen C5 workflow on the default branch, generate a fresh challenge bound to source 9e48dd1, and obtain the separately attested hosted execution. This ports only the game-facing proof contract, not Forge.
+- Risk/research gate: **bounded-c5-proofreceipt-read-only-integration / C5 portability is independently verified for the isolated game-facing proof contract: clean Windows x64/i686 observations, Android compile-only evidence, hosted Linux run 29678602236, local Sigstore replay, 40 importer hostiles, 19 retained-replay hostiles and fresh independent review all pass. Forge itself was not ported. Only read-only ProofReceipt binding may proceed; closure, promotion and C6 authority remain withheld.**
+- Exact next action: Implement the smallest read-only ProofReceipt integration for the verified C5 semantic receipt: bind receipt identity and semantic hash without changing canonical object, event or candidate counts, then run focused regressions and independent review. Do not close C5 or activate C6.
 
 ## Approved operating policies
 
