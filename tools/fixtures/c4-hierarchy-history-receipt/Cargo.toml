@@ -1,0 +1,23 @@
+[package]
+name = "c4-hierarchy-history-receipt"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[[bin]]
+name = "c4-hierarchy-history-receipt"
+path = "main.rs"
+
+[dependencies]
+addressable-world-binding = { path = "../../../crates/addressable-world-binding" }
+derived-world-rules = { path = "../../../crates/derived-world-rules" }
+entity-lifecycle = { path = "../../../crates/entity-lifecycle" }
+entity-lifecycle-history-binding = { path = "../../../crates/entity-lifecycle-history-binding" }
+field-basis = { path = "../../../crates/field-basis" }
+hierarchy-history = { path = "../../../crates/hierarchy-history" }
+mindwarp-gameplay-foundation = { path = "../../../crates/mindwarp-gameplay-foundation" }
+minicbor = { version = "=0.26.5", features = ["std"] }
+sha2 = "=0.10.9"
+
+[workspace]

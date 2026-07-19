@@ -2,10 +2,11 @@ param([switch]$ReceiptOnly,[string]$ObservationReceiptPath)
 $ErrorActionPreference='Stop'
 $root=Split-Path -Parent $PSScriptRoot
 $temp=Join-Path ([IO.Path]::GetTempPath()) 'forge-c4-receipt-v1'
-New-Item -ItemType Directory -Path (Join-Path $temp 'src') -Force|Out-Null
+New-Item -ItemType Directory -Path $temp -Force|Out-Null
 $priorRoot=$env:FORGE_ROOT
+$priorTarget=$env:CARGO_TARGET_DIR
 function Get-C4SourceManifestSha([string]$Commit) {
-  $paths=@('Cargo.lock','crates/hierarchy-history/Cargo.toml','crates/hierarchy-history/src/hierarchy.rs','crates/hierarchy-history/src/history.rs','crates/hierarchy-history/src/lib.rs','crates/hierarchy-history/src/proof.rs','crates/entity-lifecycle-history-binding/Cargo.toml','crates/entity-lifecycle-history-binding/src/lib.rs','tools/fixtures/c4-hierarchy-history-receipt/main.rs','tools/verify-g1-c4-closure-readiness.ps1','tools/verify-g1-c4-hierarchy-history-implementation.ps1','tools/verify-g1-c4-platform-observation-receipt.ps1','tools/test-g1-c4-portability-classifier.ps1','tools/verify-g1-c4-record-consistency.ps1')
+  $paths=@(Get-Content -LiteralPath (Join-Path $root 'tools\fixtures\c4-hierarchy-history-receipt\bounded-paths.txt')|Where-Object{!([string]::IsNullOrWhiteSpace($_))})
   $rows=foreach($relative in $paths){$full=Join-Path $root $relative;if(!(Test-Path -LiteralPath $full -PathType Leaf)){throw "C4 source manifest file missing: $relative"};$blob=if([string]::IsNullOrWhiteSpace($Commit)){(git hash-object -- $full).Trim()}else{(git rev-parse "$Commit`:$relative").Trim()};if($LASTEXITCODE-ne0-or$blob-notmatch'^[0-9a-f]{40,64}$'){throw "C4 source manifest blob unavailable: $relative"};"$relative`:$blob"}
   $digest=[Security.Cryptography.SHA256]::Create();try{([BitConverter]::ToString($digest.ComputeHash([Text.Encoding]::UTF8.GetBytes(($rows-join "`n")))).Replace('-','').ToLowerInvariant())}finally{$digest.Dispose()}
 }
@@ -15,37 +16,20 @@ try {
   if($ObservationReceiptPath-and(git status --porcelain)){throw 'Platform observation receipt requires a clean source tree.'}
   $sourceCommit=(git rev-parse HEAD).Trim();$treeManifestSha=Get-C4TreeManifestSha $sourceCommit
   $sourceManifestSha=Get-C4SourceManifestSha
-  $path=$root.Replace('\','/')
-  $manifest=@"
-[package]
-name="c4-hierarchy-history-receipt"
-version="0.1.0"
-edition="2024"
-[dependencies]
-addressable-world-binding={path="$path/crates/addressable-world-binding"}
-derived-world-rules={path="$path/crates/derived-world-rules"}
-entity-lifecycle={path="$path/crates/entity-lifecycle"}
-entity-lifecycle-history-binding={path="$path/crates/entity-lifecycle-history-binding"}
-field-basis={path="$path/crates/field-basis"}
-hierarchy-history={path="$path/crates/hierarchy-history"}
-mindwarp-gameplay-foundation={path="$path/crates/mindwarp-gameplay-foundation"}
-minicbor={version="0.26",features=["std"]}
-sha2="0.10"
-"@
-  Set-Content -LiteralPath (Join-Path $temp 'Cargo.toml') -Value $manifest -Encoding utf8
-  Copy-Item -LiteralPath (Join-Path $root 'tools\fixtures\c4-hierarchy-history-receipt\main.rs') -Destination (Join-Path $temp 'src\main.rs')
+  $manifestPath=Join-Path $root 'tools\fixtures\c4-hierarchy-history-receipt\Cargo.toml'
   $env:FORGE_ROOT=$root
-  cargo run --quiet --offline --manifest-path (Join-Path $temp 'Cargo.toml') -- --self-test
+  $env:CARGO_TARGET_DIR=Join-Path $temp 'target'
+  cargo run --quiet --locked --offline --manifest-path $manifestPath -- --self-test
   if($LASTEXITCODE-ne0){throw 'C4 semantic receipt self-test failed.'}
-  $args="run --quiet --offline --manifest-path `"$(Join-Path $temp 'Cargo.toml')`"";$first=Invoke-C4Process $args;$second=Invoke-C4Process $args
+  $args="run --quiet --locked --offline --manifest-path `"$manifestPath`"";$first=Invoke-C4Process $args;$second=Invoke-C4Process $args
   if($first.exit_code-ne0-or$second.exit_code-ne0){throw 'C4 semantic receipt process failed.'};$one=$first.stdout.Trim();$two=$second.stdout.Trim();if($first.pid-eq$second.pid-or$one-ne$two-or$one-notmatch'^[0-9a-f]+$'){throw 'portability.stdout-mismatch or portability.single-process'}
   $raw=New-Object byte[] ($one.Length/2);for($i=0;$i-lt$raw.Length;$i++){$raw[$i]=[Convert]::ToByte($one.Substring($i*2,2),16)}
   $sha=[Security.Cryptography.SHA256]::Create();try{$semanticSha=([BitConverter]::ToString($sha.ComputeHash($raw)).Replace('-','').ToLowerInvariant());$stdoutHashes=@($first.stdout,$second.stdout)|ForEach-Object{([BitConverter]::ToString($sha.ComputeHash([Text.Encoding]::UTF8.GetBytes($_))).Replace('-','').ToLowerInvariant())};$stderrHashes=@($first.stderr,$second.stderr)|ForEach-Object{([BitConverter]::ToString($sha.ComputeHash([Text.Encoding]::UTF8.GetBytes($_))).Replace('-','').ToLowerInvariant())}}finally{$sha.Dispose()}
   if($ReceiptOnly){Write-Output "C4 semantic receipt verified across two fresh native processes: $semanticSha";return}
 
-  $i686Args="run --quiet --offline --target i686-pc-windows-msvc --manifest-path `"$(Join-Path $temp 'Cargo.toml')`"";$i686Result=Invoke-C4Process $i686Args
+  $i686Args="run --quiet --locked --offline --target i686-pc-windows-msvc --manifest-path `"$manifestPath`"";$i686Result=Invoke-C4Process $i686Args
   if($i686Result.exit_code-ne0-or$i686Result.stdout.Trim()-ne$one){throw 'Same-host i686 semantic execution drifted.'}
-  $androidArgs="check --quiet --offline --target aarch64-linux-android --manifest-path `"$(Join-Path $temp 'Cargo.toml')`"";$androidResult=Invoke-C4Process $androidArgs
+  $androidArgs="check --quiet --locked --offline --target aarch64-linux-android --manifest-path `"$manifestPath`"";$androidResult=Invoke-C4Process $androidArgs
   if($androidResult.exit_code-ne0){throw 'Android compile-only evidence failed.'}
   if((Get-C4SourceManifestSha)-ne$sourceManifestSha){throw 'portability.source-mismatch'}
   $hash=[Security.Cryptography.SHA256]::Create();try{$i686Stdout=([BitConverter]::ToString($hash.ComputeHash([Text.Encoding]::UTF8.GetBytes($i686Result.stdout))).Replace('-','').ToLowerInvariant());$i686Stderr=([BitConverter]::ToString($hash.ComputeHash([Text.Encoding]::UTF8.GetBytes($i686Result.stderr))).Replace('-','').ToLowerInvariant());$androidStdout=([BitConverter]::ToString($hash.ComputeHash([Text.Encoding]::UTF8.GetBytes($androidResult.stdout))).Replace('-','').ToLowerInvariant());$androidStderr=([BitConverter]::ToString($hash.ComputeHash([Text.Encoding]::UTF8.GetBytes($androidResult.stderr))).Replace('-','').ToLowerInvariant())}finally{$hash.Dispose()}
@@ -73,6 +57,10 @@ sha2="0.10"
   foreach($id in $ids[66..73]){if(!$portabilityText.Contains($id)){throw "Portability hostile lacks verifier ownership: $id"}}
 
   & (Join-Path $root 'tools\test-g1-c4-portability-classifier.ps1');if(!$?){throw 'C4 portability classifier failed.'}
+  $bundledPython=Join-Path $env:USERPROFILE '.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+  $python=if(Test-Path -LiteralPath $bundledPython){$bundledPython}elseif(Get-Command python3 -ErrorAction SilentlyContinue){'python3'}else{throw 'Python runtime unavailable for C4 external receipt hostiles.'}
+  & $python (Join-Path $root 'tools\test-g1-c4-external-receipt.py');if($LASTEXITCODE-ne0){throw 'C4 external receipt hostile fixtures failed.'}
+  cargo fmt --manifest-path $manifestPath -- --check;if($LASTEXITCODE-ne0){throw 'C4 portable receipt formatting failed.'}
   if($ObservationReceiptPath){
     if(git status --porcelain){throw 'Platform observation source tree changed during verification.'}
     if((git rev-parse HEAD).Trim()-ne$sourceCommit){throw 'Platform observation source commit changed during verification.'}
@@ -95,4 +83,5 @@ sha2="0.10"
 }
 finally {
   $env:FORGE_ROOT=$priorRoot
+  $env:CARGO_TARGET_DIR=$priorTarget
 }

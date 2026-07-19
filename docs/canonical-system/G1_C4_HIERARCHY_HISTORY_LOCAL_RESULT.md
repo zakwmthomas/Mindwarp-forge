@@ -24,7 +24,7 @@ network, multiplayer, Companion, Greenfield or Kernel authority.
 
 The semantic receipt SHA-256 is
 `263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996`.
-The bounded fourteen-file implementation and verification source manifest SHA-256 is
+The bounded 22-path implementation, fixture and verification source manifest SHA-256 is
 `ddb098b3e4f5cdb92d5bc820e220d53a0423ece2fe8a86b9bca2e60735dba576`.
 The retained platform observations bind clean source commit
 `848bcb94d88586f6553a68bffc2a6c9917ef6efe` and complete tracked-tree
@@ -57,6 +57,11 @@ compilation does not prove execution. C4 therefore stops at
 genuinely independent, platform-diverse runner. No elapsed time, same-host
 architecture, compile-only target or same-platform remote Windows x64 runner
 may be substituted for that evidence.
+
+The external gate now has a retained locked fixture, fresh challenge generator,
+credential-separated hosted workflow, offline attestation bundle, strict local
+importer and 31 hostile cases. These are readiness evidence only: no Git remote
+or GitHub CLI is connected and no independent result has been imported.
 
 Deletion of the new additive APIs, tests, receipt fixture, verifier and this
 result record is the rollback boundary. The legacy one-hop migration content

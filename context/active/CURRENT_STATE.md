@@ -7,10 +7,10 @@
 
 - Package: **G1-C4-HIERARCHY-HISTORY-CLOSURE-V1**
 - Master item / milestone: **C4 / G1**
-- State / substage: **executing / c4-verification**
+- State / substage: **executing / c4-independent-platform-gate**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Objective: Close broad C4 as a capability-free addressable hierarchy and history proof against exact C2 and promoted C3A evidence, without importing C3B, later systems, storage or runtime authority.
-- Context health: The bounded GP4 vertical and receipt are verified and retained. C4 is the sole executing item and is candidate_verified_local: 43 focused component/hostile tests plus 7 C4V tests, all 74 hostile owners, deterministic semantic bytes, same-host i686 execution and Android compile pass. Independent platform-diverse execution remains open.
+- Context health: C4 remains candidate_verified_local. The locked portable fixture, challenge-bound request generator, credential-separated hosted workflow, attested strict importer and 31 external hostile cases pass locally. No Git remote or GitHub CLI is connected, so genuine external execution remains the sole open C4 gate and C5 stays inactive.
 
 ## Durable evidence
 
@@ -29,7 +29,7 @@ Owner-authorized broad C4 hierarchy/history reconciliation and capability-free c
 
 ## Exact next action
 
-Obtain identical C4 semantic-receipt execution from a genuinely independent, platform-diverse runner; until then retain candidate_verified_local and do not activate C5.
+Connect an attestation-eligible GitHub repository at the exact retained source commit, generate one fresh request, execute the hosted Ubuntu workflow, import its verified bundle, then run the registered full gate; retain candidate_verified_local and keep C5 inactive until all pass.
 
 ## Unresolved risks
 

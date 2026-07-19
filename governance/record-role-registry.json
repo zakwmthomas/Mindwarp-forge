@@ -19,6 +19,7 @@
     {"pattern":"contracts/**","role":"canonical_contract"},
     {"pattern":"crates/**","role":"implementation_and_tests"},
     {"pattern":"apps/**","role":"implementation_and_tests"},
+    {"pattern":".github/**","role":"verification_and_operations"},
     {"pattern":"tools/**","role":"verification_and_operations"},
     {"pattern":"governance/**","role":"governance_record"},
     {"pattern":"docs/canonical-system/**","role":"canonical_system_record"},
