@@ -1,4 +1,14 @@
 use significance_scheduler::*;
+struct ReferenceScheduler;
+impl ReferenceScheduler {
+    #[allow(clippy::new_ret_no_self)]
+    fn new(
+        tickets: Vec<WorkTicket>,
+        budget: BudgetEnvelope,
+    ) -> Result<significance_scheduler::ReferenceScheduler, SignificanceSchedulerError> {
+        significance_scheduler::ReferenceScheduler::new_unverified_reference(tickets, budget)
+    }
+}
 
 fn id(value: u16) -> [u8; 32] {
     let mut id = [0; 32];
@@ -506,10 +516,30 @@ fn hostile_admission_and_budget_contracts_fail_closed_and_are_receipted() {
         AdmissionReceiptV1::decode_strict(&receipt_bytes).unwrap(),
         rejected
     );
-    rejected.verify(&[], budget(1)).unwrap();
+    rejected.verify_rejection(&[], budget(1)).unwrap();
     let mut forged = rejected.clone();
     forged.budget_fingerprint = [3; 32];
-    assert!(forged.verify(&[], budget(1)).is_err());
+    assert!(forged.verify_rejection(&[], budget(1)).is_err());
+    let duplicate = AdmissionReceiptV1::evaluate(&[work.clone(), work.clone()], budget(1));
+    let duplicate_bytes = duplicate.encode_canonical().unwrap();
+    assert_eq!(
+        AdmissionReceiptV1::decode_strict(&duplicate_bytes).unwrap(),
+        duplicate
+    );
+    let binding = ImportanceDecisionBindingV1::derive(
+        &packet(1, target, 0),
+        policy(),
+        SignificanceState::default(),
+        1,
+        &maps(),
+    )
+    .unwrap();
+    let mut forged_ticket = work.clone();
+    forged_ticket.importance_tier = ImportanceTier::Dormant;
+    assert!(!AdmissionReceiptV1::evaluate(&[forged_ticket.clone()], budget(1)).accepted);
+    assert!(
+        !AdmissionReceiptV1::evaluate_verified(&[forged_ticket], budget(1), &[binding]).accepted
+    );
 
     // budget.noncanonical, budget.fingerprint-mismatch
     let encoded = budget(1).encode_canonical().unwrap();

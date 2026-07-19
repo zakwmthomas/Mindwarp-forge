@@ -134,7 +134,6 @@ pub struct ImportanceDecisionBindingV1 {
     step: u64,
     prior_state: SignificanceState,
     resulting_state: SignificanceState,
-    pub tier: ImportanceTier,
 }
 impl ImportanceDecisionBindingV1 {
     pub fn derive(
@@ -156,7 +155,7 @@ impl ImportanceDecisionBindingV1 {
             ));
         }
         let mut resulting_state = prior_state;
-        let tier = resulting_state.advance(packet, policy, step)?;
+        resulting_state.advance(packet, policy, step)?;
         Ok(Self {
             target_descriptor: packet.target_descriptor,
             request_epoch: packet.request_epoch,
@@ -166,7 +165,6 @@ impl ImportanceDecisionBindingV1 {
             step,
             prior_state,
             resulting_state,
-            tier,
         })
     }
     pub fn fingerprint(&self) -> Result<[u8; 32], SignificanceSchedulerError> {
@@ -188,6 +186,12 @@ impl ImportanceDecisionBindingV1 {
     pub fn packet_fingerprint(&self) -> [u8; 32] {
         self.packet_fingerprint
     }
+    pub fn resulting_state(&self) -> SignificanceState {
+        self.resulting_state
+    }
+    pub fn tier(&self) -> ImportanceTier {
+        self.resulting_state.tier()
+    }
     pub fn verify(
         &self,
         packet: &ImportancePacket,
@@ -207,7 +211,7 @@ impl ImportanceDecisionBindingV1 {
         if ticket.target_descriptor != self.target_descriptor
             || ticket.request_epoch != self.request_epoch
             || ticket.importance_packet != self.packet_fingerprint
-            || ticket.importance_tier != self.tier
+            || ticket.importance_tier != self.resulting_state.tier()
         {
             return Err(SignificanceSchedulerError::Invalid(
                 "importance binding mismatch",
@@ -276,13 +280,19 @@ pub struct AdmissionReceiptV1 {
     pub accepted: bool,
     pub reason_code: u16,
     pub ticket_fingerprints: Vec<[u8; 32]>,
+    pub truth_binding_fingerprints: Vec<[u8; 32]>,
     pub graph_fingerprint: [u8; 32],
     pub budget_fingerprint: [u8; 32],
 }
 impl AdmissionReceiptV1 {
     pub fn evaluate(tickets: &[WorkTicket], budget: BudgetEnvelope) -> Self {
         let result = crate::ReferenceScheduler::new(tickets.to_vec(), budget);
-        Self::from_result(tickets, budget, result)
+        let mut receipt = Self::from_result(tickets, budget, &[], result);
+        if receipt.accepted {
+            receipt.accepted = false;
+            receipt.reason_code = 11;
+        }
+        receipt
     }
     pub fn evaluate_verified(
         tickets: &[WorkTicket],
@@ -290,11 +300,17 @@ impl AdmissionReceiptV1 {
         bindings: &[ImportanceDecisionBindingV1],
     ) -> Self {
         let result = crate::ReferenceScheduler::new_verified(tickets.to_vec(), budget, bindings);
-        Self::from_result(tickets, budget, result)
+        let mut truth: Vec<[u8; 32]> = bindings
+            .iter()
+            .map(|binding| binding.fingerprint().expect("derived binding"))
+            .collect();
+        truth.sort();
+        Self::from_result(tickets, budget, &truth, result)
     }
     fn from_result(
         tickets: &[WorkTicket],
         budget: BudgetEnvelope,
+        truth_binding_fingerprints: &[[u8; 32]],
         result: Result<crate::ReferenceScheduler, SignificanceSchedulerError>,
     ) -> Self {
         let mut ticket_fingerprints: Vec<[u8; 32]> = tickets
@@ -324,18 +340,32 @@ impl AdmissionReceiptV1 {
             accepted: result.is_ok(),
             reason_code,
             ticket_fingerprints,
+            truth_binding_fingerprints: truth_binding_fingerprints.to_vec(),
             graph_fingerprint,
             budget_fingerprint: budget.fingerprint().expect("validated budget"),
         }
     }
-    pub fn verify(
+    pub fn verify_verified(
+        &self,
+        tickets: &[WorkTicket],
+        budget: BudgetEnvelope,
+        bindings: &[ImportanceDecisionBindingV1],
+    ) -> Result<(), SignificanceSchedulerError> {
+        if self != &Self::evaluate_verified(tickets, budget, bindings) {
+            return Err(SignificanceSchedulerError::Invalid(
+                "admission receipt mismatch",
+            ));
+        }
+        Ok(())
+    }
+    pub fn verify_rejection(
         &self,
         tickets: &[WorkTicket],
         budget: BudgetEnvelope,
     ) -> Result<(), SignificanceSchedulerError> {
-        if self != &Self::evaluate(tickets, budget) {
+        if self.accepted || self != &Self::evaluate(tickets, budget) {
             return Err(SignificanceSchedulerError::Invalid(
-                "admission receipt mismatch",
+                "admission rejection receipt mismatch",
             ));
         }
         Ok(())
@@ -343,13 +373,18 @@ impl AdmissionReceiptV1 {
     pub fn encode_canonical(&self) -> Result<Vec<u8>, SignificanceSchedulerError> {
         let mut out = Vec::new();
         let mut e = Encoder::new(&mut out);
-        e.array(7)
+        e.array(8)
             .and_then(|e| e.u16(CONTRACT_VERSION))
             .and_then(|e| e.bool(self.accepted))
             .and_then(|e| e.u16(self.reason_code))
             .and_then(|e| e.array(self.ticket_fingerprints.len() as u64))
             .map_err(codec)?;
         for fp in &self.ticket_fingerprints {
+            e.bytes(fp).map_err(codec)?;
+        }
+        e.array(self.truth_binding_fingerprints.len() as u64)
+            .map_err(codec)?;
+        for fp in &self.truth_binding_fingerprints {
             e.bytes(fp).map_err(codec)?;
         }
         e.bytes(&self.graph_fingerprint)
@@ -366,6 +401,10 @@ impl AdmissionReceiptV1 {
         for fp in &self.ticket_fingerprints {
             bytes.extend_from_slice(fp)
         }
+        bytes.extend_from_slice(&(self.truth_binding_fingerprints.len() as u64).to_be_bytes());
+        for fp in &self.truth_binding_fingerprints {
+            bytes.extend_from_slice(fp)
+        }
         bytes.extend_from_slice(&self.graph_fingerprint);
         bytes.extend_from_slice(&self.budget_fingerprint);
         hash(ADMISSION_DOMAIN, &bytes)
@@ -375,7 +414,7 @@ impl AdmissionReceiptV1 {
     }
     pub fn decode_strict(bytes: &[u8]) -> Result<Self, SignificanceSchedulerError> {
         let mut d = Decoder::new(bytes);
-        if d.array().map_err(codec)? != Some(7) || d.u16().map_err(codec)? != CONTRACT_VERSION {
+        if d.array().map_err(codec)? != Some(8) || d.u16().map_err(codec)? != CONTRACT_VERSION {
             return Err(SignificanceSchedulerError::NonCanonical);
         }
         let accepted = d.bool().map_err(codec)?;
@@ -391,8 +430,28 @@ impl AdmissionReceiptV1 {
         for _ in 0..count {
             ticket_fingerprints.push(bytes32(d.bytes().map_err(codec)?)?)
         }
-        if !ticket_fingerprints.windows(2).all(|pair| pair[0] < pair[1])
+        if !ticket_fingerprints
+            .windows(2)
+            .all(|pair| pair[0] <= pair[1])
             && ticket_fingerprints.len() > 1
+        {
+            return Err(SignificanceSchedulerError::NonCanonical);
+        }
+        let truth_count = d
+            .array()
+            .map_err(codec)?
+            .ok_or(SignificanceSchedulerError::NonCanonical)? as usize;
+        if truth_count > 256 {
+            return Err(SignificanceSchedulerError::NonCanonical);
+        }
+        let mut truth_binding_fingerprints = Vec::with_capacity(truth_count);
+        for _ in 0..truth_count {
+            truth_binding_fingerprints.push(bytes32(d.bytes().map_err(codec)?)?)
+        }
+        if truth_binding_fingerprints.len() > 1
+            && !truth_binding_fingerprints
+                .windows(2)
+                .all(|pair| pair[0] < pair[1])
         {
             return Err(SignificanceSchedulerError::NonCanonical);
         }
@@ -403,6 +462,7 @@ impl AdmissionReceiptV1 {
             accepted,
             reason_code,
             ticket_fingerprints,
+            truth_binding_fingerprints,
             graph_fingerprint,
             budget_fingerprint,
         };
@@ -413,7 +473,9 @@ impl AdmissionReceiptV1 {
         }
         if value.graph_fingerprint != hash(ADMISSION_DOMAIN, &graph)
             || value.fingerprint() != expected_fp
+            || !(1..=11).contains(&value.reason_code)
             || value.accepted != (value.reason_code == 1)
+            || (value.accepted && value.truth_binding_fingerprints.is_empty())
             || d.position() != bytes.len()
             || value.encode_canonical()? != bytes
         {
@@ -600,6 +662,7 @@ impl PressureTraceV2 {
         &self,
         tickets: &[WorkTicket],
         budget: BudgetEnvelope,
+        bindings: &[ImportanceDecisionBindingV1],
     ) -> Result<(), SignificanceSchedulerError> {
         if self.budget_fingerprint != budget.fingerprint()? {
             return Err(SignificanceSchedulerError::Invalid("trace budget mismatch"));
@@ -617,7 +680,8 @@ impl PressureTraceV2 {
                 return Err(SignificanceSchedulerError::Invalid("trace ticket mismatch"));
             }
         }
-        let mut scheduler = crate::ReferenceScheduler::new(tickets.to_vec(), budget)?;
+        let mut scheduler =
+            crate::ReferenceScheduler::new_verified(tickets.to_vec(), budget, bindings)?;
         let replay = scheduler.step_strict()?;
         if &replay != self {
             return Err(SignificanceSchedulerError::Invalid("trace replay drift"));

@@ -76,10 +76,10 @@ fn eight_domains_are_closed_stable_and_share_one_derived_truth() {
         &maps,
     )
     .unwrap();
-    assert_eq!(binding.tier, ImportanceTier::Critical);
+    assert_eq!(binding.tier(), ImportanceTier::Critical);
     let mut distinct = std::collections::BTreeSet::new();
     for domain in ConsumerDomainV1::ALL {
-        distinct.insert(maps.fidelity(domain, binding.tier));
+        distinct.insert(maps.fidelity(domain, binding.tier()));
         binding
             .verify_ticket(&ticket(
                 domain.code() as u8,
@@ -164,21 +164,6 @@ fn admission_receipts_are_deterministic_and_bind_the_budget() {
         None,
     )];
     let budget = BudgetEnvelope::new(1, [0, 1, 0, 0], [0; 4], 3).unwrap();
-    let accepted = AdmissionReceiptV1::evaluate(&tickets, budget);
-    assert!(accepted.accepted);
-    assert_eq!(accepted.budget_fingerprint, budget.fingerprint().unwrap());
-    assert_eq!(accepted, AdmissionReceiptV1::evaluate(&tickets, budget));
-    let rejected = AdmissionReceiptV1::evaluate(&[], budget);
-    assert!(!rejected.accepted);
-    assert_ne!(accepted.reason_code, rejected.reason_code);
-    assert_eq!(
-        ReferenceScheduler::new(
-            tickets.clone(),
-            BudgetEnvelope::new(2, [0, 1, 0, 0], [0; 4], 3).unwrap()
-        )
-        .unwrap_err(),
-        SignificanceSchedulerError::AdmissionRejected
-    );
     let binding = ImportanceDecisionBindingV1::derive(
         &packet(1, 650),
         policy(),
@@ -187,7 +172,30 @@ fn admission_receipts_are_deterministic_and_bind_the_budget() {
         &maps(),
     )
     .unwrap();
-    assert!(AdmissionReceiptV1::evaluate_verified(&tickets, budget, &[binding]).accepted);
+    let bindings = vec![binding];
+    let accepted = AdmissionReceiptV1::evaluate_verified(&tickets, budget, &bindings);
+    assert!(accepted.accepted);
+    assert!(!accepted.truth_binding_fingerprints.is_empty());
+    accepted
+        .verify_verified(&tickets, budget, &bindings)
+        .unwrap();
+    assert_eq!(accepted.budget_fingerprint, budget.fingerprint().unwrap());
+    assert_eq!(
+        accepted,
+        AdmissionReceiptV1::evaluate_verified(&tickets, budget, &bindings)
+    );
+    let rejected = AdmissionReceiptV1::evaluate(&[], budget);
+    assert!(!rejected.accepted);
+    assert_ne!(accepted.reason_code, rejected.reason_code);
+    assert_eq!(
+        ReferenceScheduler::new_unverified_reference(
+            tickets.clone(),
+            BudgetEnvelope::new(2, [0, 1, 0, 0], [0; 4], 3).unwrap()
+        )
+        .unwrap_err(),
+        SignificanceSchedulerError::AdmissionRejected
+    );
+    assert!(!AdmissionReceiptV1::evaluate(&tickets, budget).accepted);
 }
 
 #[test]
@@ -202,13 +210,15 @@ fn fallback_must_preserve_domain_and_work_class() {
     let wrong_domain = ticket(2, ConsumerDomainV1::Simulation, ResourceClass::Cpu, 1, None);
     let budget = BudgetEnvelope::new(1, [0, 2, 0, 0], [0; 4], 3).unwrap();
     assert_eq!(
-        ReferenceScheduler::new(vec![original.clone(), wrong_domain], budget).unwrap_err(),
+        ReferenceScheduler::new_unverified_reference(vec![original.clone(), wrong_domain], budget)
+            .unwrap_err(),
         SignificanceSchedulerError::InvalidFallback
     );
     let mut wrong_class = ticket(2, ConsumerDomainV1::Generation, ResourceClass::Cpu, 1, None);
     wrong_class.work_class = 2;
     assert_eq!(
-        ReferenceScheduler::new(vec![original, wrong_class], budget).unwrap_err(),
+        ReferenceScheduler::new_unverified_reference(vec![original, wrong_class], budget)
+            .unwrap_err(),
         SignificanceSchedulerError::InvalidFallback
     );
 }
@@ -224,7 +234,8 @@ fn completion_is_accepted_only_from_running_and_never_from_inactive_or_terminal(
     );
     let fallback = ticket(2, ConsumerDomainV1::Streaming, ResourceClass::Io, 1, None);
     let budget = BudgetEnvelope::new(1, [0, 0, 0, 1], [0; 4], 3).unwrap();
-    let mut scheduler = ReferenceScheduler::new(vec![original, fallback], budget).unwrap();
+    let mut scheduler =
+        ReferenceScheduler::new_unverified_reference(vec![original, fallback], budget).unwrap();
     assert_eq!(
         scheduler
             .record_external_completion([1; 32], 1)
@@ -283,8 +294,17 @@ fn strict_trace_has_domain_budget_and_stable_code_identity() {
         })
         .collect();
     let budget = BudgetEnvelope::new(1, [2, 2, 2, 2], [0; 4], 3).unwrap();
-    let mut left = ReferenceScheduler::new(tickets.clone(), budget).unwrap();
-    let mut right = ReferenceScheduler::new(tickets, budget).unwrap();
+    let binding = ImportanceDecisionBindingV1::derive(
+        &packet(1, 650),
+        policy(),
+        SignificanceState::default(),
+        1,
+        &maps(),
+    )
+    .unwrap();
+    let bindings = vec![binding];
+    let mut left = ReferenceScheduler::new_verified(tickets.clone(), budget, &bindings).unwrap();
+    let mut right = ReferenceScheduler::new_verified(tickets, budget, &bindings).unwrap();
     let a = left.step_strict().unwrap();
     let b = right.step_strict().unwrap();
     assert_eq!(a, b);
@@ -302,7 +322,7 @@ fn strict_trace_has_domain_budget_and_stable_code_identity() {
 fn starvation_is_diagnosed_without_forging_significance() {
     let work = ticket(1, ConsumerDomainV1::Simulation, ResourceClass::Cpu, 2, None);
     let budget = BudgetEnvelope::new(1, [1, 0, 0, 0], [0; 4], 2).unwrap();
-    let mut scheduler = ReferenceScheduler::new(vec![work], budget).unwrap();
+    let mut scheduler = ReferenceScheduler::new_unverified_reference(vec![work], budget).unwrap();
     assert!(
         !scheduler
             .step()
@@ -327,7 +347,7 @@ fn starvation_is_diagnosed_without_forging_significance() {
 fn epoch_advance_is_traced_and_old_route_work_never_executes() {
     let work = ticket(1, ConsumerDomainV1::Simulation, ResourceClass::Cpu, 2, None);
     let budget = BudgetEnvelope::new(1, [0, 1, 0, 0], [0; 4], 2).unwrap();
-    let mut scheduler = ReferenceScheduler::new(vec![work], budget).unwrap();
+    let mut scheduler = ReferenceScheduler::new_unverified_reference(vec![work], budget).unwrap();
     let decisions = scheduler.advance_target_epoch([7; 32], 2).unwrap();
     assert_eq!(decisions.len(), 1);
     assert_eq!(decisions[0].kind, DecisionKind::EpochAdvanced);

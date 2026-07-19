@@ -4,7 +4,7 @@
 
 - **Maturity:** prototype_tested
 - **Root:** `crates/significance-scheduler`
-- **Source fingerprint:** `39d680045b1b87307813999e20b3e24bd1ff14e6695d22e258814f16dbb2845c`
+- **Source fingerprint:** `794254a41256bc5e8c9afa7245e099f32335d66b1d68a822ab562057b9d150da`
 - **Live project state:** read `context/active/CURRENT_STATE.md`; active status is never duplicated here.
 
 ## Purpose
@@ -55,6 +55,7 @@ Shared significance packets and deterministic bounded scheduling reference acros
 - `cargo test -p significance-scheduler --test c5_contract_hostiles`
 - `cargo test -p significance-scheduler --test c5_scheduler_hostiles`
 - `cargo test -p significance-scheduler --test c5_residency_trace_authority_hostiles`
+- `cargo test -p significance-scheduler --test c5_pressure_simulation`
 - `cargo test -p significance-scheduler --test multi_domain_consumer_fidelity`
 - `tools/verify-g1-c5-significance-scheduler-implementation.ps1`
 - `tools/verify-f5-significance-scheduler-readiness.ps1`

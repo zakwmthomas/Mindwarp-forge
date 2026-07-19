@@ -10,7 +10,7 @@
 - State / substage: **executing / c5-implementation**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Objective: Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.
-- Context health: C4 remains verified and C5 remains the sole active item. The owner explicitly released the frozen C5 implementation gate. The local full-hostile candidate passes 79 Rust tests and maps every frozen hostile ID to executable evidence while retaining capability-negative authority. C6, C7, broad G1 closure and R1 remain gated.
+- Context health: C4 remains verified and C5 remains the sole active item. The first independent review failed advancement; its truth, fallback, receipt, pressure and Clippy defects were repaired, the 90-test local gate passed, and fresh independent re-review accepted portability as the next bounded substage. Integration, C5 closure, C6, C7, broad G1 closure and R1 remain gated.
 
 ## Durable evidence
 
@@ -29,11 +29,11 @@ Owner-authorized bounded C5 significance/scheduler implementation and capability
 
 ## Exact next action
 
-Freeze the local 92-hostile semantic receipt, run fresh-process and target-diverse portability, prove read-only ProofReceipt integration, obtain independent review, then run the registered full gate before any C5 closure claim.
+Freeze the C5 semantic receipt and begin fresh-process and target-diverse portability evidence. Keep integration, the registered full gate, C5 closure and C6 activation gated.
 
 ## Unresolved risks
 
-- The frozen implementation candidate must repair packet/tier truth binding, strict budget/admission evidence, same-domain fallbacks, completion state gating, starvation diagnosis and residency intents without importing capabilities or product policy.
+- Portable semantic receipt execution must preserve the hardened packet-derived truth, exact admission and replay bindings, deterministic trace identity and capability-negative boundary across fresh processes and supported target tiers.
 
 ## Resume after this package
 

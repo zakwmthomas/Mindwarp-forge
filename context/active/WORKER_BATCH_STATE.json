@@ -6,7 +6,7 @@
     "state":  "executing",
     "previous_state":  "ready",
     "objective":  "Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.",
-    "next_action":  "Freeze the local 92-hostile semantic receipt, run fresh-process and target-diverse portability, prove read-only ProofReceipt integration, obtain independent review, then run the registered full gate before any C5 closure claim.",
+    "next_action":  "Freeze the C5 semantic receipt and begin fresh-process and target-diverse portability evidence. Keep integration, the registered full gate, C5 closure and C6 activation gated.",
     "substage_id":  "c5-implementation",
     "handoff_section_receipts":  {
                                      "objective":  {
@@ -17,13 +17,13 @@
                                                    },
                                      "next_action":  {
                                                          "stage_id":  "c5-implementation",
-                                                         "content_sha256":  "e8c8afb0a141780c3d90cf54c53bfe09232074463399b59e12e6556306b2aab5",
+                                                         "content_sha256":  "9f411e4a73c4330a93952fa9199d061101e68f16b9f4a9a900428729ae9ea7d2",
                                                          "review_disposition":  "revised",
                                                          "review_note":  "Reviewed all handoff sections against the active substage."
                                                      },
                                      "stage_context":  {
                                                            "stage_id":  "c5-implementation",
-                                                           "content_sha256":  "9f06f1ca37019226bf8f3f558c9303bd8fe9e8451c3c3e54e094a042ae43d99b",
+                                                           "content_sha256":  "b33f9422a8f38b19b5c6a0f7d655d80c3bbe5501aa8b2a3866b422c7f8322be4",
                                                            "review_disposition":  "revised",
                                                            "review_note":  "Reviewed all handoff sections against the active substage."
                                                        },
@@ -41,7 +41,7 @@
                                                            },
                                      "unresolved_risks":  {
                                                               "stage_id":  "c5-implementation",
-                                                              "content_sha256":  "af2b27d20de2e26845cdd513bd99b5352e04b4665da0826bf32c593e0370327d",
+                                                              "content_sha256":  "70c712cfea87080f06af60741b770ed8116c26275d5b3613afd59b2068efd525",
                                                               "review_disposition":  "revised",
                                                               "review_note":  "Reviewed all handoff sections against the active substage."
                                                           },
@@ -65,19 +65,19 @@
                                                       },
                                      "evidence":  {
                                                       "stage_id":  "c5-implementation",
-                                                      "content_sha256":  "59091fd16fedf316781d6f4aebd23f4496f48b1bba56ad3643a7585af3182361",
+                                                      "content_sha256":  "2f77c9bb07f061c2434b32dafef6c67ba730a95ca87f937dd51a85c4362f5e17",
                                                       "review_disposition":  "revised",
                                                       "review_note":  "Reviewed all handoff sections against the active substage."
                                                   },
                                      "verification_receipts":  {
                                                                    "stage_id":  "c5-implementation",
-                                                                   "content_sha256":  "235cd956268cb8bb6449c53fdff515eebec2d1129ac79436de2e1f7f4257f34b",
+                                                                   "content_sha256":  "6ec705a2d4cbaa7cafd8228dd5c35a1d87906f80ccadc861ae8e6306cfb7e774",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "transition":  {
                                                         "stage_id":  "c5-implementation",
-                                                        "content_sha256":  "f86db7819c33b778eeadbac2a9ef48bbbe958b0a65dcf230e7703cf844d1a4f8",
+                                                        "content_sha256":  "20a91c09a47b03923c7b3af7e2a48bf54b971538905a24fcd7f73cab373eaa11",
                                                         "review_disposition":  "revised",
                                                         "review_note":  "Reviewed all handoff sections against the active substage."
                                                     }
@@ -92,10 +92,10 @@
                                         "domain-creative-suites"
                                     ]
                     },
-    "risk_level":  "bounded-c5-significance-scheduler-local-candidate",
-    "research_gate":  "C4 is verified and complete. The owner released the frozen C5 implementation lane. The capability-free local candidate now passes 79 Rust tests with executable mapping for all 92 frozen hostile IDs, strict one-step replay and disposable residency lifecycle evidence. Portability, read-only integration, independent review and the registered full gate remain required before closure.",
+    "risk_level":  "bounded-c5-significance-scheduler-portability",
+    "research_gate":  "C4 is verified and complete. The hardened C5 local candidate passes 90 tests, strict Clippy, all 92 frozen hostile mappings and ten pressure scenarios. Fresh independent re-review accepted advancement to portability while explicitly withholding integration, closure, promotion and C6 authority.",
     "authority_lane":  "Owner-authorized bounded C5 significance/scheduler implementation and capability-free closure proof only. Exact dependency C4. Frozen candidate G1_C5_CLOSURE_READINESS.md. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.",
-    "context_health":  "C4 remains verified and C5 remains the sole active item. The owner explicitly released the frozen C5 implementation gate. The local full-hostile candidate passes 79 Rust tests and maps every frozen hostile ID to executable evidence while retaining capability-negative authority. C6, C7, broad G1 closure and R1 remain gated.",
+    "context_health":  "C4 remains verified and C5 remains the sole active item. The first independent review failed advancement; its truth, fallback, receipt, pressure and Clippy defects were repaired, the 90-test local gate passed, and fresh independent re-review accepted portability as the next bounded substage. Integration, C5 closure, C6, C7, broad G1 closure and R1 remain gated.",
     "stage_context":  {
                           "stage_id":  "c5-implementation",
                           "macro_sources":  [
@@ -136,6 +136,7 @@
                                                 "crates/significance-scheduler/tests/c5_contract_hostiles.rs",
                                                 "crates/significance-scheduler/tests/c5_scheduler_hostiles.rs",
                                                 "crates/significance-scheduler/tests/c5_residency_trace_authority_hostiles.rs",
+                                                "crates/significance-scheduler/tests/c5_pressure_simulation.rs",
                                                 "crates/significance-scheduler/tests/multi_domain_consumer_fidelity.rs",
                                                 "tools/verify-g1-c5-closure-readiness.ps1",
                                                 "tools/test-g1-c5-closure-readiness.ps1",
@@ -151,10 +152,11 @@
                                                  "The public GitHub repository is connected. Hosted run 29671494578 separated read-only execution from attestation authority and was rejected locally before import when it exposed CRLF/LF tree serialization drift.",
                                                  "Canonical LF tree binding for the hardened C5-successor surface is clean source 17f39f7018de8a02c8292bcde0fafa2bf58fc7d4 with tracked-tree SHA-256 3b0bb235e5a3159ecba5b4d34acfd6157725773af79584e3b801283b8442e4dd and bounded-source SHA-256 b31d92b7ebf36540a64249192fca96d83537c01932ededf84c94e1a886acc108.",
                                                  "GitHub-hosted run 29674024317 executed and attested exact source 17f39f7; strict import and retained replay verify current independent result SHA-256 2430d21047166c7e177047b5d44862fcaffe41f33cf663c678aa3b754272fbdd.",
-                                                 "The retained 18 tests remain green and 61 new tests bring the local candidate to 79 total Rust tests.",
-                                                 "The local candidate revalidates mutable packet, policy, ticket and budget inputs at trust boundaries; binds admission graph and budget receipts; preserves fallback identity; rejects partial or terminal-rewriting completion; traces epoch advance and starvation; and implements disposable residency request, renewal, expiry, bypass and churn evidence.",
+                                                 "The retained 18 tests remain green and 72 new tests bring the hardened local candidate to 90 total Rust tests.",
+                                                 "The first independent review blocked portability on optional truth verification, stale fallback escape, non-round-trippable duplicate rejection receipts, missing pressure composition and strict-Clippy failures.",
+                                                 "The hardened candidate binds verified truth fingerprints into admission receipts and replay, makes unverified admission non-accepting, quarantines inactive fallbacks on epoch advance, validates rejection reason codes, runs ten composed pressure scenarios and passes strict Clippy.",
                                                  "All 92 frozen hostile IDs now map to executable local evidence, including strict ticket/budget replay and capability-negative authority tests.",
-                                                 "C5 remains open pending a frozen semantic receipt, fresh-process and target-diverse portability, read-only ProofReceipt integration, independent review and the full gate."
+                                                 "C5 remains open pending fresh independent re-review, then a frozen semantic receipt, fresh-process and target-diverse portability, read-only ProofReceipt integration and the full gate."
                                              ]
                       },
     "visual_quality_gate":  {
@@ -250,7 +252,7 @@
                           }
                       ],
     "unresolved_risks":  [
-                             "The frozen implementation candidate must repair packet/tier truth binding, strict budget/admission evidence, same-domain fallbacks, completion state gating, starvation diagnosis and residency intents without importing capabilities or product policy."
+                             "Portable semantic receipt execution must preserve the hardened packet-derived truth, exact admission and replay bindings, deterministic trace identity and capability-negative boundary across fresh processes and supported target tiers."
                          ],
     "evidence_requirements":  [
                                   "retain exact verified C4 as C5\u0027s sole dependency",
@@ -292,7 +294,8 @@
                      "The third registered attempt passed through retained hosted-attestation replay and the repaired successor routes, then failed because the local observation verifier incorrectly required historical and rebuilt MSVC debug PE bytes to match. Two clean target-directory builds produced distinct executable hashes with exact semantic output; the bounded repair validates both hashes as per-execution identities without weakening hosted same-run artifact equality.",
                      "GitHub-hosted run 29672946787 independently executed and attested exact repaired source f505c82; strict import and retained cryptographic replay verify result SHA-256 733d453f0831cdaafefa9d4a9e24b1494f339b0b56f4441264009c9fcc3254cd. The prior 8651038 receipt remains archived intact.",
                      "Three independent C5 audits reconciled canonical obligations, 2,134 lines of retained code and adversarial gaps; 18 focused tests and the historical F5 verifier pass but do not close C5.",
-                     "G1_C5_CLOSURE_READINESS.md freezes exactly eight domains, superseding contract decisions, a minimal additive candidate, 92 hostile IDs and the capability-negative owner gate before source."
+                     "G1_C5_CLOSURE_READINESS.md freezes exactly eight domains, superseding contract decisions, a minimal additive candidate, 92 hostile IDs and the capability-negative owner gate before source.",
+                     "The hardened C5 candidate passes 90 Rust tests, strict Clippy, all 92 frozen hostile mappings and ten composed pressure scenarios; fresh independent re-review accepted advancement to portability only."
                  ],
     "verification_receipts":  [
                                   "dependency:gp0-gp1-gp2-gp3-c4v:verified",
@@ -337,6 +340,9 @@
                                   "receipt:c4-independent-platform-sha256:2430d21047166c7e177047b5d44862fcaffe41f33cf663c678aa3b754272fbdd",
                                   "registered-full-gate:run-bc2154f73f6243239910ac30bc3b1994:passed",
                                   "receipt:G1-C4-CLOSURE:recorded",
+                                  "gate:c5-local-hardened:90-tests:passed",
+                                  "gate:c5-hostile-registry:92-of-92:mapped",
+                                  "independent-review:c5-hardened-portability:accepted",
                                   "owner-route:c5-reconciliation-readiness:authorized",
                                   "registered-full-gate:run-9a18d3d8d3504cc4a3c57dec59d69c6c:failed:github-cli-path-missing",
                                   "registered-full-gate:run-d2952383a722420eaf5160c85d49268d:failed:worker-feedback-stale",
@@ -359,5 +365,5 @@
                                          "receipt":  "registered-full-gate:run-71ef6dfd6e2945ab9745c85f3dcf4d6b:passed"
                                      }
                 },
-    "transition":  "C4 verified and recorded -\u003e C5 readiness and 92 hostiles frozen -\u003e owner released implementation -\u003e local 92-hostile candidate green -\u003e portability and integration verification active; C6 remains gated"
+    "transition":  "C4 verified and recorded -\u003e C5 local hostile candidate -\u003e first review blocked advancement -\u003e truth, fallback, receipt, pressure and Clippy hardening passed -\u003e fresh independent re-review accepted portability only; integration, closure and C6 remain gated"
 }

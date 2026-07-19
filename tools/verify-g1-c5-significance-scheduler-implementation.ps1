@@ -3,7 +3,7 @@ $root=Split-Path -Parent $PSScriptRoot
 $crate=Join-Path $root 'crates\significance-scheduler'
 $readiness=Get-Content (Join-Path $root 'docs\canonical-system\G1_C5_CLOSURE_READINESS.md') -Raw
 $source=(Get-ChildItem (Join-Path $crate 'src') -Filter '*.rs'|Get-Content -Raw)-join "`n"
-$testPaths=@('eight_domain_scheduler_closure.rs','c5_contract_hostiles.rs','c5_scheduler_hostiles.rs','c5_residency_trace_authority_hostiles.rs')|ForEach-Object{Join-Path $crate ("tests\"+$_)}
+$testPaths=@('eight_domain_scheduler_closure.rs','c5_contract_hostiles.rs','c5_scheduler_hostiles.rs','c5_residency_trace_authority_hostiles.rs','c5_pressure_simulation.rs')|ForEach-Object{Join-Path $crate ("tests\"+$_)}
 $test=($testPaths|ForEach-Object{Get-Content $_ -Raw})-join "`n"
 $manifest=Get-Content (Join-Path $crate 'Cargo.toml') -Raw
 
@@ -23,4 +23,6 @@ foreach($forbidden in @('forge-kernel','tauri','tokio','reqwest')){if($manifest.
 
 & cargo test -p significance-scheduler --locked
 if($LASTEXITCODE-ne 0){throw 'C5 significance-scheduler tests failed.'}
-Write-Output 'G1 C5 local implementation candidate verified: typed eight-domain surface, 79 Rust tests, executable mapping for all 92 hostile IDs and capability-negative boundary pass. This does not claim portability, integration, independent review, full-gate passage or closure.'
+& cargo clippy -p significance-scheduler --all-targets --locked -- -D warnings
+if($LASTEXITCODE-ne 0){throw 'C5 significance-scheduler strict Clippy failed.'}
+Write-Output 'G1 C5 local implementation candidate verified: typed eight-domain surface, 90 Rust tests, executable mapping for all 92 hostile IDs, complete local pressure scenarios, verified truth admission/replay and capability-negative boundary pass. This does not claim portability, integration, independent review, full-gate passage or closure.'

@@ -385,7 +385,7 @@ pub struct ReferenceScheduler {
 }
 
 impl ReferenceScheduler {
-    pub fn new(
+    pub(crate) fn new(
         tickets: Vec<WorkTicket>,
         budget: BudgetEnvelope,
     ) -> Result<Self, SignificanceSchedulerError> {
@@ -490,6 +490,14 @@ impl ReferenceScheduler {
         })
     }
 
+    #[doc(hidden)]
+    pub fn new_unverified_reference(
+        tickets: Vec<WorkTicket>,
+        budget: BudgetEnvelope,
+    ) -> Result<Self, SignificanceSchedulerError> {
+        Self::new(tickets, budget)
+    }
+
     pub fn new_verified(
         tickets: Vec<WorkTicket>,
         budget: BudgetEnvelope,
@@ -555,16 +563,16 @@ impl ReferenceScheduler {
         let mut queue = VecDeque::from([id]);
         let mut decisions = Vec::new();
         while let Some(current) = queue.pop_front() {
-            if let Some(runtime) = self.tickets.get_mut(&current) {
-                if matches!(runtime.state, TicketState::Pending | TicketState::Running) {
-                    runtime.state = TicketState::CancelRequested;
-                    decisions.push(decision(
-                        runtime,
-                        DecisionKind::CancelRequested,
-                        0,
-                        "explicit cancellation",
-                    ));
-                }
+            if let Some(runtime) = self.tickets.get_mut(&current)
+                && matches!(runtime.state, TicketState::Pending | TicketState::Running)
+            {
+                runtime.state = TicketState::CancelRequested;
+                decisions.push(decision(
+                    runtime,
+                    DecisionKind::CancelRequested,
+                    0,
+                    "explicit cancellation",
+                ));
             }
             if let Some(children) = self.cancellation_children.get(&current) {
                 queue.extend(children.iter().copied());
@@ -615,10 +623,10 @@ impl ReferenceScheduler {
             0,
             "cancelled output settled and discarded",
         )];
-        if let Some(fallback) = fallback {
-            if let Some(activated) = self.activate_fallback(fallback) {
-                decisions.push(activated);
-            }
+        if let Some(fallback) = fallback
+            && let Some(activated) = self.activate_fallback(fallback)
+        {
+            decisions.push(activated);
         }
         Ok(decisions)
     }
@@ -628,7 +636,10 @@ impl ReferenceScheduler {
         target: [u8; 32],
         epoch: u64,
     ) -> Result<Vec<SchedulerDecision>, SignificanceSchedulerError> {
-        let current = self.current_epochs.entry(target).or_insert(epoch);
+        let current = self
+            .current_epochs
+            .get_mut(&target)
+            .ok_or(SignificanceSchedulerError::UnknownTicket)?;
         if epoch <= *current {
             return Err(SignificanceSchedulerError::StaleEpoch);
         }
@@ -637,15 +648,28 @@ impl ReferenceScheduler {
         for runtime in self.tickets.values_mut() {
             if runtime.ticket.target_descriptor == target
                 && runtime.ticket.request_epoch < epoch
-                && matches!(runtime.state, TicketState::Pending | TicketState::Running)
+                && matches!(
+                    runtime.state,
+                    TicketState::Pending | TicketState::Running | TicketState::InactiveFallback
+                )
             {
-                runtime.state = TicketState::CancelRequested;
-                decisions.push(decision(
-                    runtime,
-                    DecisionKind::EpochAdvanced,
-                    0,
-                    "target epoch advanced",
-                ));
+                if runtime.state == TicketState::InactiveFallback {
+                    runtime.state = TicketState::CompletedDiscarded;
+                    decisions.push(decision(
+                        runtime,
+                        DecisionKind::CompletedDiscarded,
+                        0,
+                        "inactive fallback quarantined by target epoch",
+                    ));
+                } else {
+                    runtime.state = TicketState::CancelRequested;
+                    decisions.push(decision(
+                        runtime,
+                        DecisionKind::EpochAdvanced,
+                        0,
+                        "target epoch advanced",
+                    ));
+                }
             }
         }
         self.pending_decisions.extend(decisions.iter().cloned());
@@ -998,10 +1022,10 @@ impl ReferenceScheduler {
                 0,
                 "dependency failed",
             ));
-            if let Some(fallback) = fallback {
-                if let Some(activated) = self.activate_fallback(fallback) {
-                    decisions.push(activated);
-                }
+            if let Some(fallback) = fallback
+                && let Some(activated) = self.activate_fallback(fallback)
+            {
+                decisions.push(activated);
             }
         }
     }
@@ -1026,17 +1050,20 @@ impl ReferenceScheduler {
                 0,
                 "deadline expired before completion",
             ));
-            if let Some(fallback) = fallback {
-                if let Some(activated) = self.activate_fallback(fallback) {
-                    decisions.push(activated);
-                }
+            if let Some(fallback) = fallback
+                && let Some(activated) = self.activate_fallback(fallback)
+            {
+                decisions.push(activated);
             }
         }
     }
 
     fn activate_fallback(&mut self, id: [u8; 32]) -> Option<SchedulerDecision> {
         let runtime = self.tickets.get_mut(&id)?;
-        if runtime.state != TicketState::InactiveFallback {
+        if runtime.state != TicketState::InactiveFallback
+            || self.current_epochs.get(&runtime.ticket.target_descriptor)
+                != Some(&runtime.ticket.request_epoch)
+        {
             return None;
         }
         runtime.state = TicketState::Pending;

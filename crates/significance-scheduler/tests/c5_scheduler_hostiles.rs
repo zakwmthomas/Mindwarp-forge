@@ -1,8 +1,19 @@
 use significance_scheduler::{
     BudgetEnvelope, CompletionReceiptV1, ConsumerDomainV1, DeadlineClass, DecisionKind,
-    HysteresisPolicy, ImportancePacket, ImportanceTier, ReferenceScheduler, ResourceClass,
-    SignalVector, SignificanceSchedulerError, SignificanceState, TicketState, WorkTicket,
+    HysteresisPolicy, ImportancePacket, ImportanceTier, ReferenceScheduler as Scheduler,
+    ResourceClass, SignalVector, SignificanceSchedulerError, SignificanceState, TicketState,
+    WorkTicket,
 };
+struct ReferenceScheduler;
+impl ReferenceScheduler {
+    #[allow(clippy::new_ret_no_self)]
+    fn new(
+        tickets: Vec<WorkTicket>,
+        budget: BudgetEnvelope,
+    ) -> Result<Scheduler, SignificanceSchedulerError> {
+        Scheduler::new_unverified_reference(tickets, budget)
+    }
+}
 
 #[allow(clippy::too_many_arguments)]
 fn ticket(
@@ -102,7 +113,7 @@ fn dispatch_dependency_before_ready() {
     assert_eq!(scheduler.state([2; 32]).unwrap(), TicketState::Pending);
 }
 
-fn donated_scheduler() -> ReferenceScheduler {
+fn donated_scheduler() -> Scheduler {
     let dependency = ticket(
         1,
         ConsumerDomainV1::Ai,
@@ -366,6 +377,52 @@ fn thrash_route_reversal_stale_work() {
     );
     let late = scheduler.record_completion(completion(1, 1, 2)).unwrap();
     assert_eq!(late.kind, DecisionKind::CompletedDiscarded);
+}
+
+#[test]
+fn thrash_route_reversal_quarantines_inactive_fallback() {
+    let original = ticket(
+        1,
+        ConsumerDomainV1::Streaming,
+        ResourceClass::Io,
+        2,
+        vec![],
+        DeadlineClass::QualityTarget,
+        100,
+        ImportanceTier::Background,
+        Some(2),
+        None,
+    );
+    let fallback = ticket(
+        2,
+        ConsumerDomainV1::Streaming,
+        ResourceClass::Io,
+        1,
+        vec![],
+        DeadlineClass::QualityTarget,
+        100,
+        ImportanceTier::Background,
+        None,
+        None,
+    );
+    let mut scheduler =
+        ReferenceScheduler::new(vec![original, fallback], budget([0, 0, 0, 1], [0; 4], 3)).unwrap();
+    scheduler.advance_target_epoch([7; 32], 2).unwrap();
+    assert_eq!(
+        scheduler.state([2; 32]).unwrap(),
+        TicketState::CompletedDiscarded
+    );
+    scheduler.acknowledge_cancel([1; 32]).unwrap();
+    scheduler.settle_cancel([1; 32]).unwrap();
+    assert_eq!(
+        scheduler.state([2; 32]).unwrap(),
+        TicketState::CompletedDiscarded
+    );
+    assert!(
+        !scheduler.step().decisions.iter().any(
+            |decision| decision.ticket_id == [2; 32] && decision.kind == DecisionKind::Executed
+        )
+    );
 }
 
 #[test]
