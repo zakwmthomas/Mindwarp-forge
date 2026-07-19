@@ -65,13 +65,13 @@
                                                       },
                                      "evidence":  {
                                                       "stage_id":  "c4-independent-platform-gate",
-                                                      "content_sha256":  "873c490165313ff594c3e6f695d7708f2fc6ca4a333f2fdad98f66a13c16b33a",
+                                                      "content_sha256":  "26d5abf9c2d05798e4d8d46a385f62b03c746dcd77f0572589730c6b1ec823a7",
                                                       "review_disposition":  "revised",
                                                       "review_note":  "Reviewed all handoff sections against the active substage."
                                                   },
                                      "verification_receipts":  {
                                                                    "stage_id":  "c4-independent-platform-gate",
-                                                                   "content_sha256":  "26bfe044f9d03bb32393da2a9423acedc307ea1c4d942fa3d6f637f59a553ca5",
+                                                                   "content_sha256":  "78e28a6d2a92b0e31da59a07a217a7658244838be5a07b3ab9158a3bd1f3946b",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
@@ -243,8 +243,8 @@
                      "Three independent read-only audits identified the minimal C4 closure route and exact stale canonical claims before source.",
                      "C4 local implementation verifier passed 58 core, 8 receipt and 8 portability hostile owners with semantic SHA-256 263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996.",
                      "Two fresh native processes and same-host Windows i686 execution emitted identical semantic bytes; aarch64-linux-android compiled only. None is independent second-platform execution.",
-                     "The bounded 22-path C4 implementation, fixture and verification source manifest SHA-256 is ddb098b3e4f5cdb92d5bc820e220d53a0423ece2fe8a86b9bca2e60735dba576.",
-                     "Local platform observations bind clean source commit 848bcb94d88586f6553a68bffc2a6c9917ef6efe and complete tracked-tree manifest SHA-256 9d0cc92689921def59139a1930facfc7e34cdfd67bab6dd00b035cf38d8d7c1a.",
+                     "The bounded 22-path C4 implementation, fixture and verification source manifest SHA-256 is 271cf257ec5bc98dccbca3213918c9b8d78cd07df335e6f222dc2843d3e4759f.",
+                     "Local platform observations bind clean source commit b5be5b31a276b827f3b20f94c4425054b6a140be and complete tracked-tree manifest SHA-256 d2b254f20e7c2dc5070c8cb5cafaff15d7f20ad12801b373b32103d4bfd21a28.",
                      "The locked portable C4 fixture, fresh request generator, hosted Ubuntu workflow, cryptographically pinned importer and 31 external hostile cases are locally verified; no independent result has been imported."
                  ],
     "verification_receipts":  [
@@ -265,9 +265,9 @@
                                   "audit:c4-canonical-code-route:three-lanes:complete",
                                   "gate:c4-local-implementation:pass:43-focused-plus-7-c4v",
                                   "receipt:c4-semantic-sha256:263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996",
-                                  "receipt:c4-bounded-source-manifest-sha256:ddb098b3e4f5cdb92d5bc820e220d53a0423ece2fe8a86b9bca2e60735dba576",
-                                  "receipt:c4-clean-source-commit:848bcb94d88586f6553a68bffc2a6c9917ef6efe",
-                                  "receipt:c4-tracked-tree-manifest-sha256:9d0cc92689921def59139a1930facfc7e34cdfd67bab6dd00b035cf38d8d7c1a",
+                                  "receipt:c4-bounded-source-manifest-sha256:271cf257ec5bc98dccbca3213918c9b8d78cd07df335e6f222dc2843d3e4759f",
+                                  "receipt:c4-clean-source-commit:b5be5b31a276b827f3b20f94c4425054b6a140be",
+                                  "receipt:c4-tracked-tree-manifest-sha256:d2b254f20e7c2dc5070c8cb5cafaff15d7f20ad12801b373b32103d4bfd21a28",
                                   "platform:c4-i686:same-host-second-architecture:passed",
                                   "platform:c4-android-aarch64:compile-only:passed",
                                   "gate:c4-external-importer-hostiles:pass:31-plus-workflow-controls"
