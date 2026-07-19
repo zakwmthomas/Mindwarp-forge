@@ -5,6 +5,7 @@ param(
 
 $root = Split-Path -Parent $PSScriptRoot
 . (Join-Path $PSScriptRoot 'g1-c5-successor-route.ps1')
+. (Join-Path $PSScriptRoot 'g1-c6-successor-route.ps1')
 
 if ($null -eq $C3) {
   $program = Get-Content -LiteralPath (Join-Path $root 'docs\canonical-system\MASTER_PROGRAM.json') -Raw | ConvertFrom-Json
@@ -85,7 +86,8 @@ $c5BroadRoute =
   $Checkpoint.authority_lane -eq 'Owner-authorized broad C5 significance/scheduler reconciliation and capability-free closure readiness only. Exact dependency C4. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.'
 $c5FullGateRoute = Test-G1C5FullGateReconciliationRoute -Checkpoint $Checkpoint
 $c5RecordedClosureRoute = Test-G1C5RecordedClosureRoute -Checkpoint $Checkpoint
-$gameplayFoundationRoute = $gp0GameplayRoute -or $gp1GameplayRoute -or $gp2GameplayRoute -or $c4vGameplayRoute -or $gp3GameplayRoute -or $gp4GameplayRoute -or $g1VerticalCloseoutRoute -or $c4BroadRoute -or $c5BroadRoute -or $c5FullGateRoute -or $c5RecordedClosureRoute
+$c6ReconciliationReadinessRoute = Test-G1C6ReconciliationReadinessRoute -Checkpoint $Checkpoint
+$gameplayFoundationRoute = $gp0GameplayRoute -or $gp1GameplayRoute -or $gp2GameplayRoute -or $c4vGameplayRoute -or $gp3GameplayRoute -or $gp4GameplayRoute -or $g1VerticalCloseoutRoute -or $c4BroadRoute -or $c5BroadRoute -or $c5FullGateRoute -or $c5RecordedClosureRoute -or $c6ReconciliationReadinessRoute
 $c3DesignRoute =
   $Checkpoint.batch_id -eq 'G1-C3-WHOLE-CELL-RECEIVER-COUPLING-MATHEMATICAL-DESIGN-V1' -and
   $Checkpoint.master_program_item -eq 'C3' -and

@@ -627,14 +627,14 @@
                   {
                       "id":  "C5",
                       "milestone":  "G1",
-                      "state":  "executing",
-                      "status":  "active",
+                      "state":  "verified",
+                      "status":  "complete",
                       "depends_on":  [
                                          "C4"
                                      ],
                       "gate":  "recorded",
-                      "next_action":  "Retain the verified capability-free C5 reference as the closed waiting cursor until a separately owner-authorized C6 readiness transition; do not infer product policy, cache, runtime or later-system authority.",
-                      "proof":  "Exactly eight packet-derived consumer domains, all 92 frozen hostile IDs, ten deterministic pressure scenarios, portable semantic receipt 88e2be61, GitHub-hosted Linux run 29678602236, read-only ProofReceipt integration, independent reviews, pre-transition registered run-87b9301f9bb54b2d9b72767643c7ed9b and post-transition registered run-8296afcac8e949cca8b6a3693d1dfc3f pass. C5 is recorded and closed while remaining the sole executing cursor until a separately authorized successor.",
+                      "next_action":  "Retain the verified capability-free C5 reference as an immutable exact dependency for active C6 readiness; do not infer product policy, cache, runtime or later-system authority.",
+                      "proof":  "Exactly eight packet-derived consumer domains, all 92 frozen hostile IDs, ten deterministic pressure scenarios, portable semantic receipt 88e2be61, GitHub-hosted Linux run 29678602236, read-only ProofReceipt integration, independent reviews, pre-transition registered run-87b9301f9bb54b2d9b72767643c7ed9b and post-transition registered run-8296afcac8e949cca8b6a3693d1dfc3f pass. C5 is verified, complete and recorded; a separate owner authorization activated code-free C6 readiness only.",
                       "sources":  [
                                       "MASTER_CLOSURE_REGISTER.md",
                                       "SIGNIFICANCE_SCHEDULER_DESIGN_GATE.md",
@@ -652,15 +652,15 @@
                   {
                       "id":  "C6",
                       "milestone":  "G1",
-                      "state":  "proposed",
-                      "status":  "gated",
+                      "state":  "executing",
+                      "status":  "active",
                       "depends_on":  [
                                          "C4",
                                          "C5"
                                      ],
                       "gate":  "design",
-                      "next_action":  "Wait for a separately owner-authorized C6 readiness transition. Retain the repaired C6 prototypes as bounded evidence only; do not activate organism, body-plan or ecology work from C5 closure.",
-                      "proof":  "Exact C4 and capability-free C5 reference prerequisites are verified, but C6 remains incomplete, proposed and separately gated. Repaired prototypes reject fabricated causal nodes and lineage occupancy and report structural bindings only, without grounding, comparison, organism, ecology or runtime authority.",
+                      "next_action":  "Reconcile the bounded prototype evidence against G1_C6_CLOSURE_READINESS.md, freeze exact hostile contracts and stop at the separately gated first implementation candidate.",
+                      "proof":  "Exact C4 and capability-free C5 prerequisites are verified. Code-free C6 readiness is active; current prototypes remain non-closure evidence and do not prove organism, body plan, physiology, ecology, comparative eligibility, runtime or visual quality.",
                       "sources":  [
                                       "MASTER_CLOSURE_REGISTER.md",
                                       "SEMANTIC_CONSTRUCTION_DESIGN_GATE.md",
@@ -670,7 +670,8 @@
                                       "G1_C6_DISTANCE_SENSING_NICHE_BINDING_RESULT.md",
                                       "G1_C6_NICHE_GRAPH_BINDING_RESULT.md",
                                       "G1_C6_MACRO_LINEAGE_BINDING_RESULT.md",
-                                      "G1_C6_PERSON_FORM_ELIGIBILITY_RESULT.md"
+                        "G1_C6_PERSON_FORM_ELIGIBILITY_RESULT.md",
+                        "G1_C6_CLOSURE_READINESS.md"
                                   ]
                   },
                   {

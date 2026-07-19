@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 AUTHORITY = "Owner-authorized recorded C5 significance/scheduler capability-free closure evidence only. Exact dependency C4. C5 remains the sole master-program cursor pending a separate C6 transition. No C3B, C6 activation, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets, promotion authority or Kernel mutation."
+C6_AUTHORITY = "Owner-authorized C6 semantic/construction and organism-ecology reconciliation and capability-free readiness only. Exact dependencies verified C4 and C5. Retain corrected C6 prerequisite evidence as non-closure evidence. No C6 implementation source, C3B, C7, broad G1 closure, runtime, product ontology or vocabulary, solver or AI generation, geometry, assets, animation, renderer, visual-quality claim, physiology or content constants, filesystem, network, process, Companion, Greenfield, promotion authority or Kernel mutation."
 SOURCE = "9e48dd117c2b22b62bd31dba15c10c3a9bf4b100"
 TREE = "cfc58943f96fed768f77ac2a6e3256aa13d59d6c0edbe24f13cd967315038636"
 BOUNDED = "9430bc530ba39403803a05fd99a9bc5c257472c2f320921ca242b51344947ecb"
@@ -42,26 +43,36 @@ def verify(root: Path) -> None:
     local = load(root / "docs/canonical-system/G1_C5_LOCAL_PLATFORM_OBSERVATIONS.json")
     external = load(root / "docs/canonical-system/G1_C5_INDEPENDENT_PLATFORM_EXECUTION.json")
     registry = load(root / "docs/canonical-system/system-registry.json")
-    expected = {
+    successor = checkpoint.get("batch_id") == "G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1"
+    expected = ({
+        "batch_id":"G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1", "master_program_item":"C6",
+        "state":"executing", "previous_state":"ready", "substage_id":"c6-reconciliation-readiness",
+        "authority_lane":C6_AUTHORITY,
+    } if successor else {
         "batch_id":"G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1", "master_program_item":"C5",
         "state":"recorded", "previous_state":"verifying", "substage_id":"c5-registered-closure-recorded",
         "authority_lane":AUTHORITY,
-    }
+    })
     for key, wanted in expected.items():
         if type(checkpoint.get(key)) is not str or checkpoint[key] != wanted: raise ValueError(f"checkpoint {key} drifted")
     receipts = strings(checkpoint.get("verification_receipts"), "checkpoint receipts")
     for receipt in ("receipt:G1-C5-CLOSURE:recorded", f"registered-full-gate:{RUN}:passed", f"registered-full-gate:{POST_RUN}:passed", "independent-review:c5-portability-receipt:accepted", "independent-review:c5-proofreceipt-integration:accepted"):
         if receipt not in receipts: raise ValueError(f"missing closure receipt: {receipt}")
+    if successor:
+        for receipt in ("owner-route:c6-reconciliation-readiness:authorized", "independent-review:c5-c6-readiness-transition:accepted", "focused:c5-c6-successor-route-hostiles:passed", "transition:c5-verified-c6-readiness-activated:recorded"):
+            if receipt not in receipts: raise ValueError(f"missing successor receipt: {receipt}")
     criteria = checkpoint.get("exit_criteria")
     if type(criteria) is not list or any(type(x) is not dict or x.get("status") != "verified" for x in criteria): raise ValueError("C5 exit criteria are not all verified")
     items = program.get("items")
     if type(items) is not list: raise ValueError("program items are malformed")
     c5, c6 = one(items,"C5"), one(items,"C6")
-    if (c5.get("state"),c5.get("status"),c5.get("gate")) != ("executing","active","recorded"): raise ValueError("C5 holding cursor drifted")
+    expected_c5 = ("verified","complete","recorded") if successor else ("executing","active","recorded")
+    if (c5.get("state"),c5.get("status"),c5.get("gate")) != expected_c5: raise ValueError("C5 closure state drifted")
     if strings(c5.get("depends_on"),"C5 dependencies") != ["C4"] or "G1_C5_CLOSURE_RESULT.md" not in strings(c5.get("sources"),"C5 sources"): raise ValueError("C5 closure binding drifted")
-    if (c6.get("state"),c6.get("status")) != ("proposed","gated") or strings(c6.get("depends_on"),"C6 dependencies") != ["C4","C5"]: raise ValueError("C6 was activated or dependency drifted")
+    expected_c6 = ("executing","active") if successor else ("proposed","gated")
+    if (c6.get("state"),c6.get("status")) != expected_c6 or strings(c6.get("depends_on"),"C6 dependencies") != ["C4","C5"]: raise ValueError("C6 state or dependency drifted")
     active = [x.get("id") for x in items if type(x) is dict and x.get("state") == "executing" and x.get("status") == "active"]
-    if active != ["C5"]: raise ValueError("C5 is not the sole active cursor")
+    if active != (["C6"] if successor else ["C5"]): raise ValueError("sole active cursor drifted")
     local_expected = {"source_commit":SOURCE,"tracked_tree_manifest_sha256":TREE,"bounded_source_manifest_sha256":BOUNDED,"semantic_receipt_sha256":SEMANTIC,"independent_second_platform_execution":False,"promotion_authority":False,"c6_authority":False}
     for key,wanted in local_expected.items():
         if type(local.get(key)) is not type(wanted) or local.get(key) != wanted: raise ValueError(f"local receipt {key} drifted")
@@ -80,13 +91,13 @@ def verify(root: Path) -> None:
         root/"docs/project-atlas/ROADMAP.md",
     ]
     result_text = docs[0].read_text(encoding="utf-8-sig")
-    for token in ("Status: **verified, complete and recorded.**","Android ARM64 is honestly classified compile-only","not Forge","C6 remains proposed, gated and inactive",SUCCESSOR):
+    for token in ("Status: **verified, complete and recorded.**","Android ARM64 is honestly classified compile-only","not Forge","C5 grants no C6 authority",SUCCESSOR):
         if token not in result_text: raise ValueError(f"closure result is missing exact boundary: {token}")
     text = "\n".join(p.read_text(encoding="utf-8-sig") for p in docs)
-    for token in (SOURCE,TREE,BOUNDED,SUCCESSOR,SEMANTIC,REQUEST,RESULT,RUN,POST_RUN,"not Forge","C6 remains proposed, gated and inactive"):
+    for token in (SOURCE,TREE,BOUNDED,SUCCESSOR,SEMANTIC,REQUEST,RESULT,RUN,POST_RUN,"not Forge","C5 grants no C6 authority"):
         if token not in text: raise ValueError(f"closure records are missing exact token: {token}")
 
 def main() -> None:
     parser=argparse.ArgumentParser(); parser.add_argument("--root",type=Path,required=True); args=parser.parse_args()
-    verify(args.root.resolve()); print("G1 C5 closure result verified: exact evidence, sole recorded cursor, authority negatives and gated C6 agree.")
+    verify(args.root.resolve()); print("G1 C5 closure result verified: immutable evidence and exact current successor route agree.")
 if __name__ == "__main__": main()

@@ -1,83 +1,83 @@
 ﻿{
     "schema_version":  3,
     "canonical_role":  "sole-active-work-checkpoint",
-    "batch_id":  "G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1",
-    "master_program_item":  "C5",
-    "state":  "recorded",
-    "previous_state":  "verifying",
-    "objective":  "Record the exact capability-free C5 significance and scheduler closure evidence against verified C4 without activating C6 or granting runtime, product or promotion authority.",
-    "next_action":  "Retain C5 as the sole recorded waiting cursor until a separate owner-authorized C6 readiness transition. Do not port Forge, activate C6 or infer runtime, cache, product-policy or promotion authority.",
-    "substage_id":  "c5-registered-closure-recorded",
+    "batch_id":  "G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1",
+    "master_program_item":  "C6",
+    "state":  "executing",
+    "previous_state":  "ready",
+    "objective":  "Reconcile the exact bounded C6 prerequisite evidence, freeze organism and ecology ownership boundaries and hostile readiness, and identify one separately gated first implementation candidate without adding source.",
+    "next_action":  "Verify the code-free C6 readiness record and exact successor route, then stop before the separately gated body-plan structural implementation candidate.",
+    "substage_id":  "c6-reconciliation-readiness",
     "handoff_section_receipts":  {
                                      "objective":  {
-                                                       "stage_id":  "c5-registered-closure-recorded",
-                                                       "content_sha256":  "0a19e5a1715f5a6cca87429aa2a267b97f9f6dacdfadfc7de5d0846e2d51d7bc",
+                                                       "stage_id":  "c6-reconciliation-readiness",
+                                                       "content_sha256":  "729921975d5efed4e60aa2262a993fb9ceeecf74cd484cd4e6c041f597a90088",
                                                        "review_disposition":  "revised",
                                                        "review_note":  "Reviewed all handoff sections against the active substage."
                                                    },
                                      "next_action":  {
-                                                         "stage_id":  "c5-registered-closure-recorded",
-                                                         "content_sha256":  "5c263c06147a8c61c368686df0ce156e1949248faed2acfb1c49e600c85b9db1",
+                                                         "stage_id":  "c6-reconciliation-readiness",
+                                                         "content_sha256":  "57506a171ecf93c16c6fc974886d804e49cb5f7ab7f342730fc10dd4bd12a850",
                                                          "review_disposition":  "revised",
                                                          "review_note":  "Reviewed all handoff sections against the active substage."
                                                      },
                                      "stage_context":  {
-                                                           "stage_id":  "c5-registered-closure-recorded",
-                                                           "content_sha256":  "77e50a002d991607b6753e74ebe090861d381cef25edf7c10e15dc6aeadbc3b3",
+                                                           "stage_id":  "c6-reconciliation-readiness",
+                                                           "content_sha256":  "0065f939e90640251e1300f5b8033e871ffd68d7270e2ddc7da74c485f5be294",
                                                            "review_disposition":  "revised",
                                                            "review_note":  "Reviewed all handoff sections against the active substage."
                                                        },
                                      "visual_quality_gate":  {
-                                                                 "stage_id":  "c5-registered-closure-recorded",
-                                                                 "content_sha256":  "80ae5cd5e6cfb847218c27879744cfe9da5c36bd40124e6f700060f88c558739",
+                                                                 "stage_id":  "c6-reconciliation-readiness",
+                                                                 "content_sha256":  "714f74f1c91e7749f149d4b0cb884bf6dd511d97ea820c2870839755f49c4596",
                                                                  "review_disposition":  "revised",
                                                                  "review_note":  "Reviewed all handoff sections against the active substage."
                                                              },
                                      "simulation_ladder":  {
-                                                               "stage_id":  "c5-registered-closure-recorded",
+                                                               "stage_id":  "c6-reconciliation-readiness",
                                                                "content_sha256":  "5e2527faa8937a295cd953330a721b97bf79afe0e7a7e6d99a9c552492471082",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "unresolved_risks":  {
-                                                              "stage_id":  "c5-registered-closure-recorded",
+                                                              "stage_id":  "c6-reconciliation-readiness",
                                                               "content_sha256":  "8c450158aeee656c12e5a078bab4f8672a2f6e5a95dc96b4f0299fdbe710f54f",
                                                               "review_disposition":  "revised",
                                                               "review_note":  "Reviewed all handoff sections against the active substage."
                                                           },
                                      "evidence_requirements":  {
-                                                                   "stage_id":  "c5-registered-closure-recorded",
+                                                                   "stage_id":  "c6-reconciliation-readiness",
                                                                    "content_sha256":  "fee8b2b089c9ee9fd8607d84f31964a5e3a026625e9c90d93f3246844107e57a",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "verification_plan":  {
-                                                               "stage_id":  "c5-registered-closure-recorded",
+                                                               "stage_id":  "c6-reconciliation-readiness",
                                                                "content_sha256":  "c671cd7b23a7965f5a5ccfdbdbf4236339a4a9309b6e164389f9fbf40a6baa0b",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "resume_after":  {
-                                                          "stage_id":  "c5-registered-closure-recorded",
-                                                          "content_sha256":  "14291b691ce304cd9ae78dfe553656e8c4a19cb665154e38e1d96bf5aded7a81",
+                                                          "stage_id":  "c6-reconciliation-readiness",
+                                                          "content_sha256":  "36b26f42e9e9d8998050667a650b5925f103828ae51b9bb41ee0022171d4eed9",
                                                           "review_disposition":  "revised",
                                                           "review_note":  "Reviewed all handoff sections against the active substage."
                                                       },
                                      "evidence":  {
-                                                      "stage_id":  "c5-registered-closure-recorded",
-                                                      "content_sha256":  "e33c3ee30d48016edc0d62ad2c681dc594820772b0ae6938ea114b5e8daf699d",
+                                                      "stage_id":  "c6-reconciliation-readiness",
+                                                      "content_sha256":  "1ae69e632dc17e75e03c3ab2e0c4eace941c3b3890b2a2ac0f93c45f4e31e5a8",
                                                       "review_disposition":  "revised",
                                                       "review_note":  "Reviewed all handoff sections against the active substage."
                                                   },
                                      "verification_receipts":  {
-                                                                   "stage_id":  "c5-registered-closure-recorded",
-                                                                   "content_sha256":  "195225e536f66d38abaaae43c1b796d98f6fe0df172b4859478ab65295f3989d",
+                                                                   "stage_id":  "c6-reconciliation-readiness",
+                                                                   "content_sha256":  "4d2a369be5b8a22a83209f0b12d7eb9bc7de4cd2d09709ef5ac26ac199c06c8c",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "transition":  {
-                                                        "stage_id":  "c5-registered-closure-recorded",
-                                                        "content_sha256":  "e587cc3e8aaf106d172c9d715ebbfe60de2c0f77e36d54ecdebacf5d742b26a3",
+                                                        "stage_id":  "c6-reconciliation-readiness",
+                                                        "content_sha256":  "1401177eccb175ac7a088cb084f375f9e237d72d690b741001f8b45d27bac978",
                                                         "review_disposition":  "revised",
                                                         "review_note":  "Reviewed all handoff sections against the active substage."
                                                     }
@@ -92,58 +92,55 @@
                                         "domain-creative-suites"
                                     ]
                     },
-    "risk_level":  "recorded-capability-free-c5-closure-holding-cursor",
-    "research_gate":  "C5 capability-free closure evidence is recorded against exact C4. The retained source, two evidence-only successor transitions, one exact closure-orchestration transition, hosted Linux attestation, read-only ProofReceipt integration, independent reviews, pre-transition run-87b9301f9bb54b2d9b72767643c7ed9b and post-transition run-8296afcac8e949cca8b6a3693d1dfc3f remain cryptographically replayable. This holding state grants no Forge port, promotion, runtime, product-policy, cache or C6 authority.",
-    "authority_lane":  "Owner-authorized recorded C5 significance/scheduler capability-free closure evidence only. Exact dependency C4. C5 remains the sole master-program cursor pending a separate C6 transition. No C3B, C6 activation, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets, promotion authority or Kernel mutation.",
-    "context_health":  "C5 is recorded as the capability-free reference proof and remains the sole executing/active master-program waiting cursor. The isolated game-facing proof contract, not Forge, reproduced semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb on hosted Linux. Exact successor classifiers distinguish the independently executed source from later evidence-only and orchestration changes. C6 remains proposed, gated and inactive.",
+    "risk_level":  "code-free-c6-organism-ecology-readiness",
+    "research_gate":  "C4 and C5 are verified exact prerequisites. Thirty-eight focused prototype tests and five read-only desktop receipt tests are bounded non-closure evidence. C6 remains incomplete and this gate grants no source, product ontology, physiology constants, runtime, visuals, promotion or Forge-port authority.",
+    "authority_lane":  "Owner-authorized C6 semantic/construction and organism-ecology reconciliation and capability-free readiness only. Exact dependencies verified C4 and C5. Retain corrected C6 prerequisite evidence as non-closure evidence. No C6 implementation source, C3B, C7, broad G1 closure, runtime, product ontology or vocabulary, solver or AI generation, geometry, assets, animation, renderer, visual-quality claim, physiology or content constants, filesystem, network, process, Companion, Greenfield, promotion authority or Kernel mutation.",
+    "context_health":  "C5 is verified, complete and recorded after both registered closure gates. C6 is the sole executing/active cursor for code-free reconciliation only. Current synthetic prototypes expose partial deterministic seams and do not establish organism, anatomy, physiology, ecology, person-form eligibility, runtime or visual truth.",
     "stage_context":  {
-                          "stage_id":  "c5-registered-closure-recorded",
+                          "stage_id":  "c6-reconciliation-readiness",
                           "macro_sources":  [
                                                 "docs/canonical-system/MASTER_PROGRAM.json",
                                                 "docs/canonical-system/MASTER_CLOSURE_REGISTER.md",
                                                 "docs/canonical-system/PROOF_MATRIX.md",
-                                                "docs/canonical-system/SIGNIFICANCE_SCHEDULER_DESIGN_GATE.md",
-                                                "docs/canonical-system/G1_C5_MULTI_DOMAIN_FIDELITY_RESULT.md",
-                                                "docs/canonical-system/G1_C5_CLOSURE_READINESS.md",
-                                                "docs/canonical-system/G1_C5_LOCAL_PLATFORM_OBSERVATIONS.json",
-                                                "docs/canonical-system/G1_C5_INDEPENDENT_PLATFORM_EXECUTION.json",
-                                                "docs/canonical-system/G1_C5_CLOSURE_RESULT.md"
+                                                "docs/canonical-system/G1_C5_CLOSURE_RESULT.md",
+                                                "docs/canonical-system/SEMANTIC_CONSTRUCTION_DESIGN_GATE.md",
+                                                "docs/canonical-system/G1_C6_DISTANCE_SENSING_NICHE_BINDING_RESULT.md",
+                                                "docs/canonical-system/G1_C6_NICHE_GRAPH_BINDING_RESULT.md",
+                                                "docs/canonical-system/G1_C6_MACRO_LINEAGE_BINDING_RESULT.md",
+                                                "docs/canonical-system/G1_C6_PERSON_FORM_ELIGIBILITY_RESULT.md",
+                                                "docs/canonical-system/G1_C6_CLOSURE_READINESS.md"
                                             ],
                           "macro_findings":  [
                                                  "The owner retained the canonical broad route C4 then C5 then C6 then C7 then G1-CLOSEOUT then R1.",
-                                                 "C4 is verified and complete; C5 is the sole active item. C6-C7, broad G1-CLOSEOUT and R1 remain unchanged and gated.",
-                                                 "The current C5 closure requires exactly generation, simulation, AI, physics, animation, audio, rendering and streaming from one shared significance truth.",
-                                                 "C5 portability is verified only for the isolated capability-free game-facing proof contract; Forge remains the PC-first factory and was not ported.",
-                                                 "The read-only ProofReceipt binding and exact retained-successor classification are independently accepted; C5 closure evidence is recorded without modifying frozen game-facing proof bytes or activating runtime behavior or C6."
+                                                 "C4 and C5 are verified and complete; C6 is the sole active item for code-free reconciliation/readiness. C7, broad G1-CLOSEOUT and R1 remain gated.",
+                                                 "The five current C6 prototype seams pass 38 focused tests but prove only generic semantic construction, physical opportunity, hypothetical lineage binding and structural evidence completeness.",
+                                                 "Physical opportunity is owned by C3 and is not an ecological niche; representation, geometry, animation and visual quality remain C7-owned.",
+                                                 "The smallest prospective implementation is a data-only body-plan structural contract with humanoid and structurally distinct nonhuman fixtures, and remains separately owner-gated."
                                              ],
                           "micro_sources":  [
                                                 "apps/forge-desktop/src-tauri/MODULE.md",
                                                 "apps/forge-desktop/src-tauri/src/main.rs",
-                                                "crates/forge-kernel/MODULE.md",
-                                                "crates/forge-kernel/src/contracts.rs",
-                                                "crates/forge-kernel/src/persistence.rs",
-                                                "crates/significance-scheduler/MODULE.md",
-                                                "tools/verify-f5-proof-receipt.ps1",
-                                                "tools/verify-f5-significance-scheduler-readiness.ps1",
-                                                "governance/module-context-registry.json",
-                                                "docs/canonical-system/G1_C5_INDEPENDENT_PLATFORM_EXECUTION.json"
+                                                "crates/semantic-construction/MODULE.md",
+                                                "crates/organism-niche-binding/MODULE.md",
+                                                "crates/niche-graph-binding/MODULE.md",
+                                                "crates/macro-lineage-binding/MODULE.md",
+                                                "crates/person-form-eligibility/MODULE.md",
+                                                "tools/g1-c6-successor-route.ps1",
+                                                "tools/verify-g1-c6-closure-readiness.ps1",
+                                                "tools/test-g1-c6-closure-readiness.ps1"
                                             ],
                           "micro_findings":  [
-                                                 "The retained independent receipt binds exact source 9e48dd117c2b22b62bd31dba15c10c3a9bf4b100 and semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb.",
-                                                 "The hosted receipt is evidence-only and explicitly denies promotion, repository mutation and C6 activation.",
-                                                 "ProofReceiptRecord is an immutable data-only result record whose projection is read-only and carries no approval or promotion authority.",
-                                                 "The desktop integration is test-only: it records the retained hosted receipt and semantic digest idempotently without changing canonical object, event or candidate counts.",
-                                                 "The existing legacy significance/scheduler receipt test remains intact; the C5 test separately binds the strict 38-field CBOR evidence.",
-                                                 "Focused desktop tests, the complete 43-test desktop suite, ProofReceipt verification, scheduler readiness verification, module-context verification and independent hostile review pass.",
-                                                 "Four registered full-gate diagnostics exposed stale exact successor tuples; permissive wildcard repairs were rejected and reverted after hostile review.",
-                                                 "The exact adapters preserve all historical C4 proof blobs and the C5 source snapshot, classify two evidence-only C5 transitions plus one exact closure-orchestration delta, and authenticate the recorded C5 tuple through strict hostile-tested evidence.",
-                                                 "Pre-transition registered run-87b9301f9bb54b2d9b72767643c7ed9b passed in 1106066 ms and post-transition registered run-8296afcac8e949cca8b6a3693d1dfc3f passed in 779649 ms. C5 capability-free closure is recorded as the sole waiting cursor; C6, Forge port, promotion and runtime authority remain withheld."
+                                                 "Focused counts are exact: semantic-construction 14, organism-niche-binding 5, niche-graph-binding 7, macro-lineage-binding 6 and person-form-eligibility 6.",
+                                                 "Five C6-specific desktop ProofReceipt bindings pass within a 17-test read-only receipt replay; this is not runtime integration.",
+                                                 "The niche-graph result is a C3 physical opportunity precursor, the lineage body-plan reference is opaque, and person-form output is structural completeness only.",
+                                                 "Sixty-eight hostile cases cover evidence, ecology, anatomy, physiology, identity, evolution, ecomorphs, capacities, comparative eligibility, applicable variation, aging and end-to-end authority.",
+                                                 "Registered run-f51cc195a0f54ad88beeeb5d809780e9 passed the full Forge gate in 801062 ms; C6 source, Forge port, promotion, runtime and visual authority remain withheld."
                                              ]
                       },
     "visual_quality_gate":  {
                                 "asset_use_intent":  false,
                                 "status":  "not_applicable",
-                                "rationale":  "C5 is a capability-free significance/scheduler proof and uses no visual asset, renderer or creative-quality claim.",
+                                "rationale":  "C6 readiness is code-free and data-contract-only; geometry, assets, animation, renderer and visual-quality claims remain C7-owned and excluded.",
                                 "dependent_implementation_blocked":  false,
                                 "receipts":  [
 
@@ -260,7 +257,7 @@
                               "replay the hosted Linux attestation and read-only ProofReceipt integration without granting mutation authority",
                               "require a separate owner-authorized transition before activating C6"
                           ],
-    "resume_after":  "Continue only after a separate owner-authorized C6 readiness transition; do not activate C6 automatically.",
+    "resume_after":  "Stop at the separately gated first C6 implementation candidate after readiness verification; do not add body-plan or broader C6 source without a new exact authorization.",
     "evidence":  [
                      "GP3 closed cleanly in commit 7f29f6b and registered run-50a8c78043eb46c483f1f655d3793f9b.",
                      "C4V closed cleanly in commit 34f2213 and registered run-fa6334a300e04d409dd5cddb4f22542e.",
@@ -289,7 +286,11 @@
                      "G1_C5_CLOSURE_READINESS.md freezes exactly eight domains, superseding contract decisions, a minimal additive candidate, 92 hostile IDs and the capability-negative owner gate before source.",
                      "The hardened C5 candidate passes 90 Rust tests, strict Clippy, all 92 frozen hostile mappings and ten composed pressure scenarios; fresh independent re-review accepted advancement to portability only.",
                      "C5 local portability observation at source 9e48dd1 retains semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb across two fresh Windows x64 processes and same-host i686, with Android ARM64 classified compile-only and all authority flags false.",
-                     "GitHub-hosted run 29678602236 executed exact source 9e48dd1 in two overlapping native Linux x64 processes; credential-separated attestation, local cryptographic replay and fresh independent review accepted portability for the isolated proof contract only."
+                     "GitHub-hosted run 29678602236 executed exact source 9e48dd1 in two overlapping native Linux x64 processes; credential-separated attestation, local cryptographic replay and fresh independent review accepted portability for the isolated proof contract only.",
+                     "The current C6 prerequisite replay passes exactly 38 focused prototype tests: 14 semantic-construction, 5 organism-niche-binding, 7 niche-graph-binding, 6 macro-lineage-binding and 6 person-form-eligibility tests.",
+                     "Seventeen read-only Forge desktop ProofReceipt tests pass, including the five C6 prerequisite vectors; they do not establish runtime integration.",
+                     "G1_C6_CLOSURE_READINESS.md freezes 68 hostile cases across 12 missing domains and leaves the first data-only body-plan structural candidate separately gated.",
+                     "Registered full Forge gate run-f51cc195a0f54ad88beeeb5d809780e9 passed the complete verification scope in 801062 ms against checkpoint SHA-256 1ef8262aeec211b91b0ade71768caefc538a97a6cd888231ec43510e41d05532."
                  ],
     "verification_receipts":  [
                                   "dependency:gp0-gp1-gp2-gp3-c4v:verified",
@@ -365,7 +366,15 @@
                                   "independent-review:c5-exact-successor-route-adapter:accepted",
                                   "registered-full-gate:run-87b9301f9bb54b2d9b72767643c7ed9b:passed",
                                   "registered-full-gate:run-8296afcac8e949cca8b6a3693d1dfc3f:passed",
-                                  "receipt:G1-C5-CLOSURE:recorded"
+                                  "receipt:G1-C5-CLOSURE:recorded",
+                                  "owner-route:c6-reconciliation-readiness:authorized",
+                                  "independent-review:c5-c6-readiness-transition:accepted",
+                                  "focused:c5-c6-successor-route-hostiles:passed",
+                                  "focused:c6-prerequisite-prototypes:38-of-38:passed",
+                                  "focused:c6-desktop-proofreceipt:17-of-17:passed",
+                                  "gate:c6-closure-readiness:68-hostiles:frozen",
+                                  "registered-full-gate:run-f51cc195a0f54ad88beeeb5d809780e9:passed",
+                                  "transition:c5-verified-c6-readiness-activated:recorded"
                               ],
     "metrics":  {
                     "token_cost":  {
@@ -374,9 +383,9 @@
                                    },
                     "elapsed_time":  {
                                          "status":  "measured",
-                                         "value":  "779649 ms",
-                                         "receipt":  "registered-full-gate:run-8296afcac8e949cca8b6a3693d1dfc3f:passed"
+                                         "value":  "801062 ms",
+                                         "receipt":  "registered-full-gate:run-f51cc195a0f54ad88beeeb5d809780e9:passed"
                                      }
                 },
-    "transition":  "C4 verified and recorded -\u003e C5 local hardening accepted -\u003e isolated game-facing portability verified on hosted Linux run 29678602236 -\u003e read-only ProofReceipt integration active -\u003e exact successor classification and registered run-87b9301f9bb54b2d9b72767643c7ed9b retained -\u003e C5 capability-free closure recorded as the sole waiting cursor; Forge port and C6 remain gated"
+    "transition":  "C4 verified and recorded -\u003e C5 capability-free closure verified, complete and recorded -\u003e separate owner authorization activates code-free C6 reconciliation/readiness as the sole cursor -\u003e C6 source, runtime, visuals, product ontology, promotion and Forge port remain gated"
 }

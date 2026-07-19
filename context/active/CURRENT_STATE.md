@@ -5,12 +5,12 @@
 
 ## Active checkpoint
 
-- Package: **G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1**
-- Master item / milestone: **C5 / G1**
-- State / substage: **recorded / c5-registered-closure-recorded**
+- Package: **G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1**
+- Master item / milestone: **C6 / G1**
+- State / substage: **executing / c6-reconciliation-readiness**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Objective: Record the exact capability-free C5 significance and scheduler closure evidence against verified C4 without activating C6 or granting runtime, product or promotion authority.
-- Context health: C5 is recorded as the capability-free reference proof and remains the sole executing/active master-program waiting cursor. The isolated game-facing proof contract, not Forge, reproduced semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb on hosted Linux. Exact successor classifiers distinguish the independently executed source from later evidence-only and orchestration changes. C6 remains proposed, gated and inactive.
+- Objective: Reconcile the exact bounded C6 prerequisite evidence, freeze organism and ecology ownership boundaries and hostile readiness, and identify one separately gated first implementation candidate without adding source.
+- Context health: C5 is verified, complete and recorded after both registered closure gates. C6 is the sole executing/active cursor for code-free reconciliation only. Current synthetic prototypes expose partial deterministic seams and do not establish organism, anatomy, physiology, ecology, person-form eligibility, runtime or visual truth.
 
 ## Durable evidence
 
@@ -25,11 +25,11 @@
 
 ## Authority boundary
 
-Owner-authorized recorded C5 significance/scheduler capability-free closure evidence only. Exact dependency C4. C5 remains the sole master-program cursor pending a separate C6 transition. No C3B, C6 activation, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets, promotion authority or Kernel mutation.
+Owner-authorized C6 semantic/construction and organism-ecology reconciliation and capability-free readiness only. Exact dependencies verified C4 and C5. Retain corrected C6 prerequisite evidence as non-closure evidence. No C6 implementation source, C3B, C7, broad G1 closure, runtime, product ontology or vocabulary, solver or AI generation, geometry, assets, animation, renderer, visual-quality claim, physiology or content constants, filesystem, network, process, Companion, Greenfield, promotion authority or Kernel mutation.
 
 ## Exact next action
 
-Retain C5 as the sole recorded waiting cursor until a separate owner-authorized C6 readiness transition. Do not port Forge, activate C6 or infer runtime, cache, product-policy or promotion authority.
+Verify the code-free C6 readiness record and exact successor route, then stop before the separately gated body-plan structural implementation candidate.
 
 ## Unresolved risks
 
@@ -37,4 +37,4 @@ Retain C5 as the sole recorded waiting cursor until a separate owner-authorized 
 
 ## Resume after this package
 
-Continue only after a separate owner-authorized C6 readiness transition; do not activate C6 automatically.
+Stop at the separately gated first C6 implementation candidate after readiness verification; do not add body-plan or broader C6 source without a new exact authorization.

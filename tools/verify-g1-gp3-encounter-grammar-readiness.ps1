@@ -2,6 +2,7 @@ param([string]$ProgramPath,[string]$CheckpointPath)
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
 . (Join-Path $PSScriptRoot 'g1-c5-successor-route.ps1')
+. (Join-Path $PSScriptRoot 'g1-c6-successor-route.ps1')
 if ([string]::IsNullOrWhiteSpace($ProgramPath)) { $ProgramPath = Join-Path $root 'docs\canonical-system\MASTER_PROGRAM.json' }
 if ([string]::IsNullOrWhiteSpace($CheckpointPath)) { $CheckpointPath = Join-Path $root 'context\active\WORKER_BATCH_STATE.json' }
 $readinessPath = Join-Path $root 'docs\canonical-system\G1_GP3_ENCOUNTER_GRAMMAR_READINESS.md'
@@ -84,7 +85,8 @@ $c4Successor = $checkpoint.batch_id -eq 'G1-C4-HIERARCHY-HISTORY-CLOSURE-V1' -an
 $c5LegacySuccessor = $checkpoint.batch_id -eq 'G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1' -and
     $checkpoint.master_program_item -eq 'C5' -and $checkpoint.substage_id -eq 'c5-reconciliation-readiness' -and
     $checkpoint.authority_lane -eq 'Owner-authorized broad C5 significance/scheduler reconciliation and capability-free closure readiness only. Exact dependency C4. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.'
-$c5Successor = $c5LegacySuccessor -or (Test-G1C5FullGateReconciliationRoute -Checkpoint $checkpoint) -or (Test-G1C5RecordedClosureRoute -Checkpoint $checkpoint)
+$c6Successor = Test-G1C6ReconciliationReadinessRoute -Checkpoint $checkpoint
+$c5Successor = $c5LegacySuccessor -or (Test-G1C5FullGateReconciliationRoute -Checkpoint $checkpoint) -or (Test-G1C5RecordedClosureRoute -Checkpoint $checkpoint) -or $c6Successor
 if (!$gp3Live -and !$gp4Successor -and !$closeoutSuccessor -and !$c4Successor -and !$c5Successor) {
     throw 'GP3 readiness is not bound to its canonical route or an admitted authenticated successor.'
 }
@@ -102,7 +104,7 @@ if ($gp4Successor -or $closeoutSuccessor -or $c4Successor -or $c5Successor) {
         $closeout.Count -eq 1 -and @($closeout[0].depends_on) -contains 'GP4' -and
         (($closeoutSuccessor -and $closeout[0].state -eq 'executing' -and $closeout[0].status -eq 'active') -or
          ($c4Successor -and $closeout[0].state -eq 'verified' -and $closeout[0].status -eq 'complete' -and $c4.Count -eq 1 -and $c4[0].state -eq 'executing' -and $c4[0].status -eq 'active' -and (@($c4[0].depends_on)-join ',') -eq 'C2,C3A') -or
-         ($c5Successor -and $closeout[0].state -eq 'verified' -and $closeout[0].status -eq 'complete' -and $c4.Count -eq 1 -and $c4[0].state -eq 'verified' -and $c4[0].status -eq 'complete' -and (@($c4[0].depends_on)-join ',') -eq 'C2,C3A' -and @($c4[0].sources) -contains 'G1_C4_CLOSURE_RESULT.md' -and $c4Run.Success -and @($checkpoint.verification_receipts) -contains "registered-full-gate:$($c4Run.Value):passed" -and @($checkpoint.verification_receipts) -contains 'receipt:G1-C4-CLOSURE:recorded' -and $c5.Count -eq 1 -and $c5[0].state -eq 'executing' -and $c5[0].status -eq 'active' -and (@($c5[0].depends_on)-join ',') -eq 'C4'))
+         ($c5Successor -and $closeout[0].state -eq 'verified' -and $closeout[0].status -eq 'complete' -and $c4.Count -eq 1 -and $c4[0].state -eq 'verified' -and $c4[0].status -eq 'complete' -and (@($c4[0].depends_on)-join ',') -eq 'C2,C3A' -and @($c4[0].sources) -contains 'G1_C4_CLOSURE_RESULT.md' -and $c4Run.Success -and @($checkpoint.verification_receipts) -contains "registered-full-gate:$($c4Run.Value):passed" -and @($checkpoint.verification_receipts) -contains 'receipt:G1-C4-CLOSURE:recorded' -and $c5.Count -eq 1 -and (($c6Successor -and $c5[0].state -eq 'verified' -and $c5[0].status -eq 'complete') -or (!$c6Successor -and $c5[0].state -eq 'executing' -and $c5[0].status -eq 'active')) -and (@($c5[0].depends_on)-join ',') -eq 'C4'))
     } else { $gp4.Count -eq 1 -and $gp4[0].state -eq 'executing' -and $gp4[0].status -eq 'active' }
     if ($gp3.Count -ne 1 -or $gp3[0].state -ne 'promoted' -or $gp3[0].status -ne 'complete' -or
         $gp3[0].proof -notlike '*run-50a8c78043eb46c483f1f655d3793f9b*' -or !$gp4StateValid -or @($gp4[0].depends_on) -notcontains 'GP3') {

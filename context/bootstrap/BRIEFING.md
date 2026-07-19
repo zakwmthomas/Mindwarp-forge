@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1**
-- Objective: Record the exact capability-free C5 significance and scheduler closure evidence against verified C4 without activating C6 or granting runtime, product or promotion authority.
+- Work package: **G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1**
+- Objective: Reconcile the exact bounded C6 prerequisite evidence, freeze organism and ecology ownership boundaries and hostile readiness, and identify one separately gated first implementation candidate without adding source.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **recorded-capability-free-c5-closure-holding-cursor / C5 capability-free closure evidence is recorded against exact C4. The retained source, two evidence-only successor transitions, one exact closure-orchestration transition, hosted Linux attestation, read-only ProofReceipt integration, independent reviews, pre-transition run-87b9301f9bb54b2d9b72767643c7ed9b and post-transition run-8296afcac8e949cca8b6a3693d1dfc3f remain cryptographically replayable. This holding state grants no Forge port, promotion, runtime, product-policy, cache or C6 authority.**
-- Exact next action: Retain C5 as the sole recorded waiting cursor until a separate owner-authorized C6 readiness transition. Do not port Forge, activate C6 or infer runtime, cache, product-policy or promotion authority.
+- Risk/research gate: **code-free-c6-organism-ecology-readiness / C4 and C5 are verified exact prerequisites. Thirty-eight focused prototype tests and five read-only desktop receipt tests are bounded non-closure evidence. C6 remains incomplete and this gate grants no source, product ontology, physiology constants, runtime, visuals, promotion or Forge-port authority.**
+- Exact next action: Verify the code-free C6 readiness record and exact successor route, then stop before the separately gated body-plan structural implementation candidate.
 
 ## Approved operating policies
 

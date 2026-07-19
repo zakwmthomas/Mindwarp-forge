@@ -20,4 +20,4 @@ The isolated game-facing proof contract, not Forge, reproduced the same strict 3
 
 ## Authority and successor boundary
 
-C5 is retained as the sole master-program cursor until a separate owner-authorized successor transition. This record grants no product weights, runtime controller or executor, cache or storage mutation, AI generation, rendering implementation, C3B, C6, C7, broad G1 closure, Companion, Greenfield, filesystem, network, process, visual-asset or Kernel authority. C6 remains proposed, gated and inactive.
+C5 was retained as the sole master-program cursor at closure until a separate owner-authorized successor transition. C5 grants no C6 authority: any later readiness activation is a distinct, exact owner-authorized transition. This record grants no product weights, runtime controller or executor, cache or storage mutation, AI generation, rendering implementation, C3B, C6 implementation, C7, broad G1 closure, Companion, Greenfield, filesystem, network, process, visual-asset or Kernel authority.

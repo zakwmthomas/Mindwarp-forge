@@ -68,9 +68,8 @@ try {
     Assert-Rejected 'Reordered C4 dependencies' { $c4.depends_on = @('C3A', 'C2') } { $c4.depends_on = $savedC4Dependencies }
     $savedC5Dependencies = @($c5.depends_on)
     Assert-Rejected 'Expanded C5 dependencies' { $c5.depends_on = @('C4', 'C3B') } { $c5.depends_on = $savedC5Dependencies }
-    $c6 = @($program.items | Where-Object id -eq 'C6')[0]
-    $savedC6State = $c6.state; $savedC6Status = $c6.status
-    Assert-Rejected 'Extra active item' { $c6.state = 'executing'; $c6.status = 'active' } { $c6.state = $savedC6State; $c6.status = $savedC6Status }
+    $savedC5State = $c5.state; $savedC5Status = $c5.status
+    Assert-Rejected 'Extra active item' { $c5.state = 'executing'; $c5.status = 'active' } { $c5.state = $savedC5State; $c5.status = $savedC5Status }
 
     Save-Fixture
     $duplicateProgram = Get-Content -LiteralPath $programPath -Raw | ConvertFrom-Json

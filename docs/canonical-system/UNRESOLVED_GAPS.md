@@ -30,8 +30,13 @@
   transactions, multiplayer and runtime remain later work. C5 is verified and
   recorded as a capability-free reference after hosted Linux execution,
   read-only ProofReceipt integration and registered gate
-  `run-87b9301f9bb54b2d9b72767643c7ed9b`. C6 remains separately proposed and
-  gated; C7 remains dependency-gated.
+  `run-87b9301f9bb54b2d9b72767643c7ed9b`. C5 grants no C6 authority. A separate
+  owner authorization has activated code-free C6 reconciliation/readiness only;
+  C6 implementation remains gated. The current 38 focused prototype tests do not
+  yet prove ecological niches, anatomy, physiology/viability, typed organism and
+  species populations, evolution, grounded capacities, comparative person-form,
+  applicable variation, population aging, a real C5 consumption seam, or an
+  exact end-to-end organism chain. C7 remains dependency-gated.
 - Visual recognisability, player value, and hardware cost require structured
   review; numerical success alone is insufficient.
 

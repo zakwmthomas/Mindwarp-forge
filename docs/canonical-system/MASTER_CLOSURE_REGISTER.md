@@ -45,5 +45,5 @@ Do not activate F5 until A1-A4/B1-B3 are closed or explicitly owner-gated.
 
 - C3A is the promoted dependency-sufficient seam: validated `WorldGenerationInput` -> replayed `CausalWorldPacket` v1 with nested identity and provenance.
 - C3B remains evidence-blocked on physical scale, coefficients, applicability, visibility and presentation fidelity; it is not full C3 closure and does not block GP0-GP4.
-- Broad C4 and capability-free C5 are verified and recorded. C5 remains the sole executing/active waiting cursor until a separately owner-authorized successor transition; C6 stays proposed, gated and inactive. GP0-GP4 and `G1-VERTICAL-CLOSEOUT` remain completed immutable evidence; C7, broad `G1-CLOSEOUT` and R1 remain gated and unchanged.
+- Broad C4 and capability-free C5 are verified, complete and recorded. A separate owner-authorized transition made C6 the sole executing/active cursor for code-free reconciliation and readiness only; C6 implementation remains gated. GP0-GP4 and `G1-VERTICAL-CLOSEOUT` remain completed immutable evidence; C7, broad `G1-CLOSEOUT` and R1 remain gated and unchanged. C5 grants no C6 authority.
 - Yard Atlas is evidence-linked but independent; no repository, database, UI, authentication, billing or release authority transfers.

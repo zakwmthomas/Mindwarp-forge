@@ -2,6 +2,7 @@ param([string]$ProgramPath,[string]$CheckpointPath,[string]$ResultPath,[switch]$
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
 . (Join-Path $PSScriptRoot 'g1-c5-successor-route.ps1')
+. (Join-Path $PSScriptRoot 'g1-c6-successor-route.ps1')
 if ([string]::IsNullOrWhiteSpace($ProgramPath)) { $ProgramPath = Join-Path $root 'docs\canonical-system\MASTER_PROGRAM.json' }
 if ([string]::IsNullOrWhiteSpace($CheckpointPath)) { $CheckpointPath = Join-Path $root 'context\active\WORKER_BATCH_STATE.json' }
 if ([string]::IsNullOrWhiteSpace($ResultPath)) { $ResultPath = Join-Path $root 'docs\canonical-system\G1_GP4_SIGNAL_ANCHOR_RESULT.md' }
@@ -112,13 +113,15 @@ $c4Run = if($c4.Count-eq1){[regex]::Match([string]$c4[0].proof,'run-[0-9a-f]{32}
 $c5Route = ($checkpoint.batch_id -eq 'G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1' -and $checkpoint.master_program_item -eq 'C5' -and $checkpoint.substage_id -eq 'c5-reconciliation-readiness' -and
     $checkpoint.authority_lane -eq 'Owner-authorized broad C5 significance/scheduler reconciliation and capability-free closure readiness only. Exact dependency C4. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.') -or
     (Test-G1C5FullGateReconciliationRoute -Checkpoint $checkpoint) -or
-    (Test-G1C5RecordedClosureRoute -Checkpoint $checkpoint)
+    (Test-G1C5RecordedClosureRoute -Checkpoint $checkpoint) -or
+    (Test-G1C6ReconciliationReadinessRoute -Checkpoint $checkpoint)
+$c6Route = Test-G1C6ReconciliationReadinessRoute -Checkpoint $checkpoint
 $c5Successor = $c5Route -and
     $gp4.Count -eq 1 -and $gp4[0].state -eq 'verified' -and $gp4[0].status -eq 'complete' -and $gp4[0].proof -match 'run-[0-9a-f]{32}' -and
     $closeout.Count -eq 1 -and $closeout[0].state -eq 'verified' -and $closeout[0].status -eq 'complete' -and
     $c4.Count -eq 1 -and $c4[0].state -eq 'verified' -and $c4[0].status -eq 'complete' -and @($c4[0].sources) -contains 'G1_C4_CLOSURE_RESULT.md' -and $c4Run.Success -and
     @($checkpoint.verification_receipts) -contains "registered-full-gate:$($c4Run.Value):passed" -and @($checkpoint.verification_receipts) -contains 'receipt:G1-C4-CLOSURE:recorded' -and
-    $c5.Count -eq 1 -and $c5[0].state -eq 'executing' -and $c5[0].status -eq 'active' -and (@($c5[0].depends_on)-join ',') -eq 'C4'
+    $c5.Count -eq 1 -and (($c6Route -and $c5[0].state -eq 'verified' -and $c5[0].status -eq 'complete') -or (!$c6Route -and $c5[0].state -eq 'executing' -and $c5[0].status -eq 'active')) -and (@($c5[0].depends_on)-join ',') -eq 'C4'
 if ((!$gp4Live -and !$closeoutSuccessor -and !$c4Successor -and !$c5Successor) -or $closeout.Count -ne 1 -or (Compare-Object @($closeout[0].depends_on) $expectedDependencies)) { throw 'GP4 readiness checkpoint or authenticated successor drifted.' }
 $runMatch = if ($closeoutSuccessor -or $c4Successor -or $c5Successor) { [regex]::Match([string]$gp4[0].proof,'run-[0-9a-f]{32}') } else { $null }
 if (($closeoutSuccessor -or $c4Successor -or $c5Successor) -and (!$runMatch.Success -or @($checkpoint.verification_receipts) -notcontains "registered-full-gate:$($runMatch.Value):passed" -or !(Get-Content -LiteralPath $ResultPath -Raw).Contains($runMatch.Value))) { throw 'GP4 successor lost exact successful-run consistency.' }

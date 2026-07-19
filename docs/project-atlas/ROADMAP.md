@@ -14,7 +14,7 @@ structurally complete, GP2 typed progression is promoted after its registered
 full-gate proof, and C4V is recorded after registered gate
 `run-fa6334a300e04d409dd5cddb4f22542e`, closed with no C4V work remaining
 active. Owner-authorized GP3 is promoted and
-closed after registered gate `run-50a8c78043eb46c483f1f655d3793f9b`. GP4 is verified after registered gate `run-7e5c44dc8f48424a8cec42da756e3127`, and its exact typed bounded vertical-closeout receipt is complete immutable evidence. The owner retained the broad G1-first route: C4 and the capability-free C5 reference are verified; C5 remains the waiting cursor while C6 stays separately proposed and gated, followed by gated C7, broad G1-CLOSEOUT and then R1. C3A exposes the exact validated causal-world seam needed downstream;
+closed after registered gate `run-50a8c78043eb46c483f1f655d3793f9b`. GP4 is verified after registered gate `run-7e5c44dc8f48424a8cec42da756e3127`, and its exact typed bounded vertical-closeout receipt is complete immutable evidence. The owner retained the broad G1-first route: C4 and the capability-free C5 reference are verified and complete; a separate authorization activates code-free C6 reconciliation/readiness as the waiting cursor, followed by gated C6 implementation, C7, broad G1-CLOSEOUT and then R1. C3A exposes the exact validated causal-world seam needed downstream;
 C3B remains visibly blocked and does not prevent the first fixed-content
 vertical. Runtime selection remains at R1. The F5 engine-neutral proof
 milestone is verified. ProofReceipt P1, bounded

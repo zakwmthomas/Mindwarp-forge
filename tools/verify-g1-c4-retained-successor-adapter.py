@@ -26,6 +26,14 @@ EXPECTED_RECORDED_AUTHORITY = (
     "implementation, filesystem, network, process, Companion, Greenfield, visual assets, "
     "promotion authority or Kernel mutation."
 )
+EXPECTED_C6_AUTHORITY = (
+    "Owner-authorized C6 semantic/construction and organism-ecology reconciliation and capability-free "
+    "readiness only. Exact dependencies verified C4 and C5. Retain corrected C6 prerequisite evidence "
+    "as non-closure evidence. No C6 implementation source, C3B, C7, broad G1 closure, runtime, product "
+    "ontology or vocabulary, solver or AI generation, geometry, assets, animation, renderer, visual-quality "
+    "claim, physiology or content constants, filesystem, network, process, Companion, Greenfield, promotion "
+    "authority or Kernel mutation."
+)
 EXPECTED_C4_RUN = "run-bc2154f73f6243239910ac30bc3b1994"
 REQUIRED_RECEIPTS = {
     f"registered-full-gate:{EXPECTED_C4_RUN}:passed",
@@ -101,8 +109,9 @@ def verify(checkpoint_path: Path, program_path: Path, observation_path: Path) ->
     checkpoint = load_strict(checkpoint_path)
     program = load_strict(program_path)
 
-    exact_string(checkpoint, "batch_id", "G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1")
-    exact_string(checkpoint, "master_program_item", "C5")
+    c6 = checkpoint.get("batch_id") == "G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1"
+    exact_string(checkpoint, "batch_id", "G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1" if c6 else "G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1")
+    exact_string(checkpoint, "master_program_item", "C6" if c6 else "C5")
     state = checkpoint.get("state")
     substage = checkpoint.get("substage_id")
     authority = checkpoint.get("authority_lane")
@@ -116,7 +125,12 @@ def verify(checkpoint_path: Path, program_path: Path, observation_path: Path) ->
         and type(substage) is str and substage == "c5-registered-closure-recorded"
         and type(authority) is str and authority == EXPECTED_RECORDED_AUTHORITY
     )
-    if not (full_gate or recorded):
+    c6_readiness = (
+        type(state) is str and state == "executing"
+        and type(substage) is str and substage == "c6-reconciliation-readiness"
+        and type(authority) is str and authority == EXPECTED_C6_AUTHORITY
+    )
+    if not (full_gate or recorded or c6_readiness):
         raise ValueError("live checkpoint state/substage/authority tuple is not exact")
 
     receipts = exact_string_list(checkpoint, "verification_receipts")
@@ -125,6 +139,10 @@ def verify(checkpoint_path: Path, program_path: Path, observation_path: Path) ->
         raise ValueError(f"live checkpoint is missing retained evidence: {missing[0]}")
     if recorded and "receipt:G1-C5-CLOSURE:recorded" not in receipts:
         raise ValueError("recorded C5 route is missing its closure receipt")
+    if c6_readiness:
+        for receipt in ("receipt:G1-C5-CLOSURE:recorded", "owner-route:c6-reconciliation-readiness:authorized", "transition:c5-verified-c6-readiness-activated:recorded"):
+            if receipt not in receipts:
+                raise ValueError(f"C6 readiness route is missing retained evidence: {receipt}")
 
     items = program.get("items")
     if type(items) is not list or any(type(item) is not dict for item in items):
@@ -137,7 +155,7 @@ def verify(checkpoint_path: Path, program_path: Path, observation_path: Path) ->
     c5 = one_item(items, "C5")
     for record, item_id, state, status in (
         (c4, "C4", "verified", "complete"),
-        (c5, "C5", "executing", "active"),
+        (c5, "C5", "verified" if c6_readiness else "executing", "complete" if c6_readiness else "active"),
     ):
         if record.get("state") != state or record.get("status") != status:
             raise ValueError(f"{item_id} state/status is not exact")
@@ -145,14 +163,15 @@ def verify(checkpoint_path: Path, program_path: Path, observation_path: Path) ->
         raise ValueError("C4 dependency order is not exact")
     if exact_string_list(c5, "depends_on") != ["C4"]:
         raise ValueError("C5 dependency is not exact")
-    if recorded:
+    if recorded or c6_readiness:
         if c5.get("gate") != "recorded":
             raise ValueError("recorded C5 route lost its recorded master gate")
         if "G1_C5_CLOSURE_RESULT.md" not in exact_string_list(c5, "sources"):
             raise ValueError("recorded C5 route lost its closure result source")
         c6 = one_item(items, "C6")
-        if c6.get("state") != "proposed" or c6.get("status") != "gated":
-            raise ValueError("recorded C5 route activated C6")
+        expected_c6 = ("executing", "active") if c6_readiness else ("proposed", "gated")
+        if (c6.get("state"), c6.get("status")) != expected_c6:
+            raise ValueError("C6 successor state drifted")
     if "G1_C4_CLOSURE_RESULT.md" not in exact_string_list(c4, "sources"):
         raise ValueError("C4 closure source is missing")
     proof = c4.get("proof")
@@ -167,8 +186,8 @@ def verify(checkpoint_path: Path, program_path: Path, observation_path: Path) ->
         for item in items
         if item.get("state") == "executing" and item.get("status") == "active"
     ]
-    if active != ["C5"]:
-        raise ValueError("C5 must be the sole executing active program item")
+    if active != (["C6"] if c6_readiness else ["C5"]):
+        raise ValueError("successor must be the sole executing active program item")
 
     observation = load_strict(observation_path)
     expected_observation_keys = {
@@ -205,7 +224,7 @@ def main() -> None:
     parser.add_argument("--observation", required=True, type=Path)
     args = parser.parse_args()
     verify(args.checkpoint, args.program, args.observation)
-    print("Current C5 successor route verified: exact tuple, authority, dependencies and retained receipts.")
+    print("Current C4 successor route verified: exact tuple, authority, dependencies and retained receipts.")
 
 
 if __name__ == "__main__":
