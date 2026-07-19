@@ -13,7 +13,7 @@ The isolated game-facing proof contract, not Forge, reproduced the same strict 3
 - Source commit: `9e48dd117c2b22b62bd31dba15c10c3a9bf4b100`
 - Tracked-tree manifest SHA-256: `cfc58943f96fed768f77ac2a6e3256aa13d59d6c0edbe24f13cd967315038636`
 - Bounded-source manifest SHA-256: `9430bc530ba39403803a05fd99a9bc5c257472c2f320921ca242b51344947ecb`
-- Classified successor manifest SHA-256: `e8e79816668d1f49167a895c068de61ad363784483534c184462066948eb1658` (36 unchanged bounded blobs, two exact evidence-only transitions and one exact closure-orchestration transition)
+- Classified successor manifest SHA-256: `97da3aed932d41f7a0c4569585f38ccc1fba6e0a0b2e6136137d7f648b41dacd` (36 unchanged bounded blobs, two exact evidence-only transitions and one exact closure-orchestration transition; the current orchestration adds the C6 readiness and hostile gates without changing retained C5 source)
 - Semantic receipt SHA-256: `88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb`
 - External request SHA-256: `28b24d548656874a3c4f6f6bba1a40a0a716ac0603e9e38c40318c7d932bc58f`
 - Independent result SHA-256: `4dd77d3b16927644af2c9bb1b74f76e1dd7cc279a09a8297d10738a0efce1bf4`
