@@ -37,4 +37,9 @@ if ($rawInvocations.Count -ne 0) {
     throw "verify.ps1 retains $($rawInvocations.Count) unchecked child-script invocation(s)."
 }
 
+& (Join-Path $PSScriptRoot 'test-g1-c4-retained-successor-adapter.ps1')
+if (!$?) { throw 'Retained C4 successor adapter fixtures failed.' }
+& (Join-Path $PSScriptRoot 'test-g1-c5-current-successor-route.ps1')
+if (!$?) { throw 'C5 current successor route fixtures failed.' }
+
 Write-Output 'Verification runner verified: child scripts fail immediately with exact exit evidence.'

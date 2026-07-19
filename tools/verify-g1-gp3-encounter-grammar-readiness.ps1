@@ -1,6 +1,7 @@
 param([string]$ProgramPath,[string]$CheckpointPath)
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
+. (Join-Path $PSScriptRoot 'g1-c5-successor-route.ps1')
 if ([string]::IsNullOrWhiteSpace($ProgramPath)) { $ProgramPath = Join-Path $root 'docs\canonical-system\MASTER_PROGRAM.json' }
 if ([string]::IsNullOrWhiteSpace($CheckpointPath)) { $CheckpointPath = Join-Path $root 'context\active\WORKER_BATCH_STATE.json' }
 $readinessPath = Join-Path $root 'docs\canonical-system\G1_GP3_ENCOUNTER_GRAMMAR_READINESS.md'
@@ -80,9 +81,10 @@ $closeoutSuccessor = $checkpoint.batch_id -eq 'G1-VERTICAL-CLOSEOUT-V1' -and
 $c4Successor = $checkpoint.batch_id -eq 'G1-C4-HIERARCHY-HISTORY-CLOSURE-V1' -and
     $checkpoint.master_program_item -eq 'C4' -and
     $checkpoint.substage_id -in @('c4-reconciliation-readiness','c4-hierarchy-history-hardening','c4-verification','c4-verified-result','c4-independent-platform-gate')
-$c5Successor = $checkpoint.batch_id -eq 'G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1' -and
+$c5LegacySuccessor = $checkpoint.batch_id -eq 'G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1' -and
     $checkpoint.master_program_item -eq 'C5' -and $checkpoint.substage_id -eq 'c5-reconciliation-readiness' -and
     $checkpoint.authority_lane -eq 'Owner-authorized broad C5 significance/scheduler reconciliation and capability-free closure readiness only. Exact dependency C4. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.'
+$c5Successor = $c5LegacySuccessor -or (Test-G1C5FullGateReconciliationRoute -Checkpoint $checkpoint)
 if (!$gp3Live -and !$gp4Successor -and !$closeoutSuccessor -and !$c4Successor -and !$c5Successor) {
     throw 'GP3 readiness is not bound to its canonical route or an admitted authenticated successor.'
 }

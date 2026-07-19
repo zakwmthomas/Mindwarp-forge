@@ -1,6 +1,7 @@
 param([string]$ProgramPath,[string]$CheckpointPath,[string]$ReadinessPath)
 $ErrorActionPreference='Stop'
 $root=Split-Path -Parent $PSScriptRoot
+. (Join-Path $PSScriptRoot 'g1-c5-successor-route.ps1')
 if([string]::IsNullOrWhiteSpace($ProgramPath)){$ProgramPath=Join-Path $root 'docs\canonical-system\MASTER_PROGRAM.json'}
 if([string]::IsNullOrWhiteSpace($CheckpointPath)){$CheckpointPath=Join-Path $root 'context\active\WORKER_BATCH_STATE.json'}
 if([string]::IsNullOrWhiteSpace($ReadinessPath)){$ReadinessPath=Join-Path $root 'docs\canonical-system\G1_C5_CLOSURE_READINESS.md'}
@@ -14,7 +15,7 @@ $readinessAuthority='Owner-authorized broad C5 significance/scheduler reconcilia
 $implementationAuthority='Owner-authorized bounded C5 significance/scheduler implementation and capability-free closure proof only. Exact dependency C4. Frozen candidate G1_C5_CLOSURE_READINESS.md. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.'
 if($c4.Count-ne1-or$c4[0].state-ne'verified'-or$c4[0].status-ne'complete'-or(@($c4[0].depends_on)-join',')-ne'C2,C3A'){throw 'C5 readiness requires exact verified C4.'}
 if($c5.Count-ne1-or$c5[0].state-ne'executing'-or$c5[0].status-ne'active'-or(@($c5[0].depends_on)-join',')-ne'C4'-or@($c5[0].sources)-notcontains'G1_C5_CLOSURE_READINESS.md'){throw 'C5 readiness is not bound to exact active C5.'}
-$routeAuthorityOk=($checkpoint.substage_id-in@('c5-reconciliation-readiness','c5-implementation-owner-gate')-and$checkpoint.authority_lane-eq$readinessAuthority)-or($checkpoint.substage_id-eq'c5-implementation'-and$checkpoint.authority_lane-eq$implementationAuthority-and@($checkpoint.verification_receipts)-contains'owner-authorization:c5-frozen-implementation-candidate:released')
+$routeAuthorityOk=($checkpoint.substage_id-in@('c5-reconciliation-readiness','c5-implementation-owner-gate')-and$checkpoint.authority_lane-eq$readinessAuthority)-or($checkpoint.substage_id-eq'c5-implementation'-and$checkpoint.authority_lane-eq$implementationAuthority-and@($checkpoint.verification_receipts)-contains'owner-authorization:c5-frozen-implementation-candidate:released')-or((Test-G1C5FullGateReconciliationRoute -Checkpoint $checkpoint)-and@($checkpoint.verification_receipts)-contains'owner-authorization:c5-frozen-implementation-candidate:released')
 if($active.Count-ne1-or$active[0].id-ne'C5'-or$checkpoint.batch_id-ne'G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1'-or$checkpoint.master_program_item-ne'C5'-or!$routeAuthorityOk){throw 'C5 checkpoint route or authority is not exact.'}
 $domains=@('generation','simulation','ai','physics','animation','audio','rendering','streaming')
 foreach($domain in $domains){if(!$readiness.Contains("| ``$domain`` |")){throw "C5 domain missing: $domain"}}

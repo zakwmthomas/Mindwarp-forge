@@ -12,7 +12,21 @@ function Invoke-ForgeVerifier {
         throw "Forge verifier is unavailable: $ScriptName"
     }
 
-    & $scriptPath
+    $retainedC4Verifiers = @(
+        'verify-g1-c4-independent-platform-result.ps1',
+        'test-g1-c4-independent-platform-result.ps1',
+        'verify-g1-c4-closure-readiness.ps1',
+        'verify-g1-c4-hierarchy-history-implementation.ps1'
+    )
+    if ($ScriptName -in $retainedC4Verifiers) {
+        $canonicalTools = [IO.Path]::GetFullPath($PSScriptRoot)
+        if ([IO.Path]::GetFullPath($ScriptRoot) -ne $canonicalTools) {
+            throw "Retained C4 verifier requires the canonical tools root: $ScriptName"
+        }
+        & (Join-Path $canonicalTools 'invoke-g1-c4-retained-successor-adapter.ps1') -ScriptName $ScriptName
+    } else {
+        & $scriptPath
+    }
     $succeeded = $?
     $exitCode = $LASTEXITCODE
     if (!$succeeded) {

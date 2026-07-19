@@ -6,80 +6,80 @@
     "state":  "executing",
     "previous_state":  "ready",
     "objective":  "Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.",
-    "next_action":  "Design and hostile-test the smallest exact allowlisted adapter that authenticates the current C5 full-gate route without modifying the frozen C4 bounded source surface; if that is impossible, prepare a separately reviewed C4 reattestation plan. Then rerun forge-full-gate-v1. Do not use wildcard stage or authority matching, close C5 or activate C6.",
+    "next_action":  "Record and independently reconcile the passed exact C5 full-gate route adapter, then prepare the separately bounded C5 registered-closure transition. Do not port Forge, broaden route matching, close C5 in this substage or activate C6.",
     "substage_id":  "c5-full-gate-route-reconciliation",
     "handoff_section_receipts":  {
                                      "objective":  {
                                                        "stage_id":  "c5-full-gate-route-reconciliation",
                                                        "content_sha256":  "31a2cdccf71602454fc21773b1d0076077682aa9831062db569ec25fb044ceea",
                                                        "review_disposition":  "revised",
-                                                       "review_note":  "Reviewed all handoff sections against the active substage."
+                                                       "review_note":  "Reviewed exact historical C4 replay, classified outer verify.ps1 delta, accepted adapter and passed registered run-87b9301f9bb54b2d9b72767643c7ed9b; C5 closure and C6 remain gated."
                                                    },
                                      "next_action":  {
                                                          "stage_id":  "c5-full-gate-route-reconciliation",
-                                                         "content_sha256":  "d047fb5c84e5d7f51ac11237c13c0b83c674fbb392bb28a6f9a699e130a45ff2",
+                                                         "content_sha256":  "c3f526237faf9fe7208df76eccee69197f4fd4619ea25a1c9e2859ac6a1a07fc",
                                                          "review_disposition":  "revised",
-                                                         "review_note":  "Reviewed all handoff sections against the active substage."
+                                                         "review_note":  "Reviewed exact historical C4 replay, classified outer verify.ps1 delta, accepted adapter and passed registered run-87b9301f9bb54b2d9b72767643c7ed9b; C5 closure and C6 remain gated."
                                                      },
                                      "stage_context":  {
                                                            "stage_id":  "c5-full-gate-route-reconciliation",
-                                                           "content_sha256":  "b277b3b4c6a7543d2ca73ae0886bf9e965262dcc238425cffabfe64ae78d2ded",
+                                                           "content_sha256":  "f05c36aa7ba59e772a953de94037c9ab8b229d399d68fdd2b774f17f4cc6e4ef",
                                                            "review_disposition":  "revised",
-                                                           "review_note":  "Reviewed all handoff sections against the active substage."
+                                                           "review_note":  "Reviewed exact historical C4 replay, classified outer verify.ps1 delta, accepted adapter and passed registered run-87b9301f9bb54b2d9b72767643c7ed9b; C5 closure and C6 remain gated."
                                                        },
                                      "visual_quality_gate":  {
                                                                  "stage_id":  "c5-full-gate-route-reconciliation",
                                                                  "content_sha256":  "80ae5cd5e6cfb847218c27879744cfe9da5c36bd40124e6f700060f88c558739",
                                                                  "review_disposition":  "revised",
-                                                                 "review_note":  "Reviewed all handoff sections against the active substage."
+                                                                 "review_note":  "Reviewed exact historical C4 replay, classified outer verify.ps1 delta, accepted adapter and passed registered run-87b9301f9bb54b2d9b72767643c7ed9b; C5 closure and C6 remain gated."
                                                              },
                                      "simulation_ladder":  {
                                                                "stage_id":  "c5-full-gate-route-reconciliation",
-                                                               "content_sha256":  "f773cf8a3969dd21e020acb308f6244a73f6dda7892236acf231eb59766fbac9",
+                                                               "content_sha256":  "f0449bdd7d8b32b082fb7a89ff7d2151c59f8cee5f027dd3714cc91201b2fe65",
                                                                "review_disposition":  "revised",
-                                                               "review_note":  "Reviewed all handoff sections against the active substage."
+                                                               "review_note":  "Reviewed exact historical C4 replay, classified outer verify.ps1 delta, accepted adapter and passed registered run-87b9301f9bb54b2d9b72767643c7ed9b; C5 closure and C6 remain gated."
                                                            },
                                      "unresolved_risks":  {
                                                               "stage_id":  "c5-full-gate-route-reconciliation",
-                                                              "content_sha256":  "3da91aec04038a04c338c9d9819c527a4ce31d3a2ae94e5dbcba4d592515cffa",
+                                                              "content_sha256":  "1751ff2d81a876754c41c260d0fb597d7f7f33ba87821f415daf1778e9a8e7d0",
                                                               "review_disposition":  "revised",
-                                                              "review_note":  "Reviewed all handoff sections against the active substage."
+                                                              "review_note":  "Reviewed exact historical C4 replay, classified outer verify.ps1 delta, accepted adapter and passed registered run-87b9301f9bb54b2d9b72767643c7ed9b; C5 closure and C6 remain gated."
                                                           },
                                      "evidence_requirements":  {
                                                                    "stage_id":  "c5-full-gate-route-reconciliation",
                                                                    "content_sha256":  "fee8b2b089c9ee9fd8607d84f31964a5e3a026625e9c90d93f3246844107e57a",
                                                                    "review_disposition":  "revised",
-                                                                   "review_note":  "Reviewed all handoff sections against the active substage."
+                                                                   "review_note":  "Reviewed exact historical C4 replay, classified outer verify.ps1 delta, accepted adapter and passed registered run-87b9301f9bb54b2d9b72767643c7ed9b; C5 closure and C6 remain gated."
                                                                },
                                      "verification_plan":  {
                                                                "stage_id":  "c5-full-gate-route-reconciliation",
                                                                "content_sha256":  "bd8cb3648dbfdb6d3f832e3b2dfa18f80aa4c98563b3695d6866191a5f6f569c",
                                                                "review_disposition":  "revised",
-                                                               "review_note":  "Reviewed all handoff sections against the active substage."
+                                                               "review_note":  "Reviewed exact historical C4 replay, classified outer verify.ps1 delta, accepted adapter and passed registered run-87b9301f9bb54b2d9b72767643c7ed9b; C5 closure and C6 remain gated."
                                                            },
                                      "resume_after":  {
                                                           "stage_id":  "c5-full-gate-route-reconciliation",
                                                           "content_sha256":  "99bf48508c69c21d19f6a41be03dd0020e9861f909db0c510ac53f7f88d0fe5b",
                                                           "review_disposition":  "revised",
-                                                          "review_note":  "Reviewed all handoff sections against the active substage."
+                                                          "review_note":  "Reviewed exact historical C4 replay, classified outer verify.ps1 delta, accepted adapter and passed registered run-87b9301f9bb54b2d9b72767643c7ed9b; C5 closure and C6 remain gated."
                                                       },
                                      "evidence":  {
                                                       "stage_id":  "c5-full-gate-route-reconciliation",
                                                       "content_sha256":  "e33c3ee30d48016edc0d62ad2c681dc594820772b0ae6938ea114b5e8daf699d",
                                                       "review_disposition":  "revised",
-                                                      "review_note":  "Reviewed all handoff sections against the active substage."
+                                                      "review_note":  "Reviewed exact historical C4 replay, classified outer verify.ps1 delta, accepted adapter and passed registered run-87b9301f9bb54b2d9b72767643c7ed9b; C5 closure and C6 remain gated."
                                                   },
                                      "verification_receipts":  {
                                                                    "stage_id":  "c5-full-gate-route-reconciliation",
-                                                                   "content_sha256":  "af4a273edbddcdd7f1636ee0afe485dc8b91e952e6c6b4e00d19b4f87a141ed9",
+                                                                   "content_sha256":  "2ec7a57cecd8fc830851120b37ccdd4fdd33d89d5f1bc3188d21cdb768ba554d",
                                                                    "review_disposition":  "revised",
-                                                                   "review_note":  "Reviewed all handoff sections against the active substage."
+                                                                   "review_note":  "Reviewed exact historical C4 replay, classified outer verify.ps1 delta, accepted adapter and passed registered run-87b9301f9bb54b2d9b72767643c7ed9b; C5 closure and C6 remain gated."
                                                                },
                                      "transition":  {
                                                         "stage_id":  "c5-full-gate-route-reconciliation",
-                                                        "content_sha256":  "5eb7cbdad652434acc88665c360346d62fa4fdf951adc35772c87980f39c2db9",
+                                                        "content_sha256":  "196b288d38998cbd78082ae5bc30d4f777ee73ce2efc9b758389678d809c8567",
                                                         "review_disposition":  "revised",
-                                                        "review_note":  "Reviewed all handoff sections against the active substage."
+                                                        "review_note":  "Reviewed exact historical C4 replay, classified outer verify.ps1 delta, accepted adapter and passed registered run-87b9301f9bb54b2d9b72767643c7ed9b; C5 closure and C6 remain gated."
                                                     }
                                  },
     "consecutive_no_progress_limit":  1,
@@ -93,9 +93,9 @@
                                     ]
                     },
     "risk_level":  "bounded-c5-full-gate-route-reconciliation",
-    "research_gate":  "The C5 ProofReceipt integration is focused-green and independently accepted. The registered full gate cannot yet authenticate the evolved C5 substage because frozen C4 successor verifiers admit only the original exact reconciliation tuple; editing those commit-bound C4 files invalidates the retained C4 source manifest. Reconcile this with an exact fail-closed route adapter outside the frozen proof surface or a newly attested C4 proof revision. Wildcard stage or authority matching is forbidden. C5 closure, promotion and C6 authority remain withheld.",
+    "research_gate":  "The independently reviewed exact route adapter authenticates the evolved C5 substage outside the frozen C4 proof surface. It pins the retained source, closure snapshot, bounded blobs, observation blob, GitHub CLI identity, current route and decisive owner/gate receipts; wildcard and crossed tuple matching fail closed. Registered measured full gate run-87b9301f9bb54b2d9b72767643c7ed9b passed in 1106066 ms. C5 closure, promotion and C6 authority remain withheld pending the separately bounded registered-closure transition.",
     "authority_lane":  "Owner-authorized bounded C5 significance/scheduler implementation and capability-free closure proof only. Exact dependency C4. Frozen candidate G1_C5_CLOSURE_READINESS.md. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.",
-    "context_health":  "C4 remains verified and byte-frozen; C5 remains the sole active item. The isolated game-facing proof contract, not Forge, reproduced semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb on hosted Linux. The read-only ProofReceipt integration passes 43 desktop tests and independent review without changing canonical object, event or candidate counts. The remaining work is an exact full-gate successor-route reconciliation that preserves the frozen C4 manifest. C5 closure, C6, C7, broad G1 closure and R1 remain gated.",
+    "context_health":  "C5 remains the sole active item. The isolated game-facing proof contract, not Forge, reproduced semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb on hosted Linux. The read-only ProofReceipt integration and exact successor-route adapter are independently accepted. The adapter replays all 27 unchanged historical C4 bounded blobs at closure snapshot 51a67b2; current HEAD retains 26 identical blobs and separately classifies the one pinned additive tools/verify.ps1 orchestration delta. Registered measured full gate run-87b9301f9bb54b2d9b72767643c7ed9b passed in 1106066 ms with that exact composition. C5 closure, C6, C7, broad G1 closure and R1 remain gated.",
     "stage_context":  {
                           "stage_id":  "c5-full-gate-route-reconciliation",
                           "macro_sources":  [
@@ -135,8 +135,8 @@
                                                  "The existing legacy significance/scheduler receipt test remains intact; the C5 test separately binds the strict 38-field CBOR evidence.",
                                                  "Focused desktop tests, the complete 43-test desktop suite, ProofReceipt verification, scheduler readiness verification, module-context verification and independent hostile review pass.",
                                                  "Four registered full-gate diagnostics exposed stale exact successor tuples; permissive wildcard repairs were rejected and reverted after hostile review.",
-                                                 "The C4 bounded proof surface is clean against HEAD. Editing its verifier files causes the retained source-manifest verifier to fail, so route evolution must occur outside that frozen surface or through a newly attested proof revision.",
-                                                 "C5 remains open pending exact fail-closed route reconciliation and a passed registered measured full gate; C6 and runtime authority remain withheld."
+                                                 "The exact adapter preserves all 27 historical bounded C4 blobs at closure snapshot 51a67b2, classifies only the pinned additive outer verify.ps1 delta, and authenticates the current C5 tuple through strict hostile-tested evidence.",
+                                                 "Registered measured full gate run-87b9301f9bb54b2d9b72767643c7ed9b passed in 1106066 ms. C5 remains open only for a separately bounded registered-closure transition; C6 and runtime authority remain withheld."
                                              ]
                       },
     "visual_quality_gate":  {
@@ -188,12 +188,12 @@
                                                       }
                                                   ],
                               "expensive_execution_planned":  false,
-                              "unresolved_risk":  "Implementation authority is absent; the frozen candidate repairs real truth-binding and completion-state gaps but must remain capability-free and avoid product-policy selection.",
-                              "expected_information_gain":  "An owner decision determines whether the frozen minimal candidate may proceed to test-first source implementation.",
+                              "unresolved_risk":  "Route reconciliation is verified, but the present substage does not authorize C5 closure, promotion, C6 activation, runtime behavior or product-policy selection.",
+                              "expected_information_gain":  "The next bounded transition will determine whether the complete C5 evidence set is admissible for registered closure without broadening authority.",
                               "estimated_cost":  "No further execution at this gate; implementation and portability costs begin only after explicit authorization.",
                               "regression_guard":  "No C3B, C6-C7, broad G1 closure, runtime controller or executor, cache, storage, filesystem, network, process, Companion, Greenfield, visual asset or Kernel mutation.",
                               "stop_condition":  "Stop before source if any named domain, fairness obligation, fallback rule, authority exclusion or deterministic hostile case remains ambiguous.",
-                              "final_integration_gate":  "Post-transition registered regression run-71ef6dfd6e2945ab9745c85f3dcf4d6b passed; another registered gate remains required after a separately accepted C5 implementation candidate."
+                              "final_integration_gate":  "Registered measured full gate run-87b9301f9bb54b2d9b72767643c7ed9b passed in 1106066 ms after exact successor-route reconciliation."
                           },
     "exit_criteria":  [
                           {
@@ -232,7 +232,7 @@
                           }
                       ],
     "unresolved_risks":  [
-                             "Read-only ProofReceipt integration must bind the verified C5 receipt identity and semantic hash without changing canonical object, event or candidate counts, importing runtime authority, or converting evidence into promotion or C6 authority."
+                             "The separately bounded registered-closure transition must not convert verified C5 evidence into runtime, product-policy, promotion or C6 authority, and must preserve the exact historical C4 replay plus classified outer orchestration delta."
                          ],
     "evidence_requirements":  [
                                   "retain exact verified C4 as C5\u0027s sole dependency",
@@ -348,7 +348,10 @@
                                   "registered-full-gate:run-d03c80dcb1a0439db07889360bd61595:failed:c4-readiness-fixture-future-pin-stale",
                                   "registered-full-gate:run-c50b4b55bd9b49f681cd6f2af17018ea:failed:frozen-c4-source-manifest-protected",
                                   "audit:c5-full-gate-wildcard-route-repair:rejected-and-reverted",
-                                  "audit:c4-bounded-proof-surface:clean-against-head"
+                                  "audit:c4-bounded-proof-surface:clean-against-head",
+                                  "focused:c5-exact-successor-route-hostiles:passed",
+                                  "independent-review:c5-exact-successor-route-adapter:accepted",
+                                  "registered-full-gate:run-87b9301f9bb54b2d9b72767643c7ed9b:passed"
                               ],
     "metrics":  {
                     "token_cost":  {
@@ -361,5 +364,5 @@
                                          "receipt":  "registered-full-gate:run-71ef6dfd6e2945ab9745c85f3dcf4d6b:passed"
                                      }
                 },
-    "transition":  "C4 verified and recorded -\u003e C5 local hardening accepted -\u003e isolated semantic portability verified locally and on hosted Linux run 29678602236 -\u003e read-only ProofReceipt integration active; Forge port, C5 closure and C6 remain gated"
+    "transition":  "C4 verified and recorded -\u003e C5 local hardening accepted -\u003e isolated game-facing portability verified on hosted Linux run 29678602236 -\u003e read-only ProofReceipt integration active -\u003e exact successor-route reconciliation passed registered run-87b9301f9bb54b2d9b72767643c7ed9b; Forge port, C5 closure and C6 remain gated"
 }
