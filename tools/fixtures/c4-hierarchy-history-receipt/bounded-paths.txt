@@ -19,4 +19,9 @@ tools/generate-g1-c4-external-request.py
 tools/run-g1-c4-external-receipt.py
 tools/verify-g1-c4-external-receipt.py
 tools/test-g1-c4-external-receipt.py
+tools/verify-g1-c4-independent-platform-result.py
+tools/verify-g1-c4-independent-platform-result.ps1
+tools/test-g1-c4-independent-platform-result.py
+tools/test-g1-c4-independent-platform-result.ps1
+tools/verify.ps1
 .github/workflows/g1-c4-independent-platform.yml

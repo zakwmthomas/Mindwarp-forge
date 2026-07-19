@@ -47,12 +47,23 @@ cleanly retained:
    authenticated artifact channel.
 4. Run the same bundled Windows Python with
    `tools/verify-g1-c4-external-receipt.py --request <request.json>
-   --result <result.json> --bundle <bundle.jsonl>`. The derived receipt path is
-   fixed as `docs/canonical-system/G1_C4_INDEPENDENT_PLATFORM_EXECUTION.json`
-   so an identical result cannot be imported under multiple names.
-5. Only a derived `independence_verified` receipt permits the registered
-   measured full gate. The full gate, not the foreign result, is the remaining
-   prerequisite for C4 promotion. C5 requires a separate activation transition.
+   --result <result.json> --bundle <bundle.jsonl>`. The canonical receipt path
+   is fixed as
+   `docs/canonical-system/G1_C4_INDEPENDENT_PLATFORM_EXECUTION.json`. It retains
+   the exact request bytes, signed result bytes and attestation bundle in one
+   self-hashed record, so an identical result cannot be imported under multiple
+   names or reduced to an unreplayable summary.
+5. Only that `independence_verified` receipt permits the registered measured
+   full gate. While the checkpoint is exactly
+   `c4-independent-platform-gate`, the full gate decodes the retained bytes
+   before Atlas or other expensive work, revalidates the exact
+   semantic/source/authority package and reruns `gh attestation verify` against
+   the retained offline bundle with the frozen repository, source digest,
+   signer workflow and hosted-runner policy. Missing GitHub CLI, missing
+   evidence, tampering or failed replay stops this gate; unrelated substages do
+   not acquire a permanent GitHub CLI dependency. The full gate, not the
+   foreign result, is the remaining prerequisite for C4 promotion. C5 requires
+   a separate activation transition.
 
 The repository currently has no Git remote. Therefore this readiness package
 can be fully tested locally, but actual independent execution remains an

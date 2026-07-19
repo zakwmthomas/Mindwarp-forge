@@ -6,7 +6,10 @@ New-Item -ItemType Directory -Path $temp -Force|Out-Null
 $priorRoot=$env:FORGE_ROOT
 $priorTarget=$env:CARGO_TARGET_DIR
 function Get-C4SourceManifestSha([string]$Commit) {
-  $paths=@(Get-Content -LiteralPath (Join-Path $root 'tools\fixtures\c4-hierarchy-history-receipt\bounded-paths.txt')|Where-Object{!([string]::IsNullOrWhiteSpace($_))})
+  $paths=if([string]::IsNullOrWhiteSpace($Commit)){@(Get-Content -LiteralPath (Join-Path $root 'tools\fixtures\c4-hierarchy-history-receipt\bounded-paths.txt'))}else{@((git show "$Commit`:tools/fixtures/c4-hierarchy-history-receipt/bounded-paths.txt") -split "`r?`n")}
+  $paths=@($paths|Where-Object{!([string]::IsNullOrWhiteSpace($_))})
+  if($paths.Count-ne@($paths|Select-Object -Unique).Count-or$paths-notcontains'tools/fixtures/c4-hierarchy-history-receipt/bounded-paths.txt'){throw 'C4 bounded path list is duplicate or not self-binding.'}
+  if(@($paths|Where-Object{$_-match'\\'-or$_.StartsWith('/')-or@($_-split'/')|Where-Object{$_-in@('','.', '..')}}).Count){throw 'C4 bounded path list contains a noncanonical path.'}
   $rows=foreach($relative in $paths){$full=Join-Path $root $relative;if(!(Test-Path -LiteralPath $full -PathType Leaf)){throw "C4 source manifest file missing: $relative"};$blob=if([string]::IsNullOrWhiteSpace($Commit)){(git hash-object -- $full).Trim()}else{(git rev-parse "$Commit`:$relative").Trim()};if($LASTEXITCODE-ne0-or$blob-notmatch'^[0-9a-f]{40,64}$'){throw "C4 source manifest blob unavailable: $relative"};"$relative`:$blob"}
   $digest=[Security.Cryptography.SHA256]::Create();try{([BitConverter]::ToString($digest.ComputeHash([Text.Encoding]::UTF8.GetBytes(($rows-join "`n")))).Replace('-','').ToLowerInvariant())}finally{$digest.Dispose()}
 }
@@ -60,6 +63,7 @@ try {
   $bundledPython=Join-Path $env:USERPROFILE '.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
   $python=if(Test-Path -LiteralPath $bundledPython){$bundledPython}elseif(Get-Command python3 -ErrorAction SilentlyContinue){'python3'}else{throw 'Python runtime unavailable for C4 external receipt hostiles.'}
   & $python (Join-Path $root 'tools\test-g1-c4-external-receipt.py');if($LASTEXITCODE-ne0){throw 'C4 external receipt hostile fixtures failed.'}
+  & $python (Join-Path $root 'tools\test-g1-c4-independent-platform-result.py');if($LASTEXITCODE-ne0){throw 'C4 retained replay hostile fixtures failed.'}
   cargo fmt --manifest-path $manifestPath -- --check;if($LASTEXITCODE-ne0){throw 'C4 portable receipt formatting failed.'}
   if($ObservationReceiptPath){
     if(git status --porcelain){throw 'Platform observation source tree changed during verification.'}

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Strictly validate C4 external evidence; only the CLI can grant attestation_verified."""
 from __future__ import annotations
-import argparse, base64, hashlib, json, shutil, subprocess
+import argparse, base64, hashlib, json, re, shutil, stat, subprocess, tempfile, tomllib
 from datetime import datetime
 from pathlib import Path
 
@@ -9,16 +9,24 @@ ROOT=Path(__file__).resolve().parents[1]
 PATHS=ROOT/"tools/fixtures/c4-hierarchy-history-receipt/bounded-paths.txt"
 LOCAL=ROOT/"docs/canonical-system/G1_C4_LOCAL_PLATFORM_OBSERVATIONS.json"
 
-def strict_load(path):
+def strict_load_bytes(raw):
     def pairs(items):
         out={}
         for key,value in items:
             if key in out: raise ValueError(f"duplicate JSON key: {key}")
             out[key]=value
         return out
-    raw=Path(path).read_bytes()
     if len(raw)>1_048_576: raise ValueError("JSON input exceeds 1 MiB")
     return json.loads(raw.decode("utf-8-sig"),object_pairs_hook=pairs,parse_float=lambda _:(_ for _ in ()).throw(ValueError("floats forbidden")),parse_constant=lambda _:(_ for _ in ()).throw(ValueError("non-finite values forbidden")))
+def bounded_read(path,max_bytes,label):
+    path=Path(path)
+    if path.is_symlink(): raise ValueError(f"{label} may not be a symlink")
+    info=path.stat()
+    if not stat.S_ISREG(info.st_mode) or info.st_size>max_bytes: raise ValueError(f"{label} is missing, non-regular or oversized")
+    raw=path.read_bytes()
+    if len(raw)!=info.st_size or len(raw)>max_bytes: raise ValueError(f"{label} changed while being read")
+    return raw
+def strict_load(path): return strict_load_bytes(bounded_read(path,1_048_576,"JSON input"))
 def canonical(v): return json.dumps(v,sort_keys=True,separators=(",",":"),ensure_ascii=True).encode()
 def digest(v): return hashlib.sha256(canonical(v)).hexdigest()
 def exact_keys(value,keys,label):
@@ -34,14 +42,40 @@ def decoded(field,hash_field):
     if hashlib.sha256(raw).hexdigest()!=hash_field: raise ValueError("raw output hash mismatch")
     return raw
 def source_manifest(commit):
+    raw=subprocess.check_output(["git","show",f"{commit}:tools/fixtures/c4-hierarchy-history-receipt/bounded-paths.txt"],cwd=ROOT).decode()
+    paths=raw.splitlines()
+    if not paths or len(paths)!=len(set(paths)) or "tools/fixtures/c4-hierarchy-history-receipt/bounded-paths.txt" not in paths: raise ValueError("committed bounded path list is empty, duplicate or not self-binding")
     rows=[]
-    for relative in PATHS.read_text(encoding="utf-8").splitlines():
-        if relative:
-            blob=subprocess.check_output(["git","rev-parse",f"{commit}:{relative}"],cwd=ROOT,text=True).strip();rows.append(f"{relative}:{blob}")
+    for relative in paths:
+        if not relative or "\\" in relative or relative.startswith("/") or any(part in (".","..","") for part in relative.split("/")): raise ValueError("committed bounded path is noncanonical")
+        blob=subprocess.check_output(["git","rev-parse",f"{commit}:{relative}"],cwd=ROOT,text=True).strip();rows.append(f"{relative}:{blob}")
     return hashlib.sha256("\n".join(rows).encode()).hexdigest()
 def tree_manifest(commit):
     raw=subprocess.check_output(["git","ls-tree","-r","--full-tree",commit],cwd=ROOT).decode().rstrip()
     return hashlib.sha256(raw.encode()).hexdigest()
+def source_artifact_bindings(commit):
+    manifest=subprocess.check_output(["git","show",f"{commit}:tools/fixtures/c4-hierarchy-history-receipt/Cargo.toml"],cwd=ROOT)
+    lock=subprocess.check_output(["git","show",f"{commit}:tools/fixtures/c4-hierarchy-history-receipt/Cargo.lock"],cwd=ROOT)
+    packages=tomllib.loads(lock.decode())["package"]
+    rows=[{"name":p["name"],"version":p["version"],"source":p.get("source","path"),"checksum":p.get("checksum",""),"dependencies":sorted(p.get("dependencies",[]))} for p in packages]
+    dependency=hashlib.sha256(canonical(sorted(rows,key=lambda p:(p["name"],p["version"],p["source"])))).hexdigest()
+    return hashlib.sha256(manifest).hexdigest(),hashlib.sha256(lock).hexdigest(),dependency
+def validate_frozen_request(request,local,freshness_required,verify_git=True):
+    expected_platforms=[{"target":"x86_64-unknown-linux-gnu","os":"linux","architecture":"x86_64","pointer_width":64,"endian":"little"},{"target":"x86_64-apple-darwin","os":"macos","architecture":"x86_64","pointer_width":64,"endian":"little"},{"target":"aarch64-apple-darwin","os":"macos","architecture":"aarch64","pointer_width":64,"endian":"little"}]
+    expected_policy={"provider":"github-actions","hosted_runner_required":True,"native_execution_required":True,"compile_only_forbidden":True,"process_count":2,"concurrent":True,"direct_executable":True,"clean_before_after":True}
+    source=request.get("source",{});repo=request.get("provenance_policy",{}).get("repository","");commit=source.get("source_commit","")
+    if not re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+",repo): raise ValueError("request repository identity is malformed")
+    challenge=request.get("challenge");request_id=request.get("request_id")
+    if not isinstance(challenge,str) or not re.fullmatch(r"[0-9a-f]{64}",challenge) or request_id!=f"g1-c4-{challenge[:16]}": raise ValueError("request challenge or identity is malformed")
+    if request.get("schema_version")!=1 or request.get("protocol_id")!="G1-C4-INDEPENDENT-PLATFORM-V1" or source.get("repository_id")!="mindwarp-forge" or request.get("semantic")!={"receipt_id":"G1-C4-HIERARCHY-HISTORY","expected_sha256":local["semantic_receipt_sha256"],"encoding":"lowercase_hex","max_decoded_bytes":65536} or request.get("toolchain")!={"rustc_release":"1.97.0","rustc_commit":"2d8144b7880597b6e6d3dfd63a9a9efae3f533d3","cargo_release":"1.97.0"} or request.get("allowed_platforms")!=expected_platforms or request.get("execution_policy")!=expected_policy or request.get("provenance_policy")!={"repository":repo,"workflow_path":".github/workflows/g1-c4-independent-platform.yml","signer_workflow":f"{repo}/.github/workflows/g1-c4-independent-platform.yml"} or request.get("reference_platform")!={"os":"windows","architecture":"x86_64","receipt_id":"G1-C4-LOCAL-PLATFORM-OBSERVATIONS"} or request.get("authority")!={"evidence_only":True,"promotion_authority":False,"activate_c5":False,"repository_mutation":False}: raise ValueError("request is not the frozen C4 external protocol")
+    if commit!=local["source_commit"] or source.get("tracked_tree_manifest_sha256")!=local["tracked_tree_manifest_sha256"] or source.get("bounded_source_manifest_sha256")!=local["bounded_source_manifest_sha256"]: raise ValueError("request is not bound to the retained local C4 receipt")
+    if freshness_required:
+        created=datetime.fromisoformat(request["created_utc"].replace("Z","+00:00"));now=datetime.now(created.tzinfo)
+        if created.tzinfo is None or not (0<=(now-created).total_seconds()<=86400): raise ValueError("request challenge is outside the 24-hour freshness window")
+    if verify_git:
+        if tree_manifest(commit)!=source.get("tracked_tree_manifest_sha256") or source_manifest(commit)!=source.get("bounded_source_manifest_sha256"): raise ValueError("request source provenance does not match the local repository")
+        fixture_manifest,fixture_lock,dependency_graph=source_artifact_bindings(commit)
+        if (fixture_manifest,fixture_lock,dependency_graph)!=(source.get("fixture_manifest_sha256"),source.get("fixture_lock_sha256"),source.get("dependency_graph_sha256")): raise ValueError("fixture, lock or dependency binding changed")
 def validate(request,result,attestation_verified):
     exact_keys(request,["schema_version","protocol_id","request_id","challenge","created_utc","source","semantic","toolchain","allowed_platforms","execution_policy","provenance_policy","reference_platform","authority","request_sha256"],"request")
     request_sha=unhash(request,"request_sha256")
@@ -95,28 +129,40 @@ def validate(request,result,attestation_verified):
     if max(intervals[0][0],intervals[1][0])>=min(intervals[0][1],intervals[1][1]): raise ValueError("launches did not overlap")
     if payloads[0]!=payloads[1] or hashlib.sha256(payloads[0]).hexdigest()!=request["semantic"]["expected_sha256"] or len(payloads[0])>request["semantic"]["max_decoded_bytes"]: raise ValueError("semantic receipt mismatch")
     return {"status":"independence_verified","classification":"independent_platform_execution","request_sha256":request_sha,"result_sha256":result_sha,"source_commit":request["source"]["source_commit"],"semantic_receipt_sha256":request["semantic"]["expected_sha256"],"promotion_authority":False,"activate_c5":False}
+def build_retained_receipt(request,result,request_raw,result_raw,bundle_raw):
+    derived=validate(request,result,True);repo=request["provenance_policy"]["repository"]
+    receipt={
+      "schema_version":1,"receipt_id":"G1-C4-INDEPENDENT-PLATFORM-EXECUTION","protocol_id":"G1-C4-INDEPENDENT-PLATFORM-V1",
+      "status":derived["status"],"classification":derived["classification"],"request_sha256":derived["request_sha256"],"result_sha256":derived["result_sha256"],
+      "source_commit":derived["source_commit"],"semantic_receipt_sha256":derived["semantic_receipt_sha256"],"repository":repo,
+      "signer_workflow":f"{repo}/.github/workflows/g1-c4-independent-platform.yml","platform":result["platform"],"hosted_runner":True,
+      "request_json_base64":base64.b64encode(request_raw).decode(),"request_json_sha256":hashlib.sha256(request_raw).hexdigest(),
+      "result_json_base64":base64.b64encode(result_raw).decode(),"result_json_sha256":hashlib.sha256(result_raw).hexdigest(),
+      "attestation_bundle_base64":base64.b64encode(bundle_raw).decode(),"attestation_bundle_sha256":hashlib.sha256(bundle_raw).hexdigest(),
+      "authority":{"evidence_only":True,"promotion_authority":False,"activate_c5":False,"repository_mutation":False}}
+    receipt["receipt_sha256"]=digest(receipt)
+    return receipt
 def main():
     ap=argparse.ArgumentParser();ap.add_argument("--request",required=True);ap.add_argument("--result",required=True);ap.add_argument("--bundle",required=True);ap.add_argument("--output",default=str(ROOT/"docs/canonical-system/G1_C4_INDEPENDENT_PLATFORM_EXECUTION.json"));args=ap.parse_args()
     canonical_output=(ROOT/"docs/canonical-system/G1_C4_INDEPENDENT_PLATFORM_EXECUTION.json").resolve()
     if Path(args.output).resolve()!=canonical_output: raise SystemExit("derived receipt output path is fixed by protocol")
-    if canonical_output.exists(): raise SystemExit("refusing duplicate import over the canonical derived receipt")
-    req=strict_load(args.request);res=strict_load(args.result);source=req.get("source",{});commit=source.get("source_commit","");local=strict_load(LOCAL)
-    expected_platforms=[{"target":"x86_64-unknown-linux-gnu","os":"linux","architecture":"x86_64","pointer_width":64,"endian":"little"},{"target":"x86_64-apple-darwin","os":"macos","architecture":"x86_64","pointer_width":64,"endian":"little"},{"target":"aarch64-apple-darwin","os":"macos","architecture":"aarch64","pointer_width":64,"endian":"little"}]
-    expected_policy={"provider":"github-actions","hosted_runner_required":True,"native_execution_required":True,"compile_only_forbidden":True,"process_count":2,"concurrent":True,"direct_executable":True,"clean_before_after":True}
-    if req.get("schema_version")!=1 or req.get("protocol_id")!="G1-C4-INDEPENDENT-PLATFORM-V1" or req.get("semantic")!={"receipt_id":"G1-C4-HIERARCHY-HISTORY","expected_sha256":local["semantic_receipt_sha256"],"encoding":"lowercase_hex","max_decoded_bytes":65536} or req.get("toolchain")!={"rustc_release":"1.97.0","rustc_commit":"2d8144b7880597b6e6d3dfd63a9a9efae3f533d3","cargo_release":"1.97.0"} or req.get("allowed_platforms")!=expected_platforms or req.get("execution_policy")!=expected_policy or req.get("reference_platform")!={"os":"windows","architecture":"x86_64","receipt_id":"G1-C4-LOCAL-PLATFORM-OBSERVATIONS"} or req.get("authority")!={"evidence_only":True,"promotion_authority":False,"activate_c5":False,"repository_mutation":False}: raise SystemExit("request policy is not the frozen C4 external protocol")
-    if source.get("source_commit")!=local["source_commit"] or source.get("bounded_source_manifest_sha256")!=local["bounded_source_manifest_sha256"]: raise SystemExit("request is not bound to the retained local C4 receipt")
-    created=datetime.fromisoformat(req["created_utc"].replace("Z","+00:00"));now=datetime.now(created.tzinfo)
-    if created.tzinfo is None or not (0<=(now-created).total_seconds()<=86400): raise SystemExit("request challenge is outside the 24-hour freshness window")
-    if tree_manifest(commit)!=source.get("tracked_tree_manifest_sha256") or source_manifest(commit)!=source.get("bounded_source_manifest_sha256"): raise SystemExit("request source provenance does not match the local repository")
-    if hashlib.sha256((ROOT/"tools/fixtures/c4-hierarchy-history-receipt/Cargo.toml").read_bytes()).hexdigest()!=source.get("fixture_manifest_sha256") or hashlib.sha256((ROOT/"tools/fixtures/c4-hierarchy-history-receipt/Cargo.lock").read_bytes()).hexdigest()!=source.get("fixture_lock_sha256"): raise SystemExit("fixture or lock binding changed")
+    request_raw=bounded_read(args.request,1_048_576,"request JSON");result_raw=bounded_read(args.result,1_048_576,"result JSON");bundle_raw=bounded_read(args.bundle,4_194_304,"attestation bundle")
+    req=strict_load_bytes(request_raw);res=strict_load_bytes(result_raw);source=req.get("source",{});commit=source.get("source_commit","");local=strict_load(LOCAL)
+    validate_frozen_request(req,local,True)
     gh=shutil.which("gh")
     if not gh: raise SystemExit("GitHub CLI is required for cryptographic attestation verification")
     repo=res.get("provenance",{}).get("repository","")
     repo=req["provenance_policy"]["repository"];signer=f"{repo}/.github/workflows/g1-c4-independent-platform.yml"
-    command=[gh,"attestation","verify",args.result,"--repo",repo,"--bundle",args.bundle,"--deny-self-hosted-runners","--source-digest",commit,"--signer-workflow",signer,"--signer-digest",commit,"--format","json"]
-    verified=subprocess.run(command,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
+    with tempfile.TemporaryDirectory(prefix="forge-c4-import-") as td:
+        request_snapshot=Path(td)/"request.json";result_snapshot=Path(td)/"result.json";bundle_snapshot=Path(td)/"bundle.jsonl"
+        request_snapshot.write_bytes(request_raw);result_snapshot.write_bytes(result_raw);bundle_snapshot.write_bytes(bundle_raw)
+        command=[gh,"attestation","verify",str(result_snapshot),"--repo",repo,"--bundle",str(bundle_snapshot),"--deny-self-hosted-runners","--source-digest",commit,"--signer-workflow",signer,"--signer-digest",commit,"--format","json"]
+        verified=subprocess.run(command,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
     if verified.returncode: raise SystemExit(f"attestation verification failed: {verified.stderr.strip()}")
-    receipt=validate(req,res,True);receipt["attestation_verification_sha256"]=hashlib.sha256(verified.stdout.encode()).hexdigest()
-    out=Path(args.output);out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(receipt,sort_keys=True,indent=2)+"\n",encoding="utf-8")
+    receipt=build_retained_receipt(req,res,request_raw,result_raw,bundle_raw)
+    out=Path(args.output);out.parent.mkdir(parents=True,exist_ok=True)
+    try:
+        with out.open("x",encoding="utf-8",newline="\n") as handle: handle.write(json.dumps(receipt,sort_keys=True,indent=2)+"\n")
+    except FileExistsError: raise SystemExit("refusing duplicate import over the canonical derived receipt")
     print(f"C4 independent platform evidence verified: {receipt['result_sha256']}")
 if __name__=="__main__": main()

@@ -9,6 +9,11 @@ $launcherSource = Get-Content -LiteralPath $launcherPath -Raw
 foreach ($token in @('RegisteredRunId','RegisteredInvocationId','forge-full-gate-v1','Full Forge verification must use the registered launcher')) {
     if (!$verifySource.Contains($token)) { throw "Full-gate entry guard is missing: $token" }
 }
+$independentGate = $verifySource.IndexOf("verify-g1-c4-independent-platform-result.ps1")
+$atlasGate = $verifySource.IndexOf("verify-atlas.ps1")
+if ($independentGate -lt 0 -or $atlasGate -lt 0 -or $independentGate -gt $atlasGate) {
+    throw 'C4 independent-platform replay is not enforced before expensive full-gate work.'
+}
 foreach ($token in @('-RegisteredRunId','-RegisteredInvocationId')) {
     if (!$launcherSource.Contains($token)) { throw "Registered launcher binding is missing: $token" }
 }
