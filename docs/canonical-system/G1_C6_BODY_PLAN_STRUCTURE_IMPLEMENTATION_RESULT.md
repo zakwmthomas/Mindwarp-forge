@@ -51,6 +51,10 @@ never an expression identity or arbitrary nonzero reference.
   direct consumer.
 - Independent schema, matrix and integration reviews were applied before this
   result was recorded.
+- Registered full Forge gate `run-e923d74fb96743e5864b303faf27acfc`
+  passed the complete repository scope in 874,785 ms. The earlier
+  `run-57db0fb7534941d7a536bea252149e6b` failed on a stale no-op hostile
+  mutation and is retained as diagnostic evidence, not completion evidence.
 
 ## Stop boundary
 

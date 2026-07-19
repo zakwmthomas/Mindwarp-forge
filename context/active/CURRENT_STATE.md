@@ -29,7 +29,7 @@ Owner-authorized capability-free C6 body-plan family/topology V1 test-first impl
 
 ## Exact next action
 
-Commit the verified bounded body-plan source and orchestration classification, run one registered full Forge gate, record its receipt, then stop before any later C6 package.
+Stop at the verified body-plan V1 boundary. Await a separate owner route before any later C6 identity, ecology, physiology, reproduction, heredity, dimorphism-applicability, population, comparison or representation package.
 
 ## Unresolved risks
 

@@ -6,7 +6,7 @@
     "state":  "executing",
     "previous_state":  "ready",
     "objective":  "Implement and verify only the capability-free coordinate-free body-plan family/topology V1 contract, its lawful expression seam, three structural controls and one exact macro-lineage family-reference consumer.",
-    "next_action":  "Commit the verified bounded body-plan source and orchestration classification, run one registered full Forge gate, record its receipt, then stop before any later C6 package.",
+    "next_action":  "Stop at the verified body-plan V1 boundary. Await a separate owner route before any later C6 identity, ecology, physiology, reproduction, heredity, dimorphism-applicability, population, comparison or representation package.",
     "substage_id":  "c6-body-plan-structure-test-first-implementation",
     "handoff_section_receipts":  {
                                      "objective":  {
@@ -17,7 +17,7 @@
                                                    },
                                      "next_action":  {
                                                          "stage_id":  "c6-body-plan-structure-test-first-implementation",
-                                                         "content_sha256":  "406797ead7190f2b0a060e07a0a3c2c989a45d86f22375634c532b1860b5afe9",
+                                                         "content_sha256":  "7c86fbe3514253e97d27e7a3eb0f24fd6685240e54edbfd11cec75a9d60c3c2d",
                                                          "review_disposition":  "revised",
                                                          "review_note":  "Reviewed all handoff sections against the active substage."
                                                      },
@@ -65,19 +65,19 @@
                                                       },
                                      "evidence":  {
                                                       "stage_id":  "c6-body-plan-structure-test-first-implementation",
-                                                      "content_sha256":  "5272331390e01029d05042e5fb62cc2fe1790fbfaae3397b8953c123f3829a65",
+                                                      "content_sha256":  "e78832678b9bf85ae66897a1100a8fab74f6113cf841839f37accecd9a645772",
                                                       "review_disposition":  "revised",
                                                       "review_note":  "Reviewed all handoff sections against the active substage."
                                                   },
                                      "verification_receipts":  {
                                                                    "stage_id":  "c6-body-plan-structure-test-first-implementation",
-                                                                   "content_sha256":  "6225ff4302defe69b579b5e6d6278405d2210030d8bf008122d188e9f4794f04",
+                                                                   "content_sha256":  "bdd7020b259c1553ba85ef8de2418ce504bd7dae7092cbbcac3f4f489ec3e099",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "transition":  {
                                                         "stage_id":  "c6-body-plan-structure-test-first-implementation",
-                                                        "content_sha256":  "88c659018453ec3ad964546c331094670c421a2b36d4a5207397259c4ab64c65",
+                                                        "content_sha256":  "13269520b9cdee11b00fa555d66b4dcefff94ae3205d886b0072ce17e557e770",
                                                         "review_disposition":  "revised",
                                                         "review_note":  "Reviewed all handoff sections against the active substage."
                                                     }
@@ -239,9 +239,10 @@
                           {
                               "id":  "c6-body-plan-portability-integration",
                               "label":  "Focused suites, native/i686/Android classifications, module and route shields, independent review and one registered full gate pass without activating package 3.",
-                              "status":  "in_progress",
+                              "status":  "verified",
                               "evidence_ids":  [
-                                                   "tools/verify-g1-c6-body-plan-structure-implementation.ps1"
+                                                   "tools/verify-g1-c6-body-plan-structure-implementation.ps1",
+                                                   "registered-full-gate:run-e923d74fb96743e5864b303faf27acfc:passed"
                                                ]
                           }
                       ],
@@ -307,7 +308,8 @@
                      "Test-first implementation first failed because the body-plan library did not exist, then exposed and corrected recursion, canonical identity, resource preflight, budget-accounting and capability-audit defects before passing.",
                      "The final focused verifier passes 17 body-plan groups plus one macro-lineage consumer group, strict Clippy, same-host native x64 and i686 execution, and Android ARM64 compile-only classification.",
                      "Two structurally distinct humanoid expressions share the pinned family identity while retaining distinct expression identities; V1 contains no sex or dimorphism applicability labels.",
-                     "Registered run-57db0fb7534941d7a536bea252149e6b failed after 52098 ms because a retained C6 readiness hostile performed an old-route no-op authority mutation; the fixture now mutates either authorized route and the failed receipt remains diagnostic evidence."
+                     "Registered run-57db0fb7534941d7a536bea252149e6b failed after 52098 ms because a retained C6 readiness hostile performed an old-route no-op authority mutation; the fixture now mutates either authorized route and the failed receipt remains diagnostic evidence.",
+                     "Replacement registered run-e923d74fb96743e5864b303faf27acfc passed the complete Forge gate in 874785 ms with the body-plan implementation verifier, exact 17+1 matrix, retained predecessor shields and full workspace tests present."
                  ],
     "verification_receipts":  [
                                   "dependency:gp0-gp1-gp2-gp3-c4v:verified",
@@ -405,7 +407,9 @@
                                   "platform:c6-body-plan-i686:same-host-execution:passed",
                                   "platform:c6-body-plan-android-aarch64:compile-only:passed",
                                   "independent-review:c6-body-plan-source-matrix-integration:accepted",
-                                  "registered-full-gate:run-57db0fb7534941d7a536bea252149e6b:failed:stale-readiness-authority-hostile"
+                                  "registered-full-gate:run-57db0fb7534941d7a536bea252149e6b:failed:stale-readiness-authority-hostile",
+                                  "registered-full-gate:run-e923d74fb96743e5864b303faf27acfc:passed",
+                                  "receipt:G1-C6-BODY-PLAN-STRUCTURE-V1:recorded"
                               ],
     "metrics":  {
                     "token_cost":  {
@@ -414,9 +418,9 @@
                                    },
                     "elapsed_time":  {
                                          "status":  "measured",
-                                         "value":  "788754 ms",
-                                         "receipt":  "registered-full-gate:run-818500121b3f4958ac093b105a7fe61b:passed"
+                                         "value":  "874785 ms",
+                                         "receipt":  "registered-full-gate:run-e923d74fb96743e5864b303faf27acfc:passed"
                                      }
                 },
-    "transition":  "C4 verified and recorded -\u003e C5 capability-free closure verified and recorded -\u003e corrected C6 readiness verified inside the production gate -\u003e body-plan family/topology V1 focused implementation verified -\u003e registered full-gate evidence pending -\u003e all later C6, C7, runtime, promotion and Forge port remain gated"
+    "transition":  "C4 verified and recorded -\u003e C5 capability-free closure verified and recorded -\u003e corrected C6 readiness verified inside the production gate -\u003e body-plan family/topology V1 verified and recorded in run-e923d74fb96743e5864b303faf27acfc -\u003e stop before all later C6, C7, runtime, promotion and Forge port work"
 }

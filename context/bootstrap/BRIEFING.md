@@ -9,7 +9,7 @@
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Risk/research gate: **capability-free-c6-body-plan-structure-implementation / The corrected 82-ID C6 readiness record, independent schema/test/governance reviews, and registered gate run-818500121b3f4958ac093b105a7fe61b pass. V1 freezes family versus expression identity, coordinate-free graph semantics, 18 test groups, exact resources, three controls and one consumer. This grants only the bounded body-plan package, not broader biology or representation.**
-- Exact next action: Commit the verified bounded body-plan source and orchestration classification, run one registered full Forge gate, record its receipt, then stop before any later C6 package.
+- Exact next action: Stop at the verified body-plan V1 boundary. Await a separate owner route before any later C6 identity, ecology, physiology, reproduction, heredity, dimorphism-applicability, population, comparison or representation package.
 
 ## Approved operating policies
 
