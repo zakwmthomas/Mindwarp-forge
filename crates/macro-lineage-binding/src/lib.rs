@@ -11,13 +11,15 @@
 //!
 //! The module does not invent anatomy. In particular it contains no head,
 //! torso, limb, organ, sex, species, ecomorph, person-form, asset, or visual
-//! fields. `body_plan_ref` is an identity seam for a later bounded body-plan
-//! contract, preserving the owner's decision to defer region placement.
+//! fields. `body_plan_ref` remains an opaque schema-compatible identity seam;
+//! the additive validator can now bind it to an exact validated body-plan
+//! family without copying anatomy or an expression into this record.
 //!
 //! Occupancy is a hypothesis, not biological viability. Environmental
 //! opportunity is necessary context only; it does not prove that a lineage
 //! evolved or can exploit that opportunity.
 
+use body_plan_structure::{BodyPlanFamily, ValidationReport, validate_body_plan_ref};
 use derived_world_rules::{CausalWorldPacket, WorldGenerationInput};
 use niche_graph_binding::{
     EnvironmentalOpportunityGraph, validate_environmental_opportunity_graph,
@@ -204,6 +206,16 @@ pub fn validate_macro_lineage_candidate(
         ));
     }
     Ok(())
+}
+
+/// Validates the existing opaque reference against one complete body-plan
+/// family without changing or enriching the lineage record.
+pub fn validate_body_plan_binding(
+    candidate: &MacroLineageCandidate,
+    family: &BodyPlanFamily,
+    validation_budget: u32,
+) -> ValidationReport {
+    validate_body_plan_ref(candidate.body_plan_ref, family, validation_budget)
 }
 
 #[cfg(test)]
@@ -495,5 +507,57 @@ mod tests {
         )
         .unwrap();
         assert_eq!(first, second);
+    }
+
+    #[test]
+    fn candidate_accepts_only_exact_validated_family_fingerprint() {
+        let fixtures = body_plan_structure::reference_fixtures().unwrap();
+        let (input, packet) = packet(1);
+        let graph = build_environmental_opportunity_graph(&input, &packet).unwrap();
+        let candidate = build_macro_lineage_candidate(
+            &input,
+            &packet,
+            &graph,
+            [3; 32],
+            None,
+            fixtures.humanoid.family.family_id,
+            vec![graph.nodes[0].id],
+        )
+        .unwrap();
+        let before = candidate.to_bytes().unwrap();
+        assert_eq!(
+            validate_body_plan_binding(
+                &candidate,
+                &fixtures.humanoid.family,
+                body_plan_structure::MAX_VALIDATION_EXAMINATIONS,
+            )
+            .status,
+            body_plan_structure::ValidationStatus::Valid
+        );
+        assert_eq!(candidate.to_bytes().unwrap(), before);
+
+        let mut expression_ref = candidate.clone();
+        expression_ref.body_plan_ref = fixtures.humanoid.expression.expression_id;
+        assert_eq!(
+            validate_body_plan_binding(
+                &expression_ref,
+                &fixtures.humanoid.family,
+                body_plan_structure::MAX_VALIDATION_EXAMINATIONS,
+            )
+            .status,
+            body_plan_structure::ValidationStatus::Invalid
+        );
+
+        let mut forged_family = fixtures.humanoid.family.clone();
+        forged_family.family_id = [9; 32];
+        assert_eq!(
+            validate_body_plan_binding(
+                &candidate,
+                &forged_family,
+                body_plan_structure::MAX_VALIDATION_EXAMINATIONS,
+            )
+            .status,
+            body_plan_structure::ValidationStatus::Invalid
+        );
     }
 }

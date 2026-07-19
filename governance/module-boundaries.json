@@ -465,9 +465,22 @@
       ]
     },
     {
+      "id": "body-plan-structure",
+      "root": "crates/body-plan-structure",
+      "dependencies": [],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "body-plan structure cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "body-plan structure cannot depend on desktop UI or renderer capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "body-plan structure cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process|time)::", "reason": "body-plan structure cannot access files processes or clocks"},
+        {"pattern": "\\b(?:rand|fastrand|getrandom)(?:::|\\s*=)", "reason": "body-plan structure must be deterministic and cannot use random sources"}
+      ]
+    },
+    {
       "id": "macro-lineage-binding",
       "root": "crates/macro-lineage-binding",
-      "dependencies": ["derived-world-rules", "niche-graph-binding", "field-basis"],
+      "dependencies": ["derived-world-rules", "niche-graph-binding", "field-basis", "body-plan-structure"],
       "source_extensions": [".rs"],
       "forbidden_imports": [
         {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "macro-lineage binding proof cannot depend on protected Forge authority"},

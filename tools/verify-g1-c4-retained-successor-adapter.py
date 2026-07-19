@@ -34,6 +34,16 @@ EXPECTED_C6_AUTHORITY = (
     "claim, physiology or content constants, filesystem, network, process, Companion, Greenfield, promotion "
     "authority or Kernel mutation."
 )
+EXPECTED_C6_BODY_PLAN_AUTHORITY = (
+    "Owner-authorized capability-free C6 body-plan family/topology V1 test-first implementation only. "
+    "Exact dependencies verified C4 and C5. Authorizes the new body-plan-structure crate, one additive "
+    "macro-lineage-binding family-reference validator, exact tests, governance projections and verification "
+    "for this package. No ecology realization, physiology, reproduction, heredity, development, sex or "
+    "dimorphism applicability, caste, species, individual or population semantics, personhood, product "
+    "ontology, solver or AI generation, geometry, proportions, pose, assets, animation, renderer, visual-quality "
+    "claim, runtime, filesystem, network, process, Companion, Greenfield, C7, broad G1 closure, promotion "
+    "authority or Kernel mutation."
+)
 EXPECTED_C4_RUN = "run-bc2154f73f6243239910ac30bc3b1994"
 REQUIRED_RECEIPTS = {
     f"registered-full-gate:{EXPECTED_C4_RUN}:passed",
@@ -109,8 +119,10 @@ def verify(checkpoint_path: Path, program_path: Path, observation_path: Path) ->
     checkpoint = load_strict(checkpoint_path)
     program = load_strict(program_path)
 
-    c6 = checkpoint.get("batch_id") == "G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1"
-    exact_string(checkpoint, "batch_id", "G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1" if c6 else "G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1")
+    c6_readiness_batch = checkpoint.get("batch_id") == "G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1"
+    c6_body_plan_batch = checkpoint.get("batch_id") == "G1-C6-BODY-PLAN-STRUCTURE-IMPLEMENTATION-V1"
+    c6 = c6_readiness_batch or c6_body_plan_batch
+    exact_string(checkpoint, "batch_id", "G1-C6-BODY-PLAN-STRUCTURE-IMPLEMENTATION-V1" if c6_body_plan_batch else "G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1" if c6_readiness_batch else "G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1")
     exact_string(checkpoint, "master_program_item", "C6" if c6 else "C5")
     state = checkpoint.get("state")
     substage = checkpoint.get("substage_id")
@@ -130,7 +142,12 @@ def verify(checkpoint_path: Path, program_path: Path, observation_path: Path) ->
         and type(substage) is str and substage == "c6-reconciliation-readiness"
         and type(authority) is str and authority == EXPECTED_C6_AUTHORITY
     )
-    if not (full_gate or recorded or c6_readiness):
+    c6_body_plan = (
+        type(state) is str and state == "executing"
+        and type(substage) is str and substage == "c6-body-plan-structure-test-first-implementation"
+        and type(authority) is str and authority == EXPECTED_C6_BODY_PLAN_AUTHORITY
+    )
+    if not (full_gate or recorded or c6_readiness or c6_body_plan):
         raise ValueError("live checkpoint state/substage/authority tuple is not exact")
 
     receipts = exact_string_list(checkpoint, "verification_receipts")
@@ -143,6 +160,10 @@ def verify(checkpoint_path: Path, program_path: Path, observation_path: Path) ->
         for receipt in ("receipt:G1-C5-CLOSURE:recorded", "owner-route:c6-reconciliation-readiness:authorized", "transition:c5-verified-c6-readiness-activated:recorded"):
             if receipt not in receipts:
                 raise ValueError(f"C6 readiness route is missing retained evidence: {receipt}")
+    if c6_body_plan:
+        for receipt in ("receipt:G1-C5-CLOSURE:recorded", "owner-route:c6-reconciliation-readiness:authorized", "transition:c5-verified-c6-readiness-activated:recorded", "owner-authorization:c6-body-plan-structure-v1:released"):
+            if receipt not in receipts:
+                raise ValueError(f"C6 body-plan route is missing retained evidence: {receipt}")
 
     items = program.get("items")
     if type(items) is not list or any(type(item) is not dict for item in items):
@@ -155,7 +176,7 @@ def verify(checkpoint_path: Path, program_path: Path, observation_path: Path) ->
     c5 = one_item(items, "C5")
     for record, item_id, state, status in (
         (c4, "C4", "verified", "complete"),
-        (c5, "C5", "verified" if c6_readiness else "executing", "complete" if c6_readiness else "active"),
+        (c5, "C5", "verified" if c6 else "executing", "complete" if c6 else "active"),
     ):
         if record.get("state") != state or record.get("status") != status:
             raise ValueError(f"{item_id} state/status is not exact")
@@ -163,15 +184,17 @@ def verify(checkpoint_path: Path, program_path: Path, observation_path: Path) ->
         raise ValueError("C4 dependency order is not exact")
     if exact_string_list(c5, "depends_on") != ["C4"]:
         raise ValueError("C5 dependency is not exact")
-    if recorded or c6_readiness:
+    if recorded or c6:
         if c5.get("gate") != "recorded":
             raise ValueError("recorded C5 route lost its recorded master gate")
         if "G1_C5_CLOSURE_RESULT.md" not in exact_string_list(c5, "sources"):
             raise ValueError("recorded C5 route lost its closure result source")
-        c6 = one_item(items, "C6")
-        expected_c6 = ("executing", "active") if c6_readiness else ("proposed", "gated")
-        if (c6.get("state"), c6.get("status")) != expected_c6:
+        c6_item = one_item(items, "C6")
+        expected_c6 = ("executing", "active") if c6 else ("proposed", "gated")
+        if (c6_item.get("state"), c6_item.get("status")) != expected_c6:
             raise ValueError("C6 successor state drifted")
+        if c6 and c6_item.get("gate") != ("implementation" if c6_body_plan else "design"):
+            raise ValueError("C6 successor gate drifted")
     if "G1_C4_CLOSURE_RESULT.md" not in exact_string_list(c4, "sources"):
         raise ValueError("C4 closure source is missing")
     proof = c4.get("proof")
@@ -186,7 +209,7 @@ def verify(checkpoint_path: Path, program_path: Path, observation_path: Path) ->
         for item in items
         if item.get("state") == "executing" and item.get("status") == "active"
     ]
-    if active != (["C6"] if c6_readiness else ["C5"]):
+    if active != (["C6"] if c6 else ["C5"]):
         raise ValueError("successor must be the sole executing active program item")
 
     observation = load_strict(observation_path)

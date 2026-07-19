@@ -658,9 +658,9 @@
                                          "C4",
                                          "C5"
                                      ],
-                      "gate":  "design",
-                      "next_action":  "Retain the corrected 82-ID C6 hostile registry and variation-capable body-plan candidate, then stop before separately authorized source. Do not treat one humanoid fixture as the organism scope or defer reproduction, heredity and applicability until after comparison.",
-                      "proof":  "Exact C4 and capability-free C5 prerequisites are verified. Code-free C6 readiness is active; current prototypes remain non-closure evidence and do not prove organism, body plan, physiology, reproduction, heredity, ecology, applicable dimorphism, comparative eligibility, runtime or visual quality.",
+                      "gate":  "implementation",
+                      "next_action":  "Run the registered full Forge gate with the verified body-plan implementation included, record the bounded result, then stop before any later C6 package.",
+                      "proof":  "The focused body-plan verifier passes the exact 17+1 matrix, strict Clippy, native and same-host i686 execution, Android ARM64 compile-only, one direct consumer and independent review. Registered full-gate evidence for this source remains pending; organism identity, ecology, physiology, reproduction, heredity, dimorphism applicability, comparison, runtime and visual quality remain unproved and gated.",
                       "sources":  [
                                       "MASTER_CLOSURE_REGISTER.md",
                                       "SEMANTIC_CONSTRUCTION_DESIGN_GATE.md",
@@ -679,7 +679,10 @@
                         "FORGE_WIDE_NATURAL_FUNCTION_REASSESSMENT.md",
                         "REPRESENTATION_ASSET_ANIMATION_DESIGN_GATE.md",
                         "MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",
-                        "UNRESOLVED_GAPS.md"
+                        "UNRESOLVED_GAPS.md",
+                        "G1_C6_BODY_PLAN_STRUCTURE_IMPLEMENTATION_READINESS.md",
+                        "body-plan-structure-contract.md",
+                        "G1_C6_BODY_PLAN_STRUCTURE_IMPLEMENTATION_RESULT.md"
                                   ]
                   },
                   {

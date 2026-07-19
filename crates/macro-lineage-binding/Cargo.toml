@@ -5,6 +5,7 @@ edition.workspace = true
 license.workspace = true
 
 [dependencies]
+body-plan-structure = { path = "../body-plan-structure" }
 derived-world-rules = { path = "../derived-world-rules" }
 niche-graph-binding = { path = "../niche-graph-binding" }
 serde = { version = "1", features = ["derive"] }

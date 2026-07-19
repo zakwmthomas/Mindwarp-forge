@@ -1570,15 +1570,53 @@
             ]
         },
         {
-            "id": "macro-lineage-binding",
+            "id": "body-plan-structure",
             "maturity": "proof_component",
-            "purpose": "Bind one hypothetical native macro-lineage identity to an exact validated world input/packet pair, rebuilt environmental-opportunity graph and exact physical regime, occupied opportunity subset, lineage seed, optional parent and opaque body-plan reference.",
+            "purpose": "Represent and validate deterministic coordinate-free body-plan family topology, homology and symmetry with separate lawful structural expressions.",
             "owns": [
-                "macro-lineage candidate identity derivation",
-                "strict world/graph/physical-regime/occupancy/body-plan reference binding"
+                "content-derived family and expression identities with strict canonical codecs",
+                "bounded part cardinality presence relation homology and symmetry validation",
+                "synthetic humanoid radial and withheld serial structural controls"
             ],
             "non_goals": [
-                "body-plan anatomy or body-region placement",
+                "sex dimorphism applicability reproductive role caste development or heredity",
+                "lineage species individual or population identity",
+                "physiology viability capability ecology or evolutionary claims",
+                "coordinates geometry pose rigs assets runtime approval or promotion"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "family identity excludes expressions while expression identity binds one exact family",
+                "all references resolve and conditional presence and cardinalities are exact",
+                "containment is acyclic with at most one parent while multiple roots and structural connection cycles are legal",
+                "the realized combined structural graph is connected and symmetry positions are exact",
+                "budget exhaustion is indeterminate rather than biological invalidity",
+                "validation is atomic deterministic and capability-free"
+            ],
+            "verification": [
+                "cargo test -p body-plan-structure",
+                "cargo clippy -p body-plan-structure --all-targets -- -D warnings"
+            ],
+            "references": [
+                "contracts/body-plan-structure-contract.md",
+                "docs/canonical-system/G1_C6_BODY_PLAN_STRUCTURE_IMPLEMENTATION_READINESS.md",
+                "docs/canonical-system/MASTER_PLAN_V2.md"
+            ]
+        },
+        {
+            "id": "macro-lineage-binding",
+            "maturity": "proof_component",
+            "purpose": "Bind one hypothetical native macro-lineage identity to an exact validated world input/packet pair, rebuilt environmental-opportunity graph and exact physical regime, occupied opportunity subset, lineage seed, optional parent and an opaque body-plan reference, with additive exact validated family binding.",
+            "owns": [
+                "macro-lineage candidate identity derivation",
+                "strict world/graph/physical-regime/occupancy/body-plan reference binding",
+                "additive exact body-plan family-reference validation"
+            ],
+            "non_goals": [
+                "copying body-plan anatomy or expressions into lineage records",
+                "body-region placement or dimorphism and applicability inference",
                 "biological viability or evolution",
                 "biome classification or physical similarity scoring",
                 "species, ecomorphs, sensory organs, person-form eligibility, dimorphism, assets or visual quality",
@@ -1592,7 +1630,8 @@
                 "world and opportunity graph identities match exactly",
                 "the physical-regime reference matches the rebuilt graph without replacing place identity",
                 "occupied opportunities are non-empty and belong to the bound graph",
-                "body-plan identity is explicit while region modeling remains deferred",
+                "validate_body_plan_binding accepts only a fully validated family identity and never an expression identity while the schema-compatible base constructor retains its opaque nonzero reference seam",
+                "the existing candidate schema constructor identity derivation and canonical bytes remain unchanged",
                 "occupancy is labelled hypothesis rather than biological truth"
             ],
             "verification": [
@@ -1602,7 +1641,9 @@
                 "docs/canonical-system/MASTER_PLAN_V2.md",
                 "docs/canonical-system/G1_C3_PHYSICAL_REGIME_IDENTITY_RESULT.md",
                 "docs/canonical-system/G1_C6_NICHE_GRAPH_BINDING_RESULT.md",
-                "docs/canonical-system/G1_C6_MACRO_LINEAGE_BINDING_RESULT.md"
+                "docs/canonical-system/G1_C6_MACRO_LINEAGE_BINDING_RESULT.md",
+                "contracts/body-plan-structure-contract.md",
+                "docs/canonical-system/G1_C6_BODY_PLAN_STRUCTURE_IMPLEMENTATION_READINESS.md"
             ]
         },
         {

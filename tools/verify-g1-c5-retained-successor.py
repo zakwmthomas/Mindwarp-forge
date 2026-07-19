@@ -11,7 +11,7 @@ from pathlib import Path
 
 SOURCE_COMMIT = "9e48dd117c2b22b62bd31dba15c10c3a9bf4b100"
 SOURCE_MANIFEST_SHA256 = "9430bc530ba39403803a05fd99a9bc5c257472c2f320921ca242b51344947ecb"
-SUCCESSOR_MANIFEST_SHA256 = "97da3aed932d41f7a0c4569585f38ccc1fba6e0a0b2e6136137d7f648b41dacd"
+SUCCESSOR_MANIFEST_SHA256 = "5f934a61dff9effa0fec1a7c219f53e3a510faa715e1e4c58622fd7a5585715c"
 PATH_LIST = "tools/fixtures/c5-significance-scheduler-receipt/bounded-paths.txt"
 
 EXPECTED_PATHS = (
@@ -57,6 +57,14 @@ EXPECTED_PATHS = (
 )
 
 ALLOWED_TRANSITIONS = {
+    "Cargo.toml": (
+        "c89e42751c45947cca539f2d02c2216e7b85cdda",
+        "0db3b7182706c43d55014e74a233bb5394545b1a",
+    ),
+    "Cargo.lock": (
+        "c25af5e0dffd87a8f2340b70ba4269a03945c3ee",
+        "9f686900b4de5b70f6dfe3f54048f09350efd9a7",
+    ),
     "docs/canonical-system/G1_C5_LOCAL_IMPLEMENTATION_CANDIDATE.md": (
         "124910f83296f424ee66073e13ae1b10ff3298d4",
         "82ad7a0a213b36d003c2eac72a3ce29f77d6a66b",
@@ -67,7 +75,7 @@ ALLOWED_TRANSITIONS = {
     ),
     "tools/verify.ps1": (
         "81a19541b5fa0d025718cc8976f2b281cc536a6e",
-        "f991105341ae432db9e5057594bb7f17c8a6f1f1",
+        "e5613f3da5c2d365c35797910188bd31495433d6",
     ),
 }
 
@@ -143,8 +151,8 @@ def main() -> None:
     args = parser.parse_args()
     source, successor = verify(args.root.resolve())
     print(
-        "C5 retained successor verified: exact 39-path set, 36 unchanged blobs, "
-        f"two evidence-only transitions plus one exact closure-orchestration transition, source {source}, successor {successor}."
+        "C5 retained successor verified: exact 39-path set, 34 unchanged blobs, "
+        f"two evidence-only, two workspace-registration and one exact closure-orchestration transition, source {source}, successor {successor}."
     )
 
 

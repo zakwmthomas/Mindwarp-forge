@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1**
-- Objective: Reconcile the complete C6 organism/ecology context, correct dimorphism, reproduction, heredity, development and variation ordering, freeze exact hostile identities, and retain one separately gated variation-capable body-plan candidate without adding source.
+- Work package: **G1-C6-BODY-PLAN-STRUCTURE-IMPLEMENTATION-V1**
+- Objective: Implement and verify only the capability-free coordinate-free body-plan family/topology V1 contract, its lawful expression seam, three structural controls and one exact macro-lineage family-reference consumer.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **code-free-c6-organism-ecology-readiness / C4 and C5 are verified exact prerequisites. Thirty-eight focused prototype tests and five C6-specific read-only desktop receipt bindings are bounded non-closure evidence. Whole-context review corrects the hostile count from 68 to 82, moves applicability before comparison, and adds explicit reproduction/development/heredity. C6 remains incomplete and this gate grants no source, product ontology, physiology constants, runtime, visuals, promotion or Forge-port authority.**
-- Exact next action: Verify the corrected 82-ID C6 readiness record and exact successor route, then stop before separately authorized variation-capable body-plan source.
+- Risk/research gate: **capability-free-c6-body-plan-structure-implementation / The corrected 82-ID C6 readiness record, independent schema/test/governance reviews, and registered gate run-818500121b3f4958ac093b105a7fe61b pass. V1 freezes family versus expression identity, coordinate-free graph semantics, 18 test groups, exact resources, three controls and one consumer. This grants only the bounded body-plan package, not broader biology or representation.**
+- Exact next action: Commit the verified bounded body-plan source and orchestration classification, run one registered full Forge gate, record its receipt, then stop before any later C6 package.
 
 ## Approved operating policies
 

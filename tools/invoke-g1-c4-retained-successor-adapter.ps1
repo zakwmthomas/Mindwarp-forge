@@ -20,7 +20,7 @@ $root = Split-Path -Parent $PSScriptRoot
 $sourceCommit = '17f39f7018de8a02c8292bcde0fafa2bf58fc7d4'
 $historicalReplayCommit = '51a67b222739f6ba0a51f151976ded4d52d76f55'
 $historicalVerifyBlob = '21981e1ea9ea9c0117e322e0e0610e4d560edb3c'
-$currentVerifyBlob = 'f991105341ae432db9e5057594bb7f17c8a6f1f1'
+$currentVerifyBlob = 'e5613f3da5c2d365c35797910188bd31495433d6'
 $expectedObservationBlob = '02e962a7d4e9f83f506162cfb1b97e8717b18c10'
 if ([string]::IsNullOrWhiteSpace($CheckpointPath)) {
     $CheckpointPath = Join-Path $root 'context\active\WORKER_BATCH_STATE.json'

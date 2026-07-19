@@ -5,12 +5,12 @@
 
 ## Active checkpoint
 
-- Package: **G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1**
+- Package: **G1-C6-BODY-PLAN-STRUCTURE-IMPLEMENTATION-V1**
 - Master item / milestone: **C6 / G1**
-- State / substage: **executing / c6-reconciliation-readiness**
+- State / substage: **executing / c6-body-plan-structure-test-first-implementation**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Objective: Reconcile the complete C6 organism/ecology context, correct dimorphism, reproduction, heredity, development and variation ordering, freeze exact hostile identities, and retain one separately gated variation-capable body-plan candidate without adding source.
-- Context health: C5 is verified, complete and recorded after both registered closure gates. C6 is the sole executing/active cursor for code-free reconciliation only. The corrected plan now distinguishes body-plan family from expression, biological sex from reproductive role/caste/gender/social role, and positive heredity/development from H6 reproducibility. Current prototypes remain partial non-closure evidence.
+- Objective: Implement and verify only the capability-free coordinate-free body-plan family/topology V1 contract, its lawful expression seam, three structural controls and one exact macro-lineage family-reference consumer.
+- Context health: C4 and C5 remain verified prerequisites. C6 is the sole active item. Body-plan V1 passes the focused 17+1 matrix, portability classifications, module governance and independent review. One registered full gate remains before recording and stopping; all later C6 packages and C7 remain gated.
 
 ## Durable evidence
 
@@ -25,18 +25,19 @@
 
 ## Authority boundary
 
-Owner-authorized C6 semantic/construction and organism-ecology reconciliation and capability-free readiness only. Exact dependencies verified C4 and C5. Retain corrected C6 prerequisite evidence as non-closure evidence. No C6 implementation source, C3B, C7, broad G1 closure, runtime, product ontology or vocabulary, solver or AI generation, geometry, assets, animation, renderer, visual-quality claim, physiology or content constants, filesystem, network, process, Companion, Greenfield, promotion authority or Kernel mutation.
+Owner-authorized capability-free C6 body-plan family/topology V1 test-first implementation only. Exact dependencies verified C4 and C5. Authorizes the new body-plan-structure crate, one additive macro-lineage-binding family-reference validator, exact tests, governance projections and verification for this package. No ecology realization, physiology, reproduction, heredity, development, sex or dimorphism applicability, caste, species, individual or population semantics, personhood, product ontology, solver or AI generation, geometry, proportions, pose, assets, animation, renderer, visual-quality claim, runtime, filesystem, network, process, Companion, Greenfield, C7, broad G1 closure, promotion authority or Kernel mutation.
 
 ## Exact next action
 
-Verify the corrected 82-ID C6 readiness record and exact successor route, then stop before separately authorized variation-capable body-plan source.
+Commit the verified bounded body-plan source and orchestration classification, run one registered full Forge gate, record its receipt, then stop before any later C6 package.
 
 ## Unresolved risks
 
-- The bounded pelvis-rooted humanoid mannequin could be generalized into a universal organism schema.
-- Biological sex, reproductive role, sexual dimorphism, caste, social role, gender/person identity, capability and personality could be conflated.
-- Culture, player-authored meaning or product permissions could be inferred from morphology, ecology or lineage without explicit authority.
+- The bounded humanoid fixture could leak pelvis, root, tree, bilateral or unique-role assumptions into the general contract.
+- A lawful expression or arbitrary nonzero reference could be mistaken for the stable family identity bound by macro-lineage.
+- Compressed cardinality, conditional presence, relation degrees or symmetry positions could expand unboundedly or accept disconnected structure.
+- Sex, caste, species, capability, geometry or representation fields could leak into V1 through labels or reused H2/H3 types.
 
 ## Resume after this package
 
-Stop at the separately gated first C6 implementation candidate after readiness verification; do not add body-plan or broader C6 source without a new exact authorization.
+Stop after recording the body-plan structure V1 result; do not activate C6 package 3, broader biology, C7, runtime or Forge port without a new exact authorization.

@@ -4,21 +4,23 @@
 
 - **Maturity:** proof_component
 - **Root:** `crates/macro-lineage-binding`
-- **Source fingerprint:** `d7c7f9b887d9176a0ba2f51f4bac07bf6d5227a5b24f7c24529e00ee2a677c18`
+- **Source fingerprint:** `6dbe070abeadbc31fdc7c60be75dc9c6781e1551abf713595dd63a2c15bb30db`
 - **Live project state:** read `context/active/CURRENT_STATE.md`; active status is never duplicated here.
 
 ## Purpose
 
-Bind one hypothetical native macro-lineage identity to an exact validated world input/packet pair, rebuilt environmental-opportunity graph and exact physical regime, occupied opportunity subset, lineage seed, optional parent and opaque body-plan reference.
+Bind one hypothetical native macro-lineage identity to an exact validated world input/packet pair, rebuilt environmental-opportunity graph and exact physical regime, occupied opportunity subset, lineage seed, optional parent and an opaque body-plan reference, with additive exact validated family binding.
 
 ## Owns
 
 - macro-lineage candidate identity derivation
 - strict world/graph/physical-regime/occupancy/body-plan reference binding
+- additive exact body-plan family-reference validation
 
 ## Does not own
 
-- body-plan anatomy or body-region placement
+- copying body-plan anatomy or expressions into lineage records
+- body-region placement or dimorphism and applicability inference
 - biological viability or evolution
 - biome classification or physical similarity scoring
 - species, ecomorphs, sensory organs, person-form eligibility, dimorphism, assets or visual quality
@@ -33,6 +35,7 @@ Bind one hypothetical native macro-lineage identity to an exact validated world 
 - derived-world-rules
 - niche-graph-binding
 - field-basis
+- body-plan-structure
 
 ## Downstream neighbours
 
@@ -44,7 +47,8 @@ Bind one hypothetical native macro-lineage identity to an exact validated world 
 - world and opportunity graph identities match exactly
 - the physical-regime reference matches the rebuilt graph without replacing place identity
 - occupied opportunities are non-empty and belong to the bound graph
-- body-plan identity is explicit while region modeling remains deferred
+- validate_body_plan_binding accepts only a fully validated family identity and never an expression identity while the schema-compatible base constructor retains its opaque nonzero reference seam
+- the existing candidate schema constructor identity derivation and canonical bytes remain unchanged
 - occupancy is labelled hypothesis rather than biological truth
 
 ## Verification
@@ -57,6 +61,8 @@ Bind one hypothetical native macro-lineage identity to an exact validated world 
 - `docs/canonical-system/G1_C3_PHYSICAL_REGIME_IDENTITY_RESULT.md`
 - `docs/canonical-system/G1_C6_NICHE_GRAPH_BINDING_RESULT.md`
 - `docs/canonical-system/G1_C6_MACRO_LINEAGE_BINDING_RESULT.md`
+- `contracts/body-plan-structure-contract.md`
+- `docs/canonical-system/G1_C6_BODY_PLAN_STRUCTURE_IMPLEMENTATION_READINESS.md`
 
 ## Update rule
 

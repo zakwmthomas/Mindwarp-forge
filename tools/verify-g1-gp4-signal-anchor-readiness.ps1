@@ -114,8 +114,8 @@ $c5Route = ($checkpoint.batch_id -eq 'G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1' -
     $checkpoint.authority_lane -eq 'Owner-authorized broad C5 significance/scheduler reconciliation and capability-free closure readiness only. Exact dependency C4. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.') -or
     (Test-G1C5FullGateReconciliationRoute -Checkpoint $checkpoint) -or
     (Test-G1C5RecordedClosureRoute -Checkpoint $checkpoint) -or
-    (Test-G1C6ReconciliationReadinessRoute -Checkpoint $checkpoint)
-$c6Route = Test-G1C6ReconciliationReadinessRoute -Checkpoint $checkpoint
+    (Test-G1C6AuthorizedCurrentRoute -Checkpoint $checkpoint)
+$c6Route = Test-G1C6AuthorizedCurrentRoute -Checkpoint $checkpoint
 $c5Successor = $c5Route -and
     $gp4.Count -eq 1 -and $gp4[0].state -eq 'verified' -and $gp4[0].status -eq 'complete' -and $gp4[0].proof -match 'run-[0-9a-f]{32}' -and
     $closeout.Count -eq 1 -and $closeout[0].state -eq 'verified' -and $closeout[0].status -eq 'complete' -and

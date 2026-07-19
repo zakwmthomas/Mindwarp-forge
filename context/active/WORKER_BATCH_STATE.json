@@ -1,83 +1,83 @@
 ﻿{
     "schema_version":  3,
     "canonical_role":  "sole-active-work-checkpoint",
-    "batch_id":  "G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1",
+    "batch_id":  "G1-C6-BODY-PLAN-STRUCTURE-IMPLEMENTATION-V1",
     "master_program_item":  "C6",
     "state":  "executing",
     "previous_state":  "ready",
-    "objective":  "Reconcile the complete C6 organism/ecology context, correct dimorphism, reproduction, heredity, development and variation ordering, freeze exact hostile identities, and retain one separately gated variation-capable body-plan candidate without adding source.",
-    "next_action":  "Verify the corrected 82-ID C6 readiness record and exact successor route, then stop before separately authorized variation-capable body-plan source.",
-    "substage_id":  "c6-reconciliation-readiness",
+    "objective":  "Implement and verify only the capability-free coordinate-free body-plan family/topology V1 contract, its lawful expression seam, three structural controls and one exact macro-lineage family-reference consumer.",
+    "next_action":  "Commit the verified bounded body-plan source and orchestration classification, run one registered full Forge gate, record its receipt, then stop before any later C6 package.",
+    "substage_id":  "c6-body-plan-structure-test-first-implementation",
     "handoff_section_receipts":  {
                                      "objective":  {
-                                                       "stage_id":  "c6-reconciliation-readiness",
-                                                       "content_sha256":  "ff9e0593b84b282749ab71c435e544e63e3c3106d9f7e0f235b3d16e23a8b39f",
+                                                       "stage_id":  "c6-body-plan-structure-test-first-implementation",
+                                                       "content_sha256":  "6360a54d110285a96247376627f43b644c3101fce313aaa9b2611feebcf07e70",
                                                        "review_disposition":  "revised",
                                                        "review_note":  "Reviewed all handoff sections against the active substage."
                                                    },
                                      "next_action":  {
-                                                         "stage_id":  "c6-reconciliation-readiness",
-                                                         "content_sha256":  "aa2e20ba6dbc7739be2615ead32fb93d6236d6426ea432df1e8d0bfe8619bb95",
+                                                         "stage_id":  "c6-body-plan-structure-test-first-implementation",
+                                                         "content_sha256":  "406797ead7190f2b0a060e07a0a3c2c989a45d86f22375634c532b1860b5afe9",
                                                          "review_disposition":  "revised",
                                                          "review_note":  "Reviewed all handoff sections against the active substage."
                                                      },
                                      "stage_context":  {
-                                                           "stage_id":  "c6-reconciliation-readiness",
-                                                           "content_sha256":  "b31b772e92418375364128cb7f32ecf17fa349ebb079fbe8849c7fdf35bcf939",
+                                                           "stage_id":  "c6-body-plan-structure-test-first-implementation",
+                                                           "content_sha256":  "c6f2f8eaacbea98058cc1ba9e13e6ea9085d7e86f397b195f45e0734b20221b3",
                                                            "review_disposition":  "revised",
                                                            "review_note":  "Reviewed all handoff sections against the active substage."
                                                        },
                                      "visual_quality_gate":  {
-                                                                 "stage_id":  "c6-reconciliation-readiness",
+                                                                 "stage_id":  "c6-body-plan-structure-test-first-implementation",
                                                                  "content_sha256":  "714f74f1c91e7749f149d4b0cb884bf6dd511d97ea820c2870839755f49c4596",
                                                                  "review_disposition":  "revised",
                                                                  "review_note":  "Reviewed all handoff sections against the active substage."
                                                              },
                                      "simulation_ladder":  {
-                                                               "stage_id":  "c6-reconciliation-readiness",
-                                                               "content_sha256":  "be6c08190f2dd5157dcdf147388cdf96687f14ea85614ff333c779d84033fab6",
+                                                               "stage_id":  "c6-body-plan-structure-test-first-implementation",
+                                                               "content_sha256":  "16700387eb86b1abd7600a87161019208fade7afe1a96a45a0d63f0241837538",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "unresolved_risks":  {
-                                                              "stage_id":  "c6-reconciliation-readiness",
-                                                              "content_sha256":  "3f6f28539e9121055d9d776058bf323231e8f94da5d253d6b48f24bc419c6861",
+                                                              "stage_id":  "c6-body-plan-structure-test-first-implementation",
+                                                              "content_sha256":  "1d63673b24219cd7465d22770c784f902e8ce27752242349e8dc7ea491d19abe",
                                                               "review_disposition":  "revised",
                                                               "review_note":  "Reviewed all handoff sections against the active substage."
                                                           },
                                      "evidence_requirements":  {
-                                                                   "stage_id":  "c6-reconciliation-readiness",
-                                                                   "content_sha256":  "22fac020c05eaf060c11af8a266b159220dcaa9eabf84935ee5affc6b7e96888",
+                                                                   "stage_id":  "c6-body-plan-structure-test-first-implementation",
+                                                                   "content_sha256":  "d237165a69bb1397ae671f153d70f4530a330678d6bc5a2a20fb4b96dd2e4fcc",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "verification_plan":  {
-                                                               "stage_id":  "c6-reconciliation-readiness",
-                                                               "content_sha256":  "776397b70486604c0bf6e28b6a8af5d243ab080a089b3e050826b54e6ee8e43b",
+                                                               "stage_id":  "c6-body-plan-structure-test-first-implementation",
+                                                               "content_sha256":  "7dca8af6862d8778c608ea3303ad92ef8f8dba26771193240f9b116145ffc861",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "resume_after":  {
-                                                          "stage_id":  "c6-reconciliation-readiness",
-                                                          "content_sha256":  "36b26f42e9e9d8998050667a650b5925f103828ae51b9bb41ee0022171d4eed9",
+                                                          "stage_id":  "c6-body-plan-structure-test-first-implementation",
+                                                          "content_sha256":  "5019e48766afda48b2483b4dadae82705a40fb12d0b2dce4828d829e2096f42c",
                                                           "review_disposition":  "revised",
                                                           "review_note":  "Reviewed all handoff sections against the active substage."
                                                       },
                                      "evidence":  {
-                                                      "stage_id":  "c6-reconciliation-readiness",
-                                                      "content_sha256":  "ea4a9fbf58e568a43e770b9b0f1bdef854e3fa185587245297c9aad79741cb44",
+                                                      "stage_id":  "c6-body-plan-structure-test-first-implementation",
+                                                      "content_sha256":  "7e4be881caa3b783bbb09efb194cc62fe397de12f067bea9afb55614d244b951",
                                                       "review_disposition":  "revised",
                                                       "review_note":  "Reviewed all handoff sections against the active substage."
                                                   },
                                      "verification_receipts":  {
-                                                                   "stage_id":  "c6-reconciliation-readiness",
-                                                                   "content_sha256":  "d5aa6b50623fbf4c4a2cb000ec7a02e55f62f1694329ba9448cbea606c418b32",
+                                                                   "stage_id":  "c6-body-plan-structure-test-first-implementation",
+                                                                   "content_sha256":  "1c6765570321baee0f4e2039a5f6fe84c57500a90a9ea829b437a7df8ecbc927",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "transition":  {
-                                                        "stage_id":  "c6-reconciliation-readiness",
-                                                        "content_sha256":  "1401177eccb175ac7a088cb084f375f9e237d72d690b741001f8b45d27bac978",
+                                                        "stage_id":  "c6-body-plan-structure-test-first-implementation",
+                                                        "content_sha256":  "88c659018453ec3ad964546c331094670c421a2b36d4a5207397259c4ab64c65",
                                                         "review_disposition":  "revised",
                                                         "review_note":  "Reviewed all handoff sections against the active substage."
                                                     }
@@ -92,12 +92,12 @@
                                         "domain-creative-suites"
                                     ]
                     },
-    "risk_level":  "code-free-c6-organism-ecology-readiness",
-    "research_gate":  "C4 and C5 are verified exact prerequisites. Thirty-eight focused prototype tests and five C6-specific read-only desktop receipt bindings are bounded non-closure evidence. Whole-context review corrects the hostile count from 68 to 82, moves applicability before comparison, and adds explicit reproduction/development/heredity. C6 remains incomplete and this gate grants no source, product ontology, physiology constants, runtime, visuals, promotion or Forge-port authority.",
-    "authority_lane":  "Owner-authorized C6 semantic/construction and organism-ecology reconciliation and capability-free readiness only. Exact dependencies verified C4 and C5. Retain corrected C6 prerequisite evidence as non-closure evidence. No C6 implementation source, C3B, C7, broad G1 closure, runtime, product ontology or vocabulary, solver or AI generation, geometry, assets, animation, renderer, visual-quality claim, physiology or content constants, filesystem, network, process, Companion, Greenfield, promotion authority or Kernel mutation.",
-    "context_health":  "C5 is verified, complete and recorded after both registered closure gates. C6 is the sole executing/active cursor for code-free reconciliation only. The corrected plan now distinguishes body-plan family from expression, biological sex from reproductive role/caste/gender/social role, and positive heredity/development from H6 reproducibility. Current prototypes remain partial non-closure evidence.",
+    "risk_level":  "capability-free-c6-body-plan-structure-implementation",
+    "research_gate":  "The corrected 82-ID C6 readiness record, independent schema/test/governance reviews, and registered gate run-818500121b3f4958ac093b105a7fe61b pass. V1 freezes family versus expression identity, coordinate-free graph semantics, 18 test groups, exact resources, three controls and one consumer. This grants only the bounded body-plan package, not broader biology or representation.",
+    "authority_lane":  "Owner-authorized capability-free C6 body-plan family/topology V1 test-first implementation only. Exact dependencies verified C4 and C5. Authorizes the new body-plan-structure crate, one additive macro-lineage-binding family-reference validator, exact tests, governance projections and verification for this package. No ecology realization, physiology, reproduction, heredity, development, sex or dimorphism applicability, caste, species, individual or population semantics, personhood, product ontology, solver or AI generation, geometry, proportions, pose, assets, animation, renderer, visual-quality claim, runtime, filesystem, network, process, Companion, Greenfield, C7, broad G1 closure, promotion authority or Kernel mutation.",
+    "context_health":  "C4 and C5 remain verified prerequisites. C6 is the sole active item. Body-plan V1 passes the focused 17+1 matrix, portability classifications, module governance and independent review. One registered full gate remains before recording and stopping; all later C6 packages and C7 remain gated.",
     "stage_context":  {
-                          "stage_id":  "c6-reconciliation-readiness",
+                          "stage_id":  "c6-body-plan-structure-test-first-implementation",
                           "macro_sources":  [
                                                 "docs/canonical-system/MASTER_PROGRAM.json",
                                                 "docs/canonical-system/MASTER_CLOSURE_REGISTER.md",
@@ -115,7 +115,8 @@
                                                  "C4 and C5 are verified and complete; C6 is the sole active item for code-free reconciliation/readiness. C7, broad G1-CLOSEOUT and R1 remain gated.",
                                                  "The five current C6 prototype seams pass 38 focused tests but prove only generic semantic construction, physical opportunity, hypothetical lineage binding and structural evidence completeness.",
                                                  "Physical opportunity is owned by C3 and is not an ecological niche; representation, geometry, animation and visual quality remain C7-owned.",
-                                                 "The smallest prospective implementation is a coordinate-free body-plan family/topology contract with humanoid and radically nonhuman design controls, two lawful expressions of one family, and a third withheld-morphology negative-transfer control; source remains separately owner-gated."
+                                                 "Owner authorization now releases only the coordinate-free body-plan family/topology V1 package; every later C6 package, C7, broad closeout and runtime remain gated.",
+                                                 "The production full gate now invokes the C6 readiness verifier, its hostile fixtures and the C5-to-C6 route; run-818500121b3f4958ac093b105a7fe61b passed that corrected orchestration."
                                              ],
                           "micro_sources":  [
                                                 "apps/forge-desktop/src-tauri/MODULE.md",
@@ -127,14 +128,19 @@
                                                 "crates/person-form-eligibility/MODULE.md",
                                                 "tools/g1-c6-successor-route.ps1",
                                                 "tools/verify-g1-c6-closure-readiness.ps1",
-                                                "tools/test-g1-c6-closure-readiness.ps1"
+                                                "tools/test-g1-c6-closure-readiness.ps1",
+                                                "contracts/body-plan-structure-contract.md",
+                                                "docs/canonical-system/G1_C6_BODY_PLAN_STRUCTURE_IMPLEMENTATION_READINESS.md",
+                                                "tools/verify-g1-c6-body-plan-structure-readiness.ps1",
+                                                "tools/test-g1-c6-body-plan-structure-readiness.ps1"
                                             ],
                           "micro_findings":  [
                                                  "Focused counts are exact: semantic-construction 14, organism-niche-binding 5, niche-graph-binding 7, macro-lineage-binding 6 and person-form-eligibility 6.",
                                                  "Five C6-specific desktop ProofReceipt bindings pass within a 17-test read-only receipt replay; this is not runtime integration.",
                                                  "The niche-graph result is a C3 physical opportunity precursor, the lineage body-plan reference is opaque, and person-form output is structural completeness only.",
                                                  "Eighty-two exact hostile IDs cover evidence, ecology, anatomy, physiology, identity, evolution, ecomorphs, capacities, comparative eligibility, applicable variation, aging, end-to-end authority and reproduction/development/heredity.",
-                                                 "Registered run-fcbfd6e3df844cd2b3ece02c48ba9e5c passed the corrected full Forge gate in 833406 ms; C6 source, Forge port, promotion, runtime and visual authority remain withheld."
+                                                 "Three independent reviews froze family versus expression identity, a graph rather than universal tree, exact homology/presence/cardinality/symmetry semantics, 18 test groups, engineering resource bounds and one macro-lineage consumer.",
+                                                 "Registered run-818500121b3f4958ac093b105a7fe61b passed the corrected production gate in 788754 ms with the C6 readiness lanes present; body-plan source is authorized but not yet created."
                                              ]
                       },
     "visual_quality_gate":  {
@@ -196,70 +202,70 @@
                                                       }
                                                   ],
                               "expensive_execution_planned":  false,
-                              "unresolved_risk":  "A future C6 implementation could generalize the bounded humanoid mannequin, conflate biological and identity concepts, or infer culture and permissions from biology.",
-                              "expected_information_gain":  "The next useful step is focused verification of the corrected 82-case readiness contract; implementation information gain begins only after its separate source transition.",
-                              "estimated_cost":  "Readiness verification is bounded; C6 implementation cost remains unknown until the first separately authorized source package is measured.",
-                              "regression_guard":  "No C6 source, C7 source, broad G1 closure, runtime controller, product permission, Companion, Greenfield, visual asset or Forge-port mutation.",
-                              "stop_condition":  "Stop before C6 product-source mutation; the first source candidate remains a separate owner-authorized transition after readiness verification.",
-                              "final_integration_gate":  "Registered full gate run-fcbfd6e3df844cd2b3ece02c48ba9e5c passed in 833406 ms after the corrected canonical projections were refreshed; an earlier outer-runner interruption run-5a739eaaefc940359fccb610bbf3ead9 is retained as failed evidence."
+                              "unresolved_risk":  "The V1 contract could still encode a hidden root/tree, expand compressed cardinality unsafely, bind expression identity as lineage identity, or leak later biology/geometry authority unless the 18 test groups fail closed.",
+                              "expected_information_gain":  "Typed and in-memory fixtures will show whether one small graph contract can admit humanoid, radial and withheld serial controls while rejecting forced transfer and label leakage before integrated execution.",
+                              "estimated_cost":  "One small Rust crate, one additive consumer and focused portability checks; measured total cost remains unknown until the package gate completes.",
+                              "regression_guard":  "No later C6 biology, C7 source, broad G1 closure, runtime controller, product permission, Companion, Greenfield, visual asset or Forge-port mutation.",
+                              "stop_condition":  "Stop after the body-plan structure result and full gate; do not activate organism identity, ecology, physiology, reproduction, variation applicability or C7.",
+                              "final_integration_gate":  "Pre-source registered full gate run-818500121b3f4958ac093b105a7fe61b passed in 788754 ms with C6 readiness and route checks inside the production orchestration."
                           },
     "exit_criteria":  [
                           {
-                              "id":  "c6-exact-dependencies",
-                              "label":  "C6 depends exactly on verified C4 and C5 evidence without importing C7, runtime, culture, product-policy or permission authority.",
+                              "id":  "c6-body-plan-contract-readiness",
+                              "label":  "Family/expression identity, typed graph semantics, 18 tests, exact resources, fixtures, consumer, rollback and exclusions are frozen before source.",
                               "status":  "verified",
                               "evidence_ids":  [
-                                                   "docs/canonical-system/G1_C6_CLOSURE_READINESS.md"
+                                                   "contracts/body-plan-structure-contract.md",
+                                                   "docs/canonical-system/G1_C6_BODY_PLAN_STRUCTURE_IMPLEMENTATION_READINESS.md"
                                                ]
                           },
                           {
-                              "id":  "c6-whole-context-reconciliation",
-                              "label":  "Body plan, niche, physiology, reproduction, heredity, development, population, variation, comparison, aging and nonvisual intent are ordered without humanoid or binary default leakage.",
+                              "id":  "c6-body-plan-test-first-source",
+                              "label":  "The standalone capability-free crate passes all 18 positive and hostile test groups with strict canonical codecs and no partial output.",
                               "status":  "verified",
                               "evidence_ids":  [
-                                                   "docs/canonical-system/G1_C6_CLOSURE_READINESS.md"
+                                                   "crates/body-plan-structure",
+                                                   "docs/canonical-system/G1_C6_BODY_PLAN_STRUCTURE_IMPLEMENTATION_RESULT.md"
                                                ]
                           },
                           {
-                              "id":  "c6-exact-hostile-registry",
-                              "label":  "Exactly 82 hostile identities across 13 domains are frozen and mechanically counted before source.",
+                              "id":  "c6-body-plan-one-consumer",
+                              "label":  "Macro-lineage validates only an exact fully valid family ID while retaining its existing constructor and bytes.",
                               "status":  "verified",
                               "evidence_ids":  [
-                                                   "docs/canonical-system/G1_C6_CLOSURE_READINESS.md",
-                                                   "tools/test-g1-c6-closure-readiness.ps1"
+                                                   "crates/macro-lineage-binding"
                                                ]
                           },
                           {
-                              "id":  "c6-readiness-integration",
-                              "label":  "Canonical registry, proof matrix, roadmap and active handoff agree that code-free readiness is active while C6 implementation remains gated.",
-                              "status":  "verified",
+                              "id":  "c6-body-plan-portability-integration",
+                              "label":  "Focused suites, native/i686/Android classifications, module and route shields, independent review and one registered full gate pass without activating package 3.",
+                              "status":  "in_progress",
                               "evidence_ids":  [
-                                                   "docs/canonical-system/MASTER_PROGRAM.json",
-                                                   "docs/canonical-system/PROOF_MATRIX.md",
-                                                   "context/active/WORKER_BATCH_STATE.json"
+                                                   "tools/verify-g1-c6-body-plan-structure-implementation.ps1"
                                                ]
                           }
                       ],
     "unresolved_risks":  [
-                             "The bounded pelvis-rooted humanoid mannequin could be generalized into a universal organism schema.",
-                             "Biological sex, reproductive role, sexual dimorphism, caste, social role, gender/person identity, capability and personality could be conflated.",
-                             "Culture, player-authored meaning or product permissions could be inferred from morphology, ecology or lineage without explicit authority."
+                             "The bounded humanoid fixture could leak pelvis, root, tree, bilateral or unique-role assumptions into the general contract.",
+                             "A lawful expression or arbitrary nonzero reference could be mistaken for the stable family identity bound by macro-lineage.",
+                             "Compressed cardinality, conditional presence, relation degrees or symmetry positions could expand unboundedly or accept disconnected structure.",
+                             "Sex, caste, species, capability, geometry or representation fields could leak into V1 through labels or reused H2/H3 types."
                          ],
     "evidence_requirements":  [
-                                  "retain exact verified C4 and C5 evidence as C6 inputs without capability transfer",
-                                  "retain all 82 hostile identities and the 13-domain grouped registry",
-                                  "retain a coordinate-free variation seam plus humanoid, radically nonhuman, shared-family expression and withheld-morphology controls",
-                                  "retain explicit reproduction, parentage, heredity, offspring and development work before applicable variation and comparison",
-                                  "require a separate source transition before implementing the first C6 package"
+                                  "implement the exact family and expression records with separate domain identities and canonical ordering",
+                                  "pass all 18 focused groups including H200-H205, label leakage, resource boundaries and atomic failure",
+                                  "retain humanoid, radial five/seven and withheld serial controls without promoting any fixture as product content",
+                                  "bind one exact validated family ID to macro-lineage without changing existing candidate bytes",
+                                  "preserve the no-broader-C6, no-C7, no-runtime and no-Forge-authority boundary"
                               ],
     "verification_plan":  [
-                              "verify the corrected C6 readiness document and all hostile mutations",
-                              "verify exact 82-ID extraction and reject count or identity drift",
-                              "verify C4 and C5 successor routes and retained evidence consumption",
-                              "refresh active canonical projections and verify handoff, record-role and master-program integrity",
-                              "run one registered full Forge gate after the planning correction and keep C6 source gated"
+                              "verify body-plan implementation readiness and route hostiles before source",
+                              "run test-first family, expression, codec, resource and negative-transfer fixtures",
+                              "verify the one macro-lineage consumer plus all five retained C6 prototype suites",
+                              "verify formatting, strict Clippy, modularity, module context, record roles and retained C4/C5/GP3/GP4 routes",
+                              "classify native x64, i686 and Android compile evidence honestly, obtain independent review and run one registered full gate"
                           ],
-    "resume_after":  "Stop at the separately gated first C6 implementation candidate after readiness verification; do not add body-plan or broader C6 source without a new exact authorization.",
+    "resume_after":  "Stop after recording the body-plan structure V1 result; do not activate C6 package 3, broader biology, C7, runtime or Forge port without a new exact authorization.",
     "evidence":  [
                      "GP3 closed cleanly in commit 7f29f6b and registered run-50a8c78043eb46c483f1f655d3793f9b.",
                      "C4V closed cleanly in commit 34f2213 and registered run-fa6334a300e04d409dd5cddb4f22542e.",
@@ -294,7 +300,13 @@
                      "The owner flagged sexual dimorphism before source. Whole-context and independent adversarial review found the two-fixture body-plan intent was valid but variation arrived too late, biological reproduction/heredity lacked a positive package, H6 reproducibility was easy to misread as reproduction, and the published hostile ranges totalled 72 rather than the claimed 68.",
                      "Corrected G1_C6_CLOSURE_READINESS.md freezes 82 exact hostile IDs across 13 domains, a coordinate-free variation-capable body-plan substrate with a withheld-morphology control, and explicit reproduction, development, heredity, applicability, dimorphism/polymorphism, culture-boundary and exact aging work while leaving source separately gated.",
                      "Registered full Forge gate run-f51cc195a0f54ad88beeeb5d809780e9 passed the pre-audit verification scope in 801062 ms against checkpoint SHA-256 1ef8262aeec211b91b0ade71768caefc538a97a6cd888231ec43510e41d05532.",
-                     "An initial outer-runner timeout interrupted run-5a739eaaefc940359fccb610bbf3ead9 after 14692 ms; the correctly bounded replacement run-fcbfd6e3df844cd2b3ece02c48ba9e5c passed the complete corrected verification scope in 833406 ms against checkpoint SHA-256 c69c649cde50f622a51d1df6fbaf3d5adce378fde3b283dbbb1d355e0d210a2d."
+                     "An initial outer-runner timeout interrupted run-5a739eaaefc940359fccb610bbf3ead9 after 14692 ms; the correctly bounded replacement run-fcbfd6e3df844cd2b3ece02c48ba9e5c passed the then-current repository scope in 833406 ms.",
+                     "A governance audit found that the production orchestration omitted the C6 readiness verifier and hostiles. Run-78b4c2ea6ce148c5a3c5349e7c9949db failed on uncommitted protected drift and run-833dd1ec547e443d916e623f6f22831e failed on an unclassified orchestration delta; both fail-closed receipts are retained.",
+                     "The orchestration was explicitly registered in the production gate and reclassified through the retained C4/C5 shields. Run-818500121b3f4958ac093b105a7fe61b then passed in 788754 ms with C6 readiness, hostile and successor-route checks present.",
+                     "The owner continued work after the corrected C6 audit, releasing only body-plan structure V1. Three independent read-only reviews froze the standalone schema, 18 test groups, engineering bounds and one-consumer boundary.",
+                     "Test-first implementation first failed because the body-plan library did not exist, then exposed and corrected recursion, canonical identity, resource preflight, budget-accounting and capability-audit defects before passing.",
+                     "The final focused verifier passes 17 body-plan groups plus one macro-lineage consumer group, strict Clippy, same-host native x64 and i686 execution, and Android ARM64 compile-only classification.",
+                     "Two structurally distinct humanoid expressions share the pinned family identity while retaining distinct expression identities; V1 contains no sex or dimorphism applicability labels."
                  ],
     "verification_receipts":  [
                                   "dependency:gp0-gp1-gp2-gp3-c4v:verified",
@@ -381,7 +393,17 @@
                                   "registered-full-gate:run-f51cc195a0f54ad88beeeb5d809780e9:passed",
                                   "registered-full-gate:run-5a739eaaefc940359fccb610bbf3ead9:failed:outer-runner-interrupted",
                                   "registered-full-gate:run-fcbfd6e3df844cd2b3ece02c48ba9e5c:passed",
-                                  "transition:c5-verified-c6-readiness-activated:recorded"
+                                  "registered-full-gate:run-78b4c2ea6ce148c5a3c5349e7c9949db:failed:protected-uncommitted-drift",
+                                  "registered-full-gate:run-833dd1ec547e443d916e623f6f22831e:failed:unclassified-orchestration-delta",
+                                  "registered-full-gate:run-818500121b3f4958ac093b105a7fe61b:passed",
+                                  "owner-authorization:c6-body-plan-structure-v1:released",
+                                  "independent-review:c6-body-plan-schema-test-governance:accepted",
+                                  "transition:c5-verified-c6-readiness-activated:recorded",
+                                  "test-first:c6-body-plan-library-absent:failed-as-expected",
+                                  "focused:c6-body-plan-matrix:17-plus-1:passed",
+                                  "platform:c6-body-plan-i686:same-host-execution:passed",
+                                  "platform:c6-body-plan-android-aarch64:compile-only:passed",
+                                  "independent-review:c6-body-plan-source-matrix-integration:accepted"
                               ],
     "metrics":  {
                     "token_cost":  {
@@ -390,9 +412,9 @@
                                    },
                     "elapsed_time":  {
                                          "status":  "measured",
-                                         "value":  "833406 ms",
-                                         "receipt":  "registered-full-gate:run-fcbfd6e3df844cd2b3ece02c48ba9e5c:passed"
+                                         "value":  "788754 ms",
+                                         "receipt":  "registered-full-gate:run-818500121b3f4958ac093b105a7fe61b:passed"
                                      }
                 },
-    "transition":  "C4 verified and recorded -\u003e C5 capability-free closure verified, complete and recorded -\u003e separate owner authorization activates code-free C6 reconciliation/readiness as the sole cursor -\u003e C6 source, runtime, visuals, product ontology, promotion and Forge port remain gated"
+    "transition":  "C4 verified and recorded -\u003e C5 capability-free closure verified and recorded -\u003e corrected C6 readiness verified inside the production gate -\u003e body-plan family/topology V1 focused implementation verified -\u003e registered full-gate evidence pending -\u003e all later C6, C7, runtime, promotion and Forge port remain gated"
 }

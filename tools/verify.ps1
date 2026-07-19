@@ -29,6 +29,14 @@ Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-g1-c6-closure-r
 if (!$?) { throw 'G1 C6 closure readiness hostile fixtures failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-g1-c5-current-successor-route.ps1'
 if (!$?) { throw 'G1 C5 historical and C6 current successor-route fixtures failed.' }
+Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-c6-body-plan-structure-readiness.ps1'
+if (!$?) { throw 'G1 C6 body-plan structure implementation readiness verification failed.' }
+Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-g1-c6-body-plan-structure-readiness.ps1'
+if (!$?) { throw 'G1 C6 body-plan structure readiness hostile fixtures failed.' }
+Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-g1-c6-current-successor-route.ps1'
+if (!$?) { throw 'G1 C6 authorized successor-route fixtures failed.' }
+Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-c6-body-plan-structure-implementation.ps1'
+if (!$?) { throw 'G1 C6 body-plan structure implementation verification failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-atlas.ps1'
 if (!$?) { throw 'Project Atlas validation failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-operating-system.ps1'
