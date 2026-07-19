@@ -6,6 +6,8 @@ from pathlib import Path
 
 MODULE=Path(__file__).with_name("verify-g1-c4-external-receipt.py")
 spec=importlib.util.spec_from_file_location("c4verify",MODULE);v=importlib.util.module_from_spec(spec);spec.loader.exec_module(v)
+GENERATOR=Path(__file__).with_name("generate-g1-c4-external-request.py")
+generator_spec=importlib.util.spec_from_file_location("c4generate",GENERATOR);generator=importlib.util.module_from_spec(generator_spec);generator_spec.loader.exec_module(generator)
 def b64(raw): return base64.b64encode(raw).decode()
 def hashed(value,name): value[name]=v.digest(value);return value
 def fixtures():
@@ -38,6 +40,13 @@ def reject(name,mutate,attested=True):
     except Exception:return
     raise AssertionError(f"hostile admitted: {name}")
 def main():
+    commit="HEAD"
+    if v.tree_manifest(commit)!=generator.tree_sha(commit):raise AssertionError("Python tracked-tree manifest calculators diverged")
+    for module in (v,generator):
+        if module.canonical_tree_bytes(b"row one\nrow two\n")!=b"row one\nrow two" or module.canonical_tree_bytes(b"row one\r\nrow two\r\n")!=b"row one\nrow two" or module.canonical_tree_bytes(b"row with space \n")!=b"row with space ":raise AssertionError("tracked-tree line normalization changed")
+        for hostile in (b"missing terminator",b"lone\rreturn\n"):
+            try:module.canonical_tree_bytes(hostile);raise AssertionError("noncanonical tracked-tree bytes admitted")
+            except ValueError:pass
     request,result=fixtures();local={"source_commit":request["source"]["source_commit"],"tracked_tree_manifest_sha256":request["source"]["tracked_tree_manifest_sha256"],"bounded_source_manifest_sha256":request["source"]["bounded_source_manifest_sha256"],"semantic_receipt_sha256":request["semantic"]["expected_sha256"]};v.validate_frozen_request(request,local,False,verify_git=False);assert v.validate(request,result,True)["classification"]=="independent_platform_execution"
     cases={
       "independence.self-asserted-host":lambda q,r:r["provenance"].update(hosted_runner=False),
@@ -88,5 +97,8 @@ def main():
     for required in ("--deny-self-hosted-runners","--source-digest","--signer-workflow","--signer-digest"):
         if required not in verifier:raise AssertionError(f"attestation policy missing: {required}")
     if "--custom-trusted-root" in verifier:raise AssertionError("caller-selected trust root returned")
+    for script in ("verify-g1-c4-hierarchy-history-implementation.ps1","verify-g1-c4-platform-observation-receipt.ps1"):
+        text=(Path(__file__).with_name(script)).read_text(encoding="utf-8")
+        if "git -c core.quotePath=true ls-tree -r --full-tree" not in text or '$treeLines-join"`n"' not in text:raise AssertionError(f"PowerShell tracked-tree canonicalization changed: {script}")
     print(f"C4 external receipt importer verified: {len(cases)+1} hostile cases and pinned workflow controls pass.")
 if __name__=="__main__":main()

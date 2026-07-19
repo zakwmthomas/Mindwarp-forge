@@ -3,7 +3,7 @@
     "receipt_id":  "G1-C4-LOCAL-PLATFORM-OBSERVATIONS",
     "semantic_receipt_sha256":  "263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996",
     "source_commit":  "f0c3c4f127fd0c86c02c901ba199f9a385c59bee",
-    "tracked_tree_manifest_sha256":  "3b36a8f4950083ccf6fc7b507ccd893d961714e2fc4b4edb7d058315ec1f9740",
+    "tracked_tree_manifest_sha256":  "9a8e556c98606d931e8a21002d2d95003436788ed57fda6e2b47ab6ca2e68a3f",
     "bounded_source_manifest_sha256":  "36f818ffc5279c981d211d589ba6d1b379757a43fab66ae5393747299641c31a",
     "rustc":  "rustc 1.97.0 (2d8144b78 2026-07-07)\nbinary: rustc\ncommit-hash: 2d8144b7880597b6e6d3dfd63a9a9efae3f533d3\ncommit-date: 2026-07-07\nhost: x86_64-pc-windows-msvc\nrelease: 1.97.0\nLLVM version: 22.1.6",
     "cargo":  "cargo 1.97.0 (c980f4866 2026-06-30)",

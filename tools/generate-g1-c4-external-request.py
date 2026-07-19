@@ -18,9 +18,15 @@ def canonical(value: object) -> bytes:
 def digest(value: object) -> str:
     return hashlib.sha256(canonical(value)).hexdigest()
 
+def canonical_tree_bytes(raw: bytes) -> bytes:
+    raw = raw.replace(b"\r\n", b"\n")
+    if b"\r" in raw or not raw.endswith(b"\n"):
+        raise ValueError("git ls-tree output is not canonical line-delimited data")
+    return raw[:-1]
+
 def tree_sha(commit: str) -> str:
-    tree = subprocess.check_output(["git", "ls-tree", "-r", "--full-tree", commit], cwd=ROOT).decode().rstrip()
-    return hashlib.sha256(tree.encode()).hexdigest()
+    tree = subprocess.check_output(["git", "-c", "core.quotePath=true", "ls-tree", "-r", "--full-tree", commit], cwd=ROOT)
+    return hashlib.sha256(canonical_tree_bytes(tree)).hexdigest()
 
 def manifest_sha(commit: str) -> str:
     rows=[]
@@ -48,13 +54,16 @@ def main() -> None:
     bounded=manifest_sha(commit)
     if bounded != local["bounded_source_manifest_sha256"]:
         raise SystemExit("local receipt does not bind the external-run source surface")
+    tracked=tree_sha(commit)
+    if tracked != local["tracked_tree_manifest_sha256"]:
+        raise SystemExit("local receipt does not bind the external-run tracked tree")
     challenge=secrets.token_hex(32)
     request={
       "schema_version":1,"protocol_id":"G1-C4-INDEPENDENT-PLATFORM-V1",
       "request_id":f"g1-c4-{challenge[:16]}","challenge":challenge,
       "created_utc":datetime.now(timezone.utc).isoformat().replace("+00:00","Z"),
       "source":{"repository_id":"mindwarp-forge","source_commit":commit,
-        "tracked_tree_manifest_sha256":tree_sha(commit),"bounded_source_manifest_sha256":bounded,
+        "tracked_tree_manifest_sha256":tracked,"bounded_source_manifest_sha256":bounded,
         "fixture_manifest_sha256":hashlib.sha256((ROOT/'tools/fixtures/c4-hierarchy-history-receipt/Cargo.toml').read_bytes()).hexdigest(),
         "fixture_lock_sha256":hashlib.sha256((ROOT/'tools/fixtures/c4-hierarchy-history-receipt/Cargo.lock').read_bytes()).hexdigest(),"dependency_graph_sha256":dependency_sha()},
       "semantic":{"receipt_id":"G1-C4-HIERARCHY-HISTORY","expected_sha256":local["semantic_receipt_sha256"],"encoding":"lowercase_hex","max_decoded_bytes":65536},

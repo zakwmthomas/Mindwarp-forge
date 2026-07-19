@@ -13,73 +13,73 @@
                                                        "stage_id":  "c4-independent-platform-gate",
                                                        "content_sha256":  "f58fbd02ac9761d1c06bf41990a59ed0a92e965dcbc27906f4d7c165cfa0dc2a",
                                                        "review_disposition":  "revised",
-                                                       "review_note":  "Reviewed all handoff sections against the active substage."
+                                                       "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
                                                    },
                                      "next_action":  {
                                                          "stage_id":  "c4-independent-platform-gate",
                                                          "content_sha256":  "9d78815c02bb56d385f6c3f1f592651738655b81d77abdfc2eb437b794780ae9",
                                                          "review_disposition":  "revised",
-                                                         "review_note":  "Reviewed all handoff sections against the active substage."
+                                                         "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
                                                      },
                                      "stage_context":  {
                                                            "stage_id":  "c4-independent-platform-gate",
                                                            "content_sha256":  "d0b364c5ab9548b767c049abdef7fbd15aea1f8f70fe86e36956a7cafa565ab5",
                                                            "review_disposition":  "revised",
-                                                           "review_note":  "Reviewed all handoff sections against the active substage."
+                                                           "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
                                                        },
                                      "visual_quality_gate":  {
                                                                  "stage_id":  "c4-independent-platform-gate",
                                                                  "content_sha256":  "cfb3f4b0a636e0d5eff9dd88e562b4a427d3fadbe03f9349ac516e38adac2dd2",
                                                                  "review_disposition":  "revised",
-                                                                 "review_note":  "Reviewed all handoff sections against the active substage."
+                                                                 "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
                                                              },
                                      "simulation_ladder":  {
                                                                "stage_id":  "c4-independent-platform-gate",
                                                                "content_sha256":  "8080332b63e6a2a7002598fe4e3224ff982c47db70c9498132bf3bcd12d80b06",
                                                                "review_disposition":  "revised",
-                                                               "review_note":  "Reviewed all handoff sections against the active substage."
+                                                               "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
                                                            },
                                      "unresolved_risks":  {
                                                               "stage_id":  "c4-independent-platform-gate",
                                                               "content_sha256":  "4cf3cd1079979c3e739367d710f054cc8bbfce33188487547ac61ff57304d27a",
                                                               "review_disposition":  "revised",
-                                                              "review_note":  "Reviewed all handoff sections against the active substage."
+                                                              "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
                                                           },
                                      "evidence_requirements":  {
                                                                    "stage_id":  "c4-independent-platform-gate",
                                                                    "content_sha256":  "06e7a714e1bfc359ca9fc2661906f0d92aeea77fe547d108f770667a62c3d9d2",
                                                                    "review_disposition":  "revised",
-                                                                   "review_note":  "Reviewed all handoff sections against the active substage."
+                                                                   "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
                                                                },
                                      "verification_plan":  {
                                                                "stage_id":  "c4-independent-platform-gate",
                                                                "content_sha256":  "8a81c24807c04878e8370ad782858ab2d58ce14dd677563b3284f1654d873aa9",
                                                                "review_disposition":  "revised",
-                                                               "review_note":  "Reviewed all handoff sections against the active substage."
+                                                               "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
                                                            },
                                      "resume_after":  {
                                                           "stage_id":  "c4-independent-platform-gate",
                                                           "content_sha256":  "91ff7c09a948de0f53a11009f349557946af6a692096ffa798c58e0cf19dcb3d",
                                                           "review_disposition":  "revised",
-                                                          "review_note":  "Reviewed all handoff sections against the active substage."
+                                                          "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
                                                       },
                                      "evidence":  {
                                                       "stage_id":  "c4-independent-platform-gate",
-                                                      "content_sha256":  "f60a5d4c7e048f6a61b0367442b060058527b683232a578334798b41c4bab2e3",
+                                                      "content_sha256":  "6a97d6fd1da35a15985240d2cb1d40c21909247caf2c55464fa736a355101b86",
                                                       "review_disposition":  "revised",
-                                                      "review_note":  "Reviewed all handoff sections against the active substage."
+                                                      "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
                                                   },
                                      "verification_receipts":  {
                                                                    "stage_id":  "c4-independent-platform-gate",
-                                                                   "content_sha256":  "6e3eac9a8cb2788954e2375776c1901ebd633ecebae569e364f6400b0884471e",
+                                                                   "content_sha256":  "5ba979f64ab9a026dceda52d079268f0ac515e042be74bf83646b610b24fc3d7",
                                                                    "review_disposition":  "revised",
-                                                                   "review_note":  "Reviewed all handoff sections against the active substage."
+                                                                   "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
                                                                },
                                      "transition":  {
                                                         "stage_id":  "c4-independent-platform-gate",
                                                         "content_sha256":  "0ab96ffbfaa431a0e9aa4d20a2da0d294d1e87d3b4bd8a4504bb5ba27f213d9e",
                                                         "review_disposition":  "revised",
-                                                        "review_note":  "Reviewed all handoff sections against the active substage."
+                                                        "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
                                                     }
                                  },
     "consecutive_no_progress_limit":  1,
@@ -244,7 +244,7 @@
                      "C4 local implementation verifier passed 58 core, 8 receipt and 8 portability hostile owners with semantic SHA-256 263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996.",
                      "Two fresh native processes and same-host Windows i686 execution emitted identical semantic bytes; aarch64-linux-android compiled only. None is independent second-platform execution.",
                      "The bounded 27-path C4 implementation, fixture and verification source manifest SHA-256 is 36f818ffc5279c981d211d589ba6d1b379757a43fab66ae5393747299641c31a.",
-                     "Local platform observations bind clean source commit f0c3c4f127fd0c86c02c901ba199f9a385c59bee and complete tracked-tree manifest SHA-256 3b36a8f4950083ccf6fc7b507ccd893d961714e2fc4b4edb7d058315ec1f9740.",
+                     "Local platform observations bind clean source commit f0c3c4f127fd0c86c02c901ba199f9a385c59bee and canonical LF-normalized tracked-tree manifest SHA-256 9a8e556c98606d931e8a21002d2d95003436788ed57fda6e2b47ab6ca2e68a3f.",
                      "The locked portable C4 fixture, fresh request generator, hosted Ubuntu workflow, cryptographically pinned importer, 36 external hostiles and 15 exact-byte retained-replay hostiles are locally verified; no independent result has been imported."
                  ],
     "verification_receipts":  [
@@ -267,7 +267,7 @@
                                   "receipt:c4-semantic-sha256:263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996",
                                   "receipt:c4-bounded-source-manifest-sha256:36f818ffc5279c981d211d589ba6d1b379757a43fab66ae5393747299641c31a",
                                   "receipt:c4-clean-source-commit:f0c3c4f127fd0c86c02c901ba199f9a385c59bee",
-                                  "receipt:c4-tracked-tree-manifest-sha256:3b36a8f4950083ccf6fc7b507ccd893d961714e2fc4b4edb7d058315ec1f9740",
+                                  "receipt:c4-tracked-tree-manifest-sha256:9a8e556c98606d931e8a21002d2d95003436788ed57fda6e2b47ab6ca2e68a3f",
                                   "platform:c4-i686:same-host-second-architecture:passed",
                                   "platform:c4-android-aarch64:compile-only:passed",
                                   "gate:c4-external-importer-hostiles:pass:36-plus-workflow-controls",

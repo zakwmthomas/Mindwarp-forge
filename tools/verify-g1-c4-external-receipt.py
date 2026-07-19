@@ -50,9 +50,13 @@ def source_manifest(commit):
         if not relative or "\\" in relative or relative.startswith("/") or any(part in (".","..","") for part in relative.split("/")): raise ValueError("committed bounded path is noncanonical")
         blob=subprocess.check_output(["git","rev-parse",f"{commit}:{relative}"],cwd=ROOT,text=True).strip();rows.append(f"{relative}:{blob}")
     return hashlib.sha256("\n".join(rows).encode()).hexdigest()
+def canonical_tree_bytes(raw):
+    raw=raw.replace(b"\r\n",b"\n")
+    if b"\r" in raw or not raw.endswith(b"\n"): raise ValueError("git ls-tree output is not canonical line-delimited data")
+    return raw[:-1]
 def tree_manifest(commit):
-    raw=subprocess.check_output(["git","ls-tree","-r","--full-tree",commit],cwd=ROOT).decode().rstrip()
-    return hashlib.sha256(raw.encode()).hexdigest()
+    raw=subprocess.check_output(["git","-c","core.quotePath=true","ls-tree","-r","--full-tree",commit],cwd=ROOT)
+    return hashlib.sha256(canonical_tree_bytes(raw)).hexdigest()
 def source_artifact_bindings(commit):
     manifest=subprocess.check_output(["git","show",f"{commit}:tools/fixtures/c4-hierarchy-history-receipt/Cargo.toml"],cwd=ROOT)
     lock=subprocess.check_output(["git","show",f"{commit}:tools/fixtures/c4-hierarchy-history-receipt/Cargo.lock"],cwd=ROOT)

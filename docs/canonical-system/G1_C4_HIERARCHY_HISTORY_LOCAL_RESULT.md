@@ -29,7 +29,12 @@ The bounded 27-path implementation, fixture and verification source manifest SHA
 The retained platform observations bind clean source commit
 `f0c3c4f127fd0c86c02c901ba199f9a385c59bee` and complete tracked-tree
 manifest SHA-256
-`3b36a8f4950083ccf6fc7b507ccd893d961714e2fc4b4edb7d058315ec1f9740`.
+`9a8e556c98606d931e8a21002d2d95003436788ed57fda6e2b47ab6ca2e68a3f`.
+This corrects the earlier Windows `Out-String` CRLF serialization
+`3b36a8f4950083ccf6fc7b507ccd893d961714e2fc4b4edb7d058315ec1f9740` to the
+platform-neutral UTF-8 `git -c core.quotePath=true ls-tree` rows joined with LF
+and no terminal newline. The same 908 tree records, source commit, bounded
+source, observations, semantic evidence and authority boundary are unchanged.
 Two separately launched native Windows x64 processes emitted identical bytes.
 The same bytes also executed on Windows i686 and are classified only as
 `same_host_second_architecture`. The receipt and dependencies compiled for
