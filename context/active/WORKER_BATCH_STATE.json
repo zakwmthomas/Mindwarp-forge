@@ -23,7 +23,7 @@
                                                      },
                                      "stage_context":  {
                                                            "stage_id":  "c5-registered-closure-recorded",
-                                                           "content_sha256":  "edd0f2548fec568aac013ee326943bc44560ef955ca1fb817ee6071f16d39ad1",
+                                                           "content_sha256":  "c5019edff5189df2291e33c145b3783577d2dbd97bfbbe763573b59cc19ada2c",
                                                            "review_disposition":  "revised",
                                                            "review_note":  "Reviewed all handoff sections against the active substage."
                                                        },
@@ -35,7 +35,7 @@
                                                              },
                                      "simulation_ladder":  {
                                                                "stage_id":  "c5-registered-closure-recorded",
-                                                               "content_sha256":  "f0449bdd7d8b32b082fb7a89ff7d2151c59f8cee5f027dd3714cc91201b2fe65",
+                                                               "content_sha256":  "1b213446bcd7758bf1f83c271eeabac18d244618adaa27f9090e61d23f60c80a",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
@@ -106,14 +106,15 @@
                                                 "docs/canonical-system/G1_C5_MULTI_DOMAIN_FIDELITY_RESULT.md",
                                                 "docs/canonical-system/G1_C5_CLOSURE_READINESS.md",
                                                 "docs/canonical-system/G1_C5_LOCAL_PLATFORM_OBSERVATIONS.json",
-                                                "docs/canonical-system/G1_C5_INDEPENDENT_PLATFORM_EXECUTION.json"
+                                                "docs/canonical-system/G1_C5_INDEPENDENT_PLATFORM_EXECUTION.json",
+                                                "docs/canonical-system/G1_C5_CLOSURE_RESULT.md"
                                             ],
                           "macro_findings":  [
                                                  "The owner retained the canonical broad route C4 then C5 then C6 then C7 then G1-CLOSEOUT then R1.",
                                                  "C4 is verified and complete; C5 is the sole active item. C6-C7, broad G1-CLOSEOUT and R1 remain unchanged and gated.",
                                                  "The current C5 closure requires exactly generation, simulation, AI, physics, animation, audio, rendering and streaming from one shared significance truth.",
                                                  "C5 portability is verified only for the isolated capability-free game-facing proof contract; Forge remains the PC-first factory and was not ported.",
-                                                 "The read-only ProofReceipt binding is independently accepted; the present substage may only reconcile exact registered full-gate routing without modifying frozen C4 proof bytes or activating C5 closure, runtime behavior or C6."
+                                                 "The read-only ProofReceipt binding and exact retained-successor classification are independently accepted; C5 closure evidence is recorded without modifying frozen game-facing proof bytes or activating runtime behavior or C6."
                                              ],
                           "micro_sources":  [
                                                 "apps/forge-desktop/src-tauri/MODULE.md",
@@ -135,8 +136,8 @@
                                                  "The existing legacy significance/scheduler receipt test remains intact; the C5 test separately binds the strict 38-field CBOR evidence.",
                                                  "Focused desktop tests, the complete 43-test desktop suite, ProofReceipt verification, scheduler readiness verification, module-context verification and independent hostile review pass.",
                                                  "Four registered full-gate diagnostics exposed stale exact successor tuples; permissive wildcard repairs were rejected and reverted after hostile review.",
-                                                 "The exact adapter preserves all 27 historical bounded C4 blobs at closure snapshot 51a67b2, classifies only the pinned additive outer verify.ps1 delta, and authenticates the current C5 tuple through strict hostile-tested evidence.",
-                                                 "Registered measured full gate run-87b9301f9bb54b2d9b72767643c7ed9b passed in 1106066 ms. C5 remains open only for a separately bounded registered-closure transition; C6 and runtime authority remain withheld."
+                                                 "The exact adapters preserve all historical C4 proof blobs and the C5 source snapshot, classify two evidence-only C5 transitions plus one exact closure-orchestration delta, and authenticate the recorded C5 tuple through strict hostile-tested evidence.",
+                                                 "Registered measured full gate run-87b9301f9bb54b2d9b72767643c7ed9b passed in 1106066 ms. C5 capability-free closure is recorded as the sole waiting cursor; C6, Forge port, promotion and runtime authority remain withheld."
                                              ]
                       },
     "visual_quality_gate":  {
@@ -183,17 +184,27 @@
                                                       },
                                                       {
                                                           "tier":  "in_memory_fixture",
-                                                          "result":  "The retained capability-free prototype passes 18 focused tests; the exact readiness and forged-route suites pass without authorizing implementation source.",
-                                                          "evidence":  "tools/verify-g1-c5-closure-readiness.ps1"
+                                                          "result":  "The exact retained C5 source passes 90 Rust tests, strict Clippy, all 92 hostile mappings, ten pressure scenarios and fresh x64/i686/Android-classified semantic replay.",
+                                                          "evidence":  "tools/invoke-g1-c5-retained-implementation.ps1"
+                                                      },
+                                                      {
+                                                          "tier":  "external_execution",
+                                                          "result":  "GitHub-hosted Linux run 29678602236 reproduced the exact semantic receipt in two overlapping native processes; strict attestation replay preserves evidence-only authority.",
+                                                          "evidence":  "docs/canonical-system/G1_C5_INDEPENDENT_PLATFORM_EXECUTION.json"
+                                                      },
+                                                      {
+                                                          "tier":  "bounded_integrated_pc",
+                                                          "result":  "Read-only ProofReceipt integration, exact C4/C5 successor adapters, closure-result hostiles and registered full gate run-87b9301f9bb54b2d9b72767643c7ed9b pass without activating C6.",
+                                                          "evidence":  "docs/canonical-system/G1_C5_CLOSURE_RESULT.md"
                                                       }
                                                   ],
                               "expensive_execution_planned":  false,
-                              "unresolved_risk":  "Route reconciliation is verified, but the present substage does not authorize C5 closure, promotion, C6 activation, runtime behavior or product-policy selection.",
-                              "expected_information_gain":  "The next bounded transition will determine whether the complete C5 evidence set is admissible for registered closure without broadening authority.",
-                              "estimated_cost":  "No further execution at this gate; implementation and portability costs begin only after explicit authorization.",
+                              "unresolved_risk":  "A later C6 transition could overread recorded C5 evidence unless the exact owner gate and capability exclusions remain fail-closed.",
+                              "expected_information_gain":  "No additional C5 execution is required after the post-transition registered gate; the next distinct information gain belongs to a separately authorized C6 readiness audit.",
+                              "estimated_cost":  "C5 closure replay cost is measured by the registered gate; C6 cost remains unknown until separately authorized.",
                               "regression_guard":  "No C3B, C6-C7, broad G1 closure, runtime controller or executor, cache, storage, filesystem, network, process, Companion, Greenfield, visual asset or Kernel mutation.",
-                              "stop_condition":  "Stop before source if any named domain, fairness obligation, fallback rule, authority exclusion or deterministic hostile case remains ambiguous.",
-                              "final_integration_gate":  "Registered measured full gate run-87b9301f9bb54b2d9b72767643c7ed9b passed in 1106066 ms after exact successor-route reconciliation."
+                              "stop_condition":  "Stop before any C6, runtime, cache, product-weight, promotion or Forge-port mutation without a separate exact owner-authorized transition.",
+                              "final_integration_gate":  "Registered measured full gate run-87b9301f9bb54b2d9b72767643c7ed9b passed in 1106066 ms before the recorded transition; a post-transition registered gate is required before final handoff."
                           },
     "exit_criteria":  [
                           {

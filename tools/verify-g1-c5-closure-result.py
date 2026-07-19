@@ -9,6 +9,7 @@ AUTHORITY = "Owner-authorized recorded C5 significance/scheduler capability-free
 SOURCE = "9e48dd117c2b22b62bd31dba15c10c3a9bf4b100"
 TREE = "cfc58943f96fed768f77ac2a6e3256aa13d59d6c0edbe24f13cd967315038636"
 BOUNDED = "9430bc530ba39403803a05fd99a9bc5c257472c2f320921ca242b51344947ecb"
+SUCCESSOR = "e8e79816668d1f49167a895c068de61ad363784483534c184462066948eb1658"
 SEMANTIC = "88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb"
 REQUEST = "28b24d548656874a3c4f6f6bba1a40a0a716ac0603e9e38c40318c7d932bc58f"
 RESULT = "4dd77d3b16927644af2c9bb1b74f76e1dd7cc279a09a8297d10738a0efce1bf4"
@@ -78,10 +79,10 @@ def verify(root: Path) -> None:
         root/"docs/project-atlas/ROADMAP.md",
     ]
     result_text = docs[0].read_text(encoding="utf-8-sig")
-    for token in ("Android ARM64 is honestly classified compile-only","not Forge","C6 remains proposed, gated and inactive"):
+    for token in ("Status: **verified, complete and recorded.**","Android ARM64 is honestly classified compile-only","not Forge","C6 remains proposed, gated and inactive",SUCCESSOR):
         if token not in result_text: raise ValueError(f"closure result is missing exact boundary: {token}")
     text = "\n".join(p.read_text(encoding="utf-8-sig") for p in docs)
-    for token in (SOURCE,TREE,BOUNDED,SEMANTIC,REQUEST,RESULT,RUN,"not Forge","C6 remains proposed, gated and inactive"):
+    for token in (SOURCE,TREE,BOUNDED,SUCCESSOR,SEMANTIC,REQUEST,RESULT,RUN,"not Forge","C6 remains proposed, gated and inactive"):
         if token not in text: raise ValueError(f"closure records are missing exact token: {token}")
 
 def main() -> None:
