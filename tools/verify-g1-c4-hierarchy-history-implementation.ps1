@@ -1,4 +1,4 @@
-param([switch]$ReceiptOnly)
+param([switch]$ReceiptOnly,[string]$ObservationReceiptPath)
 $ErrorActionPreference='Stop'
 $root=Split-Path -Parent $PSScriptRoot
 $temp=Join-Path ([IO.Path]::GetTempPath()) ('forge-c4-receipt-'+[guid]::NewGuid().ToString('N'))
@@ -11,6 +11,8 @@ function Get-C4SourceManifestSha {
 }
 function Invoke-C4Process([string]$Arguments){$info=New-Object Diagnostics.ProcessStartInfo;$info.FileName='cargo';$info.Arguments=$Arguments;$info.UseShellExecute=$false;$info.RedirectStandardOutput=$true;$info.RedirectStandardError=$true;$info.CreateNoWindow=$true;$process=New-Object Diagnostics.Process;$process.StartInfo=$info;if(!$process.Start()){throw 'Failed to launch C4 receipt process.'}$stdout=$process.StandardOutput.ReadToEnd();$stderr=$process.StandardError.ReadToEnd();$process.WaitForExit();[pscustomobject]@{pid=$process.Id;exit_code=$process.ExitCode;stdout=$stdout;stderr=$stderr}}
 try {
+  if($ObservationReceiptPath-and(git status --porcelain)){throw 'Platform observation receipt requires a clean source tree.'}
+  $sourceCommit=(git rev-parse HEAD).Trim();$treeText=((git ls-tree -r --full-tree HEAD|Out-String).TrimEnd());$treeHasher=[Security.Cryptography.SHA256]::Create();try{$treeManifestSha=([BitConverter]::ToString($treeHasher.ComputeHash([Text.Encoding]::UTF8.GetBytes($treeText))).Replace('-','').ToLowerInvariant())}finally{$treeHasher.Dispose()}
   $sourceManifestSha=Get-C4SourceManifestSha
   $path=$root.Replace('\','/')
   $manifest=@"
@@ -68,6 +70,16 @@ sha2="0.10"
   foreach($id in $ids[66..73]){if(!$portabilityText.Contains($id)){throw "Portability hostile lacks verifier ownership: $id"}}
 
   & (Join-Path $root 'tools\test-g1-c4-portability-classifier.ps1');if(!$?){throw 'C4 portability classifier failed.'}
+  if($ObservationReceiptPath){
+    $hash=[Security.Cryptography.SHA256]::Create();try{$i686Stdout=([BitConverter]::ToString($hash.ComputeHash([Text.Encoding]::UTF8.GetBytes($i686Result.stdout))).Replace('-','').ToLowerInvariant());$i686Stderr=([BitConverter]::ToString($hash.ComputeHash([Text.Encoding]::UTF8.GetBytes($i686Result.stderr))).Replace('-','').ToLowerInvariant())}finally{$hash.Dispose()}
+    $nativeExe=Join-Path $temp 'target\debug\c4-hierarchy-history-receipt.exe';$i686Exe=Join-Path $temp 'target\i686-pc-windows-msvc\debug\c4-hierarchy-history-receipt.exe'
+    $receipt=[ordered]@{schema_version=1;receipt_id='G1-C4-LOCAL-PLATFORM-OBSERVATIONS';semantic_receipt_sha256=$semanticSha;source_commit=$sourceCommit;tracked_tree_manifest_sha256=$treeManifestSha;bounded_source_manifest_sha256=$sourceManifestSha;rustc=((rustc -vV)-join "`n");cargo=(cargo -V);observations=@(
+      [ordered]@{classification='native_same_host_execution';target='x86_64-pc-windows-msvc';os='windows';architecture='x86_64';pointer_width=64;endian='little';runner='cargo-native';command=$args;exit_code=$first.exit_code;process_ids=@($first.pid,$second.pid);stdout_sha256=$stdoutHashes;stderr_sha256=$stderrHashes;executable=[ordered]@{present=$true;sha256=(Get-FileHash $nativeExe -Algorithm SHA256).Hash.ToLowerInvariant()}},
+      [ordered]@{classification='same_host_second_architecture';target='i686-pc-windows-msvc';os='windows';architecture='i686';pointer_width=32;endian='little';runner='cargo-i686';command="run --quiet --offline --target i686-pc-windows-msvc --manifest-path <temp>/Cargo.toml";exit_code=$i686Result.exit_code;process_ids=@($i686Result.pid);stdout_sha256=@($i686Stdout);stderr_sha256=@($i686Stderr);executable=[ordered]@{present=$true;sha256=(Get-FileHash $i686Exe -Algorithm SHA256).Hash.ToLowerInvariant()}},
+      [ordered]@{classification='compile_only';target='aarch64-linux-android';os='android';architecture='aarch64';pointer_width=64;endian='little';runner='cargo-check';command='check --quiet --offline --target aarch64-linux-android --manifest-path <temp>/Cargo.toml';exit_code=0;process_ids=@();stdout_sha256=@();stderr_sha256=@();executable=[ordered]@{present=$false;reason='cargo check produces metadata only; no execution occurred'}}
+    );independent_second_platform_execution=$false;promotion_authority=$false}
+    $receipt|ConvertTo-Json -Depth 12|Set-Content -LiteralPath $ObservationReceiptPath -Encoding utf8
+  }
   Write-Output "G1 C4 local implementation verified: 58 core, 8 receipt and 8 portability hostile owners; semantic $semanticSha; source manifest $sourceManifestSha. Independent second-platform execution remains unavailable."
 }
 finally {
