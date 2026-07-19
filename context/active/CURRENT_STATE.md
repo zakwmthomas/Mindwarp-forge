@@ -10,7 +10,7 @@
 - State / substage: **executing / c4-independent-platform-gate**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Objective: Close broad C4 as a capability-free addressable hierarchy and history proof against exact C2 and promoted C3A evidence, without importing C3B, later systems, storage or runtime authority.
-- Context health: C4 remains candidate_verified_local. The locked portable fixture, challenge-bound request generator, credential-separated hosted workflow, attested strict importer and 31 external hostile cases pass locally. No Git remote or GitHub CLI is connected, so genuine external execution remains the sole open C4 gate and C5 stays inactive.
+- Context health: C4 remains candidate_verified_local. The locked portable fixture, challenge-bound request generator, credential-separated hosted workflow, attested strict importer, 36 external hostiles and 15 exact-byte retained-replay hostiles pass locally. The registered full gate now requires cryptographic bundle replay at the exact C4 platform substage. No Git remote or GitHub CLI is connected, so genuine external execution remains the sole open C4 gate and C5 stays inactive.
 
 ## Durable evidence
 

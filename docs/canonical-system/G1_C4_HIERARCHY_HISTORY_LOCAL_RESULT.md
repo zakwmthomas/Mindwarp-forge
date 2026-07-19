@@ -24,12 +24,12 @@ network, multiplayer, Companion, Greenfield or Kernel authority.
 
 The semantic receipt SHA-256 is
 `263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996`.
-The bounded 22-path implementation, fixture and verification source manifest SHA-256 is
-`271cf257ec5bc98dccbca3213918c9b8d78cd07df335e6f222dc2843d3e4759f`.
+The bounded 27-path implementation, fixture and verification source manifest SHA-256 is
+`36f818ffc5279c981d211d589ba6d1b379757a43fab66ae5393747299641c31a`.
 The retained platform observations bind clean source commit
-`b5be5b31a276b827f3b20f94c4425054b6a140be` and complete tracked-tree
+`f0c3c4f127fd0c86c02c901ba199f9a385c59bee` and complete tracked-tree
 manifest SHA-256
-`d2b254f20e7c2dc5070c8cb5cafaff15d7f20ad12801b373b32103d4bfd21a28`.
+`3b36a8f4950083ccf6fc7b507ccd893d961714e2fc4b4edb7d058315ec1f9740`.
 Two separately launched native Windows x64 processes emitted identical bytes.
 The same bytes also executed on Windows i686 and are classified only as
 `same_host_second_architecture`. The receipt and dependencies compiled for
@@ -60,8 +60,9 @@ may be substituted for that evidence.
 
 The external gate now has a retained locked fixture, fresh challenge generator,
 credential-separated hosted workflow, offline attestation bundle, strict local
-importer and 31 hostile cases. These are readiness evidence only: no Git remote
-or GitHub CLI is connected and no independent result has been imported.
+importer, replayable exact-byte retained package, 36 importer hostiles and 15
+retained-replay hostiles. These are readiness evidence only: no Git remote or
+GitHub CLI is connected and no independent result has been imported.
 
 Deletion of the new additive APIs, tests, receipt fixture, verifier and this
 result record is the rollback boundary. The legacy one-hop migration content

@@ -2,9 +2,9 @@
     "schema_version":  1,
     "receipt_id":  "G1-C4-LOCAL-PLATFORM-OBSERVATIONS",
     "semantic_receipt_sha256":  "263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996",
-    "source_commit":  "b5be5b31a276b827f3b20f94c4425054b6a140be",
-    "tracked_tree_manifest_sha256":  "d2b254f20e7c2dc5070c8cb5cafaff15d7f20ad12801b373b32103d4bfd21a28",
-    "bounded_source_manifest_sha256":  "271cf257ec5bc98dccbca3213918c9b8d78cd07df335e6f222dc2843d3e4759f",
+    "source_commit":  "f0c3c4f127fd0c86c02c901ba199f9a385c59bee",
+    "tracked_tree_manifest_sha256":  "3b36a8f4950083ccf6fc7b507ccd893d961714e2fc4b4edb7d058315ec1f9740",
+    "bounded_source_manifest_sha256":  "36f818ffc5279c981d211d589ba6d1b379757a43fab66ae5393747299641c31a",
     "rustc":  "rustc 1.97.0 (2d8144b78 2026-07-07)\nbinary: rustc\ncommit-hash: 2d8144b7880597b6e6d3dfd63a9a9efae3f533d3\ncommit-date: 2026-07-07\nhost: x86_64-pc-windows-msvc\nrelease: 1.97.0\nLLVM version: 22.1.6",
     "cargo":  "cargo 1.97.0 (c980f4866 2026-06-30)",
     "observations":  [
@@ -19,8 +19,8 @@
                              "command":  "run --quiet --locked --offline --manifest-path \"C:\\Users\\zakwm\\Desktop\\Mindwarp forge\\tools\\fixtures\\c4-hierarchy-history-receipt\\Cargo.toml\"",
                              "exit_code":  0,
                              "process_ids":  [
-                                                 28856,
-                                                 4280
+                                                 38132,
+                                                 33692
                                              ],
                              "stdout_sha256":  [
                                                    "322f534a0e7daed2c0603042c4408815e53b893110d73ff7c16839ba10cdea77",
@@ -46,7 +46,7 @@
                              "command":  "run --quiet --locked --offline --target i686-pc-windows-msvc --manifest-path \"C:\\Users\\zakwm\\Desktop\\Mindwarp forge\\tools\\fixtures\\c4-hierarchy-history-receipt\\Cargo.toml\"",
                              "exit_code":  0,
                              "process_ids":  [
-                                                 38776
+                                                 38660
                                              ],
                              "stdout_sha256":  [
                                                    "322f534a0e7daed2c0603042c4408815e53b893110d73ff7c16839ba10cdea77"
@@ -70,7 +70,7 @@
                              "command":  "check --quiet --locked --offline --target aarch64-linux-android --manifest-path \"C:\\Users\\zakwm\\Desktop\\Mindwarp forge\\tools\\fixtures\\c4-hierarchy-history-receipt\\Cargo.toml\"",
                              "exit_code":  0,
                              "process_ids":  [
-                                                 18484
+                                                 38748
                                              ],
                              "stdout_sha256":  [
                                                    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"

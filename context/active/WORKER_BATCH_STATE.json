@@ -23,7 +23,7 @@
                                                      },
                                      "stage_context":  {
                                                            "stage_id":  "c4-independent-platform-gate",
-                                                           "content_sha256":  "7b679ad602c35431129f81424b4a030b9afbd78ee9246fc17593e987036ccee9",
+                                                           "content_sha256":  "d0b364c5ab9548b767c049abdef7fbd15aea1f8f70fe86e36956a7cafa565ab5",
                                                            "review_disposition":  "revised",
                                                            "review_note":  "Reviewed all handoff sections against the active substage."
                                                        },
@@ -65,13 +65,13 @@
                                                       },
                                      "evidence":  {
                                                       "stage_id":  "c4-independent-platform-gate",
-                                                      "content_sha256":  "26d5abf9c2d05798e4d8d46a385f62b03c746dcd77f0572589730c6b1ec823a7",
+                                                      "content_sha256":  "f60a5d4c7e048f6a61b0367442b060058527b683232a578334798b41c4bab2e3",
                                                       "review_disposition":  "revised",
                                                       "review_note":  "Reviewed all handoff sections against the active substage."
                                                   },
                                      "verification_receipts":  {
                                                                    "stage_id":  "c4-independent-platform-gate",
-                                                                   "content_sha256":  "78e28a6d2a92b0e31da59a07a217a7658244838be5a07b3ab9158a3bd1f3946b",
+                                                                   "content_sha256":  "6e3eac9a8cb2788954e2375776c1901ebd633ecebae569e364f6400b0884471e",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
@@ -95,7 +95,7 @@
     "risk_level":  "bounded-broad-c4-capability-free-closure",
     "research_gate":  "C4 local proof passes. No remote, CI service, container runtime, WSL distro or cloud CLI is available on this host. Independent execution requires a locked portable fixture, fresh challenge, provider-hosted provenance, two direct native launches, strict import validation and authority-negative retention before the registered full gate.",
     "authority_lane":  "Owner-authorized broad C4 hierarchy/history reconciliation and capability-free closure proof only. Exact dependencies C2 and C3A. No C3B, C5, C6, C7, broad G1 closure, runtime, storage engine, filesystem, network, multiplayer, cross-target transactions, Companion, Greenfield, visual assets or Kernel mutation.",
-    "context_health":  "C4 remains candidate_verified_local. The locked portable fixture, challenge-bound request generator, credential-separated hosted workflow, attested strict importer and 31 external hostile cases pass locally. No Git remote or GitHub CLI is connected, so genuine external execution remains the sole open C4 gate and C5 stays inactive.",
+    "context_health":  "C4 remains candidate_verified_local. The locked portable fixture, challenge-bound request generator, credential-separated hosted workflow, attested strict importer, 36 external hostiles and 15 exact-byte retained-replay hostiles pass locally. The registered full gate now requires cryptographic bundle replay at the exact C4 platform substage. No Git remote or GitHub CLI is connected, so genuine external execution remains the sole open C4 gate and C5 stays inactive.",
     "stage_context":  {
                           "stage_id":  "c4-independent-platform-gate",
                           "macro_sources":  [
@@ -129,7 +129,7 @@
                                                  "The semantic receipt replays the exact C3A input and packet through addressable-world-binding and binds pinned deterministic cost rows.",
                                                  "Two fresh Windows x64 processes and same-host i686 execution emit semantic SHA-256 263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996.",
                                                  "Android aarch64 compilation is compile-only; independent platform-diverse execution remains a separate receipt.",
-                                                 "The retained fixture lock and 22-path blob manifest bind the portable proof surface; 31 external hostiles reject forged policy, source, runner, artifact, output, attestation and authority evidence.",
+                                                 "The retained fixture lock and 27-path blob manifest bind the portable proof surface; 36 external hostiles and 15 retained-replay hostiles reject forged policy, source, runner, artifact, output, attestation, retention and authority evidence.",
                                                  "The hosted workflow separates read-only execution from OIDC/attestation authority and retains the offline bundle; no qualifying remote is connected yet."
                                              ]
                       },
@@ -243,9 +243,9 @@
                      "Three independent read-only audits identified the minimal C4 closure route and exact stale canonical claims before source.",
                      "C4 local implementation verifier passed 58 core, 8 receipt and 8 portability hostile owners with semantic SHA-256 263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996.",
                      "Two fresh native processes and same-host Windows i686 execution emitted identical semantic bytes; aarch64-linux-android compiled only. None is independent second-platform execution.",
-                     "The bounded 22-path C4 implementation, fixture and verification source manifest SHA-256 is 271cf257ec5bc98dccbca3213918c9b8d78cd07df335e6f222dc2843d3e4759f.",
-                     "Local platform observations bind clean source commit b5be5b31a276b827f3b20f94c4425054b6a140be and complete tracked-tree manifest SHA-256 d2b254f20e7c2dc5070c8cb5cafaff15d7f20ad12801b373b32103d4bfd21a28.",
-                     "The locked portable C4 fixture, fresh request generator, hosted Ubuntu workflow, cryptographically pinned importer and 31 external hostile cases are locally verified; no independent result has been imported."
+                     "The bounded 27-path C4 implementation, fixture and verification source manifest SHA-256 is 36f818ffc5279c981d211d589ba6d1b379757a43fab66ae5393747299641c31a.",
+                     "Local platform observations bind clean source commit f0c3c4f127fd0c86c02c901ba199f9a385c59bee and complete tracked-tree manifest SHA-256 3b36a8f4950083ccf6fc7b507ccd893d961714e2fc4b4edb7d058315ec1f9740.",
+                     "The locked portable C4 fixture, fresh request generator, hosted Ubuntu workflow, cryptographically pinned importer, 36 external hostiles and 15 exact-byte retained-replay hostiles are locally verified; no independent result has been imported."
                  ],
     "verification_receipts":  [
                                   "dependency:gp0-gp1-gp2-gp3-c4v:verified",
@@ -265,12 +265,13 @@
                                   "audit:c4-canonical-code-route:three-lanes:complete",
                                   "gate:c4-local-implementation:pass:43-focused-plus-7-c4v",
                                   "receipt:c4-semantic-sha256:263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996",
-                                  "receipt:c4-bounded-source-manifest-sha256:271cf257ec5bc98dccbca3213918c9b8d78cd07df335e6f222dc2843d3e4759f",
-                                  "receipt:c4-clean-source-commit:b5be5b31a276b827f3b20f94c4425054b6a140be",
-                                  "receipt:c4-tracked-tree-manifest-sha256:d2b254f20e7c2dc5070c8cb5cafaff15d7f20ad12801b373b32103d4bfd21a28",
+                                  "receipt:c4-bounded-source-manifest-sha256:36f818ffc5279c981d211d589ba6d1b379757a43fab66ae5393747299641c31a",
+                                  "receipt:c4-clean-source-commit:f0c3c4f127fd0c86c02c901ba199f9a385c59bee",
+                                  "receipt:c4-tracked-tree-manifest-sha256:3b36a8f4950083ccf6fc7b507ccd893d961714e2fc4b4edb7d058315ec1f9740",
                                   "platform:c4-i686:same-host-second-architecture:passed",
                                   "platform:c4-android-aarch64:compile-only:passed",
-                                  "gate:c4-external-importer-hostiles:pass:31-plus-workflow-controls"
+                                  "gate:c4-external-importer-hostiles:pass:36-plus-workflow-controls",
+                                  "gate:c4-retained-replay-hostiles:pass:15-plus-scope-controls"
                               ],
     "metrics":  {
                     "token_cost":  {
