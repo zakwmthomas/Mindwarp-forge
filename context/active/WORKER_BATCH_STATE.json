@@ -71,7 +71,7 @@
                                                   },
                                      "verification_receipts":  {
                                                                    "stage_id":  "c6-organism-identity-readiness",
-                                                                   "content_sha256":  "8092614fc28a6b5b60198dac0e9004c32d94e1cbe644eeb9f64f17e00d4c5010",
+                                                                   "content_sha256":  "ccf92225e787cdd22655d79bb1a7be0e1aabaae900fa0eab92ee95bb9d225d50",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
@@ -428,7 +428,8 @@
                                   "registered-full-gate:run-e923d74fb96743e5864b303faf27acfc:passed",
                                   "receipt:G1-C6-BODY-PLAN-STRUCTURE-V1:recorded",
                                   "owner-route:c6-organism-identity-readiness:authorized",
-                                  "independent-review:c6-organism-subject-identity-readiness:accepted"
+                                  "independent-review:c6-organism-subject-identity-readiness:accepted",
+                                  "registered-full-gate:run-cd4a308b6b2f4904a4bbd2f3b1e81105:failed:stale-body-plan-readiness-successor-route"
                               ],
     "metrics":  {
                     "token_cost":  {
