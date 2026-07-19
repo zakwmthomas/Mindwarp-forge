@@ -2,8 +2,8 @@
     "schema_version":  1,
     "receipt_id":  "G1-C4-LOCAL-PLATFORM-OBSERVATIONS",
     "semantic_receipt_sha256":  "263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996",
-    "source_commit":  "99b19e8ea06a35813689b723c6c630973b4853c1",
-    "tracked_tree_manifest_sha256":  "596c5e6bf2458ca85d495dbdc703a666330a428b7d74916f51d00f63a4994c3b",
+    "source_commit":  "3aa3f5b07ccce0e80d8c1461244e671907c450cb",
+    "tracked_tree_manifest_sha256":  "70b5f171daf4b35359306df6b959d0f422d6756a3f430896b66f00bd9c1d08b9",
     "bounded_source_manifest_sha256":  "b407b6e82c248cded8c65838d4cef961c21d51d05b1a00ea75d2318756ebb1bf",
     "rustc":  "rustc 1.97.0 (2d8144b78 2026-07-07)\nbinary: rustc\ncommit-hash: 2d8144b7880597b6e6d3dfd63a9a9efae3f533d3\ncommit-date: 2026-07-07\nhost: x86_64-pc-windows-msvc\nrelease: 1.97.0\nLLVM version: 22.1.6",
     "cargo":  "cargo 1.97.0 (c980f4866 2026-06-30)",
@@ -16,11 +16,11 @@
                              "pointer_width":  64,
                              "endian":  "little",
                              "runner":  "cargo-native",
-                             "command":  "run --quiet --offline --manifest-path \"C:\\Users\\zakwm\\AppData\\Local\\Temp\\forge-c4-receipt-4edeed3dbd394f2783a63499f8ba0e96\\Cargo.toml\"",
+                             "command":  "run --quiet --offline --manifest-path \"C:\\Users\\zakwm\\AppData\\Local\\Temp\\forge-c4-receipt-fe3ea3dbbd8b4de494b46013ee2bf8d3\\Cargo.toml\"",
                              "exit_code":  0,
                              "process_ids":  [
-                                                 7404,
-                                                 28224
+                                                 17436,
+                                                 11308
                                              ],
                              "stdout_sha256":  [
                                                    "322f534a0e7daed2c0603042c4408815e53b893110d73ff7c16839ba10cdea77",
@@ -32,7 +32,7 @@
                                                ],
                              "executable":  {
                                                 "present":  true,
-                                                "sha256":  "de426006dac0d9aea851a2b0c725b0a8cfe481b54459ddb1a404f5596629ec9b"
+                                                "sha256":  "8ab3e0950ce01d7a7057f9edd671ed6808e42571b9b552041515f2138a64ef07"
                                             }
                          },
                          {
@@ -43,10 +43,10 @@
                              "pointer_width":  32,
                              "endian":  "little",
                              "runner":  "cargo-i686",
-                             "command":  "run --quiet --offline --target i686-pc-windows-msvc --manifest-path \u003ctemp\u003e/Cargo.toml",
+                             "command":  "run --quiet --offline --target i686-pc-windows-msvc --manifest-path \"C:\\Users\\zakwm\\AppData\\Local\\Temp\\forge-c4-receipt-fe3ea3dbbd8b4de494b46013ee2bf8d3\\Cargo.toml\"",
                              "exit_code":  0,
                              "process_ids":  [
-                                                 35080
+                                                 21760
                                              ],
                              "stdout_sha256":  [
                                                    "322f534a0e7daed2c0603042c4408815e53b893110d73ff7c16839ba10cdea77"
@@ -56,7 +56,7 @@
                                                ],
                              "executable":  {
                                                 "present":  true,
-                                                "sha256":  "229f54cc2eee0bec8ff73abec67e5fe8979faaf2bd7bbc6c7d7d1c35094be1d7"
+                                                "sha256":  "7cf3fd40c2788c0c5cf5258ab650a47a320dca55f463a5ecb73a3b7554b702c0"
                                             }
                          },
                          {
@@ -67,16 +67,16 @@
                              "pointer_width":  64,
                              "endian":  "little",
                              "runner":  "cargo-check",
-                             "command":  "check --quiet --offline --target aarch64-linux-android --manifest-path \u003ctemp\u003e/Cargo.toml",
+                             "command":  "check --quiet --offline --target aarch64-linux-android --manifest-path \"C:\\Users\\zakwm\\AppData\\Local\\Temp\\forge-c4-receipt-fe3ea3dbbd8b4de494b46013ee2bf8d3\\Cargo.toml\"",
                              "exit_code":  0,
                              "process_ids":  [
-
+                                                 19748
                                              ],
                              "stdout_sha256":  [
-
+                                                   "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
                                                ],
                              "stderr_sha256":  [
-
+                                                   "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
                                                ],
                              "executable":  {
                                                 "present":  false,

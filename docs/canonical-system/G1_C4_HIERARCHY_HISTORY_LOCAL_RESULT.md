@@ -27,9 +27,9 @@ The semantic receipt SHA-256 is
 The bounded nine-file implementation source manifest SHA-256 is
 `b407b6e82c248cded8c65838d4cef961c21d51d05b1a00ea75d2318756ebb1bf`.
 The retained platform observations bind clean source commit
-`99b19e8ea06a35813689b723c6c630973b4853c1` and complete tracked-tree
+`3aa3f5b07ccce0e80d8c1461244e671907c450cb` and complete tracked-tree
 manifest SHA-256
-`596c5e6bf2458ca85d495dbdc703a666330a428b7d74916f51d00f63a4994c3b`.
+`70b5f171daf4b35359306df6b959d0f422d6756a3f430896b66f00bd9c1d08b9`.
 Two separately launched native Windows x64 processes emitted identical bytes.
 The same bytes also executed on Windows i686 and are classified only as
 `same_host_second_architecture`. The receipt and dependencies compiled for
