@@ -10,7 +10,7 @@
 - State / substage: **executing / c4-independent-platform-gate**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Objective: Close broad C4 as a capability-free addressable hierarchy and history proof against exact C2 and promoted C3A evidence, without importing C3B, later systems, storage or runtime authority.
-- Context health: C4 remains candidate_verified_local. GitHub-hosted run 29671881585 independently executed and attested clean source 8651038; strict import and retained cryptographic replay verify canonical receipt digest 75d27618497c5432c10f86fd2dd25759185238cd3bbf264a583b3743b228542b. The first registered full gate passed C4 replay and later failed on compressed historical C3 closure wording; the register now retains both the current C3A/C3B split and exact residual/ecotone anchors, and all focused affected shields pass. Only the complete registered full-gate rerun remains open, and C5 stays inactive.
+- Context health: C4 remains candidate_verified_local. GitHub-hosted run 29671881585 independently executed and attested clean source 8651038; strict import and retained cryptographic replay verify canonical receipt digest 75d27618497c5432c10f86fd2dd25759185238cd3bbf264a583b3743b228542b. Two registered attempts replayed C4 successfully and exposed independent historical integration drift: compressed C3 closure anchors, then omitted independent-platform successor routing in GP3, GP4 and vertical-closeout verifiers. Both repairs are narrow, their focused current and hostile checks pass, and only one complete registered full-gate rerun remains open. C5 stays inactive.
 
 ## Durable evidence
 
@@ -29,11 +29,11 @@ Owner-authorized broad C4 hierarchy/history reconciliation and capability-free c
 
 ## Exact next action
 
-Rerun the registered full gate after the focused C3 closure-register retention repair; require exact retained C4 attestation replay, retain candidate_verified_local and keep C5 inactive until the complete gate passes.
+Rerun the registered full gate after adding only c4-independent-platform-gate to the three exact authenticated predecessor-successor allowlists; require retained C4 attestation replay, retain candidate_verified_local and keep C5 inactive until the complete gate passes.
 
 ## Unresolved risks
 
-- Registered run after import must pass every historical and current shield in one invocation; the prior run stopped at repaired C3 closure-register retention drift.
+- Registered run after import must pass every historical and current shield in one invocation; the latest run stopped at repaired exact C4 independent-platform successor-route drift.
 
 ## Resume after this package
 

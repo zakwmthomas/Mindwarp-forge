@@ -31,6 +31,9 @@ try {
     & (Join-Path $root 'tools\verify-g1-c4-closure-readiness.ps1') -ProgramPath $programPath -CheckpointPath $checkpointPath -RouteOnly | Out-Null
   }
   Assert-Pass
+  $checkpoint.substage_id = 'c4-independent-platform-gate'
+  Assert-Pass
+  $checkpoint.substage_id = 'c4-reconciliation-readiness'
   foreach ($field in @('batch_id','master_program_item','substage_id','authority_lane')) {
     $saved = $checkpoint.$field; $checkpoint.$field = 'forged'
     if ((& (Join-Path $root 'tools\test-c3-federated-interruption.ps1') -Checkpoint $checkpoint) -eq $true) { throw "Forged C4 $field was admitted." }

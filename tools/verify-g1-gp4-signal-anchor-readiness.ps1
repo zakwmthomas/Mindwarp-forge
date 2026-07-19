@@ -102,7 +102,7 @@ $closeoutSuccessor = $checkpoint.batch_id -eq 'G1-VERTICAL-CLOSEOUT-V1' -and $ch
     $gp4.Count -eq 1 -and $gp4[0].state -eq 'verified' -and $gp4[0].status -eq 'complete' -and $gp4[0].proof -match 'run-[0-9a-f]{32}' -and
     $closeout.Count -eq 1 -and $closeout[0].state -eq 'executing' -and $closeout[0].status -eq 'active'
 $c4Successor = $checkpoint.batch_id -eq 'G1-C4-HIERARCHY-HISTORY-CLOSURE-V1' -and $checkpoint.master_program_item -eq 'C4' -and
-    $checkpoint.substage_id -in @('c4-reconciliation-readiness','c4-hierarchy-history-hardening','c4-verification','c4-verified-result') -and
+    $checkpoint.substage_id -in @('c4-reconciliation-readiness','c4-hierarchy-history-hardening','c4-verification','c4-verified-result','c4-independent-platform-gate') -and
     $gp4.Count -eq 1 -and $gp4[0].state -eq 'verified' -and $gp4[0].status -eq 'complete' -and $gp4[0].proof -match 'run-[0-9a-f]{32}' -and
     $closeout.Count -eq 1 -and $closeout[0].state -eq 'verified' -and $closeout[0].status -eq 'complete' -and
     $c4.Count -eq 1 -and $c4[0].state -eq 'executing' -and $c4[0].status -eq 'active' -and (@($c4[0].depends_on)-join ',') -eq 'C2,C3A'

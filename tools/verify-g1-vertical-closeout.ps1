@@ -37,7 +37,7 @@ sha2="0.10"
     if((@($closeout.depends_on)-join ',')-ne 'C3A,C4V,GP0,GP1,GP2,GP3,GP4'){throw 'Bounded closeout dependency order changed.'}
     $checkpoint=Get-Content -Raw (Join-Path $root 'context\active\WORKER_BATCH_STATE.json')|ConvertFrom-Json
     $closeoutLive=$checkpoint.batch_id -eq 'G1-VERTICAL-CLOSEOUT-V1' -and $checkpoint.master_program_item -eq 'G1-VERTICAL-CLOSEOUT' -and $checkpoint.state -eq 'recorded' -and $checkpoint.substage_id -eq 'g1-vertical-closeout-recorded' -and $closeout.state -eq 'executing' -and $closeout.status -eq 'active'
-    $c4Successor=$checkpoint.batch_id -eq 'G1-C4-HIERARCHY-HISTORY-CLOSURE-V1' -and $checkpoint.master_program_item -eq 'C4' -and $checkpoint.substage_id -in @('c4-reconciliation-readiness','c4-hierarchy-history-hardening','c4-verification','c4-verified-result') -and $closeout.state -eq 'verified' -and $closeout.status -eq 'complete' -and $c4.state -eq 'executing' -and $c4.status -eq 'active' -and (@($c4.depends_on)-join ',') -eq 'C2,C3A'
+    $c4Successor=$checkpoint.batch_id -eq 'G1-C4-HIERARCHY-HISTORY-CLOSURE-V1' -and $checkpoint.master_program_item -eq 'C4' -and $checkpoint.substage_id -in @('c4-reconciliation-readiness','c4-hierarchy-history-hardening','c4-verification','c4-verified-result','c4-independent-platform-gate') -and $closeout.state -eq 'verified' -and $closeout.status -eq 'complete' -and $c4.state -eq 'executing' -and $c4.status -eq 'active' -and (@($c4.depends_on)-join ',') -eq 'C2,C3A'
     if(!$closeoutLive -and !$c4Successor){throw 'Bounded closeout is neither live nor retained by the exact broad-C4 successor.'}
     $active=@($program.items|Where-Object{$_.state-eq'executing'-and$_.status-eq'active'})
     $expectedActive=if($c4Successor){'C4'}else{'G1-VERTICAL-CLOSEOUT'}

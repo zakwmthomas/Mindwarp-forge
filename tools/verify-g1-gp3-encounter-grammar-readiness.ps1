@@ -79,7 +79,7 @@ $closeoutSuccessor = $checkpoint.batch_id -eq 'G1-VERTICAL-CLOSEOUT-V1' -and
     $checkpoint.substage_id -eq 'g1-vertical-closeout-recorded'
 $c4Successor = $checkpoint.batch_id -eq 'G1-C4-HIERARCHY-HISTORY-CLOSURE-V1' -and
     $checkpoint.master_program_item -eq 'C4' -and
-    $checkpoint.substage_id -in @('c4-reconciliation-readiness','c4-hierarchy-history-hardening','c4-verification','c4-verified-result')
+    $checkpoint.substage_id -in @('c4-reconciliation-readiness','c4-hierarchy-history-hardening','c4-verification','c4-verified-result','c4-independent-platform-gate')
 if (!$gp3Live -and !$gp4Successor -and !$closeoutSuccessor -and !$c4Successor) {
     throw 'GP3 readiness is not bound to its canonical route or an admitted authenticated successor.'
 }

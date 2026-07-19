@@ -6,80 +6,80 @@
     "state":  "executing",
     "previous_state":  "ready",
     "objective":  "Close broad C4 as a capability-free addressable hierarchy and history proof against exact C2 and promoted C3A evidence, without importing C3B, later systems, storage or runtime authority.",
-    "next_action":  "Rerun the registered full gate after the focused C3 closure-register retention repair; require exact retained C4 attestation replay, retain candidate_verified_local and keep C5 inactive until the complete gate passes.",
+    "next_action":  "Rerun the registered full gate after adding only c4-independent-platform-gate to the three exact authenticated predecessor-successor allowlists; require retained C4 attestation replay, retain candidate_verified_local and keep C5 inactive until the complete gate passes.",
     "substage_id":  "c4-independent-platform-gate",
     "handoff_section_receipts":  {
                                      "objective":  {
                                                        "stage_id":  "c4-independent-platform-gate",
                                                        "content_sha256":  "f58fbd02ac9761d1c06bf41990a59ed0a92e965dcbc27906f4d7c165cfa0dc2a",
                                                        "review_disposition":  "revised",
-                                                       "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
+                                                       "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
                                                    },
                                      "next_action":  {
                                                          "stage_id":  "c4-independent-platform-gate",
-                                                         "content_sha256":  "c11e6976203c0896ee9e893030e749462c175e6332f52393f4bb1d01e4cbff58",
+                                                         "content_sha256":  "9e24894b91a80f20f789d724049e3d514b27bf246968a13c679313828465cf3c",
                                                          "review_disposition":  "revised",
-                                                         "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
+                                                         "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
                                                      },
                                      "stage_context":  {
                                                            "stage_id":  "c4-independent-platform-gate",
                                                            "content_sha256":  "8cf5afb87aa33c0f77e7954fbaa1aef2179a42253007c579d740f4b504c43329",
                                                            "review_disposition":  "revised",
-                                                           "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
+                                                           "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
                                                        },
                                      "visual_quality_gate":  {
                                                                  "stage_id":  "c4-independent-platform-gate",
                                                                  "content_sha256":  "cfb3f4b0a636e0d5eff9dd88e562b4a427d3fadbe03f9349ac516e38adac2dd2",
                                                                  "review_disposition":  "revised",
-                                                                 "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
+                                                                 "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
                                                              },
                                      "simulation_ladder":  {
                                                                "stage_id":  "c4-independent-platform-gate",
-                                                               "content_sha256":  "85b7397e0a82facca16eec15f8cdd6acbd9058ce5e73b84773934d92bb094276",
+                                                               "content_sha256":  "c11f923620a3f236e86e43f612c7f5fb7bcf7fc9bdf1d7eaf28ef8e85f7358be",
                                                                "review_disposition":  "revised",
-                                                               "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
+                                                               "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
                                                            },
                                      "unresolved_risks":  {
                                                               "stage_id":  "c4-independent-platform-gate",
-                                                              "content_sha256":  "39276403d6c3b10df90bf42eb2a3dfeb4707853076c3beab9186e60db197d999",
+                                                              "content_sha256":  "f4cffb5c960b33594bf2a50c284c2b94f6e1874855c0cf08ca114c9b668c2a1b",
                                                               "review_disposition":  "revised",
-                                                              "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
+                                                              "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
                                                           },
                                      "evidence_requirements":  {
                                                                    "stage_id":  "c4-independent-platform-gate",
                                                                    "content_sha256":  "06e7a714e1bfc359ca9fc2661906f0d92aeea77fe547d108f770667a62c3d9d2",
                                                                    "review_disposition":  "revised",
-                                                                   "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
+                                                                   "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
                                                                },
                                      "verification_plan":  {
                                                                "stage_id":  "c4-independent-platform-gate",
                                                                "content_sha256":  "8a81c24807c04878e8370ad782858ab2d58ce14dd677563b3284f1654d873aa9",
                                                                "review_disposition":  "revised",
-                                                               "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
+                                                               "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
                                                            },
                                      "resume_after":  {
                                                           "stage_id":  "c4-independent-platform-gate",
                                                           "content_sha256":  "91ff7c09a948de0f53a11009f349557946af6a692096ffa798c58e0cf19dcb3d",
                                                           "review_disposition":  "revised",
-                                                          "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
+                                                          "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
                                                       },
                                      "evidence":  {
                                                       "stage_id":  "c4-independent-platform-gate",
-                                                      "content_sha256":  "8327cc96bb839657edf1c9654a697bfb27a546f52a233c6a434c9f5f67cb2415",
+                                                      "content_sha256":  "de1e5e0a5bfc803ecba436e8e5bb3f3df96cbbba8c96defb32251ca8a16a1271",
                                                       "review_disposition":  "revised",
-                                                      "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
+                                                      "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
                                                   },
                                      "verification_receipts":  {
                                                                    "stage_id":  "c4-independent-platform-gate",
-                                                                   "content_sha256":  "6ba032af5b15374a15c1fc8a6ede06ec8caa7bdaf55e0dcf03719a6daaa71bb0",
+                                                                   "content_sha256":  "a540c518705cc3e1989a57fdce8079f20ea0e3b67dad6310657a8565f152eed5",
                                                                    "review_disposition":  "revised",
-                                                                   "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
+                                                                   "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
                                                                },
                                      "transition":  {
                                                         "stage_id":  "c4-independent-platform-gate",
                                                         "content_sha256":  "0ab96ffbfaa431a0e9aa4d20a2da0d294d1e87d3b4bd8a4504bb5ba27f213d9e",
                                                         "review_disposition":  "revised",
-                                                        "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
+                                                        "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
                                                     }
                                  },
     "consecutive_no_progress_limit":  1,
@@ -93,9 +93,9 @@
                                     ]
                     },
     "risk_level":  "bounded-broad-c4-capability-free-closure",
-    "research_gate":  "C4 local proof passes and GitHub-hosted run 29671881585 at source 8651038 is strictly imported with replayable attestation digest 75d27618. The first registered full gate replayed that receipt successfully, then exposed older C3 closure-register retention drift. Focused historical C3 and current C3A/C3B split verifiers now pass after the bounded register repair; one complete registered full-gate rerun remains required.",
+    "research_gate":  "C4 local proof passes and GitHub-hosted run 29671881585 at source 8651038 is strictly imported with replayable attestation digest 75d27618. The first registered gate exposed and closed C3 register retention drift; the second passed that repair and exposed three predecessor verifiers that omitted only the new exact c4-independent-platform-gate substage. Their existing batch, item, authority, dependency, state and receipt checks remain unchanged, focused successor hostiles pass, and one complete registered rerun remains required.",
     "authority_lane":  "Owner-authorized broad C4 hierarchy/history reconciliation and capability-free closure proof only. Exact dependencies C2 and C3A. No C3B, C5, C6, C7, broad G1 closure, runtime, storage engine, filesystem, network, multiplayer, cross-target transactions, Companion, Greenfield, visual assets or Kernel mutation.",
-    "context_health":  "C4 remains candidate_verified_local. GitHub-hosted run 29671881585 independently executed and attested clean source 8651038; strict import and retained cryptographic replay verify canonical receipt digest 75d27618497c5432c10f86fd2dd25759185238cd3bbf264a583b3743b228542b. The first registered full gate passed C4 replay and later failed on compressed historical C3 closure wording; the register now retains both the current C3A/C3B split and exact residual/ecotone anchors, and all focused affected shields pass. Only the complete registered full-gate rerun remains open, and C5 stays inactive.",
+    "context_health":  "C4 remains candidate_verified_local. GitHub-hosted run 29671881585 independently executed and attested clean source 8651038; strict import and retained cryptographic replay verify canonical receipt digest 75d27618497c5432c10f86fd2dd25759185238cd3bbf264a583b3743b228542b. Two registered attempts replayed C4 successfully and exposed independent historical integration drift: compressed C3 closure anchors, then omitted independent-platform successor routing in GP3, GP4 and vertical-closeout verifiers. Both repairs are narrow, their focused current and hostile checks pass, and only one complete registered full-gate rerun remains open. C5 stays inactive.",
     "stage_context":  {
                           "stage_id":  "c4-independent-platform-gate",
                           "macro_sources":  [
@@ -173,7 +173,7 @@
                                                       }
                                                   ],
                               "expensive_execution_planned":  true,
-                              "unresolved_risk":  "The independent provider-attested receipt is imported and replayable; complete full-gate closure remains unavailable until the repaired historical C3 retention shields and every later verifier pass in one registered run.",
+                              "unresolved_risk":  "The independent receipt and focused C3/successor-route repairs pass; complete closure remains unavailable until every historical and current shield passes in one registered run.",
                               "expected_information_gain":  "Determine whether the replayable independent C4 evidence and repaired C3 retention anchors survive every historical and current repository shield in one complete registered run.",
                               "estimated_cost":  "One registered full Forge gate rerun; no additional hosted execution is required unless retained attestation replay fails.",
                               "regression_guard":  "No C3B, C5-C7, broad G1 closure, runtime, storage engine, filesystem, network, multiplayer, Companion, Greenfield, visual asset or Kernel mutation.",
@@ -217,7 +217,7 @@
                           }
                       ],
     "unresolved_risks":  [
-                             "Registered run after import must pass every historical and current shield in one invocation; the prior run stopped at repaired C3 closure-register retention drift."
+                             "Registered run after import must pass every historical and current shield in one invocation; the latest run stopped at repaired exact C4 independent-platform successor-route drift."
                          ],
     "evidence_requirements":  [
                                   "freeze the exact C2+C3A C4 closure and later-system exclusions",
@@ -254,7 +254,8 @@
                      "Local platform observations bind clean source commit 8651038d63d7e041573667878001059d7a3b3405 and canonical LF-normalized tracked-tree manifest SHA-256 4741c4bc73eedfecf733a3e3e995f52c428e35468502308944ebdf961333dcc3.",
                      "Hosted run 29671494578 executed and attested historical source f0c3c4f but strict import rejected its CRLF/LF tracked-tree mismatch before writing canonical evidence; it is diagnostic-only.",
                      "GitHub-hosted run 29671881585 independently executed and attested clean source 8651038; strict import created G1_C4_INDEPENDENT_PLATFORM_EXECUTION.json with receipt SHA-256 75d27618497c5432c10f86fd2dd25759185238cd3bbf264a583b3743b228542b.",
-                     "The first registered post-import gate replayed the C4 attestation, then failed on C3 closure-register retention drift; the register now preserves current superseded-C3/promoted-C3A/blocked-C3B truth plus residual/ecotone anchors, and all five affected focused shields pass."
+                     "The first registered post-import gate replayed the C4 attestation, then failed on C3 closure-register retention drift; the register now preserves current superseded-C3/promoted-C3A/blocked-C3B truth plus residual/ecotone anchors, and all five affected focused shields pass.",
+                     "The second registered attempt passed the C3 repair and later failed because three retained GP3/GP4/vertical-closeout verifiers omitted only c4-independent-platform-gate; exact-stage additions and the existing forged-route successor suite now pass without widening authority."
                  ],
     "verification_receipts":  [
                                   "dependency:gp0-gp1-gp2-gp3-c4v:verified",
@@ -285,7 +286,9 @@
                                   "external:c4-github-run-29671881585:hosted-linux-attested:passed",
                                   "receipt:c4-independent-platform-sha256:75d27618497c5432c10f86fd2dd25759185238cd3bbf264a583b3743b228542b",
                                   "registered-full-gate:post-c4-import:failed:c3-closure-register-retention-drift",
-                                  "focused:c3-closure-retention-shields:5-of-5:passed"
+                                  "focused:c3-closure-retention-shields:5-of-5:passed",
+                                  "registered-full-gate:post-c3-repair:failed:gp3-independent-platform-successor-drift",
+                                  "focused:c4-independent-platform-successor-route:passed"
                               ],
     "metrics":  {
                     "token_cost":  {

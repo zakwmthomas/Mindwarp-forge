@@ -8,8 +8,8 @@
 - Objective: Close broad C4 as a capability-free addressable hierarchy and history proof against exact C2 and promoted C3A evidence, without importing C3B, later systems, storage or runtime authority.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **bounded-broad-c4-capability-free-closure / C4 local proof passes and GitHub-hosted run 29671881585 at source 8651038 is strictly imported with replayable attestation digest 75d27618. The first registered full gate replayed that receipt successfully, then exposed older C3 closure-register retention drift. Focused historical C3 and current C3A/C3B split verifiers now pass after the bounded register repair; one complete registered full-gate rerun remains required.**
-- Exact next action: Rerun the registered full gate after the focused C3 closure-register retention repair; require exact retained C4 attestation replay, retain candidate_verified_local and keep C5 inactive until the complete gate passes.
+- Risk/research gate: **bounded-broad-c4-capability-free-closure / C4 local proof passes and GitHub-hosted run 29671881585 at source 8651038 is strictly imported with replayable attestation digest 75d27618. The first registered gate exposed and closed C3 register retention drift; the second passed that repair and exposed three predecessor verifiers that omitted only the new exact c4-independent-platform-gate substage. Their existing batch, item, authority, dependency, state and receipt checks remain unchanged, focused successor hostiles pass, and one complete registered rerun remains required.**
+- Exact next action: Rerun the registered full gate after adding only c4-independent-platform-gate to the three exact authenticated predecessor-successor allowlists; require retained C4 attestation replay, retain candidate_verified_local and keep C5 inactive until the complete gate passes.
 
 ## Approved operating policies
 
