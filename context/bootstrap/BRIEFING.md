@@ -5,11 +5,11 @@
 ## Active route
 
 - Work package: **G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1**
-- Objective: Reconcile the exact bounded C6 prerequisite evidence, freeze organism and ecology ownership boundaries and hostile readiness, and identify one separately gated first implementation candidate without adding source.
+- Objective: Reconcile the complete C6 organism/ecology context, correct dimorphism, reproduction, heredity, development and variation ordering, freeze exact hostile identities, and retain one separately gated variation-capable body-plan candidate without adding source.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **code-free-c6-organism-ecology-readiness / C4 and C5 are verified exact prerequisites. Thirty-eight focused prototype tests and five read-only desktop receipt tests are bounded non-closure evidence. C6 remains incomplete and this gate grants no source, product ontology, physiology constants, runtime, visuals, promotion or Forge-port authority.**
-- Exact next action: Verify the code-free C6 readiness record and exact successor route, then stop before the separately gated body-plan structural implementation candidate.
+- Risk/research gate: **code-free-c6-organism-ecology-readiness / C4 and C5 are verified exact prerequisites. Thirty-eight focused prototype tests and five C6-specific read-only desktop receipt bindings are bounded non-closure evidence. Whole-context review corrects the hostile count from 68 to 82, moves applicability before comparison, and adds explicit reproduction/development/heredity. C6 remains incomplete and this gate grants no source, product ontology, physiology constants, runtime, visuals, promotion or Forge-port authority.**
+- Exact next action: Verify the corrected 82-ID C6 readiness record and exact successor route, then stop before separately authorized variation-capable body-plan source.
 
 ## Approved operating policies
 

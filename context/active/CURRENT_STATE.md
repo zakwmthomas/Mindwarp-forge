@@ -9,8 +9,8 @@
 - Master item / milestone: **C6 / G1**
 - State / substage: **executing / c6-reconciliation-readiness**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Objective: Reconcile the exact bounded C6 prerequisite evidence, freeze organism and ecology ownership boundaries and hostile readiness, and identify one separately gated first implementation candidate without adding source.
-- Context health: C5 is verified, complete and recorded after both registered closure gates. C6 is the sole executing/active cursor for code-free reconciliation only. Current synthetic prototypes expose partial deterministic seams and do not establish organism, anatomy, physiology, ecology, person-form eligibility, runtime or visual truth.
+- Objective: Reconcile the complete C6 organism/ecology context, correct dimorphism, reproduction, heredity, development and variation ordering, freeze exact hostile identities, and retain one separately gated variation-capable body-plan candidate without adding source.
+- Context health: C5 is verified, complete and recorded after both registered closure gates. C6 is the sole executing/active cursor for code-free reconciliation only. The corrected plan now distinguishes body-plan family from expression, biological sex from reproductive role/caste/gender/social role, and positive heredity/development from H6 reproducibility. Current prototypes remain partial non-closure evidence.
 
 ## Durable evidence
 
@@ -29,11 +29,13 @@ Owner-authorized C6 semantic/construction and organism-ecology reconciliation an
 
 ## Exact next action
 
-Verify the code-free C6 readiness record and exact successor route, then stop before the separately gated body-plan structural implementation candidate.
+Verify the corrected 82-ID C6 readiness record and exact successor route, then stop before separately authorized variation-capable body-plan source.
 
 ## Unresolved risks
 
-- A later C6 transition must not reinterpret recorded C5 evidence as runtime, product-policy, promotion, cache or Forge-port authority.
+- The bounded pelvis-rooted humanoid mannequin could be generalized into a universal organism schema.
+- Biological sex, reproductive role, sexual dimorphism, caste, social role, gender/person identity, capability and personality could be conflated.
+- Culture, player-authored meaning or product permissions could be inferred from morphology, ecology or lineage without explicit authority.
 
 ## Resume after this package
 
