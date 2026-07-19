@@ -42,7 +42,19 @@ if ($c3.Count -ne 1 -or
   throw 'C3 does not select and retain the bounded source-distribution compatibility audit.'
 }
 
-if ($closure -notlike '*whole-cell dimensionless transfer*source-distribution*phase-space-measure*' -and
+$c3a = @($program.items | Where-Object id -eq 'C3A')
+$c3b = @($program.items | Where-Object id -eq 'C3B')
+$currentSplit = $c3.Count -eq 1 -and $c3[0].state -eq 'superseded' -and
+    $c3[0].proof -like '*does not claim full C3 closure*' -and
+    $c3a.Count -eq 1 -and $c3a[0].state -eq 'promoted' -and
+    $c3b.Count -eq 1 -and $c3b[0].state -eq 'blocked' -and
+    $c3b[0].next_action -like '*physical scale*coefficient*applicability*visibility*presentation fidelity*'
+
+if ($currentSplit) {
+  if ($closure -notlike '*Superseded umbrella*C3A is promoted*C3B remains independently evidence-blocked*retained ecotone oracle*proof-tool evidence only*no*C3 closure*') {
+    throw 'The master closure register does not retain the superseded C3, promoted C3A and evidence-blocked C3B split.'
+  }
+} elseif ($closure -notlike '*whole-cell dimensionless transfer*source-distribution*phase-space-measure*' -and
     $closure -notlike '*whole-cell dimensionless transfer*additive source-quantity measure*quantity-basis and schema gap audit*' -and
     $closure -notlike '*Whole-cell dimensionless transfer*source-quantity basis/schema audit*mathematical design audit*' -and
     $closure -notlike '*whole-cell dimensionless transfer*source-quantity oracle*calibrated spectral/time basis mathematical design audit*' -and
@@ -54,4 +66,4 @@ if ($closure -notlike '*whole-cell dimensionless transfer*source-distribution*ph
   throw 'The master closure register does not retain the current C3 result and next gap.'
 }
 
-Write-Output 'Post whole-cell dimensionless-transfer reassessment verified: transfer is distinct from source and detection; the next route is code-free source-distribution and measure compatibility.'
+Write-Output 'Historical post whole-cell dimensionless-transfer reassessment verified and retained under promoted C3A and evidence-blocked C3B.'

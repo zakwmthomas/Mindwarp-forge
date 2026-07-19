@@ -6,80 +6,80 @@
     "state":  "executing",
     "previous_state":  "ready",
     "objective":  "Close broad C4 as a capability-free addressable hierarchy and history proof against exact C2 and promoted C3A evidence, without importing C3B, later systems, storage or runtime authority.",
-    "next_action":  "Push clean retained source 8651038 and its record commit to the connected public GitHub repository, generate one fresh request, execute the hosted Ubuntu workflow, import its verified bundle, then run the registered full gate; retain candidate_verified_local and keep C5 inactive until all pass.",
+    "next_action":  "Rerun the registered full gate after the focused C3 closure-register retention repair; require exact retained C4 attestation replay, retain candidate_verified_local and keep C5 inactive until the complete gate passes.",
     "substage_id":  "c4-independent-platform-gate",
     "handoff_section_receipts":  {
                                      "objective":  {
                                                        "stage_id":  "c4-independent-platform-gate",
                                                        "content_sha256":  "f58fbd02ac9761d1c06bf41990a59ed0a92e965dcbc27906f4d7c165cfa0dc2a",
                                                        "review_disposition":  "revised",
-                                                       "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
+                                                       "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
                                                    },
                                      "next_action":  {
                                                          "stage_id":  "c4-independent-platform-gate",
-                                                         "content_sha256":  "f511b401170f88d7f73ec12f7c19d41cb79f4c47b31a52b8cea830df6155cee8",
+                                                         "content_sha256":  "c11e6976203c0896ee9e893030e749462c175e6332f52393f4bb1d01e4cbff58",
                                                          "review_disposition":  "revised",
-                                                         "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
+                                                         "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
                                                      },
                                      "stage_context":  {
                                                            "stage_id":  "c4-independent-platform-gate",
                                                            "content_sha256":  "8cf5afb87aa33c0f77e7954fbaa1aef2179a42253007c579d740f4b504c43329",
                                                            "review_disposition":  "revised",
-                                                           "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
+                                                           "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
                                                        },
                                      "visual_quality_gate":  {
                                                                  "stage_id":  "c4-independent-platform-gate",
                                                                  "content_sha256":  "cfb3f4b0a636e0d5eff9dd88e562b4a427d3fadbe03f9349ac516e38adac2dd2",
                                                                  "review_disposition":  "revised",
-                                                                 "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
+                                                                 "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
                                                              },
                                      "simulation_ladder":  {
                                                                "stage_id":  "c4-independent-platform-gate",
-                                                               "content_sha256":  "2f4c51eecd5489cd601866cdba3673ddc2fee60d176aea8207739c373ce85214",
+                                                               "content_sha256":  "85b7397e0a82facca16eec15f8cdd6acbd9058ce5e73b84773934d92bb094276",
                                                                "review_disposition":  "revised",
-                                                               "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
+                                                               "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
                                                            },
                                      "unresolved_risks":  {
                                                               "stage_id":  "c4-independent-platform-gate",
-                                                              "content_sha256":  "f9dd9467b527c81a1cc158ca1fea6398e7254c6a809eab236c67107b03d6542e",
+                                                              "content_sha256":  "39276403d6c3b10df90bf42eb2a3dfeb4707853076c3beab9186e60db197d999",
                                                               "review_disposition":  "revised",
-                                                              "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
+                                                              "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
                                                           },
                                      "evidence_requirements":  {
                                                                    "stage_id":  "c4-independent-platform-gate",
                                                                    "content_sha256":  "06e7a714e1bfc359ca9fc2661906f0d92aeea77fe547d108f770667a62c3d9d2",
                                                                    "review_disposition":  "revised",
-                                                                   "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
+                                                                   "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
                                                                },
                                      "verification_plan":  {
                                                                "stage_id":  "c4-independent-platform-gate",
                                                                "content_sha256":  "8a81c24807c04878e8370ad782858ab2d58ce14dd677563b3284f1654d873aa9",
                                                                "review_disposition":  "revised",
-                                                               "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
+                                                               "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
                                                            },
                                      "resume_after":  {
                                                           "stage_id":  "c4-independent-platform-gate",
                                                           "content_sha256":  "91ff7c09a948de0f53a11009f349557946af6a692096ffa798c58e0cf19dcb3d",
                                                           "review_disposition":  "revised",
-                                                          "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
+                                                          "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
                                                       },
                                      "evidence":  {
                                                       "stage_id":  "c4-independent-platform-gate",
-                                                      "content_sha256":  "2194de648eb3096254f60460b840b7ff87d76bff3a04ac119bf11d65e8b6e61b",
+                                                      "content_sha256":  "8327cc96bb839657edf1c9654a697bfb27a546f52a233c6a434c9f5f67cb2415",
                                                       "review_disposition":  "revised",
-                                                      "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
+                                                      "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
                                                   },
                                      "verification_receipts":  {
                                                                    "stage_id":  "c4-independent-platform-gate",
-                                                                   "content_sha256":  "b7e1255e43bd4312762b47e8f0a4f8b33e6cdbfa5454a5dfaff67dcc76282c1d",
+                                                                   "content_sha256":  "6ba032af5b15374a15c1fc8a6ede06ec8caa7bdaf55e0dcf03719a6daaa71bb0",
                                                                    "review_disposition":  "revised",
-                                                                   "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
+                                                                   "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
                                                                },
                                      "transition":  {
                                                         "stage_id":  "c4-independent-platform-gate",
                                                         "content_sha256":  "0ab96ffbfaa431a0e9aa4d20a2da0d294d1e87d3b4bd8a4504bb5ba27f213d9e",
                                                         "review_disposition":  "revised",
-                                                        "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
+                                                        "review_note":  "Reviewed imported independent C4 evidence, failed full-gate receipt and repaired C3 retention anchors against the active platform gate."
                                                     }
                                  },
     "consecutive_no_progress_limit":  1,
@@ -93,9 +93,9 @@
                                     ]
                     },
     "risk_level":  "bounded-broad-c4-capability-free-closure",
-    "research_gate":  "C4 local proof passes and the public GitHub repository plus authenticated CLI are connected. Hosted run 29671494578 proved the external workflow but strict import exposed a Windows-CRLF/LF tracked-tree serialization mismatch. The canonical LF repair is locally regenerated at source 8651038; one fresh challenge, provider-hosted execution, strict import and registered full gate remain required.",
+    "research_gate":  "C4 local proof passes and GitHub-hosted run 29671881585 at source 8651038 is strictly imported with replayable attestation digest 75d27618. The first registered full gate replayed that receipt successfully, then exposed older C3 closure-register retention drift. Focused historical C3 and current C3A/C3B split verifiers now pass after the bounded register repair; one complete registered full-gate rerun remains required.",
     "authority_lane":  "Owner-authorized broad C4 hierarchy/history reconciliation and capability-free closure proof only. Exact dependencies C2 and C3A. No C3B, C5, C6, C7, broad G1 closure, runtime, storage engine, filesystem, network, multiplayer, cross-target transactions, Companion, Greenfield, visual assets or Kernel mutation.",
-    "context_health":  "C4 remains candidate_verified_local. The public zakwmthomas/Mindwarp-forge repository and authenticated GitHub CLI are connected. The first hosted attested run was rejected before import because it exposed noncanonical Windows CRLF tree serialization. Canonical LF binding, generator fail-early checks, 36 external hostiles and 15 retained-replay hostiles now pass at clean source 8651038 with bounded manifest 3d0a2419; a fresh hosted receipt and registered full gate remain open, and C5 stays inactive.",
+    "context_health":  "C4 remains candidate_verified_local. GitHub-hosted run 29671881585 independently executed and attested clean source 8651038; strict import and retained cryptographic replay verify canonical receipt digest 75d27618497c5432c10f86fd2dd25759185238cd3bbf264a583b3743b228542b. The first registered full gate passed C4 replay and later failed on compressed historical C3 closure wording; the register now retains both the current C3A/C3B split and exact residual/ecotone anchors, and all focused affected shields pass. Only the complete registered full-gate rerun remains open, and C5 stays inactive.",
     "stage_context":  {
                           "stage_id":  "c4-independent-platform-gate",
                           "macro_sources":  [
@@ -165,15 +165,20 @@
                                                           "tier":  "in_memory_fixture",
                                                           "result":  "Thirty-six external receipt hostiles and pinned workflow-control assertions fail closed without granting independence.",
                                                           "evidence":  "tools/test-g1-c4-external-receipt.py"
+                                                      },
+                                                      {
+                                                          "tier":  "external_execution",
+                                                          "result":  "GitHub-hosted Ubuntu run 29671881585 executed two concurrent native processes at source 8651038 and produced a strictly imported, cryptographically replayable authority-negative receipt.",
+                                                          "evidence":  "docs/canonical-system/G1_C4_INDEPENDENT_PLATFORM_EXECUTION.json"
                                                       }
                                                   ],
                               "expensive_execution_planned":  true,
-                              "unresolved_risk":  "Local semantic, hostile, cost, fresh-process, same-host i686 and Android compile evidence passes at source 8651038; a fresh provider-attested independent run and strict import remain unavailable.",
-                              "expected_information_gain":  "Determine whether exact C4 semantic bytes and source-bound execution survive a genuinely independent Linux or macOS hosted runner without trusting self-asserted metadata.",
-                              "estimated_cost":  "One locked portable fixture and hostile-tested importer locally, then one short read-only hosted-runner job; registered full gate only after a qualifying imported receipt exists.",
+                              "unresolved_risk":  "The independent provider-attested receipt is imported and replayable; complete full-gate closure remains unavailable until the repaired historical C3 retention shields and every later verifier pass in one registered run.",
+                              "expected_information_gain":  "Determine whether the replayable independent C4 evidence and repaired C3 retention anchors survive every historical and current repository shield in one complete registered run.",
+                              "estimated_cost":  "One registered full Forge gate rerun; no additional hosted execution is required unless retained attestation replay fails.",
                               "regression_guard":  "No C3B, C5-C7, broad G1 closure, runtime, storage engine, filesystem, network, multiplayer, Companion, Greenfield, visual asset or Kernel mutation.",
-                              "stop_condition":  "Stop at candidate_verified_local if independent second-platform execution is unavailable or any semantic/authority hostile passes.",
-                              "final_integration_gate":  "Pending after readiness, implementation, local portability and independent second-platform evidence."
+                              "stop_condition":  "Stop at candidate_verified_local if retained attestation replay or any semantic, authority, historical or current-route shield fails.",
+                              "final_integration_gate":  "Registered forge-full-gate-v1 rerun pending after successful independent-platform import and focused C3 retention repair."
                           },
     "exit_criteria":  [
                           {
@@ -196,22 +201,23 @@
                           {
                               "id":  "c4-deterministic-cost-portability",
                               "label":  "Bounded window/history/snapshot work and byte portfolios are deterministic across fresh processes and an honestly classified independent second platform.",
-                              "status":  "in_progress",
+                              "status":  "verified",
                               "evidence_ids":  [
-                                                   "contracts/hierarchy-history-contract.md"
+                                                   "contracts/hierarchy-history-contract.md",
+                                                   "docs/canonical-system/G1_C4_INDEPENDENT_PLATFORM_EXECUTION.json"
                                                ]
                           },
                           {
                               "id":  "c4-registered-closure",
                               "label":  "The dedicated C4 verifier, dependent regressions, independent review and one registered full Forge gate pass without activating C5.",
-                              "status":  "planned",
+                              "status":  "in_progress",
                               "evidence_ids":  [
                                                    "tools/verify-g1-c4-closure-readiness.ps1"
                                                ]
                           }
                       ],
     "unresolved_risks":  [
-                             "Hosted run 29671494578 is diagnostic-only because strict import rejected its tracked-tree serialization mismatch; source 8651038 still requires one fresh provider-attested independent run."
+                             "Registered run after import must pass every historical and current shield in one invocation; the prior run stopped at repaired C3 closure-register retention drift."
                          ],
     "evidence_requirements":  [
                                   "freeze the exact C2+C3A C4 closure and later-system exclusions",
@@ -247,7 +253,8 @@
                      "The bounded 27-path C4 implementation, fixture and verification source manifest SHA-256 is 3d0a24192fead0a12d78ad7fa440b1c3485a61609bed674225f06a4c666a7e91.",
                      "Local platform observations bind clean source commit 8651038d63d7e041573667878001059d7a3b3405 and canonical LF-normalized tracked-tree manifest SHA-256 4741c4bc73eedfecf733a3e3e995f52c428e35468502308944ebdf961333dcc3.",
                      "Hosted run 29671494578 executed and attested historical source f0c3c4f but strict import rejected its CRLF/LF tracked-tree mismatch before writing canonical evidence; it is diagnostic-only.",
-                     "The locked portable C4 fixture, fresh request generator, hosted Ubuntu workflow, cryptographically pinned importer, 36 external hostiles and 15 exact-byte retained-replay hostiles are locally verified; no qualifying independent result has been imported."
+                     "GitHub-hosted run 29671881585 independently executed and attested clean source 8651038; strict import created G1_C4_INDEPENDENT_PLATFORM_EXECUTION.json with receipt SHA-256 75d27618497c5432c10f86fd2dd25759185238cd3bbf264a583b3743b228542b.",
+                     "The first registered post-import gate replayed the C4 attestation, then failed on C3 closure-register retention drift; the register now preserves current superseded-C3/promoted-C3A/blocked-C3B truth plus residual/ecotone anchors, and all five affected focused shields pass."
                  ],
     "verification_receipts":  [
                                   "dependency:gp0-gp1-gp2-gp3-c4v:verified",
@@ -274,7 +281,11 @@
                                   "platform:c4-android-aarch64:compile-only:passed",
                                   "gate:c4-external-importer-hostiles:pass:36-plus-workflow-controls",
                                   "gate:c4-retained-replay-hostiles:pass:15-plus-scope-controls",
-                                  "external:c4-github-run-29671494578:rejected-before-import:tracked-tree-newline-drift"
+                                  "external:c4-github-run-29671494578:rejected-before-import:tracked-tree-newline-drift",
+                                  "external:c4-github-run-29671881585:hosted-linux-attested:passed",
+                                  "receipt:c4-independent-platform-sha256:75d27618497c5432c10f86fd2dd25759185238cd3bbf264a583b3743b228542b",
+                                  "registered-full-gate:post-c4-import:failed:c3-closure-register-retention-drift",
+                                  "focused:c3-closure-retention-shields:5-of-5:passed"
                               ],
     "metrics":  {
                     "token_cost":  {
