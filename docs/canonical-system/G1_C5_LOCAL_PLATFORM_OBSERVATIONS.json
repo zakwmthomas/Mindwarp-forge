@@ -1,0 +1,90 @@
+﻿{
+    "schema_version":  1,
+    "receipt_id":  "G1-C5-LOCAL-PLATFORM-OBSERVATIONS",
+    "semantic_receipt_sha256":  "88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb",
+    "source_commit":  "9e48dd117c2b22b62bd31dba15c10c3a9bf4b100",
+    "tracked_tree_manifest_sha256":  "cfc58943f96fed768f77ac2a6e3256aa13d59d6c0edbe24f13cd967315038636",
+    "bounded_source_manifest_sha256":  "9430bc530ba39403803a05fd99a9bc5c257472c2f320921ca242b51344947ecb",
+    "rustc":  "rustc 1.97.0 (2d8144b78 2026-07-07)\nbinary: rustc\ncommit-hash: 2d8144b7880597b6e6d3dfd63a9a9efae3f533d3\ncommit-date: 2026-07-07\nhost: x86_64-pc-windows-msvc\nrelease: 1.97.0\nLLVM version: 22.1.6",
+    "cargo":  "cargo 1.97.0 (c980f4866 2026-06-30)",
+    "observations":  [
+                         {
+                             "classification":  "native_same_host_execution",
+                             "target":  "x86_64-pc-windows-msvc",
+                             "os":  "windows",
+                             "architecture":  "x86_64",
+                             "pointer_width":  64,
+                             "endian":  "little",
+                             "runner":  "cargo-native",
+                             "command":  "run --quiet --locked --offline --manifest-path \"C:\\Users\\zakwm\\Desktop\\Mindwarp forge\\tools\\fixtures\\c5-significance-scheduler-receipt\\Cargo.toml\"",
+                             "exit_code":  0,
+                             "process_ids":  [
+                                                 38904,
+                                                 19756
+                                             ],
+                             "stdout_sha256":  [
+                                                   "15c3a2a3ec0c8f86bd2e8322d5ecf8802ff1ea5bc8926fda1c518fd0cb041941",
+                                                   "15c3a2a3ec0c8f86bd2e8322d5ecf8802ff1ea5bc8926fda1c518fd0cb041941"
+                                               ],
+                             "stderr_sha256":  [
+                                                   "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                                                   "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                                               ],
+                             "executable":  {
+                                                "present":  true,
+                                                "sha256":  "d65ad2d04eb58c0cfa0fde594c0f91cf3768fddcca0e58d36529bcc71bf2e934"
+                                            }
+                         },
+                         {
+                             "classification":  "same_host_second_architecture",
+                             "target":  "i686-pc-windows-msvc",
+                             "os":  "windows",
+                             "architecture":  "i686",
+                             "pointer_width":  32,
+                             "endian":  "little",
+                             "runner":  "cargo-i686",
+                             "command":  "run --quiet --locked --offline --target i686-pc-windows-msvc --manifest-path \"C:\\Users\\zakwm\\Desktop\\Mindwarp forge\\tools\\fixtures\\c5-significance-scheduler-receipt\\Cargo.toml\"",
+                             "exit_code":  0,
+                             "process_ids":  [
+                                                 30828
+                                             ],
+                             "stdout_sha256":  [
+                                                   "15c3a2a3ec0c8f86bd2e8322d5ecf8802ff1ea5bc8926fda1c518fd0cb041941"
+                                               ],
+                             "stderr_sha256":  [
+                                                   "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                                               ],
+                             "executable":  {
+                                                "present":  true,
+                                                "sha256":  "e4dcbf8739015d5a9c00c9de3f1ca025e1b553ae4c10696a3006a0a21d8410fb"
+                                            }
+                         },
+                         {
+                             "classification":  "compile_only",
+                             "target":  "aarch64-linux-android",
+                             "os":  "android",
+                             "architecture":  "aarch64",
+                             "pointer_width":  64,
+                             "endian":  "little",
+                             "runner":  "cargo-check",
+                             "command":  "check --quiet --locked --offline --target aarch64-linux-android --manifest-path \"C:\\Users\\zakwm\\Desktop\\Mindwarp forge\\tools\\fixtures\\c5-significance-scheduler-receipt\\Cargo.toml\"",
+                             "exit_code":  0,
+                             "process_ids":  [
+                                                 16228
+                                             ],
+                             "stdout_sha256":  [
+                                                   "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                                               ],
+                             "stderr_sha256":  [
+                                                   "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                                               ],
+                             "executable":  {
+                                                "present":  false,
+                                                "reason":  "cargo check produces metadata only; no execution occurred"
+                                            }
+                         }
+                     ],
+    "independent_second_platform_execution":  false,
+    "promotion_authority":  false,
+    "c6_authority":  false
+}

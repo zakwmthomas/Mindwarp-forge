@@ -1,6 +1,6 @@
 # G1 C5 independent platform execution protocol
 
-Status: **portability protocol implemented locally; no independent result imported**.
+Status: **clean-commit local observation retained; no independent result imported**.
 
 This protocol proves only the independent-platform portion of C5 portability. It grants no integration, promotion, C5 closure, C6 activation, repository mutation, runtime, cache, storage, network, rendering, AI-generation or publishing authority.
 

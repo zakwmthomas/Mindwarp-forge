@@ -10,7 +10,7 @@
 - State / substage: **executing / c5-implementation**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Objective: Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.
-- Context health: C4 remains verified and C5 remains the sole active item. C5 local hardening and portability tooling now pass independent review: the semantic receipt is stable across fresh Windows x64 processes and same-host i686, while Android ARM64 is compile-only. This is not a Forge port. Clean-commit local observation and genuinely independent hosted evidence remain pending; integration, C5 closure, C6, C7, broad G1 closure and R1 remain gated.
+- Context health: C4 remains verified and C5 remains the sole active item. C5 local hardening and portability tooling pass independent review, and a clean-commit observation at source 9e48dd1 retains exact Windows x64/i686 semantic evidence plus honest Android ARM64 compile-only classification. This is not a Forge port. Genuinely independent hosted evidence remains pending; integration, C5 closure, C6, C7, broad G1 closure and R1 remain gated.
 
 ## Durable evidence
 
@@ -29,11 +29,11 @@ Owner-authorized bounded C5 significance/scheduler implementation and capability
 
 ## Exact next action
 
-Freeze the independently reviewed C5 portability tooling on a clean commit, emit the commit-bound Windows x64/i686 and Android compile-only observation, then prepare the separately attested hosted execution. This ports only the game-facing proof contract, not Forge.
+Commit the verified C5 local platform observation, register the already frozen C5 workflow on the default branch, generate a fresh challenge bound to source 9e48dd1, and obtain the separately attested hosted execution. This ports only the game-facing proof contract, not Forge.
 
 ## Unresolved risks
 
-- The clean-commit local observation and independently attested hosted execution must preserve semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb without misclassifying i686 or Android compile-only evidence as an independent platform or porting Forge itself.
+- The independently attested hosted execution must preserve semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb and exact source 9e48dd1 without treating the retained i686 or Android compile-only observations as independent evidence or porting Forge itself.
 
 ## Resume after this package
 

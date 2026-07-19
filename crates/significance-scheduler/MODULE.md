@@ -72,6 +72,7 @@ Shared significance packets and deterministic bounded scheduling reference acros
 - `docs/canonical-system/G1_C5_CLOSURE_READINESS.md`
 - `docs/canonical-system/G1_C5_LOCAL_IMPLEMENTATION_CANDIDATE.md`
 - `docs/canonical-system/G1_C5_INDEPENDENT_PLATFORM_EXECUTION_PROTOCOL.md`
+- `docs/canonical-system/G1_C5_LOCAL_PLATFORM_OBSERVATIONS.json`
 
 ## Update rule
 

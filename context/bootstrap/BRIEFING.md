@@ -9,7 +9,7 @@
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Risk/research gate: **bounded-c5-significance-scheduler-portability / C4 is verified and complete. The hardened C5 candidate and isolated 38-field semantic receipt pass 90 tests, strict Clippy, all 92 hostile mappings, ten pressure transcripts, cross-target local execution/compile checks and a fresh hostile tooling review. Portability applies only to the game-facing proof contract; Forge remains the PC-first factory. Integration, closure, promotion and C6 authority remain withheld.**
-- Exact next action: Freeze the independently reviewed C5 portability tooling on a clean commit, emit the commit-bound Windows x64/i686 and Android compile-only observation, then prepare the separately attested hosted execution. This ports only the game-facing proof contract, not Forge.
+- Exact next action: Commit the verified C5 local platform observation, register the already frozen C5 workflow on the default branch, generate a fresh challenge bound to source 9e48dd1, and obtain the separately attested hosted execution. This ports only the game-facing proof contract, not Forge.
 
 ## Approved operating policies
 
