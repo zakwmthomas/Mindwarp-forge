@@ -9,7 +9,7 @@
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Risk/research gate: **code-free-c6-organism-identity-readiness / Body-plan V1 is recorded and passed registered full gate run-e923d74fb96743e5864b303faf27acfc. Three independent package-order audits selected typed identity plus exact C4 lifecycle/history consumption; three independent schema, adversarial and integration re-reviews now accept the frozen code-free readiness package after stable-identity, multi-family, population-separation, dependency, codec, resource, source-negative and contradiction-resistance repairs.**
-- Exact next action: Run the registered forge-full-gate-v1 with the independently accepted package-3 identity readiness verifier and hostiles inside production orchestration; then record the code-free readiness result and stop before source authorization.
+- Exact next action: Stop at the verified package-3 identity readiness boundary. Await one exact owner authorization naming G1-C6-ORGANISM-SUBJECT-IDENTITY-IMPLEMENTATION-V1 before any Rust source or person-form consumer change.
 
 ## Approved operating policies
 

@@ -32,12 +32,12 @@
   read-only ProofReceipt integration and registered gate
   `run-87b9301f9bb54b2d9b72767643c7ed9b`. C5 grants no broader C6 authority.
   Coordinate-free body-plan structure V1 is verified and recorded after
-  registered gate `run-e923d74fb96743e5864b303faf27acfc`. The owner continuation
-  activates code-free C6 package 3 identity readiness only; package 3 source
-  remains gated. The inherited 38 focused prototype tests and verified body-plan
-  slice still do not prove typed organism/individual/lineage/species identity
-  envelopes, exact C4 lifecycle/history/delta consumption for those identities,
-  population membership or distributions, ecological niches,
+  registered gate `run-e923d74fb96743e5864b303faf27acfc`. Code-free C6
+  package-3 identity readiness is independently accepted, verified and recorded
+  after `run-a25fd6473dc7401fa9b24df5d4e5cb27`; package-3 source remains gated.
+  The inherited prototypes, verified body-plan slice and readiness record still
+  do not implement the typed identity envelopes or exact C4 consumption source,
+  nor prove population membership or distributions, ecological niches,
   physiology/viability, reproduction/heredity/development, evolution, grounded
   capacities, comparative person-form, applicable variation, population aging,
   a real C5 consumption seam, or an exact end-to-end organism chain. C7 remains

@@ -10,7 +10,7 @@
 - State / substage: **executing / c6-organism-identity-readiness**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Objective: Reconcile the recorded body-plan V1 result, then freeze only the capability-free C6 package-3 typed lineage, organism-form, species-candidate, individual and population identity envelopes plus exact C4 lifecycle/history consumption.
-- Context health: C4 and C5 remain verified prerequisites. Body-plan V1 is verified, recorded and passed the complete registered gate. C6 package 3 is active for code-free identity readiness only; all source and later C6 packages remain gated.
+- Context health: C4 and C5 remain verified prerequisites. Body-plan V1 is verified and recorded. C6 package-3 identity readiness is independently accepted, recorded and passed complete registered gate run-a25fd6473dc7401fa9b24df5d4e5cb27; source and all later C6 packages remain gated.
 
 ## Durable evidence
 
@@ -29,7 +29,7 @@ Owner-routed code-free C6 package-3 identity readiness only. Authorizes reconcil
 
 ## Exact next action
 
-Run the registered forge-full-gate-v1 with the independently accepted package-3 identity readiness verifier and hostiles inside production orchestration; then record the code-free readiness result and stop before source authorization.
+Stop at the verified package-3 identity readiness boundary. Await one exact owner authorization naming G1-C6-ORGANISM-SUBJECT-IDENTITY-IMPLEMENTATION-V1 before any Rust source or person-form consumer change.
 
 ## Unresolved risks
 

@@ -64,7 +64,7 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
 - **C5** - verified; gate: recorded; depends on: C4.
   Next: Retain the verified capability-free C5 reference as an immutable exact dependency for active C6 readiness; do not infer product policy, cache, runtime or later-system authority.
 - **C6** - executing; gate: design; depends on: C4, C5.
-  Next: Freeze only C6 package 3 readiness: typed organism, individual, lineage and species identity envelopes plus exact C4 lifecycle/history/delta consumption, with population identity only. Freeze exact tests, resources, receipts, one-consumer scope, rollback and platform classifications before any source; retain all later C6 and C7 gates.
+  Next: Stop at verified package-3 identity readiness and require one exact owner authorization naming G1-C6-ORGANISM-SUBJECT-IDENTITY-IMPLEMENTATION-V1 before source. Retain ecology, physiology, reproduction, heredity, development, dimorphism applicability, population membership/distributions, C7 and runtime gates.
 - **C7** - proposed; gate: design; depends on: C5, C6.
   Next: Promote representation contracts and prove asset, animation, aesthetic, visual-fitness and phone-to-high-end fidelity recipes from the same canonical organism/world state.
 - **G1-CLOSEOUT** - proposed; gate: owner; depends on: C3A, C4, C5, C6, C7, GP4.
