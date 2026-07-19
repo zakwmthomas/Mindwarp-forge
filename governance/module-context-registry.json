@@ -1656,24 +1656,31 @@
             "entrypoints": [
                 "src/significance.rs",
                 "src/scheduler.rs",
+                "src/closure.rs",
                 "src/lib.rs"
             ],
             "invariants": [
                 "safety work is admitted before dispatch",
                 "late output is quarantined",
                 "consumer fidelity remains monotone",
-                "named consumer domains never interfere with each other's fidelity map"
+                "the eight consumer domains are closed and stable-coded",
+                "named consumer domains never interfere with each other's fidelity map",
+                "completion acceptance requires a full typed completion receipt from running work",
+                "strict traces bind domain, work class, packet and budget identity"
             ],
             "verification": [
                 "cargo test -p significance-scheduler",
+                "cargo test -p significance-scheduler --test eight_domain_scheduler_closure",
                 "cargo test -p significance-scheduler --test multi_domain_consumer_fidelity",
+                "tools/verify-g1-c5-significance-scheduler-implementation.ps1",
                 "tools/verify-f5-significance-scheduler-readiness.ps1"
             ],
             "references": [
                 "contracts/significance-scheduler-contract.md",
                 "docs/canonical-system/SIGNIFICANCE_SCHEDULER_DESIGN_GATE.md",
                 "docs/canonical-system/G1_C5_MULTI_DOMAIN_FIDELITY_RESULT.md",
-                "docs/canonical-system/G1_C5_CLOSURE_READINESS.md"
+                "docs/canonical-system/G1_C5_CLOSURE_READINESS.md",
+                "docs/canonical-system/G1_C5_LOCAL_IMPLEMENTATION_CANDIDATE.md"
             ]
         },
         {

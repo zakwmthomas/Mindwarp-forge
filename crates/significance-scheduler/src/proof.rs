@@ -101,8 +101,8 @@ fn fixture_ticket(
 mod tests {
     use super::*;
     use crate::{
-        ConsumerFidelityMap, DecisionKind, HysteresisPolicy, PROTECT_THREAT, SignificanceState,
-        TicketState,
+        ConsumerDomainV1, ConsumerFidelityMap, DecisionKind, HysteresisPolicy, PROTECT_THREAT,
+        SignificanceState, TicketState,
     };
 
     fn packet(signal: u16, protection: u8) -> ImportancePacket {
@@ -141,7 +141,7 @@ mod tests {
             [id; 32],
             [7; 32],
             1,
-            u16::from(id.max(1)),
+            ConsumerDomainV1::Generation.code(),
             1,
             ResourceClass::Cpu,
             cost,

@@ -1,5 +1,6 @@
 //! Capability-free significance and scheduling reference harness.
 
+mod closure;
 mod proof;
 mod scheduler;
 mod significance;
@@ -58,3 +59,4 @@ pub(crate) fn bytes32(bytes: &[u8]) -> Result<[u8; 32], SignificanceSchedulerErr
         .try_into()
         .map_err(|_| SignificanceSchedulerError::Invalid("expected 32 bytes"))
 }
+pub use closure::*;

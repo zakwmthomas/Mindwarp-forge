@@ -8,8 +8,8 @@
 - Objective: Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **bounded-c5-significance-scheduler-readiness / C4 is verified, complete and recorded after GitHub-hosted Linux execution, retained cryptographic replay and registered full gate run-bc2154f73f6243239910ac30bc3b1994. C5 may reconcile requirements and freeze readiness evidence; source remains blocked until the exact closure surface and hostile matrix are complete.**
-- Exact next action: At the bounded owner gate, authorize or reject only the minimal additive C5 candidate frozen in G1_C5_CLOSURE_READINESS.md: eight typed domains, exact packet/tier and budget binding, same-domain fallback, state-gated completion, strict traces, starvation diagnosis and capability-free residency intents.
+- Risk/research gate: **bounded-c5-significance-scheduler-local-candidate / C4 is verified and complete. The owner released the frozen C5 implementation lane. A capability-free local candidate now passes 27 tests and exact 92-ID registry identity, but full one-to-one hostile execution, pressure replay, portability, integration, independent review and the registered full gate remain required before closure.**
+- Exact next action: Expand the locally green C5 candidate into exact one-to-one hostile suites and sealed pressure/replay fixtures, then run fresh-process, portability, read-only ProofReceipt integration, independent review and the registered full gate before any C5 closure claim.
 
 ## Approved operating policies
 

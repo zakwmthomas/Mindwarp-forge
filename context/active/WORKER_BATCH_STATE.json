@@ -6,78 +6,78 @@
     "state":  "executing",
     "previous_state":  "ready",
     "objective":  "Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.",
-    "next_action":  "At the bounded owner gate, authorize or reject only the minimal additive C5 candidate frozen in G1_C5_CLOSURE_READINESS.md: eight typed domains, exact packet/tier and budget binding, same-domain fallback, state-gated completion, strict traces, starvation diagnosis and capability-free residency intents.",
-    "substage_id":  "c5-implementation-owner-gate",
+    "next_action":  "Expand the locally green C5 candidate into exact one-to-one hostile suites and sealed pressure/replay fixtures, then run fresh-process, portability, read-only ProofReceipt integration, independent review and the registered full gate before any C5 closure claim.",
+    "substage_id":  "c5-implementation",
     "handoff_section_receipts":  {
                                      "objective":  {
-                                                       "stage_id":  "c5-implementation-owner-gate",
+                                                       "stage_id":  "c5-implementation",
                                                        "content_sha256":  "31a2cdccf71602454fc21773b1d0076077682aa9831062db569ec25fb044ceea",
                                                        "review_disposition":  "revised",
                                                        "review_note":  "Reviewed all handoff sections against the active substage."
                                                    },
                                      "next_action":  {
-                                                         "stage_id":  "c5-implementation-owner-gate",
-                                                         "content_sha256":  "080dccc620f14b82477568d5f866f122206e0ae1f6649fd224e42ea0225ff23f",
+                                                         "stage_id":  "c5-implementation",
+                                                         "content_sha256":  "3bed3ba8950869ebe2de17ac3caea516d497d176c00ec4d45bd7a3bbc1225dcb",
                                                          "review_disposition":  "revised",
                                                          "review_note":  "Reviewed all handoff sections against the active substage."
                                                      },
                                      "stage_context":  {
-                                                           "stage_id":  "c5-implementation-owner-gate",
-                                                           "content_sha256":  "efb6ca32eaceb19d15ca3ca3469142771b2262854f88e466509bb0c8ec1f2aa6",
+                                                           "stage_id":  "c5-implementation",
+                                                           "content_sha256":  "1eb7d4c293c2f024202753dcf50476f4e0ae9b516446e8c2c3f0bcb4fabe8339",
                                                            "review_disposition":  "revised",
                                                            "review_note":  "Reviewed all handoff sections against the active substage."
                                                        },
                                      "visual_quality_gate":  {
-                                                                 "stage_id":  "c5-implementation-owner-gate",
+                                                                 "stage_id":  "c5-implementation",
                                                                  "content_sha256":  "80ae5cd5e6cfb847218c27879744cfe9da5c36bd40124e6f700060f88c558739",
                                                                  "review_disposition":  "revised",
                                                                  "review_note":  "Reviewed all handoff sections against the active substage."
                                                              },
                                      "simulation_ladder":  {
-                                                               "stage_id":  "c5-implementation-owner-gate",
+                                                               "stage_id":  "c5-implementation",
                                                                "content_sha256":  "f773cf8a3969dd21e020acb308f6244a73f6dda7892236acf231eb59766fbac9",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "unresolved_risks":  {
-                                                              "stage_id":  "c5-implementation-owner-gate",
+                                                              "stage_id":  "c5-implementation",
                                                               "content_sha256":  "af2b27d20de2e26845cdd513bd99b5352e04b4665da0826bf32c593e0370327d",
                                                               "review_disposition":  "revised",
                                                               "review_note":  "Reviewed all handoff sections against the active substage."
                                                           },
                                      "evidence_requirements":  {
-                                                                   "stage_id":  "c5-implementation-owner-gate",
+                                                                   "stage_id":  "c5-implementation",
                                                                    "content_sha256":  "fee8b2b089c9ee9fd8607d84f31964a5e3a026625e9c90d93f3246844107e57a",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "verification_plan":  {
-                                                               "stage_id":  "c5-implementation-owner-gate",
+                                                               "stage_id":  "c5-implementation",
                                                                "content_sha256":  "bd8cb3648dbfdb6d3f832e3b2dfa18f80aa4c98563b3695d6866191a5f6f569c",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "resume_after":  {
-                                                          "stage_id":  "c5-implementation-owner-gate",
-                                                          "content_sha256":  "2c2cec92074ab7fa733b92387ce90e5afd9c3a28a561c8871f98067d839f940d",
+                                                          "stage_id":  "c5-implementation",
+                                                          "content_sha256":  "99bf48508c69c21d19f6a41be03dd0020e9861f909db0c510ac53f7f88d0fe5b",
                                                           "review_disposition":  "revised",
                                                           "review_note":  "Reviewed all handoff sections against the active substage."
                                                       },
                                      "evidence":  {
-                                                      "stage_id":  "c5-implementation-owner-gate",
+                                                      "stage_id":  "c5-implementation",
                                                       "content_sha256":  "59091fd16fedf316781d6f4aebd23f4496f48b1bba56ad3643a7585af3182361",
                                                       "review_disposition":  "revised",
                                                       "review_note":  "Reviewed all handoff sections against the active substage."
                                                   },
                                      "verification_receipts":  {
-                                                                   "stage_id":  "c5-implementation-owner-gate",
-                                                                   "content_sha256":  "c1794271c8d022f443ecb3a6b05cc183591c0184d32ed02cc2254056120b7784",
+                                                                   "stage_id":  "c5-implementation",
+                                                                   "content_sha256":  "235cd956268cb8bb6449c53fdff515eebec2d1129ac79436de2e1f7f4257f34b",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "transition":  {
-                                                        "stage_id":  "c5-implementation-owner-gate",
-                                                        "content_sha256":  "2c59e2d35cfbac01c3613018957d0409535d443506ee30d81424b89aba9546fb",
+                                                        "stage_id":  "c5-implementation",
+                                                        "content_sha256":  "4f809cd71349ef88e42ece518237567d3cc3d799fd122e7b04d1c55695d9239b",
                                                         "review_disposition":  "revised",
                                                         "review_note":  "Reviewed all handoff sections against the active substage."
                                                     }
@@ -92,12 +92,12 @@
                                         "domain-creative-suites"
                                     ]
                     },
-    "risk_level":  "bounded-c5-significance-scheduler-readiness",
-    "research_gate":  "C4 is verified, complete and recorded after GitHub-hosted Linux execution, retained cryptographic replay and registered full gate run-bc2154f73f6243239910ac30bc3b1994. C5 may reconcile requirements and freeze readiness evidence; source remains blocked until the exact closure surface and hostile matrix are complete.",
-    "authority_lane":  "Owner-authorized broad C5 significance/scheduler reconciliation and capability-free closure readiness only. Exact dependency C4. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.",
-    "context_health":  "C4 remains verified and C5 remains the sole active item. Three independent read-only audits plus 18 passing focused tests contradicted the old one-gap claim and froze the complete eight-domain boundary, supersessions, minimal additive candidate and 92 hostile IDs in G1_C5_CLOSURE_READINESS.md. The exact readiness verifier and forged-route/authority/dependency/registry suite pass. Product source remains blocked at the explicit owner gate; C6, C7, broad G1 closure and R1 remain gated.",
+    "risk_level":  "bounded-c5-significance-scheduler-local-candidate",
+    "research_gate":  "C4 is verified and complete. The owner released the frozen C5 implementation lane. A capability-free local candidate now passes 27 tests and exact 92-ID registry identity, but full one-to-one hostile execution, pressure replay, portability, integration, independent review and the registered full gate remain required before closure.",
+    "authority_lane":  "Owner-authorized bounded C5 significance/scheduler implementation and capability-free closure proof only. Exact dependency C4. Frozen candidate G1_C5_CLOSURE_READINESS.md. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.",
+    "context_health":  "C4 remains verified and C5 remains the sole active item. The owner explicitly released the frozen C5 implementation gate. The local candidate adds the typed eight-domain surface and passes 27 tests plus module/readiness gates; its verifier explicitly does not mislabel the 92-ID registry as 92 executed hostile proofs. C6, C7, broad G1 closure and R1 remain gated.",
     "stage_context":  {
-                          "stage_id":  "c5-implementation-owner-gate",
+                          "stage_id":  "c5-implementation",
                           "macro_sources":  [
                                                 "docs/canonical-system/MASTER_PROGRAM.json",
                                                 "docs/canonical-system/MASTER_CLOSURE_REGISTER.md",
@@ -130,10 +130,14 @@
                                                 ".github/workflows/g1-c4-independent-platform.yml",
                                                 "crates/significance-scheduler/src/significance.rs",
                                                 "crates/significance-scheduler/src/scheduler.rs",
+                                                "crates/significance-scheduler/src/closure.rs",
                                                 "crates/significance-scheduler/src/proof.rs",
+                                                "crates/significance-scheduler/tests/eight_domain_scheduler_closure.rs",
                                                 "crates/significance-scheduler/tests/multi_domain_consumer_fidelity.rs",
                                                 "tools/verify-g1-c5-closure-readiness.ps1",
-                                                "tools/test-g1-c5-closure-readiness.ps1"
+                                                "tools/test-g1-c5-closure-readiness.ps1",
+                                                "tools/verify-g1-c5-significance-scheduler-implementation.ps1",
+                                                "docs/canonical-system/G1_C5_LOCAL_IMPLEMENTATION_CANDIDATE.md"
                                             ],
                           "micro_findings":  [
                                                  "Stable dynamic identity, four-state presence, retained ambient cohort binding, exact dependency availability, typed prefix recovery, topology refusal and one/two-hop migrations pass hostile tests.",
@@ -144,9 +148,10 @@
                                                  "The public GitHub repository is connected. Hosted run 29671494578 separated read-only execution from attestation authority and was rejected locally before import when it exposed CRLF/LF tree serialization drift.",
                                                  "Canonical LF tree binding for the hardened C5-successor surface is clean source 17f39f7018de8a02c8292bcde0fafa2bf58fc7d4 with tracked-tree SHA-256 3b0bb235e5a3159ecba5b4d34acfd6157725773af79584e3b801283b8442e4dd and bounded-source SHA-256 b31d92b7ebf36540a64249192fca96d83537c01932ededf84c94e1a886acc108.",
                                                  "GitHub-hosted run 29674024317 executed and attested exact source 17f39f7; strict import and retained replay verify current independent result SHA-256 2430d21047166c7e177047b5d44862fcaffe41f33cf663c678aa3b754272fbdd.",
-                                                 "The retained C5 crate has 2,134 Rust lines and passes 14 unit plus four integration tests, but only AI, animation, audio and rendering have named fidelity fixtures.",
-                                                 "Current source accepts arbitrary consumer IDs, independently supplied packet/tier truth, cross-domain fallbacks and completion from invalid states; it has no strict budget/admission receipt or residency-intent surface.",
-                                                 "The readiness record freezes eight typed domains, exact truth/budget/trace binding, state-gated completion, starvation diagnosis, capability-free residency intent and 92 hostile IDs before source."
+                                                 "The retained 18 tests remain green and nine new integration tests cover the local eight-domain candidate for 27 total tests.",
+                                                 "The local candidate rejects unknown consumer/work-class codes, binds packet/policy/maps and budget identity, validates verified admission, preserves fallback domain/work-class identity, requires a full completion receipt, emits strict traces and bounds streaming-only residency intent.",
+                                                 "The exact 92 hostile IDs are mirrored uniquely in Rust, but the local result and verifier explicitly retain the gap between registry identity and one-to-one executable hostile coverage.",
+                                                 "C5 remains open pending exact hostile suites, sealed replay/pressure fixtures, portable and hosted receipts, read-only ProofReceipt integration, independent review and the full gate."
                                              ]
                       },
     "visual_quality_gate":  {
@@ -258,7 +263,7 @@
                               "at the owner gate, authorize or reject only the frozen minimal additive candidate",
                               "after authorization, run focused implementation and registered gates without activating C6"
                           ],
-    "resume_after":  "Pause at the C5 implementation owner gate. If explicitly authorized, continue only through the frozen capability-free candidate; do not activate C6 automatically.",
+    "resume_after":  "Continue only through the frozen capability-free C5 implementation and verification candidate; do not activate C6 automatically.",
     "evidence":  [
                      "GP3 closed cleanly in commit 7f29f6b and registered run-50a8c78043eb46c483f1f655d3793f9b.",
                      "C4V closed cleanly in commit 34f2213 and registered run-fa6334a300e04d409dd5cddb4f22542e.",
@@ -337,7 +342,8 @@
                                   "focused:c5-retained-prototype:18-of-18:passed",
                                   "audit:c5-canonical-code-hostile:three-lanes:complete",
                                   "gate:c5-closure-readiness:92-hostiles:frozen",
-                                  "gate:c5-readiness-route-hostiles:passed"
+                                  "gate:c5-readiness-route-hostiles:passed",
+                                  "owner-authorization:c5-frozen-implementation-candidate:released"
                               ],
     "metrics":  {
                     "token_cost":  {
@@ -350,5 +356,5 @@
                                          "receipt":  "registered-full-gate:run-71ef6dfd6e2945ab9745c85f3dcf4d6b:passed"
                                      }
                 },
-    "transition":  "C4 verified and recorded -\u003e C5 reconciliation audited -\u003e eight-domain readiness and 92 hostiles frozen -\u003e explicit C5 implementation owner gate; C6 remains gated"
+    "transition":  "C4 verified and recorded -\u003e C5 readiness and 92 hostiles frozen -\u003e owner explicitly released frozen C5 implementation -\u003e test-first capability-free implementation active; C6 remains gated"
 }

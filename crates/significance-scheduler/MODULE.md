@@ -4,7 +4,7 @@
 
 - **Maturity:** prototype_tested
 - **Root:** `crates/significance-scheduler`
-- **Source fingerprint:** `ccd256419204e524d18b3015c4969795750cf6101aa975248c1c824a90e49bc4`
+- **Source fingerprint:** `3029d416141e28fc394c8d3e9af79ffbbdefa2395b1a0b406b588e101464a2c6`
 - **Live project state:** read `context/active/CURRENT_STATE.md`; active status is never duplicated here.
 
 ## Purpose
@@ -27,6 +27,7 @@ Shared significance packets and deterministic bounded scheduling reference acros
 
 - `src/significance.rs`
 - `src/scheduler.rs`
+- `src/closure.rs`
 - `src/lib.rs`
 
 ## Upstream neighbours
@@ -42,12 +43,17 @@ Shared significance packets and deterministic bounded scheduling reference acros
 - safety work is admitted before dispatch
 - late output is quarantined
 - consumer fidelity remains monotone
+- the eight consumer domains are closed and stable-coded
 - named consumer domains never interfere with each other's fidelity map
+- completion acceptance requires a full typed completion receipt from running work
+- strict traces bind domain, work class, packet and budget identity
 
 ## Verification
 
 - `cargo test -p significance-scheduler`
+- `cargo test -p significance-scheduler --test eight_domain_scheduler_closure`
 - `cargo test -p significance-scheduler --test multi_domain_consumer_fidelity`
+- `tools/verify-g1-c5-significance-scheduler-implementation.ps1`
 - `tools/verify-f5-significance-scheduler-readiness.ps1`
 
 ## Canonical references
@@ -56,6 +62,7 @@ Shared significance packets and deterministic bounded scheduling reference acros
 - `docs/canonical-system/SIGNIFICANCE_SCHEDULER_DESIGN_GATE.md`
 - `docs/canonical-system/G1_C5_MULTI_DOMAIN_FIDELITY_RESULT.md`
 - `docs/canonical-system/G1_C5_CLOSURE_READINESS.md`
+- `docs/canonical-system/G1_C5_LOCAL_IMPLEMENTATION_CANDIDATE.md`
 
 ## Update rule
 

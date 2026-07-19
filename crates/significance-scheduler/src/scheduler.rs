@@ -4,7 +4,11 @@ use std::collections::{BTreeMap, BTreeSet, VecDeque};
 use minicbor::{Decoder, Encoder};
 use serde::Serialize;
 
-use crate::{CONTRACT_VERSION, ImportanceTier, SignificanceSchedulerError, bytes32, codec, hash};
+use crate::{
+    CONTRACT_VERSION, CompletionReceiptV1, ConsumerDomainV1, ImportanceDecisionBindingV1,
+    ImportanceTier, PressureTraceV2, SignificanceSchedulerError, StrictSchedulerDecisionV2,
+    bytes32, codec, hash,
+};
 
 const TICKET_DOMAIN: &[u8] = b"mindwarp/scheduler/ticket/v1\0";
 const TRACE_DOMAIN: &[u8] = b"mindwarp/scheduler/trace/v1\0";
@@ -96,9 +100,10 @@ impl WorkTicket {
         importance_tier: ImportanceTier,
     ) -> Result<Self, SignificanceSchedulerError> {
         if id == [0; 32]
+            || target_descriptor == [0; 32]
             || request_epoch == 0
-            || consumer == 0
-            || work_class == 0
+            || ConsumerDomainV1::try_from(consumer).is_err()
+            || !(1..=8).contains(&work_class)
             || cost_units == 0
             || due_step == 0
             || dependencies.len() > MAX_DEPENDENCIES
@@ -293,6 +298,7 @@ struct RuntimeTicket {
     effective_class: DeadlineClass,
     effective_tier: ImportanceTier,
     effective_due: u64,
+    starvation_reported: bool,
 }
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Serialize)]
@@ -306,10 +312,11 @@ pub enum DecisionKind {
     FallbackActivated,
     DeadlineRejected,
     DependencyRejected,
+    StarvationDiagnosed,
 }
 
 impl DecisionKind {
-    fn stable_code(self) -> u8 {
+    pub fn stable_code(self) -> u8 {
         match self {
             Self::Executed => 1,
             Self::CompletedAccepted => 2,
@@ -320,6 +327,26 @@ impl DecisionKind {
             Self::FallbackActivated => 7,
             Self::DeadlineRejected => 8,
             Self::DependencyRejected => 9,
+            Self::StarvationDiagnosed => 10,
+        }
+    }
+}
+
+impl TryFrom<u8> for DecisionKind {
+    type Error = SignificanceSchedulerError;
+    fn try_from(value: u8) -> Result<Self, Self::Error> {
+        match value {
+            1 => Ok(Self::Executed),
+            2 => Ok(Self::CompletedAccepted),
+            3 => Ok(Self::CompletedDiscarded),
+            4 => Ok(Self::CancelRequested),
+            5 => Ok(Self::CancelAcknowledged),
+            6 => Ok(Self::CancelSettled),
+            7 => Ok(Self::FallbackActivated),
+            8 => Ok(Self::DeadlineRejected),
+            9 => Ok(Self::DependencyRejected),
+            10 => Ok(Self::StarvationDiagnosed),
+            _ => Err(SignificanceSchedulerError::Invalid("decision kind")),
         }
     }
 }
@@ -360,6 +387,18 @@ impl ReferenceScheduler {
         if tickets.is_empty() || tickets.len() > MAX_TICKETS {
             return Err(SignificanceSchedulerError::Invalid("ticket count"));
         }
+        for ticket in &tickets {
+            let bytes = ticket.encode_canonical()?;
+            if WorkTicket::decode_strict(&bytes).as_ref() != Ok(ticket) {
+                return Err(SignificanceSchedulerError::Invalid("mutated work ticket"));
+            }
+        }
+        if tickets
+            .iter()
+            .any(|ticket| ticket.request_epoch != budget.epoch)
+        {
+            return Err(SignificanceSchedulerError::AdmissionRejected);
+        }
         let mut by_id = BTreeMap::new();
         for ticket in tickets {
             if by_id.insert(ticket.id, ticket).is_some() {
@@ -387,6 +426,7 @@ impl ReferenceScheduler {
                         effective_class: ticket.deadline_class,
                         effective_tier: ticket.importance_tier,
                         effective_due: ticket.due_step,
+                        starvation_reported: false,
                         ticket,
                     },
                 )
@@ -436,6 +476,27 @@ impl ReferenceScheduler {
             current_epochs,
             step: 0,
         })
+    }
+
+    pub fn new_verified(
+        tickets: Vec<WorkTicket>,
+        budget: BudgetEnvelope,
+        bindings: &[ImportanceDecisionBindingV1],
+    ) -> Result<Self, SignificanceSchedulerError> {
+        let by_packet: BTreeMap<[u8; 32], &ImportanceDecisionBindingV1> = bindings
+            .iter()
+            .map(|b| (b.packet_fingerprint(), b))
+            .collect();
+        if by_packet.len() != bindings.len()
+            || tickets.iter().any(|t| {
+                by_packet
+                    .get(&t.importance_packet)
+                    .is_none_or(|b| b.verify_ticket(t).is_err())
+            })
+        {
+            return Err(SignificanceSchedulerError::AdmissionRejected);
+        }
+        Self::new(tickets, budget)
     }
 
     pub fn state(&self, id: [u8; 32]) -> Result<TicketState, SignificanceSchedulerError> {
@@ -589,12 +650,12 @@ impl ReferenceScheduler {
                     | TicketState::CancelAcknowledged
                     | TicketState::CancelSettled
             );
-        runtime.remaining = 0;
-        runtime.state = if stale {
-            TicketState::CompletedDiscarded
+        if stale {
+            runtime.remaining = 0;
+            runtime.state = TicketState::CompletedDiscarded;
         } else {
-            TicketState::CompletedAccepted
-        };
+            return Err(SignificanceSchedulerError::InvalidTransition);
+        }
         Ok(decision(
             runtime,
             if stale {
@@ -608,6 +669,49 @@ impl ReferenceScheduler {
             } else {
                 "completion accepted"
             },
+        ))
+    }
+
+    pub fn record_completion(
+        &mut self,
+        receipt: CompletionReceiptV1,
+    ) -> Result<SchedulerDecision, SignificanceSchedulerError> {
+        let current_epochs = &self.current_epochs;
+        let runtime = self
+            .tickets
+            .get_mut(&receipt.ticket_id)
+            .ok_or(SignificanceSchedulerError::UnknownTicket)?;
+        let stale = receipt.request_epoch != runtime.ticket.request_epoch
+            || current_epochs[&runtime.ticket.target_descriptor] != receipt.request_epoch;
+        if stale
+            || matches!(
+                runtime.state,
+                TicketState::CancelRequested
+                    | TicketState::CancelAcknowledged
+                    | TicketState::CancelSettled
+            )
+        {
+            runtime.remaining = 0;
+            runtime.state = TicketState::CompletedDiscarded;
+            return Ok(decision(
+                runtime,
+                DecisionKind::CompletedDiscarded,
+                0,
+                "stale or cancelled completion",
+            ));
+        }
+        if runtime.state != TicketState::Running
+            || receipt.completed_units != runtime.ticket.cost_units
+        {
+            return Err(SignificanceSchedulerError::InvalidTransition);
+        }
+        runtime.remaining = 0;
+        runtime.state = TicketState::CompletedAccepted;
+        Ok(decision(
+            runtime,
+            DecisionKind::CompletedAccepted,
+            0,
+            "verified full completion",
         ))
     }
 
@@ -638,6 +742,26 @@ impl ReferenceScheduler {
             let general_budget = self.budget.units_for(resource).saturating_sub(safety_used);
             self.dispatch(resource, general_budget, false, &mut decisions);
         }
+        let starved: Vec<[u8; 32]> = self
+            .tickets
+            .iter()
+            .filter(|(id, runtime)| {
+                self.is_runnable(**id)
+                    && runtime.service_debt >= self.budget.max_service_debt
+                    && !runtime.starvation_reported
+            })
+            .map(|(id, _)| *id)
+            .collect();
+        for id in starved {
+            let runtime = self.tickets.get_mut(&id).unwrap();
+            runtime.starvation_reported = true;
+            decisions.push(decision(
+                runtime,
+                DecisionKind::StarvationDiagnosed,
+                0,
+                "bounded service-debt threshold",
+            ));
+        }
         let remaining_tickets = self
             .tickets
             .values()
@@ -656,6 +780,28 @@ impl ReferenceScheduler {
         };
         self.step = self.step.saturating_add(1);
         trace
+    }
+
+    pub fn step_strict(&mut self) -> Result<PressureTraceV2, SignificanceSchedulerError> {
+        let trace = self.step();
+        let mut decisions = Vec::with_capacity(trace.decisions.len());
+        for decision in &trace.decisions {
+            let ticket = &self
+                .tickets
+                .get(&decision.ticket_id)
+                .ok_or(SignificanceSchedulerError::UnknownTicket)?
+                .ticket;
+            decisions.push(StrictSchedulerDecisionV2 {
+                ticket_id: decision.ticket_id,
+                domain_code: ticket.consumer,
+                work_class: ticket.work_class,
+                packet_fingerprint: ticket.importance_packet,
+                kind: decision.kind,
+                resource: decision.resource,
+                units: decision.units,
+            });
+        }
+        PressureTraceV2::build(trace.step, self.budget, decisions, trace.remaining_tickets)
     }
 
     fn is_runnable(&self, id: [u8; 32]) -> bool {
@@ -869,6 +1015,8 @@ fn validate_links(
                 .ok_or(SignificanceSchedulerError::UnknownFallback)?;
             if fallback.target_descriptor != ticket.target_descriptor
                 || fallback.request_epoch != ticket.request_epoch
+                || fallback.consumer != ticket.consumer
+                || fallback.work_class != ticket.work_class
                 || fallback.resource != ticket.resource
                 || fallback.cost_units >= ticket.cost_units
                 || fallback.fallback.is_some()
@@ -1003,7 +1151,6 @@ fn trace_fingerprint(
         bytes.push(decision.resource as u8);
         bytes.extend_from_slice(&decision.units.to_be_bytes());
         bytes.push(decision.kind.stable_code());
-        bytes.extend_from_slice(decision.reason.as_bytes());
     }
     hash(TRACE_DOMAIN, &bytes)
 }

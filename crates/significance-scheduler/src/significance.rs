@@ -4,6 +4,7 @@ use serde::Serialize;
 use crate::{CONTRACT_VERSION, SignificanceSchedulerError, bytes32, codec, hash};
 
 const PACKET_DOMAIN: &[u8] = b"mindwarp/significance/packet/v1\0";
+const POLICY_DOMAIN: &[u8] = b"mindwarp/significance/hysteresis-policy/v1\0";
 pub const PROTECT_INTERACTION: u8 = 1;
 pub const PROTECT_THREAT: u8 = 2;
 
@@ -89,7 +90,10 @@ impl ImportancePacket {
         reason_flags: u16,
         protection_flags: u8,
     ) -> Result<Self, SignificanceSchedulerError> {
-        if request_epoch == 0 || protection_flags & !(PROTECT_INTERACTION | PROTECT_THREAT) != 0 {
+        if target_descriptor == [0; 32]
+            || request_epoch == 0
+            || protection_flags & !(PROTECT_INTERACTION | PROTECT_THREAT) != 0
+        {
             return Err(SignificanceSchedulerError::Invalid("importance packet"));
         }
         Ok(Self {
@@ -201,13 +205,63 @@ impl HysteresisPolicy {
             ImportanceTier::Dormant => None,
         }
     }
+
+    pub fn encode_canonical(&self) -> Result<Vec<u8>, SignificanceSchedulerError> {
+        let mut out = Vec::new();
+        let mut e = Encoder::new(&mut out);
+        e.array(4)
+            .and_then(|e| e.u16(CONTRACT_VERSION))
+            .and_then(|e| e.array(3))
+            .map_err(codec)?;
+        for value in self.enter {
+            e.u16(value).map_err(codec)?;
+        }
+        e.array(3).map_err(codec)?;
+        for value in self.exit {
+            e.u16(value).map_err(codec)?;
+        }
+        e.u16(self.minimum_hold_steps).map_err(codec)?;
+        Ok(out)
+    }
+
+    pub fn decode_strict(bytes: &[u8]) -> Result<Self, SignificanceSchedulerError> {
+        let mut d = Decoder::new(bytes);
+        if d.array().map_err(codec)? != Some(4)
+            || d.u16().map_err(codec)? != CONTRACT_VERSION
+            || d.array().map_err(codec)? != Some(3)
+        {
+            return Err(SignificanceSchedulerError::NonCanonical);
+        }
+        let enter = [
+            d.u16().map_err(codec)?,
+            d.u16().map_err(codec)?,
+            d.u16().map_err(codec)?,
+        ];
+        if d.array().map_err(codec)? != Some(3) {
+            return Err(SignificanceSchedulerError::NonCanonical);
+        }
+        let exit = [
+            d.u16().map_err(codec)?,
+            d.u16().map_err(codec)?,
+            d.u16().map_err(codec)?,
+        ];
+        let value = Self::new(enter, exit, d.u16().map_err(codec)?)?;
+        if d.position() != bytes.len() || value.encode_canonical()? != bytes {
+            return Err(SignificanceSchedulerError::NonCanonical);
+        }
+        Ok(value)
+    }
+
+    pub fn fingerprint(&self) -> Result<[u8; 32], SignificanceSchedulerError> {
+        Ok(hash(POLICY_DOMAIN, &self.encode_canonical()?))
+    }
 }
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Serialize)]
 pub struct SignificanceState {
-    pub tier: ImportanceTier,
-    pub since_step: u64,
-    pub last_step: u64,
+    pub(crate) tier: ImportanceTier,
+    pub(crate) since_step: u64,
+    pub(crate) last_step: u64,
 }
 
 impl Default for SignificanceState {
@@ -221,6 +275,15 @@ impl Default for SignificanceState {
 }
 
 impl SignificanceState {
+    pub fn tier(&self) -> ImportanceTier {
+        self.tier
+    }
+    pub fn since_step(&self) -> u64 {
+        self.since_step
+    }
+    pub fn last_step(&self) -> u64 {
+        self.last_step
+    }
     pub fn advance(
         &mut self,
         packet: &ImportancePacket,
