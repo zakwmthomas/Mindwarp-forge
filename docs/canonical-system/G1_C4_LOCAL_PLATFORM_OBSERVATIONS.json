@@ -2,9 +2,9 @@
     "schema_version":  1,
     "receipt_id":  "G1-C4-LOCAL-PLATFORM-OBSERVATIONS",
     "semantic_receipt_sha256":  "263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996",
-    "source_commit":  "f505c82bc9303b3426a4530d0a8deec6eede400a",
-    "tracked_tree_manifest_sha256":  "f9089b4d62bd789c514c152e600607fcdeb0b762c0888b19115feb193b7f0e8b",
-    "bounded_source_manifest_sha256":  "022e29d8cbc31459656ac36aabcefe656632005f6df47057b97185b57bad5557",
+    "source_commit":  "17f39f7018de8a02c8292bcde0fafa2bf58fc7d4",
+    "tracked_tree_manifest_sha256":  "3b0bb235e5a3159ecba5b4d34acfd6157725773af79584e3b801283b8442e4dd",
+    "bounded_source_manifest_sha256":  "b31d92b7ebf36540a64249192fca96d83537c01932ededf84c94e1a886acc108",
     "rustc":  "rustc 1.97.0 (2d8144b78 2026-07-07)\nbinary: rustc\ncommit-hash: 2d8144b7880597b6e6d3dfd63a9a9efae3f533d3\ncommit-date: 2026-07-07\nhost: x86_64-pc-windows-msvc\nrelease: 1.97.0\nLLVM version: 22.1.6",
     "cargo":  "cargo 1.97.0 (c980f4866 2026-06-30)",
     "observations":  [
@@ -19,8 +19,8 @@
                              "command":  "run --quiet --locked --offline --manifest-path \"C:\\Users\\zakwm\\Desktop\\Mindwarp forge\\tools\\fixtures\\c4-hierarchy-history-receipt\\Cargo.toml\"",
                              "exit_code":  0,
                              "process_ids":  [
-                                                 26168,
-                                                 12568
+                                                 38552,
+                                                 13188
                                              ],
                              "stdout_sha256":  [
                                                    "322f534a0e7daed2c0603042c4408815e53b893110d73ff7c16839ba10cdea77",
@@ -32,7 +32,7 @@
                                                ],
                              "executable":  {
                                                 "present":  true,
-                                                "sha256":  "89089ea5e5ac16af127748a0632eed5228afb776c7fcba1850fa7d3b48ef9685"
+                                                "sha256":  "d08f0e1c2ce0703723392cb90ad9c5be3ea8a1e0c18669ff7b5565eebc84b0eb"
                                             }
                          },
                          {
@@ -46,7 +46,7 @@
                              "command":  "run --quiet --locked --offline --target i686-pc-windows-msvc --manifest-path \"C:\\Users\\zakwm\\Desktop\\Mindwarp forge\\tools\\fixtures\\c4-hierarchy-history-receipt\\Cargo.toml\"",
                              "exit_code":  0,
                              "process_ids":  [
-                                                 30796
+                                                 31200
                                              ],
                              "stdout_sha256":  [
                                                    "322f534a0e7daed2c0603042c4408815e53b893110d73ff7c16839ba10cdea77"
@@ -56,7 +56,7 @@
                                                ],
                              "executable":  {
                                                 "present":  true,
-                                                "sha256":  "dd01452ae4eeb48d1db616b2dd381dc40b4dfd4f2d76edcd7a9067450fc39920"
+                                                "sha256":  "a63f60d7cd3503fd6b7624f430c66ffcbfe25b25e75477a6579e2833b267248b"
                                             }
                          },
                          {
@@ -70,7 +70,7 @@
                              "command":  "check --quiet --locked --offline --target aarch64-linux-android --manifest-path \"C:\\Users\\zakwm\\Desktop\\Mindwarp forge\\tools\\fixtures\\c4-hierarchy-history-receipt\\Cargo.toml\"",
                              "exit_code":  0,
                              "process_ids":  [
-                                                 22160
+                                                 27656
                                              ],
                              "stdout_sha256":  [
                                                    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
