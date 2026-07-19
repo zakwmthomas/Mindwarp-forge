@@ -8,8 +8,8 @@
 - Objective: Close broad C4 as a capability-free addressable hierarchy and history proof against exact C2 and promoted C3A evidence, without importing C3B, later systems, storage or runtime authority.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **bounded-broad-c4-capability-free-closure / C4 local proof passes at repaired clean source f505c82 with exact bounded source manifest 022e29d8 and tracked-tree manifest f9089b4d. Earlier hosted receipt 75d27618 at source 8651038 remains replayable historical evidence but cannot promote the changed attested source. A fresh exact-source hosted execution and strict import are required before another registered full-gate attempt.**
-- Exact next action: Publish exact clean source f505c82, generate a fresh challenge for the hosted Ubuntu workflow, strictly import its attestation, then rerun only the registered full gate; retain candidate_verified_local and keep C5 inactive until the complete gate passes.
+- Risk/research gate: **bounded-broad-c4-capability-free-closure / C4 local proof passes at repaired clean source f505c82 with exact bounded source manifest 022e29d8 and tracked-tree manifest f9089b4d. GitHub-hosted run 29672946787 executed that exact source and the strict importer plus retained replay verify current result SHA-256 733d453f. Earlier receipt 75d27618 is retained under its source-qualified historical filename. One registered full-gate rerun is now required.**
+- Exact next action: With the hosted Ubuntu workflow receipt 733d453f strictly imported for exact source f505c82, rerun only registered forge-full-gate-v1; if every historical and current shield passes, perform the separate governed C4 promotion procedure while keeping C5 inactive.
 
 ## Approved operating policies
 

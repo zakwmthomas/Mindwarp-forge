@@ -6,7 +6,7 @@
     "state":  "executing",
     "previous_state":  "ready",
     "objective":  "Close broad C4 as a capability-free addressable hierarchy and history proof against exact C2 and promoted C3A evidence, without importing C3B, later systems, storage or runtime authority.",
-    "next_action":  "Publish exact clean source f505c82, generate a fresh challenge for the hosted Ubuntu workflow, strictly import its attestation, then rerun only the registered full gate; retain candidate_verified_local and keep C5 inactive until the complete gate passes.",
+    "next_action":  "With the hosted Ubuntu workflow receipt 733d453f strictly imported for exact source f505c82, rerun only registered forge-full-gate-v1; if every historical and current shield passes, perform the separate governed C4 promotion procedure while keeping C5 inactive.",
     "substage_id":  "c4-independent-platform-gate",
     "handoff_section_receipts":  {
                                      "objective":  {
@@ -93,9 +93,9 @@
                                     ]
                     },
     "risk_level":  "bounded-broad-c4-capability-free-closure",
-    "research_gate":  "C4 local proof passes at repaired clean source f505c82 with exact bounded source manifest 022e29d8 and tracked-tree manifest f9089b4d. Earlier hosted receipt 75d27618 at source 8651038 remains replayable historical evidence but cannot promote the changed attested source. A fresh exact-source hosted execution and strict import are required before another registered full-gate attempt.",
+    "research_gate":  "C4 local proof passes at repaired clean source f505c82 with exact bounded source manifest 022e29d8 and tracked-tree manifest f9089b4d. GitHub-hosted run 29672946787 executed that exact source and the strict importer plus retained replay verify current result SHA-256 733d453f. Earlier receipt 75d27618 is retained under its source-qualified historical filename. One registered full-gate rerun is now required.",
     "authority_lane":  "Owner-authorized broad C4 hierarchy/history reconciliation and capability-free closure proof only. Exact dependencies C2 and C3A. No C3B, C5, C6, C7, broad G1 closure, runtime, storage engine, filesystem, network, multiplayer, cross-target transactions, Companion, Greenfield, visual assets or Kernel mutation.",
-    "context_health":  "C4 remains candidate_verified_local. GitHub-hosted run 29671881585 independently executed and attested clean source 8651038; strict import and retained cryptographic replay verify canonical receipt digest 75d27618497c5432c10f86fd2dd25759185238cd3bbf264a583b3743b228542b. Three registered attempts replayed C4 successfully and exposed independent integration drift: compressed C3 closure anchors, omitted independent-platform successor routing, then an invalid cross-build MSVC executable-byte equality claim in the retained local-observation verifier. Two clean target-directory builds proved the Windows debug PE bytes differ while canonical semantic output remains exact. The bounded repair preserves retained and current executable hashes as typed observation identities, retains exact source/toolchain/command/output checks, and leaves hosted same-run artifact equality unchanged; because that verifier is attested source, a fresh clean observation and hosted proof are required. C5 stays inactive.",
+    "context_health":  "C4 remains candidate_verified_local. Three registered attempts exposed and repaired compressed C3 closure anchors, omitted independent-platform successor routing, and an invalid cross-build MSVC executable-byte equality claim. The bounded verifier repair preserves retained/current hashes as typed observation identities without weakening hosted same-run artifact equality. Clean source f505c82 is bound to tracked-tree f9089b4d and bounded-source 022e29d8; GitHub-hosted run 29672946787 independently executed and attested that exact source, and strict import plus retained replay verify current result 733d453f0831cdaafefa9d4a9e24b1494f339b0b56f4441264009c9fcc3254cd. Historical source 8651038 receipt 75d27618 is archived intact. Only the complete registered full-gate rerun and separate governed C4 promotion remain; C5 stays inactive.",
     "stage_context":  {
                           "stage_id":  "c4-independent-platform-gate",
                           "macro_sources":  [
@@ -131,7 +131,8 @@
                                                  "Android aarch64 compilation is compile-only; independent platform-diverse execution remains a separate receipt.",
                                                  "The retained fixture lock and 27-path blob manifest bind the portable proof surface; 36 external hostiles and 15 retained-replay hostiles reject forged policy, source, runner, artifact, output, attestation, retention and authority evidence.",
                                                  "The public GitHub repository is connected. Hosted run 29671494578 separated read-only execution from attestation authority and was rejected locally before import when it exposed CRLF/LF tree serialization drift.",
-                                                 "Canonical LF tree binding is regenerated at clean source f505c82bc9303b3426a4530d0a8deec6eede400a with tracked-tree SHA-256 f9089b4d62bd789c514c152e600607fcdeb0b762c0888b19115feb193b7f0e8b and bounded-source SHA-256 022e29d8cbc31459656ac36aabcefe656632005f6df47057b97185b57bad5557."
+                                                  "Canonical LF tree binding is regenerated at clean source f505c82bc9303b3426a4530d0a8deec6eede400a with tracked-tree SHA-256 f9089b4d62bd789c514c152e600607fcdeb0b762c0888b19115feb193b7f0e8b and bounded-source SHA-256 022e29d8cbc31459656ac36aabcefe656632005f6df47057b97185b57bad5557.",
+                                                  "GitHub-hosted run 29672946787 executed and attested exact repaired source f505c82; strict import and retained replay verify current independent result SHA-256 733d453f0831cdaafefa9d4a9e24b1494f339b0b56f4441264009c9fcc3254cd."
                                              ]
                       },
     "visual_quality_gate":  {
@@ -168,7 +169,7 @@
                                                       },
                                                       {
                                                           "tier":  "external_execution",
-                                                          "result":  "GitHub-hosted Ubuntu run 29671881585 executed two concurrent native processes at source 8651038 and produced a strictly imported, cryptographically replayable authority-negative receipt.",
+                                                           "result":  "GitHub-hosted Ubuntu run 29672946787 executed two concurrent native processes at repaired source f505c82 and produced a strictly imported, cryptographically replayable authority-negative receipt; the prior 8651038 receipt is archived intact.",
                                                           "evidence":  "docs/canonical-system/G1_C4_INDEPENDENT_PLATFORM_EXECUTION.json"
                                                       }
                                                   ],
@@ -257,6 +258,7 @@
                      "The first registered post-import gate replayed the C4 attestation, then failed on C3 closure-register retention drift; the register now preserves current superseded-C3/promoted-C3A/blocked-C3B truth plus residual/ecotone anchors, and all five affected focused shields pass.",
                      "The second registered attempt passed the C3 repair and later failed because three retained GP3/GP4/vertical-closeout verifiers omitted only c4-independent-platform-gate; exact-stage additions and the existing forged-route successor suite now pass without widening authority.",
                      "The third registered attempt passed through retained hosted-attestation replay and the repaired successor routes, then failed because the local observation verifier incorrectly required historical and rebuilt MSVC debug PE bytes to match. Two clean target-directory builds produced distinct executable hashes with exact semantic output; the bounded repair validates both hashes as per-execution identities without weakening hosted same-run artifact equality."
+                     ,"GitHub-hosted run 29672946787 independently executed and attested exact repaired source f505c82; strict import and retained cryptographic replay verify result SHA-256 733d453f0831cdaafefa9d4a9e24b1494f339b0b56f4441264009c9fcc3254cd. The prior 8651038 receipt remains archived intact."
                  ],
     "verification_receipts":  [
                                   "dependency:gp0-gp1-gp2-gp3-c4v:verified",
@@ -292,6 +294,8 @@
                                    "focused:c4-independent-platform-successor-route:passed",
                                    "registered-full-gate:run-38b90549d7d045c9be46f951cf2b7f8f:failed:local-msvc-cross-build-byte-equality",
                                    "diagnostic:c4-msvc-clean-targets:semantic-exact:executable-bytes-distinct"
+                                   ,"external:c4-github-run-29672946787:hosted-linux-attested:passed"
+                                   ,"receipt:c4-independent-platform-sha256:733d453f0831cdaafefa9d4a9e24b1494f339b0b56f4441264009c9fcc3254cd"
                               ],
     "metrics":  {
                     "token_cost":  {

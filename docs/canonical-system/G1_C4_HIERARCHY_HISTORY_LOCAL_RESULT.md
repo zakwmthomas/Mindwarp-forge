@@ -65,11 +65,12 @@ are retained as diagnostic failures; none promotes this revised source.
 ## Remaining gate
 
 Windows x64 and i686 on this host do not prove independent execution. Android
-compilation does not prove execution. C4 therefore stops at
-`candidate_verified_local` until the identical semantic receipt executes on a
-genuinely independent, platform-diverse runner. No elapsed time, same-host
-architecture, compile-only target or same-platform remote Windows x64 runner
-may be substituted for that evidence.
+compilation does not prove execution. No elapsed time, same-host architecture,
+compile-only target or same-platform remote Windows x64 runner may be
+substituted for independent evidence. The exact repaired source has now executed
+on a qualifying hosted Linux runner, but C4 remains `candidate_verified_local`
+until the complete registered Forge gate passes and the separate governed
+promotion procedure records the transition. C5 is not activated automatically.
 
 GitHub Actions run `29671494578` executed and attested the historical `f0c3c4f`
 fixture, but strict local import rejected its Windows-CRLF/LF tracked-tree
@@ -77,15 +78,21 @@ binding mismatch before writing a receipt. It is diagnostic evidence only and
 cannot satisfy this gate. Run `29671881585` then executed and attested corrected
 source `8651038`, and its retained receipt remains cryptographically replayable.
 The later local-observation verifier repair changed the attested 27-path source
-surface, so that receipt cannot promote source `f505c82`; a fresh challenge,
-hosted execution and strict import for the exact new source are required.
+surface, so that receipt cannot promote source `f505c82`. GitHub Actions run
+`29672946787` independently executed and attested the exact repaired source;
+strict import and retained replay verify result SHA-256
+`733d453f0831cdaafefa9d4a9e24b1494f339b0b56f4441264009c9fcc3254cd`.
+The prior source `8651038` receipt is retained intact as
+`G1_C4_INDEPENDENT_PLATFORM_EXECUTION_8651038.json`.
 
 The external gate has a retained locked fixture, fresh challenge generator,
 credential-separated hosted workflow, offline attestation bundle, strict local
 importer, replayable exact-byte retained package, 36 importer hostiles and 15
 retained-replay hostiles. The public remote and GitHub CLI are connected; each
 source revision still requires its own fresh request, hosted run and strict
-import before a registered closure gate can authorize promotion.
+import before a registered closure gate can authorize promotion. The current
+source has satisfied that external gate; the complete registered Forge gate and
+separate governed promotion procedure remain.
 
 Deletion of the new additive APIs, tests, receipt fixture, verifier and this
 result record is the rollback boundary. The legacy one-hop migration content

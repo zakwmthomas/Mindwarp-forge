@@ -10,7 +10,7 @@
 - State / substage: **executing / c4-independent-platform-gate**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Objective: Close broad C4 as a capability-free addressable hierarchy and history proof against exact C2 and promoted C3A evidence, without importing C3B, later systems, storage or runtime authority.
-- Context health: C4 remains candidate_verified_local. GitHub-hosted run 29671881585 independently executed and attested clean source 8651038; strict import and retained cryptographic replay verify canonical receipt digest 75d27618497c5432c10f86fd2dd25759185238cd3bbf264a583b3743b228542b. Three registered attempts replayed C4 successfully and exposed independent integration drift: compressed C3 closure anchors, omitted independent-platform successor routing, then an invalid cross-build MSVC executable-byte equality claim in the retained local-observation verifier. Two clean target-directory builds proved the Windows debug PE bytes differ while canonical semantic output remains exact. The bounded repair preserves retained and current executable hashes as typed observation identities, retains exact source/toolchain/command/output checks, and leaves hosted same-run artifact equality unchanged; because that verifier is attested source, a fresh clean observation and hosted proof are required. C5 stays inactive.
+- Context health: C4 remains candidate_verified_local. Three registered attempts exposed and repaired compressed C3 closure anchors, omitted independent-platform successor routing, and an invalid cross-build MSVC executable-byte equality claim. The bounded verifier repair preserves retained/current hashes as typed observation identities without weakening hosted same-run artifact equality. Clean source f505c82 is bound to tracked-tree f9089b4d and bounded-source 022e29d8; GitHub-hosted run 29672946787 independently executed and attested that exact source, and strict import plus retained replay verify current result 733d453f0831cdaafefa9d4a9e24b1494f339b0b56f4441264009c9fcc3254cd. Historical source 8651038 receipt 75d27618 is archived intact. Only the complete registered full-gate rerun and separate governed C4 promotion remain; C5 stays inactive.
 
 ## Durable evidence
 
@@ -29,7 +29,7 @@ Owner-authorized broad C4 hierarchy/history reconciliation and capability-free c
 
 ## Exact next action
 
-Publish exact clean source f505c82, generate a fresh challenge for the hosted Ubuntu workflow, strictly import its attestation, then rerun only the registered full gate; retain candidate_verified_local and keep C5 inactive until the complete gate passes.
+With the hosted Ubuntu workflow receipt 733d453f strictly imported for exact source f505c82, rerun only registered forge-full-gate-v1; if every historical and current shield passes, perform the separate governed C4 promotion procedure while keeping C5 inactive.
 
 ## Unresolved risks
 
