@@ -6,7 +6,7 @@ Status: verified, complete and recorded. This is capability-free semantic proof,
 
 C4 closes against exact C2 and promoted C3A evidence. Stable addressable identity, presence and cohort semantics, ordered sparse replay, typed recovery, topology refusal, bounded migration, lifecycle history and deterministic scale/cost all pass. All 74 frozen hostile owners pass.
 
-Local x64 execution, same-host i686 execution and Android aarch64 compile evidence are honestly classified. GitHub-hosted Linux run `29674024317` independently executed and attested the exact retained C5-successor source. Registered full gate `run-bc2154f73f6243239910ac30bc3b1994` established closure in `632411 ms`; a post-transition registered regression remains required for the revised verifier source.
+Local x64 execution, same-host i686 execution and Android aarch64 compile evidence are honestly classified. GitHub-hosted Linux run `29674024317` independently executed and attested the exact retained C5-successor source. Registered full gate `run-bc2154f73f6243239910ac30bc3b1994` established closure in `632411 ms`; post-transition registered regression `run-71ef6dfd6e2945ab9745c85f3dcf4d6b` passed the revised verifier and exact C5 route in `651819 ms`.
 
 ## Exact retained bindings
 

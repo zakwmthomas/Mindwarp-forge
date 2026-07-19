@@ -6,7 +6,7 @@
     "state":  "executing",
     "previous_state":  "ready",
     "objective":  "Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.",
-    "next_action":  "Run registered forge-full-gate-v1 once against the strictly imported source-17f39f7 hosted receipt and exact C5 successor route; only after it passes, begin the named-domain C5 reconciliation before source work.",
+    "next_action":  "Audit every named generation, simulation, AI, physics, animation, audio, rendering and streaming obligation; freeze dispatch, admission, budget, fallback, cancellation, fairness and hostile proof requirements before any C5 source work.",
     "substage_id":  "c5-reconciliation-readiness",
     "handoff_section_receipts":  {
                                      "objective":  {
@@ -17,7 +17,7 @@
                                                    },
                                      "next_action":  {
                                                          "stage_id":  "c5-reconciliation-readiness",
-                                                         "content_sha256":  "c0951f56314ef2998aa6050bb58db954cc2866d19343ef38c5af850603c2dfc9",
+                                                         "content_sha256":  "f7a03003d5a14f41cd27a2d985510febefa97dd0fe6dc2f103a51254f163d7a4",
                                                          "review_disposition":  "revised",
                                                          "review_note":  "Reviewed all handoff sections against the active substage."
                                                      },
@@ -35,7 +35,7 @@
                                                              },
                                      "simulation_ladder":  {
                                                                "stage_id":  "c5-reconciliation-readiness",
-                                                               "content_sha256":  "2c65608c91ebe6870a2f4a38f76b1cdbcd85f8c98d12eb5c0148677d5408a08e",
+                                                               "content_sha256":  "c3da030897fe9e5869dab7e853b8e103a16533bd9a691fc8caf893c3d47d9df1",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
@@ -71,7 +71,7 @@
                                                   },
                                      "verification_receipts":  {
                                                                    "stage_id":  "c5-reconciliation-readiness",
-                                                                   "content_sha256":  "74be714e98281be2d71546ce9c03a93e1f497392f93de5e662f3603cfd14f9b4",
+                                                                   "content_sha256":  "23ac1d222c977b1d79c7d63662cc5da10e6e7703118fea1eda4e524d7e2ccef3",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
@@ -95,7 +95,7 @@
     "risk_level":  "bounded-c5-significance-scheduler-readiness",
     "research_gate":  "C4 is verified, complete and recorded after GitHub-hosted Linux execution, retained cryptographic replay and registered full gate run-bc2154f73f6243239910ac30bc3b1994. C5 may reconcile requirements and freeze readiness evidence; source remains blocked until the exact closure surface and hostile matrix are complete.",
     "authority_lane":  "Owner-authorized broad C5 significance/scheduler reconciliation and capability-free closure readiness only. Exact dependency C4. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.",
-    "context_health":  "C4 is verified, complete and recorded after registered full gate run-bc2154f73f6243239910ac30bc3b1994. The hardened C5-successor verifier surface is bound to clean source 17f39f7, tracked tree 3b0bb235, bounded source b31d92b7 and GitHub-hosted run 29674024317 result 2430d210; strict import and retained replay pass. C5 is the sole active reconciliation/readiness item; one post-transition registered regression run remains before source work. C6, C7, broad G1 closure and R1 remain gated.",
+    "context_health":  "C4 is verified, complete and recorded after closure run-bc2154f73f6243239910ac30bc3b1994. The hardened C5-successor verifier surface is bound to clean source 17f39f7, tracked tree 3b0bb235, bounded source b31d92b7 and GitHub-hosted run 29674024317 result 2430d210; strict import, retained replay and post-transition registered full gate run-71ef6dfd6e2945ab9745c85f3dcf4d6b pass. C5 is the sole active reconciliation/readiness item. C6, C7, broad G1 closure and R1 remain gated.",
     "stage_context":  {
                           "stage_id":  "c5-reconciliation-readiness",
                           "macro_sources":  [
@@ -179,7 +179,7 @@
                               "estimated_cost":  "Bounded canonical and code reconciliation first; no runtime or integrated product execution is authorized.",
                               "regression_guard":  "No C3B, C6-C7, broad G1 closure, runtime controller or executor, cache, storage, filesystem, network, process, Companion, Greenfield, visual asset or Kernel mutation.",
                               "stop_condition":  "Stop before source if any named domain, fairness obligation, fallback rule, authority exclusion or deterministic hostile case remains ambiguous.",
-                              "final_integration_gate":  "One registered post-transition Forge regression is pending now; another remains required after a separately accepted C5 implementation candidate."
+                              "final_integration_gate":  "Post-transition registered regression run-71ef6dfd6e2945ab9745c85f3dcf4d6b passed; another registered gate remains required after a separately accepted C5 implementation candidate."
                           },
     "exit_criteria":  [
                           {
@@ -302,7 +302,11 @@
                                   "receipt:c4-independent-platform-sha256:2430d21047166c7e177047b5d44862fcaffe41f33cf663c678aa3b754272fbdd",
                                   "registered-full-gate:run-bc2154f73f6243239910ac30bc3b1994:passed",
                                   "receipt:G1-C4-CLOSURE:recorded",
-                                  "owner-route:c5-reconciliation-readiness:authorized"
+                                  "owner-route:c5-reconciliation-readiness:authorized",
+                                  "registered-full-gate:run-9a18d3d8d3504cc4a3c57dec59d69c6c:failed:github-cli-path-missing",
+                                  "registered-full-gate:run-d2952383a722420eaf5160c85d49268d:failed:worker-feedback-stale",
+                                  "registered-full-gate:run-08cc762c96a34328ba66c6ba649f07f5:failed:registry-status-target-drift",
+                                  "registered-full-gate:run-71ef6dfd6e2945ab9745c85f3dcf4d6b:passed"
                               ],
     "metrics":  {
                     "token_cost":  {
@@ -311,8 +315,8 @@
                                    },
                     "elapsed_time":  {
                                          "status":  "measured",
-                                         "value":  "632411 ms",
-                                         "receipt":  "registered-full-gate:run-bc2154f73f6243239910ac30bc3b1994:passed"
+                                         "value":  "651819 ms",
+                                         "receipt":  "registered-full-gate:run-71ef6dfd6e2945ab9745c85f3dcf4d6b:passed"
                                      }
                 },
     "transition":  "C4 verified, complete and recorded after independent hosted execution and registered full gate -\u003e owner-authorized C5 reconciliation/readiness active -\u003e C6 remains gated"

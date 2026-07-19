@@ -9,7 +9,7 @@
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Risk/research gate: **bounded-c5-significance-scheduler-readiness / C4 is verified, complete and recorded after GitHub-hosted Linux execution, retained cryptographic replay and registered full gate run-bc2154f73f6243239910ac30bc3b1994. C5 may reconcile requirements and freeze readiness evidence; source remains blocked until the exact closure surface and hostile matrix are complete.**
-- Exact next action: Run registered forge-full-gate-v1 once against the strictly imported source-17f39f7 hosted receipt and exact C5 successor route; only after it passes, begin the named-domain C5 reconciliation before source work.
+- Exact next action: Audit every named generation, simulation, AI, physics, animation, audio, rendering and streaming obligation; freeze dispatch, admission, budget, fallback, cancellation, fairness and hostile proof requirements before any C5 source work.
 
 ## Approved operating policies
 
