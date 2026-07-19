@@ -25,11 +25,11 @@ network, multiplayer, Companion, Greenfield or Kernel authority.
 The semantic receipt SHA-256 is
 `263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996`.
 The bounded fourteen-file implementation and verification source manifest SHA-256 is
-`b407b6e82c248cded8c65838d4cef961c21d51d05b1a00ea75d2318756ebb1bf`.
+`ddb098b3e4f5cdb92d5bc820e220d53a0423ece2fe8a86b9bca2e60735dba576`.
 The retained platform observations bind clean source commit
-`3aa3f5b07ccce0e80d8c1461244e671907c450cb` and complete tracked-tree
+`848bcb94d88586f6553a68bffc2a6c9917ef6efe` and complete tracked-tree
 manifest SHA-256
-`70b5f171daf4b35359306df6b959d0f422d6756a3f430896b66f00bd9c1d08b9`.
+`9d0cc92689921def59139a1930facfc7e34cdfd67bab6dd00b035cf38d8d7c1a`.
 Two separately launched native Windows x64 processes emitted identical bytes.
 The same bytes also executed on Windows i686 and are classified only as
 `same_host_second_architecture`. The receipt and dependencies compiled for
