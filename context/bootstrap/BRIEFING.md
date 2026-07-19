@@ -8,8 +8,8 @@
 - Objective: Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **bounded-c5-significance-scheduler-portability / C4 is verified and complete. The hardened C5 local candidate passes 90 tests, strict Clippy, all 92 frozen hostile mappings and ten pressure scenarios. Fresh independent re-review accepted advancement to portability while explicitly withholding integration, closure, promotion and C6 authority.**
-- Exact next action: Freeze the C5 semantic receipt and begin fresh-process and target-diverse portability evidence. Keep integration, the registered full gate, C5 closure and C6 activation gated.
+- Risk/research gate: **bounded-c5-significance-scheduler-portability / C4 is verified and complete. The hardened C5 candidate and isolated 38-field semantic receipt pass 90 tests, strict Clippy, all 92 hostile mappings, ten pressure transcripts, cross-target local execution/compile checks and a fresh hostile tooling review. Portability applies only to the game-facing proof contract; Forge remains the PC-first factory. Integration, closure, promotion and C6 authority remain withheld.**
+- Exact next action: Freeze the independently reviewed C5 portability tooling on a clean commit, emit the commit-bound Windows x64/i686 and Android compile-only observation, then prepare the separately attested hosted execution. This ports only the game-facing proof contract, not Forge.
 
 ## Approved operating policies
 

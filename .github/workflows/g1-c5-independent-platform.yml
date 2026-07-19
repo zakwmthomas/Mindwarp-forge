@@ -1,0 +1,86 @@
+name: G1 C5 independent platform receipt
+
+on:
+  workflow_dispatch:
+    inputs:
+      request_base64:
+        description: Base64 of the locally generated challenge-bound request JSON
+        required: true
+        type: string
+
+permissions: {}
+
+jobs:
+  c5-independent-linux:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout exact dispatched commit
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+      - name: Decode request
+        shell: bash
+        env:
+          REQUEST_BASE64: ${{ inputs.request_base64 }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/c5-evidence"
+          printf '%s' "$REQUEST_BASE64" | base64 --decode > "$RUNNER_TEMP/c5-evidence/request.json"
+      - name: Acquire pinned toolchain and locked dependencies
+        shell: bash
+        run: |
+          rustup toolchain install 1.97.0 --profile minimal
+          rustup default 1.97.0
+          cargo fetch --locked --manifest-path tools/fixtures/c5-significance-scheduler-receipt/Cargo.toml
+      - name: Execute Cargo-offline without signing credentials
+        shell: bash
+        env:
+          CARGO_NET_OFFLINE: "true"
+          RUNNER_ENVIRONMENT: ${{ runner.environment }}
+        run: |
+          python3 tools/run-g1-c5-external-receipt.py \
+            --request "$RUNNER_TEMP/c5-evidence/request.json" \
+            --output "$RUNNER_TEMP/c5-evidence/result.json"
+      - name: Transfer unsigned evidence to attestation job
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: g1-c5-unsigned-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/c5-evidence/request.json
+            ${{ runner.temp }}/c5-evidence/result.json
+          if-no-files-found: error
+          retention-days: 1
+
+  attest-c5-result:
+    needs: c5-independent-linux
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      actions: read
+      id-token: write
+      attestations: write
+      artifact-metadata: write
+    steps:
+      - name: Retrieve unsigned evidence
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: g1-c5-unsigned-${{ github.run_id }}
+          path: ${{ runner.temp }}/c5-evidence
+      - name: Attest exact result in credential-separated job
+        id: attest
+        uses: actions/attest@f7c74d28b9d84cb8768d0b8ca14a4bac6ef463e6
+        with:
+          subject-path: ${{ runner.temp }}/c5-evidence/result.json
+      - name: Upload request, result and offline bundle
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: g1-c5-independent-platform-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/c5-evidence/request.json
+            ${{ runner.temp }}/c5-evidence/result.json
+            ${{ steps.attest.outputs.bundle-path }}
+          if-no-files-found: error
+          retention-days: 30

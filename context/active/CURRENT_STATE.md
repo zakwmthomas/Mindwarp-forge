@@ -10,7 +10,7 @@
 - State / substage: **executing / c5-implementation**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Objective: Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.
-- Context health: C4 remains verified and C5 remains the sole active item. The first independent review failed advancement; its truth, fallback, receipt, pressure and Clippy defects were repaired, the 90-test local gate passed, and fresh independent re-review accepted portability as the next bounded substage. Integration, C5 closure, C6, C7, broad G1 closure and R1 remain gated.
+- Context health: C4 remains verified and C5 remains the sole active item. C5 local hardening and portability tooling now pass independent review: the semantic receipt is stable across fresh Windows x64 processes and same-host i686, while Android ARM64 is compile-only. This is not a Forge port. Clean-commit local observation and genuinely independent hosted evidence remain pending; integration, C5 closure, C6, C7, broad G1 closure and R1 remain gated.
 
 ## Durable evidence
 
@@ -29,11 +29,11 @@ Owner-authorized bounded C5 significance/scheduler implementation and capability
 
 ## Exact next action
 
-Freeze the C5 semantic receipt and begin fresh-process and target-diverse portability evidence. Keep integration, the registered full gate, C5 closure and C6 activation gated.
+Freeze the independently reviewed C5 portability tooling on a clean commit, emit the commit-bound Windows x64/i686 and Android compile-only observation, then prepare the separately attested hosted execution. This ports only the game-facing proof contract, not Forge.
 
 ## Unresolved risks
 
-- Portable semantic receipt execution must preserve the hardened packet-derived truth, exact admission and replay bindings, deterministic trace identity and capability-negative boundary across fresh processes and supported target tiers.
+- The clean-commit local observation and independently attested hosted execution must preserve semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb without misclassifying i686 or Android compile-only evidence as an independent platform or porting Forge itself.
 
 ## Resume after this package
 

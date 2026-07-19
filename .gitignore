@@ -1,5 +1,6 @@
 /target/
 /tools/fixtures/c4-hierarchy-history-receipt/target/
+/tools/fixtures/c5-significance-scheduler-receipt/target/
 /apps/forge-desktop/ui/node_modules/
 /apps/forge-desktop/ui/dist/
 /.local/

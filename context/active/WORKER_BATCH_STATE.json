@@ -6,7 +6,7 @@
     "state":  "executing",
     "previous_state":  "ready",
     "objective":  "Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.",
-    "next_action":  "Freeze the C5 semantic receipt and begin fresh-process and target-diverse portability evidence. Keep integration, the registered full gate, C5 closure and C6 activation gated.",
+    "next_action":  "Freeze the independently reviewed C5 portability tooling on a clean commit, emit the commit-bound Windows x64/i686 and Android compile-only observation, then prepare the separately attested hosted execution. This ports only the game-facing proof contract, not Forge.",
     "substage_id":  "c5-implementation",
     "handoff_section_receipts":  {
                                      "objective":  {
@@ -17,7 +17,7 @@
                                                    },
                                      "next_action":  {
                                                          "stage_id":  "c5-implementation",
-                                                         "content_sha256":  "9f411e4a73c4330a93952fa9199d061101e68f16b9f4a9a900428729ae9ea7d2",
+                                                         "content_sha256":  "785c4b8a943df6844e182a031d1dadf2723aa01c0c8a9c4b775a5e4e0126fe51",
                                                          "review_disposition":  "revised",
                                                          "review_note":  "Reviewed all handoff sections against the active substage."
                                                      },
@@ -41,7 +41,7 @@
                                                            },
                                      "unresolved_risks":  {
                                                               "stage_id":  "c5-implementation",
-                                                              "content_sha256":  "70c712cfea87080f06af60741b770ed8116c26275d5b3613afd59b2068efd525",
+                                                              "content_sha256":  "49578fb71d9d689ab8cd390c1a8b88c5e4bc33b46ceb5964d86b6048b777e6f4",
                                                               "review_disposition":  "revised",
                                                               "review_note":  "Reviewed all handoff sections against the active substage."
                                                           },
@@ -77,7 +77,7 @@
                                                                },
                                      "transition":  {
                                                         "stage_id":  "c5-implementation",
-                                                        "content_sha256":  "20a91c09a47b03923c7b3af7e2a48bf54b971538905a24fcd7f73cab373eaa11",
+                                                        "content_sha256":  "86eee471dc8b6873dd542dcbeb93d0926b6ee578ef792a95542b4d2ada6e960d",
                                                         "review_disposition":  "revised",
                                                         "review_note":  "Reviewed all handoff sections against the active substage."
                                                     }
@@ -93,9 +93,9 @@
                                     ]
                     },
     "risk_level":  "bounded-c5-significance-scheduler-portability",
-    "research_gate":  "C4 is verified and complete. The hardened C5 local candidate passes 90 tests, strict Clippy, all 92 frozen hostile mappings and ten pressure scenarios. Fresh independent re-review accepted advancement to portability while explicitly withholding integration, closure, promotion and C6 authority.",
+    "research_gate":  "C4 is verified and complete. The hardened C5 candidate and isolated 38-field semantic receipt pass 90 tests, strict Clippy, all 92 hostile mappings, ten pressure transcripts, cross-target local execution/compile checks and a fresh hostile tooling review. Portability applies only to the game-facing proof contract; Forge remains the PC-first factory. Integration, closure, promotion and C6 authority remain withheld.",
     "authority_lane":  "Owner-authorized bounded C5 significance/scheduler implementation and capability-free closure proof only. Exact dependency C4. Frozen candidate G1_C5_CLOSURE_READINESS.md. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.",
-    "context_health":  "C4 remains verified and C5 remains the sole active item. The first independent review failed advancement; its truth, fallback, receipt, pressure and Clippy defects were repaired, the 90-test local gate passed, and fresh independent re-review accepted portability as the next bounded substage. Integration, C5 closure, C6, C7, broad G1 closure and R1 remain gated.",
+    "context_health":  "C4 remains verified and C5 remains the sole active item. C5 local hardening and portability tooling now pass independent review: the semantic receipt is stable across fresh Windows x64 processes and same-host i686, while Android ARM64 is compile-only. This is not a Forge port. Clean-commit local observation and genuinely independent hosted evidence remain pending; integration, C5 closure, C6, C7, broad G1 closure and R1 remain gated.",
     "stage_context":  {
                           "stage_id":  "c5-implementation",
                           "macro_sources":  [
@@ -252,7 +252,7 @@
                           }
                       ],
     "unresolved_risks":  [
-                             "Portable semantic receipt execution must preserve the hardened packet-derived truth, exact admission and replay bindings, deterministic trace identity and capability-negative boundary across fresh processes and supported target tiers."
+                             "The clean-commit local observation and independently attested hosted execution must preserve semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb without misclassifying i686 or Android compile-only evidence as an independent platform or porting Forge itself."
                          ],
     "evidence_requirements":  [
                                   "retain exact verified C4 as C5\u0027s sole dependency",
@@ -365,5 +365,5 @@
                                          "receipt":  "registered-full-gate:run-71ef6dfd6e2945ab9745c85f3dcf4d6b:passed"
                                      }
                 },
-    "transition":  "C4 verified and recorded -\u003e C5 local hostile candidate -\u003e first review blocked advancement -\u003e truth, fallback, receipt, pressure and Clippy hardening passed -\u003e fresh independent re-review accepted portability only; integration, closure and C6 remain gated"
+    "transition":  "C4 verified and recorded -\u003e C5 local hostile candidate -\u003e first review blocked advancement -\u003e local hardening accepted -\u003e 38-field semantic receipt and complete portability tooling passed hostile re-review -\u003e clean-commit local and hosted evidence next; Forge port, integration, closure and C6 remain gated"
 }
