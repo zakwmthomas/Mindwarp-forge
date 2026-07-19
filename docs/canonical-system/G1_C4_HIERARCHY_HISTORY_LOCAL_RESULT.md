@@ -1,6 +1,6 @@
 # G1 C4 hierarchy/history local verification result
 
-Status: **candidate_verified_local; not promoted.**
+Status: **verified, complete and recorded.**
 
 Broad C4's additive capability-free implementation is locally verified against
 the accepted exact C2 plus promoted C3A boundary. It does not activate C5 and
@@ -62,15 +62,16 @@ toolchains, target metadata and typed absence are retained in
 The verifier is registered in the full Forge gate. Earlier registered attempts
 are retained as diagnostic failures; none promotes this revised source.
 
-## Remaining gate
+## Closed gate
 
 Windows x64 and i686 on this host do not prove independent execution. Android
 compilation does not prove execution. No elapsed time, same-host architecture,
 compile-only target or same-platform remote Windows x64 runner may be
-substituted for independent evidence. The exact repaired source has now executed
-on a qualifying hosted Linux runner, but C4 remains `candidate_verified_local`
-until the complete registered Forge gate passes and the separate governed
-promotion procedure records the transition. C5 is not activated automatically.
+substituted for independent evidence. The exact repaired source executed on a
+qualifying hosted Linux runner, retained replay passed, and registered full gate
+`run-bc2154f73f6243239910ac30bc3b1994` passed in `632411 ms`. The governed
+registry transition records C4 as verified and complete. C5 activation is a
+separate owner-authorized transition and grants readiness authority only.
 
 GitHub Actions run `29671494578` executed and attested the historical `f0c3c4f`
 fixture, but strict local import rejected its Windows-CRLF/LF tracked-tree

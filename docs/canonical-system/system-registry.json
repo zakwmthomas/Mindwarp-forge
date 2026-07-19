@@ -30,7 +30,7 @@
                     {
                         "id":  "visible-radiance-interface-event",
                         "layer":  "game-canonical",
-                        "status":  "prototype_tested",
+      "status":  "reference_proven",
                         "depends_on":  [
                                            "physical-path-substrate"
                                        ],
@@ -350,7 +350,7 @@
                                            "derived-world-rules"
                                        ],
                         "purpose":  "Addressable, lazy materialisation from galaxy to entity with cache and promotion policy.",
-                        "proof":  "Strict deterministic descriptors, dynamic identity, four-state address presence and stable windows capped at 256 are locally verified. addressable-world-binding replays the exact promoted C3A input/packet; retained ambient cohort binding rejects entity, contract and cohort drift. The 74-ID C4 hostile matrix and pinned deterministic window rows pass. C4 consumes exact C2+C3A and is candidate_verified_local; only genuinely independent platform-diverse execution remains open. C3B physical/presentation evidence is not a C4 dependency.",
+      "proof":  "Strict deterministic descriptors, dynamic identity, four-state address presence and stable windows capped at 256 are verified. addressable-world-binding replays exact promoted C3A evidence; all 74 C4 hostile owners and pinned deterministic rows pass. GitHub-hosted Linux run 29672946787, retained cryptographic replay and registered full gate run-bc2154f73f6243239910ac30bc3b1994 close C4. C3B, cache, storage and runtime remain excluded.",
                         "references":  [
                                            "contracts/hierarchy-history-contract.md",
                                            "crates/hierarchy-history/src/hierarchy.rs",
@@ -358,26 +358,28 @@
                                            "docs/canonical-system/HIERARCHY_HISTORY_DESIGN_GATE.md",
                                            "docs/canonical-system/G1_C4_ADDRESSABLE_WORLD_BINDING_RESULT.md",
                                            "docs/canonical-system/G1_C4_AGE_LIFECYCLE_AND_PROOFRECEIPT_RESULT.md",
-                                           "docs/canonical-system/G1_C4_HIERARCHY_HISTORY_LOCAL_RESULT.md"
+                           "docs/canonical-system/G1_C4_HIERARCHY_HISTORY_LOCAL_RESULT.md",
+                           "docs/canonical-system/G1_C4_CLOSURE_RESULT.md"
                                        ]
                     },
                     {
                         "id":  "world-history-ledger",
                         "layer":  "game-canonical",
-                        "status":  "prototype_tested",
+        "status":  "reference_proven",
                         "depends_on":  [
                                            "lazy-universe-hierarchy",
                                            "forge-truth-kernel"
                                        ],
                         "purpose":  "Baseline reconstruction plus explicit mutable player and world deltas.",
-                        "proof":  "Canonical baseline binding, exact dependency availability, ordered/idempotent replay, typed known-good corrupt-tail recovery, externally anchored snapshots, old/new baseline coexistence and atomic one/two-hop received migration validation are locally verified. Pinned history byte/work rows and a deterministic semantic receipt replay exact C2+C3A evidence. C4V remains registered complete; production storage, runtime, cross-target transactions and independent second-platform C4 execution remain open.",
+        "proof":  "Canonical baseline binding, exact dependency availability, ordered/idempotent replay, typed known-good corrupt-tail recovery, externally anchored snapshots, old/new baseline coexistence and atomic one/two-hop received migration validation are verified. Pinned history rows and the deterministic semantic receipt replay exact C2+C3A evidence. GitHub-hosted Linux execution, retained replay and registered full gate run-bc2154f73f6243239910ac30bc3b1994 close C4; production storage, runtime and cross-target transactions remain open.",
                         "references":  [
                                            "contracts/hierarchy-history-contract.md",
                                            "crates/hierarchy-history/src/history.rs",
                                            "crates/mindwarp-vertical-persistence/src/lib.rs",
                                            "docs/canonical-system/G1_C4V_VERTICAL_PERSISTENCE_RESULT.md",
                                            "docs/canonical-system/HIERARCHY_HISTORY_DESIGN_GATE.md",
-                                           "docs/canonical-system/G1_C4_HIERARCHY_HISTORY_LOCAL_RESULT.md"
+                           "docs/canonical-system/G1_C4_HIERARCHY_HISTORY_LOCAL_RESULT.md",
+                           "docs/canonical-system/G1_C4_CLOSURE_RESULT.md"
                                        ]
                     },
                     {

@@ -1,85 +1,85 @@
 ﻿{
     "schema_version":  3,
     "canonical_role":  "sole-active-work-checkpoint",
-    "batch_id":  "G1-C4-HIERARCHY-HISTORY-CLOSURE-V1",
-    "master_program_item":  "C4",
+    "batch_id":  "G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1",
+    "master_program_item":  "C5",
     "state":  "executing",
     "previous_state":  "ready",
-    "objective":  "Close broad C4 as a capability-free addressable hierarchy and history proof against exact C2 and promoted C3A evidence, without importing C3B, later systems, storage or runtime authority.",
-    "next_action":  "With the hosted Ubuntu workflow receipt 733d453f strictly imported for exact source f505c82, rerun only registered forge-full-gate-v1; if every historical and current shield passes, perform the separate governed C4 promotion procedure while keeping C5 inactive.",
-    "substage_id":  "c4-independent-platform-gate",
+    "objective":  "Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.",
+    "next_action":  "Audit every named generation, simulation, AI, physics, animation, audio, rendering and streaming obligation; freeze dispatch, admission, budget, fallback, cancellation, fairness and hostile proof requirements before any source work.",
+    "substage_id":  "c5-reconciliation-readiness",
     "handoff_section_receipts":  {
                                      "objective":  {
-                                                       "stage_id":  "c4-independent-platform-gate",
-                                                       "content_sha256":  "f58fbd02ac9761d1c06bf41990a59ed0a92e965dcbc27906f4d7c165cfa0dc2a",
+                                                       "stage_id":  "c5-reconciliation-readiness",
+                                                       "content_sha256":  "31a2cdccf71602454fc21773b1d0076077682aa9831062db569ec25fb044ceea",
                                                        "review_disposition":  "revised",
-                                                       "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
+                                                       "review_note":  "Reviewed all handoff sections against the active substage."
                                                    },
                                      "next_action":  {
-                                                         "stage_id":  "c4-independent-platform-gate",
-                                                         "content_sha256":  "40b576a2a5fb620ba26dc1a0ffe800243f27502195bcd728c557b727f93f552e",
+                                                         "stage_id":  "c5-reconciliation-readiness",
+                                                         "content_sha256":  "0d2448c53507028eb0c254d99508a4f15db732b10bed933ccbfbba768e7dac31",
                                                          "review_disposition":  "revised",
-                                                         "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
+                                                         "review_note":  "Reviewed all handoff sections against the active substage."
                                                      },
                                      "stage_context":  {
-                                                           "stage_id":  "c4-independent-platform-gate",
-                                                           "content_sha256":  "8658ea2d30894ed623442925c03f6dc98b25c60aad9113a963418063c097bc36",
+                                                           "stage_id":  "c5-reconciliation-readiness",
+                                                           "content_sha256":  "bfe917749229da072abd091100a168324a34bf83202e7d7b4ff2d6b59d47536d",
                                                            "review_disposition":  "revised",
-                                                           "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
+                                                           "review_note":  "Reviewed all handoff sections against the active substage."
                                                        },
                                      "visual_quality_gate":  {
-                                                                 "stage_id":  "c4-independent-platform-gate",
+                                                                 "stage_id":  "c5-reconciliation-readiness",
                                                                  "content_sha256":  "cfb3f4b0a636e0d5eff9dd88e562b4a427d3fadbe03f9349ac516e38adac2dd2",
                                                                  "review_disposition":  "revised",
-                                                                 "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
+                                                                 "review_note":  "Reviewed all handoff sections against the active substage."
                                                              },
                                      "simulation_ladder":  {
-                                                               "stage_id":  "c4-independent-platform-gate",
-                                                               "content_sha256":  "1cccaeaf338cddd7949907649346c86462e201200467194a0c7054d98e5fa47a",
+                                                               "stage_id":  "c5-reconciliation-readiness",
+                                                               "content_sha256":  "1efef3345680021c371b16d1bc667c43fa6609766d82677c5687c30912410d0d",
                                                                "review_disposition":  "revised",
-                                                               "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
+                                                               "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "unresolved_risks":  {
-                                                              "stage_id":  "c4-independent-platform-gate",
-                                                              "content_sha256":  "f4cffb5c960b33594bf2a50c284c2b94f6e1874855c0cf08ca114c9b668c2a1b",
+                                                              "stage_id":  "c5-reconciliation-readiness",
+                                                              "content_sha256":  "34ed7be7a598607b95bc92979252e16dfd58d21d23f041a2fed032a72ba54717",
                                                               "review_disposition":  "revised",
-                                                              "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
+                                                              "review_note":  "Reviewed all handoff sections against the active substage."
                                                           },
                                      "evidence_requirements":  {
-                                                                   "stage_id":  "c4-independent-platform-gate",
-                                                                   "content_sha256":  "06e7a714e1bfc359ca9fc2661906f0d92aeea77fe547d108f770667a62c3d9d2",
+                                                                   "stage_id":  "c5-reconciliation-readiness",
+                                                                   "content_sha256":  "38fb0d476b35f0eb9a4238578463f65121204cc0b1667d3c5346ef2654f1d194",
                                                                    "review_disposition":  "revised",
-                                                                   "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
+                                                                   "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "verification_plan":  {
-                                                               "stage_id":  "c4-independent-platform-gate",
-                                                               "content_sha256":  "8a81c24807c04878e8370ad782858ab2d58ce14dd677563b3284f1654d873aa9",
+                                                               "stage_id":  "c5-reconciliation-readiness",
+                                                               "content_sha256":  "e9abd321dfb84cc7b789dc12ba6d0e22c900f71a5a8e996ba50708096aaab283",
                                                                "review_disposition":  "revised",
-                                                               "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
+                                                               "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "resume_after":  {
-                                                          "stage_id":  "c4-independent-platform-gate",
-                                                          "content_sha256":  "91ff7c09a948de0f53a11009f349557946af6a692096ffa798c58e0cf19dcb3d",
+                                                          "stage_id":  "c5-reconciliation-readiness",
+                                                          "content_sha256":  "17f74ee9bd772bac659b17e18b2a03cf8a8d16741a7897e6b0b7597adb5877f2",
                                                           "review_disposition":  "revised",
-                                                          "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
+                                                          "review_note":  "Reviewed all handoff sections against the active substage."
                                                       },
                                      "evidence":  {
-                                                      "stage_id":  "c4-independent-platform-gate",
+                                                      "stage_id":  "c5-reconciliation-readiness",
                                                       "content_sha256":  "52a204b5b9d658cc5e9a12152ce0f3e6c76a1396ac058d41c9af5c981f52edda",
                                                       "review_disposition":  "revised",
-                                                      "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
+                                                      "review_note":  "Reviewed all handoff sections against the active substage."
                                                   },
                                      "verification_receipts":  {
-                                                                   "stage_id":  "c4-independent-platform-gate",
-                                                                   "content_sha256":  "eeaba5ff41cabb851a7ef0d9bdc011ec87305bd2c185f4403150e79b007081c3",
+                                                                   "stage_id":  "c5-reconciliation-readiness",
+                                                                   "content_sha256":  "23a738d459e8e68e0df8483ec11e33498ceee12b68ce8452a3beb78c608ab0b5",
                                                                    "review_disposition":  "revised",
-                                                                   "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
+                                                                   "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "transition":  {
-                                                        "stage_id":  "c4-independent-platform-gate",
-                                                        "content_sha256":  "0ab96ffbfaa431a0e9aa4d20a2da0d294d1e87d3b4bd8a4504bb5ba27f213d9e",
+                                                        "stage_id":  "c5-reconciliation-readiness",
+                                                        "content_sha256":  "e8e2f93ca313d4d63cd8b682a6aecc616484e66febe1202c07f2d83251fc9176",
                                                         "review_disposition":  "revised",
-                                                        "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
+                                                        "review_note":  "Reviewed all handoff sections against the active substage."
                                                     }
                                  },
     "consecutive_no_progress_limit":  1,
@@ -92,12 +92,12 @@
                                         "domain-creative-suites"
                                     ]
                     },
-    "risk_level":  "bounded-broad-c4-capability-free-closure",
-    "research_gate":  "C4 local proof passes at repaired clean source f505c82 with exact bounded source manifest 022e29d8 and tracked-tree manifest f9089b4d. GitHub-hosted run 29672946787 executed that exact source and the strict importer plus retained replay verify current result SHA-256 733d453f. Earlier receipt 75d27618 is retained under its source-qualified historical filename. One registered full-gate rerun is now required.",
-    "authority_lane":  "Owner-authorized broad C4 hierarchy/history reconciliation and capability-free closure proof only. Exact dependencies C2 and C3A. No C3B, C5, C6, C7, broad G1 closure, runtime, storage engine, filesystem, network, multiplayer, cross-target transactions, Companion, Greenfield, visual assets or Kernel mutation.",
-    "context_health":  "C4 remains candidate_verified_local. Three registered attempts exposed and repaired compressed C3 closure anchors, omitted independent-platform successor routing, and an invalid cross-build MSVC executable-byte equality claim. The bounded verifier repair preserves retained/current hashes as typed observation identities without weakening hosted same-run artifact equality. Clean source f505c82 is bound to tracked-tree f9089b4d and bounded-source 022e29d8; GitHub-hosted run 29672946787 independently executed and attested that exact source, and strict import plus retained replay verify current result 733d453f0831cdaafefa9d4a9e24b1494f339b0b56f4441264009c9fcc3254cd. Historical source 8651038 receipt 75d27618 is archived intact. Only the complete registered full-gate rerun and separate governed C4 promotion remain; C5 stays inactive.",
+    "risk_level":  "bounded-c5-significance-scheduler-readiness",
+    "research_gate":  "C4 is verified, complete and recorded after GitHub-hosted Linux execution, retained cryptographic replay and registered full gate run-bc2154f73f6243239910ac30bc3b1994. C5 may reconcile requirements and freeze readiness evidence; source remains blocked until the exact closure surface and hostile matrix are complete.",
+    "authority_lane":  "Owner-authorized broad C5 significance/scheduler reconciliation and capability-free closure readiness only. Exact dependency C4. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.",
+    "context_health":  "C4 is verified, complete and recorded after exact source f505c82, GitHub-hosted run 29672946787, retained result 733d453f and registered full gate run-bc2154f73f6243239910ac30bc3b1994 passed in 632411 ms. C5 is the sole active item for reconciliation and capability-free readiness only; C6, C7, broad G1 closure and R1 remain gated.",
     "stage_context":  {
-                          "stage_id":  "c4-independent-platform-gate",
+                          "stage_id":  "c5-reconciliation-readiness",
                           "macro_sources":  [
                                                 "docs/canonical-system/MASTER_PROGRAM.json",
                                                 "docs/canonical-system/MASTER_CLOSURE_REGISTER.md",
@@ -110,7 +110,7 @@
                                                  "The owner retained the canonical broad route C4 then C5 then C6 then C7 then G1-CLOSEOUT then R1.",
                                                  "C4 consumes exact C2 and promoted C3A; C3B physical and presentation evidence is independent and blocked.",
                                                  "Population ecology and species presentation belong to C6, rendered visual proof belongs to C7, and runtime storage belongs to R1.",
-                                                 "C5-C7, broad G1-CLOSEOUT and R1 remain unchanged and gated."
+                                                 "C4 is verified and complete; C5 is the sole active item. C6-C7, broad G1-CLOSEOUT and R1 remain unchanged and gated."
                                              ],
                           "micro_sources":  [
                                                 "crates/hierarchy-history/src/hierarchy.rs",
@@ -174,67 +174,66 @@
                                                       }
                                                   ],
                               "expensive_execution_planned":  true,
-                              "unresolved_risk":  "The independent receipt and focused C3/successor-route repairs pass; complete closure remains unavailable until every historical and current shield passes in one registered run.",
-                              "expected_information_gain":  "Determine whether the replayable independent C4 evidence and repaired C3 retention anchors survive every historical and current repository shield in one complete registered run.",
-                              "estimated_cost":  "One registered full Forge gate rerun; no additional hosted execution is required unless retained attestation replay fails.",
-                              "regression_guard":  "No C3B, C5-C7, broad G1 closure, runtime, storage engine, filesystem, network, multiplayer, Companion, Greenfield, visual asset or Kernel mutation.",
-                              "stop_condition":  "Stop at candidate_verified_local if retained attestation replay or any semantic, authority, historical or current-route shield fails.",
-                              "final_integration_gate":  "Registered forge-full-gate-v1 rerun pending after successful independent-platform import and focused C3 retention repair."
+                              "unresolved_risk":  "The retained C5 fixture covers four domains but not every master-plan consumer or the complete hostile scheduler surface.",
+                              "expected_information_gain":  "Identify the smallest complete capability-free C5 contract and hostile matrix before implementation.",
+                              "estimated_cost":  "Bounded canonical and code reconciliation first; no runtime or integrated product execution is authorized.",
+                              "regression_guard":  "No C3B, C6-C7, broad G1 closure, runtime controller or executor, cache, storage, filesystem, network, process, Companion, Greenfield, visual asset or Kernel mutation.",
+                              "stop_condition":  "Stop before source if any named domain, fairness obligation, fallback rule, authority exclusion or deterministic hostile case remains ambiguous.",
+                              "final_integration_gate":  "A registered full Forge gate remains required after a separately accepted C5 implementation candidate."
                           },
     "exit_criteria":  [
                           {
-                              "id":  "c4-canonical-boundary",
-                              "label":  "C4 depends exactly on C2 and promoted C3A; C3B, ecology, presentation, storage and runtime claims remain outside the package.",
+                              "id":  "c5-exact-dependency",
+                              "label":  "C5 depends exactly on verified C4 and imports no C3B, later-system, storage or runtime authority.",
                               "status":  "verified",
                               "evidence_ids":  [
                                                    "docs/canonical-system/MASTER_PROGRAM.json",
-                                                   "docs/canonical-system/G1_C4_CLOSURE_READINESS.md"
+                                                   "docs/canonical-system/G1_C4_CLOSURE_RESULT.md"
                                                ]
                           },
                           {
-                              "id":  "c4-history-hardening",
-                              "label":  "Stable dynamic/presence semantics, exact dependency availability, known-good corrupt-tail recovery, unsupported topology refusal and bounded migration chains pass exact hostile tests.",
-                              "status":  "verified",
-                              "evidence_ids":  [
-                                                   "crates/hierarchy-history/src/lib.rs"
-                                               ]
-                          },
-                          {
-                              "id":  "c4-deterministic-cost-portability",
-                              "label":  "Bounded window/history/snapshot work and byte portfolios are deterministic across fresh processes and an honestly classified independent second platform.",
-                              "status":  "verified",
-                              "evidence_ids":  [
-                                                   "contracts/hierarchy-history-contract.md",
-                                                   "docs/canonical-system/G1_C4_INDEPENDENT_PLATFORM_EXECUTION.json"
-                                               ]
-                          },
-                          {
-                              "id":  "c4-registered-closure",
-                              "label":  "The dedicated C4 verifier, dependent regressions, independent review and one registered full Forge gate pass without activating C5.",
+                              "id":  "c5-named-domain-reconciliation",
+                              "label":  "Every named generation, simulation, AI, physics, animation, audio, rendering and streaming obligation is mapped to one shared significance truth.",
                               "status":  "in_progress",
                               "evidence_ids":  [
-                                                   "tools/verify-g1-c4-closure-readiness.ps1"
+                                                   "docs/canonical-system/G1_C5_MULTI_DOMAIN_FIDELITY_RESULT.md"
+                                               ]
+                          },
+                          {
+                              "id":  "c5-hostile-scheduler-proof",
+                              "label":  "Deterministic dispatch, admission, budget, fallback, cancellation, fairness, starvation and thrash hostiles are frozen before source.",
+                              "status":  "planned",
+                              "evidence_ids":  [
+                                                   "docs/canonical-system/SIGNIFICANCE_SCHEDULER_DESIGN_GATE.md"
+                                               ]
+                          },
+                          {
+                              "id":  "c5-registered-closure",
+                              "label":  "A separately authorized C5 implementation, focused regressions, independent review and one registered full Forge gate pass without activating C6.",
+                              "status":  "planned",
+                              "evidence_ids":  [
+                                                   "docs/canonical-system/MASTER_PROGRAM.json"
                                                ]
                           }
                       ],
     "unresolved_risks":  [
-                             "Registered run after import must pass every historical and current shield in one invocation; the latest run stopped at repaired exact C4 independent-platform successor-route drift."
+                             "The retained C5 fixture covers four domains and does not yet prove complete named-domain dispatch, admission, budgets, fallback, cancellation, fairness, starvation or thrash behavior."
                          ],
     "evidence_requirements":  [
-                                  "freeze the exact C2+C3A C4 closure and later-system exclusions",
-                                  "retain existing 33 focused hierarchy, addressable-world and lifecycle tests",
-                                  "retain exact adversarial identity, dependency, recovery, topology and migration-chain evidence",
-                                  "retain deterministic cost rows and honest fresh-process/architecture/platform classifications",
-                                  "keep C5-C7, G1-CLOSEOUT and R1 gated and unchanged"
+                                  "retain exact verified C4 as C5\u0027s sole dependency",
+                                  "inventory every named generation, simulation, AI, physics, animation, audio, rendering and streaming consumer",
+                                  "freeze deterministic dispatch, admission, budget, fallback, cancellation and fairness obligations",
+                                  "define hostile starvation, thrash, forged-priority and truth-fork cases before source",
+                                  "keep C6-C7, G1-CLOSEOUT and R1 gated and unchanged"
                               ],
     "verification_plan":  [
-                              "verify the authenticated C4 successor route and canonical reconciliation",
-                              "run the C4 readiness hostile matrix before source",
-                              "retain the additive hierarchy/history proof and dependent regressions",
-                              "obtain the identical semantic receipt from a genuinely independent platform-diverse executor",
-                              "run the registered full gate only after the independent execution receipt exists"
+                              "reconcile all canonical C5 requirements and retained fixture evidence",
+                              "audit the scheduler implementation surface without granting runtime authority",
+                              "freeze the exact C5 readiness contract and hostile matrix",
+                              "obtain independent readiness review before source",
+                              "run focused and registered gates only after a separately authorized implementation candidate exists"
                           ],
-    "resume_after":  "Continue only through broad C4 closure; stop at candidate_verified_local if independent second-platform execution is unavailable, and do not activate C5 automatically.",
+    "resume_after":  "Continue only through C5 reconciliation and capability-free readiness. Do not activate C6 automatically.",
     "evidence":  [
                      "GP3 closed cleanly in commit 7f29f6b and registered run-50a8c78043eb46c483f1f655d3793f9b.",
                      "C4V closed cleanly in commit 34f2213 and registered run-fa6334a300e04d409dd5cddb4f22542e.",
@@ -295,7 +294,10 @@
                                   "registered-full-gate:run-38b90549d7d045c9be46f951cf2b7f8f:failed:local-msvc-cross-build-byte-equality",
                                   "diagnostic:c4-msvc-clean-targets:semantic-exact:executable-bytes-distinct",
                                   "external:c4-github-run-29672946787:hosted-linux-attested:passed",
-                                  "receipt:c4-independent-platform-sha256:733d453f0831cdaafefa9d4a9e24b1494f339b0b56f4441264009c9fcc3254cd"
+                                  "receipt:c4-independent-platform-sha256:733d453f0831cdaafefa9d4a9e24b1494f339b0b56f4441264009c9fcc3254cd",
+                                  "registered-full-gate:run-bc2154f73f6243239910ac30bc3b1994:passed",
+                                  "receipt:G1-C4-CLOSURE:recorded",
+                                  "owner-route:c5-reconciliation-readiness:authorized"
                               ],
     "metrics":  {
                     "token_cost":  {
@@ -304,9 +306,9 @@
                                    },
                     "elapsed_time":  {
                                          "status":  "measured",
-                                         "value":  "33 focused tests in four existing C4-owned packages",
-                                         "receipt":  "focused:c4-existing-components:33-of-33:passed"
+                                         "value":  "632411 ms",
+                                         "receipt":  "registered-full-gate:run-bc2154f73f6243239910ac30bc3b1994:passed"
                                      }
                 },
-    "transition":  "Bounded GP4 vertical retained -\u003e canonical broad route retained -\u003e C4 readiness independently accepted -\u003e C4 candidate_verified_local retained pending independent platform-diverse execution"
+    "transition":  "C4 verified, complete and recorded after independent hosted execution and registered full gate -\u003e owner-authorized C5 reconciliation/readiness active -\u003e C6 remains gated"
 }

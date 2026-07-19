@@ -88,6 +88,7 @@ $program = Get-Content -LiteralPath $ProgramPath -Raw | ConvertFrom-Json
 $gp4 = @($program.items | Where-Object id -eq 'GP4')
 $closeout = @($program.items | Where-Object id -eq 'G1-VERTICAL-CLOSEOUT')
 $c4 = @($program.items | Where-Object id -eq 'C4')
+$c5 = @($program.items | Where-Object id -eq 'C5')
 $expectedDependencies = @('C3A','C4V','GP0','GP1','GP2','GP3','GP4')
 $broad = @($program.items | Where-Object id -eq 'G1-CLOSEOUT')
 if ($broad.Count -ne 1 -or $broad[0].state -eq 'promoted') { throw 'Broad G1 closeout was changed by GP4 readiness.' }
@@ -106,9 +107,17 @@ $c4Successor = $checkpoint.batch_id -eq 'G1-C4-HIERARCHY-HISTORY-CLOSURE-V1' -an
     $gp4.Count -eq 1 -and $gp4[0].state -eq 'verified' -and $gp4[0].status -eq 'complete' -and $gp4[0].proof -match 'run-[0-9a-f]{32}' -and
     $closeout.Count -eq 1 -and $closeout[0].state -eq 'verified' -and $closeout[0].status -eq 'complete' -and
     $c4.Count -eq 1 -and $c4[0].state -eq 'executing' -and $c4[0].status -eq 'active' -and (@($c4[0].depends_on)-join ',') -eq 'C2,C3A'
-if ((!$gp4Live -and !$closeoutSuccessor -and !$c4Successor) -or $closeout.Count -ne 1 -or (Compare-Object @($closeout[0].depends_on) $expectedDependencies)) { throw 'GP4 readiness checkpoint or authenticated successor drifted.' }
-$runMatch = if ($closeoutSuccessor -or $c4Successor) { [regex]::Match([string]$gp4[0].proof,'run-[0-9a-f]{32}') } else { $null }
-if (($closeoutSuccessor -or $c4Successor) -and (!$runMatch.Success -or @($checkpoint.verification_receipts) -notcontains "registered-full-gate:$($runMatch.Value):passed" -or !(Get-Content -LiteralPath $ResultPath -Raw).Contains($runMatch.Value))) { throw 'GP4 successor lost exact successful-run consistency.' }
+$c4Run = if($c4.Count-eq1){[regex]::Match([string]$c4[0].proof,'run-[0-9a-f]{32}')}else{$null}
+$c5Successor = $checkpoint.batch_id -eq 'G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1' -and $checkpoint.master_program_item -eq 'C5' -and $checkpoint.substage_id -eq 'c5-reconciliation-readiness' -and
+    $checkpoint.authority_lane -eq 'Owner-authorized broad C5 significance/scheduler reconciliation and capability-free closure readiness only. Exact dependency C4. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.' -and
+    $gp4.Count -eq 1 -and $gp4[0].state -eq 'verified' -and $gp4[0].status -eq 'complete' -and $gp4[0].proof -match 'run-[0-9a-f]{32}' -and
+    $closeout.Count -eq 1 -and $closeout[0].state -eq 'verified' -and $closeout[0].status -eq 'complete' -and
+    $c4.Count -eq 1 -and $c4[0].state -eq 'verified' -and $c4[0].status -eq 'complete' -and @($c4[0].sources) -contains 'G1_C4_CLOSURE_RESULT.md' -and $c4Run.Success -and
+    @($checkpoint.verification_receipts) -contains "registered-full-gate:$($c4Run.Value):passed" -and @($checkpoint.verification_receipts) -contains 'receipt:G1-C4-CLOSURE:recorded' -and
+    $c5.Count -eq 1 -and $c5[0].state -eq 'executing' -and $c5[0].status -eq 'active' -and (@($c5[0].depends_on)-join ',') -eq 'C4'
+if ((!$gp4Live -and !$closeoutSuccessor -and !$c4Successor -and !$c5Successor) -or $closeout.Count -ne 1 -or (Compare-Object @($closeout[0].depends_on) $expectedDependencies)) { throw 'GP4 readiness checkpoint or authenticated successor drifted.' }
+$runMatch = if ($closeoutSuccessor -or $c4Successor -or $c5Successor) { [regex]::Match([string]$gp4[0].proof,'run-[0-9a-f]{32}') } else { $null }
+if (($closeoutSuccessor -or $c4Successor -or $c5Successor) -and (!$runMatch.Success -or @($checkpoint.verification_receipts) -notcontains "registered-full-gate:$($runMatch.Value):passed" -or !(Get-Content -LiteralPath $ResultPath -Raw).Contains($runMatch.Value))) { throw 'GP4 successor lost exact successful-run consistency.' }
 $route = & (Join-Path $root 'tools\test-c3-federated-interruption.ps1') -Checkpoint $checkpoint
 if ($route -ne $true) { throw 'GP4 or its bounded closeout successor is not admitted by the interruption route.' }
 if ($checkpoint.substage_id -eq 'gp4-signal-anchor-readiness' -and (Test-Path -LiteralPath (Join-Path $root 'crates\mindwarp-signal-anchor-vertical'))) {

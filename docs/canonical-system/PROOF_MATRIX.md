@@ -55,8 +55,8 @@ performance claims remain provisional until the final runtime-adapter phase.
 | GP3 | Five fixed authored encounter situations, multiple approaches and exact consequence references | Promoted |
 | GP4 | Runtime-independent Signal Anchor vertical, strict evidence replay, return and restart | Verified and complete |
 | G1-VERTICAL-CLOSEOUT | Exact typed bounded C3A/C4V/GP0-GP4 evidence receipt with no promotion/runtime authority | Verified and complete |
-| C4 | Exact C2+C3A-bound descriptor/baseline; residency-neutral identity; ordered sparse replay; migration/corruption/recovery; canonical lifecycle state; bounded scale/cost and independent second-platform evidence | Candidate verified locally; independent platform-diverse execution remains open |
-| C5 | Eight typed domain maps plus dispatch, admission, budget, cancellation, starvation and thrash proof without canonical truth forks | Gated by C4 |
+| C4 | Exact C2+C3A-bound descriptor/baseline; residency-neutral identity; ordered sparse replay; migration/corruption/recovery; canonical lifecycle state; bounded scale/cost and independent second-platform evidence | Verified: exact semantic receipt, 74 hostile owners, bounded scale/cost, local platform classifications, GitHub-hosted Linux execution, retained attestation replay and registered gate `run-bc2154f73f6243239910ac30bc3b1994` pass; production storage/runtime remain excluded |
+| C5 | Eight typed domain maps plus dispatch, admission, budget, cancellation, starvation and thrash proof without canonical truth forks | Active for reconciliation/readiness; complete named-domain and hostile proof remains open |
 | C6 | Niche, lineage, body-plan, species/ecomorph, sense, person-form, dimorphism, aging-presentation and aesthetic proof | Gated by C4-C5 |
 | C7 | Representation lineage, material, articulation, animation, repair, anti-oatmeal, visual-fitness and fidelity-cost proof | Gated by C5-C6 |
 | G1-CLOSEOUT | Whole C3A-to-representation integration plus exact GP4 dependency, recovery, quality-diversity and visual/fidelity evidence | Owner-gated after C4-C7 |

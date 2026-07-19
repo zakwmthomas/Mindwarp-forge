@@ -5,12 +5,12 @@
 
 ## Active checkpoint
 
-- Package: **G1-C4-HIERARCHY-HISTORY-CLOSURE-V1**
-- Master item / milestone: **C4 / G1**
-- State / substage: **executing / c4-independent-platform-gate**
+- Package: **G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1**
+- Master item / milestone: **C5 / G1**
+- State / substage: **executing / c5-reconciliation-readiness**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Objective: Close broad C4 as a capability-free addressable hierarchy and history proof against exact C2 and promoted C3A evidence, without importing C3B, later systems, storage or runtime authority.
-- Context health: C4 remains candidate_verified_local. Three registered attempts exposed and repaired compressed C3 closure anchors, omitted independent-platform successor routing, and an invalid cross-build MSVC executable-byte equality claim. The bounded verifier repair preserves retained/current hashes as typed observation identities without weakening hosted same-run artifact equality. Clean source f505c82 is bound to tracked-tree f9089b4d and bounded-source 022e29d8; GitHub-hosted run 29672946787 independently executed and attested that exact source, and strict import plus retained replay verify current result 733d453f0831cdaafefa9d4a9e24b1494f339b0b56f4441264009c9fcc3254cd. Historical source 8651038 receipt 75d27618 is archived intact. Only the complete registered full-gate rerun and separate governed C4 promotion remain; C5 stays inactive.
+- Objective: Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.
+- Context health: C4 is verified, complete and recorded after exact source f505c82, GitHub-hosted run 29672946787, retained result 733d453f and registered full gate run-bc2154f73f6243239910ac30bc3b1994 passed in 632411 ms. C5 is the sole active item for reconciliation and capability-free readiness only; C6, C7, broad G1 closure and R1 remain gated.
 
 ## Durable evidence
 
@@ -25,16 +25,16 @@
 
 ## Authority boundary
 
-Owner-authorized broad C4 hierarchy/history reconciliation and capability-free closure proof only. Exact dependencies C2 and C3A. No C3B, C5, C6, C7, broad G1 closure, runtime, storage engine, filesystem, network, multiplayer, cross-target transactions, Companion, Greenfield, visual assets or Kernel mutation.
+Owner-authorized broad C5 significance/scheduler reconciliation and capability-free closure readiness only. Exact dependency C4. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.
 
 ## Exact next action
 
-With the hosted Ubuntu workflow receipt 733d453f strictly imported for exact source f505c82, rerun only registered forge-full-gate-v1; if every historical and current shield passes, perform the separate governed C4 promotion procedure while keeping C5 inactive.
+Audit every named generation, simulation, AI, physics, animation, audio, rendering and streaming obligation; freeze dispatch, admission, budget, fallback, cancellation, fairness and hostile proof requirements before any source work.
 
 ## Unresolved risks
 
-- Registered run after import must pass every historical and current shield in one invocation; the latest run stopped at repaired exact C4 independent-platform successor-route drift.
+- The retained C5 fixture covers four domains and does not yet prove complete named-domain dispatch, admission, budgets, fallback, cancellation, fairness, starvation or thrash behavior.
 
 ## Resume after this package
 
-Continue only through broad C4 closure; stop at candidate_verified_local if independent second-platform execution is unavailable, and do not activate C5 automatically.
+Continue only through C5 reconciliation and capability-free readiness. Do not activate C6 automatically.

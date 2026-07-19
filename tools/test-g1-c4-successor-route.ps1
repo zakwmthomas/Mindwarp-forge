@@ -7,8 +7,10 @@ try {
   $checkpoint = Get-Content -LiteralPath (Join-Path $root 'context\active\WORKER_BATCH_STATE.json') -Raw | ConvertFrom-Json
   $closeout = @($program.items | Where-Object id -eq 'G1-VERTICAL-CLOSEOUT')[0]
   $c4 = @($program.items | Where-Object id -eq 'C4')[0]
+  $c5 = @($program.items | Where-Object id -eq 'C5')[0]
   $closeout.state = 'verified'; $closeout.status = 'complete'
   $c4.state = 'executing'; $c4.status = 'active'
+  $c5.state = 'proposed'; $c5.status = 'gated'
   $checkpoint.batch_id = 'G1-C4-HIERARCHY-HISTORY-CLOSURE-V1'
   $checkpoint.master_program_item = 'C4'
   $checkpoint.state = 'executing'
@@ -50,7 +52,7 @@ try {
   $c4.depends_on = $savedDeps
   foreach($forgedDeps in @(@('C2','C3A','C3B'),@('C3A','C2'))){$c4.depends_on=$forgedDeps;Save-Fixture;try{& (Join-Path $root 'tools\verify-g1-c4-closure-readiness.ps1') -ProgramPath $programPath -CheckpointPath $checkpointPath -RouteOnly|Out-Null;throw 'Forged C4 dependency set was admitted.'}catch{if($_.Exception.Message-eq'Forged C4 dependency set was admitted.'){throw}}};$c4.depends_on=$savedDeps
   foreach($id in @('C2','C3A','C4V','G1-VERTICAL-CLOSEOUT')){$item=@($program.items|Where-Object id -eq $id)[0];$saved=$item.proof;$item.proof='forged';Save-Fixture;try{& (Join-Path $root 'tools\verify-g1-c4-closure-readiness.ps1') -ProgramPath $programPath -CheckpointPath $checkpointPath -RouteOnly|Out-Null;throw "Forged $id prerequisite was admitted."}catch{if($_.Exception.Message-eq"Forged $id prerequisite was admitted."){throw}};$item.proof=$saved}
-  $c5=@($program.items|Where-Object id -eq 'C5')[0];$savedC5State=$c5.state;$savedC5Status=$c5.status;$c5.state='executing';$c5.status='active';Save-Fixture;try{& (Join-Path $root 'tools\verify-g1-c4-closure-readiness.ps1') -ProgramPath $programPath -CheckpointPath $checkpointPath -RouteOnly|Out-Null;throw 'Extra active C5 was admitted.'}catch{if($_.Exception.Message-eq'Extra active C5 was admitted.'){throw}};$c5.state=$savedC5State;$c5.status=$savedC5Status
+  $savedC5State=$c5.state;$savedC5Status=$c5.status;$c5.state='executing';$c5.status='active';Save-Fixture;try{& (Join-Path $root 'tools\verify-g1-c4-closure-readiness.ps1') -ProgramPath $programPath -CheckpointPath $checkpointPath -RouteOnly|Out-Null;throw 'Extra active C5 was admitted.'}catch{if($_.Exception.Message-eq'Extra active C5 was admitted.'){throw}};$c5.state=$savedC5State;$c5.status=$savedC5Status
   $savedCloseout = $closeout.status; $closeout.status = 'active'; Save-Fixture
   try { & (Join-Path $root 'tools\verify-g1-gp3-encounter-grammar-readiness.ps1') -ProgramPath $programPath -CheckpointPath $checkpointPath | Out-Null; throw 'Unclosed vertical receipt was admitted.' } catch { if ($_.Exception.Message -eq 'Unclosed vertical receipt was admitted.') { throw } }
   $closeout.status = $savedCloseout

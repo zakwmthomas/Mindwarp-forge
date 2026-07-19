@@ -32,15 +32,17 @@ sha2="0.10"
         if($hostileHash-eq $pin[1]){throw "$($pin[0]) hostile mutation was not detected."}
       }
     } finally {$sha.Dispose()}
-    $gp4=$program.items|Where-Object id -eq 'GP4';$closeout=$program.items|Where-Object id -eq 'G1-VERTICAL-CLOSEOUT';$c4=$program.items|Where-Object id -eq 'C4'
+    $gp4=$program.items|Where-Object id -eq 'GP4';$closeout=$program.items|Where-Object id -eq 'G1-VERTICAL-CLOSEOUT';$c4=$program.items|Where-Object id -eq 'C4';$c5=$program.items|Where-Object id -eq 'C5'
     if($gp4.state-ne 'verified'-or$gp4.status-ne 'complete'){throw 'GP4 is not verified/complete.'}
     if((@($closeout.depends_on)-join ',')-ne 'C3A,C4V,GP0,GP1,GP2,GP3,GP4'){throw 'Bounded closeout dependency order changed.'}
     $checkpoint=Get-Content -Raw (Join-Path $root 'context\active\WORKER_BATCH_STATE.json')|ConvertFrom-Json
     $closeoutLive=$checkpoint.batch_id -eq 'G1-VERTICAL-CLOSEOUT-V1' -and $checkpoint.master_program_item -eq 'G1-VERTICAL-CLOSEOUT' -and $checkpoint.state -eq 'recorded' -and $checkpoint.substage_id -eq 'g1-vertical-closeout-recorded' -and $closeout.state -eq 'executing' -and $closeout.status -eq 'active'
     $c4Successor=$checkpoint.batch_id -eq 'G1-C4-HIERARCHY-HISTORY-CLOSURE-V1' -and $checkpoint.master_program_item -eq 'C4' -and $checkpoint.substage_id -in @('c4-reconciliation-readiness','c4-hierarchy-history-hardening','c4-verification','c4-verified-result','c4-independent-platform-gate') -and $closeout.state -eq 'verified' -and $closeout.status -eq 'complete' -and $c4.state -eq 'executing' -and $c4.status -eq 'active' -and (@($c4.depends_on)-join ',') -eq 'C2,C3A'
-    if(!$closeoutLive -and !$c4Successor){throw 'Bounded closeout is neither live nor retained by the exact broad-C4 successor.'}
+    $c4Run=[regex]::Match([string]$c4.proof,'run-[0-9a-f]{32}')
+    $c5Successor=$checkpoint.batch_id -eq 'G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1' -and $checkpoint.master_program_item -eq 'C5' -and $checkpoint.substage_id -eq 'c5-reconciliation-readiness' -and $checkpoint.authority_lane -eq 'Owner-authorized broad C5 significance/scheduler reconciliation and capability-free closure readiness only. Exact dependency C4. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.' -and $closeout.state -eq 'verified' -and $closeout.status -eq 'complete' -and $c4.state -eq 'verified' -and $c4.status -eq 'complete' -and @($c4.sources) -contains 'G1_C4_CLOSURE_RESULT.md' -and $c4Run.Success -and @($checkpoint.verification_receipts) -contains "registered-full-gate:$($c4Run.Value):passed" -and @($checkpoint.verification_receipts) -contains 'receipt:G1-C4-CLOSURE:recorded' -and $c5.state -eq 'executing' -and $c5.status -eq 'active' -and (@($c5.depends_on)-join ',') -eq 'C4'
+    if(!$closeoutLive -and !$c4Successor -and !$c5Successor){throw 'Bounded closeout is neither live nor retained by an exact C4/C5 successor.'}
     $active=@($program.items|Where-Object{$_.state-eq'executing'-and$_.status-eq'active'})
-    $expectedActive=if($c4Successor){'C4'}else{'G1-VERTICAL-CLOSEOUT'}
+    $expectedActive=if($c5Successor){'C5'}elseif($c4Successor){'C4'}else{'G1-VERTICAL-CLOSEOUT'}
     if ($active.Count -ne 1 -or $active[0].id -ne $expectedActive) { throw 'The authenticated closeout route is not the sole executing/active program item.' }
     $metricPath=Join-Path $root '.local\forge-metrics\inbox\run-7e5c44dc8f48424a8cec42da756e3127.json'
     if(Test-Path -LiteralPath $metricPath){$metric=Get-Content -Raw $metricPath|ConvertFrom-Json

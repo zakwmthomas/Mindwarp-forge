@@ -2,7 +2,7 @@
 
 ```mermaid
 flowchart LR
-  F1["F1 Kernel\nverified"] --> F2["F2 Continuity\nverified"] --> F3["F3 Atlas\nverified"] --> F4["F4 Canonical registry\nverified"] --> F5["F5 Reference proof studio\nverified"] --> C3A["C3A causal-world seam\npromoted"] --> C4["C4 hierarchy/history\nactive"] --> C5["C5 significance/scheduler\ngated"] --> C6["C6 organisms/ecology\ngated"] --> C7["C7 representation\ngated"] --> G1C["Broad G1 closeout\ngated"] --> R1["R1 Runtime adapter\ngated"]
+  F1["F1 Kernel\nverified"] --> F2["F2 Continuity\nverified"] --> F3["F3 Atlas\nverified"] --> F4["F4 Canonical registry\nverified"] --> F5["F5 Reference proof studio\nverified"] --> C3A["C3A causal-world seam\npromoted"] --> C4["C4 hierarchy/history\nverified"] --> C5["C5 significance/scheduler\nactive"] --> C6["C6 organisms/ecology\ngated"] --> C7["C7 representation\ngated"] --> G1C["Broad G1 closeout\ngated"] --> R1["R1 Runtime adapter\ngated"]
   C3A --> GP0["GP0 player promise\npromoted"] --> GP1["GP1 fixed base loop\npromoted"] --> GP2["GP2 typed progression\npromoted"] --> GP3["GP3 encounter grammar\npromoted"] --> GP4["GP4 Signal Anchor\nverified"] --> VC["Bounded vertical closeout\nverified"]
   GP4 --> G1C
   C3A --> C4V["C4V vertical persistence\nverified"] --> GP4

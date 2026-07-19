@@ -32,6 +32,8 @@ Gameplay recovery and development proposal:
 - `G1_C4_INDEPENDENT_PLATFORM_EXECUTION_PROTOCOL.md` - locked portable
   request, provider-hosted execution, attestation and strict authority-negative
   import boundary for the remaining external C4 gate.
+- `G1_C4_CLOSURE_RESULT.md` - verified C4 closure binding hosted Linux
+  execution, retained replay and the decisive registered full-gate receipt.
 
 6. `MACRO_GAP_CLOSURE_AUDIT.md` - per-system contracts, risks,
    observability requirements, smallest proofs, and F5 package ordering.

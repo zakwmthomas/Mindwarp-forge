@@ -582,22 +582,24 @@
                   {
                       "id":  "C4",
                       "milestone":  "G1",
-                      "state":  "executing",
-                      "status":  "active",
+                      "state":  "verified",
+                      "status":  "complete",
                       "depends_on":  [
                                          "C2",
                                          "C3A"
                                      ],
-                      "gate":  "design",
-                      "next_action":  "Close the bounded C4 addressable-state/history package against exact C3A evidence: freeze closure obligations, extend exact replay/recovery/migration/corruption/scale/platform evidence, and keep species presentation, C3B physical claims, C5-C7 and runtime out of scope.",
-                      "proof":  "The addressable-world binding imports and validates only WorldGenerationInput, CausalWorldPacket v1 and validate_world_packet, preserving nested identity and provenance without a physical or optical dependency.",
+                      "gate":  "recorded",
+                      "next_action":  "Retain C4 as the verified exact dependency for C5. Do not reopen C4 or infer runtime, storage, C3B, C6, C7 or broad G1 authority from its closure.",
+                      "proof":  "Exact C2+C3A semantic receipt 263a7c27, all 74 frozen hostile owners, bounded scale/cost, local platform classifications, GitHub-hosted Linux run 29672946787, retained cryptographic replay, and registered full gate run-bc2154f73f6243239910ac30bc3b1994 passed in 632411 ms.",
                       "sources":  [
                                       "MASTER_CLOSURE_REGISTER.md",
                                       "HIERARCHY_HISTORY_DESIGN_GATE.md",
                                       "SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md",
                                       "APERIODIC_MONOTILE_CANDIDATE_MAP.md",
                                       "G1_C4_ADDRESSABLE_WORLD_BINDING_RESULT.md",
-                                      "G1_C4_AGE_LIFECYCLE_AND_PROOFRECEIPT_RESULT.md"
+                                      "G1_C4_AGE_LIFECYCLE_AND_PROOFRECEIPT_RESULT.md",
+                                      "G1_C4_INDEPENDENT_PLATFORM_EXECUTION.json",
+                                      "G1_C4_CLOSURE_RESULT.md"
                                   ]
                   },
         {
@@ -625,20 +627,21 @@
                   {
                       "id":  "C5",
                       "milestone":  "G1",
-                      "state":  "proposed",
-                      "status":  "gated",
+                      "state":  "executing",
+                      "status":  "active",
                       "depends_on":  [
                                          "C4"
                                      ],
                       "gate":  "design",
-                      "next_action":  "Wait for C4 closure. Retain the shared-significance and four-domain fidelity-map fixture as bounded evidence, then prove scheduler dispatch and budget control across every named generation, simulation, AI, physics, animation, audio, rendering and streaming consumer before C5 completion.",
-                      "proof":  "The scheduler reference and four-domain fidelity fixture pass, but the fixture does not exercise cross-system dispatch/admission and omits four master-plan domains. C5 is not complete and remains dependency-gated by C4.",
+                      "next_action":  "Reconcile the retained scheduler and four-domain fidelity fixture against every named generation, simulation, AI, physics, animation, audio, rendering and streaming obligation; freeze dispatch, admission, budget, fallback, cancellation, fairness and hostile proof requirements before source work.",
+                      "proof":  "C4 is verified and complete. The retained scheduler reference and four-domain fidelity fixture pass, but complete named-domain readiness, cross-system dispatch/admission and hostile coverage remain open; C5 is active, not complete.",
                       "sources":  [
                                       "MASTER_CLOSURE_REGISTER.md",
                                       "SIGNIFICANCE_SCHEDULER_DESIGN_GATE.md",
                                       "ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md",
                                       "APERIODIC_MONOTILE_CANDIDATE_MAP.md",
-                                      "G1_C5_MULTI_DOMAIN_FIDELITY_RESULT.md"
+                                      "G1_C5_MULTI_DOMAIN_FIDELITY_RESULT.md",
+                                      "G1_C4_CLOSURE_RESULT.md"
                                   ]
                   },
                   {

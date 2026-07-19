@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **G1-C4-HIERARCHY-HISTORY-CLOSURE-V1**
-- Objective: Close broad C4 as a capability-free addressable hierarchy and history proof against exact C2 and promoted C3A evidence, without importing C3B, later systems, storage or runtime authority.
+- Work package: **G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1**
+- Objective: Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **bounded-broad-c4-capability-free-closure / C4 local proof passes at repaired clean source f505c82 with exact bounded source manifest 022e29d8 and tracked-tree manifest f9089b4d. GitHub-hosted run 29672946787 executed that exact source and the strict importer plus retained replay verify current result SHA-256 733d453f. Earlier receipt 75d27618 is retained under its source-qualified historical filename. One registered full-gate rerun is now required.**
-- Exact next action: With the hosted Ubuntu workflow receipt 733d453f strictly imported for exact source f505c82, rerun only registered forge-full-gate-v1; if every historical and current shield passes, perform the separate governed C4 promotion procedure while keeping C5 inactive.
+- Risk/research gate: **bounded-c5-significance-scheduler-readiness / C4 is verified, complete and recorded after GitHub-hosted Linux execution, retained cryptographic replay and registered full gate run-bc2154f73f6243239910ac30bc3b1994. C5 may reconcile requirements and freeze readiness evidence; source remains blocked until the exact closure surface and hostile matrix are complete.**
+- Exact next action: Audit every named generation, simulation, AI, physics, animation, audio, rendering and streaming obligation; freeze dispatch, admission, budget, fallback, cancellation, fairness and hostile proof requirements before any source work.
 
 ## Approved operating policies
 

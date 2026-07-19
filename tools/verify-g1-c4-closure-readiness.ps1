@@ -17,16 +17,20 @@ $retainedActive = if($active.Count-eq 1){[string]$active[0].id}else{''}
 $c4Run=if($c4.Count-eq 1){[regex]::Match([string]$c4[0].proof,'run-[0-9a-f]{32}')}else{$null}
 function Complete-Item([string]$id){$item=@($program.items|Where-Object id -eq $id);return $item.Count-eq 1-and$item[0].status-eq'complete'-and$item[0].state-in@('promoted','verified')}
 $successorClosure = switch($retainedActive){'C5'{Complete-Item 'C4'};'C6'{(Complete-Item 'C4')-and(Complete-Item 'C5')};'C7'{(Complete-Item 'C4')-and(Complete-Item 'C5')-and(Complete-Item 'C6')};'G1-CLOSEOUT'{(Complete-Item 'C4')-and(Complete-Item 'C5')-and(Complete-Item 'C6')-and(Complete-Item 'C7')};'R1'{Complete-Item 'G1-CLOSEOUT'};default{$false}}
-$c4Retained = $c4.Count -eq 1 -and $c4[0].state -eq 'verified' -and $c4[0].status -eq 'complete' -and $c4Run.Success -and
-    @($c4[0].sources)-contains'G1_C4_CLOSURE_RESULT.md' -and @($checkpoint.verification_receipts)-contains"registered-full-gate:$($c4Run.Value):passed" -and @($checkpoint.verification_receipts)-contains'receipt:G1-C4-CLOSURE:recorded' -and
+$hasClosureSource = @($c4[0].sources) -contains 'G1_C4_CLOSURE_RESULT.md'
+$hasFullGateReceipt = $c4Run.Success -and (@($checkpoint.verification_receipts) -contains "registered-full-gate:$($c4Run.Value):passed")
+$hasClosureReceipt = @($checkpoint.verification_receipts) -contains 'receipt:G1-C4-CLOSURE:recorded'
+$c4Retained = $c4.Count -eq 1 -and $c4[0].state -eq 'verified' -and $c4[0].status -eq 'complete' -and
+    $hasClosureSource -and $hasFullGateReceipt -and $hasClosureReceipt -and
     $retainedActive -in @('C5','C6','C7','G1-CLOSEOUT','R1') -and $checkpoint.master_program_item -eq $retainedActive -and $successorClosure
-if ((!$c4Live -and !$c4Retained) -or (@($c4[0].depends_on)-join ',') -ne 'C2,C3A' -or $closeout.Count -ne 1 -or $closeout[0].state -ne 'verified' -or $closeout[0].status -ne 'complete') { throw 'C4 readiness is not bound to its exact active or retained-successor route.' }
+if (!$c4Live -and !$c4Retained) { throw "C4 readiness route invalid: active=$retainedActive source=$hasClosureSource full_gate=$hasFullGateReceipt closure=$hasClosureReceipt successor=$successorClosure checkpoint=$($checkpoint.master_program_item)." }
+if ((@($c4[0].depends_on)-join ',') -ne 'C2,C3A' -or $closeout.Count -ne 1 -or $closeout[0].state -ne 'verified' -or $closeout[0].status -ne 'complete') { throw 'C4 readiness is not bound to exact C2+C3A and verified vertical closeout evidence.' }
 if($c4Live){foreach ($token in $requiredAuthority) { if (!$authority.Contains($token)) { throw "C4 authority boundary missing: $token" } }}
 if ($c4Live -and ((& (Join-Path $root 'tools\test-c3-federated-interruption.ps1') -Checkpoint $checkpoint) -ne $true)) { throw 'C4 route is not admitted by the federated interruption guard.' }
 $pins = [ordered]@{
   'C2'='bbd80968996612cca154ad29e324d9fdeb50072f38fd41d2c43699bacdb2da3d'; 'C3A'='61e1fe3bdea3f000cd6f08cf51bbe7f4d3e2baaa506700e495b07a35f8bbec9b'; 'C4V'='eec2ea37577af35147ac85b3082f85a98c58e1acbbcd7dd85d4377c595e676a0'; 'G1-VERTICAL-CLOSEOUT'='2963d0c1b7e679b88e4db273fe24fbcdf9de09894fb0a5c5e8e905c5c73966d6'
 }
-if($c4Live){$pins['C5']='c719f99ad3d7c06957bcb857c7b4977c2eae48fa70c7b9fded0ebc5e4eec79b8';$pins['C6']='00fefa9ada5f788ab1c470b9abed83b2c85c2529b870c9aff1be6c12af477511';$pins['C7']='bddc31b69fe9a9c15805bcd8f52c1edcd1868bd55d38192cfc117b1582bc1131';$pins['G1-CLOSEOUT']='0f568deda22a0901030948cb9c9355916cbfe2319e943267f1cd6135c5fe39a5';$pins['R1']='87ef69f50f4d4cd7fa297d19cae56e77db1cac53605f12849c3cc380156b9869'}
+if($c4Live){$pins['C5']='c6cadcfff651ee48e46214c9b7e94554dc546e97a3df56c459bd5ef843bed24b';$pins['C6']='00fefa9ada5f788ab1c470b9abed83b2c85c2529b870c9aff1be6c12af477511';$pins['C7']='bddc31b69fe9a9c15805bcd8f52c1edcd1868bd55d38192cfc117b1582bc1131';$pins['G1-CLOSEOUT']='0f568deda22a0901030948cb9c9355916cbfe2319e943267f1cd6135c5fe39a5';$pins['R1']='87ef69f50f4d4cd7fa297d19cae56e77db1cac53605f12849c3cc380156b9869'}
 $sha = [Security.Cryptography.SHA256]::Create()
 try { foreach ($entry in $pins.GetEnumerator()) { $item=@($program.items|Where-Object id -eq $entry.Key); if($item.Count-ne 1){throw "Missing pinned successor item: $($entry.Key)"}; $bytes=[Text.Encoding]::UTF8.GetBytes(($item[0]|ConvertTo-Json -Depth 20 -Compress)); $actual=(($sha.ComputeHash($bytes)|ForEach-Object{$_.ToString('x2')})-join ''); if($actual-ne$entry.Value){throw "$($entry.Key) changed during C4 readiness: $actual"} } } finally { $sha.Dispose() }
 if (!$RouteOnly) {

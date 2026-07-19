@@ -76,7 +76,12 @@ $c4BroadRoute =
   $Checkpoint.master_program_item -eq 'C4' -and
   $Checkpoint.substage_id -in @('c4-reconciliation-readiness','c4-hierarchy-history-hardening','c4-verification','c4-verified-result','c4-independent-platform-gate') -and
   $Checkpoint.authority_lane -like '*Owner-authorized broad C4 hierarchy/history reconciliation and capability-free closure proof only*Exact dependencies C2 and C3A*No C3B*C5*C6*C7*broad G1 closure*runtime*storage engine*filesystem*network*multiplayer*cross-target transactions*Companion*Greenfield*visual assets*Kernel mutation*'
-$gameplayFoundationRoute = $gp0GameplayRoute -or $gp1GameplayRoute -or $gp2GameplayRoute -or $c4vGameplayRoute -or $gp3GameplayRoute -or $gp4GameplayRoute -or $g1VerticalCloseoutRoute -or $c4BroadRoute
+$c5BroadRoute =
+  $Checkpoint.batch_id -eq 'G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1' -and
+  $Checkpoint.master_program_item -eq 'C5' -and
+  $Checkpoint.substage_id -eq 'c5-reconciliation-readiness' -and
+  $Checkpoint.authority_lane -eq 'Owner-authorized broad C5 significance/scheduler reconciliation and capability-free closure readiness only. Exact dependency C4. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.'
+$gameplayFoundationRoute = $gp0GameplayRoute -or $gp1GameplayRoute -or $gp2GameplayRoute -or $c4vGameplayRoute -or $gp3GameplayRoute -or $gp4GameplayRoute -or $g1VerticalCloseoutRoute -or $c4BroadRoute -or $c5BroadRoute
 $c3DesignRoute =
   $Checkpoint.batch_id -eq 'G1-C3-WHOLE-CELL-RECEIVER-COUPLING-MATHEMATICAL-DESIGN-V1' -and
   $Checkpoint.master_program_item -eq 'C3' -and

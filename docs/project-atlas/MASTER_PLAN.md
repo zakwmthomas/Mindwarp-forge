@@ -2,7 +2,7 @@
 
 > GENERATED from `docs/canonical-system/MASTER_PROGRAM.json`. Do not edit this view directly.
 
-Canonical lifecycle: schema v2; executing item: `C4`.
+Canonical lifecycle: schema v2; executing item: `C5`.
 Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
 
 ## F4
@@ -57,12 +57,12 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
   Next: Maintain the validated WorldGenerationInput to replayed CausalWorldPacket v1 seam for dependency-sufficient consumers.
 - **C3B** - blocked; gate: evidence; depends on: C3A.
   Next: Wait for authoritative project-specific physical scale, calibrated coefficient, applicability, visibility and presentation fidelity evidence; do not substitute Yard Atlas or fixture data.
-- **C4** - executing; gate: design; depends on: C2, C3A.
-  Next: Close the bounded C4 addressable-state/history package against exact C3A evidence: freeze closure obligations, extend exact replay/recovery/migration/corruption/scale/platform evidence, and keep species presentation, C3B physical claims, C5-C7 and runtime out of scope.
+- **C4** - verified; gate: recorded; depends on: C2, C3A.
+  Next: Retain C4 as the verified exact dependency for C5. Do not reopen C4 or infer runtime, storage, C3B, C6, C7 or broad G1 authority from its closure.
 - **C4V** - verified; gate: recorded; depends on: C2, C3A, GP1.
   Next: Retain the bounded C4V seam as a verified GP4 dependency; do not broaden it into runtime or broad C4.
-- **C5** - proposed; gate: design; depends on: C4.
-  Next: Wait for C4 closure. Retain the shared-significance and four-domain fidelity-map fixture as bounded evidence, then prove scheduler dispatch and budget control across every named generation, simulation, AI, physics, animation, audio, rendering and streaming consumer before C5 completion.
+- **C5** - executing; gate: design; depends on: C4.
+  Next: Reconcile the retained scheduler and four-domain fidelity fixture against every named generation, simulation, AI, physics, animation, audio, rendering and streaming obligation; freeze dispatch, admission, budget, fallback, cancellation, fairness and hostile proof requirements before source work.
 - **C6** - proposed; gate: design; depends on: C4, C5.
   Next: Wait for the reopened C3-C5 route. Retain the repaired C6 prototypes as bounded evidence only; do not continue body-plan work until the upstream causal-world, addressable-state and shared-scheduler packages satisfy their declared scopes.
 - **C7** - proposed; gate: design; depends on: C5, C6.
