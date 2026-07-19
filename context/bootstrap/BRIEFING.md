@@ -8,8 +8,8 @@
 - Objective: Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **bounded-c5-significance-scheduler-local-candidate / C4 is verified and complete. The owner released the frozen C5 implementation lane. A capability-free local candidate now passes 27 tests and exact 92-ID registry identity, but full one-to-one hostile execution, pressure replay, portability, integration, independent review and the registered full gate remain required before closure.**
-- Exact next action: Expand the locally green C5 candidate into exact one-to-one hostile suites and sealed pressure/replay fixtures, then run fresh-process, portability, read-only ProofReceipt integration, independent review and the registered full gate before any C5 closure claim.
+- Risk/research gate: **bounded-c5-significance-scheduler-local-candidate / C4 is verified and complete. The owner released the frozen C5 implementation lane. The capability-free local candidate now passes 79 Rust tests with executable mapping for all 92 frozen hostile IDs, strict one-step replay and disposable residency lifecycle evidence. Portability, read-only integration, independent review and the registered full gate remain required before closure.**
+- Exact next action: Freeze the local 92-hostile semantic receipt, run fresh-process and target-diverse portability, prove read-only ProofReceipt integration, obtain independent review, then run the registered full gate before any C5 closure claim.
 
 ## Approved operating policies
 

@@ -1,5 +1,6 @@
 use minicbor::{Decoder, Encoder};
 use serde::Serialize;
+use std::collections::BTreeMap;
 
 use crate::{
     BudgetEnvelope, CONTRACT_VERSION, DecisionKind, HysteresisPolicy, ImportancePacket,
@@ -145,6 +146,14 @@ impl ImportanceDecisionBindingV1 {
     ) -> Result<Self, SignificanceSchedulerError> {
         if step == 0 {
             return Err(SignificanceSchedulerError::Invalid("binding step"));
+        }
+        if ImportancePacket::decode_strict(&packet.encode_canonical()?)? != *packet
+            || HysteresisPolicy::decode_strict(&policy.encode_canonical()?)? != policy
+            || DomainFidelityMapSetV1::decode_strict(&maps.encode_canonical()?)? != *maps
+        {
+            return Err(SignificanceSchedulerError::Invalid(
+                "mutated significance evidence",
+            ));
         }
         let mut resulting_state = prior_state;
         let tier = resulting_state.advance(packet, policy, step)?;
@@ -319,6 +328,99 @@ impl AdmissionReceiptV1 {
             budget_fingerprint: budget.fingerprint().expect("validated budget"),
         }
     }
+    pub fn verify(
+        &self,
+        tickets: &[WorkTicket],
+        budget: BudgetEnvelope,
+    ) -> Result<(), SignificanceSchedulerError> {
+        if self != &Self::evaluate(tickets, budget) {
+            return Err(SignificanceSchedulerError::Invalid(
+                "admission receipt mismatch",
+            ));
+        }
+        Ok(())
+    }
+    pub fn encode_canonical(&self) -> Result<Vec<u8>, SignificanceSchedulerError> {
+        let mut out = Vec::new();
+        let mut e = Encoder::new(&mut out);
+        e.array(7)
+            .and_then(|e| e.u16(CONTRACT_VERSION))
+            .and_then(|e| e.bool(self.accepted))
+            .and_then(|e| e.u16(self.reason_code))
+            .and_then(|e| e.array(self.ticket_fingerprints.len() as u64))
+            .map_err(codec)?;
+        for fp in &self.ticket_fingerprints {
+            e.bytes(fp).map_err(codec)?;
+        }
+        e.bytes(&self.graph_fingerprint)
+            .and_then(|e| e.bytes(&self.budget_fingerprint))
+            .and_then(|e| e.bytes(&self.fingerprint_body()))
+            .map_err(codec)?;
+        Ok(out)
+    }
+    fn fingerprint_body(&self) -> [u8; 32] {
+        let mut bytes = Vec::new();
+        bytes.push(u8::from(self.accepted));
+        bytes.extend_from_slice(&self.reason_code.to_be_bytes());
+        bytes.extend_from_slice(&(self.ticket_fingerprints.len() as u64).to_be_bytes());
+        for fp in &self.ticket_fingerprints {
+            bytes.extend_from_slice(fp)
+        }
+        bytes.extend_from_slice(&self.graph_fingerprint);
+        bytes.extend_from_slice(&self.budget_fingerprint);
+        hash(ADMISSION_DOMAIN, &bytes)
+    }
+    pub fn fingerprint(&self) -> [u8; 32] {
+        self.fingerprint_body()
+    }
+    pub fn decode_strict(bytes: &[u8]) -> Result<Self, SignificanceSchedulerError> {
+        let mut d = Decoder::new(bytes);
+        if d.array().map_err(codec)? != Some(7) || d.u16().map_err(codec)? != CONTRACT_VERSION {
+            return Err(SignificanceSchedulerError::NonCanonical);
+        }
+        let accepted = d.bool().map_err(codec)?;
+        let reason_code = d.u16().map_err(codec)?;
+        let count = d
+            .array()
+            .map_err(codec)?
+            .ok_or(SignificanceSchedulerError::NonCanonical)? as usize;
+        if count > 256 {
+            return Err(SignificanceSchedulerError::NonCanonical);
+        }
+        let mut ticket_fingerprints = Vec::with_capacity(count);
+        for _ in 0..count {
+            ticket_fingerprints.push(bytes32(d.bytes().map_err(codec)?)?)
+        }
+        if !ticket_fingerprints.windows(2).all(|pair| pair[0] < pair[1])
+            && ticket_fingerprints.len() > 1
+        {
+            return Err(SignificanceSchedulerError::NonCanonical);
+        }
+        let graph_fingerprint = bytes32(d.bytes().map_err(codec)?)?;
+        let budget_fingerprint = bytes32(d.bytes().map_err(codec)?)?;
+        let expected_fp = bytes32(d.bytes().map_err(codec)?)?;
+        let value = Self {
+            accepted,
+            reason_code,
+            ticket_fingerprints,
+            graph_fingerprint,
+            budget_fingerprint,
+        };
+        let mut graph = Vec::new();
+        graph.extend_from_slice(&(value.ticket_fingerprints.len() as u64).to_be_bytes());
+        for fp in &value.ticket_fingerprints {
+            graph.extend_from_slice(fp)
+        }
+        if value.graph_fingerprint != hash(ADMISSION_DOMAIN, &graph)
+            || value.fingerprint() != expected_fp
+            || value.accepted != (value.reason_code == 1)
+            || d.position() != bytes.len()
+            || value.encode_canonical()? != bytes
+        {
+            return Err(SignificanceSchedulerError::NonCanonical);
+        }
+        Ok(value)
+    }
 }
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Serialize)]
@@ -450,6 +552,9 @@ impl PressureTraceV2 {
             .array()
             .map_err(codec)?
             .ok_or(SignificanceSchedulerError::NonCanonical)? as usize;
+        if count > 1024 {
+            return Err(SignificanceSchedulerError::NonCanonical);
+        }
         let mut decisions = Vec::with_capacity(count);
         for _ in 0..count {
             if d.array().map_err(codec)? != Some(7) {
@@ -472,7 +577,8 @@ impl PressureTraceV2 {
                 units: d.u32().map_err(codec)?,
             });
         }
-        let remaining = d.u64().map_err(codec)? as usize;
+        let remaining = usize::try_from(d.u64().map_err(codec)?)
+            .map_err(|_| SignificanceSchedulerError::NonCanonical)?;
         let fp = bytes32(d.bytes().map_err(codec)?)?;
         let value = Self {
             step,
@@ -489,6 +595,34 @@ impl PressureTraceV2 {
             return Err(SignificanceSchedulerError::NonCanonical);
         }
         Ok(value)
+    }
+    pub fn verify_replay(
+        &self,
+        tickets: &[WorkTicket],
+        budget: BudgetEnvelope,
+    ) -> Result<(), SignificanceSchedulerError> {
+        if self.budget_fingerprint != budget.fingerprint()? {
+            return Err(SignificanceSchedulerError::Invalid("trace budget mismatch"));
+        }
+        let by_id: BTreeMap<[u8; 32], &WorkTicket> =
+            tickets.iter().map(|ticket| (ticket.id, ticket)).collect();
+        for decision in &self.decisions {
+            let ticket = by_id
+                .get(&decision.ticket_id)
+                .ok_or(SignificanceSchedulerError::UnknownTicket)?;
+            if decision.domain_code != ticket.consumer
+                || decision.work_class != ticket.work_class
+                || decision.packet_fingerprint != ticket.importance_packet
+            {
+                return Err(SignificanceSchedulerError::Invalid("trace ticket mismatch"));
+            }
+        }
+        let mut scheduler = crate::ReferenceScheduler::new(tickets.to_vec(), budget)?;
+        let replay = scheduler.step_strict()?;
+        if &replay != self {
+            return Err(SignificanceSchedulerError::Invalid("trace replay drift"));
+        }
+        Ok(())
     }
 }
 
@@ -573,6 +707,149 @@ impl ResidencyIntentV1 {
             return Err(SignificanceSchedulerError::NonCanonical);
         }
         Ok(value)
+    }
+}
+
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Serialize)]
+#[repr(u8)]
+pub enum ResidencyDecisionKind {
+    Requested = 1,
+    Renewed = 2,
+    Expired = 3,
+    Bypassed = 4,
+    ChurnDiagnosed = 5,
+}
+#[derive(Clone, Debug, Eq, PartialEq, Serialize)]
+pub struct ResidencyDecisionV1 {
+    pub target_descriptor: [u8; 32],
+    pub request_epoch: u64,
+    pub kind: ResidencyDecisionKind,
+    pub step: u64,
+}
+#[derive(Clone, Debug, Eq, PartialEq)]
+struct ActiveResidencyV1 {
+    epoch: u64,
+    expires_after: u64,
+    changes: u16,
+}
+#[derive(Clone, Debug)]
+pub struct ResidencyLedgerV1 {
+    current_epochs: BTreeMap<[u8; 32], u64>,
+    active: BTreeMap<[u8; 32], ActiveResidencyV1>,
+    step: u64,
+    trace: Vec<ResidencyDecisionV1>,
+}
+impl ResidencyLedgerV1 {
+    pub fn new(
+        current_epochs: impl IntoIterator<Item = ([u8; 32], u64)>,
+    ) -> Result<Self, SignificanceSchedulerError> {
+        let current_epochs: BTreeMap<_, _> = current_epochs.into_iter().collect();
+        if current_epochs.is_empty()
+            || current_epochs
+                .iter()
+                .any(|(target, epoch)| *target == [0; 32] || *epoch == 0)
+        {
+            return Err(SignificanceSchedulerError::Invalid("residency epochs"));
+        }
+        Ok(Self {
+            current_epochs,
+            active: BTreeMap::new(),
+            step: 0,
+            trace: Vec::new(),
+        })
+    }
+    pub fn apply(
+        &mut self,
+        intent: ResidencyIntentV1,
+    ) -> Result<Vec<ResidencyDecisionV1>, SignificanceSchedulerError> {
+        if self.current_epochs.get(&intent.target_descriptor) != Some(&intent.request_epoch) {
+            return Err(SignificanceSchedulerError::StaleEpoch);
+        }
+        let mut emitted = Vec::new();
+        let kind = match intent.disposition {
+            ResidencyDisposition::Bypass => ResidencyDecisionKind::Bypassed,
+            ResidencyDisposition::Expire => {
+                self.active.remove(&intent.target_descriptor);
+                ResidencyDecisionKind::Expired
+            }
+            ResidencyDisposition::Request | ResidencyDisposition::Renew => {
+                let previous = self
+                    .active
+                    .get(&intent.target_descriptor)
+                    .map_or(0, |active| active.changes);
+                let changes = previous.saturating_add(1);
+                self.active.insert(
+                    intent.target_descriptor,
+                    ActiveResidencyV1 {
+                        epoch: intent.request_epoch,
+                        expires_after: self.step.saturating_add(u64::from(intent.lease_steps)),
+                        changes,
+                    },
+                );
+                if intent.disposition == ResidencyDisposition::Renew {
+                    ResidencyDecisionKind::Renewed
+                } else {
+                    ResidencyDecisionKind::Requested
+                }
+            }
+        };
+        emitted.push(ResidencyDecisionV1 {
+            target_descriptor: intent.target_descriptor,
+            request_epoch: intent.request_epoch,
+            kind,
+            step: self.step,
+        });
+        if self
+            .active
+            .get(&intent.target_descriptor)
+            .is_some_and(|active| active.changes >= 3)
+        {
+            emitted.push(ResidencyDecisionV1 {
+                target_descriptor: intent.target_descriptor,
+                request_epoch: intent.request_epoch,
+                kind: ResidencyDecisionKind::ChurnDiagnosed,
+                step: self.step,
+            });
+        }
+        self.trace.extend(emitted.iter().cloned());
+        Ok(emitted)
+    }
+    pub fn advance(&mut self, steps: u64) -> Vec<ResidencyDecisionV1> {
+        self.step = self.step.saturating_add(steps);
+        let expired: Vec<_> = self
+            .active
+            .iter()
+            .filter(|(_, active)| active.expires_after <= self.step)
+            .map(|(target, active)| (*target, active.epoch))
+            .collect();
+        let mut emitted = Vec::new();
+        for (target, epoch) in expired {
+            self.active.remove(&target);
+            emitted.push(ResidencyDecisionV1 {
+                target_descriptor: target,
+                request_epoch: epoch,
+                kind: ResidencyDecisionKind::Expired,
+                step: self.step,
+            });
+        }
+        self.trace.extend(emitted.iter().cloned());
+        emitted
+    }
+    pub fn contains(&self, target: [u8; 32]) -> bool {
+        self.active.contains_key(&target)
+    }
+    pub fn state_fingerprint(&self) -> [u8; 32] {
+        let mut bytes = Vec::new();
+        for (target, active) in &self.active {
+            bytes.extend_from_slice(target);
+            bytes.extend_from_slice(&active.epoch.to_be_bytes());
+            bytes.extend_from_slice(&active.expires_after.to_be_bytes());
+            bytes.extend_from_slice(&active.changes.to_be_bytes())
+        }
+        hash(b"mindwarp/scheduler/residency-state/v1\0", &bytes)
+    }
+    pub fn trace(&self) -> &[ResidencyDecisionV1] {
+        &self.trace
     }
 }
 

@@ -324,6 +324,29 @@ fn starvation_is_diagnosed_without_forging_significance() {
 }
 
 #[test]
+fn epoch_advance_is_traced_and_old_route_work_never_executes() {
+    let work = ticket(1, ConsumerDomainV1::Simulation, ResourceClass::Cpu, 2, None);
+    let budget = BudgetEnvelope::new(1, [0, 1, 0, 0], [0; 4], 2).unwrap();
+    let mut scheduler = ReferenceScheduler::new(vec![work], budget).unwrap();
+    let decisions = scheduler.advance_target_epoch([7; 32], 2).unwrap();
+    assert_eq!(decisions.len(), 1);
+    assert_eq!(decisions[0].kind, DecisionKind::EpochAdvanced);
+    let trace = scheduler.step_strict().unwrap();
+    assert!(
+        trace
+            .decisions
+            .iter()
+            .any(|decision| decision.kind == DecisionKind::EpochAdvanced)
+    );
+    assert!(
+        !trace
+            .decisions
+            .iter()
+            .any(|decision| decision.kind == DecisionKind::Executed)
+    );
+}
+
+#[test]
 fn residency_intents_are_streaming_only_bounded_and_strict() {
     let intent = ResidencyIntentV1::new(
         [7; 32],

@@ -10,7 +10,7 @@
 - State / substage: **executing / c5-implementation**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Objective: Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.
-- Context health: C4 remains verified and C5 remains the sole active item. The owner explicitly released the frozen C5 implementation gate. The local candidate adds the typed eight-domain surface and passes 27 tests plus module/readiness gates; its verifier explicitly does not mislabel the 92-ID registry as 92 executed hostile proofs. C6, C7, broad G1 closure and R1 remain gated.
+- Context health: C4 remains verified and C5 remains the sole active item. The owner explicitly released the frozen C5 implementation gate. The local full-hostile candidate passes 79 Rust tests and maps every frozen hostile ID to executable evidence while retaining capability-negative authority. C6, C7, broad G1 closure and R1 remain gated.
 
 ## Durable evidence
 
@@ -29,7 +29,7 @@ Owner-authorized bounded C5 significance/scheduler implementation and capability
 
 ## Exact next action
 
-Expand the locally green C5 candidate into exact one-to-one hostile suites and sealed pressure/replay fixtures, then run fresh-process, portability, read-only ProofReceipt integration, independent review and the registered full gate before any C5 closure claim.
+Freeze the local 92-hostile semantic receipt, run fresh-process and target-diverse portability, prove read-only ProofReceipt integration, obtain independent review, then run the registered full gate before any C5 closure claim.
 
 ## Unresolved risks
 

@@ -1671,6 +1671,9 @@
             "verification": [
                 "cargo test -p significance-scheduler",
                 "cargo test -p significance-scheduler --test eight_domain_scheduler_closure",
+                "cargo test -p significance-scheduler --test c5_contract_hostiles",
+                "cargo test -p significance-scheduler --test c5_scheduler_hostiles",
+                "cargo test -p significance-scheduler --test c5_residency_trace_authority_hostiles",
                 "cargo test -p significance-scheduler --test multi_domain_consumer_fidelity",
                 "tools/verify-g1-c5-significance-scheduler-implementation.ps1",
                 "tools/verify-f5-significance-scheduler-readiness.ps1"

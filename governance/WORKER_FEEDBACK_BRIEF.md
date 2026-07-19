@@ -21,5 +21,5 @@ Every material observation, improvement, failure, metric result, and stop/refocu
 | `governance\SYSTEM_EFFICIENCY_AUDIT.md` | `7320ff85f8af2a039a4f1c0e906239aebf7e921a378df7de9edced7b4667cdcd` |
 | `governance\WORKER_METRIC_REGISTRY.md` | `ef2f3105cb4a35c75a5a606687df1b6da28a9c3a0b5fde3ec39aee8b66089414` |
 | `governance\MEASUREMENT_AND_RECURSIVE_LEARNING_CONTRACT.md` | `962b2631e2748c022d15f1e4d91409218ec41b15857f5357636575cf1c8c936f` |
-| `context\active\WORKER_BATCH_STATE.json` | `11622c770fe18e0c64a066c3a4452ff45f620ceac330cf6a0e5b5a4fb6657e5a` |
+| `context\active\WORKER_BATCH_STATE.json` | `5a911e790cb8c55dec7150f97ca1ec469d888d3fc67932d5fd2647b1d84b4c3d` |
 | `docs\canonical-system\MASTER_CLOSURE_REGISTER.md` | `833bee33acf864ba1131e4bf498e2e0430a6860d5330ec86cd485b3b9c9fd9c3` |

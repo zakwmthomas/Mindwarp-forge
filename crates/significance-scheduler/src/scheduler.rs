@@ -111,6 +111,7 @@ impl WorkTicket {
             || !dependencies.windows(2).all(|pair| pair[0] < pair[1])
             || fallback == Some(id)
             || cancellation_parent == Some(id)
+            || importance_packet == [0; 32]
         {
             return Err(SignificanceSchedulerError::Invalid("work ticket"));
         }
@@ -313,6 +314,7 @@ pub enum DecisionKind {
     DeadlineRejected,
     DependencyRejected,
     StarvationDiagnosed,
+    EpochAdvanced,
 }
 
 impl DecisionKind {
@@ -328,6 +330,7 @@ impl DecisionKind {
             Self::DeadlineRejected => 8,
             Self::DependencyRejected => 9,
             Self::StarvationDiagnosed => 10,
+            Self::EpochAdvanced => 11,
         }
     }
 }
@@ -346,6 +349,7 @@ impl TryFrom<u8> for DecisionKind {
             8 => Ok(Self::DeadlineRejected),
             9 => Ok(Self::DependencyRejected),
             10 => Ok(Self::StarvationDiagnosed),
+            11 => Ok(Self::EpochAdvanced),
             _ => Err(SignificanceSchedulerError::Invalid("decision kind")),
         }
     }
@@ -376,6 +380,7 @@ pub struct ReferenceScheduler {
     dependency_order: Vec<[u8; 32]>,
     cancellation_children: BTreeMap<[u8; 32], Vec<[u8; 32]>>,
     current_epochs: BTreeMap<[u8; 32], u64>,
+    pending_decisions: Vec<SchedulerDecision>,
     step: u64,
 }
 
@@ -386,6 +391,12 @@ impl ReferenceScheduler {
     ) -> Result<Self, SignificanceSchedulerError> {
         if tickets.is_empty() || tickets.len() > MAX_TICKETS {
             return Err(SignificanceSchedulerError::Invalid("ticket count"));
+        }
+        let budget_bytes = budget.encode_canonical()?;
+        if BudgetEnvelope::decode_strict(&budget_bytes)? != budget {
+            return Err(SignificanceSchedulerError::Invalid(
+                "mutated budget envelope",
+            ));
         }
         for ticket in &tickets {
             let bytes = ticket.encode_canonical()?;
@@ -474,6 +485,7 @@ impl ReferenceScheduler {
             dependency_order: order,
             cancellation_children,
             current_epochs,
+            pending_decisions: Vec::new(),
             step: 0,
         })
     }
@@ -615,21 +627,29 @@ impl ReferenceScheduler {
         &mut self,
         target: [u8; 32],
         epoch: u64,
-    ) -> Result<(), SignificanceSchedulerError> {
+    ) -> Result<Vec<SchedulerDecision>, SignificanceSchedulerError> {
         let current = self.current_epochs.entry(target).or_insert(epoch);
         if epoch <= *current {
             return Err(SignificanceSchedulerError::StaleEpoch);
         }
         *current = epoch;
+        let mut decisions = Vec::new();
         for runtime in self.tickets.values_mut() {
             if runtime.ticket.target_descriptor == target
                 && runtime.ticket.request_epoch < epoch
                 && matches!(runtime.state, TicketState::Pending | TicketState::Running)
             {
                 runtime.state = TicketState::CancelRequested;
+                decisions.push(decision(
+                    runtime,
+                    DecisionKind::EpochAdvanced,
+                    0,
+                    "target epoch advanced",
+                ));
             }
         }
-        Ok(())
+        self.pending_decisions.extend(decisions.iter().cloned());
+        Ok(decisions)
     }
 
     pub fn record_external_completion(
@@ -642,6 +662,23 @@ impl ReferenceScheduler {
             .tickets
             .get_mut(&id)
             .ok_or(SignificanceSchedulerError::UnknownTicket)?;
+        if runtime.state == TicketState::CancelSettled {
+            return Ok(decision(
+                runtime,
+                DecisionKind::CompletedDiscarded,
+                0,
+                "late completion after settled cancellation",
+            ));
+        }
+        if matches!(
+            runtime.state,
+            TicketState::InactiveFallback
+                | TicketState::CompletedAccepted
+                | TicketState::CompletedDiscarded
+                | TicketState::Rejected
+        ) {
+            return Err(SignificanceSchedulerError::InvalidTransition);
+        }
         let stale = epoch != runtime.ticket.request_epoch
             || current_epochs[&runtime.ticket.target_descriptor] != epoch
             || matches!(
@@ -681,6 +718,23 @@ impl ReferenceScheduler {
             .tickets
             .get_mut(&receipt.ticket_id)
             .ok_or(SignificanceSchedulerError::UnknownTicket)?;
+        if runtime.state == TicketState::CancelSettled {
+            return Ok(decision(
+                runtime,
+                DecisionKind::CompletedDiscarded,
+                0,
+                "late completion after settled cancellation",
+            ));
+        }
+        if matches!(
+            runtime.state,
+            TicketState::InactiveFallback
+                | TicketState::CompletedAccepted
+                | TicketState::CompletedDiscarded
+                | TicketState::Rejected
+        ) {
+            return Err(SignificanceSchedulerError::InvalidTransition);
+        }
         let stale = receipt.request_epoch != runtime.ticket.request_epoch
             || current_epochs[&runtime.ticket.target_descriptor] != receipt.request_epoch;
         if stale
@@ -716,7 +770,7 @@ impl ReferenceScheduler {
     }
 
     pub fn step(&mut self) -> PressureTrace {
-        let mut decisions = Vec::new();
+        let mut decisions = std::mem::take(&mut self.pending_decisions);
         self.reject_failed_dependencies(&mut decisions);
         self.expire_overdue(&mut decisions);
         self.recompute_effective_priorities();
