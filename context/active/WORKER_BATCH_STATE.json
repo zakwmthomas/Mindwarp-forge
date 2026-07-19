@@ -1,4 +1,4 @@
-{
+﻿{
     "schema_version":  3,
     "canonical_role":  "sole-active-work-checkpoint",
     "batch_id":  "G1-C4-HIERARCHY-HISTORY-CLOSURE-V1",
@@ -13,73 +13,73 @@
                                                        "stage_id":  "c4-independent-platform-gate",
                                                        "content_sha256":  "f58fbd02ac9761d1c06bf41990a59ed0a92e965dcbc27906f4d7c165cfa0dc2a",
                                                        "review_disposition":  "revised",
-                                                       "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
+                                                       "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
                                                    },
                                      "next_action":  {
                                                          "stage_id":  "c4-independent-platform-gate",
-                                                         "content_sha256":  "9e24894b91a80f20f789d724049e3d514b27bf246968a13c679313828465cf3c",
+                                                         "content_sha256":  "40b576a2a5fb620ba26dc1a0ffe800243f27502195bcd728c557b727f93f552e",
                                                          "review_disposition":  "revised",
-                                                         "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
+                                                         "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
                                                      },
                                      "stage_context":  {
                                                            "stage_id":  "c4-independent-platform-gate",
-                                                           "content_sha256":  "8cf5afb87aa33c0f77e7954fbaa1aef2179a42253007c579d740f4b504c43329",
+                                                           "content_sha256":  "8658ea2d30894ed623442925c03f6dc98b25c60aad9113a963418063c097bc36",
                                                            "review_disposition":  "revised",
-                                                           "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
+                                                           "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
                                                        },
                                      "visual_quality_gate":  {
                                                                  "stage_id":  "c4-independent-platform-gate",
                                                                  "content_sha256":  "cfb3f4b0a636e0d5eff9dd88e562b4a427d3fadbe03f9349ac516e38adac2dd2",
                                                                  "review_disposition":  "revised",
-                                                                 "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
+                                                                 "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
                                                              },
                                      "simulation_ladder":  {
                                                                "stage_id":  "c4-independent-platform-gate",
-                                                               "content_sha256":  "c11f923620a3f236e86e43f612c7f5fb7bcf7fc9bdf1d7eaf28ef8e85f7358be",
+                                                               "content_sha256":  "1cccaeaf338cddd7949907649346c86462e201200467194a0c7054d98e5fa47a",
                                                                "review_disposition":  "revised",
-                                                               "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
+                                                               "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
                                                            },
                                      "unresolved_risks":  {
                                                               "stage_id":  "c4-independent-platform-gate",
                                                               "content_sha256":  "f4cffb5c960b33594bf2a50c284c2b94f6e1874855c0cf08ca114c9b668c2a1b",
                                                               "review_disposition":  "revised",
-                                                              "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
+                                                              "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
                                                           },
                                      "evidence_requirements":  {
                                                                    "stage_id":  "c4-independent-platform-gate",
                                                                    "content_sha256":  "06e7a714e1bfc359ca9fc2661906f0d92aeea77fe547d108f770667a62c3d9d2",
                                                                    "review_disposition":  "revised",
-                                                                   "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
+                                                                   "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
                                                                },
                                      "verification_plan":  {
                                                                "stage_id":  "c4-independent-platform-gate",
                                                                "content_sha256":  "8a81c24807c04878e8370ad782858ab2d58ce14dd677563b3284f1654d873aa9",
                                                                "review_disposition":  "revised",
-                                                               "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
+                                                               "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
                                                            },
                                      "resume_after":  {
                                                           "stage_id":  "c4-independent-platform-gate",
                                                           "content_sha256":  "91ff7c09a948de0f53a11009f349557946af6a692096ffa798c58e0cf19dcb3d",
                                                           "review_disposition":  "revised",
-                                                          "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
+                                                          "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
                                                       },
                                      "evidence":  {
                                                       "stage_id":  "c4-independent-platform-gate",
-                                                      "content_sha256":  "de1e5e0a5bfc803ecba436e8e5bb3f3df96cbbba8c96defb32251ca8a16a1271",
+                                                      "content_sha256":  "52a204b5b9d658cc5e9a12152ce0f3e6c76a1396ac058d41c9af5c981f52edda",
                                                       "review_disposition":  "revised",
-                                                      "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
+                                                      "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
                                                   },
                                      "verification_receipts":  {
                                                                    "stage_id":  "c4-independent-platform-gate",
-                                                                   "content_sha256":  "a540c518705cc3e1989a57fdce8079f20ea0e3b67dad6310657a8565f152eed5",
+                                                                   "content_sha256":  "eeaba5ff41cabb851a7ef0d9bdc011ec87305bd2c185f4403150e79b007081c3",
                                                                    "review_disposition":  "revised",
-                                                                   "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
+                                                                   "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
                                                                },
                                      "transition":  {
                                                         "stage_id":  "c4-independent-platform-gate",
                                                         "content_sha256":  "0ab96ffbfaa431a0e9aa4d20a2da0d294d1e87d3b4bd8a4504bb5ba27f213d9e",
                                                         "review_disposition":  "revised",
-                                                        "review_note":  "Reviewed exact independent-platform successor-route repair and second registered failure against the active C4 gate."
+                                                        "review_note":  "Reviewed current hosted C4 receipt and exact full-gate continuation after the attested-source repair."
                                                     }
                                  },
     "consecutive_no_progress_limit":  1,
@@ -131,8 +131,8 @@
                                                  "Android aarch64 compilation is compile-only; independent platform-diverse execution remains a separate receipt.",
                                                  "The retained fixture lock and 27-path blob manifest bind the portable proof surface; 36 external hostiles and 15 retained-replay hostiles reject forged policy, source, runner, artifact, output, attestation, retention and authority evidence.",
                                                  "The public GitHub repository is connected. Hosted run 29671494578 separated read-only execution from attestation authority and was rejected locally before import when it exposed CRLF/LF tree serialization drift.",
-                                                  "Canonical LF tree binding is regenerated at clean source f505c82bc9303b3426a4530d0a8deec6eede400a with tracked-tree SHA-256 f9089b4d62bd789c514c152e600607fcdeb0b762c0888b19115feb193b7f0e8b and bounded-source SHA-256 022e29d8cbc31459656ac36aabcefe656632005f6df47057b97185b57bad5557.",
-                                                  "GitHub-hosted run 29672946787 executed and attested exact repaired source f505c82; strict import and retained replay verify current independent result SHA-256 733d453f0831cdaafefa9d4a9e24b1494f339b0b56f4441264009c9fcc3254cd."
+                                                 "Canonical LF tree binding is regenerated at clean source f505c82bc9303b3426a4530d0a8deec6eede400a with tracked-tree SHA-256 f9089b4d62bd789c514c152e600607fcdeb0b762c0888b19115feb193b7f0e8b and bounded-source SHA-256 022e29d8cbc31459656ac36aabcefe656632005f6df47057b97185b57bad5557.",
+                                                 "GitHub-hosted run 29672946787 executed and attested exact repaired source f505c82; strict import and retained replay verify current independent result SHA-256 733d453f0831cdaafefa9d4a9e24b1494f339b0b56f4441264009c9fcc3254cd."
                                              ]
                       },
     "visual_quality_gate":  {
@@ -169,7 +169,7 @@
                                                       },
                                                       {
                                                           "tier":  "external_execution",
-                                                           "result":  "GitHub-hosted Ubuntu run 29672946787 executed two concurrent native processes at repaired source f505c82 and produced a strictly imported, cryptographically replayable authority-negative receipt; the prior 8651038 receipt is archived intact.",
+                                                          "result":  "GitHub-hosted Ubuntu run 29672946787 executed two concurrent native processes at repaired source f505c82 and produced a strictly imported, cryptographically replayable authority-negative receipt; the prior 8651038 receipt is archived intact.",
                                                           "evidence":  "docs/canonical-system/G1_C4_INDEPENDENT_PLATFORM_EXECUTION.json"
                                                       }
                                                   ],
@@ -257,8 +257,8 @@
                      "GitHub-hosted run 29671881585 independently executed and attested clean source 8651038; strict import created G1_C4_INDEPENDENT_PLATFORM_EXECUTION.json with receipt SHA-256 75d27618497c5432c10f86fd2dd25759185238cd3bbf264a583b3743b228542b.",
                      "The first registered post-import gate replayed the C4 attestation, then failed on C3 closure-register retention drift; the register now preserves current superseded-C3/promoted-C3A/blocked-C3B truth plus residual/ecotone anchors, and all five affected focused shields pass.",
                      "The second registered attempt passed the C3 repair and later failed because three retained GP3/GP4/vertical-closeout verifiers omitted only c4-independent-platform-gate; exact-stage additions and the existing forged-route successor suite now pass without widening authority.",
-                     "The third registered attempt passed through retained hosted-attestation replay and the repaired successor routes, then failed because the local observation verifier incorrectly required historical and rebuilt MSVC debug PE bytes to match. Two clean target-directory builds produced distinct executable hashes with exact semantic output; the bounded repair validates both hashes as per-execution identities without weakening hosted same-run artifact equality."
-                     ,"GitHub-hosted run 29672946787 independently executed and attested exact repaired source f505c82; strict import and retained cryptographic replay verify result SHA-256 733d453f0831cdaafefa9d4a9e24b1494f339b0b56f4441264009c9fcc3254cd. The prior 8651038 receipt remains archived intact."
+                     "The third registered attempt passed through retained hosted-attestation replay and the repaired successor routes, then failed because the local observation verifier incorrectly required historical and rebuilt MSVC debug PE bytes to match. Two clean target-directory builds produced distinct executable hashes with exact semantic output; the bounded repair validates both hashes as per-execution identities without weakening hosted same-run artifact equality.",
+                     "GitHub-hosted run 29672946787 independently executed and attested exact repaired source f505c82; strict import and retained cryptographic replay verify result SHA-256 733d453f0831cdaafefa9d4a9e24b1494f339b0b56f4441264009c9fcc3254cd. The prior 8651038 receipt remains archived intact."
                  ],
     "verification_receipts":  [
                                   "dependency:gp0-gp1-gp2-gp3-c4v:verified",
@@ -278,9 +278,9 @@
                                   "audit:c4-canonical-code-route:three-lanes:complete",
                                   "gate:c4-local-implementation:pass:43-focused-plus-7-c4v",
                                   "receipt:c4-semantic-sha256:263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996",
-                                   "receipt:c4-bounded-source-manifest-sha256:022e29d8cbc31459656ac36aabcefe656632005f6df47057b97185b57bad5557",
-                                   "receipt:c4-clean-source-commit:f505c82bc9303b3426a4530d0a8deec6eede400a",
-                                   "receipt:c4-tracked-tree-manifest-sha256:f9089b4d62bd789c514c152e600607fcdeb0b762c0888b19115feb193b7f0e8b",
+                                  "receipt:c4-bounded-source-manifest-sha256:022e29d8cbc31459656ac36aabcefe656632005f6df47057b97185b57bad5557",
+                                  "receipt:c4-clean-source-commit:f505c82bc9303b3426a4530d0a8deec6eede400a",
+                                  "receipt:c4-tracked-tree-manifest-sha256:f9089b4d62bd789c514c152e600607fcdeb0b762c0888b19115feb193b7f0e8b",
                                   "platform:c4-i686:same-host-second-architecture:passed",
                                   "platform:c4-android-aarch64:compile-only:passed",
                                   "gate:c4-external-importer-hostiles:pass:36-plus-workflow-controls",
@@ -291,11 +291,11 @@
                                   "registered-full-gate:post-c4-import:failed:c3-closure-register-retention-drift",
                                   "focused:c3-closure-retention-shields:5-of-5:passed",
                                   "registered-full-gate:post-c3-repair:failed:gp3-independent-platform-successor-drift",
-                                   "focused:c4-independent-platform-successor-route:passed",
-                                   "registered-full-gate:run-38b90549d7d045c9be46f951cf2b7f8f:failed:local-msvc-cross-build-byte-equality",
-                                   "diagnostic:c4-msvc-clean-targets:semantic-exact:executable-bytes-distinct"
-                                   ,"external:c4-github-run-29672946787:hosted-linux-attested:passed"
-                                   ,"receipt:c4-independent-platform-sha256:733d453f0831cdaafefa9d4a9e24b1494f339b0b56f4441264009c9fcc3254cd"
+                                  "focused:c4-independent-platform-successor-route:passed",
+                                  "registered-full-gate:run-38b90549d7d045c9be46f951cf2b7f8f:failed:local-msvc-cross-build-byte-equality",
+                                  "diagnostic:c4-msvc-clean-targets:semantic-exact:executable-bytes-distinct",
+                                  "external:c4-github-run-29672946787:hosted-linux-attested:passed",
+                                  "receipt:c4-independent-platform-sha256:733d453f0831cdaafefa9d4a9e24b1494f339b0b56f4441264009c9fcc3254cd"
                               ],
     "metrics":  {
                     "token_cost":  {
