@@ -21,6 +21,10 @@ $sourceCommit = '17f39f7018de8a02c8292bcde0fafa2bf58fc7d4'
 $historicalReplayCommit = '51a67b222739f6ba0a51f151976ded4d52d76f55'
 $historicalVerifyBlob = '21981e1ea9ea9c0117e322e0e0610e4d560edb3c'
 $currentVerifyBlob = 'e5613f3da5c2d365c35797910188bd31495433d6'
+$historicalCargoTomlBlob = 'c89e42751c45947cca539f2d02c2216e7b85cdda'
+$currentCargoTomlBlob = '0db3b7182706c43d55014e74a233bb5394545b1a'
+$historicalCargoLockBlob = 'c25af5e0dffd87a8f2340b70ba4269a03945c3ee'
+$currentCargoLockBlob = '9f686900b4de5b70f6dfe3f54048f09350efd9a7'
 $expectedObservationBlob = '02e962a7d4e9f83f506162cfb1b97e8717b18c10'
 if ([string]::IsNullOrWhiteSpace($CheckpointPath)) {
     $CheckpointPath = Join-Path $root 'context\active\WORKER_BATCH_STATE.json'
@@ -95,13 +99,21 @@ foreach ($relative in $bounded) {
         if ($historicalBlob -ne $historicalVerifyBlob -or $headBlob -ne $currentVerifyBlob) {
             throw 'Outer verify.ps1 is not the one exact classified C5 closure-orchestration transition.'
         }
+    } elseif ($relative -eq 'Cargo.toml') {
+        if ($historicalBlob -ne $historicalCargoTomlBlob -or $headBlob -ne $currentCargoTomlBlob) {
+            throw 'Workspace manifest is not the exact classified body-plan registration transition.'
+        }
+    } elseif ($relative -eq 'Cargo.lock') {
+        if ($historicalBlob -ne $historicalCargoLockBlob -or $headBlob -ne $currentCargoLockBlob) {
+            throw 'Workspace lockfile is not the exact classified body-plan registration transition.'
+        }
     } elseif ($historicalBlob -ne $headBlob) {
         throw "Retained C4 bounded path drifted outside the classified outer orchestration delta: $relative"
     }
 }
 
 if ($ValidateOnly) {
-    Write-Output 'C4 successor adapter validated: exact current C5 route plus historical C4 identity and one classified closure-orchestration delta.'
+    Write-Output 'C4 successor adapter validated: exact current C5 route plus historical C4 identity, two body-plan workspace registrations and one closure-orchestration delta.'
     return
 }
 
