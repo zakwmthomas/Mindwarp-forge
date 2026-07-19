@@ -4,7 +4,7 @@
 
 - **Maturity:** prototype_tested
 - **Root:** `apps/forge-desktop/src-tauri`
-- **Source fingerprint:** `794af2a32ef132fd3a0d2b6db50ee060ac7fe276b17a2995cc6792f509d672e1`
+- **Source fingerprint:** `63b7a75e0492989171cb7f8fb0b00488959ef655412c0a47aba3a1082d1baace`
 - **Live project state:** read `context/active/CURRENT_STATE.md`; active status is never duplicated here.
 
 ## Purpose

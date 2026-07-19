@@ -6,77 +6,77 @@
     "state":  "executing",
     "previous_state":  "ready",
     "objective":  "Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.",
-    "next_action":  "Implement the smallest read-only ProofReceipt integration for the verified C5 semantic receipt: bind receipt identity and semantic hash without changing canonical object, event or candidate counts, then run focused regressions and independent review. Do not close C5 or activate C6.",
-    "substage_id":  "c5-proofreceipt-integration",
+    "next_action":  "Design and hostile-test the smallest exact allowlisted adapter that authenticates the current C5 full-gate route without modifying the frozen C4 bounded source surface; if that is impossible, prepare a separately reviewed C4 reattestation plan. Then rerun forge-full-gate-v1. Do not use wildcard stage or authority matching, close C5 or activate C6.",
+    "substage_id":  "c5-full-gate-route-reconciliation",
     "handoff_section_receipts":  {
                                      "objective":  {
-                                                       "stage_id":  "c5-proofreceipt-integration",
+                                                       "stage_id":  "c5-full-gate-route-reconciliation",
                                                        "content_sha256":  "31a2cdccf71602454fc21773b1d0076077682aa9831062db569ec25fb044ceea",
                                                        "review_disposition":  "revised",
                                                        "review_note":  "Reviewed all handoff sections against the active substage."
                                                    },
                                      "next_action":  {
-                                                         "stage_id":  "c5-proofreceipt-integration",
-                                                         "content_sha256":  "fcdf45de79e6504790549d7df63cb45d90af735c2f79a4b4d8de75adc5ccf590",
+                                                         "stage_id":  "c5-full-gate-route-reconciliation",
+                                                         "content_sha256":  "d047fb5c84e5d7f51ac11237c13c0b83c674fbb392bb28a6f9a699e130a45ff2",
                                                          "review_disposition":  "revised",
                                                          "review_note":  "Reviewed all handoff sections against the active substage."
                                                      },
                                      "stage_context":  {
-                                                           "stage_id":  "c5-proofreceipt-integration",
-                                                           "content_sha256":  "b33f9422a8f38b19b5c6a0f7d655d80c3bbe5501aa8b2a3866b422c7f8322be4",
+                                                           "stage_id":  "c5-full-gate-route-reconciliation",
+                                                           "content_sha256":  "b277b3b4c6a7543d2ca73ae0886bf9e965262dcc238425cffabfe64ae78d2ded",
                                                            "review_disposition":  "revised",
                                                            "review_note":  "Reviewed all handoff sections against the active substage."
                                                        },
                                      "visual_quality_gate":  {
-                                                                 "stage_id":  "c5-proofreceipt-integration",
+                                                                 "stage_id":  "c5-full-gate-route-reconciliation",
                                                                  "content_sha256":  "80ae5cd5e6cfb847218c27879744cfe9da5c36bd40124e6f700060f88c558739",
                                                                  "review_disposition":  "revised",
                                                                  "review_note":  "Reviewed all handoff sections against the active substage."
                                                              },
                                      "simulation_ladder":  {
-                                                               "stage_id":  "c5-proofreceipt-integration",
+                                                               "stage_id":  "c5-full-gate-route-reconciliation",
                                                                "content_sha256":  "f773cf8a3969dd21e020acb308f6244a73f6dda7892236acf231eb59766fbac9",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "unresolved_risks":  {
-                                                              "stage_id":  "c5-proofreceipt-integration",
+                                                              "stage_id":  "c5-full-gate-route-reconciliation",
                                                               "content_sha256":  "3da91aec04038a04c338c9d9819c527a4ce31d3a2ae94e5dbcba4d592515cffa",
                                                               "review_disposition":  "revised",
                                                               "review_note":  "Reviewed all handoff sections against the active substage."
                                                           },
                                      "evidence_requirements":  {
-                                                                   "stage_id":  "c5-proofreceipt-integration",
+                                                                   "stage_id":  "c5-full-gate-route-reconciliation",
                                                                    "content_sha256":  "fee8b2b089c9ee9fd8607d84f31964a5e3a026625e9c90d93f3246844107e57a",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "verification_plan":  {
-                                                               "stage_id":  "c5-proofreceipt-integration",
+                                                               "stage_id":  "c5-full-gate-route-reconciliation",
                                                                "content_sha256":  "bd8cb3648dbfdb6d3f832e3b2dfa18f80aa4c98563b3695d6866191a5f6f569c",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "resume_after":  {
-                                                          "stage_id":  "c5-proofreceipt-integration",
+                                                          "stage_id":  "c5-full-gate-route-reconciliation",
                                                           "content_sha256":  "99bf48508c69c21d19f6a41be03dd0020e9861f909db0c510ac53f7f88d0fe5b",
                                                           "review_disposition":  "revised",
                                                           "review_note":  "Reviewed all handoff sections against the active substage."
                                                       },
                                      "evidence":  {
-                                                      "stage_id":  "c5-proofreceipt-integration",
+                                                      "stage_id":  "c5-full-gate-route-reconciliation",
                                                       "content_sha256":  "e33c3ee30d48016edc0d62ad2c681dc594820772b0ae6938ea114b5e8daf699d",
                                                       "review_disposition":  "revised",
                                                       "review_note":  "Reviewed all handoff sections against the active substage."
                                                   },
                                      "verification_receipts":  {
-                                                                   "stage_id":  "c5-proofreceipt-integration",
-                                                                   "content_sha256":  "eab299841a6164b5a9a70a10debf7f86e847cb3006c517c89b8438318507134b",
+                                                                   "stage_id":  "c5-full-gate-route-reconciliation",
+                                                                   "content_sha256":  "af4a273edbddcdd7f1636ee0afe485dc8b91e952e6c6b4e00d19b4f87a141ed9",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "transition":  {
-                                                        "stage_id":  "c5-proofreceipt-integration",
+                                                        "stage_id":  "c5-full-gate-route-reconciliation",
                                                         "content_sha256":  "5eb7cbdad652434acc88665c360346d62fa4fdf951adc35772c87980f39c2db9",
                                                         "review_disposition":  "revised",
                                                         "review_note":  "Reviewed all handoff sections against the active substage."
@@ -92,71 +92,51 @@
                                         "domain-creative-suites"
                                     ]
                     },
-    "risk_level":  "bounded-c5-proofreceipt-read-only-integration",
-    "research_gate":  "C5 portability is independently verified for the isolated game-facing proof contract: clean Windows x64/i686 observations, Android compile-only evidence, hosted Linux run 29678602236, local Sigstore replay, 40 importer hostiles, 19 retained-replay hostiles and fresh independent review all pass. Forge itself was not ported. Only read-only ProofReceipt binding may proceed; closure, promotion and C6 authority remain withheld.",
+    "risk_level":  "bounded-c5-full-gate-route-reconciliation",
+    "research_gate":  "The C5 ProofReceipt integration is focused-green and independently accepted. The registered full gate cannot yet authenticate the evolved C5 substage because frozen C4 successor verifiers admit only the original exact reconciliation tuple; editing those commit-bound C4 files invalidates the retained C4 source manifest. Reconcile this with an exact fail-closed route adapter outside the frozen proof surface or a newly attested C4 proof revision. Wildcard stage or authority matching is forbidden. C5 closure, promotion and C6 authority remain withheld.",
     "authority_lane":  "Owner-authorized bounded C5 significance/scheduler implementation and capability-free closure proof only. Exact dependency C4. Frozen candidate G1_C5_CLOSURE_READINESS.md. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.",
-    "context_health":  "C4 remains verified and C5 remains the sole active item. C5 local hardening and portability are independently verified at exact source 9e48dd1; the isolated proof contract, not Forge, reproduced semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb on hosted Linux. The active substage is now read-only ProofReceipt integration. C5 closure, C6, C7, broad G1 closure and R1 remain gated.",
+    "context_health":  "C4 remains verified and byte-frozen; C5 remains the sole active item. The isolated game-facing proof contract, not Forge, reproduced semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb on hosted Linux. The read-only ProofReceipt integration passes 43 desktop tests and independent review without changing canonical object, event or candidate counts. The remaining work is an exact full-gate successor-route reconciliation that preserves the frozen C4 manifest. C5 closure, C6, C7, broad G1 closure and R1 remain gated.",
     "stage_context":  {
-                          "stage_id":  "c5-implementation",
+                          "stage_id":  "c5-full-gate-route-reconciliation",
                           "macro_sources":  [
                                                 "docs/canonical-system/MASTER_PROGRAM.json",
                                                 "docs/canonical-system/MASTER_CLOSURE_REGISTER.md",
                                                 "docs/canonical-system/PROOF_MATRIX.md",
-                                                "docs/canonical-system/HIERARCHY_HISTORY_DESIGN_GATE.md",
-                                                "docs/canonical-system/G1_C4_ADDRESSABLE_WORLD_BINDING_RESULT.md",
-                                                "docs/canonical-system/G1_C4_AGE_LIFECYCLE_AND_PROOFRECEIPT_RESULT.md",
                                                 "docs/canonical-system/SIGNIFICANCE_SCHEDULER_DESIGN_GATE.md",
                                                 "docs/canonical-system/G1_C5_MULTI_DOMAIN_FIDELITY_RESULT.md",
-                                                "docs/canonical-system/G1_C5_CLOSURE_READINESS.md"
+                                                "docs/canonical-system/G1_C5_CLOSURE_READINESS.md",
+                                                "docs/canonical-system/G1_C5_LOCAL_PLATFORM_OBSERVATIONS.json",
+                                                "docs/canonical-system/G1_C5_INDEPENDENT_PLATFORM_EXECUTION.json"
                                             ],
                           "macro_findings":  [
                                                  "The owner retained the canonical broad route C4 then C5 then C6 then C7 then G1-CLOSEOUT then R1.",
-                                                 "C4 consumes exact C2 and promoted C3A; C3B physical and presentation evidence is independent and blocked.",
-                                                 "Population ecology and species presentation belong to C6, rendered visual proof belongs to C7, and runtime storage belongs to R1.",
                                                  "C4 is verified and complete; C5 is the sole active item. C6-C7, broad G1-CLOSEOUT and R1 remain unchanged and gated.",
                                                  "The current C5 closure requires exactly generation, simulation, AI, physics, animation, audio, rendering and streaming from one shared significance truth.",
-                                                 "The old four-domain one-gap interpretation is superseded; cache remains a capability-free residency-intent proof, not a ninth domain or cache implementation."
+                                                 "C5 portability is verified only for the isolated capability-free game-facing proof contract; Forge remains the PC-first factory and was not ported.",
+                                                 "The read-only ProofReceipt binding is independently accepted; the present substage may only reconcile exact registered full-gate routing without modifying frozen C4 proof bytes or activating C5 closure, runtime behavior or C6."
                                              ],
                           "micro_sources":  [
-                                                "crates/hierarchy-history/src/hierarchy.rs",
-                                                "crates/hierarchy-history/src/history.rs",
-                                                "crates/hierarchy-history/src/proof.rs",
-                                                "crates/addressable-world-binding/src/lib.rs",
-                                                "crates/entity-lifecycle-history-binding/src/lib.rs",
-                                                "tools/fixtures/c4-hierarchy-history-receipt/Cargo.toml",
-                                                "tools/generate-g1-c4-external-request.py",
-                                                "tools/run-g1-c4-external-receipt.py",
-                                                "tools/verify-g1-c4-external-receipt.py",
-                                                ".github/workflows/g1-c4-independent-platform.yml",
-                                                "crates/significance-scheduler/src/significance.rs",
-                                                "crates/significance-scheduler/src/scheduler.rs",
-                                                "crates/significance-scheduler/src/closure.rs",
-                                                "crates/significance-scheduler/src/proof.rs",
-                                                "crates/significance-scheduler/tests/eight_domain_scheduler_closure.rs",
-                                                "crates/significance-scheduler/tests/c5_contract_hostiles.rs",
-                                                "crates/significance-scheduler/tests/c5_scheduler_hostiles.rs",
-                                                "crates/significance-scheduler/tests/c5_residency_trace_authority_hostiles.rs",
-                                                "crates/significance-scheduler/tests/c5_pressure_simulation.rs",
-                                                "crates/significance-scheduler/tests/multi_domain_consumer_fidelity.rs",
-                                                "tools/verify-g1-c5-closure-readiness.ps1",
-                                                "tools/test-g1-c5-closure-readiness.ps1",
-                                                "tools/verify-g1-c5-significance-scheduler-implementation.ps1",
-                                                "docs/canonical-system/G1_C5_LOCAL_IMPLEMENTATION_CANDIDATE.md"
+                                                "apps/forge-desktop/src-tauri/MODULE.md",
+                                                "apps/forge-desktop/src-tauri/src/main.rs",
+                                                "crates/forge-kernel/MODULE.md",
+                                                "crates/forge-kernel/src/contracts.rs",
+                                                "crates/forge-kernel/src/persistence.rs",
+                                                "crates/significance-scheduler/MODULE.md",
+                                                "tools/verify-f5-proof-receipt.ps1",
+                                                "tools/verify-f5-significance-scheduler-readiness.ps1",
+                                                "governance/module-context-registry.json",
+                                                "docs/canonical-system/G1_C5_INDEPENDENT_PLATFORM_EXECUTION.json"
                                             ],
                           "micro_findings":  [
-                                                 "Stable dynamic identity, four-state presence, retained ambient cohort binding, exact dependency availability, typed prefix recovery, topology refusal and one/two-hop migrations pass hostile tests.",
-                                                 "The semantic receipt replays the exact C3A input and packet through addressable-world-binding and binds pinned deterministic cost rows.",
-                                                 "Two fresh Windows x64 processes and same-host i686 execution emit semantic SHA-256 263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996.",
-                                                 "Android aarch64 compilation is compile-only; independent platform-diverse execution remains a separate receipt.",
-                                                 "The retained fixture lock and 27-path blob manifest bind the portable proof surface; 36 external hostiles and 15 retained-replay hostiles reject forged policy, source, runner, artifact, output, attestation, retention and authority evidence.",
-                                                 "The public GitHub repository is connected. Hosted run 29671494578 separated read-only execution from attestation authority and was rejected locally before import when it exposed CRLF/LF tree serialization drift.",
-                                                 "Canonical LF tree binding for the hardened C5-successor surface is clean source 17f39f7018de8a02c8292bcde0fafa2bf58fc7d4 with tracked-tree SHA-256 3b0bb235e5a3159ecba5b4d34acfd6157725773af79584e3b801283b8442e4dd and bounded-source SHA-256 b31d92b7ebf36540a64249192fca96d83537c01932ededf84c94e1a886acc108.",
-                                                 "GitHub-hosted run 29674024317 executed and attested exact source 17f39f7; strict import and retained replay verify current independent result SHA-256 2430d21047166c7e177047b5d44862fcaffe41f33cf663c678aa3b754272fbdd.",
-                                                 "The retained 18 tests remain green and 72 new tests bring the hardened local candidate to 90 total Rust tests.",
-                                                 "The first independent review blocked portability on optional truth verification, stale fallback escape, non-round-trippable duplicate rejection receipts, missing pressure composition and strict-Clippy failures.",
-                                                 "The hardened candidate binds verified truth fingerprints into admission receipts and replay, makes unverified admission non-accepting, quarantines inactive fallbacks on epoch advance, validates rejection reason codes, runs ten composed pressure scenarios and passes strict Clippy.",
-                                                 "All 92 frozen hostile IDs now map to executable local evidence, including strict ticket/budget replay and capability-negative authority tests.",
-                                                 "C5 remains open pending fresh independent re-review, then a frozen semantic receipt, fresh-process and target-diverse portability, read-only ProofReceipt integration and the full gate."
+                                                 "The retained independent receipt binds exact source 9e48dd117c2b22b62bd31dba15c10c3a9bf4b100 and semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb.",
+                                                 "The hosted receipt is evidence-only and explicitly denies promotion, repository mutation and C6 activation.",
+                                                 "ProofReceiptRecord is an immutable data-only result record whose projection is read-only and carries no approval or promotion authority.",
+                                                 "The desktop integration is test-only: it records the retained hosted receipt and semantic digest idempotently without changing canonical object, event or candidate counts.",
+                                                 "The existing legacy significance/scheduler receipt test remains intact; the C5 test separately binds the strict 38-field CBOR evidence.",
+                                                 "Focused desktop tests, the complete 43-test desktop suite, ProofReceipt verification, scheduler readiness verification, module-context verification and independent hostile review pass.",
+                                                 "Four registered full-gate diagnostics exposed stale exact successor tuples; permissive wildcard repairs were rejected and reverted after hostile review.",
+                                                 "The C4 bounded proof surface is clean against HEAD. Editing its verifier files causes the retained source-manifest verifier to fail, so route evolution must occur outside that frozen surface or through a newly attested proof revision.",
+                                                 "C5 remains open pending exact fail-closed route reconciliation and a passed registered measured full gate; C6 and runtime authority remain withheld."
                                              ]
                       },
     "visual_quality_gate":  {
@@ -359,7 +339,16 @@
                                   "audit:c5-canonical-code-hostile:three-lanes:complete",
                                   "gate:c5-closure-readiness:92-hostiles:frozen",
                                   "gate:c5-readiness-route-hostiles:passed",
-                                  "owner-authorization:c5-frozen-implementation-candidate:released"
+                                  "owner-authorization:c5-frozen-implementation-candidate:released",
+                                  "focused:c5-proofreceipt-integration:forge-desktop-43:passed",
+                                  "independent-review:c5-proofreceipt-integration:accepted",
+                                  "registered-full-gate:run-173aa43f80ee4afc9e80c1b3e8c190a7:failed:frozen-c4-successor-route-stale",
+                                  "registered-full-gate:run-374fa02030ad4a17b242133d50d8ee5c:failed:shared-c3-successor-route-stale",
+                                  "registered-full-gate:run-bbd05f4e69e546c7a775907c6e9516ed:failed:gp3-successor-route-stale",
+                                  "registered-full-gate:run-d03c80dcb1a0439db07889360bd61595:failed:c4-readiness-fixture-future-pin-stale",
+                                  "registered-full-gate:run-c50b4b55bd9b49f681cd6f2af17018ea:failed:frozen-c4-source-manifest-protected",
+                                  "audit:c5-full-gate-wildcard-route-repair:rejected-and-reverted",
+                                  "audit:c4-bounded-proof-surface:clean-against-head"
                               ],
     "metrics":  {
                     "token_cost":  {

@@ -2617,6 +2617,112 @@ mod tests {
     }
 
     #[test]
+    fn c5_portability_receipt_persists_as_read_only_proof_evidence() {
+        use forge_kernel::contracts::{NamedVersion, ProofMeasurement, ProofReceiptRecord};
+        use forge_kernel::persistence::canonical_proof_receipt_id;
+
+        const SEMANTIC_RECEIPT_SHA256: &str =
+            "88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb";
+        const SOURCE_COMMIT: &str = "9e48dd117c2b22b62bd31dba15c10c3a9bf4b100";
+        const HOSTED_RECEIPT: &[u8] = include_bytes!(
+            "../../../../docs/canonical-system/G1_C5_INDEPENDENT_PLATFORM_EXECUTION.json"
+        );
+
+        let hosted: serde_json::Value = serde_json::from_slice(HOSTED_RECEIPT).unwrap();
+        assert_eq!(
+            hosted["receipt_id"].as_str(),
+            Some("G1-C5-INDEPENDENT-PLATFORM-EXECUTION")
+        );
+        assert_eq!(
+            hosted["semantic_receipt_sha256"].as_str(),
+            Some(SEMANTIC_RECEIPT_SHA256)
+        );
+        assert_eq!(hosted["source_commit"].as_str(), Some(SOURCE_COMMIT));
+        assert_eq!(hosted["status"].as_str(), Some("independence_verified"));
+        assert_eq!(hosted["authority"]["evidence_only"].as_bool(), Some(true));
+        for field in ["promotion_authority", "repository_mutation", "activate_c6"] {
+            assert_eq!(hosted["authority"][field].as_bool(), Some(false));
+        }
+
+        let mut forge = PersistentForge::in_memory().unwrap();
+        let input = forge.kernel_mut().put_object(HOSTED_RECEIPT);
+        let output = forge
+            .kernel_mut()
+            .put_object(SEMANTIC_RECEIPT_SHA256.as_bytes());
+        forge.commit().unwrap();
+        let before = (
+            forge.kernel().object_count(),
+            forge.kernel().events().len(),
+            forge.kernel().candidate_count(),
+        );
+        let mut receipt = ProofReceiptRecord {
+            schema_version: 1,
+            receipt_id: String::new(),
+            system_id: "streaming-scheduler".into(),
+            proof_id: "g1-c5-significance-scheduler-semantic-receipt-v1".into(),
+            status: "pass".into(),
+            failure_classification: None,
+            input_refs: vec![input],
+            fixture_id: "g1-c5-eight-domain-pressure-v1".into(),
+            generator_versions: vec![NamedVersion {
+                name: "c5-significance-scheduler-receipt".into(),
+                version: "0.1.0".into(),
+            }],
+            contract_versions: vec![NamedVersion {
+                name: "mindwarp/significance-scheduler/c5".into(),
+                version: "v1".into(),
+            }],
+            output_refs: vec![output],
+            equivalence_method: "sha256-strict-38-field-cbor".into(),
+            measurements: vec![
+                ProofMeasurement {
+                    name: "semantic_receipt_sha256".into(),
+                    value: SEMANTIC_RECEIPT_SHA256.into(),
+                    unit: "sha256".into(),
+                    method: "local-and-independent-hosted-byte-equivalence".into(),
+                    classification: "measured".into(),
+                },
+                ProofMeasurement {
+                    name: "hosted_native_processes".into(),
+                    value: "2".into(),
+                    unit: "processes".into(),
+                    method: "independent-github-hosted-linux-execution".into(),
+                    classification: "measured".into(),
+                },
+            ],
+            warnings: vec![],
+            limitations: vec![
+                "Evidence covers only the capability-free game-facing significance/scheduler proof contract; Forge itself was not ported.".into(),
+                "This receipt grants no runtime, cache, storage, promotion, repository-mutation, C5-closure, or C6 authority.".into(),
+            ],
+            created_at: "2026-07-19T07:44:42Z".into(),
+            runner_identity: "github-actions-run-29678602236-plus-local-import".into(),
+        };
+        receipt.receipt_id = canonical_proof_receipt_id(&receipt).unwrap();
+        forge.record_proof_receipt(&receipt).unwrap();
+        forge.record_proof_receipt(&receipt).unwrap();
+
+        let projection = forge.proof_receipt_projection(1).unwrap();
+        assert!(projection.read_only);
+        assert_eq!(projection.receipts, vec![receipt.clone()]);
+        assert_eq!(
+            reference_studio_for(&forge, 1, 9005)
+                .unwrap()
+                .records
+                .proof_receipts,
+            vec![receipt]
+        );
+        assert_eq!(
+            before,
+            (
+                forge.kernel().object_count(),
+                forge.kernel().events().len(),
+                forge.kernel().candidate_count()
+            )
+        );
+    }
+
+    #[test]
     fn semantic_construction_vector_persists_as_read_only_proof_receipt() {
         use forge_kernel::contracts::{NamedVersion, ProofMeasurement, ProofReceiptRecord};
         use forge_kernel::persistence::canonical_proof_receipt_id;

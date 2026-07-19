@@ -58,6 +58,7 @@ Shared significance packets and deterministic bounded scheduling reference acros
 - `cargo test -p significance-scheduler --test c5_pressure_simulation`
 - `cargo test -p significance-scheduler --test multi_domain_consumer_fidelity`
 - `cargo run --locked --offline --manifest-path tools/fixtures/c5-significance-scheduler-receipt/Cargo.toml -- --self-test`
+- `cargo test -p forge-desktop c5_portability_receipt_persists_as_read_only_proof_evidence`
 - `tools/verify-g1-c5-significance-scheduler-implementation.ps1`
 - `tools/test-g1-c5-portability-classifier.ps1`
 - `tools/test-g1-c5-external-receipt.py`

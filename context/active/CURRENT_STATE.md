@@ -7,10 +7,10 @@
 
 - Package: **G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1**
 - Master item / milestone: **C5 / G1**
-- State / substage: **executing / c5-proofreceipt-integration**
+- State / substage: **executing / c5-full-gate-route-reconciliation**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Objective: Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.
-- Context health: C4 remains verified and C5 remains the sole active item. C5 local hardening and portability are independently verified at exact source 9e48dd1; the isolated proof contract, not Forge, reproduced semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb on hosted Linux. The active substage is now read-only ProofReceipt integration. C5 closure, C6, C7, broad G1 closure and R1 remain gated.
+- Context health: C4 remains verified and byte-frozen; C5 remains the sole active item. The isolated game-facing proof contract, not Forge, reproduced semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb on hosted Linux. The read-only ProofReceipt integration passes 43 desktop tests and independent review without changing canonical object, event or candidate counts. The remaining work is an exact full-gate successor-route reconciliation that preserves the frozen C4 manifest. C5 closure, C6, C7, broad G1 closure and R1 remain gated.
 
 ## Durable evidence
 
@@ -29,7 +29,7 @@ Owner-authorized bounded C5 significance/scheduler implementation and capability
 
 ## Exact next action
 
-Implement the smallest read-only ProofReceipt integration for the verified C5 semantic receipt: bind receipt identity and semantic hash without changing canonical object, event or candidate counts, then run focused regressions and independent review. Do not close C5 or activate C6.
+Design and hostile-test the smallest exact allowlisted adapter that authenticates the current C5 full-gate route without modifying the frozen C4 bounded source surface; if that is impossible, prepare a separately reviewed C4 reattestation plan. Then rerun forge-full-gate-v1. Do not use wildcard stage or authority matching, close C5 or activate C6.
 
 ## Unresolved risks
 
