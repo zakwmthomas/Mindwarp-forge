@@ -6,7 +6,7 @@
     "state":  "executing",
     "previous_state":  "ready",
     "objective":  "Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.",
-    "next_action":  "Audit every named generation, simulation, AI, physics, animation, audio, rendering and streaming obligation; freeze dispatch, admission, budget, fallback, cancellation, fairness and hostile proof requirements before any source work.",
+    "next_action":  "Run registered forge-full-gate-v1 once against the strictly imported source-17f39f7 hosted receipt and exact C5 successor route; only after it passes, begin the named-domain C5 reconciliation before source work.",
     "substage_id":  "c5-reconciliation-readiness",
     "handoff_section_receipts":  {
                                      "objective":  {
@@ -17,13 +17,13 @@
                                                    },
                                      "next_action":  {
                                                          "stage_id":  "c5-reconciliation-readiness",
-                                                         "content_sha256":  "0d2448c53507028eb0c254d99508a4f15db732b10bed933ccbfbba768e7dac31",
+                                                         "content_sha256":  "c0951f56314ef2998aa6050bb58db954cc2866d19343ef38c5af850603c2dfc9",
                                                          "review_disposition":  "revised",
                                                          "review_note":  "Reviewed all handoff sections against the active substage."
                                                      },
                                      "stage_context":  {
                                                            "stage_id":  "c5-reconciliation-readiness",
-                                                           "content_sha256":  "bfe917749229da072abd091100a168324a34bf83202e7d7b4ff2d6b59d47536d",
+                                                           "content_sha256":  "b0b50246b1ef3e7f3077a8a02044851156907c965635f4ae572c6ee4dc4133ec",
                                                            "review_disposition":  "revised",
                                                            "review_note":  "Reviewed all handoff sections against the active substage."
                                                        },
@@ -35,7 +35,7 @@
                                                              },
                                      "simulation_ladder":  {
                                                                "stage_id":  "c5-reconciliation-readiness",
-                                                               "content_sha256":  "1efef3345680021c371b16d1bc667c43fa6609766d82677c5687c30912410d0d",
+                                                               "content_sha256":  "2c65608c91ebe6870a2f4a38f76b1cdbcd85f8c98d12eb5c0148677d5408a08e",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
@@ -71,7 +71,7 @@
                                                   },
                                      "verification_receipts":  {
                                                                    "stage_id":  "c5-reconciliation-readiness",
-                                                                   "content_sha256":  "23a738d459e8e68e0df8483ec11e33498ceee12b68ce8452a3beb78c608ab0b5",
+                                                                   "content_sha256":  "74be714e98281be2d71546ce9c03a93e1f497392f93de5e662f3603cfd14f9b4",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
@@ -95,7 +95,7 @@
     "risk_level":  "bounded-c5-significance-scheduler-readiness",
     "research_gate":  "C4 is verified, complete and recorded after GitHub-hosted Linux execution, retained cryptographic replay and registered full gate run-bc2154f73f6243239910ac30bc3b1994. C5 may reconcile requirements and freeze readiness evidence; source remains blocked until the exact closure surface and hostile matrix are complete.",
     "authority_lane":  "Owner-authorized broad C5 significance/scheduler reconciliation and capability-free closure readiness only. Exact dependency C4. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.",
-    "context_health":  "C4 is verified, complete and recorded after exact source f505c82, GitHub-hosted run 29672946787, retained result 733d453f and registered full gate run-bc2154f73f6243239910ac30bc3b1994 passed in 632411 ms. C5 is the sole active item for reconciliation and capability-free readiness only; C6, C7, broad G1 closure and R1 remain gated.",
+    "context_health":  "C4 is verified, complete and recorded after registered full gate run-bc2154f73f6243239910ac30bc3b1994. The hardened C5-successor verifier surface is bound to clean source 17f39f7, tracked tree 3b0bb235, bounded source b31d92b7 and GitHub-hosted run 29674024317 result 2430d210; strict import and retained replay pass. C5 is the sole active reconciliation/readiness item; one post-transition registered regression run remains before source work. C6, C7, broad G1 closure and R1 remain gated.",
     "stage_context":  {
                           "stage_id":  "c5-reconciliation-readiness",
                           "macro_sources":  [
@@ -131,8 +131,8 @@
                                                  "Android aarch64 compilation is compile-only; independent platform-diverse execution remains a separate receipt.",
                                                  "The retained fixture lock and 27-path blob manifest bind the portable proof surface; 36 external hostiles and 15 retained-replay hostiles reject forged policy, source, runner, artifact, output, attestation, retention and authority evidence.",
                                                  "The public GitHub repository is connected. Hosted run 29671494578 separated read-only execution from attestation authority and was rejected locally before import when it exposed CRLF/LF tree serialization drift.",
-                                                 "Canonical LF tree binding is regenerated at clean source f505c82bc9303b3426a4530d0a8deec6eede400a with tracked-tree SHA-256 f9089b4d62bd789c514c152e600607fcdeb0b762c0888b19115feb193b7f0e8b and bounded-source SHA-256 022e29d8cbc31459656ac36aabcefe656632005f6df47057b97185b57bad5557.",
-                                                 "GitHub-hosted run 29672946787 executed and attested exact repaired source f505c82; strict import and retained replay verify current independent result SHA-256 733d453f0831cdaafefa9d4a9e24b1494f339b0b56f4441264009c9fcc3254cd."
+                                                 "Canonical LF tree binding for the hardened C5-successor surface is clean source 17f39f7018de8a02c8292bcde0fafa2bf58fc7d4 with tracked-tree SHA-256 3b0bb235e5a3159ecba5b4d34acfd6157725773af79584e3b801283b8442e4dd and bounded-source SHA-256 b31d92b7ebf36540a64249192fca96d83537c01932ededf84c94e1a886acc108.",
+                                                 "GitHub-hosted run 29674024317 executed and attested exact source 17f39f7; strict import and retained replay verify current independent result SHA-256 2430d21047166c7e177047b5d44862fcaffe41f33cf663c678aa3b754272fbdd."
                                              ]
                       },
     "visual_quality_gate":  {
@@ -169,7 +169,7 @@
                                                       },
                                                       {
                                                           "tier":  "external_execution",
-                                                          "result":  "GitHub-hosted Ubuntu run 29672946787 executed two concurrent native processes at repaired source f505c82 and produced a strictly imported, cryptographically replayable authority-negative receipt; the prior 8651038 receipt is archived intact.",
+                                                          "result":  "GitHub-hosted Ubuntu run 29674024317 executed two concurrent native processes at exact C5-successor source 17f39f7 and produced a strictly imported, cryptographically replayable authority-negative receipt; prior receipts are archived intact.",
                                                           "evidence":  "docs/canonical-system/G1_C4_INDEPENDENT_PLATFORM_EXECUTION.json"
                                                       }
                                                   ],
@@ -179,7 +179,7 @@
                               "estimated_cost":  "Bounded canonical and code reconciliation first; no runtime or integrated product execution is authorized.",
                               "regression_guard":  "No C3B, C6-C7, broad G1 closure, runtime controller or executor, cache, storage, filesystem, network, process, Companion, Greenfield, visual asset or Kernel mutation.",
                               "stop_condition":  "Stop before source if any named domain, fairness obligation, fallback rule, authority exclusion or deterministic hostile case remains ambiguous.",
-                              "final_integration_gate":  "A registered full Forge gate remains required after a separately accepted C5 implementation candidate."
+                              "final_integration_gate":  "One registered post-transition Forge regression is pending now; another remains required after a separately accepted C5 implementation candidate."
                           },
     "exit_criteria":  [
                           {
@@ -295,6 +295,11 @@
                                   "diagnostic:c4-msvc-clean-targets:semantic-exact:executable-bytes-distinct",
                                   "external:c4-github-run-29672946787:hosted-linux-attested:passed",
                                   "receipt:c4-independent-platform-sha256:733d453f0831cdaafefa9d4a9e24b1494f339b0b56f4441264009c9fcc3254cd",
+                                  "receipt:c4-bounded-source-manifest-sha256:b31d92b7ebf36540a64249192fca96d83537c01932ededf84c94e1a886acc108",
+                                  "receipt:c4-clean-source-commit:17f39f7018de8a02c8292bcde0fafa2bf58fc7d4",
+                                  "receipt:c4-tracked-tree-manifest-sha256:3b0bb235e5a3159ecba5b4d34acfd6157725773af79584e3b801283b8442e4dd",
+                                  "external:c4-github-run-29674024317:hosted-linux-attested:passed",
+                                  "receipt:c4-independent-platform-sha256:2430d21047166c7e177047b5d44862fcaffe41f33cf663c678aa3b754272fbdd",
                                   "registered-full-gate:run-bc2154f73f6243239910ac30bc3b1994:passed",
                                   "receipt:G1-C4-CLOSURE:recorded",
                                   "owner-route:c5-reconciliation-readiness:authorized"

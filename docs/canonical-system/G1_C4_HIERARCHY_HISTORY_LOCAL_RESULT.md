@@ -25,11 +25,11 @@ network, multiplayer, Companion, Greenfield or Kernel authority.
 The semantic receipt SHA-256 is
 `263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996`.
 The bounded 27-path implementation, fixture and verification source manifest SHA-256 is
-`022e29d8cbc31459656ac36aabcefe656632005f6df47057b97185b57bad5557`.
+`b31d92b7ebf36540a64249192fca96d83537c01932ededf84c94e1a886acc108`.
 The retained platform observations bind clean source commit
-`f505c82bc9303b3426a4530d0a8deec6eede400a` and complete tracked-tree
+`17f39f7018de8a02c8292bcde0fafa2bf58fc7d4` and complete tracked-tree
 manifest SHA-256
-`f9089b4d62bd789c514c152e600607fcdeb0b762c0888b19115feb193b7f0e8b`.
+`3b0bb235e5a3159ecba5b4d34acfd6157725773af79584e3b801283b8442e4dd`.
 The first hosted attempt exposed an earlier Windows `Out-String` CRLF
 serialization
 `3b36a8f4950083ccf6fc7b507ccd893d961714e2fc4b4edb7d058315ec1f9740` to the
@@ -83,8 +83,10 @@ surface, so that receipt cannot promote source `f505c82`. GitHub Actions run
 `29672946787` independently executed and attested the exact repaired source;
 strict import and retained replay verify result SHA-256
 `733d453f0831cdaafefa9d4a9e24b1494f339b0b56f4441264009c9fcc3254cd`.
-The prior source `8651038` receipt is retained intact as
-`G1_C4_INDEPENDENT_PLATFORM_EXECUTION_8651038.json`.
+The C5-successor verifier surface was then attested by GitHub Actions run
+`29674024317` at exact source `17f39f7`; strict import and retained replay verify
+result SHA-256 `2430d21047166c7e177047b5d44862fcaffe41f33cf663c678aa3b754272fbdd`.
+The prior source receipts are retained intact under source-qualified filenames.
 
 The external gate has a retained locked fixture, fresh challenge generator,
 credential-separated hosted workflow, offline attestation bundle, strict local

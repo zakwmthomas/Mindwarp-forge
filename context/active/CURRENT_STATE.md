@@ -10,7 +10,7 @@
 - State / substage: **executing / c5-reconciliation-readiness**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Objective: Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.
-- Context health: C4 is verified, complete and recorded after exact source f505c82, GitHub-hosted run 29672946787, retained result 733d453f and registered full gate run-bc2154f73f6243239910ac30bc3b1994 passed in 632411 ms. C5 is the sole active item for reconciliation and capability-free readiness only; C6, C7, broad G1 closure and R1 remain gated.
+- Context health: C4 is verified, complete and recorded after registered full gate run-bc2154f73f6243239910ac30bc3b1994. The hardened C5-successor verifier surface is bound to clean source 17f39f7, tracked tree 3b0bb235, bounded source b31d92b7 and GitHub-hosted run 29674024317 result 2430d210; strict import and retained replay pass. C5 is the sole active reconciliation/readiness item; one post-transition registered regression run remains before source work. C6, C7, broad G1 closure and R1 remain gated.
 
 ## Durable evidence
 
@@ -29,7 +29,7 @@ Owner-authorized broad C5 significance/scheduler reconciliation and capability-f
 
 ## Exact next action
 
-Audit every named generation, simulation, AI, physics, animation, audio, rendering and streaming obligation; freeze dispatch, admission, budget, fallback, cancellation, fairness and hostile proof requirements before any source work.
+Run registered forge-full-gate-v1 once against the strictly imported source-17f39f7 hosted receipt and exact C5 successor route; only after it passes, begin the named-domain C5 reconciliation before source work.
 
 ## Unresolved risks
 
