@@ -53,7 +53,8 @@ Prove that an input-validated derived-world-rules CausalWorldPacket can fill hie
 ## Canonical references
 
 - `docs/canonical-system/HIERARCHY_HISTORY_DESIGN_GATE.md`
-- `docs/canonical-system/G1_C3_QUALITY_COST_RANGE_CANDIDATE_RESULT.md`
+- `docs/canonical-system/G1_C4_ADDRESSABLE_WORLD_BINDING_RESULT.md`
+- `docs/canonical-system/G1_C4_CLOSURE_READINESS.md`
 
 ## Update rule
 

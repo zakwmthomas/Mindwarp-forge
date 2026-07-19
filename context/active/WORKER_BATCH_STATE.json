@@ -1,83 +1,83 @@
 ﻿{
     "schema_version":  3,
     "canonical_role":  "sole-active-work-checkpoint",
-    "batch_id":  "G1-VERTICAL-CLOSEOUT-V1",
-    "master_program_item":  "G1-VERTICAL-CLOSEOUT",
-    "state":  "recorded",
-    "previous_state":  "verifying",
-    "objective":  "Retain the exact typed bounded G1 vertical closeout receipt from verified C3A, C4V and GP0-GP4 evidence without broad G1 closure or runtime authority.",
-    "next_action":  "Keep G1-VERTICAL-CLOSEOUT as the sole active program item until the owner authorizes a successor; do not implicitly activate broad G1-CLOSEOUT or R1.",
-    "substage_id":  "g1-vertical-closeout-recorded",
+    "batch_id":  "G1-C4-HIERARCHY-HISTORY-CLOSURE-V1",
+    "master_program_item":  "C4",
+    "state":  "executing",
+    "previous_state":  "ready",
+    "objective":  "Close broad C4 as a capability-free addressable hierarchy and history proof against exact C2 and promoted C3A evidence, without importing C3B, later systems, storage or runtime authority.",
+    "next_action":  "Obtain identical C4 semantic-receipt execution from a genuinely independent, platform-diverse runner; until then retain candidate_verified_local and do not activate C5.",
+    "substage_id":  "c4-verification",
     "handoff_section_receipts":  {
                                      "objective":  {
-                                                       "stage_id":  "g1-vertical-closeout-recorded",
-                                                       "content_sha256":  "f45aa004fb5a3a6eba54f5f5ec003f3a04ebb4ed297afbd9e630579d4c0377be",
+                                                       "stage_id":  "c4-verification",
+                                                       "content_sha256":  "f58fbd02ac9761d1c06bf41990a59ed0a92e965dcbc27906f4d7c165cfa0dc2a",
                                                        "review_disposition":  "revised",
                                                        "review_note":  "Reviewed all handoff sections against the active substage."
                                                    },
                                      "next_action":  {
-                                                         "stage_id":  "g1-vertical-closeout-recorded",
-                                                         "content_sha256":  "846d572a1b1294a37bf116374a19d31c26c18293e97c7430a8adf7967ec3e9f3",
+                                                         "stage_id":  "c4-verification",
+                                                         "content_sha256":  "d9ab1b5834064b52b2b168c225b92d89c2e976dc373e69372832f52abd1c1151",
                                                          "review_disposition":  "revised",
                                                          "review_note":  "Reviewed all handoff sections against the active substage."
                                                      },
                                      "stage_context":  {
-                                                           "stage_id":  "g1-vertical-closeout-recorded",
-                                                           "content_sha256":  "562c3daa67deadc8d155e3a93d52c59c7c5ebb37773689aafe34c6b13460284e",
+                                                           "stage_id":  "c4-verification",
+                                                           "content_sha256":  "30d9c46c749c53bc14aa98b4b168abecf8b0a70463a66da428e39bff32925b46",
                                                            "review_disposition":  "revised",
                                                            "review_note":  "Reviewed all handoff sections against the active substage."
                                                        },
                                      "visual_quality_gate":  {
-                                                                 "stage_id":  "g1-vertical-closeout-recorded",
-                                                                 "content_sha256":  "c8b9d6b9d1b78212912f6d01a17ee39ed974a726d63b93aca62036cba93f93dd",
+                                                                 "stage_id":  "c4-verification",
+                                                                 "content_sha256":  "cfb3f4b0a636e0d5eff9dd88e562b4a427d3fadbe03f9349ac516e38adac2dd2",
                                                                  "review_disposition":  "revised",
                                                                  "review_note":  "Reviewed all handoff sections against the active substage."
                                                              },
                                      "simulation_ladder":  {
-                                                               "stage_id":  "g1-vertical-closeout-recorded",
-                                                               "content_sha256":  "762592efd60e104a06126f8529576b5819f3ee39ef3e8720905a5af130bdc04e",
+                                                               "stage_id":  "c4-verification",
+                                                               "content_sha256":  "0b82d224354e1e9fa0d5ee1231265788168ff8cd7f4a9e806474e05231b3b304",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "unresolved_risks":  {
-                                                              "stage_id":  "g1-vertical-closeout-recorded",
-                                                              "content_sha256":  "628de84bf5583f9a58169b9b972cbcb8d5523e9593b04bb801b1782cccd5f5a0",
+                                                              "stage_id":  "c4-verification",
+                                                              "content_sha256":  "4cf3cd1079979c3e739367d710f054cc8bbfce33188487547ac61ff57304d27a",
                                                               "review_disposition":  "revised",
                                                               "review_note":  "Reviewed all handoff sections against the active substage."
                                                           },
                                      "evidence_requirements":  {
-                                                                   "stage_id":  "g1-vertical-closeout-recorded",
-                                                                   "content_sha256":  "ff7c382852684bbc649a1c23e1e140731daeeae1c3ff1795d986405ecc148804",
+                                                                   "stage_id":  "c4-verification",
+                                                                   "content_sha256":  "06e7a714e1bfc359ca9fc2661906f0d92aeea77fe547d108f770667a62c3d9d2",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "verification_plan":  {
-                                                               "stage_id":  "g1-vertical-closeout-recorded",
-                                                               "content_sha256":  "4db9d2e6aeef77891377ff208f9ad02bb2398cf59aaab4903fabd2b522b5efc5",
+                                                               "stage_id":  "c4-verification",
+                                                               "content_sha256":  "8a81c24807c04878e8370ad782858ab2d58ce14dd677563b3284f1654d873aa9",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "resume_after":  {
-                                                          "stage_id":  "g1-vertical-closeout-recorded",
-                                                          "content_sha256":  "b0245b314de7f60d20602e2067d1f2e21c43e65a668aaeb864d4524e6b0836a9",
+                                                          "stage_id":  "c4-verification",
+                                                          "content_sha256":  "91ff7c09a948de0f53a11009f349557946af6a692096ffa798c58e0cf19dcb3d",
                                                           "review_disposition":  "revised",
                                                           "review_note":  "Reviewed all handoff sections against the active substage."
                                                       },
                                      "evidence":  {
-                                                      "stage_id":  "g1-vertical-closeout-recorded",
-                                                      "content_sha256":  "c107eec70793315272691a9aeaf6a7582f116126e94be25b66c4d5dceb26f544",
+                                                      "stage_id":  "c4-verification",
+                                                      "content_sha256":  "87bf2bfe61ddcbfc037d31f34830c2da174e6be8a1075e754dedea267883cb90",
                                                       "review_disposition":  "revised",
                                                       "review_note":  "Reviewed all handoff sections against the active substage."
                                                   },
                                      "verification_receipts":  {
-                                                                   "stage_id":  "g1-vertical-closeout-recorded",
-                                                                   "content_sha256":  "c601808d3457ae438db6aca285f07b47c8cf5e05a22cead49aecb9a8a9c343ed",
+                                                                   "stage_id":  "c4-verification",
+                                                                   "content_sha256":  "b3b46a8fb5061a15dc8492a5b2a4d4f8396494f73ee4dcbe9122e89bc9c2dbf5",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "transition":  {
-                                                        "stage_id":  "g1-vertical-closeout-recorded",
-                                                        "content_sha256":  "03a4206e5e8e6fe6e4724368ccaac9772b428c9c8eb9711614fd83c158f26e11",
+                                                        "stage_id":  "c4-verification",
+                                                        "content_sha256":  "f565fb0f5ce265dd456013e09255e184073ed047c1690bd001fe42f1e1d0e204",
                                                         "review_disposition":  "revised",
                                                         "review_note":  "Reviewed all handoff sections against the active substage."
                                                     }
@@ -92,46 +92,44 @@
                                         "domain-creative-suites"
                                     ]
                     },
-    "risk_level":  "bounded-g1-vertical-closeout-evidence-only",
-    "research_gate":  "GP4 is verified and complete through registered run-7e5c44dc8f48424a8cec42da756e3127; the typed closeout receipt binds exact C3A, C4V and GP0-GP4 proof references and grants no successor authority.",
-    "authority_lane":  "Owner-authorized bounded G1 vertical closeout evidence receipt only; broad_g1=false; runtime_selected=false; runtime_containment_pending=true; evidence_only=true; promotion_authority=false. No runtime, broad C4, C3B, Companion, Greenfield, procedural generation, persistence expansion, filesystem, network, process or Kernel mutation.",
-    "context_health":  "Registered complete gate run-7e5c44dc8f48424a8cec42da756e3127 passed in 590582 ms; typed deterministic closeout receipt is recorded; broad G1-CLOSEOUT and R1 remain gated.",
+    "risk_level":  "bounded-broad-c4-capability-free-closure",
+    "research_gate":  "C4 depends exactly on C2 and promoted C3A. Local dynamic/presence/cohort, dependency, recovery, migration, cost, hostile and portability-classification evidence passes; genuinely independent platform-diverse execution is the sole remaining closure gate.",
+    "authority_lane":  "Owner-authorized broad C4 hierarchy/history reconciliation and capability-free closure proof only. Exact dependencies C2 and C3A. No C3B, C5, C6, C7, broad G1 closure, runtime, storage engine, filesystem, network, multiplayer, cross-target transactions, Companion, Greenfield, visual assets or Kernel mutation.",
+    "context_health":  "The bounded GP4 vertical and receipt are verified and retained. C4 is the sole executing item and is candidate_verified_local: 43 focused component/hostile tests plus 7 C4V tests, all 74 hostile owners, deterministic semantic bytes, same-host i686 execution and Android compile pass. Independent platform-diverse execution remains open.",
     "stage_context":  {
-                          "stage_id":  "g1-vertical-closeout-recorded",
+                          "stage_id":  "c4-verification",
                           "macro_sources":  [
                                                 "docs/canonical-system/MASTER_PROGRAM.json",
-                                                "docs/canonical-system/MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",
-                                                "docs/canonical-system/G1_PRODUCT_PORTFOLIO_AND_C3_DEPENDENCY_REBASELINE.md",
-                                                "docs/canonical-system/G1_GP2_PROGRESSION_RESULT.md",
-                                                "docs/canonical-system/G1_GP3_ENCOUNTER_GRAMMAR_RESULT.md",
-                                                "docs/canonical-system/G1_C4V_VERTICAL_PERSISTENCE_RESULT.md",
-                                                "docs/canonical-system/G1_GP4_SIGNAL_ANCHOR_RESULT.md",
-                                                "docs/canonical-system/G1_VERTICAL_CLOSEOUT_RECEIPT.json"
+                                                "docs/canonical-system/MASTER_CLOSURE_REGISTER.md",
+                                                "docs/canonical-system/PROOF_MATRIX.md",
+                                                "docs/canonical-system/HIERARCHY_HISTORY_DESIGN_GATE.md",
+                                                "docs/canonical-system/G1_C4_ADDRESSABLE_WORLD_BINDING_RESULT.md",
+                                                "docs/canonical-system/G1_C4_AGE_LIFECYCLE_AND_PROOFRECEIPT_RESULT.md"
                                             ],
                           "macro_findings":  [
-                                                 "GP4 is verified and complete after focused, workspace and registered complete-gate evidence.",
-                                                 "The typed canonical receipt binds the exact deterministic bundle, ordered dependency proofs and registered successful run.",
-                                                 "The recorded closeout is evidence only and grants no runtime, promotion or broad G1 authority.",
-                                                 "Broad G1-CLOSEOUT and R1 remain unchanged and gated."
+                                                 "The owner retained the canonical broad route C4 then C5 then C6 then C7 then G1-CLOSEOUT then R1.",
+                                                 "C4 consumes exact C2 and promoted C3A; C3B physical and presentation evidence is independent and blocked.",
+                                                 "Population ecology and species presentation belong to C6, rendered visual proof belongs to C7, and runtime storage belongs to R1.",
+                                                 "C5-C7, broad G1-CLOSEOUT and R1 remain unchanged and gated."
                                              ],
                           "micro_sources":  [
-                                                "crates/mindwarp-gameplay-foundation/src/base_loop.rs",
-                                                "crates/mindwarp-gameplay-foundation/src/progression.rs",
-                                                "crates/mindwarp-gameplay-foundation/src/encounter_grammar.rs",
-                                                "crates/mindwarp-vertical-persistence/src/lib.rs",
-                                                "docs/canonical-system/G1_C4V_VERTICAL_PERSISTENCE_DESIGN.md"
+                                                "crates/hierarchy-history/src/hierarchy.rs",
+                                                "crates/hierarchy-history/src/history.rs",
+                                                "crates/hierarchy-history/src/proof.rs",
+                                                "crates/addressable-world-binding/src/lib.rs",
+                                                "crates/entity-lifecycle-history-binding/src/lib.rs"
                                             ],
                           "micro_findings":  [
-                                                 "C4V already authenticates the exact C3A input and packet and reconstructs return state by semantic replay rather than deserialization trust.",
-                                                 "GP2 emissions require exact replay-validated terminal GP1 state and history; GP4 may embed exact outputs but cannot synthesize progression.",
-                                                 "GP3 exposes authenticated fixed situation, approach, consequence and optional nonterminal threat references.",
-                                                 "GP4 needs a separate isolated module with an 8 MiB bundle ceiling and strict nested validation before canonical equality."
+                                                 "Stable dynamic identity, four-state presence, retained ambient cohort binding, exact dependency availability, typed prefix recovery, topology refusal and one/two-hop migrations pass hostile tests.",
+                                                 "The semantic receipt replays the exact C3A input and packet through addressable-world-binding and binds pinned deterministic cost rows.",
+                                                 "Two fresh Windows x64 processes and same-host i686 execution emit semantic SHA-256 263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996.",
+                                                 "Android aarch64 compilation is compile-only; independent platform-diverse execution remains a separate receipt."
                                              ]
                       },
     "visual_quality_gate":  {
                                 "asset_use_intent":  false,
                                 "status":  "not_applicable",
-                                "rationale":  "The closeout records existing semantic evidence only; no visual asset, renderer or creative-quality claim is used.",
+                                "rationale":  "C4 is a capability-free semantic hierarchy/history proof and uses no visual asset, renderer or creative-quality claim.",
                                 "dependent_implementation_blocked":  false,
                                 "receipts":  [
 
@@ -142,88 +140,103 @@
                               "tiers_completed":  [
                                                       {
                                                           "tier":  "static_reasoning",
-                                                          "result":  "The owner-authorized boundary fixes one Signal Anchor temporary-rescue bundle, exact dual-world replay semantics, dependency references, return/restart and runtime nonclaims.",
-                                                          "evidence":  "owner-authorized GP4 runtime-independent vertical"
+                                                          "result":  "The C4 audit reconciles exact C2+C3A ownership, existing bounded proofs, missing adversarial cases, later-system exclusions and portability classifications.",
+                                                          "evidence":  "parallel C4 canonical, code and broad-route audits"
+                                                      },
+                                                      {
+                                                          "tier":  "in_memory_fixture",
+                                                          "result":  "All 58 core hostile IDs and exact deterministic cost rows pass in capability-free Rust fixtures.",
+                                                          "evidence":  "cargo test -p hierarchy-history -p entity-lifecycle-history-binding"
+                                                      },
+                                                      {
+                                                          "tier":  "bounded_integrated_pc",
+                                                          "result":  "Exact C2+C3A semantic receipt, eight receipt hostiles, two fresh native processes, same-host i686 execution, Android compile and C4V regression pass.",
+                                                          "evidence":  "tools/verify-g1-c4-hierarchy-history-implementation.ps1"
                                                       }
                                                   ],
                               "expensive_execution_planned":  false,
-                              "unresolved_risk":  "A future worker could mistake the bounded evidence receipt for broad G1 closure or runtime-selection authority.",
-                              "expected_information_gain":  "Retain one exact machine-verifiable completion boundary for the proven Signal Anchor vertical.",
-                              "estimated_cost":  "Recorded; no further execution is authorized in this package.",
-                              "regression_guard":  "No engine, runtime implementation or promotion, broad C4, C3B, Companion, Greenfield, procedural generation, persistence expansion, filesystem, network, process or Kernel mutation.",
-                              "stop_condition":  "Receipt recorded; wait for an owner-authorized successor.",
-                              "final_integration_gate":  "Passed as run-7e5c44dc8f48424a8cec42da756e3127 in 590582 ms."
+                              "unresolved_risk":  "Local semantic, hostile, cost, fresh-process, same-host i686 and Android compile evidence passes; genuinely independent platform-diverse execution remains unavailable.",
+                              "expected_information_gain":  "Determine whether the smallest additive proof can close broad C4 without importing storage, runtime, C3B or later-system semantics.",
+                              "estimated_cost":  "Readiness and local proof first; registered full gate only after local and independent-platform receipts exist.",
+                              "regression_guard":  "No C3B, C5-C7, broad G1 closure, runtime, storage engine, filesystem, network, multiplayer, Companion, Greenfield, visual asset or Kernel mutation.",
+                              "stop_condition":  "Stop at candidate_verified_local if independent second-platform execution is unavailable or any semantic/authority hostile passes.",
+                              "final_integration_gate":  "Pending after readiness, implementation, local portability and independent second-platform evidence."
                           },
     "exit_criteria":  [
                           {
-                              "id":  "dual-world-semantic-equivalence",
-                              "label":  "One exact C3A-backed C4V run and one authority-lowering authored shadow replay share a digest covering every BaseLoopState field except world_context.",
+                              "id":  "c4-canonical-boundary",
+                              "label":  "C4 depends exactly on C2 and promoted C3A; C3B, ecology, presentation, storage and runtime claims remain outside the package.",
                               "status":  "verified",
                               "evidence_ids":  [
-                                                   "docs/canonical-system/G1_C4V_VERTICAL_PERSISTENCE_RESULT.md",
-                                                   "crates/mindwarp-gameplay-foundation/src/base_loop.rs"
+                                                   "docs/canonical-system/MASTER_PROGRAM.json",
+                                                   "docs/canonical-system/G1_C4_CLOSURE_READINESS.md"
                                                ]
                           },
                           {
-                              "id":  "exact-dependency-bindings",
-                              "label":  "The bundle binds real C4V receipts and snapshots, exact GP3 situation/approach/threat references and exact GP2 emissions without invented labels or digests.",
+                              "id":  "c4-history-hardening",
+                              "label":  "Stable dynamic/presence semantics, exact dependency availability, known-good corrupt-tail recovery, unsupported topology refusal and bounded migration chains pass exact hostile tests.",
                               "status":  "verified",
                               "evidence_ids":  [
-                                                   "docs/canonical-system/G1_GP4_SIGNAL_ANCHOR_RESULT.md"
+                                                   "crates/hierarchy-history/src/lib.rs"
                                                ]
                           },
                           {
-                              "id":  "return-restart-and-neutral-contract",
-                              "label":  "C4V return and final restart reproduce exact semantics while presentation/accessibility remain neutral slots and adapter/performance requirements remain explicitly unmeasured.",
-                              "status":  "verified",
+                              "id":  "c4-deterministic-cost-portability",
+                              "label":  "Bounded window/history/snapshot work and byte portfolios are deterministic across fresh processes and an honestly classified independent second platform.",
+                              "status":  "in_progress",
                               "evidence_ids":  [
-                                                   "docs/canonical-system/G1_GP4_SIGNAL_ANCHOR_RESULT.md"
+                                                   "contracts/hierarchy-history-contract.md"
                                                ]
                           },
                           {
-                              "id":  "bounded-closeout-without-runtime",
-                              "label":  "A strict bundle no larger than 8 MiB survives hostile decoding and produces a G1-VERTICAL-CLOSEOUT receipt without broad G1 closure or runtime promotion.",
-                              "status":  "verified",
+                              "id":  "c4-registered-closure",
+                              "label":  "The dedicated C4 verifier, dependent regressions, independent review and one registered full Forge gate pass without activating C5.",
+                              "status":  "planned",
                               "evidence_ids":  [
-                                                   "docs/canonical-system/G1_VERTICAL_CLOSEOUT_RECEIPT.json"
+                                                   "tools/verify-g1-c4-closure-readiness.ps1"
                                                ]
                           }
                       ],
     "unresolved_risks":  [
-                             "A future successor could confuse this bounded evidence-only receipt with broad G1 closure or runtime promotion.",
-                             "Runtime containment remains pending and requires a separate owner-authorized successor."
+                             "This host executes identical C4 semantic bytes on Windows x64 and i686 and compiles Android, but none proves genuinely independent, platform-diverse execution."
                          ],
     "evidence_requirements":  [
-                                  "retain the exact typed receipt and its domain-and-length-framed hash",
-                                  "retain exact ordered C3A, C4V and GP0-GP4 proof references",
-                                  "keep broad G1-CLOSEOUT and R1 gated and unchanged",
-                                  "require a new owner-authorized successor before any runtime or promotion work"
+                                  "freeze the exact C2+C3A C4 closure and later-system exclusions",
+                                  "retain existing 33 focused hierarchy, addressable-world and lifecycle tests",
+                                  "retain exact adversarial identity, dependency, recovery, topology and migration-chain evidence",
+                                  "retain deterministic cost rows and honest fresh-process/architecture/platform classifications",
+                                  "keep C5-C7, G1-CLOSEOUT and R1 gated and unchanged"
                               ],
     "verification_plan":  [
-                              "verify the typed canonical receipt and all hostile mutations",
-                              "verify exact registered metric outcome, duration and checkpoint binding",
-                              "verify closeout is sole active item while broad G1-CLOSEOUT and R1 remain pinned",
-                              "wait for an owner-authorized successor"
+                              "verify the authenticated C4 successor route and canonical reconciliation",
+                              "run the C4 readiness hostile matrix before source",
+                              "retain the additive hierarchy/history proof and dependent regressions",
+                              "obtain the identical semantic receipt from a genuinely independent platform-diverse executor",
+                              "run the registered full gate only after the independent execution receipt exists"
                           ],
-    "resume_after":  "Wait for an owner-authorized successor; do not infer broad G1 closure, R1 activation or runtime authority from this recorded receipt.",
+    "resume_after":  "Continue only through broad C4 closure; stop at candidate_verified_local if independent second-platform execution is unavailable, and do not activate C5 automatically.",
     "evidence":  [
                      "GP3 closed cleanly in commit 7f29f6b and registered run-50a8c78043eb46c483f1f655d3793f9b.",
                      "C4V closed cleanly in commit 34f2213 and registered run-fa6334a300e04d409dd5cddb4f22542e.",
-                     "Owner authorized only the bounded runtime-independent Signal Anchor temporary-rescue GP4 vertical.",
-                     "The authored shadow lowers world authority and must match the C3A-backed run across every semantic BaseLoopState field except world_context.",
-                     "Runtime selection and implementation, broad C4, C3B, Companion and Greenfield remain excluded.",
+                     "The owner rejected an early runtime shortcut and authorized continuation of the canonical broad route C4-C7 then G1-CLOSEOUT then R1.",
+                     "C4 depends exactly on C2 and promoted C3A; C3B remains independent and blocked.",
+                     "Four existing C4-owned modules pass 33 of 33 focused tests while retaining no runtime, storage, network or filesystem capability.",
                      "Independent GP4 pre-source acceptance recorded after the composed readiness gate passed in 73.9 seconds with the source crate absent and all exact hostile mutations failing closed.",
                      "Both independent reviewers accepted the source candidate after 9 of 9 focused hostile tests, strict received-evidence replay, capability audit, formatting and focused clippy passed.",
                      "The 100.8-second GP4 focused integration verifier passed formatting, clippy, 9 hostile vertical tests, retained GP0-GP3 and C4V tests, computation readiness and all readiness hostiles.",
                      "Registered invocation run-fd385f42fd5a4ee68b5e965463e2d8f1 was deliberately aborted and recorded failed after 310191 ms when pre-closeout audit found missing successor-route verifier coverage; it is superseded and is not completion evidence.",
                      "Replacement invocation run-7d55ecad743f45bf9be1f115694738d0 was immediately aborted and recorded failed after 26038 ms before canonical mutation when final preflight found stale GP3 successor wording; it is superseded and is not completion evidence.",
                      "Registered invocation run-7e5c44dc8f48424a8cec42da756e3127 passed the complete Forge gate in 590582 ms.",
-                     "G1_VERTICAL_CLOSEOUT_RECEIPT.json records the exact typed bounded receipt; broad G1-CLOSEOUT and R1 remain gated."
+                     "G1_VERTICAL_CLOSEOUT_RECEIPT.json remains immutable verified predecessor evidence.",
+                     "Three independent read-only audits identified the minimal C4 closure route and exact stale canonical claims before source.",
+                     "C4 local implementation verifier passed 58 core, 8 receipt and 8 portability hostile owners with semantic SHA-256 263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996.",
+                     "Two fresh native processes and same-host Windows i686 execution emitted identical semantic bytes; aarch64-linux-android compiled only. None is independent second-platform execution.",
+                     "The bounded nine-file C4 implementation source manifest SHA-256 is b407b6e82c248cded8c65838d4cef961c21d51d05b1a00ea75d2318756ebb1bf; clean whole-tree commit provenance remains to be recorded."
                  ],
     "verification_receipts":  [
                                   "dependency:gp0-gp1-gp2-gp3-c4v:verified",
-                                  "authority:gp4-signal-anchor-runtime-independent:owner-authorized",
-                                  "boundary:runtime-broad-c4-c3b-companion-greenfield:excluded",
+                                  "historical-gp4-authority:signal-anchor-runtime-independent:owner-authorized",
+                                  "historical-gp4-boundary:runtime-broad-c4-c3b-companion-greenfield:excluded",
                                   "independent-review:gp4-pre-source:accepted",
                                   "gate:gp4-composed-readiness:pass:73.9s",
                                   "independent-review:gp4-source-candidate:accepted",
@@ -232,7 +245,15 @@
                                   "registered-full-gate:run-fd385f42fd5a4ee68b5e965463e2d8f1:failed:superseded-transition-preflight",
                                   "registered-full-gate:run-7d55ecad743f45bf9be1f115694738d0:failed:superseded-stale-gp3-wording",
                                   "registered-full-gate:run-7e5c44dc8f48424a8cec42da756e3127:passed",
-                                  "receipt:G1-VERTICAL-CLOSEOUT:recorded"
+                                  "receipt:G1-VERTICAL-CLOSEOUT:recorded",
+                                  "owner-route:broad-g1-first:c4-authorized",
+                                  "focused:c4-existing-components:33-of-33:passed",
+                                  "audit:c4-canonical-code-route:three-lanes:complete",
+                                  "gate:c4-local-implementation:pass:43-focused-plus-7-c4v",
+                                  "receipt:c4-semantic-sha256:263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996",
+                                  "receipt:c4-bounded-source-manifest-sha256:b407b6e82c248cded8c65838d4cef961c21d51d05b1a00ea75d2318756ebb1bf",
+                                  "platform:c4-i686:same-host-second-architecture:passed",
+                                  "platform:c4-android-aarch64:compile-only:passed"
                               ],
     "metrics":  {
                     "token_cost":  {
@@ -241,10 +262,9 @@
                                    },
                     "elapsed_time":  {
                                          "status":  "measured",
-                                         "value":  590582,
-                                         "unit":  "ms",
-                                         "receipt":  "run-7e5c44dc8f48424a8cec42da756e3127"
+                                         "value":  "33 focused tests in four existing C4-owned packages",
+                                         "receipt":  "focused:c4-existing-components:33-of-33:passed"
                                      }
                 },
-    "transition":  "GP4 verified and complete -\u003e registered complete gate passed -\u003e typed bounded G1 vertical closeout receipt recorded; wait for owner-authorized successor"
+    "transition":  "Bounded GP4 vertical retained -\u003e canonical broad route retained -\u003e C4 readiness independently accepted -\u003e test-first hierarchy/history hardening activated"
 }

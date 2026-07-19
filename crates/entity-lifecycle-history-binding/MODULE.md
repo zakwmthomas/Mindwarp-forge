@@ -4,17 +4,18 @@
 
 - **Maturity:** proof_component
 - **Root:** `crates/entity-lifecycle-history-binding`
-- **Source fingerprint:** `4c1c31a0b26bb75cd233760bd8bf12ab365a67acb2b1ae028eb080f9165550cc`
+- **Source fingerprint:** `546a491571ba8423568ab760a85db3f26265be25a99ba9eff5e2dde051482ec0`
 - **Live project state:** read `context/active/CURRENT_STATE.md`; active status is never duplicated here.
 
 ## Purpose
 
-Prove selected-entity lifecycle deltas replay through hierarchy-history's existing generic delta/replay machinery and recover without continuous ambient simulation.
+Bind deterministic ambient age-cohort assignment and prove selected-entity lifecycle deltas replay through hierarchy-history's generic delta/replay machinery without continuous ambient simulation.
 
 ## Owns
 
 - the lifecycle-event-to-ReferenceOperation key mapping
 - the drive/reconstruct integration functions
+- strict entity, assignment-contract and age-cohort binding bytes
 
 ## Does not own
 
@@ -42,6 +43,7 @@ Prove selected-entity lifecycle deltas replay through hierarchy-history's existi
 - hostile stored values fail before integer conversion
 - hierarchy-history's existing Gap/replay checks are reused unmodified
 - storage round-tripped deltas reconstruct exact lifecycle state
+- a persisted ambient cohort binding rejects entity, contract and cohort drift rather than rerolling
 
 ## Verification
 
@@ -51,6 +53,9 @@ Prove selected-entity lifecycle deltas replay through hierarchy-history's existi
 
 - `docs/canonical-system/HIERARCHY_HISTORY_DESIGN_GATE.md`
 - `docs/canonical-system/G1_C4_AGE_LIFECYCLE_AND_PROOFRECEIPT_RESULT.md`
+- `docs/canonical-system/G1_C4_CLOSURE_READINESS.md`
+- `docs/canonical-system/G1_C4_CLOSURE_DESIGN.md`
+- `docs/canonical-system/G1_C4_HIERARCHY_HISTORY_LOCAL_RESULT.md`
 
 ## Update rule
 

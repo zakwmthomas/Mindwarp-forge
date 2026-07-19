@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **G1-VERTICAL-CLOSEOUT-V1**
-- Objective: Retain the exact typed bounded G1 vertical closeout receipt from verified C3A, C4V and GP0-GP4 evidence without broad G1 closure or runtime authority.
+- Work package: **G1-C4-HIERARCHY-HISTORY-CLOSURE-V1**
+- Objective: Close broad C4 as a capability-free addressable hierarchy and history proof against exact C2 and promoted C3A evidence, without importing C3B, later systems, storage or runtime authority.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **bounded-g1-vertical-closeout-evidence-only / GP4 is verified and complete through registered run-7e5c44dc8f48424a8cec42da756e3127; the typed closeout receipt binds exact C3A, C4V and GP0-GP4 proof references and grants no successor authority.**
-- Exact next action: Keep G1-VERTICAL-CLOSEOUT as the sole active program item until the owner authorizes a successor; do not implicitly activate broad G1-CLOSEOUT or R1.
+- Risk/research gate: **bounded-broad-c4-capability-free-closure / C4 depends exactly on C2 and promoted C3A. Local dynamic/presence/cohort, dependency, recovery, migration, cost, hostile and portability-classification evidence passes; genuinely independent platform-diverse execution is the sole remaining closure gate.**
+- Exact next action: Obtain identical C4 semantic-receipt execution from a genuinely independent, platform-diverse runner; until then retain candidate_verified_local and do not activate C5.
 
 ## Approved operating policies
 

@@ -21,40 +21,38 @@
 
 ## Game-canonical production
 
-- Field, scheduler, significance, representation, and semantic prototypes need
-  engine-neutral reference proof before production status.
-- Derived physics, history, construction language, asset factory, and animation
-  remain specified or partial rather than finished production systems.
+- C3A is promoted. C3B physical/applicability/visibility/presentation evidence
+  remains independently blocked and is not a C4 dependency.
+- C4 is `candidate_verified_local`: dynamic/presence/cohort identity, exact
+  dependency availability, corrupt-tail recovery, bounded migration chains,
+  deterministic scale/cost and all 74 hostile IDs pass. The sole closure gap
+  is identical semantic execution on a genuinely independent, platform-diverse
+  runner. C5-C7 remain dependency-gated prototypes or specifications.
 - Visual recognisability, player value, and hardware cost require structured
   review; numerical success alone is insufficient.
 
 ## Main Mind Warp gameplay foundation
 
-- Forge has no promoted player-experience contract, base gameplay loop or
-  player-facing system ownership map.
+- GP0-GP4 are closed at their recorded maturity and the exact typed bounded
+  Signal Anchor vertical receipt is complete.
 - Main Mind Warp and the smaller Quantum Tunnel product must remain separate;
   product-specific currencies, balance, scope and implementation shortcuts are
   not transferable by default.
 - Historical gameplay code is explicitly rejected for reuse. Concepts require
   clean-room adjudication through
   `MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md`.
-- The primary player fantasy, default verbs, home/hub structure, failure model,
-  combat weight, progression shape, authored/emergent narrative boundary,
-  economy scope and multiplayer necessity remain owner-level design decisions.
-- Gameplay concepts are not ready for runtime work until a small fixed-content
-  paper model proves that the base loop is meaningful without procedural scale,
-  multiplayer or visual spectacle.
-- No gameplay candidate may treat Forge complexity as player value without a
-  legible decision, consequence and cheapest falsifier.
+- The bounded gameplay result grants no runtime, broad G1, procedural breadth,
+  Companion or Greenfield authority. Historical gameplay code remains rejected;
+  the fixed Signal Anchor contract is the retained exact vertical.
 
 ## Runtime
 
 - No game engine is selected.
 - No Unity, Godot, or custom runtime project is created or modified.
-- Runtime selection is gated on the engine-neutral systems and the scored
-  runtime-adapter decision package.
+- Runtime selection depends on owner-promoted broad G1-CLOSEOUT, not the
+  bounded vertical receipt, and then requires the scored runtime-adapter package.
 # Product and fidelity gaps retained (2026-07-18)
 
 - C3B lacks authoritative project-specific physical scale, calibrated material coefficients, applicability, received-energy, visibility and presentation-fidelity evidence. Yard Atlas and disposable fixtures may not substitute for it.
-- GP0 still must adjudicate the primary player fantasy, promise, non-goals and five session stories. Historical gameplay evidence remains candidate-only and transfers no code.
+- GP0-GP4 and their bounded vertical receipt are closed evidence; they do not substitute for C4-C7 or broad G1 promotion. Historical gameplay evidence transfers no code.
 - Companion synchronization and garden-domain schemas remain later product contracts; repositories, databases, UI, authentication, billing and release authority remain isolated.

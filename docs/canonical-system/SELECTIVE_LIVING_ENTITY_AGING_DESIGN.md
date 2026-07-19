@@ -1,6 +1,9 @@
 # Selective living-entity aging design
 
-**Status:** owner requirement and bounded design recorded; not implemented.
+**Status:** partially implemented. Strict lifecycle state, pure transitions,
+history replay and read-only receipt proof pass. Population distribution,
+species-authored presentation and visual/device proof remain open in their
+owning packages.
 
 ## Intent
 
@@ -127,9 +130,14 @@ version coexistence, and no cohort reroll after reload.
 6. Use phone-legible visual comparisons with one large subject/stage per image;
    never repeat the failed three-small-panel presentation.
 
+Steps 1-3 are implemented as bounded C4 evidence. Population-distribution
+semantics are owned by C6 together with species profiles; presentation-budget,
+creature-comparison and visual-device evidence are owned by C7 after C5/C6.
+
 ## Explicit non-claims
 
-No aging state machine, population sampler, morph system, creature generator,
-shader, mesh LOD, animation set, runtime integration, or device performance is
-implemented by this document. It records the clarified design boundary and the
-cheapest safe route to a future proof.
+The C4 state machine and replay binding are implemented. Population semantics
+and species-authored morph/presentation rules are not implemented (C6); mesh,
+LOD, animation and visual/device comparisons are not implemented (C7); engine
+and runtime integration are not implemented (R1). This document grants no
+authority across those package boundaries.

@@ -30,6 +30,12 @@ pub enum HierarchyHistoryError {
     UnsupportedCrossTarget,
     SnapshotMismatch,
     UnsupportedMigration,
+    MissingDependency(u16),
+    DependencyFingerprintMismatch(u16),
+    InvalidDependencyAvailability,
+    RecoveryBoundExceeded,
+    UnsupportedTopology,
+    MigrationChainInvalid,
 }
 
 impl fmt::Display for HierarchyHistoryError {

@@ -14,6 +14,8 @@ const SNAPSHOT_DOMAIN: &[u8] = b"mindwarp/hierarchy-history/snapshot/v1\0";
 const MIGRATION_DOMAIN: &[u8] = b"mindwarp/hierarchy-history/migration/v1\0";
 const MAX_DEPENDENCIES: usize = 32;
 const MAX_OPERATION_BYTES: usize = 65_536;
+const MAX_RECOVERY_RECORDS: usize = 1024;
+const MAX_RECOVERY_BYTES: usize = 16 * 1024 * 1024;
 
 #[derive(Clone, Copy, Debug, Eq, Ord, PartialEq, PartialOrd, Serialize)]
 pub struct DependencyRef {
@@ -109,6 +111,37 @@ impl BaselineManifest {
 
     pub fn key(&self) -> Result<[u8; 32], HierarchyHistoryError> {
         Ok(hash(BASELINE_DOMAIN, &self.encode_canonical()?))
+    }
+
+    pub fn verify_available_dependencies(
+        &self,
+        available: &[DependencyRef],
+    ) -> Result<(), HierarchyHistoryError> {
+        let rebuilt = Self::new(
+            self.logical_id,
+            self.descriptor_fingerprint,
+            self.output_dependencies.clone(),
+        )?;
+        if &rebuilt != self
+            || available.is_empty()
+            || available.len() > MAX_DEPENDENCIES
+            || available.len() > self.output_dependencies.len()
+            || available.iter().any(|item| item.kind == 0)
+            || !available.windows(2).all(|pair| pair[0].kind < pair[1].kind)
+        {
+            return Err(HierarchyHistoryError::InvalidDependencyAvailability);
+        }
+        for required in &self.output_dependencies {
+            let Some(actual) = available.iter().find(|item| item.kind == required.kind) else {
+                return Err(HierarchyHistoryError::MissingDependency(required.kind));
+            };
+            if actual.fingerprint != required.fingerprint {
+                return Err(HierarchyHistoryError::DependencyFingerprintMismatch(
+                    required.kind,
+                ));
+            }
+        }
+        Ok(())
     }
 }
 
@@ -271,13 +304,33 @@ impl HistoryStream {
         &self.events
     }
 
+    pub fn encode_canonical(&self) -> Result<Vec<u8>, HierarchyHistoryError> {
+        let baseline_bytes = self.baseline.encode_canonical()?;
+        let mut out = Vec::new();
+        let mut encoder = Encoder::new(&mut out);
+        encoder
+            .array(3)
+            .and_then(|e| e.u16(CONTRACT_VERSION))
+            .and_then(|e| e.bytes(&baseline_bytes))
+            .and_then(|e| e.array(self.events.len() as u64))
+            .map_err(codec)?;
+        for event in &self.events {
+            encoder.bytes(&event.encode_canonical()?).map_err(codec)?;
+        }
+        Ok(out)
+    }
+
     pub fn append(&mut self, event: DeltaEnvelope) -> Result<AppendOutcome, HierarchyHistoryError> {
+        if event.sequence == 0 {
+            return Err(HierarchyHistoryError::CorruptContent);
+        }
         if event.baseline_key != self.baseline_key {
             return Err(HierarchyHistoryError::WrongBaseline);
         }
         if event.target_logical_id != self.baseline.logical_id {
             return Err(HierarchyHistoryError::WrongTarget);
         }
+        let event = DeltaEnvelope::decode_strict(&event.encode_canonical()?)?;
         if let Some(existing) = self.commands.get(&event.command_id) {
             return if existing == &event.content_id {
                 Ok(AppendOutcome::Idempotent(event.content_id))
@@ -297,7 +350,15 @@ impl HistoryStream {
             };
         }
         if event.expected_parent != self.head() {
-            return Err(HierarchyHistoryError::ForkConflict);
+            return if event.expected_parent.is_some_and(|parent| {
+                self.events
+                    .iter()
+                    .any(|existing| existing.content_id == parent)
+            }) {
+                Err(HierarchyHistoryError::StaleHead)
+            } else {
+                Err(HierarchyHistoryError::ForkConflict)
+            };
         }
         self.commands.insert(event.command_id, event.content_id);
         self.events.push(event.clone());
@@ -318,6 +379,99 @@ impl HistoryStream {
             operation.apply(&mut state);
         }
         Ok(state)
+    }
+
+    pub fn reject_topology_change(
+        &mut self,
+        _operation: UnsupportedTopologyOperation,
+    ) -> Result<(), HierarchyHistoryError> {
+        Err(HierarchyHistoryError::UnsupportedTopology)
+    }
+}
+
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Serialize)]
+pub enum UnsupportedTopologyOperation {
+    Reparent,
+    Split,
+    Merge,
+}
+
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Serialize)]
+pub enum RecoveryFailureKind {
+    CorruptContent,
+    InvalidEnvelope,
+    WrongBaseline,
+    WrongTarget,
+    Gap,
+    StaleHead,
+    ForkConflict,
+    CommandConflict,
+    UnknownOperationSchema,
+    UnsupportedCrossTarget,
+}
+
+#[derive(Clone, Debug)]
+pub struct KnownGoodPrefixRecovery {
+    pub stream: HistoryStream,
+    pub accepted_records: usize,
+    pub first_failure: Option<RecoveryFailureKind>,
+}
+
+pub fn recover_known_good_prefix(
+    baseline: BaselineManifest,
+    encoded_records: &[Vec<u8>],
+) -> Result<KnownGoodPrefixRecovery, HierarchyHistoryError> {
+    if encoded_records.len() > MAX_RECOVERY_RECORDS {
+        return Err(HierarchyHistoryError::RecoveryBoundExceeded);
+    }
+    let total = encoded_records.iter().try_fold(0_usize, |sum, bytes| {
+        sum.checked_add(bytes.len())
+            .ok_or(HierarchyHistoryError::RecoveryBoundExceeded)
+    })?;
+    if total > MAX_RECOVERY_BYTES {
+        return Err(HierarchyHistoryError::RecoveryBoundExceeded);
+    }
+    let mut stream = HistoryStream::new(baseline)?;
+    for (index, bytes) in encoded_records.iter().enumerate() {
+        let result = (|| {
+            let event = DeltaEnvelope::decode_strict(bytes)?;
+            let mut candidate = stream.clone();
+            candidate.append(event)?;
+            candidate.replay_reference()?;
+            stream = candidate;
+            Ok::<(), HierarchyHistoryError>(())
+        })();
+        if let Err(error) = result {
+            return Ok(KnownGoodPrefixRecovery {
+                stream,
+                accepted_records: index,
+                first_failure: Some(recovery_failure_kind(&error)),
+            });
+        }
+    }
+    Ok(KnownGoodPrefixRecovery {
+        accepted_records: encoded_records.len(),
+        stream,
+        first_failure: None,
+    })
+}
+
+fn recovery_failure_kind(error: &HierarchyHistoryError) -> RecoveryFailureKind {
+    match error {
+        HierarchyHistoryError::CorruptContent => RecoveryFailureKind::CorruptContent,
+        HierarchyHistoryError::WrongBaseline => RecoveryFailureKind::WrongBaseline,
+        HierarchyHistoryError::WrongTarget => RecoveryFailureKind::WrongTarget,
+        HierarchyHistoryError::Gap => RecoveryFailureKind::Gap,
+        HierarchyHistoryError::StaleHead => RecoveryFailureKind::StaleHead,
+        HierarchyHistoryError::ForkConflict => RecoveryFailureKind::ForkConflict,
+        HierarchyHistoryError::CommandConflict => RecoveryFailureKind::CommandConflict,
+        HierarchyHistoryError::UnknownOperationSchema => {
+            RecoveryFailureKind::UnknownOperationSchema
+        }
+        HierarchyHistoryError::UnsupportedCrossTarget => {
+            RecoveryFailureKind::UnsupportedCrossTarget
+        }
+        _ => RecoveryFailureKind::InvalidEnvelope,
     }
 }
 
@@ -477,6 +631,18 @@ impl Snapshot {
         Ok(out)
     }
 
+    pub fn encode_canonical(&self) -> Result<Vec<u8>, HierarchyHistoryError> {
+        let body = self.body_bytes()?;
+        let mut out = Vec::new();
+        Encoder::new(&mut out)
+            .array(3)
+            .and_then(|e| e.bytes(&body))
+            .and_then(|e| e.bytes(&self.state_hash))
+            .and_then(|e| e.bytes(&self.content_id))
+            .map_err(codec)?;
+        Ok(out)
+    }
+
     pub fn verify_reference(
         &self,
         stream: &HistoryStream,
@@ -495,6 +661,18 @@ impl Snapshot {
             return Err(HierarchyHistoryError::SnapshotMismatch);
         }
         Ok(())
+    }
+
+    pub fn verify_reference_with_builder(
+        &self,
+        stream: &HistoryStream,
+        expected: &ReferenceState,
+        expected_builder_fingerprint: [u8; 32],
+    ) -> Result<(), HierarchyHistoryError> {
+        if self.builder_fingerprint != expected_builder_fingerprint {
+            return Err(HierarchyHistoryError::SnapshotMismatch);
+        }
+        self.verify_reference(stream, expected)
     }
 }
 
@@ -521,23 +699,124 @@ impl MigrationReceipt {
             return Err(HierarchyHistoryError::UnsupportedMigration);
         }
         let state_hash = source.replay_reference()?.fingerprint()?;
+        Self::identity_between(
+            source.baseline_key(),
+            target.key()?,
+            source.head(),
+            adapter_fingerprint,
+            state_hash,
+        )
+    }
+
+    fn identity_between(
+        from_baseline: [u8; 32],
+        to_baseline: [u8; 32],
+        source_head: Option<[u8; 32]>,
+        adapter_fingerprint: [u8; 32],
+        state_hash: [u8; 32],
+    ) -> Result<Self, HierarchyHistoryError> {
+        if from_baseline == to_baseline || adapter_fingerprint == [0; 32] {
+            return Err(HierarchyHistoryError::MigrationChainInvalid);
+        }
         let mut preimage = Vec::new();
-        preimage.extend_from_slice(&source.baseline_key());
-        preimage.extend_from_slice(&target.key()?);
-        preimage.extend_from_slice(&source.head().unwrap_or([0; 32]));
+        preimage.extend_from_slice(&from_baseline);
+        preimage.extend_from_slice(&to_baseline);
+        preimage.extend_from_slice(&source_head.unwrap_or([0; 32]));
         preimage.extend_from_slice(&adapter_fingerprint);
         preimage.extend_from_slice(&state_hash);
         preimage.extend_from_slice(&state_hash);
         Ok(Self {
-            from_baseline: source.baseline_key(),
-            to_baseline: target.key()?,
-            source_head: source.head(),
+            from_baseline,
+            to_baseline,
+            source_head,
             adapter_fingerprint,
             input_state_hash: state_hash,
             output_state_hash: state_hash,
             content_id: hash(MIGRATION_DOMAIN, &preimage),
         })
     }
+
+    pub fn validate_content_id(&self) -> Result<(), HierarchyHistoryError> {
+        let expected = Self::identity_between(
+            self.from_baseline,
+            self.to_baseline,
+            self.source_head,
+            self.adapter_fingerprint,
+            self.input_state_hash,
+        )?;
+        if self.input_state_hash != self.output_state_hash || self.content_id != expected.content_id
+        {
+            return Err(HierarchyHistoryError::MigrationChainInvalid);
+        }
+        Ok(())
+    }
+}
+
+pub fn identity_reference_chain(
+    source: &HistoryStream,
+    targets: &[BaselineManifest],
+    adapter_fingerprints: &[[u8; 32]],
+) -> Result<Vec<MigrationReceipt>, HierarchyHistoryError> {
+    if targets.is_empty()
+        || targets.len() > 2
+        || targets.len() != adapter_fingerprints.len()
+        || adapter_fingerprints.contains(&[0; 32])
+        || adapter_fingerprints
+            .windows(2)
+            .any(|pair| pair[0] == pair[1])
+    {
+        return Err(HierarchyHistoryError::MigrationChainInvalid);
+    }
+    let mut keys = Vec::with_capacity(targets.len());
+    let mut visited = BTreeSet::from([source.baseline_key()]);
+    for target in targets {
+        if target.logical_id != source.baseline().logical_id
+            || BaselineManifest::decode_strict(&target.encode_canonical()?)? != *target
+        {
+            return Err(HierarchyHistoryError::MigrationChainInvalid);
+        }
+        let key = target.key()?;
+        if !visited.insert(key) {
+            return Err(HierarchyHistoryError::MigrationChainInvalid);
+        }
+        keys.push(key);
+    }
+    let state_hash = source.replay_reference()?.fingerprint()?;
+    let mut receipts = Vec::with_capacity(keys.len());
+    let mut from = source.baseline_key();
+    for (to, adapter) in keys.into_iter().zip(adapter_fingerprints.iter().copied()) {
+        receipts.push(MigrationReceipt::identity_between(
+            from,
+            to,
+            source.head(),
+            adapter,
+            state_hash,
+        )?);
+        from = to;
+    }
+    Ok(receipts)
+}
+
+pub fn validate_identity_reference_chain(
+    source: &HistoryStream,
+    targets: &[BaselineManifest],
+    adapter_fingerprints: &[[u8; 32]],
+    received: &[MigrationReceipt],
+) -> Result<(), HierarchyHistoryError> {
+    if received.is_empty()
+        || received.len() > 2
+        || received.len() != targets.len()
+        || received.len() != adapter_fingerprints.len()
+    {
+        return Err(HierarchyHistoryError::MigrationChainInvalid);
+    }
+    for receipt in received {
+        receipt.validate_content_id()?;
+    }
+    if identity_reference_chain(source, targets, adapter_fingerprints)? != received {
+        return Err(HierarchyHistoryError::MigrationChainInvalid);
+    }
+    Ok(())
 }
 
 fn bytes32(bytes: &[u8]) -> Result<[u8; 32], HierarchyHistoryError> {

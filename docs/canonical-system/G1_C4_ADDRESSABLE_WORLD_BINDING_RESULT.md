@@ -59,6 +59,12 @@ current C4 proof and is not silently assumed to be solved.
 
 ## What C4 still has open
 
+> Supersession note (2026-07-19): the later age/lifecycle and ProofReceipt
+> result closes the lifecycle, bound recovery and read-only receipt bullets
+> below. The physical-only fingerprint remains optional unless a named
+> consumer requires cross-provenance physical equivalence. Current broad-C4
+> blockers are recorded in `G1_C4_CLOSURE_READINESS.md`.
+
 - Stable age cohorts and selected-entity lifecycle deltas
   (`SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md` is design-only; nothing in this
   result implements it).
@@ -76,9 +82,10 @@ seam, then cheap focused tests before broader proof.
 
 ## Dependency-correction isolation audit
 
-Status: **one disposable, source-only correction-isolation fixture passed;
-the result is reference evidence only. C3 remains open and C4 remains
-dependency-gated.**
+Historical execution status: **one disposable, source-only
+correction-isolation fixture passed; the result is reference evidence only.
+Its umbrella-C3/C4 routing conclusion was superseded by the 2026-07-18 C3A
+rebaseline.**
 
 The owner authorized one bounded audit of whether two exact validated
 `WorldGenerationInput` / `CausalWorldPacket` pairs for the same logical place
@@ -186,7 +193,8 @@ This audit records `status=correction_isolated_reference_only` and
 - The fixture proves no physical applicability, visibility, ecotone production
   behavior, biome, organism, renderer, runtime or player-facing result.
 
-C3 remains executing with physical-applicability, visibility and ecotone
-obligations open. C4 remains gated by C3. This audit does not activate C4,
-release C5, close either item, promote a baseline, or grant implementation,
+At the time of this disposable audit the umbrella C3 route was open. The
+2026-07-18 owner-authorized rebaseline supersedes that routing conclusion: C4
+depends on C2 and promoted C3A, while C3B remains independently blocked. The
+fixture still grants no C4 closure, release of C5, baseline promotion,
 persistence, migration, runtime or protected-Kernel authority.

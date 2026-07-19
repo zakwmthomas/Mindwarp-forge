@@ -1,9 +1,122 @@
 use serde::Serialize;
 
 use crate::{
-    BaselineManifest, CONTRACT_VERSION, DependencyRef, DescriptorOrigin, HierarchyDescriptor,
-    HierarchyHistoryError, hex, observe_fixture_window,
+    BaselineManifest, CONTRACT_VERSION, DeltaEnvelope, DependencyRef, DescriptorOrigin,
+    HierarchyDescriptor, HierarchyHistoryError, HistoryStream, ReferenceOperation, Snapshot, hex,
+    observe_fixture_window, reference_operation_schema,
 };
+
+#[derive(Clone, Debug, Eq, PartialEq, Serialize)]
+pub struct WindowCostPoint {
+    pub requested: u16,
+    pub returned: u16,
+    pub examined: u16,
+    pub canonical_bytes: u64,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq, Serialize)]
+pub struct HistoryCostPoint {
+    pub event_count: u16,
+    pub encoded_delta_bytes: u64,
+    pub full_stream_bytes: u64,
+    pub decoded_operation_count: u16,
+    pub snapshot_bytes: u64,
+}
+
+pub fn deterministic_cost_evidence()
+-> Result<(Vec<WindowCostPoint>, Vec<HistoryCostPoint>), HierarchyHistoryError> {
+    let descriptor = HierarchyDescriptor::new(
+        [1; 32],
+        None,
+        [2; 32],
+        [3; 32],
+        [4; 32],
+        DescriptorOrigin::Procedural,
+        b"c4-cost-v1".to_vec(),
+    )?;
+    let baseline = BaselineManifest::new(
+        descriptor.logical_id,
+        descriptor.fingerprint()?,
+        vec![
+            DependencyRef {
+                kind: 1,
+                fingerprint: descriptor.reconstruction_fingerprint,
+            },
+            DependencyRef {
+                kind: 2,
+                fingerprint: descriptor.world_conditions_fingerprint,
+            },
+        ],
+    )?;
+    let mut windows = Vec::new();
+    for requested in [0_u16, 1, 16, 256] {
+        let window = observe_fixture_window(
+            &descriptor,
+            1,
+            None,
+            requested,
+            u64::from(requested),
+            requested,
+        )?;
+        windows.push(WindowCostPoint {
+            requested,
+            returned: u16::try_from(window.children.len())
+                .map_err(|_| HierarchyHistoryError::Invalid("window count"))?,
+            examined: window.examined,
+            canonical_bytes: u64::try_from(window.encode_canonical()?.len())
+                .map_err(|_| HierarchyHistoryError::Invalid("window bytes"))?,
+        });
+    }
+    let mut histories = Vec::new();
+    for event_count in [0_u16, 1, 16, 64, 256] {
+        let mut stream = HistoryStream::new(baseline.clone())?;
+        let mut encoded_delta_bytes = 0_u64;
+        let mut decoded_operation_count = 0_u16;
+        for index in 0..event_count {
+            let operation = ReferenceOperation::Set {
+                key: index,
+                value: i64::from(index),
+            }
+            .encode_canonical()?;
+            let mut command = [0_u8; 32];
+            command[..2].copy_from_slice(&index.saturating_add(1).to_be_bytes());
+            let event = DeltaEnvelope::new(
+                stream.baseline_key(),
+                stream.baseline().logical_id,
+                u64::from(index) + 1,
+                stream.head(),
+                command,
+                reference_operation_schema(),
+                operation,
+            )?;
+            let bytes = event.encode_canonical()?;
+            encoded_delta_bytes = encoded_delta_bytes
+                .checked_add(
+                    u64::try_from(bytes.len())
+                        .map_err(|_| HierarchyHistoryError::Invalid("delta bytes"))?,
+                )
+                .ok_or(HierarchyHistoryError::Invalid("delta byte total"))?;
+            let decoded = DeltaEnvelope::decode_strict(&bytes)?;
+            ReferenceOperation::decode_strict(&decoded.operation)?;
+            decoded_operation_count = decoded_operation_count
+                .checked_add(1)
+                .ok_or(HierarchyHistoryError::Invalid("operation count"))?;
+            stream.append(decoded)?;
+        }
+        stream.replay_reference()?;
+        let snapshot = Snapshot::build_reference(&stream, [0x42; 32])?;
+        histories.push(HistoryCostPoint {
+            event_count,
+            encoded_delta_bytes,
+            full_stream_bytes: u64::try_from(stream.encode_canonical()?.len())
+                .map_err(|_| HierarchyHistoryError::Invalid("stream bytes"))?,
+            decoded_operation_count,
+            snapshot_bytes: u64::try_from(snapshot.encode_canonical()?.len())
+                .map_err(|_| HierarchyHistoryError::Invalid("snapshot bytes"))?,
+        });
+    }
+    Ok((windows, histories))
+}
 
 #[derive(Clone, Debug, Eq, PartialEq, Serialize)]
 pub struct HierarchyHistoryProofEvidence {
@@ -47,7 +160,7 @@ pub fn reference_proof_evidence() -> Result<HierarchyHistoryProofEvidence, Hiera
     let measured_window_sizes = [0_u64, 16, 256, 1024]
         .into_iter()
         .map(|logical_count| {
-            let limit = logical_count.min(256).max(1) as u16;
+            let limit = logical_count.clamp(1, 256) as u16;
             let window = observe_fixture_window(&descriptor, 1, None, limit, logical_count, limit)?;
             Ok((logical_count, window.children.len(), window.examined))
         })
@@ -274,8 +387,18 @@ mod tests {
         );
         let gap = event(&stream, 3, 3, ReferenceOperation::Remove { key: 8 });
         assert_eq!(stream.append(gap), Err(HierarchyHistoryError::Gap));
-        let mut fork = event(&stream, 2, 2, ReferenceOperation::Remove { key: 8 });
-        fork.expected_parent = Some([9; 32]);
+        let fork = DeltaEnvelope::new(
+            stream.baseline_key(),
+            item.logical_id,
+            2,
+            Some([9; 32]),
+            [2; 32],
+            reference_operation_schema(),
+            ReferenceOperation::Remove { key: 8 }
+                .encode_canonical()
+                .unwrap(),
+        )
+        .unwrap();
         assert_eq!(
             stream.append(fork),
             Err(HierarchyHistoryError::ForkConflict)
@@ -298,8 +421,18 @@ mod tests {
             stream.append(wrong),
             Err(HierarchyHistoryError::WrongTarget)
         );
-        let mut unknown = event(&stream, 1, 2, ReferenceOperation::Set { key: 1, value: 1 });
-        unknown.operation_schema = [88; 32];
+        let unknown = DeltaEnvelope::new(
+            stream.baseline_key(),
+            stream.baseline().logical_id,
+            1,
+            None,
+            [2; 32],
+            [88; 32],
+            ReferenceOperation::Set { key: 1, value: 1 }
+                .encode_canonical()
+                .unwrap(),
+        )
+        .unwrap();
         stream.append(unknown).unwrap();
         assert_eq!(
             stream.replay_reference(),
@@ -370,6 +503,10 @@ mod tests {
         let original_head = source.head();
         let target = baseline(&item, 2);
         let receipt = MigrationReceipt::identity_reference(&source, &target, [4; 32]).unwrap();
+        assert_eq!(
+            hex(&receipt.content_id),
+            "ea19d3e5369ec0e1afbbcd1717e2dcf45393e0113276b541628846959c65676e"
+        );
         assert_eq!(
             (receipt.source_head, source.head()),
             (original_head, original_head)

@@ -2,7 +2,7 @@
 
 > GENERATED from `docs/canonical-system/MASTER_PROGRAM.json`. Do not edit this view directly.
 
-Canonical lifecycle: schema v2; executing item: `G1-VERTICAL-CLOSEOUT`.
+Canonical lifecycle: schema v2; executing item: `C4`.
 Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
 
 ## F4
@@ -57,8 +57,8 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
   Next: Maintain the validated WorldGenerationInput to replayed CausalWorldPacket v1 seam for dependency-sufficient consumers.
 - **C3B** - blocked; gate: evidence; depends on: C3A.
   Next: Wait for authoritative project-specific physical scale, calibrated coefficient, applicability, visibility and presentation fidelity evidence; do not substitute Yard Atlas or fixture data.
-- **C4** - proposed; gate: design; depends on: C2, C3A.
-  Next: Resume addressable-state and history work against the exact promoted C3A causal-world seam; do not import C3B physical or presentation claims.
+- **C4** - executing; gate: design; depends on: C2, C3A.
+  Next: Close the bounded C4 addressable-state/history package against exact C3A evidence: freeze closure obligations, extend exact replay/recovery/migration/corruption/scale/platform evidence, and keep species presentation, C3B physical claims, C5-C7 and runtime out of scope.
 - **C4V** - verified; gate: recorded; depends on: C2, C3A, GP1.
   Next: Retain the bounded C4V seam as a verified GP4 dependency; do not broaden it into runtime or broad C4.
 - **C5** - proposed; gate: design; depends on: C4.
@@ -79,8 +79,8 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
   Next: Retain verified GP3 as a closed dependency of the owner-authorized bounded GP4 Signal Anchor vertical; do not broaden into runtime, procedural generation or automatic GP2 progression.
 - **GP4** - verified; gate: recorded; depends on: GP3, C4V.
   Next: Retain verified GP4 as the closed dependency of the recorded bounded G1 vertical closeout; do not select or implement a runtime without a new owner-authorized successor.
-- **G1-VERTICAL-CLOSEOUT** - executing; gate: recorded; depends on: C3A, C4V, GP0, GP1, GP2, GP3, GP4.
-  Next: Retain the recorded bounded receipt as the sole active item until an owner-authorized successor is activated; broad G1-CLOSEOUT and R1 remain gated.
+- **G1-VERTICAL-CLOSEOUT** - verified; gate: recorded; depends on: C3A, C4V, GP0, GP1, GP2, GP3, GP4.
+  Next: Retain the typed bounded receipt as immutable evidence; it grants no broad G1, C4, C3B or runtime authority.
 
 ## R1
 

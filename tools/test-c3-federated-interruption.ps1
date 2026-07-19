@@ -71,7 +71,12 @@ $g1VerticalCloseoutRoute =
   $Checkpoint.master_program_item -eq 'G1-VERTICAL-CLOSEOUT' -and
   $Checkpoint.substage_id -eq 'g1-vertical-closeout-recorded' -and
   $Checkpoint.authority_lane -like '*Owner-authorized bounded G1 vertical closeout evidence receipt only*broad_g1=false*runtime_selected=false*runtime_containment_pending=true*evidence_only=true*promotion_authority=false*No runtime*broad C4*C3B*Companion*Greenfield*procedural generation*persistence expansion*filesystem*network*process*Kernel mutation*'
-$gameplayFoundationRoute = $gp0GameplayRoute -or $gp1GameplayRoute -or $gp2GameplayRoute -or $c4vGameplayRoute -or $gp3GameplayRoute -or $gp4GameplayRoute -or $g1VerticalCloseoutRoute
+$c4BroadRoute =
+  $Checkpoint.batch_id -eq 'G1-C4-HIERARCHY-HISTORY-CLOSURE-V1' -and
+  $Checkpoint.master_program_item -eq 'C4' -and
+  $Checkpoint.substage_id -in @('c4-reconciliation-readiness','c4-hierarchy-history-hardening','c4-verification','c4-verified-result') -and
+  $Checkpoint.authority_lane -like '*Owner-authorized broad C4 hierarchy/history reconciliation and capability-free closure proof only*Exact dependencies C2 and C3A*No C3B*C5*C6*C7*broad G1 closure*runtime*storage engine*filesystem*network*multiplayer*cross-target transactions*Companion*Greenfield*visual assets*Kernel mutation*'
+$gameplayFoundationRoute = $gp0GameplayRoute -or $gp1GameplayRoute -or $gp2GameplayRoute -or $c4vGameplayRoute -or $gp3GameplayRoute -or $gp4GameplayRoute -or $g1VerticalCloseoutRoute -or $c4BroadRoute
 $c3DesignRoute =
   $Checkpoint.batch_id -eq 'G1-C3-WHOLE-CELL-RECEIVER-COUPLING-MATHEMATICAL-DESIGN-V1' -and
   $Checkpoint.master_program_item -eq 'C3' -and

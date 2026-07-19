@@ -1033,6 +1033,7 @@ version = "0.1.0"
 dependencies = [
  "entity-lifecycle",
  "hierarchy-history",
+ "sha2",
 ]
 
 [[package]]

@@ -20,6 +20,13 @@ Gameplay recovery and development proposal:
   Main Mind Warp, Quantum Tunnel and Forge; recovered gameplay candidates;
   missing decisions; and the GP0-GP5 route from player fantasy to one gated
   vertical experience.
+- `G1_C4_CLOSURE_READINESS.md` - exact broad-C4 C2+C3A boundary, retained
+  components, missing hostile/scale/platform obligations and later-system
+  exclusions.
+- `G1_C4_CLOSURE_DESIGN.md` - minimal additive hierarchy/history hardening and
+  deterministic semantic/platform receipt design.
+- `G1_C4_HIERARCHY_HISTORY_LOCAL_RESULT.md` - locally verified implementation,
+  exact semantic hash and honest independent-platform blocker.
 
 6. `MACRO_GAP_CLOSURE_AUDIT.md` - per-system contracts, risks,
    observability requirements, smallest proofs, and F5 package ordering.

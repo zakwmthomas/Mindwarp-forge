@@ -76,19 +76,19 @@ three:
   is now also carried into its ProofReceipt's `limitations` field rather
   than only living in a markdown result document.
 
-## What C4 still has open
+## Remaining work and corrected ownership
 
-- A population-level sampler for ambient age-cohort distribution (design
-  document explicitly defers this; not attempted here).
-- Species-authored `PresentationProfile` visual cues and the two-creature-
-  profile visual comparison.
-- A physical-only, provenance-independent world-conditions fingerprint.
-- Broader hierarchy-history proof (multi-hop migration, snapshot/scale
-  cost curves, second-platform receipts) remains from the original P4 gate
-  and was not re-run here; it was already prototype_tested before this
-  result and is unaffected by it.
+- C4 still owns canonical lifecycle state plus its addressable history. Broad
+  hierarchy/history proof remains open for stable dynamic/presence evidence,
+  exact dependency availability, corrupt-tail recovery, bounded migration
+  chains, deterministic snapshot/log/replay cost curves and independent
+  second-platform receipts.
+- Population distributions and species-authored `PresentationProfile`
+  semantics belong to C6, which consumes C4's stable lifecycle state.
+- Rendered two-creature and phone-legible comparison belongs to C7 and its
+  bounded visual-observation gate.
+- A physical-only, provenance-independent world-conditions fingerprint is an
+  optional consumer-driven gap, not a current C4 closure requirement.
 
-C4 is not closed by this result. The next decision is the same pattern
-used for C3: present this evidence for an explicit owner promotion-or-
-continue decision, or continue toward the still-open items above if the
-owner wants more proof first.
+The owner chose to continue the canonical broad route. C4 is active; this
+result remains a bounded input and is not itself a C4 closure receipt.

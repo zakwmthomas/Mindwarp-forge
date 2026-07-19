@@ -7,3 +7,4 @@ license.workspace = true
 [dependencies]
 entity-lifecycle = { path = "../entity-lifecycle" }
 hierarchy-history = { path = "../hierarchy-history" }
+sha2 = "0.10"

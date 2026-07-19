@@ -582,14 +582,14 @@
                   {
                       "id":  "C4",
                       "milestone":  "G1",
-                      "state":  "proposed",
-                      "status":  "gated",
+                      "state":  "executing",
+                      "status":  "active",
                       "depends_on":  [
                                          "C2",
                                          "C3A"
                                      ],
                       "gate":  "design",
-                      "next_action":  "Resume addressable-state and history work against the exact promoted C3A causal-world seam; do not import C3B physical or presentation claims.",
+                      "next_action":  "Close the bounded C4 addressable-state/history package against exact C3A evidence: freeze closure obligations, extend exact replay/recovery/migration/corruption/scale/platform evidence, and keep species presentation, C3B physical claims, C5-C7 and runtime out of scope.",
                       "proof":  "The addressable-world binding imports and validates only WorldGenerationInput, CausalWorldPacket v1 and validate_world_packet, preserving nested identity and provenance without a physical or optical dependency.",
                       "sources":  [
                                       "MASTER_CLOSURE_REGISTER.md",
@@ -821,8 +821,8 @@
                   {
                       "id":  "G1-VERTICAL-CLOSEOUT",
                       "milestone":  "G1",
-                      "state":  "executing",
-                      "status":  "active",
+                      "state":  "verified",
+                      "status":  "complete",
                       "depends_on":  [
                                          "C3A",
                                          "C4V",
@@ -833,7 +833,7 @@
                                          "GP4"
                                      ],
                       "gate":  "recorded",
-                      "next_action":  "Retain the recorded bounded receipt as the sole active item until an owner-authorized successor is activated; broad G1-CLOSEOUT and R1 remain gated.",
+                      "next_action":  "Retain the typed bounded receipt as immutable evidence; it grants no broad G1, C4, C3B or runtime authority.",
                       "proof":  "G1_VERTICAL_CLOSEOUT_RECEIPT.json records the exact typed C3A, C4V and GP0-GP4 evidence set plus registered gate run-7e5c44dc8f48424a8cec42da756e3127 with broad_g1=false, runtime_selected=false, runtime_containment_pending=true, evidence_only=true and promotion_authority=false.",
                       "sources":  [
                                       "MIND_WARP_GAMEPLAY_FOUNDATION_RECOVERY_MAP.md",

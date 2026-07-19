@@ -4,7 +4,7 @@
 
 - **Maturity:** prototype_tested
 - **Root:** `crates/hierarchy-history`
-- **Source fingerprint:** `c26897a7376efce98ad5f265ce2faf36b8eca23da793463eaed400bb4c797ee2`
+- **Source fingerprint:** `d381bf41efe1d1692b3e7e1a120f5000cfa73864fe67d2e8b838ab89ce1efc28`
 - **Live project state:** read `context/active/CURRENT_STATE.md`; active status is never duplicated here.
 
 ## Purpose
@@ -16,6 +16,8 @@ Lazy addressable hierarchy descriptors plus baseline-bound append-only world del
 - bounded child windows and residency-neutral descriptors
 - ordered idempotent deltas
 - migration and snapshot verification
+- stable dynamic identity and strict four-state address presence
+- exact dependency availability, semantic prefix recovery and deterministic cost evidence
 
 ## Does not own
 
@@ -46,16 +48,22 @@ Lazy addressable hierarchy descriptors plus baseline-bound append-only world del
 - residency never changes identity
 - snapshots are verified against replay
 - old baselines remain recoverable
+- corrupt tails never advance beyond the last semantically replayable prefix
+- migration chains contain one or two unique contiguous baselines and validate received receipts atomically
 
 ## Verification
 
 - `cargo test -p hierarchy-history`
 - `tools/verify-f5-hierarchy-history-readiness.ps1`
+- `cargo test -p hierarchy-history --test c4_closure`
 
 ## Canonical references
 
 - `contracts/hierarchy-history-contract.md`
 - `docs/canonical-system/HIERARCHY_HISTORY_DESIGN_GATE.md`
+- `docs/canonical-system/G1_C4_CLOSURE_READINESS.md`
+- `docs/canonical-system/G1_C4_CLOSURE_DESIGN.md`
+- `docs/canonical-system/G1_C4_HIERARCHY_HISTORY_LOCAL_RESULT.md`
 
 ## Update rule
 

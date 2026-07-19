@@ -1211,7 +1211,8 @@
             ],
             "references": [
                 "docs/canonical-system/HIERARCHY_HISTORY_DESIGN_GATE.md",
-                "docs/canonical-system/G1_C3_QUALITY_COST_RANGE_CANDIDATE_RESULT.md"
+                "docs/canonical-system/G1_C4_ADDRESSABLE_WORLD_BINDING_RESULT.md",
+                "docs/canonical-system/G1_C4_CLOSURE_READINESS.md"
             ]
         },
         {
@@ -1416,10 +1417,11 @@
         {
             "id": "entity-lifecycle-history-binding",
             "maturity": "proof_component",
-            "purpose": "Prove selected-entity lifecycle deltas replay through hierarchy-history's existing generic delta/replay machinery and recover without continuous ambient simulation.",
+            "purpose": "Bind deterministic ambient age-cohort assignment and prove selected-entity lifecycle deltas replay through hierarchy-history's generic delta/replay machinery without continuous ambient simulation.",
             "owns": [
                 "the lifecycle-event-to-ReferenceOperation key mapping",
-                "the drive/reconstruct integration functions"
+                "the drive/reconstruct integration functions",
+                "strict entity, assignment-contract and age-cohort binding bytes"
             ],
             "non_goals": [
                 "a production save-record schema",
@@ -1434,14 +1436,18 @@
                 "Reload and zero-change events produce no delta",
                 "hostile stored values fail before integer conversion",
                 "hierarchy-history's existing Gap/replay checks are reused unmodified",
-                "storage round-tripped deltas reconstruct exact lifecycle state"
+                "storage round-tripped deltas reconstruct exact lifecycle state",
+                "a persisted ambient cohort binding rejects entity, contract and cohort drift rather than rerolling"
             ],
             "verification": [
                 "cargo test -p entity-lifecycle-history-binding"
             ],
             "references": [
                 "docs/canonical-system/HIERARCHY_HISTORY_DESIGN_GATE.md",
-                "docs/canonical-system/G1_C4_AGE_LIFECYCLE_AND_PROOFRECEIPT_RESULT.md"
+                "docs/canonical-system/G1_C4_AGE_LIFECYCLE_AND_PROOFRECEIPT_RESULT.md",
+                "docs/canonical-system/G1_C4_CLOSURE_READINESS.md",
+                "docs/canonical-system/G1_C4_CLOSURE_DESIGN.md",
+                "docs/canonical-system/G1_C4_HIERARCHY_HISTORY_LOCAL_RESULT.md"
             ]
         },
         {
@@ -1451,7 +1457,9 @@
             "owns": [
                 "bounded child windows and residency-neutral descriptors",
                 "ordered idempotent deltas",
-                "migration and snapshot verification"
+                "migration and snapshot verification",
+                "stable dynamic identity and strict four-state address presence",
+                "exact dependency availability, semantic prefix recovery and deterministic cost evidence"
             ],
             "non_goals": [
                 "derived world physics",
@@ -1466,15 +1474,21 @@
             "invariants": [
                 "residency never changes identity",
                 "snapshots are verified against replay",
-                "old baselines remain recoverable"
+                "old baselines remain recoverable",
+                "corrupt tails never advance beyond the last semantically replayable prefix",
+                "migration chains contain one or two unique contiguous baselines and validate received receipts atomically"
             ],
             "verification": [
                 "cargo test -p hierarchy-history",
-                "tools/verify-f5-hierarchy-history-readiness.ps1"
+                "tools/verify-f5-hierarchy-history-readiness.ps1",
+                "cargo test -p hierarchy-history --test c4_closure"
             ],
             "references": [
                 "contracts/hierarchy-history-contract.md",
-                "docs/canonical-system/HIERARCHY_HISTORY_DESIGN_GATE.md"
+                "docs/canonical-system/HIERARCHY_HISTORY_DESIGN_GATE.md",
+                "docs/canonical-system/G1_C4_CLOSURE_READINESS.md",
+                "docs/canonical-system/G1_C4_CLOSURE_DESIGN.md",
+                "docs/canonical-system/G1_C4_HIERARCHY_HISTORY_LOCAL_RESULT.md"
             ]
         },
         {

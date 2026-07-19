@@ -9,13 +9,94 @@
 //! reducer changes, and no wall clock.
 
 use entity_lifecycle::{
-    LifecycleError, LifecycleEvent, LifecycleMode, LifecycleState, apply as lifecycle_apply,
-    validate_state,
+    AgeCohort, LifecycleError, LifecycleEvent, LifecycleMode, LifecycleState,
+    apply as lifecycle_apply, validate_state,
 };
 use hierarchy_history::{
     BaselineManifest, DeltaEnvelope, DependencyRef, HierarchyHistoryError, HistoryStream,
     ReferenceOperation, ReferenceState, reference_operation_schema,
 };
+use sha2::{Digest, Sha256};
+
+const COHORT_BINDING_DOMAIN: &[u8] = b"mindwarp/entity-lifecycle/ambient-cohort-binding/v1\0";
+const COHORT_BINDING_VERSION: u16 = 1;
+
+#[derive(Clone, Copy, Debug, Eq, PartialEq)]
+pub struct AmbientCohortBindingV1 {
+    entity_logical_id: [u8; 32],
+    assignment_contract_fingerprint: [u8; 32],
+    cohort: AgeCohort,
+}
+
+impl AmbientCohortBindingV1 {
+    pub fn new(
+        entity_logical_id: [u8; 32],
+        assignment_contract_fingerprint: [u8; 32],
+        cohort: AgeCohort,
+    ) -> Result<Self, BindingError> {
+        if entity_logical_id == [0; 32] || assignment_contract_fingerprint == [0; 32] {
+            return Err(BindingError::InvalidCohortBinding);
+        }
+        Ok(Self {
+            entity_logical_id,
+            assignment_contract_fingerprint,
+            cohort,
+        })
+    }
+
+    pub fn encode_canonical(&self) -> Vec<u8> {
+        let mut bytes = Vec::with_capacity(67);
+        bytes.extend_from_slice(&COHORT_BINDING_VERSION.to_be_bytes());
+        bytes.extend_from_slice(&self.entity_logical_id);
+        bytes.extend_from_slice(&self.assignment_contract_fingerprint);
+        bytes.push(self.cohort as u8);
+        bytes
+    }
+
+    pub fn decode_strict(bytes: &[u8]) -> Result<Self, BindingError> {
+        if bytes.len() != 67 || u16::from_be_bytes([bytes[0], bytes[1]]) != COHORT_BINDING_VERSION {
+            return Err(BindingError::InvalidCohortBinding);
+        }
+        let entity_logical_id = bytes[2..34]
+            .try_into()
+            .map_err(|_| BindingError::InvalidCohortBinding)?;
+        let assignment_contract_fingerprint = bytes[34..66]
+            .try_into()
+            .map_err(|_| BindingError::InvalidCohortBinding)?;
+        let cohort = match bytes[66] {
+            0 => AgeCohort::Young,
+            1 => AgeCohort::Juvenile,
+            2 => AgeCohort::Adult,
+            3 => AgeCohort::Elderly,
+            _ => return Err(BindingError::InvalidCohortBinding),
+        };
+        let value = Self::new(entity_logical_id, assignment_contract_fingerprint, cohort)?;
+        if value.encode_canonical() != bytes {
+            return Err(BindingError::InvalidCohortBinding);
+        }
+        Ok(value)
+    }
+
+    pub fn fingerprint(&self) -> [u8; 32] {
+        let mut hasher = Sha256::new();
+        hasher.update(COHORT_BINDING_DOMAIN);
+        hasher.update(self.encode_canonical());
+        hasher.finalize().into()
+    }
+
+    pub fn verify_expected(
+        &self,
+        entity_logical_id: [u8; 32],
+        assignment_contract_fingerprint: [u8; 32],
+        cohort: AgeCohort,
+    ) -> Result<(), BindingError> {
+        let expected = Self::new(entity_logical_id, assignment_contract_fingerprint, cohort)?;
+        if *self != expected {
+            return Err(BindingError::InvalidCohortBinding);
+        }
+        Ok(())
+    }
+}
 
 pub const KEY_MODE: u16 = 1;
 pub const KEY_MATURITY: u16 = 2;
@@ -27,6 +108,7 @@ pub enum BindingError {
     Lifecycle(LifecycleError),
     History(HierarchyHistoryError),
     InvalidStoredState(&'static str),
+    InvalidCohortBinding,
 }
 
 impl From<HierarchyHistoryError> for BindingError {
