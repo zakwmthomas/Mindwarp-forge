@@ -8,7 +8,7 @@
 - Objective: Record the exact capability-free C5 significance and scheduler closure evidence against verified C4 without activating C6 or granting runtime, product or promotion authority.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **recorded-capability-free-c5-closure-holding-cursor / C5 capability-free closure evidence is recorded against exact C4. The retained source, two evidence-only successor transitions, one exact closure-orchestration transition, hosted Linux attestation, read-only ProofReceipt integration, independent reviews and registered run-87b9301f9bb54b2d9b72767643c7ed9b remain cryptographically replayable. This holding state grants no Forge port, promotion, runtime, product-policy, cache or C6 authority.**
+- Risk/research gate: **recorded-capability-free-c5-closure-holding-cursor / C5 capability-free closure evidence is recorded against exact C4. The retained source, two evidence-only successor transitions, one exact closure-orchestration transition, hosted Linux attestation, read-only ProofReceipt integration, independent reviews, pre-transition run-87b9301f9bb54b2d9b72767643c7ed9b and post-transition run-8296afcac8e949cca8b6a3693d1dfc3f remain cryptographically replayable. This holding state grants no Forge port, promotion, runtime, product-policy, cache or C6 authority.**
 - Exact next action: Retain C5 as the sole recorded waiting cursor until a separate owner-authorized C6 readiness transition. Do not port Forge, activate C6 or infer runtime, cache, product-policy or promotion authority.
 
 ## Approved operating policies

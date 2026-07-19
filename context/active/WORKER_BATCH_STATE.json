@@ -23,7 +23,7 @@
                                                      },
                                      "stage_context":  {
                                                            "stage_id":  "c5-registered-closure-recorded",
-                                                           "content_sha256":  "c5019edff5189df2291e33c145b3783577d2dbd97bfbbe763573b59cc19ada2c",
+                                                           "content_sha256":  "77e50a002d991607b6753e74ebe090861d381cef25edf7c10e15dc6aeadbc3b3",
                                                            "review_disposition":  "revised",
                                                            "review_note":  "Reviewed all handoff sections against the active substage."
                                                        },
@@ -35,7 +35,7 @@
                                                              },
                                      "simulation_ladder":  {
                                                                "stage_id":  "c5-registered-closure-recorded",
-                                                               "content_sha256":  "1b213446bcd7758bf1f83c271eeabac18d244618adaa27f9090e61d23f60c80a",
+                                                               "content_sha256":  "5e2527faa8937a295cd953330a721b97bf79afe0e7a7e6d99a9c552492471082",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
@@ -71,7 +71,7 @@
                                                   },
                                      "verification_receipts":  {
                                                                    "stage_id":  "c5-registered-closure-recorded",
-                                                                   "content_sha256":  "0967d47da4e0df59de5028ccf3771eb9b91ac4e776fd62d9567e56ec45a92bcb",
+                                                                   "content_sha256":  "195225e536f66d38abaaae43c1b796d98f6fe0df172b4859478ab65295f3989d",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
@@ -93,7 +93,7 @@
                                     ]
                     },
     "risk_level":  "recorded-capability-free-c5-closure-holding-cursor",
-    "research_gate":  "C5 capability-free closure evidence is recorded against exact C4. The retained source, two evidence-only successor transitions, one exact closure-orchestration transition, hosted Linux attestation, read-only ProofReceipt integration, independent reviews and registered run-87b9301f9bb54b2d9b72767643c7ed9b remain cryptographically replayable. This holding state grants no Forge port, promotion, runtime, product-policy, cache or C6 authority.",
+    "research_gate":  "C5 capability-free closure evidence is recorded against exact C4. The retained source, two evidence-only successor transitions, one exact closure-orchestration transition, hosted Linux attestation, read-only ProofReceipt integration, independent reviews, pre-transition run-87b9301f9bb54b2d9b72767643c7ed9b and post-transition run-8296afcac8e949cca8b6a3693d1dfc3f remain cryptographically replayable. This holding state grants no Forge port, promotion, runtime, product-policy, cache or C6 authority.",
     "authority_lane":  "Owner-authorized recorded C5 significance/scheduler capability-free closure evidence only. Exact dependency C4. C5 remains the sole master-program cursor pending a separate C6 transition. No C3B, C6 activation, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets, promotion authority or Kernel mutation.",
     "context_health":  "C5 is recorded as the capability-free reference proof and remains the sole executing/active master-program waiting cursor. The isolated game-facing proof contract, not Forge, reproduced semantic SHA-256 88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb on hosted Linux. Exact successor classifiers distinguish the independently executed source from later evidence-only and orchestration changes. C6 remains proposed, gated and inactive.",
     "stage_context":  {
@@ -137,7 +137,7 @@
                                                  "Focused desktop tests, the complete 43-test desktop suite, ProofReceipt verification, scheduler readiness verification, module-context verification and independent hostile review pass.",
                                                  "Four registered full-gate diagnostics exposed stale exact successor tuples; permissive wildcard repairs were rejected and reverted after hostile review.",
                                                  "The exact adapters preserve all historical C4 proof blobs and the C5 source snapshot, classify two evidence-only C5 transitions plus one exact closure-orchestration delta, and authenticate the recorded C5 tuple through strict hostile-tested evidence.",
-                                                 "Registered measured full gate run-87b9301f9bb54b2d9b72767643c7ed9b passed in 1106066 ms. C5 capability-free closure is recorded as the sole waiting cursor; C6, Forge port, promotion and runtime authority remain withheld."
+                                                 "Pre-transition registered run-87b9301f9bb54b2d9b72767643c7ed9b passed in 1106066 ms and post-transition registered run-8296afcac8e949cca8b6a3693d1dfc3f passed in 779649 ms. C5 capability-free closure is recorded as the sole waiting cursor; C6, Forge port, promotion and runtime authority remain withheld."
                                              ]
                       },
     "visual_quality_gate":  {
@@ -194,7 +194,7 @@
                                                       },
                                                       {
                                                           "tier":  "bounded_integrated_pc",
-                                                          "result":  "Read-only ProofReceipt integration, exact C4/C5 successor adapters, closure-result hostiles and registered full gate run-87b9301f9bb54b2d9b72767643c7ed9b pass without activating C6.",
+                                                          "result":  "Read-only ProofReceipt integration, exact C4/C5 successor adapters, closure-result hostiles, pre-transition run-87b9301f9bb54b2d9b72767643c7ed9b and post-transition run-8296afcac8e949cca8b6a3693d1dfc3f pass without activating C6.",
                                                           "evidence":  "docs/canonical-system/G1_C5_CLOSURE_RESULT.md"
                                                       }
                                                   ],
@@ -204,7 +204,7 @@
                               "estimated_cost":  "C5 closure replay cost is measured by the registered gate; C6 cost remains unknown until separately authorized.",
                               "regression_guard":  "No C3B, C6-C7, broad G1 closure, runtime controller or executor, cache, storage, filesystem, network, process, Companion, Greenfield, visual asset or Kernel mutation.",
                               "stop_condition":  "Stop before any C6, runtime, cache, product-weight, promotion or Forge-port mutation without a separate exact owner-authorized transition.",
-                              "final_integration_gate":  "Registered measured full gate run-87b9301f9bb54b2d9b72767643c7ed9b passed in 1106066 ms before the recorded transition; a post-transition registered gate is required before final handoff."
+                              "final_integration_gate":  "Post-transition registered measured full gate run-8296afcac8e949cca8b6a3693d1dfc3f passed in 779649 ms against the recorded C5 holding state."
                           },
     "exit_criteria":  [
                           {
@@ -364,6 +364,7 @@
                                   "focused:c5-exact-successor-route-hostiles:passed",
                                   "independent-review:c5-exact-successor-route-adapter:accepted",
                                   "registered-full-gate:run-87b9301f9bb54b2d9b72767643c7ed9b:passed",
+                                  "registered-full-gate:run-8296afcac8e949cca8b6a3693d1dfc3f:passed",
                                   "receipt:G1-C5-CLOSURE:recorded"
                               ],
     "metrics":  {
@@ -373,8 +374,8 @@
                                    },
                     "elapsed_time":  {
                                          "status":  "measured",
-                                         "value":  "1106066 ms",
-                                         "receipt":  "registered-full-gate:run-87b9301f9bb54b2d9b72767643c7ed9b:passed"
+                                         "value":  "779649 ms",
+                                         "receipt":  "registered-full-gate:run-8296afcac8e949cca8b6a3693d1dfc3f:passed"
                                      }
                 },
     "transition":  "C4 verified and recorded -\u003e C5 local hardening accepted -\u003e isolated game-facing portability verified on hosted Linux run 29678602236 -\u003e read-only ProofReceipt integration active -\u003e exact successor classification and registered run-87b9301f9bb54b2d9b72767643c7ed9b retained -\u003e C5 capability-free closure recorded as the sole waiting cursor; Forge port and C6 remain gated"

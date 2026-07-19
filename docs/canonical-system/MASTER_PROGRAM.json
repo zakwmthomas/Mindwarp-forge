@@ -634,7 +634,7 @@
                                      ],
                       "gate":  "recorded",
                       "next_action":  "Retain the verified capability-free C5 reference as the closed waiting cursor until a separately owner-authorized C6 readiness transition; do not infer product policy, cache, runtime or later-system authority.",
-                      "proof":  "Exactly eight packet-derived consumer domains, all 92 frozen hostile IDs, ten deterministic pressure scenarios, portable semantic receipt 88e2be61, GitHub-hosted Linux run 29678602236, read-only ProofReceipt integration, independent reviews and registered full gate run-87b9301f9bb54b2d9b72767643c7ed9b pass. C5 is recorded and closed while remaining the sole executing cursor until a separately authorized successor.",
+                      "proof":  "Exactly eight packet-derived consumer domains, all 92 frozen hostile IDs, ten deterministic pressure scenarios, portable semantic receipt 88e2be61, GitHub-hosted Linux run 29678602236, read-only ProofReceipt integration, independent reviews, pre-transition registered run-87b9301f9bb54b2d9b72767643c7ed9b and post-transition registered run-8296afcac8e949cca8b6a3693d1dfc3f pass. C5 is recorded and closed while remaining the sole executing cursor until a separately authorized successor.",
                       "sources":  [
                                       "MASTER_CLOSURE_REGISTER.md",
                                       "SIGNIFICANCE_SCHEDULER_DESIGN_GATE.md",

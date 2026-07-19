@@ -14,6 +14,7 @@ SEMANTIC = "88e2be61586e728613fe2c7bf5b947074459fc5f63d6e5f13d4f4648e64624eb"
 REQUEST = "28b24d548656874a3c4f6f6bba1a40a0a716ac0603e9e38c40318c7d932bc58f"
 RESULT = "4dd77d3b16927644af2c9bb1b74f76e1dd7cc279a09a8297d10738a0efce1bf4"
 RUN = "run-87b9301f9bb54b2d9b72767643c7ed9b"
+POST_RUN = "run-8296afcac8e949cca8b6a3693d1dfc3f"
 
 def obj(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
     out: dict[str, Any] = {}
@@ -49,7 +50,7 @@ def verify(root: Path) -> None:
     for key, wanted in expected.items():
         if type(checkpoint.get(key)) is not str or checkpoint[key] != wanted: raise ValueError(f"checkpoint {key} drifted")
     receipts = strings(checkpoint.get("verification_receipts"), "checkpoint receipts")
-    for receipt in ("receipt:G1-C5-CLOSURE:recorded", f"registered-full-gate:{RUN}:passed", "independent-review:c5-portability-receipt:accepted", "independent-review:c5-proofreceipt-integration:accepted"):
+    for receipt in ("receipt:G1-C5-CLOSURE:recorded", f"registered-full-gate:{RUN}:passed", f"registered-full-gate:{POST_RUN}:passed", "independent-review:c5-portability-receipt:accepted", "independent-review:c5-proofreceipt-integration:accepted"):
         if receipt not in receipts: raise ValueError(f"missing closure receipt: {receipt}")
     criteria = checkpoint.get("exit_criteria")
     if type(criteria) is not list or any(type(x) is not dict or x.get("status") != "verified" for x in criteria): raise ValueError("C5 exit criteria are not all verified")
@@ -82,7 +83,7 @@ def verify(root: Path) -> None:
     for token in ("Status: **verified, complete and recorded.**","Android ARM64 is honestly classified compile-only","not Forge","C6 remains proposed, gated and inactive",SUCCESSOR):
         if token not in result_text: raise ValueError(f"closure result is missing exact boundary: {token}")
     text = "\n".join(p.read_text(encoding="utf-8-sig") for p in docs)
-    for token in (SOURCE,TREE,BOUNDED,SUCCESSOR,SEMANTIC,REQUEST,RESULT,RUN,"not Forge","C6 remains proposed, gated and inactive"):
+    for token in (SOURCE,TREE,BOUNDED,SUCCESSOR,SEMANTIC,REQUEST,RESULT,RUN,POST_RUN,"not Forge","C6 remains proposed, gated and inactive"):
         if token not in text: raise ValueError(f"closure records are missing exact token: {token}")
 
 def main() -> None:
