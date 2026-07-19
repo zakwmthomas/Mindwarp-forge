@@ -26,6 +26,10 @@ The semantic receipt SHA-256 is
 `263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996`.
 The bounded nine-file implementation source manifest SHA-256 is
 `b407b6e82c248cded8c65838d4cef961c21d51d05b1a00ea75d2318756ebb1bf`.
+The retained platform observations bind clean source commit
+`99b19e8ea06a35813689b723c6c630973b4853c1` and complete tracked-tree
+manifest SHA-256
+`596c5e6bf2458ca85d495dbdc703a666330a428b7d74916f51d00f63a4994c3b`.
 Two separately launched native Windows x64 processes emitted identical bytes.
 The same bytes also executed on Windows i686 and are classified only as
 `same_host_second_architecture`. The receipt and dependencies compiled for
@@ -37,6 +41,9 @@ The same bytes also executed on Windows i686 and are classified only as
 focused warning-free clippy for both changed crates, 43 focused component and
 C4 hostile tests, seven retained C4V tests, exact C2/C3A semantic replay, two
 fresh native processes, same-host i686 execution and Android compilation.
+Exact commands, process IDs, separate stdout/stderr hashes, executable hashes,
+toolchains, target metadata and typed absence are retained in
+`G1_C4_LOCAL_PLATFORM_OBSERVATIONS.json`.
 
 The verifier is registered in the full Forge gate. A registered full-gate run
 has not been recorded for this candidate because the required independent
@@ -52,5 +59,6 @@ architecture, compile-only target or same-platform remote Windows x64 runner
 may be substituted for that evidence.
 
 Deletion of the new additive APIs, tests, receipt fixture, verifier and this
-result record is the rollback boundary. Existing descriptor, delta, snapshot
-content IDs and C3A/C4V evidence remain unchanged.
+result record is the rollback boundary. The legacy one-hop migration content
+ID is pinned as `ea19d3e5369ec0e1afbbcd1717e2dcf45393e0113276b541628846959c65676e`;
+existing C3A/C4V evidence remains unchanged.

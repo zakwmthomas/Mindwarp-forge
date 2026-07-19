@@ -27,6 +27,8 @@ Gameplay recovery and development proposal:
   deterministic semantic/platform receipt design.
 - `G1_C4_HIERARCHY_HISTORY_LOCAL_RESULT.md` - locally verified implementation,
   exact semantic hash and honest independent-platform blocker.
+- `G1_C4_LOCAL_PLATFORM_OBSERVATIONS.json` - clean-commit-bound native x64,
+  same-host i686 and Android compile-only observation metadata.
 
 6. `MACRO_GAP_CLOSURE_AUDIT.md` - per-system contracts, risks,
    observability requirements, smallest proofs, and F5 package ordering.

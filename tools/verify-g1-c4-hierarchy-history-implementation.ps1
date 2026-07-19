@@ -42,10 +42,10 @@ sha2="0.10"
   $sha=[Security.Cryptography.SHA256]::Create();try{$semanticSha=([BitConverter]::ToString($sha.ComputeHash($raw)).Replace('-','').ToLowerInvariant());$stdoutHashes=@($first.stdout,$second.stdout)|ForEach-Object{([BitConverter]::ToString($sha.ComputeHash([Text.Encoding]::UTF8.GetBytes($_))).Replace('-','').ToLowerInvariant())};$stderrHashes=@($first.stderr,$second.stderr)|ForEach-Object{([BitConverter]::ToString($sha.ComputeHash([Text.Encoding]::UTF8.GetBytes($_))).Replace('-','').ToLowerInvariant())}}finally{$sha.Dispose()}
   if($ReceiptOnly){Write-Output "C4 semantic receipt verified across two fresh native processes: $semanticSha";return}
 
-  $i686Result=Invoke-C4Process "run --quiet --offline --target i686-pc-windows-msvc --manifest-path `"$(Join-Path $temp 'Cargo.toml')`""
+  $i686Args="run --quiet --offline --target i686-pc-windows-msvc --manifest-path `"$(Join-Path $temp 'Cargo.toml')`"";$i686Result=Invoke-C4Process $i686Args
   if($i686Result.exit_code-ne0-or$i686Result.stdout.Trim()-ne$one){throw 'Same-host i686 semantic execution drifted.'}
-  cargo check --quiet --offline --target aarch64-linux-android --manifest-path (Join-Path $temp 'Cargo.toml')
-  if($LASTEXITCODE-ne0){throw 'Android compile-only evidence failed.'}
+  $androidArgs="check --quiet --offline --target aarch64-linux-android --manifest-path `"$(Join-Path $temp 'Cargo.toml')`"";$androidResult=Invoke-C4Process $androidArgs
+  if($androidResult.exit_code-ne0){throw 'Android compile-only evidence failed.'}
   if((Get-C4SourceManifestSha)-ne$sourceManifestSha){throw 'portability.source-mismatch'}
 
   & (Join-Path $root 'tools\verify-g1-c4-closure-readiness.ps1')
@@ -71,15 +71,18 @@ sha2="0.10"
 
   & (Join-Path $root 'tools\test-g1-c4-portability-classifier.ps1');if(!$?){throw 'C4 portability classifier failed.'}
   if($ObservationReceiptPath){
-    $hash=[Security.Cryptography.SHA256]::Create();try{$i686Stdout=([BitConverter]::ToString($hash.ComputeHash([Text.Encoding]::UTF8.GetBytes($i686Result.stdout))).Replace('-','').ToLowerInvariant());$i686Stderr=([BitConverter]::ToString($hash.ComputeHash([Text.Encoding]::UTF8.GetBytes($i686Result.stderr))).Replace('-','').ToLowerInvariant())}finally{$hash.Dispose()}
+    $hash=[Security.Cryptography.SHA256]::Create();try{$i686Stdout=([BitConverter]::ToString($hash.ComputeHash([Text.Encoding]::UTF8.GetBytes($i686Result.stdout))).Replace('-','').ToLowerInvariant());$i686Stderr=([BitConverter]::ToString($hash.ComputeHash([Text.Encoding]::UTF8.GetBytes($i686Result.stderr))).Replace('-','').ToLowerInvariant());$androidStdout=([BitConverter]::ToString($hash.ComputeHash([Text.Encoding]::UTF8.GetBytes($androidResult.stdout))).Replace('-','').ToLowerInvariant());$androidStderr=([BitConverter]::ToString($hash.ComputeHash([Text.Encoding]::UTF8.GetBytes($androidResult.stderr))).Replace('-','').ToLowerInvariant())}finally{$hash.Dispose()}
     $nativeExe=Join-Path $temp 'target\debug\c4-hierarchy-history-receipt.exe';$i686Exe=Join-Path $temp 'target\i686-pc-windows-msvc\debug\c4-hierarchy-history-receipt.exe'
     $receipt=[ordered]@{schema_version=1;receipt_id='G1-C4-LOCAL-PLATFORM-OBSERVATIONS';semantic_receipt_sha256=$semanticSha;source_commit=$sourceCommit;tracked_tree_manifest_sha256=$treeManifestSha;bounded_source_manifest_sha256=$sourceManifestSha;rustc=((rustc -vV)-join "`n");cargo=(cargo -V);observations=@(
       [ordered]@{classification='native_same_host_execution';target='x86_64-pc-windows-msvc';os='windows';architecture='x86_64';pointer_width=64;endian='little';runner='cargo-native';command=$args;exit_code=$first.exit_code;process_ids=@($first.pid,$second.pid);stdout_sha256=$stdoutHashes;stderr_sha256=$stderrHashes;executable=[ordered]@{present=$true;sha256=(Get-FileHash $nativeExe -Algorithm SHA256).Hash.ToLowerInvariant()}},
-      [ordered]@{classification='same_host_second_architecture';target='i686-pc-windows-msvc';os='windows';architecture='i686';pointer_width=32;endian='little';runner='cargo-i686';command="run --quiet --offline --target i686-pc-windows-msvc --manifest-path <temp>/Cargo.toml";exit_code=$i686Result.exit_code;process_ids=@($i686Result.pid);stdout_sha256=@($i686Stdout);stderr_sha256=@($i686Stderr);executable=[ordered]@{present=$true;sha256=(Get-FileHash $i686Exe -Algorithm SHA256).Hash.ToLowerInvariant()}},
-      [ordered]@{classification='compile_only';target='aarch64-linux-android';os='android';architecture='aarch64';pointer_width=64;endian='little';runner='cargo-check';command='check --quiet --offline --target aarch64-linux-android --manifest-path <temp>/Cargo.toml';exit_code=0;process_ids=@();stdout_sha256=@();stderr_sha256=@();executable=[ordered]@{present=$false;reason='cargo check produces metadata only; no execution occurred'}}
+      [ordered]@{classification='same_host_second_architecture';target='i686-pc-windows-msvc';os='windows';architecture='i686';pointer_width=32;endian='little';runner='cargo-i686';command=$i686Args;exit_code=$i686Result.exit_code;process_ids=@($i686Result.pid);stdout_sha256=@($i686Stdout);stderr_sha256=@($i686Stderr);executable=[ordered]@{present=$true;sha256=(Get-FileHash $i686Exe -Algorithm SHA256).Hash.ToLowerInvariant()}},
+      [ordered]@{classification='compile_only';target='aarch64-linux-android';os='android';architecture='aarch64';pointer_width=64;endian='little';runner='cargo-check';command=$androidArgs;exit_code=$androidResult.exit_code;process_ids=@($androidResult.pid);stdout_sha256=@($androidStdout);stderr_sha256=@($androidStderr);executable=[ordered]@{present=$false;reason='cargo check produces metadata only; no execution occurred'}}
     );independent_second_platform_execution=$false;promotion_authority=$false}
     $receipt|ConvertTo-Json -Depth 12|Set-Content -LiteralPath $ObservationReceiptPath -Encoding utf8
   }
+  $retainedPath=if($ObservationReceiptPath){$ObservationReceiptPath}else{Join-Path $root 'docs\canonical-system\G1_C4_LOCAL_PLATFORM_OBSERVATIONS.json'}
+  & (Join-Path $root 'tools\verify-g1-c4-platform-observation-receipt.ps1') -ReceiptPath $retainedPath -SemanticSha256 $semanticSha -BoundedSourceManifestSha256 $sourceManifestSha
+  if(!$?){throw 'C4 retained platform observation verification failed.'}
   Write-Output "G1 C4 local implementation verified: 58 core, 8 receipt and 8 portability hostile owners; semantic $semanticSha; source manifest $sourceManifestSha. Independent second-platform execution remains unavailable."
 }
 finally {
