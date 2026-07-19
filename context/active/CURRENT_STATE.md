@@ -29,7 +29,7 @@ Owner-authorized broad C4 hierarchy/history reconciliation and capability-free c
 
 ## Exact next action
 
-Commit the bounded local-observation verifier repair, regenerate a clean source-bound local observation, obtain and strictly import a fresh hosted Linux attestation for that exact source, then rerun only the registered full gate; retain candidate_verified_local and keep C5 inactive until the complete gate passes.
+Publish exact clean source f505c82, generate a fresh challenge for the hosted Ubuntu workflow, strictly import its attestation, then rerun only the registered full gate; retain candidate_verified_local and keep C5 inactive until the complete gate passes.
 
 ## Unresolved risks
 

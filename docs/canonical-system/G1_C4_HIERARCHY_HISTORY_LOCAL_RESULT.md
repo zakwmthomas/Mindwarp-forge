@@ -25,19 +25,25 @@ network, multiplayer, Companion, Greenfield or Kernel authority.
 The semantic receipt SHA-256 is
 `263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996`.
 The bounded 27-path implementation, fixture and verification source manifest SHA-256 is
-`3d0a24192fead0a12d78ad7fa440b1c3485a61609bed674225f06a4c666a7e91`.
+`022e29d8cbc31459656ac36aabcefe656632005f6df47057b97185b57bad5557`.
 The retained platform observations bind clean source commit
-`8651038d63d7e041573667878001059d7a3b3405` and complete tracked-tree
+`f505c82bc9303b3426a4530d0a8deec6eede400a` and complete tracked-tree
 manifest SHA-256
-`4741c4bc73eedfecf733a3e3e995f52c428e35468502308944ebdf961333dcc3`.
+`f9089b4d62bd789c514c152e600607fcdeb0b762c0888b19115feb193b7f0e8b`.
 The first hosted attempt exposed an earlier Windows `Out-String` CRLF
 serialization
 `3b36a8f4950083ccf6fc7b507ccd893d961714e2fc4b4edb7d058315ec1f9740` to the
 historical `f0c3c4f` tree. Its corrected LF/no-terminal-newline value is
 `9a8e556c98606d931e8a21002d2d95003436788ed57fda6e2b47ab6ca2e68a3f`.
 Because the canonicalization repair changed the bounded verification surface,
-the observations were regenerated at `8651038`; the semantic evidence and
-authority boundary remain unchanged.
+the observations were regenerated at `8651038`. A later registered gate proved
+that clean MSVC debug PE builds are not byte-identical across target directories;
+the verifier now retains historical and current executable hashes as typed
+per-execution identities while continuing to require exact semantic output,
+source, toolchain, command and platform evidence. That bounded repair required
+another clean observation at `f505c82`; the semantic evidence and authority
+boundary remain unchanged. Hosted same-run before/after artifact equality is
+not weakened.
 Two separately launched native Windows x64 processes emitted identical bytes.
 The same bytes also executed on Windows i686 and are classified only as
 `same_host_second_architecture`. The receipt and dependencies compiled for
@@ -53,9 +59,8 @@ Exact commands, process IDs, separate stdout/stderr hashes, executable hashes,
 toolchains, target metadata and typed absence are retained in
 `G1_C4_LOCAL_PLATFORM_OBSERVATIONS.json`.
 
-The verifier is registered in the full Forge gate. A registered full-gate run
-has not been recorded for this candidate because the required independent
-second-platform execution receipt is still absent.
+The verifier is registered in the full Forge gate. Earlier registered attempts
+are retained as diagnostic failures; none promotes this revised source.
 
 ## Remaining gate
 
@@ -69,14 +74,18 @@ may be substituted for that evidence.
 GitHub Actions run `29671494578` executed and attested the historical `f0c3c4f`
 fixture, but strict local import rejected its Windows-CRLF/LF tracked-tree
 binding mismatch before writing a receipt. It is diagnostic evidence only and
-cannot satisfy this gate. A fresh challenge and hosted run at `8651038` are
-required.
+cannot satisfy this gate. Run `29671881585` then executed and attested corrected
+source `8651038`, and its retained receipt remains cryptographically replayable.
+The later local-observation verifier repair changed the attested 27-path source
+surface, so that receipt cannot promote source `f505c82`; a fresh challenge,
+hosted execution and strict import for the exact new source are required.
 
-The external gate now has a retained locked fixture, fresh challenge generator,
+The external gate has a retained locked fixture, fresh challenge generator,
 credential-separated hosted workflow, offline attestation bundle, strict local
 importer, replayable exact-byte retained package, 36 importer hostiles and 15
-retained-replay hostiles. These are readiness evidence only: no Git remote or
-GitHub CLI is connected and no independent result has been imported.
+retained-replay hostiles. The public remote and GitHub CLI are connected; each
+source revision still requires its own fresh request, hosted run and strict
+import before a registered closure gate can authorize promotion.
 
 Deletion of the new additive APIs, tests, receipt fixture, verifier and this
 result record is the rollback boundary. The legacy one-hop migration content

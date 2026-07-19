@@ -6,7 +6,7 @@
     "state":  "executing",
     "previous_state":  "ready",
     "objective":  "Close broad C4 as a capability-free addressable hierarchy and history proof against exact C2 and promoted C3A evidence, without importing C3B, later systems, storage or runtime authority.",
-    "next_action":  "Commit the bounded local-observation verifier repair, regenerate a clean source-bound local observation, obtain and strictly import a fresh hosted Linux attestation for that exact source, then rerun only the registered full gate; retain candidate_verified_local and keep C5 inactive until the complete gate passes.",
+    "next_action":  "Publish exact clean source f505c82, generate a fresh challenge for the hosted Ubuntu workflow, strictly import its attestation, then rerun only the registered full gate; retain candidate_verified_local and keep C5 inactive until the complete gate passes.",
     "substage_id":  "c4-independent-platform-gate",
     "handoff_section_receipts":  {
                                      "objective":  {
@@ -93,7 +93,7 @@
                                     ]
                     },
     "risk_level":  "bounded-broad-c4-capability-free-closure",
-    "research_gate":  "C4 local proof passes and GitHub-hosted run 29671881585 at source 8651038 is strictly imported with replayable attestation digest 75d27618. The first registered gate exposed and closed C3 register retention drift; the second passed that repair and exposed three predecessor verifiers that omitted only the new exact c4-independent-platform-gate substage. Their existing batch, item, authority, dependency, state and receipt checks remain unchanged, focused successor hostiles pass, and one complete registered rerun remains required.",
+    "research_gate":  "C4 local proof passes at repaired clean source f505c82 with exact bounded source manifest 022e29d8 and tracked-tree manifest f9089b4d. Earlier hosted receipt 75d27618 at source 8651038 remains replayable historical evidence but cannot promote the changed attested source. A fresh exact-source hosted execution and strict import are required before another registered full-gate attempt.",
     "authority_lane":  "Owner-authorized broad C4 hierarchy/history reconciliation and capability-free closure proof only. Exact dependencies C2 and C3A. No C3B, C5, C6, C7, broad G1 closure, runtime, storage engine, filesystem, network, multiplayer, cross-target transactions, Companion, Greenfield, visual assets or Kernel mutation.",
     "context_health":  "C4 remains candidate_verified_local. GitHub-hosted run 29671881585 independently executed and attested clean source 8651038; strict import and retained cryptographic replay verify canonical receipt digest 75d27618497c5432c10f86fd2dd25759185238cd3bbf264a583b3743b228542b. Three registered attempts replayed C4 successfully and exposed independent integration drift: compressed C3 closure anchors, omitted independent-platform successor routing, then an invalid cross-build MSVC executable-byte equality claim in the retained local-observation verifier. Two clean target-directory builds proved the Windows debug PE bytes differ while canonical semantic output remains exact. The bounded repair preserves retained and current executable hashes as typed observation identities, retains exact source/toolchain/command/output checks, and leaves hosted same-run artifact equality unchanged; because that verifier is attested source, a fresh clean observation and hosted proof are required. C5 stays inactive.",
     "stage_context":  {
@@ -131,7 +131,7 @@
                                                  "Android aarch64 compilation is compile-only; independent platform-diverse execution remains a separate receipt.",
                                                  "The retained fixture lock and 27-path blob manifest bind the portable proof surface; 36 external hostiles and 15 retained-replay hostiles reject forged policy, source, runner, artifact, output, attestation, retention and authority evidence.",
                                                  "The public GitHub repository is connected. Hosted run 29671494578 separated read-only execution from attestation authority and was rejected locally before import when it exposed CRLF/LF tree serialization drift.",
-                                                 "Canonical LF tree binding is regenerated at clean source 8651038d63d7e041573667878001059d7a3b3405 with tracked-tree SHA-256 4741c4bc73eedfecf733a3e3e995f52c428e35468502308944ebdf961333dcc3 and bounded-source SHA-256 3d0a24192fead0a12d78ad7fa440b1c3485a61609bed674225f06a4c666a7e91."
+                                                 "Canonical LF tree binding is regenerated at clean source f505c82bc9303b3426a4530d0a8deec6eede400a with tracked-tree SHA-256 f9089b4d62bd789c514c152e600607fcdeb0b762c0888b19115feb193b7f0e8b and bounded-source SHA-256 022e29d8cbc31459656ac36aabcefe656632005f6df47057b97185b57bad5557."
                                              ]
                       },
     "visual_quality_gate":  {
@@ -250,8 +250,8 @@
                      "Three independent read-only audits identified the minimal C4 closure route and exact stale canonical claims before source.",
                      "C4 local implementation verifier passed 58 core, 8 receipt and 8 portability hostile owners with semantic SHA-256 263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996.",
                      "Two fresh native processes and same-host Windows i686 execution emitted identical semantic bytes; aarch64-linux-android compiled only. None is independent second-platform execution.",
-                     "The bounded 27-path C4 implementation, fixture and verification source manifest SHA-256 is 3d0a24192fead0a12d78ad7fa440b1c3485a61609bed674225f06a4c666a7e91.",
-                     "Local platform observations bind clean source commit 8651038d63d7e041573667878001059d7a3b3405 and canonical LF-normalized tracked-tree manifest SHA-256 4741c4bc73eedfecf733a3e3e995f52c428e35468502308944ebdf961333dcc3.",
+                     "The bounded 27-path C4 implementation, fixture and verification source manifest SHA-256 is 022e29d8cbc31459656ac36aabcefe656632005f6df47057b97185b57bad5557.",
+                     "Local platform observations bind clean source commit f505c82bc9303b3426a4530d0a8deec6eede400a and canonical LF-normalized tracked-tree manifest SHA-256 f9089b4d62bd789c514c152e600607fcdeb0b762c0888b19115feb193b7f0e8b.",
                      "Hosted run 29671494578 executed and attested historical source f0c3c4f but strict import rejected its CRLF/LF tracked-tree mismatch before writing canonical evidence; it is diagnostic-only.",
                      "GitHub-hosted run 29671881585 independently executed and attested clean source 8651038; strict import created G1_C4_INDEPENDENT_PLATFORM_EXECUTION.json with receipt SHA-256 75d27618497c5432c10f86fd2dd25759185238cd3bbf264a583b3743b228542b.",
                      "The first registered post-import gate replayed the C4 attestation, then failed on C3 closure-register retention drift; the register now preserves current superseded-C3/promoted-C3A/blocked-C3B truth plus residual/ecotone anchors, and all five affected focused shields pass.",
@@ -276,9 +276,9 @@
                                   "audit:c4-canonical-code-route:three-lanes:complete",
                                   "gate:c4-local-implementation:pass:43-focused-plus-7-c4v",
                                   "receipt:c4-semantic-sha256:263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996",
-                                  "receipt:c4-bounded-source-manifest-sha256:3d0a24192fead0a12d78ad7fa440b1c3485a61609bed674225f06a4c666a7e91",
-                                  "receipt:c4-clean-source-commit:8651038d63d7e041573667878001059d7a3b3405",
-                                  "receipt:c4-tracked-tree-manifest-sha256:4741c4bc73eedfecf733a3e3e995f52c428e35468502308944ebdf961333dcc3",
+                                   "receipt:c4-bounded-source-manifest-sha256:022e29d8cbc31459656ac36aabcefe656632005f6df47057b97185b57bad5557",
+                                   "receipt:c4-clean-source-commit:f505c82bc9303b3426a4530d0a8deec6eede400a",
+                                   "receipt:c4-tracked-tree-manifest-sha256:f9089b4d62bd789c514c152e600607fcdeb0b762c0888b19115feb193b7f0e8b",
                                   "platform:c4-i686:same-host-second-architecture:passed",
                                   "platform:c4-android-aarch64:compile-only:passed",
                                   "gate:c4-external-importer-hostiles:pass:36-plus-workflow-controls",
