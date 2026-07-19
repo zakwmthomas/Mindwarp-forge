@@ -24,7 +24,7 @@ network, multiplayer, Companion, Greenfield or Kernel authority.
 
 The semantic receipt SHA-256 is
 `263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996`.
-The bounded nine-file implementation source manifest SHA-256 is
+The bounded fourteen-file implementation and verification source manifest SHA-256 is
 `b407b6e82c248cded8c65838d4cef961c21d51d05b1a00ea75d2318756ebb1bf`.
 The retained platform observations bind clean source commit
 `3aa3f5b07ccce0e80d8c1461244e671907c450cb` and complete tracked-tree

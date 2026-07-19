@@ -65,7 +65,7 @@
                                                       },
                                      "evidence":  {
                                                       "stage_id":  "c4-verification",
-                                                      "content_sha256":  "6b903469d4d385777c19bf042b4e9edbc3815b00d5db902981f26c761c706707",
+                                                      "content_sha256":  "5c2b79daf0d42220b3ecb0eaa159a4bff272e40f824647aceb4f7f7448782052",
                                                       "review_disposition":  "revised",
                                                       "review_note":  "Reviewed all handoff sections against the active substage."
                                                   },
@@ -77,7 +77,7 @@
                                                                },
                                      "transition":  {
                                                         "stage_id":  "c4-verification",
-                                                        "content_sha256":  "f565fb0f5ce265dd456013e09255e184073ed047c1690bd001fe42f1e1d0e204",
+                                                        "content_sha256":  "0ab96ffbfaa431a0e9aa4d20a2da0d294d1e87d3b4bd8a4504bb5ba27f213d9e",
                                                         "review_disposition":  "revised",
                                                         "review_note":  "Reviewed all handoff sections against the active substage."
                                                     }
@@ -231,7 +231,7 @@
                      "Three independent read-only audits identified the minimal C4 closure route and exact stale canonical claims before source.",
                      "C4 local implementation verifier passed 58 core, 8 receipt and 8 portability hostile owners with semantic SHA-256 263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996.",
                      "Two fresh native processes and same-host Windows i686 execution emitted identical semantic bytes; aarch64-linux-android compiled only. None is independent second-platform execution.",
-                     "The bounded nine-file C4 implementation source manifest SHA-256 is b407b6e82c248cded8c65838d4cef961c21d51d05b1a00ea75d2318756ebb1bf.",
+                     "The bounded fourteen-file C4 implementation and verification source manifest SHA-256 is b407b6e82c248cded8c65838d4cef961c21d51d05b1a00ea75d2318756ebb1bf.",
                      "Local platform observations bind clean source commit 3aa3f5b07ccce0e80d8c1461244e671907c450cb and complete tracked-tree manifest SHA-256 70b5f171daf4b35359306df6b959d0f422d6756a3f430896b66f00bd9c1d08b9."
                  ],
     "verification_receipts":  [
@@ -269,5 +269,5 @@
                                          "receipt":  "focused:c4-existing-components:33-of-33:passed"
                                      }
                 },
-    "transition":  "Bounded GP4 vertical retained -\u003e canonical broad route retained -\u003e C4 readiness independently accepted -\u003e test-first hierarchy/history hardening activated"
+    "transition":  "Bounded GP4 vertical retained -\u003e canonical broad route retained -\u003e C4 readiness independently accepted -\u003e C4 candidate_verified_local retained pending independent platform-diverse execution"
 }

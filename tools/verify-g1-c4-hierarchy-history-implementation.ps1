@@ -2,12 +2,11 @@ param([switch]$ReceiptOnly,[string]$ObservationReceiptPath)
 $ErrorActionPreference='Stop'
 $root=Split-Path -Parent $PSScriptRoot
 $temp=Join-Path ([IO.Path]::GetTempPath()) 'forge-c4-receipt-v1'
-if(Test-Path -LiteralPath $temp){Remove-Item -LiteralPath $temp -Recurse -Force}
 New-Item -ItemType Directory -Path (Join-Path $temp 'src') -Force|Out-Null
 $priorRoot=$env:FORGE_ROOT
-function Get-C4SourceManifestSha {
-  $paths=@('Cargo.lock','crates/hierarchy-history/Cargo.toml','crates/hierarchy-history/src/hierarchy.rs','crates/hierarchy-history/src/history.rs','crates/hierarchy-history/src/lib.rs','crates/hierarchy-history/src/proof.rs','crates/entity-lifecycle-history-binding/Cargo.toml','crates/entity-lifecycle-history-binding/src/lib.rs','tools/fixtures/c4-hierarchy-history-receipt/main.rs')
-  $rows=foreach($relative in $paths){$full=Join-Path $root $relative;if(!(Test-Path -LiteralPath $full -PathType Leaf)){throw "C4 source manifest file missing: $relative"};$hash=(Get-FileHash -LiteralPath $full -Algorithm SHA256).Hash.ToLowerInvariant();"$relative`:$hash"}
+function Get-C4SourceManifestSha([string]$Commit) {
+  $paths=@('Cargo.lock','crates/hierarchy-history/Cargo.toml','crates/hierarchy-history/src/hierarchy.rs','crates/hierarchy-history/src/history.rs','crates/hierarchy-history/src/lib.rs','crates/hierarchy-history/src/proof.rs','crates/entity-lifecycle-history-binding/Cargo.toml','crates/entity-lifecycle-history-binding/src/lib.rs','tools/fixtures/c4-hierarchy-history-receipt/main.rs','tools/verify-g1-c4-closure-readiness.ps1','tools/verify-g1-c4-hierarchy-history-implementation.ps1','tools/verify-g1-c4-platform-observation-receipt.ps1','tools/test-g1-c4-portability-classifier.ps1','tools/verify-g1-c4-record-consistency.ps1')
+  $rows=foreach($relative in $paths){$full=Join-Path $root $relative;if(!(Test-Path -LiteralPath $full -PathType Leaf)){throw "C4 source manifest file missing: $relative"};$blob=if([string]::IsNullOrWhiteSpace($Commit)){(git hash-object -- $full).Trim()}else{(git rev-parse "$Commit`:$relative").Trim()};if($LASTEXITCODE-ne0-or$blob-notmatch'^[0-9a-f]{40,64}$'){throw "C4 source manifest blob unavailable: $relative"};"$relative`:$blob"}
   $digest=[Security.Cryptography.SHA256]::Create();try{([BitConverter]::ToString($digest.ComputeHash([Text.Encoding]::UTF8.GetBytes(($rows-join "`n")))).Replace('-','').ToLowerInvariant())}finally{$digest.Dispose()}
 }
 function Get-C4TreeManifestSha([string]$Commit){$treeText=((git ls-tree -r --full-tree $Commit|Out-String).TrimEnd());$treeHasher=[Security.Cryptography.SHA256]::Create();try{([BitConverter]::ToString($treeHasher.ComputeHash([Text.Encoding]::UTF8.GetBytes($treeText))).Replace('-','').ToLowerInvariant())}finally{$treeHasher.Dispose()}}
@@ -87,11 +86,13 @@ sha2="0.10"
     $receipt|ConvertTo-Json -Depth 12|Set-Content -LiteralPath $ObservationReceiptPath -Encoding utf8
   }
   $retainedPath=if($ObservationReceiptPath){$ObservationReceiptPath}else{Join-Path $root 'docs\canonical-system\G1_C4_LOCAL_PLATFORM_OBSERVATIONS.json'}
-  & (Join-Path $root 'tools\verify-g1-c4-platform-observation-receipt.ps1') -ReceiptPath $retainedPath -SemanticSha256 $semanticSha -BoundedSourceManifestSha256 $sourceManifestSha -SourceCommit $sourceCommit -TrackedTreeManifestSha256 $treeManifestSha -Rustc $rustcText -Cargo $cargoText -NativeCommand $args -I686Command $i686Args -AndroidCommand $androidArgs -NativeStdout $stdoutHashes[0] -NativeStderr $stderrHashes[0] -I686Stdout $i686Stdout -I686Stderr $i686Stderr -AndroidStdout $androidStdout -AndroidStderr $androidStderr -NativeExecutable $nativeExeHash -I686Executable $i686ExeHash
+  $retainedReceipt=Get-Content -Raw $retainedPath|ConvertFrom-Json
+  if((Get-C4SourceManifestSha $retainedReceipt.source_commit)-ne$sourceManifestSha){throw 'C4 receipt source commit does not contain the verified bounded source manifest.'}
+  & (Join-Path $root 'tools\verify-g1-c4-platform-observation-receipt.ps1') -ReceiptPath $retainedPath -SemanticSha256 $semanticSha -BoundedSourceManifestSha256 $sourceManifestSha -Rustc $rustcText -Cargo $cargoText -NativeCommand $args -I686Command $i686Args -AndroidCommand $androidArgs -NativeStdout $stdoutHashes[0] -NativeStderr $stderrHashes[0] -I686Stdout $i686Stdout -I686Stderr $i686Stderr -AndroidStdout $androidStdout -AndroidStderr $androidStderr -NativeExecutable $nativeExeHash -I686Executable $i686ExeHash
   if(!$?){throw 'C4 retained platform observation verification failed.'}
+  if(!$ObservationReceiptPath){& (Join-Path $root 'tools\verify-g1-c4-record-consistency.ps1');if(!$?){throw 'C4 retained record consistency failed.'}}
   Write-Output "G1 C4 local implementation verified: 58 core, 8 receipt and 8 portability hostile owners; semantic $semanticSha; source manifest $sourceManifestSha. Independent second-platform execution remains unavailable."
 }
 finally {
   $env:FORGE_ROOT=$priorRoot
-  if(Test-Path -LiteralPath $temp){Remove-Item -LiteralPath $temp -Recurse -Force}
 }
