@@ -11,7 +11,7 @@ $active = @($program.items | Where-Object { $_.state -eq 'executing' -and $_.sta
 $authority = [string]$checkpoint.authority_lane
 $requiredAuthority = @('Owner-authorized broad C4 hierarchy/history reconciliation and capability-free closure proof only','Exact dependencies C2 and C3A','No C3B','C5','C6','C7','broad G1 closure','runtime','storage engine','filesystem','network','multiplayer','cross-target transactions','Companion','Greenfield','visual assets','Kernel mutation')
 $c4Live = $checkpoint.batch_id -eq 'G1-C4-HIERARCHY-HISTORY-CLOSURE-V1' -and $checkpoint.master_program_item -eq 'C4' -and
-    $checkpoint.substage_id -in @('c4-reconciliation-readiness','c4-hierarchy-history-hardening','c4-verification','c4-verified-result') -and
+    $checkpoint.substage_id -in @('c4-reconciliation-readiness','c4-hierarchy-history-hardening','c4-verification','c4-verified-result','c4-independent-platform-gate') -and
     $c4.Count -eq 1 -and $c4[0].state -eq 'executing' -and $c4[0].status -eq 'active' -and $active.Count -eq 1 -and $active[0].id -eq 'C4'
 $retainedActive = if($active.Count-eq 1){[string]$active[0].id}else{''}
 $c4Run=if($c4.Count-eq 1){[regex]::Match([string]$c4[0].proof,'run-[0-9a-f]{32}')}else{$null}
