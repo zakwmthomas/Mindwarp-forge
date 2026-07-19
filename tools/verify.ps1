@@ -23,6 +23,12 @@ Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'invoke-g1-c5-retaine
 if (!$?) { throw 'G1 C5 retained implementation and portability replay failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-c5-closure-result.ps1'
 if (!$?) { throw 'G1 C5 recorded closure result verification failed.' }
+Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-c6-closure-readiness.ps1'
+if (!$?) { throw 'G1 C6 closure readiness verification failed.' }
+Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-g1-c6-closure-readiness.ps1'
+if (!$?) { throw 'G1 C6 closure readiness hostile fixtures failed.' }
+Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-g1-c5-current-successor-route.ps1'
+if (!$?) { throw 'G1 C5 historical and C6 current successor-route fixtures failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-atlas.ps1'
 if (!$?) { throw 'Project Atlas validation failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-operating-system.ps1'
