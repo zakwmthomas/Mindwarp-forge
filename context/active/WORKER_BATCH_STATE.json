@@ -6,80 +6,80 @@
     "state":  "executing",
     "previous_state":  "ready",
     "objective":  "Close broad C4 as a capability-free addressable hierarchy and history proof against exact C2 and promoted C3A evidence, without importing C3B, later systems, storage or runtime authority.",
-    "next_action":  "Connect an attestation-eligible GitHub repository at the exact retained source commit, generate one fresh request, execute the hosted Ubuntu workflow, import its verified bundle, then run the registered full gate; retain candidate_verified_local and keep C5 inactive until all pass.",
+    "next_action":  "Push clean retained source 8651038 and its record commit to the connected public GitHub repository, generate one fresh request, execute the hosted Ubuntu workflow, import its verified bundle, then run the registered full gate; retain candidate_verified_local and keep C5 inactive until all pass.",
     "substage_id":  "c4-independent-platform-gate",
     "handoff_section_receipts":  {
                                      "objective":  {
                                                        "stage_id":  "c4-independent-platform-gate",
                                                        "content_sha256":  "f58fbd02ac9761d1c06bf41990a59ed0a92e965dcbc27906f4d7c165cfa0dc2a",
                                                        "review_disposition":  "revised",
-                                                       "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
+                                                       "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
                                                    },
                                      "next_action":  {
                                                          "stage_id":  "c4-independent-platform-gate",
-                                                         "content_sha256":  "9d78815c02bb56d385f6c3f1f592651738655b81d77abdfc2eb437b794780ae9",
+                                                         "content_sha256":  "f511b401170f88d7f73ec12f7c19d41cb79f4c47b31a52b8cea830df6155cee8",
                                                          "review_disposition":  "revised",
-                                                         "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
+                                                         "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
                                                      },
                                      "stage_context":  {
                                                            "stage_id":  "c4-independent-platform-gate",
-                                                           "content_sha256":  "d0b364c5ab9548b767c049abdef7fbd15aea1f8f70fe86e36956a7cafa565ab5",
+                                                           "content_sha256":  "8cf5afb87aa33c0f77e7954fbaa1aef2179a42253007c579d740f4b504c43329",
                                                            "review_disposition":  "revised",
-                                                           "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
+                                                           "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
                                                        },
                                      "visual_quality_gate":  {
                                                                  "stage_id":  "c4-independent-platform-gate",
                                                                  "content_sha256":  "cfb3f4b0a636e0d5eff9dd88e562b4a427d3fadbe03f9349ac516e38adac2dd2",
                                                                  "review_disposition":  "revised",
-                                                                 "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
+                                                                 "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
                                                              },
                                      "simulation_ladder":  {
                                                                "stage_id":  "c4-independent-platform-gate",
-                                                               "content_sha256":  "8080332b63e6a2a7002598fe4e3224ff982c47db70c9498132bf3bcd12d80b06",
+                                                               "content_sha256":  "2f4c51eecd5489cd601866cdba3673ddc2fee60d176aea8207739c373ce85214",
                                                                "review_disposition":  "revised",
-                                                               "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
+                                                               "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
                                                            },
                                      "unresolved_risks":  {
                                                               "stage_id":  "c4-independent-platform-gate",
-                                                              "content_sha256":  "4cf3cd1079979c3e739367d710f054cc8bbfce33188487547ac61ff57304d27a",
+                                                              "content_sha256":  "f9dd9467b527c81a1cc158ca1fea6398e7254c6a809eab236c67107b03d6542e",
                                                               "review_disposition":  "revised",
-                                                              "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
+                                                              "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
                                                           },
                                      "evidence_requirements":  {
                                                                    "stage_id":  "c4-independent-platform-gate",
                                                                    "content_sha256":  "06e7a714e1bfc359ca9fc2661906f0d92aeea77fe547d108f770667a62c3d9d2",
                                                                    "review_disposition":  "revised",
-                                                                   "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
+                                                                   "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
                                                                },
                                      "verification_plan":  {
                                                                "stage_id":  "c4-independent-platform-gate",
                                                                "content_sha256":  "8a81c24807c04878e8370ad782858ab2d58ce14dd677563b3284f1654d873aa9",
                                                                "review_disposition":  "revised",
-                                                               "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
+                                                               "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
                                                            },
                                      "resume_after":  {
                                                           "stage_id":  "c4-independent-platform-gate",
                                                           "content_sha256":  "91ff7c09a948de0f53a11009f349557946af6a692096ffa798c58e0cf19dcb3d",
                                                           "review_disposition":  "revised",
-                                                          "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
+                                                          "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
                                                       },
                                      "evidence":  {
                                                       "stage_id":  "c4-independent-platform-gate",
-                                                      "content_sha256":  "6a97d6fd1da35a15985240d2cb1d40c21909247caf2c55464fa736a355101b86",
+                                                      "content_sha256":  "2194de648eb3096254f60460b840b7ff87d76bff3a04ac119bf11d65e8b6e61b",
                                                       "review_disposition":  "revised",
-                                                      "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
+                                                      "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
                                                   },
                                      "verification_receipts":  {
                                                                    "stage_id":  "c4-independent-platform-gate",
-                                                                   "content_sha256":  "5ba979f64ab9a026dceda52d079268f0ac515e042be74bf83646b610b24fc3d7",
+                                                                   "content_sha256":  "b7e1255e43bd4312762b47e8f0a4f8b33e6cdbfa5454a5dfaff67dcc76282c1d",
                                                                    "review_disposition":  "revised",
-                                                                   "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
+                                                                   "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
                                                                },
                                      "transition":  {
                                                         "stage_id":  "c4-independent-platform-gate",
                                                         "content_sha256":  "0ab96ffbfaa431a0e9aa4d20a2da0d294d1e87d3b4bd8a4504bb5ba27f213d9e",
                                                         "review_disposition":  "revised",
-                                                        "review_note":  "Reviewed canonical LF tracked-tree correction against the active C4 external-proof substage."
+                                                        "review_note":  "Reviewed regenerated C4 source binding and external execution escalation against the active platform gate."
                                                     }
                                  },
     "consecutive_no_progress_limit":  1,
@@ -93,9 +93,9 @@
                                     ]
                     },
     "risk_level":  "bounded-broad-c4-capability-free-closure",
-    "research_gate":  "C4 local proof passes. No remote, CI service, container runtime, WSL distro or cloud CLI is available on this host. Independent execution requires a locked portable fixture, fresh challenge, provider-hosted provenance, two direct native launches, strict import validation and authority-negative retention before the registered full gate.",
+    "research_gate":  "C4 local proof passes and the public GitHub repository plus authenticated CLI are connected. Hosted run 29671494578 proved the external workflow but strict import exposed a Windows-CRLF/LF tracked-tree serialization mismatch. The canonical LF repair is locally regenerated at source 8651038; one fresh challenge, provider-hosted execution, strict import and registered full gate remain required.",
     "authority_lane":  "Owner-authorized broad C4 hierarchy/history reconciliation and capability-free closure proof only. Exact dependencies C2 and C3A. No C3B, C5, C6, C7, broad G1 closure, runtime, storage engine, filesystem, network, multiplayer, cross-target transactions, Companion, Greenfield, visual assets or Kernel mutation.",
-    "context_health":  "C4 remains candidate_verified_local. The locked portable fixture, challenge-bound request generator, credential-separated hosted workflow, attested strict importer, 36 external hostiles and 15 exact-byte retained-replay hostiles pass locally. The registered full gate now requires cryptographic bundle replay at the exact C4 platform substage. No Git remote or GitHub CLI is connected, so genuine external execution remains the sole open C4 gate and C5 stays inactive.",
+    "context_health":  "C4 remains candidate_verified_local. The public zakwmthomas/Mindwarp-forge repository and authenticated GitHub CLI are connected. The first hosted attested run was rejected before import because it exposed noncanonical Windows CRLF tree serialization. Canonical LF binding, generator fail-early checks, 36 external hostiles and 15 retained-replay hostiles now pass at clean source 8651038 with bounded manifest 3d0a2419; a fresh hosted receipt and registered full gate remain open, and C5 stays inactive.",
     "stage_context":  {
                           "stage_id":  "c4-independent-platform-gate",
                           "macro_sources":  [
@@ -130,7 +130,8 @@
                                                  "Two fresh Windows x64 processes and same-host i686 execution emit semantic SHA-256 263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996.",
                                                  "Android aarch64 compilation is compile-only; independent platform-diverse execution remains a separate receipt.",
                                                  "The retained fixture lock and 27-path blob manifest bind the portable proof surface; 36 external hostiles and 15 retained-replay hostiles reject forged policy, source, runner, artifact, output, attestation, retention and authority evidence.",
-                                                 "The hosted workflow separates read-only execution from OIDC/attestation authority and retains the offline bundle; no qualifying remote is connected yet."
+                                                 "The public GitHub repository is connected. Hosted run 29671494578 separated read-only execution from attestation authority and was rejected locally before import when it exposed CRLF/LF tree serialization drift.",
+                                                 "Canonical LF tree binding is regenerated at clean source 8651038d63d7e041573667878001059d7a3b3405 with tracked-tree SHA-256 4741c4bc73eedfecf733a3e3e995f52c428e35468502308944ebdf961333dcc3 and bounded-source SHA-256 3d0a24192fead0a12d78ad7fa440b1c3485a61609bed674225f06a4c666a7e91."
                                              ]
                       },
     "visual_quality_gate":  {
@@ -143,7 +144,7 @@
                                              ]
                             },
     "simulation_ladder":  {
-                              "cheapest_sufficient_tier":  "in_memory_fixture",
+                              "cheapest_sufficient_tier":  "external_execution",
                               "tiers_completed":  [
                                                       {
                                                           "tier":  "static_reasoning",
@@ -162,12 +163,12 @@
                                                       },
                                                       {
                                                           "tier":  "in_memory_fixture",
-                                                          "result":  "Thirty-one external receipt hostiles and pinned workflow-control assertions fail closed without granting independence.",
+                                                          "result":  "Thirty-six external receipt hostiles and pinned workflow-control assertions fail closed without granting independence.",
                                                           "evidence":  "tools/test-g1-c4-external-receipt.py"
                                                       }
                                                   ],
-                              "expensive_execution_planned":  false,
-                              "unresolved_risk":  "Local semantic, hostile, cost, fresh-process, same-host i686 and Android compile evidence passes; genuinely independent platform-diverse execution remains unavailable.",
+                              "expensive_execution_planned":  true,
+                              "unresolved_risk":  "Local semantic, hostile, cost, fresh-process, same-host i686 and Android compile evidence passes at source 8651038; a fresh provider-attested independent run and strict import remain unavailable.",
                               "expected_information_gain":  "Determine whether exact C4 semantic bytes and source-bound execution survive a genuinely independent Linux or macOS hosted runner without trusting self-asserted metadata.",
                               "estimated_cost":  "One locked portable fixture and hostile-tested importer locally, then one short read-only hosted-runner job; registered full gate only after a qualifying imported receipt exists.",
                               "regression_guard":  "No C3B, C5-C7, broad G1 closure, runtime, storage engine, filesystem, network, multiplayer, Companion, Greenfield, visual asset or Kernel mutation.",
@@ -210,7 +211,7 @@
                           }
                       ],
     "unresolved_risks":  [
-                             "This host executes identical C4 semantic bytes on Windows x64 and i686 and compiles Android, but none proves genuinely independent, platform-diverse execution."
+                             "Hosted run 29671494578 is diagnostic-only because strict import rejected its tracked-tree serialization mismatch; source 8651038 still requires one fresh provider-attested independent run."
                          ],
     "evidence_requirements":  [
                                   "freeze the exact C2+C3A C4 closure and later-system exclusions",
@@ -243,9 +244,10 @@
                      "Three independent read-only audits identified the minimal C4 closure route and exact stale canonical claims before source.",
                      "C4 local implementation verifier passed 58 core, 8 receipt and 8 portability hostile owners with semantic SHA-256 263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996.",
                      "Two fresh native processes and same-host Windows i686 execution emitted identical semantic bytes; aarch64-linux-android compiled only. None is independent second-platform execution.",
-                     "The bounded 27-path C4 implementation, fixture and verification source manifest SHA-256 is 36f818ffc5279c981d211d589ba6d1b379757a43fab66ae5393747299641c31a.",
-                     "Local platform observations bind clean source commit f0c3c4f127fd0c86c02c901ba199f9a385c59bee and canonical LF-normalized tracked-tree manifest SHA-256 9a8e556c98606d931e8a21002d2d95003436788ed57fda6e2b47ab6ca2e68a3f.",
-                     "The locked portable C4 fixture, fresh request generator, hosted Ubuntu workflow, cryptographically pinned importer, 36 external hostiles and 15 exact-byte retained-replay hostiles are locally verified; no independent result has been imported."
+                     "The bounded 27-path C4 implementation, fixture and verification source manifest SHA-256 is 3d0a24192fead0a12d78ad7fa440b1c3485a61609bed674225f06a4c666a7e91.",
+                     "Local platform observations bind clean source commit 8651038d63d7e041573667878001059d7a3b3405 and canonical LF-normalized tracked-tree manifest SHA-256 4741c4bc73eedfecf733a3e3e995f52c428e35468502308944ebdf961333dcc3.",
+                     "Hosted run 29671494578 executed and attested historical source f0c3c4f but strict import rejected its CRLF/LF tracked-tree mismatch before writing canonical evidence; it is diagnostic-only.",
+                     "The locked portable C4 fixture, fresh request generator, hosted Ubuntu workflow, cryptographically pinned importer, 36 external hostiles and 15 exact-byte retained-replay hostiles are locally verified; no qualifying independent result has been imported."
                  ],
     "verification_receipts":  [
                                   "dependency:gp0-gp1-gp2-gp3-c4v:verified",
@@ -265,13 +267,14 @@
                                   "audit:c4-canonical-code-route:three-lanes:complete",
                                   "gate:c4-local-implementation:pass:43-focused-plus-7-c4v",
                                   "receipt:c4-semantic-sha256:263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996",
-                                  "receipt:c4-bounded-source-manifest-sha256:36f818ffc5279c981d211d589ba6d1b379757a43fab66ae5393747299641c31a",
-                                  "receipt:c4-clean-source-commit:f0c3c4f127fd0c86c02c901ba199f9a385c59bee",
-                                  "receipt:c4-tracked-tree-manifest-sha256:9a8e556c98606d931e8a21002d2d95003436788ed57fda6e2b47ab6ca2e68a3f",
+                                  "receipt:c4-bounded-source-manifest-sha256:3d0a24192fead0a12d78ad7fa440b1c3485a61609bed674225f06a4c666a7e91",
+                                  "receipt:c4-clean-source-commit:8651038d63d7e041573667878001059d7a3b3405",
+                                  "receipt:c4-tracked-tree-manifest-sha256:4741c4bc73eedfecf733a3e3e995f52c428e35468502308944ebdf961333dcc3",
                                   "platform:c4-i686:same-host-second-architecture:passed",
                                   "platform:c4-android-aarch64:compile-only:passed",
                                   "gate:c4-external-importer-hostiles:pass:36-plus-workflow-controls",
-                                  "gate:c4-retained-replay-hostiles:pass:15-plus-scope-controls"
+                                  "gate:c4-retained-replay-hostiles:pass:15-plus-scope-controls",
+                                  "external:c4-github-run-29671494578:rejected-before-import:tracked-tree-newline-drift"
                               ],
     "metrics":  {
                     "token_cost":  {

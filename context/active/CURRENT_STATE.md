@@ -10,7 +10,7 @@
 - State / substage: **executing / c4-independent-platform-gate**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Objective: Close broad C4 as a capability-free addressable hierarchy and history proof against exact C2 and promoted C3A evidence, without importing C3B, later systems, storage or runtime authority.
-- Context health: C4 remains candidate_verified_local. The locked portable fixture, challenge-bound request generator, credential-separated hosted workflow, attested strict importer, 36 external hostiles and 15 exact-byte retained-replay hostiles pass locally. The registered full gate now requires cryptographic bundle replay at the exact C4 platform substage. No Git remote or GitHub CLI is connected, so genuine external execution remains the sole open C4 gate and C5 stays inactive.
+- Context health: C4 remains candidate_verified_local. The public zakwmthomas/Mindwarp-forge repository and authenticated GitHub CLI are connected. The first hosted attested run was rejected before import because it exposed noncanonical Windows CRLF tree serialization. Canonical LF binding, generator fail-early checks, 36 external hostiles and 15 retained-replay hostiles now pass at clean source 8651038 with bounded manifest 3d0a2419; a fresh hosted receipt and registered full gate remain open, and C5 stays inactive.
 
 ## Durable evidence
 
@@ -29,11 +29,11 @@ Owner-authorized broad C4 hierarchy/history reconciliation and capability-free c
 
 ## Exact next action
 
-Connect an attestation-eligible GitHub repository at the exact retained source commit, generate one fresh request, execute the hosted Ubuntu workflow, import its verified bundle, then run the registered full gate; retain candidate_verified_local and keep C5 inactive until all pass.
+Push clean retained source 8651038 and its record commit to the connected public GitHub repository, generate one fresh request, execute the hosted Ubuntu workflow, import its verified bundle, then run the registered full gate; retain candidate_verified_local and keep C5 inactive until all pass.
 
 ## Unresolved risks
 
-- This host executes identical C4 semantic bytes on Windows x64 and i686 and compiles Android, but none proves genuinely independent, platform-diverse execution.
+- Hosted run 29671494578 is diagnostic-only because strict import rejected its tracked-tree serialization mismatch; source 8651038 still requires one fresh provider-attested independent run.
 
 ## Resume after this package
 

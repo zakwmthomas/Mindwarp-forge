@@ -25,16 +25,19 @@ network, multiplayer, Companion, Greenfield or Kernel authority.
 The semantic receipt SHA-256 is
 `263a7c274c5bbfb5a48f0a7ccf3462eb35ddc7c96c1c92ff01d8ef37a40f6996`.
 The bounded 27-path implementation, fixture and verification source manifest SHA-256 is
-`36f818ffc5279c981d211d589ba6d1b379757a43fab66ae5393747299641c31a`.
+`3d0a24192fead0a12d78ad7fa440b1c3485a61609bed674225f06a4c666a7e91`.
 The retained platform observations bind clean source commit
-`f0c3c4f127fd0c86c02c901ba199f9a385c59bee` and complete tracked-tree
+`8651038d63d7e041573667878001059d7a3b3405` and complete tracked-tree
 manifest SHA-256
-`9a8e556c98606d931e8a21002d2d95003436788ed57fda6e2b47ab6ca2e68a3f`.
-This corrects the earlier Windows `Out-String` CRLF serialization
+`4741c4bc73eedfecf733a3e3e995f52c428e35468502308944ebdf961333dcc3`.
+The first hosted attempt exposed an earlier Windows `Out-String` CRLF
+serialization
 `3b36a8f4950083ccf6fc7b507ccd893d961714e2fc4b4edb7d058315ec1f9740` to the
-platform-neutral UTF-8 `git -c core.quotePath=true ls-tree` rows joined with LF
-and no terminal newline. The same 908 tree records, source commit, bounded
-source, observations, semantic evidence and authority boundary are unchanged.
+historical `f0c3c4f` tree. Its corrected LF/no-terminal-newline value is
+`9a8e556c98606d931e8a21002d2d95003436788ed57fda6e2b47ab6ca2e68a3f`.
+Because the canonicalization repair changed the bounded verification surface,
+the observations were regenerated at `8651038`; the semantic evidence and
+authority boundary remain unchanged.
 Two separately launched native Windows x64 processes emitted identical bytes.
 The same bytes also executed on Windows i686 and are classified only as
 `same_host_second_architecture`. The receipt and dependencies compiled for
@@ -62,6 +65,12 @@ compilation does not prove execution. C4 therefore stops at
 genuinely independent, platform-diverse runner. No elapsed time, same-host
 architecture, compile-only target or same-platform remote Windows x64 runner
 may be substituted for that evidence.
+
+GitHub Actions run `29671494578` executed and attested the historical `f0c3c4f`
+fixture, but strict local import rejected its Windows-CRLF/LF tracked-tree
+binding mismatch before writing a receipt. It is diagnostic evidence only and
+cannot satisfy this gate. A fresh challenge and hosted run at `8651038` are
+required.
 
 The external gate now has a retained locked fixture, fresh challenge generator,
 credential-separated hosted workflow, offline attestation bundle, strict local
