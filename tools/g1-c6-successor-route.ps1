@@ -28,9 +28,25 @@ function Test-G1C6BodyPlanStructureImplementationRoute {
         $Checkpoint.authority_lane -eq $expectedAuthority
 }
 
+function Test-G1C6OrganismIdentityReadinessRoute {
+    [CmdletBinding()]
+    param([Parameter(Mandatory = $true)]$Checkpoint)
+
+    $expectedAuthority = 'Owner-routed code-free C6 package-3 identity readiness only. Authorizes reconciliation of stale body-plan projections and design, adversarial review, fixtures, verifier and governance records for distinct lineage, organism-form, species-candidate, individual and population identity envelopes plus exact C4 lifecycle/history consumption. No production crate or source implementation; no asserted species membership, population members/count/distribution, ancestry/evolution inference, ecology, physiology, reproduction, heredity, development, sex, dimorphism, culture, representation, runtime, Companion, Greenfield, C7, promotion authority or Kernel mutation.'
+    foreach ($field in @('batch_id', 'master_program_item', 'state', 'substage_id', 'authority_lane')) {
+        if ($Checkpoint.$field -isnot [string]) { return $false }
+    }
+    return $Checkpoint.batch_id -eq 'G1-C6-ORGANISM-IDENTITY-READINESS-V1' -and
+        $Checkpoint.master_program_item -eq 'C6' -and
+        $Checkpoint.state -eq 'executing' -and
+        $Checkpoint.substage_id -eq 'c6-organism-identity-readiness' -and
+        $Checkpoint.authority_lane -eq $expectedAuthority
+}
+
 function Test-G1C6AuthorizedCurrentRoute {
     [CmdletBinding()]
     param([Parameter(Mandatory = $true)]$Checkpoint)
     return (Test-G1C6ReconciliationReadinessRoute -Checkpoint $Checkpoint) -or
-        (Test-G1C6BodyPlanStructureImplementationRoute -Checkpoint $Checkpoint)
+        (Test-G1C6BodyPlanStructureImplementationRoute -Checkpoint $Checkpoint) -or
+        (Test-G1C6OrganismIdentityReadinessRoute -Checkpoint $Checkpoint)
 }

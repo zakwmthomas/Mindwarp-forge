@@ -658,9 +658,9 @@
                                          "C4",
                                          "C5"
                                      ],
-                      "gate":  "implementation",
-                      "next_action":  "Stop at the recorded body-plan V1 boundary and require a separate owner route before any later C6 package.",
-                      "proof":  "Body-plan V1 passes the exact 17+1 matrix, strict Clippy, native and same-host i686 execution, Android ARM64 compile-only, one direct consumer, independent review and registered full gate run-e923d74fb96743e5864b303faf27acfc in 874785 ms. Organism identity, ecology, physiology, reproduction, heredity, dimorphism applicability, comparison, runtime and visual quality remain unproved and gated.",
+                      "gate":  "design",
+                      "next_action":  "Freeze only C6 package 3 readiness: typed organism, individual, lineage and species identity envelopes plus exact C4 lifecycle/history/delta consumption, with population identity only. Freeze exact tests, resources, receipts, one-consumer scope, rollback and platform classifications before any source; retain all later C6 and C7 gates.",
+                      "proof":  "Body-plan V1 passes the exact 17+1 matrix, strict Clippy, native and same-host i686 execution, Android ARM64 compile-only, one direct consumer, independent review and registered full gate run-e923d74fb96743e5864b303faf27acfc in 874785 ms. The owner continuation activates code-free package 3 identity readiness only; its source remains gated. Ecology, physiology, reproduction, heredity, dimorphism applicability, population membership/distributions, comparison, runtime and visual quality remain unproved and gated.",
                       "sources":  [
                                       "MASTER_CLOSURE_REGISTER.md",
                                       "SEMANTIC_CONSTRUCTION_DESIGN_GATE.md",
@@ -682,7 +682,9 @@
                         "UNRESOLVED_GAPS.md",
                         "G1_C6_BODY_PLAN_STRUCTURE_IMPLEMENTATION_READINESS.md",
                         "body-plan-structure-contract.md",
-                        "G1_C6_BODY_PLAN_STRUCTURE_IMPLEMENTATION_RESULT.md"
+                        "G1_C6_BODY_PLAN_STRUCTURE_IMPLEMENTATION_RESULT.md",
+                        "organism-subject-identity-contract.md",
+                        "G1_C6_ORGANISM_SUBJECT_IDENTITY_IMPLEMENTATION_READINESS.md"
                                   ]
                   },
                   {

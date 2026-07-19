@@ -44,6 +44,15 @@ EXPECTED_C6_BODY_PLAN_AUTHORITY = (
     "claim, runtime, filesystem, network, process, Companion, Greenfield, C7, broad G1 closure, promotion "
     "authority or Kernel mutation."
 )
+EXPECTED_C6_IDENTITY_READINESS_AUTHORITY = (
+    "Owner-routed code-free C6 package-3 identity readiness only. Authorizes reconciliation of stale "
+    "body-plan projections and design, adversarial review, fixtures, verifier and governance records for "
+    "distinct lineage, organism-form, species-candidate, individual and population identity envelopes plus "
+    "exact C4 lifecycle/history consumption. No production crate or source implementation; no asserted species "
+    "membership, population members/count/distribution, ancestry/evolution inference, ecology, physiology, "
+    "reproduction, heredity, development, sex, dimorphism, culture, representation, runtime, Companion, "
+    "Greenfield, C7, promotion authority or Kernel mutation."
+)
 EXPECTED_C4_RUN = "run-bc2154f73f6243239910ac30bc3b1994"
 REQUIRED_RECEIPTS = {
     f"registered-full-gate:{EXPECTED_C4_RUN}:passed",
@@ -121,8 +130,9 @@ def verify(checkpoint_path: Path, program_path: Path, observation_path: Path) ->
 
     c6_readiness_batch = checkpoint.get("batch_id") == "G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1"
     c6_body_plan_batch = checkpoint.get("batch_id") == "G1-C6-BODY-PLAN-STRUCTURE-IMPLEMENTATION-V1"
-    c6 = c6_readiness_batch or c6_body_plan_batch
-    exact_string(checkpoint, "batch_id", "G1-C6-BODY-PLAN-STRUCTURE-IMPLEMENTATION-V1" if c6_body_plan_batch else "G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1" if c6_readiness_batch else "G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1")
+    c6_identity_readiness_batch = checkpoint.get("batch_id") == "G1-C6-ORGANISM-IDENTITY-READINESS-V1"
+    c6 = c6_readiness_batch or c6_body_plan_batch or c6_identity_readiness_batch
+    exact_string(checkpoint, "batch_id", "G1-C6-ORGANISM-IDENTITY-READINESS-V1" if c6_identity_readiness_batch else "G1-C6-BODY-PLAN-STRUCTURE-IMPLEMENTATION-V1" if c6_body_plan_batch else "G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1" if c6_readiness_batch else "G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1")
     exact_string(checkpoint, "master_program_item", "C6" if c6 else "C5")
     state = checkpoint.get("state")
     substage = checkpoint.get("substage_id")
@@ -147,7 +157,12 @@ def verify(checkpoint_path: Path, program_path: Path, observation_path: Path) ->
         and type(substage) is str and substage == "c6-body-plan-structure-test-first-implementation"
         and type(authority) is str and authority == EXPECTED_C6_BODY_PLAN_AUTHORITY
     )
-    if not (full_gate or recorded or c6_readiness or c6_body_plan):
+    c6_identity_readiness = (
+        type(state) is str and state == "executing"
+        and type(substage) is str and substage == "c6-organism-identity-readiness"
+        and type(authority) is str and authority == EXPECTED_C6_IDENTITY_READINESS_AUTHORITY
+    )
+    if not (full_gate or recorded or c6_readiness or c6_body_plan or c6_identity_readiness):
         raise ValueError("live checkpoint state/substage/authority tuple is not exact")
 
     receipts = exact_string_list(checkpoint, "verification_receipts")
@@ -164,6 +179,10 @@ def verify(checkpoint_path: Path, program_path: Path, observation_path: Path) ->
         for receipt in ("receipt:G1-C5-CLOSURE:recorded", "owner-route:c6-reconciliation-readiness:authorized", "transition:c5-verified-c6-readiness-activated:recorded", "owner-authorization:c6-body-plan-structure-v1:released"):
             if receipt not in receipts:
                 raise ValueError(f"C6 body-plan route is missing retained evidence: {receipt}")
+    if c6_identity_readiness:
+        for receipt in ("receipt:G1-C5-CLOSURE:recorded", "receipt:G1-C6-BODY-PLAN-STRUCTURE-V1:recorded", "owner-route:c6-organism-identity-readiness:authorized"):
+            if receipt not in receipts:
+                raise ValueError(f"C6 identity-readiness route is missing retained evidence: {receipt}")
 
     items = program.get("items")
     if type(items) is not list or any(type(item) is not dict for item in items):

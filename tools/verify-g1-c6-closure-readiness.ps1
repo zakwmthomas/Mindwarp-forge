@@ -10,7 +10,8 @@ $checkpoint=Get-Content -LiteralPath $CheckpointPath -Raw|ConvertFrom-Json
 $text=Get-Content -LiteralPath $ReadinessPath -Raw
 $readinessRoute=Test-G1C6ReconciliationReadinessRoute -Checkpoint $checkpoint
 $implementationRoute=Test-G1C6BodyPlanStructureImplementationRoute -Checkpoint $checkpoint
-if(!$readinessRoute-and!$implementationRoute){throw 'C6 authorized current route tuple drifted.'}
+$identityReadinessRoute=Test-G1C6OrganismIdentityReadinessRoute -Checkpoint $checkpoint
+if(!$readinessRoute-and!$implementationRoute-and!$identityReadinessRoute){throw 'C6 authorized current route tuple drifted.'}
 $c4=@($program.items|Where-Object id -eq C4);$c5=@($program.items|Where-Object id -eq C5);$c6=@($program.items|Where-Object id -eq C6)
 if($c4.Count-ne1-or$c5.Count-ne1-or$c6.Count-ne1){throw 'C4-C6 program items are missing or ambiguous.'}
 if($c4[0].state-ne'verified'-or$c4[0].status-ne'complete'-or$c5[0].state-ne'verified'-or$c5[0].status-ne'complete'){throw 'C6 exact prerequisites are not verified and complete.'}
@@ -20,6 +21,8 @@ foreach($token in @('38 tests','`semantic-construction` 14','`organism-niche-bin
 $hostileIds=@([regex]::Matches($text,'C6-H(?:[0-9]{3,4})')|ForEach-Object Value|Sort-Object -Unique)
 if($hostileIds.Count-ne82){throw "C6 readiness hostile registry must contain exactly 82 unique IDs, found $($hostileIds.Count)."}
 if($readinessRoute-and(Test-Path -LiteralPath (Join-Path $root 'crates\body-plan-structure'))){throw 'Prospective body-plan source exists before separate authorization.'}
+if($identityReadinessRoute-and(Test-Path -LiteralPath (Join-Path $root 'crates\organism-subject-identity'))){throw 'Prospective organism identity source exists before separate authorization.'}
 foreach($receipt in @('receipt:G1-C5-CLOSURE:recorded','owner-route:c6-reconciliation-readiness:authorized','independent-review:c5-c6-readiness-transition:accepted','focused:c5-c6-successor-route-hostiles:passed','registered-full-gate:run-f51cc195a0f54ad88beeeb5d809780e9:passed','registered-full-gate:run-fcbfd6e3df844cd2b3ece02c48ba9e5c:passed','transition:c5-verified-c6-readiness-activated:recorded')){if(@($checkpoint.verification_receipts)-notcontains$receipt){throw "C6 readiness receipt missing: $receipt"}}
 if($implementationRoute-and@($checkpoint.verification_receipts)-notcontains'owner-authorization:c6-body-plan-structure-v1:released'){throw 'C6 body-plan implementation authorization receipt missing.'}
+if($identityReadinessRoute-and@($checkpoint.verification_receipts)-notcontains'receipt:G1-C6-BODY-PLAN-STRUCTURE-V1:recorded'){throw 'C6 identity readiness requires the recorded body-plan V1 receipt.'}
 Write-Output 'G1 C6 closure readiness verified: exact dependencies, evidence limits, 82 hostile IDs, variation-capable topology and source-negative gate agree.'

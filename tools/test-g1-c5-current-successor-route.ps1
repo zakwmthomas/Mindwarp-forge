@@ -28,8 +28,12 @@ $value=$canonical.substage_id; Reject-C6Mutation 'substage' {$canonical.substage
 $value=$canonical.authority_lane; Reject-C6Mutation 'authority suffix' {$canonical.authority_lane=$value+' forged'} {$canonical.authority_lane=$value}
 if(Test-G1C6ReconciliationReadinessRoute -Checkpoint $canonical){
   Reject-C6Mutation 'source authority omission' {$canonical.authority_lane=$value.Replace('No C6 implementation source, ','')} {$canonical.authority_lane=$value}
-}else{
+}elseif(Test-G1C6BodyPlanStructureImplementationRoute -Checkpoint $canonical){
   Reject-C6Mutation 'body-plan scope omission' {$canonical.authority_lane=$value.Replace('No ecology realization, ','')} {$canonical.authority_lane=$value}
+}elseif(Test-G1C6OrganismIdentityReadinessRoute -Checkpoint $canonical){
+  Reject-C6Mutation 'identity source scope omission' {$canonical.authority_lane=$value.Replace('No production crate or source implementation; ','')} {$canonical.authority_lane=$value}
+}else{
+  throw 'Canonical C6 route did not match an exact successor branch.'
 }
 Reject-C6Mutation 'array authority' {$canonical.authority_lane=@($value,'FORGED')} {$canonical.authority_lane=$value}
 

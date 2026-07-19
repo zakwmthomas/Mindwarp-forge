@@ -1,83 +1,83 @@
 ﻿{
     "schema_version":  3,
     "canonical_role":  "sole-active-work-checkpoint",
-    "batch_id":  "G1-C6-BODY-PLAN-STRUCTURE-IMPLEMENTATION-V1",
+    "batch_id":  "G1-C6-ORGANISM-IDENTITY-READINESS-V1",
     "master_program_item":  "C6",
     "state":  "executing",
     "previous_state":  "ready",
-    "objective":  "Implement and verify only the capability-free coordinate-free body-plan family/topology V1 contract, its lawful expression seam, three structural controls and one exact macro-lineage family-reference consumer.",
-    "next_action":  "Stop at the verified body-plan V1 boundary. Await a separate owner route before any later C6 identity, ecology, physiology, reproduction, heredity, dimorphism-applicability, population, comparison or representation package.",
-    "substage_id":  "c6-body-plan-structure-test-first-implementation",
+    "objective":  "Reconcile the recorded body-plan V1 result, then freeze only the capability-free C6 package-3 typed lineage, organism-form, species-candidate, individual and population identity envelopes plus exact C4 lifecycle/history consumption.",
+    "next_action":  "Run the registered forge-full-gate-v1 with the independently accepted package-3 identity readiness verifier and hostiles inside production orchestration; then record the code-free readiness result and stop before source authorization.",
+    "substage_id":  "c6-organism-identity-readiness",
     "handoff_section_receipts":  {
                                      "objective":  {
-                                                       "stage_id":  "c6-body-plan-structure-test-first-implementation",
-                                                       "content_sha256":  "6360a54d110285a96247376627f43b644c3101fce313aaa9b2611feebcf07e70",
+                                                       "stage_id":  "c6-organism-identity-readiness",
+                                                       "content_sha256":  "9a95fa81bfec41e07c09708528d672bad9d0fd4a3d88471002761207018433c7",
                                                        "review_disposition":  "revised",
                                                        "review_note":  "Reviewed all handoff sections against the active substage."
                                                    },
                                      "next_action":  {
-                                                         "stage_id":  "c6-body-plan-structure-test-first-implementation",
-                                                         "content_sha256":  "7c86fbe3514253e97d27e7a3eb0f24fd6685240e54edbfd11cec75a9d60c3c2d",
+                                                         "stage_id":  "c6-organism-identity-readiness",
+                                                         "content_sha256":  "f51055102fafb3cb3efa9eeb2175be5ffdc730bc0883736d2b24bbe2e688dfd2",
                                                          "review_disposition":  "revised",
                                                          "review_note":  "Reviewed all handoff sections against the active substage."
                                                      },
                                      "stage_context":  {
-                                                           "stage_id":  "c6-body-plan-structure-test-first-implementation",
-                                                           "content_sha256":  "c6f2f8eaacbea98058cc1ba9e13e6ea9085d7e86f397b195f45e0734b20221b3",
+                                                           "stage_id":  "c6-organism-identity-readiness",
+                                                           "content_sha256":  "7bd5a91cbb956c5f525b81e32319fc1be935387750456cdf93488af34a98a970",
                                                            "review_disposition":  "revised",
                                                            "review_note":  "Reviewed all handoff sections against the active substage."
                                                        },
                                      "visual_quality_gate":  {
-                                                                 "stage_id":  "c6-body-plan-structure-test-first-implementation",
+                                                                 "stage_id":  "c6-organism-identity-readiness",
                                                                  "content_sha256":  "714f74f1c91e7749f149d4b0cb884bf6dd511d97ea820c2870839755f49c4596",
                                                                  "review_disposition":  "revised",
                                                                  "review_note":  "Reviewed all handoff sections against the active substage."
                                                              },
                                      "simulation_ladder":  {
-                                                               "stage_id":  "c6-body-plan-structure-test-first-implementation",
-                                                               "content_sha256":  "16700387eb86b1abd7600a87161019208fade7afe1a96a45a0d63f0241837538",
+                                                               "stage_id":  "c6-organism-identity-readiness",
+                                                               "content_sha256":  "fd400801c2bf0f1e297a63e9900e770ecdc7eb858348b0c84ca29176dcbb8977",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "unresolved_risks":  {
-                                                              "stage_id":  "c6-body-plan-structure-test-first-implementation",
-                                                              "content_sha256":  "1d63673b24219cd7465d22770c784f902e8ce27752242349e8dc7ea491d19abe",
+                                                              "stage_id":  "c6-organism-identity-readiness",
+                                                              "content_sha256":  "ec7ab682576e72becf91faa672444db93d4c25be36aba554e025f6d20e9adfee",
                                                               "review_disposition":  "revised",
                                                               "review_note":  "Reviewed all handoff sections against the active substage."
                                                           },
                                      "evidence_requirements":  {
-                                                                   "stage_id":  "c6-body-plan-structure-test-first-implementation",
-                                                                   "content_sha256":  "d237165a69bb1397ae671f153d70f4530a330678d6bc5a2a20fb4b96dd2e4fcc",
+                                                                   "stage_id":  "c6-organism-identity-readiness",
+                                                                   "content_sha256":  "4d598d20655601fa285b5e4cab91478abeb9dc38afbab23cfdbf88bc092762ff",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "verification_plan":  {
-                                                               "stage_id":  "c6-body-plan-structure-test-first-implementation",
-                                                               "content_sha256":  "7dca8af6862d8778c608ea3303ad92ef8f8dba26771193240f9b116145ffc861",
+                                                               "stage_id":  "c6-organism-identity-readiness",
+                                                               "content_sha256":  "fcdc82f677b2ff4019c28e9a8224844c38a0dc1a307e06f93a51f64226029a40",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "resume_after":  {
-                                                          "stage_id":  "c6-body-plan-structure-test-first-implementation",
-                                                          "content_sha256":  "5019e48766afda48b2483b4dadae82705a40fb12d0b2dce4828d829e2096f42c",
+                                                          "stage_id":  "c6-organism-identity-readiness",
+                                                          "content_sha256":  "cfc0acd4984e7d8508cde85cbc9606ce1aafec6fe426abe579417d5d32a7fe4e",
                                                           "review_disposition":  "revised",
                                                           "review_note":  "Reviewed all handoff sections against the active substage."
                                                       },
                                      "evidence":  {
-                                                      "stage_id":  "c6-body-plan-structure-test-first-implementation",
+                                                      "stage_id":  "c6-organism-identity-readiness",
                                                       "content_sha256":  "e78832678b9bf85ae66897a1100a8fab74f6113cf841839f37accecd9a645772",
                                                       "review_disposition":  "revised",
                                                       "review_note":  "Reviewed all handoff sections against the active substage."
                                                   },
                                      "verification_receipts":  {
-                                                                   "stage_id":  "c6-body-plan-structure-test-first-implementation",
-                                                                   "content_sha256":  "bdd7020b259c1553ba85ef8de2418ce504bd7dae7092cbbcac3f4f489ec3e099",
+                                                                   "stage_id":  "c6-organism-identity-readiness",
+                                                                   "content_sha256":  "8092614fc28a6b5b60198dac0e9004c32d94e1cbe644eeb9f64f17e00d4c5010",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "transition":  {
-                                                        "stage_id":  "c6-body-plan-structure-test-first-implementation",
-                                                        "content_sha256":  "13269520b9cdee11b00fa555d66b4dcefff94ae3205d886b0072ce17e557e770",
+                                                        "stage_id":  "c6-organism-identity-readiness",
+                                                        "content_sha256":  "cc2d205592c90ce1c6f390977f0d5efc802b471d6a06062b8648d9963f06dcc9",
                                                         "review_disposition":  "revised",
                                                         "review_note":  "Reviewed all handoff sections against the active substage."
                                                     }
@@ -92,12 +92,12 @@
                                         "domain-creative-suites"
                                     ]
                     },
-    "risk_level":  "capability-free-c6-body-plan-structure-implementation",
-    "research_gate":  "The corrected 82-ID C6 readiness record, independent schema/test/governance reviews, and registered gate run-818500121b3f4958ac093b105a7fe61b pass. V1 freezes family versus expression identity, coordinate-free graph semantics, 18 test groups, exact resources, three controls and one consumer. This grants only the bounded body-plan package, not broader biology or representation.",
-    "authority_lane":  "Owner-authorized capability-free C6 body-plan family/topology V1 test-first implementation only. Exact dependencies verified C4 and C5. Authorizes the new body-plan-structure crate, one additive macro-lineage-binding family-reference validator, exact tests, governance projections and verification for this package. No ecology realization, physiology, reproduction, heredity, development, sex or dimorphism applicability, caste, species, individual or population semantics, personhood, product ontology, solver or AI generation, geometry, proportions, pose, assets, animation, renderer, visual-quality claim, runtime, filesystem, network, process, Companion, Greenfield, C7, broad G1 closure, promotion authority or Kernel mutation.",
-    "context_health":  "C4 and C5 remain verified prerequisites. C6 is the sole active item. Body-plan V1 passes the focused 17+1 matrix, portability classifications, module governance and independent review. One registered full gate remains before recording and stopping; all later C6 packages and C7 remain gated.",
+    "risk_level":  "code-free-c6-organism-identity-readiness",
+    "research_gate":  "Body-plan V1 is recorded and passed registered full gate run-e923d74fb96743e5864b303faf27acfc. Three independent package-order audits selected typed identity plus exact C4 lifecycle/history consumption; three independent schema, adversarial and integration re-reviews now accept the frozen code-free readiness package after stable-identity, multi-family, population-separation, dependency, codec, resource, source-negative and contradiction-resistance repairs.",
+    "authority_lane":  "Owner-routed code-free C6 package-3 identity readiness only. Authorizes reconciliation of stale body-plan projections and design, adversarial review, fixtures, verifier and governance records for distinct lineage, organism-form, species-candidate, individual and population identity envelopes plus exact C4 lifecycle/history consumption. No production crate or source implementation; no asserted species membership, population members/count/distribution, ancestry/evolution inference, ecology, physiology, reproduction, heredity, development, sex, dimorphism, culture, representation, runtime, Companion, Greenfield, C7, promotion authority or Kernel mutation.",
+    "context_health":  "C4 and C5 remain verified prerequisites. Body-plan V1 is verified, recorded and passed the complete registered gate. C6 package 3 is active for code-free identity readiness only; all source and later C6 packages remain gated.",
     "stage_context":  {
-                          "stage_id":  "c6-body-plan-structure-test-first-implementation",
+                          "stage_id":  "c6-organism-identity-readiness",
                           "macro_sources":  [
                                                 "docs/canonical-system/MASTER_PROGRAM.json",
                                                 "docs/canonical-system/MASTER_CLOSURE_REGISTER.md",
@@ -112,11 +112,11 @@
                                             ],
                           "macro_findings":  [
                                                  "The owner retained the canonical broad route C4 then C5 then C6 then C7 then G1-CLOSEOUT then R1.",
-                                                 "C4 and C5 are verified and complete; C6 is the sole active item for code-free reconciliation/readiness. C7, broad G1-CLOSEOUT and R1 remain gated.",
+                                                 "C4 and C5 are verified and complete; body-plan V1 is verified and recorded; C6 package 3 is the sole active code-free identity-readiness item. C7, broad G1-CLOSEOUT and R1 remain gated.",
                                                  "The five current C6 prototype seams pass 38 focused tests but prove only generic semantic construction, physical opportunity, hypothetical lineage binding and structural evidence completeness.",
                                                  "Physical opportunity is owned by C3 and is not an ecological niche; representation, geometry, animation and visual quality remain C7-owned.",
-                                                 "Owner authorization now releases only the coordinate-free body-plan family/topology V1 package; every later C6 package, C7, broad closeout and runtime remain gated.",
-                                                 "The production full gate now invokes the C6 readiness verifier, its hostile fixtures and the C5-to-C6 route; run-818500121b3f4958ac093b105a7fe61b passed that corrected orchestration."
+                                                 "Body-plan family/topology V1 is verified and recorded after the exact 17+1 matrix and registered gate run-e923d74fb96743e5864b303faf27acfc.",
+                                                 "The owner continuation releases code-free package-3 identity readiness only; source and every later C6 package remain gated."
                                              ],
                           "micro_sources":  [
                                                 "apps/forge-desktop/src-tauri/MODULE.md",
@@ -132,7 +132,12 @@
                                                 "contracts/body-plan-structure-contract.md",
                                                 "docs/canonical-system/G1_C6_BODY_PLAN_STRUCTURE_IMPLEMENTATION_READINESS.md",
                                                 "tools/verify-g1-c6-body-plan-structure-readiness.ps1",
-                                                "tools/test-g1-c6-body-plan-structure-readiness.ps1"
+                                                "tools/test-g1-c6-body-plan-structure-readiness.ps1",
+                                                "docs/canonical-system/G1_C6_BODY_PLAN_STRUCTURE_IMPLEMENTATION_RESULT.md",
+                                                "contracts/organism-subject-identity-contract.md",
+                                                "docs/canonical-system/G1_C6_ORGANISM_SUBJECT_IDENTITY_IMPLEMENTATION_READINESS.md",
+                                                "tools/verify-g1-c6-organism-subject-identity-readiness.ps1",
+                                                "tools/test-g1-c6-organism-subject-identity-readiness.ps1"
                                             ],
                           "micro_findings":  [
                                                  "Focused counts are exact: semantic-construction 14, organism-niche-binding 5, niche-graph-binding 7, macro-lineage-binding 6 and person-form-eligibility 6.",
@@ -140,7 +145,9 @@
                                                  "The niche-graph result is a C3 physical opportunity precursor, the lineage body-plan reference is opaque, and person-form output is structural completeness only.",
                                                  "Eighty-two exact hostile IDs cover evidence, ecology, anatomy, physiology, identity, evolution, ecomorphs, capacities, comparative eligibility, applicable variation, aging, end-to-end authority and reproduction/development/heredity.",
                                                  "Three independent reviews froze family versus expression identity, a graph rather than universal tree, exact homology/presence/cardinality/symmetry semantics, 18 test groups, engineering resource bounds and one macro-lineage consumer.",
-                                                 "Registered run-818500121b3f4958ac093b105a7fe61b passed the corrected production gate in 788754 ms with the C6 readiness lanes present; body-plan source is authorized but not yet created."
+                                                 "Registered run-e923d74fb96743e5864b303faf27acfc passed the complete Forge gate in 874785 ms and the body-plan result is recorded.",
+                                                 "Three independent audits agree that package 3 must distinguish lineage, form template, species candidate, individual and population identity before ecology, physiology, reproduction or dimorphism.",
+                                                 "The package-3 readiness candidate freezes seven typed identity/binding records, exact C4 subject replay, 33 test groups, resource ceilings and one person-form consumer while retaining source-negative authority."
                                              ]
                       },
     "visual_quality_gate":  {
@@ -202,12 +209,12 @@
                                                       }
                                                   ],
                               "expensive_execution_planned":  false,
-                              "unresolved_risk":  "The V1 contract could still encode a hidden root/tree, expand compressed cardinality unsafely, bind expression identity as lineage identity, or leak later biology/geometry authority unless the 18 test groups fail closed.",
-                              "expected_information_gain":  "Typed and in-memory fixtures will show whether one small graph contract can admit humanoid, radial and withheld serial controls while rejecting forced transfer and label leakage before integrated execution.",
-                              "estimated_cost":  "One small Rust crate, one additive consumer and focused portability checks; measured total cost remains unknown until the package gate completes.",
+                              "unresolved_risk":  "An identity envelope could still collapse template, species, individual or population namespaces, launder optional lineage parentage into ancestry, or treat C4 age state as biological development unless the 33 groups fail closed.",
+                              "expected_information_gain":  "Static and disposable hostile fixtures will show whether one bounded identity contract can bind exact macro-lineage, body-plan and C4 subjects without importing later membership, reproduction or dimorphism semantics.",
+                              "estimated_cost":  "One contract, one readiness record, two focused verifiers and independent review; implementation cost remains unknown and separately gated.",
                               "regression_guard":  "No later C6 biology, C7 source, broad G1 closure, runtime controller, product permission, Companion, Greenfield, visual asset or Forge-port mutation.",
-                              "stop_condition":  "Stop after the body-plan structure result and full gate; do not activate organism identity, ecology, physiology, reproduction, variation applicability or C7.",
-                              "final_integration_gate":  "Pre-source registered full gate run-818500121b3f4958ac093b105a7fe61b passed in 788754 ms with C6 readiness and route checks inside the production orchestration."
+                              "stop_condition":  "Stop after independently accepted package-3 readiness and one registered full gate; do not create identity source without the exact implementation authorization.",
+                              "final_integration_gate":  "The package-3 readiness verifier and hostile harness must be registered in the complete measured Forge gate before implementation authorization."
                           },
     "exit_criteria":  [
                           {
@@ -244,29 +251,39 @@
                                                    "tools/verify-g1-c6-body-plan-structure-implementation.ps1",
                                                    "registered-full-gate:run-e923d74fb96743e5864b303faf27acfc:passed"
                                                ]
+                          },
+                          {
+                              "id":  "c6-organism-identity-readiness",
+                              "label":  "Distinct typed identities, exact C4 subject replay, 33 groups, resources, one consumer, rollback and source-negative authority are frozen and independently reviewed.",
+                              "status":  "verified",
+                              "evidence_ids":  [
+                                                   "contracts/organism-subject-identity-contract.md",
+                                                   "docs/canonical-system/G1_C6_ORGANISM_SUBJECT_IDENTITY_IMPLEMENTATION_READINESS.md"
+                                               ]
                           }
                       ],
     "unresolved_risks":  [
-                             "The bounded humanoid fixture could leak pelvis, root, tree, bilateral or unique-role assumptions into the general contract.",
-                             "A lawful expression or arbitrary nonzero reference could be mistaken for the stable family identity bound by macro-lineage.",
-                             "Compressed cardinality, conditional presence, relation degrees or symmetry positions could expand unboundedly or accept disconnected structure.",
-                             "Sex, caste, species, capability, geometry or representation fields could leak into V1 through labels or reused H2/H3 types."
+                             "A shared 32-byte representation could collapse lineage, form-template, species-candidate, individual or population namespaces.",
+                             "An unresolved species or population identity could be mistaken for a membership policy, member list, count or distribution.",
+                             "Optional macro-lineage parentage, opportunity occupancy or structural homology could be laundered into ancestry or evolution.",
+                             "C4 lifecycle age/cohort state could be mislabeled as biological development, reproductive maturity or species distribution.",
+                             "Sex, dimorphism, reproduction, heredity, ecology, physiology or representation authority could leak into the identity layer."
                          ],
     "evidence_requirements":  [
-                                  "implement the exact family and expression records with separate domain identities and canonical ordering",
-                                  "pass all 18 focused groups including H200-H205, label leakage, resource boundaries and atomic failure",
-                                  "retain humanoid, radial five/seven and withheld serial controls without promoting any fixture as product content",
-                                  "bind one exact validated family ID to macro-lineage without changing existing candidate bytes",
-                                  "preserve the no-broader-C6, no-C7, no-runtime and no-Forge-authority boundary"
+                                  "freeze seven typed identity/binding records with distinct domains and strict canonical codecs",
+                                  "bind exact macro-lineage, family/expression and individual-targeted C4 lifecycle/history evidence",
+                                  "pass all 33 readiness groups and disposable hostiles including H400-H405, authority-negative H500-H505 and the applicable H1100 slice",
+                                  "freeze one additive person-form structural-completeness consumer without changing legacy bytes",
+                                  "preserve unresolved membership and the no-later-C6, no-C7, no-runtime and no-Forge-authority boundary"
                               ],
     "verification_plan":  [
-                              "verify body-plan implementation readiness and route hostiles before source",
-                              "run test-first family, expression, codec, resource and negative-transfer fixtures",
-                              "verify the one macro-lineage consumer plus all five retained C6 prototype suites",
-                              "verify formatting, strict Clippy, modularity, module context, record roles and retained C4/C5/GP3/GP4 routes",
-                              "classify native x64, i686 and Android compile evidence honestly, obtain independent review and run one registered full gate"
+                              "verify package-3 identity contract/readiness tokens, exact route and source absence",
+                              "run all disposable readiness mutations for type, label, membership, world, ancestry, C4 target, resource and authority drift",
+                              "obtain independent schema, test, dependency and dimorphism-boundary review",
+                              "verify Atlas, operating-system, module context, record roles and retained C4/C5/C6 routes",
+                              "register both readiness scripts and pass one complete measured Forge gate before any implementation authorization"
                           ],
-    "resume_after":  "Stop after recording the body-plan structure V1 result; do not activate C6 package 3, broader biology, C7, runtime or Forge port without a new exact authorization.",
+    "resume_after":  "Stop after independent acceptance of the frozen package-3 readiness record; source implementation remains separately gated.",
     "evidence":  [
                      "GP3 closed cleanly in commit 7f29f6b and registered run-50a8c78043eb46c483f1f655d3793f9b.",
                      "C4V closed cleanly in commit 34f2213 and registered run-fa6334a300e04d409dd5cddb4f22542e.",
@@ -409,7 +426,9 @@
                                   "independent-review:c6-body-plan-source-matrix-integration:accepted",
                                   "registered-full-gate:run-57db0fb7534941d7a536bea252149e6b:failed:stale-readiness-authority-hostile",
                                   "registered-full-gate:run-e923d74fb96743e5864b303faf27acfc:passed",
-                                  "receipt:G1-C6-BODY-PLAN-STRUCTURE-V1:recorded"
+                                  "receipt:G1-C6-BODY-PLAN-STRUCTURE-V1:recorded",
+                                  "owner-route:c6-organism-identity-readiness:authorized",
+                                  "independent-review:c6-organism-subject-identity-readiness:accepted"
                               ],
     "metrics":  {
                     "token_cost":  {
@@ -422,5 +441,5 @@
                                          "receipt":  "registered-full-gate:run-e923d74fb96743e5864b303faf27acfc:passed"
                                      }
                 },
-    "transition":  "C4 verified and recorded -\u003e C5 capability-free closure verified and recorded -\u003e corrected C6 readiness verified inside the production gate -\u003e body-plan family/topology V1 verified and recorded in run-e923d74fb96743e5864b303faf27acfc -\u003e stop before all later C6, C7, runtime, promotion and Forge port work"
+    "transition":  "C4 verified and recorded -\u003e C5 capability-free closure verified and recorded -\u003e corrected C6 readiness verified inside the production gate -\u003e body-plan family/topology V1 verified and recorded in run-e923d74fb96743e5864b303faf27acfc -\u003e owner continued into code-free package-3 identity readiness only"
 }

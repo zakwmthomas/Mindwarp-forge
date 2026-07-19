@@ -11,7 +11,7 @@ from pathlib import Path
 
 SOURCE_COMMIT = "9e48dd117c2b22b62bd31dba15c10c3a9bf4b100"
 SOURCE_MANIFEST_SHA256 = "9430bc530ba39403803a05fd99a9bc5c257472c2f320921ca242b51344947ecb"
-SUCCESSOR_MANIFEST_SHA256 = "5f934a61dff9effa0fec1a7c219f53e3a510faa715e1e4c58622fd7a5585715c"
+SUCCESSOR_MANIFEST_SHA256 = "1e77df61675512c905688ae9edcc90e32e62ed4740c87148bfd16807390a6fc3"
 PATH_LIST = "tools/fixtures/c5-significance-scheduler-receipt/bounded-paths.txt"
 
 EXPECTED_PATHS = (
@@ -75,7 +75,7 @@ ALLOWED_TRANSITIONS = {
     ),
     "tools/verify.ps1": (
         "81a19541b5fa0d025718cc8976f2b281cc536a6e",
-        "e5613f3da5c2d365c35797910188bd31495433d6",
+        "9c1a8477b4eacb35c70f9b71c354fb3e9b8366f3",
     ),
 }
 

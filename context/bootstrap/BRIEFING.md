@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **G1-C6-BODY-PLAN-STRUCTURE-IMPLEMENTATION-V1**
-- Objective: Implement and verify only the capability-free coordinate-free body-plan family/topology V1 contract, its lawful expression seam, three structural controls and one exact macro-lineage family-reference consumer.
+- Work package: **G1-C6-ORGANISM-IDENTITY-READINESS-V1**
+- Objective: Reconcile the recorded body-plan V1 result, then freeze only the capability-free C6 package-3 typed lineage, organism-form, species-candidate, individual and population identity envelopes plus exact C4 lifecycle/history consumption.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **capability-free-c6-body-plan-structure-implementation / The corrected 82-ID C6 readiness record, independent schema/test/governance reviews, and registered gate run-818500121b3f4958ac093b105a7fe61b pass. V1 freezes family versus expression identity, coordinate-free graph semantics, 18 test groups, exact resources, three controls and one consumer. This grants only the bounded body-plan package, not broader biology or representation.**
-- Exact next action: Stop at the verified body-plan V1 boundary. Await a separate owner route before any later C6 identity, ecology, physiology, reproduction, heredity, dimorphism-applicability, population, comparison or representation package.
+- Risk/research gate: **code-free-c6-organism-identity-readiness / Body-plan V1 is recorded and passed registered full gate run-e923d74fb96743e5864b303faf27acfc. Three independent package-order audits selected typed identity plus exact C4 lifecycle/history consumption; three independent schema, adversarial and integration re-reviews now accept the frozen code-free readiness package after stable-identity, multi-family, population-separation, dependency, codec, resource, source-negative and contradiction-resistance repairs.**
+- Exact next action: Run the registered forge-full-gate-v1 with the independently accepted package-3 identity readiness verifier and hostiles inside production orchestration; then record the code-free readiness result and stop before source authorization.
 
 ## Approved operating policies
 

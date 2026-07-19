@@ -5,12 +5,12 @@
 
 ## Active checkpoint
 
-- Package: **G1-C6-BODY-PLAN-STRUCTURE-IMPLEMENTATION-V1**
+- Package: **G1-C6-ORGANISM-IDENTITY-READINESS-V1**
 - Master item / milestone: **C6 / G1**
-- State / substage: **executing / c6-body-plan-structure-test-first-implementation**
+- State / substage: **executing / c6-organism-identity-readiness**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Objective: Implement and verify only the capability-free coordinate-free body-plan family/topology V1 contract, its lawful expression seam, three structural controls and one exact macro-lineage family-reference consumer.
-- Context health: C4 and C5 remain verified prerequisites. C6 is the sole active item. Body-plan V1 passes the focused 17+1 matrix, portability classifications, module governance and independent review. One registered full gate remains before recording and stopping; all later C6 packages and C7 remain gated.
+- Objective: Reconcile the recorded body-plan V1 result, then freeze only the capability-free C6 package-3 typed lineage, organism-form, species-candidate, individual and population identity envelopes plus exact C4 lifecycle/history consumption.
+- Context health: C4 and C5 remain verified prerequisites. Body-plan V1 is verified, recorded and passed the complete registered gate. C6 package 3 is active for code-free identity readiness only; all source and later C6 packages remain gated.
 
 ## Durable evidence
 
@@ -25,19 +25,20 @@
 
 ## Authority boundary
 
-Owner-authorized capability-free C6 body-plan family/topology V1 test-first implementation only. Exact dependencies verified C4 and C5. Authorizes the new body-plan-structure crate, one additive macro-lineage-binding family-reference validator, exact tests, governance projections and verification for this package. No ecology realization, physiology, reproduction, heredity, development, sex or dimorphism applicability, caste, species, individual or population semantics, personhood, product ontology, solver or AI generation, geometry, proportions, pose, assets, animation, renderer, visual-quality claim, runtime, filesystem, network, process, Companion, Greenfield, C7, broad G1 closure, promotion authority or Kernel mutation.
+Owner-routed code-free C6 package-3 identity readiness only. Authorizes reconciliation of stale body-plan projections and design, adversarial review, fixtures, verifier and governance records for distinct lineage, organism-form, species-candidate, individual and population identity envelopes plus exact C4 lifecycle/history consumption. No production crate or source implementation; no asserted species membership, population members/count/distribution, ancestry/evolution inference, ecology, physiology, reproduction, heredity, development, sex, dimorphism, culture, representation, runtime, Companion, Greenfield, C7, promotion authority or Kernel mutation.
 
 ## Exact next action
 
-Stop at the verified body-plan V1 boundary. Await a separate owner route before any later C6 identity, ecology, physiology, reproduction, heredity, dimorphism-applicability, population, comparison or representation package.
+Run the registered forge-full-gate-v1 with the independently accepted package-3 identity readiness verifier and hostiles inside production orchestration; then record the code-free readiness result and stop before source authorization.
 
 ## Unresolved risks
 
-- The bounded humanoid fixture could leak pelvis, root, tree, bilateral or unique-role assumptions into the general contract.
-- A lawful expression or arbitrary nonzero reference could be mistaken for the stable family identity bound by macro-lineage.
-- Compressed cardinality, conditional presence, relation degrees or symmetry positions could expand unboundedly or accept disconnected structure.
-- Sex, caste, species, capability, geometry or representation fields could leak into V1 through labels or reused H2/H3 types.
+- A shared 32-byte representation could collapse lineage, form-template, species-candidate, individual or population namespaces.
+- An unresolved species or population identity could be mistaken for a membership policy, member list, count or distribution.
+- Optional macro-lineage parentage, opportunity occupancy or structural homology could be laundered into ancestry or evolution.
+- C4 lifecycle age/cohort state could be mislabeled as biological development, reproductive maturity or species distribution.
+- Sex, dimorphism, reproduction, heredity, ecology, physiology or representation authority could leak into the identity layer.
 
 ## Resume after this package
 
-Stop after recording the body-plan structure V1 result; do not activate C6 package 3, broader biology, C7, runtime or Forge port without a new exact authorization.
+Stop after independent acceptance of the frozen package-3 readiness record; source implementation remains separately gated.
