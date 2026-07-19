@@ -30,7 +30,7 @@
                     {
                         "id":  "visible-radiance-interface-event",
                         "layer":  "game-canonical",
-      "status":  "reference_proven",
+      "status":  "prototype_tested",
                         "depends_on":  [
                                            "physical-path-substrate"
                                        ],
@@ -342,9 +342,9 @@
                                        ]
                     },
                     {
-                        "id":  "lazy-universe-hierarchy",
-                        "layer":  "game-canonical",
-                        "status":  "prototype_tested",
+        "id":  "lazy-universe-hierarchy",
+        "layer":  "game-canonical",
+        "status":  "reference_proven",
                         "depends_on":  [
                                            "universe-identity",
                                            "derived-world-rules"
