@@ -385,34 +385,36 @@
                     {
                         "id":  "significance-system",
                         "layer":  "game-canonical",
-                        "status":  "prototype_tested",
+                        "status":  "reference_proven",
                         "depends_on":  [
                                            "lazy-universe-hierarchy"
                                        ],
                         "purpose":  "Shared importance packet for rendering, simulation, AI, physics, animation, audio, streaming, and generation.",
-                        "proof":  "Strict packet encoding, asymmetric hysteresis, protection, monotone independent consumer maps, and authority-negative fixtures; a new 4-test multi-domain fixture proves named AI/animation/audio/rendering consumers diverge from one shared tier, stay stable together through a shared hysteresis-protected flap, are jointly forced to Critical by a protected threat flag, and never interfere with each other\u0027s fidelity map. Product signals, weights, and mappings remain open.",
+                        "proof":  "Strict packet encoding, asymmetric hysteresis, protection and eight closed packet-derived domain maps pass 90 Rust tests, all 92 frozen hostile IDs, ten pressure scenarios, portable semantic receipt 88e2be61, hosted Linux execution, read-only ProofReceipt integration, independent review and registered gate run-87b9301f9bb54b2d9b72767643c7ed9b. Product signals, weights and runtime mappings remain open.",
                         "references":  [
                                            "contracts/significance-scheduler-contract.md",
                                            "crates/significance-scheduler/src/significance.rs",
                                            "crates/significance-scheduler/tests/multi_domain_consumer_fidelity.rs",
                                            "docs/canonical-system/SIGNIFICANCE_SCHEDULER_DESIGN_GATE.md",
-                                           "docs/canonical-system/G1_C5_MULTI_DOMAIN_FIDELITY_RESULT.md"
+                                           "docs/canonical-system/G1_C5_MULTI_DOMAIN_FIDELITY_RESULT.md",
+                                           "docs/canonical-system/G1_C5_CLOSURE_RESULT.md"
                                        ]
                     },
                     {
                         "id":  "streaming-scheduler",
                         "layer":  "game-canonical",
-                        "status":  "prototype_tested",
+                        "status":  "reference_proven",
                         "depends_on":  [
                                            "significance-system",
                                            "lazy-universe-hierarchy"
                                        ],
                         "purpose":  "Predictive prefetch, pinning, cancellation, deadlines, fallback, and CPU/GPU/I/O/main-thread budgets.",
-                        "proof":  "Strict tickets, graph validation, safety admission, live priority donation, bounded fairness, deterministic traces, cancellation settlement, stale-output quarantine, fallback, and read-only ProofReceipt fixtures; runtime controllers, executors, cache policy, and performance remain open.",
+                        "proof":  "Strict tickets, verified admission, bounded budgets, identity-preserving fallback, state-gated completion, cancellation settlement, bounded fairness, starvation diagnosis, deterministic pressure/thrash traces and disposable residency intents pass the exact C5 closure evidence and registered gate run-87b9301f9bb54b2d9b72767643c7ed9b. Runtime controllers, executors, cache policy, product weights and performance remain open.",
                         "references":  [
                                            "contracts/significance-scheduler-contract.md",
                                            "crates/significance-scheduler/src/scheduler.rs",
-                                           "docs/canonical-system/SIGNIFICANCE_SCHEDULER_DESIGN_GATE.md"
+                                           "docs/canonical-system/SIGNIFICANCE_SCHEDULER_DESIGN_GATE.md",
+                                           "docs/canonical-system/G1_C5_CLOSURE_RESULT.md"
                                        ]
                     },
                     {

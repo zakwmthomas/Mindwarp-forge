@@ -20,7 +20,7 @@ $root = Split-Path -Parent $PSScriptRoot
 $sourceCommit = '17f39f7018de8a02c8292bcde0fafa2bf58fc7d4'
 $historicalReplayCommit = '51a67b222739f6ba0a51f151976ded4d52d76f55'
 $historicalVerifyBlob = '21981e1ea9ea9c0117e322e0e0610e4d560edb3c'
-$currentVerifyBlob = '81a19541b5fa0d025718cc8976f2b281cc536a6e'
+$currentVerifyBlob = '852ff5114c39e6a5389429000b78c9b3858931a3'
 $expectedObservationBlob = '02e962a7d4e9f83f506162cfb1b97e8717b18c10'
 if ([string]::IsNullOrWhiteSpace($CheckpointPath)) {
     $CheckpointPath = Join-Path $root 'context\active\WORKER_BATCH_STATE.json'
@@ -93,7 +93,7 @@ foreach ($relative in $bounded) {
     if ($workingBlob -ne $headBlob) { throw "C4 bounded path has uncommitted drift: $relative" }
     if ($relative -eq 'tools/verify.ps1') {
         if ($historicalBlob -ne $historicalVerifyBlob -or $headBlob -ne $currentVerifyBlob) {
-            throw 'Outer verify.ps1 is not the one exact classified C5 orchestration transition.'
+            throw 'Outer verify.ps1 is not the one exact classified C5 closure-orchestration transition.'
         }
     } elseif ($historicalBlob -ne $headBlob) {
         throw "Retained C4 bounded path drifted outside the classified outer orchestration delta: $relative"
@@ -101,7 +101,7 @@ foreach ($relative in $bounded) {
 }
 
 if ($ValidateOnly) {
-    Write-Output 'C4 successor adapter validated: exact current C5 route plus historical C4 identity and one classified orchestration delta.'
+    Write-Output 'C4 successor adapter validated: exact current C5 route plus historical C4 identity and one classified closure-orchestration delta.'
     return
 }
 

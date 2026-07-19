@@ -111,7 +111,8 @@ $c4Successor = $checkpoint.batch_id -eq 'G1-C4-HIERARCHY-HISTORY-CLOSURE-V1' -an
 $c4Run = if($c4.Count-eq1){[regex]::Match([string]$c4[0].proof,'run-[0-9a-f]{32}')}else{$null}
 $c5Route = ($checkpoint.batch_id -eq 'G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1' -and $checkpoint.master_program_item -eq 'C5' -and $checkpoint.substage_id -eq 'c5-reconciliation-readiness' -and
     $checkpoint.authority_lane -eq 'Owner-authorized broad C5 significance/scheduler reconciliation and capability-free closure readiness only. Exact dependency C4. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.') -or
-    (Test-G1C5FullGateReconciliationRoute -Checkpoint $checkpoint)
+    (Test-G1C5FullGateReconciliationRoute -Checkpoint $checkpoint) -or
+    (Test-G1C5RecordedClosureRoute -Checkpoint $checkpoint)
 $c5Successor = $c5Route -and
     $gp4.Count -eq 1 -and $gp4[0].state -eq 'verified' -and $gp4[0].status -eq 'complete' -and $gp4[0].proof -match 'run-[0-9a-f]{32}' -and
     $closeout.Count -eq 1 -and $closeout[0].state -eq 'verified' -and $closeout[0].status -eq 'complete' -and

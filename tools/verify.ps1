@@ -19,6 +19,10 @@ Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-c4-indepen
 if (!$?) { throw 'G1 C4 independent-platform attestation replay failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-c5-independent-platform-result.ps1'
 if (!$?) { throw 'G1 C5 independent-platform attestation replay failed.' }
+Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'invoke-g1-c5-retained-implementation.ps1'
+if (!$?) { throw 'G1 C5 retained implementation and portability replay failed.' }
+Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-c5-closure-result.ps1'
+if (!$?) { throw 'G1 C5 recorded closure result verification failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-atlas.ps1'
 if (!$?) { throw 'Project Atlas validation failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-operating-system.ps1'
@@ -87,6 +91,10 @@ Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-g1-c4-independe
 if (!$?) { throw 'G1 C4 retained independent-platform hostile fixtures failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-g1-c5-independent-platform-result.ps1'
 if (!$?) { throw 'G1 C5 retained independent-platform hostile fixtures failed.' }
+Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-g1-c5-retained-successor.ps1'
+if (!$?) { throw 'G1 C5 retained-successor hostile fixtures failed.' }
+Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-g1-c5-closure-result.ps1'
+if (!$?) { throw 'G1 C5 closure-result hostile fixtures failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-c3-route-authorization.ps1'
 if (!$?) { throw 'Shared C3 route authorization fixtures failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-worker-selector.ps1'

@@ -61,10 +61,10 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
   Next: Retain C4 as the verified exact dependency for C5. Do not reopen C4 or infer runtime, storage, C3B, C6, C7 or broad G1 authority from its closure.
 - **C4V** - verified; gate: recorded; depends on: C2, C3A, GP1.
   Next: Retain the bounded C4V seam as a verified GP4 dependency; do not broaden it into runtime or broad C4.
-- **C5** - executing; gate: design; depends on: C4.
-  Next: Reconcile the retained scheduler and four-domain fidelity fixture against every named generation, simulation, AI, physics, animation, audio, rendering and streaming obligation; freeze dispatch, admission, budget, fallback, cancellation, fairness and hostile proof requirements before source work.
+- **C5** - executing; gate: recorded; depends on: C4.
+  Next: Retain the verified capability-free C5 reference as the closed waiting cursor until a separately owner-authorized C6 readiness transition; do not infer product policy, cache, runtime or later-system authority.
 - **C6** - proposed; gate: design; depends on: C4, C5.
-  Next: Wait for the reopened C3-C5 route. Retain the repaired C6 prototypes as bounded evidence only; do not continue body-plan work until the upstream causal-world, addressable-state and shared-scheduler packages satisfy their declared scopes.
+  Next: Wait for a separately owner-authorized C6 readiness transition. Retain the repaired C6 prototypes as bounded evidence only; do not activate organism, body-plan or ecology work from C5 closure.
 - **C7** - proposed; gate: design; depends on: C5, C6.
   Next: Promote representation contracts and prove asset, animation, aesthetic, visual-fitness and phone-to-high-end fidelity recipes from the same canonical organism/world state.
 - **G1-CLOSEOUT** - proposed; gate: owner; depends on: C3A, C4, C5, C6, C7, GP4.

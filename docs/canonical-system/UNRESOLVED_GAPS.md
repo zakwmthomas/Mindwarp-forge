@@ -27,8 +27,11 @@
   retained cryptographic replay and registered full gate
   `run-bc2154f73f6243239910ac30bc3b1994`. This closes engine-neutral hierarchy
   and history proof only; production storage, cache residency, cross-target
-  transactions, multiplayer and runtime remain later work. C5 is active for
-  readiness reconciliation; C6-C7 remain dependency-gated.
+  transactions, multiplayer and runtime remain later work. C5 is verified and
+  recorded as a capability-free reference after hosted Linux execution,
+  read-only ProofReceipt integration and registered gate
+  `run-87b9301f9bb54b2d9b72767643c7ed9b`. C6 remains separately proposed and
+  gated; C7 remains dependency-gated.
 - Visual recognisability, player value, and hardware cost require structured
   review; numerical success alone is insufficient.
 

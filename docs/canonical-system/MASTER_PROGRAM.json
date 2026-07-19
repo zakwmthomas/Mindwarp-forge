@@ -632,9 +632,9 @@
                       "depends_on":  [
                                          "C4"
                                      ],
-                      "gate":  "design",
-                      "next_action":  "Reconcile the retained scheduler and four-domain fidelity fixture against every named generation, simulation, AI, physics, animation, audio, rendering and streaming obligation; freeze dispatch, admission, budget, fallback, cancellation, fairness and hostile proof requirements before source work.",
-                      "proof":  "C4 is verified and complete. The retained scheduler reference and four-domain fidelity fixture pass, but complete named-domain readiness, cross-system dispatch/admission and hostile coverage remain open; C5 is active, not complete.",
+                      "gate":  "recorded",
+                      "next_action":  "Retain the verified capability-free C5 reference as the closed waiting cursor until a separately owner-authorized C6 readiness transition; do not infer product policy, cache, runtime or later-system authority.",
+                      "proof":  "Exactly eight packet-derived consumer domains, all 92 frozen hostile IDs, ten deterministic pressure scenarios, portable semantic receipt 88e2be61, GitHub-hosted Linux run 29678602236, read-only ProofReceipt integration, independent reviews and registered full gate run-87b9301f9bb54b2d9b72767643c7ed9b pass. C5 is recorded and closed while remaining the sole executing cursor until a separately authorized successor.",
                       "sources":  [
                                       "MASTER_CLOSURE_REGISTER.md",
                                       "SIGNIFICANCE_SCHEDULER_DESIGN_GATE.md",
@@ -642,6 +642,10 @@
                                       "APERIODIC_MONOTILE_CANDIDATE_MAP.md",
                                       "G1_C5_MULTI_DOMAIN_FIDELITY_RESULT.md",
                                       "G1_C5_CLOSURE_READINESS.md",
+                                      "G1_C5_LOCAL_IMPLEMENTATION_CANDIDATE.md",
+                                      "G1_C5_LOCAL_PLATFORM_OBSERVATIONS.json",
+                                      "G1_C5_INDEPENDENT_PLATFORM_EXECUTION.json",
+                                      "G1_C5_CLOSURE_RESULT.md",
                                       "G1_C4_CLOSURE_RESULT.md"
                                   ]
                   },
@@ -655,8 +659,8 @@
                                          "C5"
                                      ],
                       "gate":  "design",
-                      "next_action":  "Wait for the reopened C3-C5 route. Retain the repaired C6 prototypes as bounded evidence only; do not continue body-plan work until the upstream causal-world, addressable-state and shared-scheduler packages satisfy their declared scopes.",
-                      "proof":  "Repaired prerequisites now require exact input/packet replay, rebuild opportunity graphs from causal inputs, reject fabricated nodes and lineage occupancy, and report person-form structural binding completeness without grounding or comparison readiness. C6 remains incomplete and dependency-gated.",
+                      "next_action":  "Wait for a separately owner-authorized C6 readiness transition. Retain the repaired C6 prototypes as bounded evidence only; do not activate organism, body-plan or ecology work from C5 closure.",
+                      "proof":  "Exact C4 and capability-free C5 reference prerequisites are verified, but C6 remains incomplete, proposed and separately gated. Repaired prototypes reject fabricated causal nodes and lineage occupancy and report structural bindings only, without grounding, comparison, organism, ecology or runtime authority.",
                       "sources":  [
                                       "MASTER_CLOSURE_REGISTER.md",
                                       "SEMANTIC_CONSTRUCTION_DESIGN_GATE.md",

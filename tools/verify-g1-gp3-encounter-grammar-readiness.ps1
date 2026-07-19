@@ -84,7 +84,7 @@ $c4Successor = $checkpoint.batch_id -eq 'G1-C4-HIERARCHY-HISTORY-CLOSURE-V1' -an
 $c5LegacySuccessor = $checkpoint.batch_id -eq 'G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1' -and
     $checkpoint.master_program_item -eq 'C5' -and $checkpoint.substage_id -eq 'c5-reconciliation-readiness' -and
     $checkpoint.authority_lane -eq 'Owner-authorized broad C5 significance/scheduler reconciliation and capability-free closure readiness only. Exact dependency C4. No C3B, C6, C7, broad G1 closure, runtime controllers, runtime executors, cache mutation, storage mutation, product weights, AI generation, rendering implementation, filesystem, network, process, Companion, Greenfield, visual assets or Kernel mutation.'
-$c5Successor = $c5LegacySuccessor -or (Test-G1C5FullGateReconciliationRoute -Checkpoint $checkpoint)
+$c5Successor = $c5LegacySuccessor -or (Test-G1C5FullGateReconciliationRoute -Checkpoint $checkpoint) -or (Test-G1C5RecordedClosureRoute -Checkpoint $checkpoint)
 if (!$gp3Live -and !$gp4Successor -and !$closeoutSuccessor -and !$c4Successor -and !$c5Successor) {
     throw 'GP3 readiness is not bound to its canonical route or an admitted authenticated successor.'
 }

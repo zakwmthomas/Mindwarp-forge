@@ -1641,7 +1641,7 @@
         },
         {
             "id": "significance-scheduler",
-            "maturity": "prototype_tested",
+            "maturity": "reference_proven",
             "purpose": "Shared significance packets and deterministic bounded scheduling reference across future fidelity consumers.",
             "owns": [
                 "significance tiers and hysteresis",
@@ -1682,6 +1682,8 @@
                 "tools/test-g1-c5-portability-classifier.ps1",
                 "tools/test-g1-c5-external-receipt.py",
                 "tools/test-g1-c5-independent-platform-result.ps1",
+                "tools/verify-g1-c5-retained-successor.ps1",
+                "tools/verify-g1-c5-closure-result.ps1",
                 "tools/verify-f5-significance-scheduler-readiness.ps1"
             ],
             "references": [
@@ -1692,7 +1694,8 @@
                 "docs/canonical-system/G1_C5_LOCAL_IMPLEMENTATION_CANDIDATE.md",
                 "docs/canonical-system/G1_C5_INDEPENDENT_PLATFORM_EXECUTION_PROTOCOL.md",
                 "docs/canonical-system/G1_C5_LOCAL_PLATFORM_OBSERVATIONS.json",
-                "docs/canonical-system/G1_C5_INDEPENDENT_PLATFORM_EXECUTION.json"
+                "docs/canonical-system/G1_C5_INDEPENDENT_PLATFORM_EXECUTION.json",
+                "docs/canonical-system/G1_C5_CLOSURE_RESULT.md"
             ]
         },
         {

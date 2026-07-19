@@ -5,11 +5,11 @@
 ## Active route
 
 - Work package: **G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1**
-- Objective: Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.
+- Objective: Record the exact capability-free C5 significance and scheduler closure evidence against verified C4 without activating C6 or granting runtime, product or promotion authority.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **bounded-c5-full-gate-route-reconciliation / The independently reviewed exact route adapter authenticates the evolved C5 substage outside the frozen C4 proof surface. It pins the retained source, closure snapshot, bounded blobs, observation blob, GitHub CLI identity, current route and decisive owner/gate receipts; wildcard and crossed tuple matching fail closed. Registered measured full gate run-87b9301f9bb54b2d9b72767643c7ed9b passed in 1106066 ms. C5 closure, promotion and C6 authority remain withheld pending the separately bounded registered-closure transition.**
-- Exact next action: Record and independently reconcile the passed exact C5 full-gate route adapter, then prepare the separately bounded C5 registered-closure transition. Do not port Forge, broaden route matching, close C5 in this substage or activate C6.
+- Risk/research gate: **recorded-capability-free-c5-closure-holding-cursor / C5 capability-free closure evidence is recorded against exact C4. The retained source, two evidence-only successor transitions, one exact closure-orchestration transition, hosted Linux attestation, read-only ProofReceipt integration, independent reviews and registered run-87b9301f9bb54b2d9b72767643c7ed9b remain cryptographically replayable. This holding state grants no Forge port, promotion, runtime, product-policy, cache or C6 authority.**
+- Exact next action: Retain C5 as the sole recorded waiting cursor until a separate owner-authorized C6 readiness transition. Do not port Forge, activate C6 or infer runtime, cache, product-policy or promotion authority.
 
 ## Approved operating policies
 
