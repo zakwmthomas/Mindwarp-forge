@@ -65,13 +65,13 @@
                                                       },
                                      "evidence":  {
                                                       "stage_id":  "c6-body-plan-structure-test-first-implementation",
-                                                      "content_sha256":  "7e4be881caa3b783bbb09efb194cc62fe397de12f067bea9afb55614d244b951",
+                                                      "content_sha256":  "5272331390e01029d05042e5fb62cc2fe1790fbfaae3397b8953c123f3829a65",
                                                       "review_disposition":  "revised",
                                                       "review_note":  "Reviewed all handoff sections against the active substage."
                                                   },
                                      "verification_receipts":  {
                                                                    "stage_id":  "c6-body-plan-structure-test-first-implementation",
-                                                                   "content_sha256":  "1c6765570321baee0f4e2039a5f6fe84c57500a90a9ea829b437a7df8ecbc927",
+                                                                   "content_sha256":  "6225ff4302defe69b579b5e6d6278405d2210030d8bf008122d188e9f4794f04",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
@@ -306,7 +306,8 @@
                      "The owner continued work after the corrected C6 audit, releasing only body-plan structure V1. Three independent read-only reviews froze the standalone schema, 18 test groups, engineering bounds and one-consumer boundary.",
                      "Test-first implementation first failed because the body-plan library did not exist, then exposed and corrected recursion, canonical identity, resource preflight, budget-accounting and capability-audit defects before passing.",
                      "The final focused verifier passes 17 body-plan groups plus one macro-lineage consumer group, strict Clippy, same-host native x64 and i686 execution, and Android ARM64 compile-only classification.",
-                     "Two structurally distinct humanoid expressions share the pinned family identity while retaining distinct expression identities; V1 contains no sex or dimorphism applicability labels."
+                     "Two structurally distinct humanoid expressions share the pinned family identity while retaining distinct expression identities; V1 contains no sex or dimorphism applicability labels.",
+                     "Registered run-57db0fb7534941d7a536bea252149e6b failed after 52098 ms because a retained C6 readiness hostile performed an old-route no-op authority mutation; the fixture now mutates either authorized route and the failed receipt remains diagnostic evidence."
                  ],
     "verification_receipts":  [
                                   "dependency:gp0-gp1-gp2-gp3-c4v:verified",
@@ -403,7 +404,8 @@
                                   "focused:c6-body-plan-matrix:17-plus-1:passed",
                                   "platform:c6-body-plan-i686:same-host-execution:passed",
                                   "platform:c6-body-plan-android-aarch64:compile-only:passed",
-                                  "independent-review:c6-body-plan-source-matrix-integration:accepted"
+                                  "independent-review:c6-body-plan-source-matrix-integration:accepted",
+                                  "registered-full-gate:run-57db0fb7534941d7a536bea252149e6b:failed:stale-readiness-authority-hostile"
                               ],
     "metrics":  {
                     "token_cost":  {
