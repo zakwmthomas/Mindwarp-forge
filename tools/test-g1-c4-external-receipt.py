@@ -100,5 +100,7 @@ def main():
     for script in ("verify-g1-c4-hierarchy-history-implementation.ps1","verify-g1-c4-platform-observation-receipt.ps1"):
         text=(Path(__file__).with_name(script)).read_text(encoding="utf-8")
         if "git -c core.quotePath=true ls-tree -r --full-tree" not in text or '$treeLines-join"`n"' not in text:raise AssertionError(f"PowerShell tracked-tree canonicalization changed: {script}")
+    local_verifier=(Path(__file__).with_name("verify-g1-c4-platform-observation-receipt.ps1")).read_text(encoding="utf-8")
+    if "sha256-notmatch'^[0-9a-f]{64}$'" not in local_verifier or "$NativeExecutable-notmatch'^[0-9a-f]{64}$'" not in local_verifier or "sha256-ne$NativeExecutable" in local_verifier or "sha256-ne$I686Executable" in local_verifier:raise AssertionError("local MSVC observation incorrectly claims reproducible executable bytes")
     print(f"C4 external receipt importer verified: {len(cases)+1} hostile cases and pinned workflow controls pass.")
 if __name__=="__main__":main()

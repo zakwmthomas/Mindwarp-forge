@@ -1,4 +1,4 @@
-﻿{
+{
     "schema_version":  3,
     "canonical_role":  "sole-active-work-checkpoint",
     "batch_id":  "G1-C4-HIERARCHY-HISTORY-CLOSURE-V1",
@@ -6,7 +6,7 @@
     "state":  "executing",
     "previous_state":  "ready",
     "objective":  "Close broad C4 as a capability-free addressable hierarchy and history proof against exact C2 and promoted C3A evidence, without importing C3B, later systems, storage or runtime authority.",
-    "next_action":  "Rerun the registered full gate after adding only c4-independent-platform-gate to the three exact authenticated predecessor-successor allowlists; require retained C4 attestation replay, retain candidate_verified_local and keep C5 inactive until the complete gate passes.",
+    "next_action":  "Commit the bounded local-observation verifier repair, regenerate a clean source-bound local observation, obtain and strictly import a fresh hosted Linux attestation for that exact source, then rerun only the registered full gate; retain candidate_verified_local and keep C5 inactive until the complete gate passes.",
     "substage_id":  "c4-independent-platform-gate",
     "handoff_section_receipts":  {
                                      "objective":  {
@@ -95,7 +95,7 @@
     "risk_level":  "bounded-broad-c4-capability-free-closure",
     "research_gate":  "C4 local proof passes and GitHub-hosted run 29671881585 at source 8651038 is strictly imported with replayable attestation digest 75d27618. The first registered gate exposed and closed C3 register retention drift; the second passed that repair and exposed three predecessor verifiers that omitted only the new exact c4-independent-platform-gate substage. Their existing batch, item, authority, dependency, state and receipt checks remain unchanged, focused successor hostiles pass, and one complete registered rerun remains required.",
     "authority_lane":  "Owner-authorized broad C4 hierarchy/history reconciliation and capability-free closure proof only. Exact dependencies C2 and C3A. No C3B, C5, C6, C7, broad G1 closure, runtime, storage engine, filesystem, network, multiplayer, cross-target transactions, Companion, Greenfield, visual assets or Kernel mutation.",
-    "context_health":  "C4 remains candidate_verified_local. GitHub-hosted run 29671881585 independently executed and attested clean source 8651038; strict import and retained cryptographic replay verify canonical receipt digest 75d27618497c5432c10f86fd2dd25759185238cd3bbf264a583b3743b228542b. Two registered attempts replayed C4 successfully and exposed independent historical integration drift: compressed C3 closure anchors, then omitted independent-platform successor routing in GP3, GP4 and vertical-closeout verifiers. Both repairs are narrow, their focused current and hostile checks pass, and only one complete registered full-gate rerun remains open. C5 stays inactive.",
+    "context_health":  "C4 remains candidate_verified_local. GitHub-hosted run 29671881585 independently executed and attested clean source 8651038; strict import and retained cryptographic replay verify canonical receipt digest 75d27618497c5432c10f86fd2dd25759185238cd3bbf264a583b3743b228542b. Three registered attempts replayed C4 successfully and exposed independent integration drift: compressed C3 closure anchors, omitted independent-platform successor routing, then an invalid cross-build MSVC executable-byte equality claim in the retained local-observation verifier. Two clean target-directory builds proved the Windows debug PE bytes differ while canonical semantic output remains exact. The bounded repair preserves retained and current executable hashes as typed observation identities, retains exact source/toolchain/command/output checks, and leaves hosted same-run artifact equality unchanged; because that verifier is attested source, a fresh clean observation and hosted proof are required. C5 stays inactive.",
     "stage_context":  {
                           "stage_id":  "c4-independent-platform-gate",
                           "macro_sources":  [
@@ -255,7 +255,8 @@
                      "Hosted run 29671494578 executed and attested historical source f0c3c4f but strict import rejected its CRLF/LF tracked-tree mismatch before writing canonical evidence; it is diagnostic-only.",
                      "GitHub-hosted run 29671881585 independently executed and attested clean source 8651038; strict import created G1_C4_INDEPENDENT_PLATFORM_EXECUTION.json with receipt SHA-256 75d27618497c5432c10f86fd2dd25759185238cd3bbf264a583b3743b228542b.",
                      "The first registered post-import gate replayed the C4 attestation, then failed on C3 closure-register retention drift; the register now preserves current superseded-C3/promoted-C3A/blocked-C3B truth plus residual/ecotone anchors, and all five affected focused shields pass.",
-                     "The second registered attempt passed the C3 repair and later failed because three retained GP3/GP4/vertical-closeout verifiers omitted only c4-independent-platform-gate; exact-stage additions and the existing forged-route successor suite now pass without widening authority."
+                     "The second registered attempt passed the C3 repair and later failed because three retained GP3/GP4/vertical-closeout verifiers omitted only c4-independent-platform-gate; exact-stage additions and the existing forged-route successor suite now pass without widening authority.",
+                     "The third registered attempt passed through retained hosted-attestation replay and the repaired successor routes, then failed because the local observation verifier incorrectly required historical and rebuilt MSVC debug PE bytes to match. Two clean target-directory builds produced distinct executable hashes with exact semantic output; the bounded repair validates both hashes as per-execution identities without weakening hosted same-run artifact equality."
                  ],
     "verification_receipts":  [
                                   "dependency:gp0-gp1-gp2-gp3-c4v:verified",
@@ -288,7 +289,9 @@
                                   "registered-full-gate:post-c4-import:failed:c3-closure-register-retention-drift",
                                   "focused:c3-closure-retention-shields:5-of-5:passed",
                                   "registered-full-gate:post-c3-repair:failed:gp3-independent-platform-successor-drift",
-                                  "focused:c4-independent-platform-successor-route:passed"
+                                   "focused:c4-independent-platform-successor-route:passed",
+                                   "registered-full-gate:run-38b90549d7d045c9be46f951cf2b7f8f:failed:local-msvc-cross-build-byte-equality",
+                                   "diagnostic:c4-msvc-clean-targets:semantic-exact:executable-bytes-distinct"
                               ],
     "metrics":  {
                     "token_cost":  {

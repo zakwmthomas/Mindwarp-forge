@@ -10,7 +10,7 @@
 - State / substage: **executing / c4-independent-platform-gate**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Objective: Close broad C4 as a capability-free addressable hierarchy and history proof against exact C2 and promoted C3A evidence, without importing C3B, later systems, storage or runtime authority.
-- Context health: C4 remains candidate_verified_local. GitHub-hosted run 29671881585 independently executed and attested clean source 8651038; strict import and retained cryptographic replay verify canonical receipt digest 75d27618497c5432c10f86fd2dd25759185238cd3bbf264a583b3743b228542b. Two registered attempts replayed C4 successfully and exposed independent historical integration drift: compressed C3 closure anchors, then omitted independent-platform successor routing in GP3, GP4 and vertical-closeout verifiers. Both repairs are narrow, their focused current and hostile checks pass, and only one complete registered full-gate rerun remains open. C5 stays inactive.
+- Context health: C4 remains candidate_verified_local. GitHub-hosted run 29671881585 independently executed and attested clean source 8651038; strict import and retained cryptographic replay verify canonical receipt digest 75d27618497c5432c10f86fd2dd25759185238cd3bbf264a583b3743b228542b. Three registered attempts replayed C4 successfully and exposed independent integration drift: compressed C3 closure anchors, omitted independent-platform successor routing, then an invalid cross-build MSVC executable-byte equality claim in the retained local-observation verifier. Two clean target-directory builds proved the Windows debug PE bytes differ while canonical semantic output remains exact. The bounded repair preserves retained and current executable hashes as typed observation identities, retains exact source/toolchain/command/output checks, and leaves hosted same-run artifact equality unchanged; because that verifier is attested source, a fresh clean observation and hosted proof are required. C5 stays inactive.
 
 ## Durable evidence
 
@@ -29,7 +29,7 @@ Owner-authorized broad C4 hierarchy/history reconciliation and capability-free c
 
 ## Exact next action
 
-Rerun the registered full gate after adding only c4-independent-platform-gate to the three exact authenticated predecessor-successor allowlists; require retained C4 attestation replay, retain candidate_verified_local and keep C5 inactive until the complete gate passes.
+Commit the bounded local-observation verifier repair, regenerate a clean source-bound local observation, obtain and strictly import a fresh hosted Linux attestation for that exact source, then rerun only the registered full gate; retain candidate_verified_local and keep C5 inactive until the complete gate passes.
 
 ## Unresolved risks
 
