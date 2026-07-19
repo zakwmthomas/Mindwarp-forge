@@ -34,6 +34,8 @@ Gameplay recovery and development proposal:
   import boundary for the remaining external C4 gate.
 - `G1_C4_CLOSURE_RESULT.md` - verified C4 closure binding hosted Linux
   execution, retained replay and the decisive registered full-gate receipt.
+- `G1_C5_CLOSURE_READINESS.md` - exact eight-domain significance/scheduler
+  closure boundary, supersessions, missing proof and frozen hostile registry.
 
 6. `MACRO_GAP_CLOSURE_AUDIT.md` - per-system contracts, risks,
    observability requirements, smallest proofs, and F5 package ordering.

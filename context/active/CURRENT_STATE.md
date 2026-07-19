@@ -7,10 +7,10 @@
 
 - Package: **G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1**
 - Master item / milestone: **C5 / G1**
-- State / substage: **executing / c5-reconciliation-readiness**
+- State / substage: **executing / c5-implementation-owner-gate**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Objective: Reconcile C5 significance and scheduler closure obligations against verified C4, preserving capability-free deterministic proof and excluding later systems and runtime authority.
-- Context health: C4 is verified, complete and recorded after closure run-bc2154f73f6243239910ac30bc3b1994. The hardened C5-successor verifier surface is bound to clean source 17f39f7, tracked tree 3b0bb235, bounded source b31d92b7 and GitHub-hosted run 29674024317 result 2430d210; strict import, retained replay and post-transition registered full gate run-71ef6dfd6e2945ab9745c85f3dcf4d6b pass. C5 is the sole active reconciliation/readiness item. C6, C7, broad G1 closure and R1 remain gated.
+- Context health: C4 remains verified and C5 remains the sole active item. Three independent read-only audits plus 18 passing focused tests contradicted the old one-gap claim and froze the complete eight-domain boundary, supersessions, minimal additive candidate and 92 hostile IDs in G1_C5_CLOSURE_READINESS.md. The exact readiness verifier and forged-route/authority/dependency/registry suite pass. Product source remains blocked at the explicit owner gate; C6, C7, broad G1 closure and R1 remain gated.
 
 ## Durable evidence
 
@@ -29,12 +29,12 @@ Owner-authorized broad C5 significance/scheduler reconciliation and capability-f
 
 ## Exact next action
 
-Audit every named generation, simulation, AI, physics, animation, audio, rendering and streaming obligation; freeze dispatch, admission, budget, fallback, cancellation, fairness and hostile proof requirements before any C5 source work.
+At the bounded owner gate, authorize or reject only the minimal additive C5 candidate frozen in G1_C5_CLOSURE_READINESS.md: eight typed domains, exact packet/tier and budget binding, same-domain fallback, state-gated completion, strict traces, starvation diagnosis and capability-free residency intents.
 
 ## Unresolved risks
 
-- The retained C5 fixture covers four domains and does not yet prove complete named-domain dispatch, admission, budgets, fallback, cancellation, fairness, starvation or thrash behavior.
+- The frozen implementation candidate must repair packet/tier truth binding, strict budget/admission evidence, same-domain fallbacks, completion state gating, starvation diagnosis and residency intents without importing capabilities or product policy.
 
 ## Resume after this package
 
-Continue only through C5 reconciliation and capability-free readiness. Do not activate C6 automatically.
+Pause at the C5 implementation owner gate. If explicitly authorized, continue only through the frozen capability-free candidate; do not activate C6 automatically.

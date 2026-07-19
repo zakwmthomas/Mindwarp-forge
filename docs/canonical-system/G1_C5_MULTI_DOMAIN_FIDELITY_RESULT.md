@@ -2,6 +2,11 @@
 
 Status: **first C5 proof component passed; C5 remains executing.**
 
+> Superseded closure interpretation: this remains valid four-domain fidelity
+> evidence, but named maps were not the only C5 gap. Current closure requires
+> all eight named domains plus composed scheduler, residency, observability and
+> hostile proof frozen in `G1_C5_CLOSURE_READINESS.md`.
+
 ## What this closes
 
 C5's next action asked for a gap audit against `SIGNIFICANCE_SCHEDULER_DESIGN_GATE.md`

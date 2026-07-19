@@ -55,6 +55,7 @@ Shared significance packets and deterministic bounded scheduling reference acros
 - `contracts/significance-scheduler-contract.md`
 - `docs/canonical-system/SIGNIFICANCE_SCHEDULER_DESIGN_GATE.md`
 - `docs/canonical-system/G1_C5_MULTI_DOMAIN_FIDELITY_RESULT.md`
+- `docs/canonical-system/G1_C5_CLOSURE_READINESS.md`
 
 ## Update rule
 
