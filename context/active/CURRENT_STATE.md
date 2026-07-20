@@ -9,8 +9,8 @@
 - Master item / milestone: **C6 / G1**
 - State / substage: **executing / c6-ecological-niche-semantics-design-readiness**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Objective: Design and prove readiness for a capability-free C6 package-4 ecological-niche authored-hypothesis contract that preserves exact provenance and typed indeterminacy without claiming ecological truth or implementing production source.
-- Context health: C4, C5, body-plan V1, package-3 organism subject identity V1 and the package-4 source-negative schema-gap audit are verified and recorded. The ecological-niche semantics design/readiness successor is the sole active bounded item; implementation, later C6 packages and C7 remain gated.
+- Objective: Record the verified capability-free C6 package-4 ecological-niche authored-hypothesis design/readiness result, preserving exact provenance and typed indeterminacy without claiming ecological truth or implementing production source.
+- Context health: C4, C5, body-plan V1, package-3 organism subject identity V1, the package-4 source-negative schema-gap audit and ecological-niche semantics design/readiness are verified and recorded. Implementation, later C6 packages and C7 remain gated.
 
 ## Durable evidence
 
@@ -29,7 +29,7 @@ Owner-routed code-free C6 package-4 ecological-niche semantics authored-hypothes
 
 ## Exact next action
 
-Freeze the exact authored-hypothesis mathematical model, strict contract candidate, deterministic disposable fixtures, cumulative resource limits, one-consumer boundary, hostiles, portability and deletion-only rollback; stop before production source implementation.
+Stop at the verified package-4 ecological-niche semantics design/readiness boundary. One separately owner-authorized test-first implementation of the frozen V1 candidate and its single additive consumer is the next candidate; it is not active or authorized.
 
 ## Unresolved risks
 
@@ -43,4 +43,4 @@ Freeze the exact authored-hypothesis mathematical model, strict contract candida
 
 ## Resume after this package
 
-Stop after the package-4 authored-hypothesis design/readiness evidence is verified and recorded. Do not create production source, implement its consumer, or activate physiology, reproduction, heredity, development, realized occupancy, dimorphism, population semantics, comparison or C7 without a separate exact owner route.
+The package-4 authored-hypothesis design/readiness evidence is verified and recorded. Do not create production source, implement its consumer, or activate physiology, reproduction, heredity, development, realized occupancy, dimorphism, population semantics, comparison or C7 without a separate exact owner route.

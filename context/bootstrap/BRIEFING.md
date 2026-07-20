@@ -5,11 +5,11 @@
 ## Active route
 
 - Work package: **G1-C6-ECOLOGICAL-NICHE-SEMANTICS-DESIGN-READINESS-V1**
-- Objective: Design and prove readiness for a capability-free C6 package-4 ecological-niche authored-hypothesis contract that preserves exact provenance and typed indeterminacy without claiming ecological truth or implementing production source.
+- Objective: Record the verified capability-free C6 package-4 ecological-niche authored-hypothesis design/readiness result, preserving exact provenance and typed indeterminacy without claiming ecological truth or implementing production source.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **source-negative-c6-ecological-niche-authored-hypothesis-design-readiness / Body-plan V1, package-3 organism subject identity V1 and the package-4 source-negative schema-gap audit are verified and recorded. Only explicitly authored, provenance-bound candidate assertions may enter design; current evidence still cannot establish ecological truth.**
-- Exact next action: Freeze the exact authored-hypothesis mathematical model, strict contract candidate, deterministic disposable fixtures, cumulative resource limits, one-consumer boundary, hostiles, portability and deletion-only rollback; stop before production source implementation.
+- Risk/research gate: **source-negative-c6-ecological-niche-authored-hypothesis-design-readiness / Body-plan V1, package-3 organism subject identity V1, the package-4 source-negative schema-gap audit and its code-free authored-hypothesis design/readiness package are verified and recorded. Current evidence still cannot establish ecological truth; implementation remains separately owner-gated.**
+- Exact next action: Stop at the verified package-4 ecological-niche semantics design/readiness boundary. One separately owner-authorized test-first implementation of the frozen V1 candidate and its single additive consumer is the next candidate; it is not active or authorized.
 
 ## Approved operating policies
 

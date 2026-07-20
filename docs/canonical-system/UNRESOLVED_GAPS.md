@@ -39,7 +39,8 @@
   species/population membership. The package-4 ecological-niche source-negative
   schema-gap audit is verified and recorded after registered gate
   `run-c0712471f015435abbaa71ac001ef975`. Its code-free atomic
-  authored-hypothesis design/readiness package is active: current physical opportunity evidence
+  authored-hypothesis design/readiness package is verified and recorded after
+  registered gate `run-8f77f5cf17434292818314a74f763a8f`: current physical opportunity evidence
   cannot automatically prove ecological truth. The recorded slices still do
   not prove population membership or distributions, ecological niches,
   physiology/viability, reproduction/heredity/development, evolution, grounded
