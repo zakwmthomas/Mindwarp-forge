@@ -71,7 +71,7 @@
                                                   },
                                      "verification_receipts":  {
                                                                    "stage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
-                                                                   "content_sha256":  "bce5efcfe7858ad8815b0e618d1d8828f257b8f12acfe7dae019cd30009a4eef",
+                                                                   "content_sha256":  "6f28df92cde9f6f10a0834aa3e3dfc2f884da4a5793428632115e45639fbf0ab",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
@@ -498,7 +498,8 @@
                                   "focused:c6-ecological-niche-schema-gap:verified",
                                   "hostile:c6-ecological-niche-schema-gap:source-negative-and-gated-crossings:passed",
                                   "independent-review:c6-ecological-niche-schema-gap:biology-engineering-schema:accepted",
-                                  "retained:c4-c5-successor-routes:ecology-schema-gap:passed"
+                                  "retained:c4-c5-successor-routes:ecology-schema-gap:passed",
+                                  "registered-full-gate:run-42bdea3a8d584d86be5ea21b67ca7ef1:failed:stale-c5-current-successor-route"
                               ],
     "metrics":  {
                     "token_cost":  {

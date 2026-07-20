@@ -34,6 +34,8 @@ if(Test-G1C6ReconciliationReadinessRoute -Checkpoint $canonical){
   Reject-C6Mutation 'identity source scope omission' {$canonical.authority_lane=$value.Replace('No production crate or source implementation; ','')} {$canonical.authority_lane=$value}
 }elseif(Test-G1C6OrganismSubjectIdentityImplementationRoute -Checkpoint $canonical){
   Reject-C6Mutation 'identity implementation scope omission' {$canonical.authority_lane=$value.Replace('No asserted species membership, ','')} {$canonical.authority_lane=$value}
+}elseif(Test-G1C6EcologicalNicheSemanticsSchemaGapRoute -Checkpoint $canonical){
+  Reject-C6Mutation 'ecology schema-gap source boundary omission' {$canonical.authority_lane=$value.Replace('No ecological contract schema or production crate/source; ','')} {$canonical.authority_lane=$value}
 }else{
   throw 'Canonical C6 route did not match an exact successor branch.'
 }
