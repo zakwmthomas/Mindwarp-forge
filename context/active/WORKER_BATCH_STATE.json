@@ -71,7 +71,7 @@
                                                   },
                                      "verification_receipts":  {
                                                                    "stage_id":  "c6-ecological-niche-semantics-design-readiness",
-                                                                   "content_sha256":  "d5b3a88ab6eb8371ee9413e3159bfc17c155595f7b3acbdd23ec0cebe6eb74aa",
+                                                                   "content_sha256":  "35c880778e7ce79d42a94610a2f5d5566c08b96e1797ed739ec52c907187bc54",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
@@ -525,7 +525,8 @@
                                   "independent-review:c6-ecological-niche-design-readiness:biology-dimorphism:accepted",
                                   "independent-review:c6-ecological-niche-design-readiness:governance-schema-security:accepted",
                                   "focused:c6-ecological-niche-design-readiness:verified",
-                                  "hostile:c6-ecological-niche-design-readiness:truth-authority-resource-source-crossings:passed"
+                                  "hostile:c6-ecological-niche-design-readiness:truth-authority-resource-source-crossings:passed",
+                                  "retained:c4-c5-c6-successor-routes:ecology-design-readiness:passed"
                               ],
     "metrics":  {
                     "token_cost":  {
