@@ -51,8 +51,9 @@ not decide personhood, comparison, compatibility, capacity truth or eligibility.
 - Independent source-security, test and integration reviews accepted the final
   candidate after cumulative budget preflight and real public-consumer evidence
   were added.
-- Registered full Forge gate `run-98693301e2904841994d402854a8a542`
-  passed the complete repository scope in 978,259 ms.
+- Registered full Forge gate `run-500f816d66e94a359e9cf8617982bf49`
+  passed the complete repository scope in 853,579 ms with this result and its
+  verifier assertions present.
 
 ## Stop boundary
 

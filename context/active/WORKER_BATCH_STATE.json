@@ -65,13 +65,13 @@
                                                       },
                                      "evidence":  {
                                                       "stage_id":  "c6-organism-subject-identity-test-first-implementation",
-                                                      "content_sha256":  "045d8d2150d935865d0f8ee2dd1c3735fda56fa86072b1bbe0b2ea172863fe42",
+                                                      "content_sha256":  "c5e5bf1cad0e360860027cdf58c0a1ea2dad16bd68ca800000f2fc8169eaeb48",
                                                       "review_disposition":  "revised",
                                                       "review_note":  "Reviewed all handoff sections against the active substage."
                                                   },
                                      "verification_receipts":  {
                                                                    "stage_id":  "c6-organism-subject-identity-test-first-implementation",
-                                                                   "content_sha256":  "9859091df3d895c65a77a6d14825a9ebd1f497605f1569d427dfc2cd0fcf553b",
+                                                                   "content_sha256":  "47a795cd3b09d54e7afa9d1a8055b06f92905a48835d4e0426812e8cf27cabdd",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
@@ -284,7 +284,7 @@
                               "status":  "verified",
                               "evidence_ids":  [
                                                    "tools/verify-g1-c6-organism-subject-identity-implementation.ps1",
-                                                   "registered-full-gate:run-98693301e2904841994d402854a8a542:passed"
+                                                   "registered-full-gate:run-500f816d66e94a359e9cf8617982bf49:passed"
                                                ]
                           }
                       ],
@@ -355,7 +355,7 @@
                      "Replacement registered run-e923d74fb96743e5864b303faf27acfc passed the complete Forge gate in 874785 ms with the body-plan implementation verifier, exact 17+1 matrix, retained predecessor shields and full workspace tests present.",
                      "The package-3 implementation passes the exact 33-group matrix with seven strict identity/binding records, exact macro-lineage/body-plan/C4 replay, two distinct individuals on one humanoid form, radial controls and cumulative fail-before-work budgets.",
                      "A real integration fixture calls the public identity-bound person-form consumer through production constructors; three independent source-security, test and integration reviews accepted the final candidate.",
-                     "Registered full gate run-98693301e2904841994d402854a8a542 passed the complete Forge scope in 978259 ms; native and i686 execute, Android ARM64 remains compile-only."
+                     "Registered full gate run-500f816d66e94a359e9cf8617982bf49 passed the complete Forge scope in 853579 ms with the result verifier present; native and i686 execute, Android ARM64 remains compile-only."
                  ],
     "verification_receipts":  [
                                   "dependency:gp0-gp1-gp2-gp3-c4v:verified",
@@ -466,7 +466,7 @@
                                   "platform:c6-organism-subject-identity-i686:same-host-execution:passed",
                                   "platform:c6-organism-subject-identity-android-aarch64:compile-only:passed",
                                   "independent-review:c6-organism-subject-identity-source-security-test-integration:accepted",
-                                  "registered-full-gate:run-98693301e2904841994d402854a8a542:passed",
+                                  "registered-full-gate:run-500f816d66e94a359e9cf8617982bf49:passed",
                                   "receipt:G1-C6-ORGANISM-SUBJECT-IDENTITY-V1:recorded"
                               ],
     "metrics":  {
@@ -476,8 +476,8 @@
                                    },
                     "elapsed_time":  {
                                          "status":  "measured",
-                                         "value":  "978259 ms",
-                                         "receipt":  "registered-full-gate:run-98693301e2904841994d402854a8a542:passed"
+                                         "value":  "853579 ms",
+                                         "receipt":  "registered-full-gate:run-500f816d66e94a359e9cf8617982bf49:passed"
                                      }
                 },
     "transition":  "C4 verified and recorded -\u003e C5 verified and recorded -\u003e body-plan V1 verified and recorded -\u003e package-3 identity readiness verified and recorded -\u003e package-3 organism subject identity V1 verified and recorded -\u003e stop boundary retained"
