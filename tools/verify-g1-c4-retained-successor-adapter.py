@@ -53,6 +53,7 @@ EXPECTED_C6_IDENTITY_READINESS_AUTHORITY = (
     "reproduction, heredity, development, sex, dimorphism, culture, representation, runtime, Companion, "
     "Greenfield, C7, promotion authority or Kernel mutation."
 )
+EXPECTED_C6_IDENTITY_IMPLEMENTATION_AUTHORITY = "Owner-authorized capability-free C6 organism subject identity V1 test-first implementation only. Exact dependencies verified C4, C5 and body-plan V1. Authorizes the organism-subject-identity crate, one additive person-form-eligibility bound-subject evaluator, exact 33-group implementation matrix, module/governance projections and verification. No asserted species membership, population members/count/distribution, ancestry/evolution inference, ecology, physiology, reproduction, heredity, development, sex, dimorphism, caste, culture, capacity truth, comparison, representation, runtime, filesystem, network, process, Companion, Greenfield, C7, broad G1 closure, promotion authority or Kernel mutation."
 EXPECTED_C4_RUN = "run-bc2154f73f6243239910ac30bc3b1994"
 REQUIRED_RECEIPTS = {
     f"registered-full-gate:{EXPECTED_C4_RUN}:passed",
@@ -131,8 +132,9 @@ def verify(checkpoint_path: Path, program_path: Path, observation_path: Path) ->
     c6_readiness_batch = checkpoint.get("batch_id") == "G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1"
     c6_body_plan_batch = checkpoint.get("batch_id") == "G1-C6-BODY-PLAN-STRUCTURE-IMPLEMENTATION-V1"
     c6_identity_readiness_batch = checkpoint.get("batch_id") == "G1-C6-ORGANISM-IDENTITY-READINESS-V1"
-    c6 = c6_readiness_batch or c6_body_plan_batch or c6_identity_readiness_batch
-    exact_string(checkpoint, "batch_id", "G1-C6-ORGANISM-IDENTITY-READINESS-V1" if c6_identity_readiness_batch else "G1-C6-BODY-PLAN-STRUCTURE-IMPLEMENTATION-V1" if c6_body_plan_batch else "G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1" if c6_readiness_batch else "G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1")
+    c6_identity_implementation_batch = checkpoint.get("batch_id") == "G1-C6-ORGANISM-SUBJECT-IDENTITY-IMPLEMENTATION-V1"
+    c6 = c6_readiness_batch or c6_body_plan_batch or c6_identity_readiness_batch or c6_identity_implementation_batch
+    exact_string(checkpoint, "batch_id", "G1-C6-ORGANISM-SUBJECT-IDENTITY-IMPLEMENTATION-V1" if c6_identity_implementation_batch else "G1-C6-ORGANISM-IDENTITY-READINESS-V1" if c6_identity_readiness_batch else "G1-C6-BODY-PLAN-STRUCTURE-IMPLEMENTATION-V1" if c6_body_plan_batch else "G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1" if c6_readiness_batch else "G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1")
     exact_string(checkpoint, "master_program_item", "C6" if c6 else "C5")
     state = checkpoint.get("state")
     substage = checkpoint.get("substage_id")
@@ -162,7 +164,12 @@ def verify(checkpoint_path: Path, program_path: Path, observation_path: Path) ->
         and type(substage) is str and substage == "c6-organism-identity-readiness"
         and type(authority) is str and authority == EXPECTED_C6_IDENTITY_READINESS_AUTHORITY
     )
-    if not (full_gate or recorded or c6_readiness or c6_body_plan or c6_identity_readiness):
+    c6_identity_implementation = (
+        type(state) is str and state == "executing"
+        and type(substage) is str and substage == "c6-organism-subject-identity-test-first-implementation"
+        and type(authority) is str and authority == EXPECTED_C6_IDENTITY_IMPLEMENTATION_AUTHORITY
+    )
+    if not (full_gate or recorded or c6_readiness or c6_body_plan or c6_identity_readiness or c6_identity_implementation):
         raise ValueError("live checkpoint state/substage/authority tuple is not exact")
 
     receipts = exact_string_list(checkpoint, "verification_receipts")
@@ -183,6 +190,10 @@ def verify(checkpoint_path: Path, program_path: Path, observation_path: Path) ->
         for receipt in ("receipt:G1-C5-CLOSURE:recorded", "receipt:G1-C6-BODY-PLAN-STRUCTURE-V1:recorded", "owner-route:c6-organism-identity-readiness:authorized"):
             if receipt not in receipts:
                 raise ValueError(f"C6 identity-readiness route is missing retained evidence: {receipt}")
+    if c6_identity_implementation:
+        for receipt in ("receipt:G1-C6-BODY-PLAN-STRUCTURE-V1:recorded", "owner-route:c6-organism-identity-readiness:authorized", "owner-authorization:c6-organism-subject-identity-v1:released"):
+            if receipt not in receipts:
+                raise ValueError(f"C6 identity-implementation route is missing retained evidence: {receipt}")
 
     items = program.get("items")
     if type(items) is not list or any(type(item) is not dict for item in items):
@@ -212,7 +223,7 @@ def verify(checkpoint_path: Path, program_path: Path, observation_path: Path) ->
         expected_c6 = ("executing", "active") if c6 else ("proposed", "gated")
         if (c6_item.get("state"), c6_item.get("status")) != expected_c6:
             raise ValueError("C6 successor state drifted")
-        if c6 and c6_item.get("gate") != ("implementation" if c6_body_plan else "design"):
+        if c6 and c6_item.get("gate") != ("implementation" if (c6_body_plan or c6_identity_implementation) else "design"):
             raise ValueError("C6 successor gate drifted")
     if "G1_C4_CLOSURE_RESULT.md" not in exact_string_list(c4, "sources"):
         raise ValueError("C4 closure source is missing")

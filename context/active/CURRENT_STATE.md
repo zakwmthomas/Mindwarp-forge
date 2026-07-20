@@ -5,12 +5,12 @@
 
 ## Active checkpoint
 
-- Package: **G1-C6-ORGANISM-IDENTITY-READINESS-V1**
+- Package: **G1-C6-ORGANISM-SUBJECT-IDENTITY-IMPLEMENTATION-V1**
 - Master item / milestone: **C6 / G1**
-- State / substage: **executing / c6-organism-identity-readiness**
+- State / substage: **executing / c6-organism-subject-identity-test-first-implementation**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Objective: Reconcile the recorded body-plan V1 result, then freeze only the capability-free C6 package-3 typed lineage, organism-form, species-candidate, individual and population identity envelopes plus exact C4 lifecycle/history consumption.
-- Context health: C4 and C5 remain verified prerequisites. Body-plan V1 is verified and recorded. C6 package-3 identity readiness is independently accepted, recorded and passed complete registered gate run-a25fd6473dc7401fa9b24df5d4e5cb27; source and all later C6 packages remain gated.
+- Objective: Implement and verify only the frozen capability-free package-3 organism subject identity V1 contract: seven typed identity/binding records, exact C4 lifecycle/history subject replay and one additive person-form structural-completeness consumer.
+- Context health: C4, C5, body-plan V1 and package-3 code-free readiness are verified and recorded. The exact package-3 implementation is owner-authorized but source is not yet created; every later C6 package and C7 remain gated.
 
 ## Durable evidence
 
@@ -25,11 +25,11 @@
 
 ## Authority boundary
 
-Owner-routed code-free C6 package-3 identity readiness only. Authorizes reconciliation of stale body-plan projections and design, adversarial review, fixtures, verifier and governance records for distinct lineage, organism-form, species-candidate, individual and population identity envelopes plus exact C4 lifecycle/history consumption. No production crate or source implementation; no asserted species membership, population members/count/distribution, ancestry/evolution inference, ecology, physiology, reproduction, heredity, development, sex, dimorphism, culture, representation, runtime, Companion, Greenfield, C7, promotion authority or Kernel mutation.
+Owner-authorized capability-free C6 organism subject identity V1 test-first implementation only. Exact dependencies verified C4, C5 and body-plan V1. Authorizes the organism-subject-identity crate, one additive person-form-eligibility bound-subject evaluator, exact 33-group implementation matrix, module/governance projections and verification. No asserted species membership, population members/count/distribution, ancestry/evolution inference, ecology, physiology, reproduction, heredity, development, sex, dimorphism, caste, culture, capacity truth, comparison, representation, runtime, filesystem, network, process, Companion, Greenfield, C7, broad G1 closure, promotion authority or Kernel mutation.
 
 ## Exact next action
 
-Stop at the verified package-3 identity readiness boundary. Await one exact owner authorization naming G1-C6-ORGANISM-SUBJECT-IDENTITY-IMPLEMENTATION-V1 before any Rust source or person-form consumer change.
+Establish failing test-first identity, codec, subject-binding, C4 replay, resource, authority and person-form consumer fixtures before creating the minimal bounded source implementation.
 
 ## Unresolved risks
 
@@ -41,4 +41,4 @@ Stop at the verified package-3 identity readiness boundary. Await one exact owne
 
 ## Resume after this package
 
-Stop after independent acceptance of the frozen package-3 readiness record; source implementation remains separately gated.
+Stop after the bounded identity implementation result is verified and recorded; do not activate ecology, physiology, reproduction, heredity, development, dimorphism applicability, population semantics or C7.

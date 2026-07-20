@@ -64,12 +64,15 @@ try {
 
     $c4 = @($program.items | Where-Object id -eq 'C4')[0]
     $c5 = @($program.items | Where-Object id -eq 'C5')[0]
+    $c6 = @($program.items | Where-Object id -eq 'C6')[0]
     $savedC4Dependencies = @($c4.depends_on)
     Assert-Rejected 'Reordered C4 dependencies' { $c4.depends_on = @('C3A', 'C2') } { $c4.depends_on = $savedC4Dependencies }
     $savedC5Dependencies = @($c5.depends_on)
     Assert-Rejected 'Expanded C5 dependencies' { $c5.depends_on = @('C4', 'C3B') } { $c5.depends_on = $savedC5Dependencies }
     $savedC5State = $c5.state; $savedC5Status = $c5.status
     Assert-Rejected 'Extra active item' { $c5.state = 'executing'; $c5.status = 'active' } { $c5.state = $savedC5State; $c5.status = $savedC5Status }
+    $savedC6Gate = $c6.gate
+    Assert-Rejected 'C6 implementation gate downgraded' { $c6.gate = 'design' } { $c6.gate = $savedC6Gate }
 
     Save-Fixture
     $duplicateProgram = Get-Content -LiteralPath $programPath -Raw | ConvertFrom-Json

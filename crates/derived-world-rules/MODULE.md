@@ -48,6 +48,8 @@ Strict causal field-to-world packets for physical palette bounds and environment
 - mindwarp-vertical-persistence
 - niche-graph-binding
 - organism-niche-binding
+- organism-subject-identity
+- person-form-eligibility
 
 ## Invariants and failure boundaries
 

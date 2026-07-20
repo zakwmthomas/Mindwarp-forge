@@ -39,6 +39,8 @@ Build and validate a deterministic C3 physical environmental-opportunity graph f
 
 - forge-desktop
 - macro-lineage-binding
+- organism-subject-identity
+- person-form-eligibility
 
 ## Invariants and failure boundaries
 

@@ -20,7 +20,9 @@ $checkpoint = Get-Content -Raw -LiteralPath $CheckpointPath | ConvertFrom-Json
 $readiness = Get-Content -Raw -LiteralPath $ReadinessPath
 $contract = Get-Content -Raw -LiteralPath $ContractPath
 
-if (!(Test-G1C6OrganismIdentityReadinessRoute -Checkpoint $checkpoint)) {
+$readinessRoute = Test-G1C6OrganismIdentityReadinessRoute -Checkpoint $checkpoint
+$implementationRoute = Test-G1C6OrganismSubjectIdentityImplementationRoute -Checkpoint $checkpoint
+if (!$readinessRoute -and !$implementationRoute) {
     throw 'C6 organism-subject identity readiness route is not exact.'
 }
 
@@ -34,8 +36,9 @@ if ($c4[0].state -ne 'verified' -or $c4[0].status -ne 'complete' -or
     $c5[0].state -ne 'verified' -or $c5[0].status -ne 'complete') {
     throw 'C6 organism-subject identity prerequisites are not verified and complete.'
 }
+$expectedGate = if ($readinessRoute) { 'design' } else { 'implementation' }
 if ($c6[0].state -ne 'executing' -or $c6[0].status -ne 'active' -or
-    $c6[0].gate -ne 'design' -or (@($c6[0].depends_on) -join ',') -ne 'C4,C5') {
+    $c6[0].gate -ne $expectedGate -or (@($c6[0].depends_on) -join ',') -ne 'C4,C5') {
     throw 'C6 organism-subject identity master-program route is not exact.'
 }
 $active = @($program.items | Where-Object { $_.state -eq 'executing' -and $_.status -eq 'active' })
@@ -53,7 +56,7 @@ foreach ($receipt in @(
 )) {
     if (@($checkpoint.verification_receipts) -notcontains $receipt) { throw "C6 organism-subject identity readiness receipt missing: $receipt" }
 }
-if (@($checkpoint.verification_receipts | Where-Object { $_ -match '^(owner-authorization|source-authorization):c6-organism-subject-identity' }).Count -ne 0) {
+if ($readinessRoute -and @($checkpoint.verification_receipts | Where-Object { $_ -match '^(owner-authorization|source-authorization):c6-organism-subject-identity' }).Count -ne 0) {
     throw 'C6 organism-subject identity source authorization exists during code-free readiness.'
 }
 
@@ -150,9 +153,6 @@ foreach ($token in @(
 }
 
 $preSourcePins = @{
-    'Cargo.toml' = 'ccd13039808cd25fb487a4b87b9ebda5fde185b8fb248711dfcde8e18843aea4'
-    'crates\person-form-eligibility\Cargo.toml' = '00a16e5763d332cea55e7904b95ed8837bd0309f4707a8011436581d96624d94'
-    'crates\person-form-eligibility\src\lib.rs' = 'f9c3be6ce9fc0b2669563d7c65d9e16d087337015aace052a1fa507c663a7cd4'
     'contracts\organism-subject-identity-contract.md' = '9f831d6a9b429aedca9d611dbefe84a268a8fe94c55b8c86a341cb7fbca09180'
     'docs\canonical-system\G1_C6_ORGANISM_SUBJECT_IDENTITY_IMPLEMENTATION_READINESS.md' = 'ac9b7bcb07e3ca05920f19e483afd7d8b6ead255a712ba82ccc5f59aad659e72'
 }
@@ -163,10 +163,10 @@ foreach ($relative in $preSourcePins.Keys) {
     if ($actual -ne $preSourcePins[$relative]) { throw "C6 identity pre-source pin drift: $relative" }
 }
 
-if (Test-Path -LiteralPath (Join-Path $RootPath 'crates\organism-subject-identity')) {
+if ($readinessRoute -and (Test-Path -LiteralPath (Join-Path $RootPath 'crates\organism-subject-identity'))) {
     throw 'Prospective organism-subject identity source exists before separate authorization.'
 }
-if (Test-Path -LiteralPath (Join-Path $RootPath 'docs\canonical-system\G1_C6_ORGANISM_SUBJECT_IDENTITY_IMPLEMENTATION_RESULT.md')) {
+if ($readinessRoute -and (Test-Path -LiteralPath (Join-Path $RootPath 'docs\canonical-system\G1_C6_ORGANISM_SUBJECT_IDENTITY_IMPLEMENTATION_RESULT.md'))) {
     throw 'Organism-subject identity implementation result exists during code-free readiness.'
 }
 

@@ -35,6 +35,8 @@ Represent and validate deterministic coordinate-free body-plan family topology, 
 ## Downstream neighbours
 
 - macro-lineage-binding
+- organism-subject-identity
+- person-form-eligibility
 
 ## Invariants and failure boundaries
 

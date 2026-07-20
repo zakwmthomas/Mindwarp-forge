@@ -39,6 +39,8 @@ Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-c6-organis
 if (!$?) { throw 'G1 C6 organism-subject identity implementation readiness verification failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-g1-c6-organism-subject-identity-readiness.ps1'
 if (!$?) { throw 'G1 C6 organism-subject identity readiness hostile fixtures failed.' }
+Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-c6-organism-subject-identity-implementation.ps1'
+if (!$?) { throw 'G1 C6 organism-subject identity implementation verification failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-c6-body-plan-structure-implementation.ps1'
 if (!$?) { throw 'G1 C6 body-plan structure implementation verification failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-atlas.ps1'

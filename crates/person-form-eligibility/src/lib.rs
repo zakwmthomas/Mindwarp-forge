@@ -20,6 +20,10 @@
 //! "Grotesque retrofit" rejection remains a future structural-compatibility
 //! proof. A lineage-ID mismatch alone cannot prove anatomy is grotesque.
 
+use body_plan_structure::{
+    BodyPlanFamily, StructuralExpression, ValidationStatus, validate_expression,
+};
+use organism_subject_identity::{MAX_PERSON_FORM_GROUNDINGS, OrganismSubjectBundleV1};
 use semantic_construction::{Claim, Id};
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
@@ -145,6 +149,73 @@ pub fn evaluate_person_form_prerequisites(
     }
 }
 
+#[derive(Debug)]
+pub enum BoundSubjectError {
+    AssessedLineageMismatch,
+    BodyPlanMismatch,
+    GroundingLimit,
+    InvalidBodyPlanEvidence,
+    IndeterminateBudget,
+}
+
+/// Delegates unchanged prerequisite evaluation only after exact subject binding.
+pub fn evaluate_identity_bound_person_form_prerequisites(
+    bundle: &OrganismSubjectBundleV1,
+    family: &BodyPlanFamily,
+    expression: &StructuralExpression,
+    body_plan_budget: u32,
+    assessed_lineage_id: Id,
+    body_plan_ref: Option<Id>,
+    groundings: &[CapacityGrounding],
+) -> Result<PersonFormPrerequisiteReport, BoundSubjectError> {
+    if groundings.len() != MAX_PERSON_FORM_GROUNDINGS {
+        return Err(BoundSubjectError::GroundingLimit);
+    }
+    if family.family_id != bundle.form_template().body_plan_family_id
+        || expression.expression_id != bundle.form_template().structural_expression_id
+        || expression.family_id != family.family_id
+    {
+        return Err(BoundSubjectError::BodyPlanMismatch);
+    }
+    match validate_expression(family, expression, body_plan_budget).status {
+        ValidationStatus::Valid => {}
+        ValidationStatus::IndeterminateBudget => {
+            return Err(BoundSubjectError::IndeterminateBudget);
+        }
+        ValidationStatus::Invalid => return Err(BoundSubjectError::InvalidBodyPlanEvidence),
+    }
+    evaluate_bound_subject_ids(
+        bundle.lineage_subject().lineage_id,
+        bundle.lineage_subject().body_plan_family_id,
+        assessed_lineage_id,
+        body_plan_ref,
+        groundings,
+    )
+}
+
+fn evaluate_bound_subject_ids(
+    bundle_lineage_id: Id,
+    bundle_family_id: Id,
+    assessed_lineage_id: Id,
+    body_plan_ref: Option<Id>,
+    groundings: &[CapacityGrounding],
+) -> Result<PersonFormPrerequisiteReport, BoundSubjectError> {
+    if groundings.len() != MAX_PERSON_FORM_GROUNDINGS {
+        return Err(BoundSubjectError::GroundingLimit);
+    }
+    if assessed_lineage_id != bundle_lineage_id {
+        return Err(BoundSubjectError::AssessedLineageMismatch);
+    }
+    if body_plan_ref != Some(bundle_family_id) {
+        return Err(BoundSubjectError::BodyPlanMismatch);
+    }
+    Ok(evaluate_person_form_prerequisites(
+        assessed_lineage_id,
+        body_plan_ref,
+        groundings,
+    ))
+}
+
 pub fn capacity_concept_id(capacity: PersonFormCapacity) -> Id {
     let label = match capacity {
         PersonFormCapacity::Manipulation => "manipulation",
@@ -164,6 +235,42 @@ mod tests {
     use super::*;
     use semantic_construction::ClaimClass;
     use sha2::{Digest, Sha256};
+
+    #[test]
+    fn identity_bound_id_checks_delegate_unchanged_and_reject_mismatch() {
+        let lineage = id("identity-bound-lineage");
+        let fixtures = body_plan_structure::reference_fixtures().unwrap();
+        let family = fixtures.humanoid.family.family_id;
+        let groundings: Vec<_> = COMPARISON_DIMENSIONS
+            .into_iter()
+            .map(|c| grounding(c, lineage))
+            .collect();
+        let expected = evaluate_person_form_prerequisites(lineage, Some(family), &groundings);
+        let actual =
+            evaluate_bound_subject_ids(lineage, family, lineage, Some(family), &groundings)
+                .unwrap();
+        assert_eq!(actual, expected);
+        assert!(matches!(
+            evaluate_bound_subject_ids(lineage, family, id("foreign"), Some(family), &groundings),
+            Err(BoundSubjectError::AssessedLineageMismatch)
+        ));
+        assert!(matches!(
+            evaluate_bound_subject_ids(
+                lineage,
+                family,
+                lineage,
+                Some(id("foreign-family")),
+                &groundings
+            ),
+            Err(BoundSubjectError::BodyPlanMismatch)
+        ));
+        let mut excessive = groundings.clone();
+        excessive.push(grounding(PersonFormCapacity::Manipulation, lineage));
+        assert!(matches!(
+            evaluate_bound_subject_ids(lineage, family, lineage, Some(family), &excessive),
+            Err(BoundSubjectError::GroundingLimit)
+        ));
+    }
 
     fn id(label: &str) -> Id {
         let mut hasher = Sha256::new();

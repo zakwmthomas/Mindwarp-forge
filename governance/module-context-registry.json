@@ -1647,12 +1647,48 @@
             ]
         },
         {
+            "id": "organism-subject-identity",
+            "maturity": "candidate_under_test",
+            "purpose": "Distinguish validated lineage, reusable form, unresolved species candidate, stable individual, mutable subject binding and population identity while binding one exact individual to unchanged C4 lifecycle/history replay.",
+            "owns": [
+                "seven strict typed identity and subject-binding records plus one authority-negative reference receipt",
+                "stable individual identity separated from mutable form and classification bindings",
+                "exact macro-lineage body-plan and C4 lifecycle-history reconstruction"
+            ],
+            "non_goals": [
+                "species membership population members counts or distribution",
+                "ancestry evolution ecology physiology reproduction heredity development sex dimorphism or caste",
+                "capacity truth comparison representation runtime approval promotion or host authority"
+            ],
+            "entrypoints": [
+                "src/lib.rs"
+            ],
+            "invariants": [
+                "all semantic IDs use distinct domains and exact compact JSON preimages",
+                "strict codecs reject unknown duplicate reordered trailing oversized or noncanonical input",
+                "the non-encoded validated bundle is private-field and cannot be forged by downstream consumers",
+                "known-good-prefix partial C4 recovery never emits a lifecycle subject binding",
+                "population and species candidate membership remain unresolved",
+                "budget exhaustion remains typed indeterminate and failures emit no partial record"
+            ],
+            "verification": [
+                "cargo test -p organism-subject-identity --all-targets",
+                "cargo clippy -p organism-subject-identity --all-targets -- -D warnings",
+                "tools/verify-g1-c6-organism-subject-identity-implementation.ps1"
+            ],
+            "references": [
+                "contracts/organism-subject-identity-contract.md",
+                "docs/canonical-system/G1_C6_ORGANISM_SUBJECT_IDENTITY_IMPLEMENTATION_READINESS.md"
+            ]
+        },
+        {
             "id": "person-form-eligibility",
             "maturity": "prerequisite_contract",
-            "purpose": "Fail closed before future comparative person-form evaluation by checking only the structural completeness of explicit lineage, body-plan and five-dimension evidence bindings without claiming grounding, readiness or eligibility.",
+            "purpose": "Fail closed before future comparative person-form evaluation by checking structural completeness and, additively, requiring one non-forgeable validated organism subject bundle with exact lineage and body-plan bindings without claiming grounding, readiness or eligibility.",
             "owns": [
                 "the five named comparison dimensions",
-                "the explicit lineage/body-plan/capacity binding structure"
+                "the explicit lineage/body-plan/capacity binding structure",
+                "one additive identity-bound delegation that leaves the legacy report unchanged"
             ],
             "non_goals": [
                 "evidence truth or provenance validation",
@@ -1664,20 +1700,26 @@
                 "the Mind Warp content grammar"
             ],
             "entrypoints": [
-                "src/lib.rs"
+                "src/lib.rs",
+                "tests/identity_bound_subject.rs"
             ],
             "invariants": [
                 "zero lineage and body-plan identities fail closed",
                 "claim identifiers and capacity-concept bindings are explicit and non-duplicated",
                 "foreign-lineage evidence cannot fill the assessed lineage's dimension",
-                "all five valid bindings yield structural completeness only, never readiness or eligibility"
+                "all five valid bindings yield structural completeness only, never readiness or eligibility",
+                "identity-bound evaluation requires exactly five groundings and exact bundle lineage and family identities",
+                "the real consumer fixture constructs its bundle through public world lineage form individual and lifecycle replay APIs and validates exact family and expression evidence"
             ],
             "verification": [
-                "cargo test -p person-form-eligibility"
+                "cargo test -p person-form-eligibility --all-targets",
+                "tools/verify-g1-c6-organism-subject-identity-implementation.ps1"
             ],
             "references": [
                 "docs/canonical-system/MASTER_PLAN_V2.md",
-                "docs/canonical-system/G1_C6_PERSON_FORM_ELIGIBILITY_RESULT.md"
+                "docs/canonical-system/G1_C6_PERSON_FORM_ELIGIBILITY_RESULT.md",
+                "contracts/organism-subject-identity-contract.md",
+                "docs/canonical-system/G1_C6_ORGANISM_SUBJECT_IDENTITY_IMPLEMENTATION_READINESS.md"
             ]
         },
         {

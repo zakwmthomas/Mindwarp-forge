@@ -37,6 +37,8 @@ Strict typed age-cohort and selected-entity lifecycle records plus a pure, capab
 
 - entity-lifecycle-history-binding
 - forge-desktop
+- organism-subject-identity
+- person-form-eligibility
 
 ## Invariants and failure boundaries
 

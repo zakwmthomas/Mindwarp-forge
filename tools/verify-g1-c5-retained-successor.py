@@ -11,7 +11,7 @@ from pathlib import Path
 
 SOURCE_COMMIT = "9e48dd117c2b22b62bd31dba15c10c3a9bf4b100"
 SOURCE_MANIFEST_SHA256 = "9430bc530ba39403803a05fd99a9bc5c257472c2f320921ca242b51344947ecb"
-SUCCESSOR_MANIFEST_SHA256 = "1e77df61675512c905688ae9edcc90e32e62ed4740c87148bfd16807390a6fc3"
+SUCCESSOR_MANIFEST_SHA256 = "b52241c8813383c189ddd29302a1ce2a213fcaac45d69740626ec551c385d0e8"
 PATH_LIST = "tools/fixtures/c5-significance-scheduler-receipt/bounded-paths.txt"
 
 EXPECTED_PATHS = (
@@ -59,11 +59,11 @@ EXPECTED_PATHS = (
 ALLOWED_TRANSITIONS = {
     "Cargo.toml": (
         "c89e42751c45947cca539f2d02c2216e7b85cdda",
-        "0db3b7182706c43d55014e74a233bb5394545b1a",
+        "7b9d45f902b2b696d6e8fc7afecc1e8712d129a3",
     ),
     "Cargo.lock": (
         "c25af5e0dffd87a8f2340b70ba4269a03945c3ee",
-        "9f686900b4de5b70f6dfe3f54048f09350efd9a7",
+        "2a36e57cfffce80167a1b71a0f975baed1c16da1",
     ),
     "docs/canonical-system/G1_C5_LOCAL_IMPLEMENTATION_CANDIDATE.md": (
         "124910f83296f424ee66073e13ae1b10ff3298d4",
@@ -75,7 +75,7 @@ ALLOWED_TRANSITIONS = {
     ),
     "tools/verify.ps1": (
         "81a19541b5fa0d025718cc8976f2b281cc536a6e",
-        "9c1a8477b4eacb35c70f9b71c354fb3e9b8366f3",
+        "80cb199215d39e84e8d8dd4d84d7681f3a807232",
     ),
 }
 

@@ -20,11 +20,11 @@ $root = Split-Path -Parent $PSScriptRoot
 $sourceCommit = '17f39f7018de8a02c8292bcde0fafa2bf58fc7d4'
 $historicalReplayCommit = '51a67b222739f6ba0a51f151976ded4d52d76f55'
 $historicalVerifyBlob = '21981e1ea9ea9c0117e322e0e0610e4d560edb3c'
-$currentVerifyBlob = '9c1a8477b4eacb35c70f9b71c354fb3e9b8366f3'
+$currentVerifyBlob = '80cb199215d39e84e8d8dd4d84d7681f3a807232'
 $historicalCargoTomlBlob = 'c89e42751c45947cca539f2d02c2216e7b85cdda'
-$currentCargoTomlBlob = '0db3b7182706c43d55014e74a233bb5394545b1a'
+$currentCargoTomlBlob = '7b9d45f902b2b696d6e8fc7afecc1e8712d129a3'
 $historicalCargoLockBlob = 'c25af5e0dffd87a8f2340b70ba4269a03945c3ee'
-$currentCargoLockBlob = '9f686900b4de5b70f6dfe3f54048f09350efd9a7'
+$currentCargoLockBlob = '2a36e57cfffce80167a1b71a0f975baed1c16da1'
 $expectedObservationBlob = '02e962a7d4e9f83f506162cfb1b97e8717b18c10'
 if ([string]::IsNullOrWhiteSpace($CheckpointPath)) {
     $CheckpointPath = Join-Path $root 'context\active\WORKER_BATCH_STATE.json'
@@ -101,11 +101,11 @@ foreach ($relative in $bounded) {
         }
     } elseif ($relative -eq 'Cargo.toml') {
         if ($historicalBlob -ne $historicalCargoTomlBlob -or $headBlob -ne $currentCargoTomlBlob) {
-            throw 'Workspace manifest is not the exact classified body-plan registration transition.'
+            throw 'Workspace manifest is not the exact classified bounded C6 registration transition.'
         }
     } elseif ($relative -eq 'Cargo.lock') {
         if ($historicalBlob -ne $historicalCargoLockBlob -or $headBlob -ne $currentCargoLockBlob) {
-            throw 'Workspace lockfile is not the exact classified body-plan registration transition.'
+            throw 'Workspace lockfile is not the exact classified bounded C6 registration transition.'
         }
     } elseif ($historicalBlob -ne $headBlob) {
         throw "Retained C4 bounded path drifted outside the classified outer orchestration delta: $relative"

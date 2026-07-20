@@ -2820,6 +2820,23 @@ dependencies = [
 ]
 
 [[package]]
+name = "organism-subject-identity"
+version = "0.1.0"
+dependencies = [
+ "body-plan-structure",
+ "derived-world-rules",
+ "entity-lifecycle",
+ "entity-lifecycle-history-binding",
+ "field-basis",
+ "hierarchy-history",
+ "macro-lineage-binding",
+ "niche-graph-binding",
+ "serde",
+ "serde_json",
+ "sha2",
+]
+
+[[package]]
 name = "pango"
 version = "0.18.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2892,6 +2909,15 @@ dependencies = [
 name = "person-form-eligibility"
 version = "0.1.0"
 dependencies = [
+ "body-plan-structure",
+ "derived-world-rules",
+ "entity-lifecycle",
+ "entity-lifecycle-history-binding",
+ "field-basis",
+ "hierarchy-history",
+ "macro-lineage-binding",
+ "niche-graph-binding",
+ "organism-subject-identity",
  "semantic-construction",
  "serde",
  "sha2",

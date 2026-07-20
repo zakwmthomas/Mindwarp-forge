@@ -4,17 +4,18 @@
 
 - **Maturity:** prerequisite_contract
 - **Root:** `crates/person-form-eligibility`
-- **Source fingerprint:** `15d199b5bef7175b2d22af3665c01ff9d9d693cf8ef1056fd8a2f19024fd211d`
+- **Source fingerprint:** `f8f12ad58e42f5ce997e0545fe5c201641c80254f606d656e7b4fee064aa0468`
 - **Live project state:** read `context/active/CURRENT_STATE.md`; active status is never duplicated here.
 
 ## Purpose
 
-Fail closed before future comparative person-form evaluation by checking only the structural completeness of explicit lineage, body-plan and five-dimension evidence bindings without claiming grounding, readiness or eligibility.
+Fail closed before future comparative person-form evaluation by checking structural completeness and, additively, requiring one non-forgeable validated organism subject bundle with exact lineage and body-plan bindings without claiming grounding, readiness or eligibility.
 
 ## Owns
 
 - the five named comparison dimensions
 - the explicit lineage/body-plan/capacity binding structure
+- one additive identity-bound delegation that leaves the legacy report unchanged
 
 ## Does not own
 
@@ -29,9 +30,19 @@ Fail closed before future comparative person-form evaluation by checking only th
 ## Primary entry points
 
 - `src/lib.rs`
+- `tests/identity_bound_subject.rs`
 
 ## Upstream neighbours
 
+- body-plan-structure
+- derived-world-rules
+- entity-lifecycle
+- entity-lifecycle-history-binding
+- field-basis
+- hierarchy-history
+- macro-lineage-binding
+- niche-graph-binding
+- organism-subject-identity
 - semantic-construction
 
 ## Downstream neighbours
@@ -44,15 +55,20 @@ Fail closed before future comparative person-form evaluation by checking only th
 - claim identifiers and capacity-concept bindings are explicit and non-duplicated
 - foreign-lineage evidence cannot fill the assessed lineage's dimension
 - all five valid bindings yield structural completeness only, never readiness or eligibility
+- identity-bound evaluation requires exactly five groundings and exact bundle lineage and family identities
+- the real consumer fixture constructs its bundle through public world lineage form individual and lifecycle replay APIs and validates exact family and expression evidence
 
 ## Verification
 
-- `cargo test -p person-form-eligibility`
+- `cargo test -p person-form-eligibility --all-targets`
+- `tools/verify-g1-c6-organism-subject-identity-implementation.ps1`
 
 ## Canonical references
 
 - `docs/canonical-system/MASTER_PLAN_V2.md`
 - `docs/canonical-system/G1_C6_PERSON_FORM_ELIGIBILITY_RESULT.md`
+- `contracts/organism-subject-identity-contract.md`
+- `docs/canonical-system/G1_C6_ORGANISM_SUBJECT_IDENTITY_IMPLEMENTATION_READINESS.md`
 
 ## Update rule
 

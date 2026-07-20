@@ -40,6 +40,8 @@ Bind one hypothetical native macro-lineage identity to an exact validated world 
 ## Downstream neighbours
 
 - forge-desktop
+- organism-subject-identity
+- person-form-eligibility
 
 ## Invariants and failure boundaries
 

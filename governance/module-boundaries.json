@@ -490,9 +490,22 @@
       ]
     },
     {
+      "id": "organism-subject-identity",
+      "root": "crates/organism-subject-identity",
+      "dependencies": ["body-plan-structure", "derived-world-rules", "entity-lifecycle", "entity-lifecycle-history-binding", "field-basis", "hierarchy-history", "macro-lineage-binding", "niche-graph-binding"],
+      "source_extensions": [".rs"],
+      "forbidden_imports": [
+        {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "organism subject identity cannot depend on protected Forge authority"},
+        {"pattern": "\\btauri(?:_plugin)?(?:::|\\s*=)", "reason": "organism subject identity cannot depend on desktop UI or renderer capabilities"},
+        {"pattern": "\\b(?:reqwest|ureq|hyper|tokio::net|std::net)::", "reason": "organism subject identity cannot initiate network access"},
+        {"pattern": "\\bstd::(?:fs|process|time)::", "reason": "organism subject identity cannot access files processes or clocks"},
+        {"pattern": "\\b(?:rand|fastrand|getrandom)(?:::|\\s*=)", "reason": "organism subject identity must be deterministic and cannot use random sources"}
+      ]
+    },
+    {
       "id": "person-form-eligibility",
       "root": "crates/person-form-eligibility",
-      "dependencies": ["semantic-construction"],
+      "dependencies": ["body-plan-structure", "derived-world-rules", "entity-lifecycle", "entity-lifecycle-history-binding", "field-basis", "hierarchy-history", "macro-lineage-binding", "niche-graph-binding", "organism-subject-identity", "semantic-construction"],
       "source_extensions": [".rs"],
       "forbidden_imports": [
         {"pattern": "\\bforge_kernel(?:::|\\s*=)", "reason": "person-form eligibility proof cannot depend on protected Forge authority"},

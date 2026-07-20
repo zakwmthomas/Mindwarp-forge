@@ -35,6 +35,8 @@ Bind deterministic ambient age-cohort assignment and prove selected-entity lifec
 ## Downstream neighbours
 
 - forge-desktop
+- organism-subject-identity
+- person-form-eligibility
 
 ## Invariants and failure boundaries
 

@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **G1-C6-ORGANISM-IDENTITY-READINESS-V1**
-- Objective: Reconcile the recorded body-plan V1 result, then freeze only the capability-free C6 package-3 typed lineage, organism-form, species-candidate, individual and population identity envelopes plus exact C4 lifecycle/history consumption.
+- Work package: **G1-C6-ORGANISM-SUBJECT-IDENTITY-IMPLEMENTATION-V1**
+- Objective: Implement and verify only the frozen capability-free package-3 organism subject identity V1 contract: seven typed identity/binding records, exact C4 lifecycle/history subject replay and one additive person-form structural-completeness consumer.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **code-free-c6-organism-identity-readiness / Body-plan V1 is recorded and passed registered full gate run-e923d74fb96743e5864b303faf27acfc. Three independent package-order audits selected typed identity plus exact C4 lifecycle/history consumption; three independent schema, adversarial and integration re-reviews now accept the frozen code-free readiness package after stable-identity, multi-family, population-separation, dependency, codec, resource, source-negative and contradiction-resistance repairs.**
-- Exact next action: Stop at the verified package-3 identity readiness boundary. Await one exact owner authorization naming G1-C6-ORGANISM-SUBJECT-IDENTITY-IMPLEMENTATION-V1 before any Rust source or person-form consumer change.
+- Risk/research gate: **capability-free-c6-organism-subject-identity-implementation / The frozen readiness package passed registered gate run-a25fd6473dc7401fa9b24df5d4e5cb27 and three independent schema, adversarial and integration reviews. The owner then explicitly continued from the named implementation gate, releasing only the bounded test-first candidate.**
+- Exact next action: Establish failing test-first identity, codec, subject-binding, C4 replay, resource, authority and person-form consumer fixtures before creating the minimal bounded source implementation.
 
 ## Approved operating policies
 

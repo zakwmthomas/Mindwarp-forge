@@ -43,10 +43,26 @@ function Test-G1C6OrganismIdentityReadinessRoute {
         $Checkpoint.authority_lane -eq $expectedAuthority
 }
 
+function Test-G1C6OrganismSubjectIdentityImplementationRoute {
+    [CmdletBinding()]
+    param([Parameter(Mandatory = $true)]$Checkpoint)
+
+    $expectedAuthority = 'Owner-authorized capability-free C6 organism subject identity V1 test-first implementation only. Exact dependencies verified C4, C5 and body-plan V1. Authorizes the organism-subject-identity crate, one additive person-form-eligibility bound-subject evaluator, exact 33-group implementation matrix, module/governance projections and verification. No asserted species membership, population members/count/distribution, ancestry/evolution inference, ecology, physiology, reproduction, heredity, development, sex, dimorphism, caste, culture, capacity truth, comparison, representation, runtime, filesystem, network, process, Companion, Greenfield, C7, broad G1 closure, promotion authority or Kernel mutation.'
+    foreach ($field in @('batch_id', 'master_program_item', 'state', 'substage_id', 'authority_lane')) {
+        if ($Checkpoint.$field -isnot [string]) { return $false }
+    }
+    return $Checkpoint.batch_id -eq 'G1-C6-ORGANISM-SUBJECT-IDENTITY-IMPLEMENTATION-V1' -and
+        $Checkpoint.master_program_item -eq 'C6' -and
+        $Checkpoint.state -eq 'executing' -and
+        $Checkpoint.substage_id -eq 'c6-organism-subject-identity-test-first-implementation' -and
+        $Checkpoint.authority_lane -eq $expectedAuthority
+}
+
 function Test-G1C6AuthorizedCurrentRoute {
     [CmdletBinding()]
     param([Parameter(Mandatory = $true)]$Checkpoint)
     return (Test-G1C6ReconciliationReadinessRoute -Checkpoint $Checkpoint) -or
         (Test-G1C6BodyPlanStructureImplementationRoute -Checkpoint $Checkpoint) -or
-        (Test-G1C6OrganismIdentityReadinessRoute -Checkpoint $Checkpoint)
+        (Test-G1C6OrganismIdentityReadinessRoute -Checkpoint $Checkpoint) -or
+        (Test-G1C6OrganismSubjectIdentityImplementationRoute -Checkpoint $Checkpoint)
 }

@@ -42,6 +42,8 @@ Lazy addressable hierarchy descriptors plus baseline-bound append-only world del
 - forge-desktop
 - mindwarp-signal-anchor-vertical
 - mindwarp-vertical-persistence
+- organism-subject-identity
+- person-form-eligibility
 
 ## Invariants and failure boundaries
 

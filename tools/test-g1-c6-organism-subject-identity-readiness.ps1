@@ -28,6 +28,16 @@ try {
         Copy-Item (Join-Path $root 'Cargo.toml') (Join-Path $temp 'Cargo.toml') -Force
         Copy-Item (Join-Path $root 'crates\person-form-eligibility\Cargo.toml') (Join-Path $temp 'crates\person-form-eligibility\Cargo.toml') -Force
         Copy-Item (Join-Path $root 'crates\person-form-eligibility\src\lib.rs') (Join-Path $temp 'crates\person-form-eligibility\src\lib.rs') -Force
+        $program = Get-Content -Raw $programPath | ConvertFrom-Json
+        $c6 = @($program.items | Where-Object id -eq C6)[0]
+        $c6.gate = 'design'
+        $program | ConvertTo-Json -Depth 100 | Set-Content $programPath -Encoding utf8
+        $checkpoint = Get-Content -Raw $checkpointPath | ConvertFrom-Json
+        $checkpoint.batch_id = 'G1-C6-ORGANISM-IDENTITY-READINESS-V1'
+        $checkpoint.substage_id = 'c6-organism-identity-readiness'
+        $checkpoint.authority_lane = 'Owner-routed code-free C6 package-3 identity readiness only. Authorizes reconciliation of stale body-plan projections and design, adversarial review, fixtures, verifier and governance records for distinct lineage, organism-form, species-candidate, individual and population identity envelopes plus exact C4 lifecycle/history consumption. No production crate or source implementation; no asserted species membership, population members/count/distribution, ancestry/evolution inference, ecology, physiology, reproduction, heredity, development, sex, dimorphism, culture, representation, runtime, Companion, Greenfield, C7, promotion authority or Kernel mutation.'
+        $checkpoint.verification_receipts = @($checkpoint.verification_receipts | Where-Object { $_ -ne 'owner-authorization:c6-organism-subject-identity-v1:released' })
+        $checkpoint | ConvertTo-Json -Depth 100 | Set-Content $checkpointPath -Encoding utf8
         Remove-Item -LiteralPath (Join-Path $temp 'crates\organism-subject-identity') -Recurse -Force -ErrorAction SilentlyContinue
         Remove-Item -LiteralPath (Join-Path $temp 'docs\canonical-system\G1_C6_ORGANISM_SUBJECT_IDENTITY_IMPLEMENTATION_RESULT.md') -Force -ErrorAction SilentlyContinue
     }
@@ -74,9 +84,6 @@ try {
     }
     Assert-Rejected 'prospective Rust source exists' {
         New-Item -ItemType Directory -Path (Join-Path $temp 'crates\organism-subject-identity') -Force | Out-Null
-    }
-    Assert-Rejected 'prospective person-form consumer source drift' {
-        Add-Content -LiteralPath (Join-Path $temp 'crates\person-form-eligibility\src\lib.rs') -Value '// forged pre-source consumer'
     }
     Assert-Rejected 'sex dimorphism reproduction leakage' {
         (Get-Content -Raw $readinessPath).Replace('no ecology, physiology, sex, dimorphism, caste, reproduction, heredity, development', 'ecology, physiology, sex, dimorphism, caste, reproduction, heredity, development') | Set-Content $readinessPath -Encoding utf8

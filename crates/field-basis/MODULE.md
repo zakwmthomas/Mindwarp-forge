@@ -44,6 +44,8 @@ Capability-free fixed-point field recipes and stateless deterministic sampling r
 - mindwarp-vertical-persistence
 - niche-graph-binding
 - organism-niche-binding
+- organism-subject-identity
+- person-form-eligibility
 - physical-region-partition
 - regional-environment-state
 - spatial-domain

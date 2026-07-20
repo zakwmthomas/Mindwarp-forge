@@ -1,21 +1,20 @@
 [package]
-name = "person-form-eligibility"
+name = "organism-subject-identity"
 version = "0.1.0"
 edition.workspace = true
 license.workspace = true
 
 [dependencies]
 body-plan-structure = { path = "../body-plan-structure" }
-organism-subject-identity = { path = "../organism-subject-identity" }
-semantic-construction = { path = "../semantic-construction" }
-serde = { version = "1", features = ["derive"] }
-sha2 = "0.10"
-
-[dev-dependencies]
 derived-world-rules = { path = "../derived-world-rules" }
 entity-lifecycle = { path = "../entity-lifecycle" }
 entity-lifecycle-history-binding = { path = "../entity-lifecycle-history-binding" }
-field-basis = { path = "../field-basis" }
 hierarchy-history = { path = "../hierarchy-history" }
 macro-lineage-binding = { path = "../macro-lineage-binding" }
 niche-graph-binding = { path = "../niche-graph-binding" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"
+
+[dev-dependencies]
+field-basis = { path = "../field-basis" }

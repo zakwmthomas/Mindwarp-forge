@@ -13,8 +13,8 @@ $package=@($metadata.packages|Where-Object name -eq 'body-plan-structure')
 if($package.Count-ne1){throw 'C6 body-plan package is not unique.'}
 $dependencies=@($package[0].dependencies|ForEach-Object name|Sort-Object)
 if(Compare-Object $dependencies @('serde','serde_json','sha2')){throw 'C6 body-plan dependency allowlist drifted.'}
-$consumers=@($metadata.packages|Where-Object{@($_.dependencies|Where-Object name -eq 'body-plan-structure').Count}|ForEach-Object name)
-if($consumers.Count-ne1-or$consumers[0]-ne'macro-lineage-binding'){throw "C6 body-plan consumer set drifted: $($consumers-join',')"}
+$consumers=@($metadata.packages|Where-Object{@($_.dependencies|Where-Object name -eq 'body-plan-structure').Count}|ForEach-Object name|Sort-Object)
+if(Compare-Object $consumers @('macro-lineage-binding','organism-subject-identity','person-form-eligibility')){throw "C6 body-plan consumer set drifted: $($consumers-join',')"}
 
 $source=Get-Content -Raw -LiteralPath $sourcePath
 $normalized=$source-replace'\s+',''
