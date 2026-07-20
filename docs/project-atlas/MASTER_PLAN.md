@@ -64,7 +64,7 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
 - **C5** - verified; gate: recorded; depends on: C4.
   Next: Retain the verified capability-free C5 reference as an immutable exact dependency for active C6 readiness; do not infer product policy, cache, runtime or later-system authority.
 - **C6** - executing; gate: implementation; depends on: C4, C5.
-  Next: Implement the owner-authorized capability-free package-3 identity candidate test-first: seven typed records, exact C4 lifecycle/history replay and one additive person-form consumer. Retain ecology, physiology, reproduction, heredity, development, dimorphism applicability, population membership/distributions, C7 and runtime gates.
+  Next: Stop at the recorded package-3 organism subject identity V1 boundary. Broad C6 remains active, but every later biology, dimorphism, population, comparison, C7 and runtime package requires a separate owner route.
 - **C7** - proposed; gate: design; depends on: C5, C6.
   Next: Promote representation contracts and prove asset, animation, aesthetic, visual-fitness and phone-to-high-end fidelity recipes from the same canonical organism/world state.
 - **G1-CLOSEOUT** - proposed; gate: owner; depends on: C3A, C4, C5, C6, C7, GP4.

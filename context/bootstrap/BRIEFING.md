@@ -9,7 +9,7 @@
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Risk/research gate: **capability-free-c6-organism-subject-identity-implementation / The frozen readiness package passed registered gate run-a25fd6473dc7401fa9b24df5d4e5cb27 and three independent schema, adversarial and integration reviews. The owner then explicitly continued from the named implementation gate, releasing only the bounded test-first candidate.**
-- Exact next action: Establish failing test-first identity, codec, subject-binding, C4 replay, resource, authority and person-form consumer fixtures before creating the minimal bounded source implementation.
+- Exact next action: Stop at the verified and recorded package-3 organism subject identity V1 boundary; do not activate any later C6 biology, dimorphism, population, comparison, C7 or runtime package without a separate owner route.
 
 ## Approved operating policies
 

@@ -10,7 +10,7 @@
 - State / substage: **executing / c6-organism-subject-identity-test-first-implementation**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
 - Objective: Implement and verify only the frozen capability-free package-3 organism subject identity V1 contract: seven typed identity/binding records, exact C4 lifecycle/history subject replay and one additive person-form structural-completeness consumer.
-- Context health: C4, C5, body-plan V1 and package-3 code-free readiness are verified and recorded. The exact package-3 implementation is owner-authorized but source is not yet created; every later C6 package and C7 remain gated.
+- Context health: C4, C5, body-plan V1 and package-3 organism subject identity V1 are verified and recorded. Broad C6 remains active while every later C6 package and C7 remain gated.
 
 ## Durable evidence
 
@@ -29,7 +29,7 @@ Owner-authorized capability-free C6 organism subject identity V1 test-first impl
 
 ## Exact next action
 
-Establish failing test-first identity, codec, subject-binding, C4 replay, resource, authority and person-form consumer fixtures before creating the minimal bounded source implementation.
+Stop at the verified and recorded package-3 organism subject identity V1 boundary; do not activate any later C6 biology, dimorphism, population, comparison, C7 or runtime package without a separate owner route.
 
 ## Unresolved risks
 

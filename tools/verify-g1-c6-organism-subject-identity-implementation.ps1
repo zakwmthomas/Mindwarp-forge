@@ -10,7 +10,8 @@ $realTestPath=Join-Path $root 'crates\organism-subject-identity\tests\real_subje
 $redTestPath=Join-Path $root 'crates\organism-subject-identity\tests\red_contract.rs'
 $consumerPath=Join-Path $root 'crates\person-form-eligibility\src\lib.rs'
 $consumerTestPath=Join-Path $root 'crates\person-form-eligibility\tests\identity_bound_subject.rs'
-foreach($path in @($sourcePath,$realTestPath,$redTestPath,$consumerPath,$consumerTestPath)){if(!(Test-Path -LiteralPath $path -PathType Leaf)){throw "C6 identity implementation evidence missing: $path"}}
+$resultPath=Join-Path $root 'docs\canonical-system\G1_C6_ORGANISM_SUBJECT_IDENTITY_IMPLEMENTATION_RESULT.md'
+foreach($path in @($sourcePath,$realTestPath,$redTestPath,$consumerPath,$consumerTestPath,$resultPath)){if(!(Test-Path -LiteralPath $path -PathType Leaf)){throw "C6 identity implementation evidence missing: $path"}}
 
 $metadata=& cargo metadata --locked --no-deps --format-version 1|ConvertFrom-Json
 if($LASTEXITCODE-ne0){throw 'C6 identity Cargo metadata failed.'}
@@ -27,6 +28,7 @@ $realTests=Get-Content -Raw $realTestPath
 $redTests=Get-Content -Raw $redTestPath
 $consumer=Get-Content -Raw $consumerPath
 $consumerTests=Get-Content -Raw $consumerTestPath
+$result=Get-Content -Raw $resultPath
 $matrixText=$source+"`n"+$realTests+"`n"+$redTests+"`n"+$consumer+"`n"+$consumerTests
 $groups=@([regex]::Matches($matrixText,'(?m)^\s*fn c6_(\d{2})_')|ForEach-Object{$_.Groups[1].Value})
 if($groups.Count-ne33-or(@($groups|Sort-Object -Unique).Count)-ne33-or(@($groups|Sort-Object)-join',')-ne((1..33|ForEach-Object{$_.ToString('00')})-join',')){throw "C6 identity focused matrix is not exact 01..33: $($groups-join',')"}
@@ -34,6 +36,7 @@ foreach($token in @('recover_known_good_prefix','accepted_records != encoded_del
 foreach($token in @('reference_fixtures','build_macro_lineage_candidate','build_lineage_subject_ref','bind_lifecycle_history_subject','build_subject_bundle','corrupt.last_mut')){if(!$realTests.Contains($token)){throw "C6 identity real replay fixture missing: $token"}}
 foreach($token in @('evaluate_identity_bound_person_form_prerequisites','groundings.len() != MAX_PERSON_FORM_GROUNDINGS','AssessedLineageMismatch','BodyPlanMismatch')){if(!$consumer.Contains($token)){throw "C6 identity consumer invariant missing: $token"}}
 foreach($token in @('evaluate_identity_bound_person_form_prerequisites(','build_subject_bundle','bind_lifecycle_history_subject','BoundSubjectError::IndeterminateBudget')){if(!$consumerTests.Contains($token)){throw "C6 identity real consumer fixture missing: $token"}}
+foreach($token in @('exact 33-group implementation matrix','one production consumer','i686-pc-windows-msvc','aarch64-linux-android','24 examinations','run-98693301e2904841994d402854a8a542','dimorphism applicability')){if(!$result.Contains($token)){throw "C6 identity result missing: $token"}}
 
 $normalized=$source-replace'\s+',''
 foreach($token in @('std::fs','std::net','std::process','std::time','forge_kernel','tauri','reqwest','ureq','hyper','tokio::net','getrandom','rand::','fastrand::')){if($normalized.Contains($token)){throw "C6 identity capability surface crossed: $token"}}
