@@ -15,7 +15,9 @@ $audit=Get-Content -Raw -LiteralPath $AuditPath
 $normalizedAudit=$audit-replace'\s+',' '
 $checkpoint=Get-Content -Raw -LiteralPath $CheckpointPath|ConvertFrom-Json
 $program=Get-Content -Raw -LiteralPath $ProgramPath|ConvertFrom-Json
-if(!(Test-G1C6EcologicalNicheSemanticsSchemaGapRoute -Checkpoint $checkpoint)){throw 'C6 ecological-niche schema-gap route is not exact.'}
+$schemaGapRoute=Test-G1C6EcologicalNicheSemanticsSchemaGapRoute -Checkpoint $checkpoint
+$designReadinessRoute=Test-G1C6EcologicalNicheSemanticsDesignReadinessRoute -Checkpoint $checkpoint
+if(!$schemaGapRoute-and!$designReadinessRoute){throw 'C6 ecological-niche schema-gap or exact recorded successor route is not exact.'}
 foreach($receipt in @(
   'receipt:G1-C6-BODY-PLAN-STRUCTURE-V1:recorded',
   'receipt:G1-C6-ORGANISM-SUBJECT-IDENTITY-V1:recorded',
@@ -30,7 +32,8 @@ if($c6[0].state-ne'executing'-or$c6[0].status-ne'active'-or$c6[0].gate-ne'design
 $active=@($program.items|Where-Object{$_.state-eq'executing'-and$_.status-eq'active'})
 if($active.Count-ne1-or$active[0].id-ne'C6'){throw 'C6 is not the sole active cursor.'}
 $ecologySources=@($c6[0].sources|Where-Object{$_-like'*ecological*niche*'})
-if($ecologySources.Count-ne1-or$ecologySources[0]-ne'G1_C6_ECOLOGICAL_NICHE_SEMANTICS_SCHEMA_GAP_AUDIT.md'){throw 'C6 ecology schema-gap source registration drifted.'}
+$expectedEcologySources=if($designReadinessRoute){@('G1_C6_ECOLOGICAL_NICHE_SEMANTICS_SCHEMA_GAP_AUDIT.md','G1_C6_ECOLOGICAL_NICHE_SEMANTICS_MATHEMATICAL_DESIGN_AUDIT.md','ecological-niche-semantics-contract.md','G1_C6_ECOLOGICAL_NICHE_SEMANTICS_IMPLEMENTATION_READINESS.md')}else{@('G1_C6_ECOLOGICAL_NICHE_SEMANTICS_SCHEMA_GAP_AUDIT.md')}
+if(($ecologySources-join'|')-ne($expectedEcologySources-join'|')){throw 'C6 ecology schema-gap/successor source registration drifted.'}
 foreach($token in @(
   'source-negative schema-gap audit',
   'cannot automatically derive ecological truth from physical opportunity',
@@ -62,12 +65,8 @@ $hostileSection=[regex]::Match($audit,'(?s)## Source-negative hostile obligation
 if(!$hostileSection.Success){throw 'C6 ecology direct hostile section is missing or relocated.'}
 $direct=@([regex]::Matches($hostileSection.Groups[1].Value,'C6-H10[0-5](?![0-9])')|ForEach-Object Value|Sort-Object -Unique)
 if($direct.Count-ne6){throw "C6 ecology direct hostile section must contain exact H100..H105, found $($direct.Count)."}
-$forbidden=@(
-  (Join-Path $root 'crates\ecological-niche-semantics'),
-  (Join-Path $root 'contracts\ecological-niche-semantics-contract.md'),
-  (Join-Path $root 'docs\canonical-system\G1_C6_ECOLOGICAL_NICHE_SEMANTICS_IMPLEMENTATION_READINESS.md'),
-  (Join-Path $root 'docs\canonical-system\G1_C6_ECOLOGICAL_NICHE_SEMANTICS_IMPLEMENTATION_RESULT.md')
-)
+$forbidden=@((Join-Path $root 'crates\ecological-niche-semantics'),(Join-Path $root 'docs\canonical-system\G1_C6_ECOLOGICAL_NICHE_SEMANTICS_IMPLEMENTATION_RESULT.md'))
+if($schemaGapRoute){$forbidden+=@((Join-Path $root 'contracts\ecological-niche-semantics-contract.md'),(Join-Path $root 'docs\canonical-system\G1_C6_ECOLOGICAL_NICHE_SEMANTICS_MATHEMATICAL_DESIGN_AUDIT.md'),(Join-Path $root 'docs\canonical-system\G1_C6_ECOLOGICAL_NICHE_SEMANTICS_IMPLEMENTATION_READINESS.md'))}
 foreach($path in $forbidden){if(Test-Path -LiteralPath $path){throw "C6 ecology schema-gap audit crossed into gated output: $path"}}
 $cargoFiles=@(Get-ChildItem -LiteralPath $root -Filter Cargo.toml -File -Recurse -ErrorAction SilentlyContinue)
 foreach($cargo in $cargoFiles){if((Get-Content -Raw -LiteralPath $cargo.FullName)-match'(?i)ecological-niche-semantics'){throw "C6 ecology Cargo member or dependency exists during schema-gap audit: $($cargo.FullName)"}}

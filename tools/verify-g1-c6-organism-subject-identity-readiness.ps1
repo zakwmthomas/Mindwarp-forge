@@ -23,7 +23,8 @@ $contract = Get-Content -Raw -LiteralPath $ContractPath
 $readinessRoute = Test-G1C6OrganismIdentityReadinessRoute -Checkpoint $checkpoint
 $implementationRoute = Test-G1C6OrganismSubjectIdentityImplementationRoute -Checkpoint $checkpoint
 $ecologySchemaGapRoute = Test-G1C6EcologicalNicheSemanticsSchemaGapRoute -Checkpoint $checkpoint
-if (!$readinessRoute -and !$implementationRoute -and !$ecologySchemaGapRoute) {
+$ecologyDesignReadinessRoute = Test-G1C6EcologicalNicheSemanticsDesignReadinessRoute -Checkpoint $checkpoint
+if (!$readinessRoute -and !$implementationRoute -and !$ecologySchemaGapRoute -and !$ecologyDesignReadinessRoute) {
     throw 'C6 organism-subject identity readiness route is not exact.'
 }
 
@@ -37,7 +38,7 @@ if ($c4[0].state -ne 'verified' -or $c4[0].status -ne 'complete' -or
     $c5[0].state -ne 'verified' -or $c5[0].status -ne 'complete') {
     throw 'C6 organism-subject identity prerequisites are not verified and complete.'
 }
-$expectedGate = if ($readinessRoute -or $ecologySchemaGapRoute) { 'design' } else { 'implementation' }
+$expectedGate = if ($readinessRoute -or $ecologySchemaGapRoute -or $ecologyDesignReadinessRoute) { 'design' } else { 'implementation' }
 if ($c6[0].state -ne 'executing' -or $c6[0].status -ne 'active' -or
     $c6[0].gate -ne $expectedGate -or (@($c6[0].depends_on) -join ',') -ne 'C4,C5') {
     throw 'C6 organism-subject identity master-program route is not exact.'

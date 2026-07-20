@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **G1-C6-ECOLOGICAL-NICHE-SEMANTICS-SCHEMA-GAP-AUDIT-V1**
-- Objective: Record the verified source-negative C6 package-4 ecological-niche semantics schema-gap audit from exact physical opportunity and organism-subject evidence, without fabricating habitat, resource, hazard, trophic, competition, ecotone or occupancy truth.
+- Work package: **G1-C6-ECOLOGICAL-NICHE-SEMANTICS-DESIGN-READINESS-V1**
+- Objective: Design and prove readiness for a capability-free C6 package-4 ecological-niche authored-hypothesis contract that preserves exact provenance and typed indeterminacy without claiming ecological truth or implementing production source.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **source-negative-c6-ecological-niche-semantics-schema-gap-audit / Body-plan V1, package-3 organism subject identity V1 and the package-4 source-negative schema-gap audit are verified and recorded. Current C3 evidence proves only physical opportunity and coavailability; the separate provenance-bound authored-hypothesis design/readiness candidate remains owner-gated before any contract or source can be frozen.**
-- Exact next action: Stop at the verified package-4 schema-gap boundary. A separate owner-routed, code-free authored-hypothesis mathematical/contract design and implementation-readiness package is the next candidate; it is not active or authorized.
+- Risk/research gate: **source-negative-c6-ecological-niche-authored-hypothesis-design-readiness / Body-plan V1, package-3 organism subject identity V1 and the package-4 source-negative schema-gap audit are verified and recorded. Only explicitly authored, provenance-bound candidate assertions may enter design; current evidence still cannot establish ecological truth.**
+- Exact next action: Freeze the exact authored-hypothesis mathematical model, strict contract candidate, deterministic disposable fixtures, cumulative resource limits, one-consumer boundary, hostiles, portability and deletion-only rollback; stop before production source implementation.
 
 ## Approved operating policies
 

@@ -14,7 +14,8 @@ $implementationRoute=Test-G1C6BodyPlanStructureImplementationRoute -Checkpoint $
 $identityReadinessRoute=Test-G1C6OrganismIdentityReadinessRoute -Checkpoint $checkpoint
 $identityImplementationRoute=Test-G1C6OrganismSubjectIdentityImplementationRoute -Checkpoint $checkpoint
 $ecologySchemaGapRoute=Test-G1C6EcologicalNicheSemanticsSchemaGapRoute -Checkpoint $checkpoint
-if(!$readinessRoute-and!$implementationRoute-and!$identityReadinessRoute-and!$identityImplementationRoute-and!$ecologySchemaGapRoute){throw 'C6 authorized current route tuple drifted.'}
+$ecologyDesignReadinessRoute=Test-G1C6EcologicalNicheSemanticsDesignReadinessRoute -Checkpoint $checkpoint
+if(!$readinessRoute-and!$implementationRoute-and!$identityReadinessRoute-and!$identityImplementationRoute-and!$ecologySchemaGapRoute-and!$ecologyDesignReadinessRoute){throw 'C6 authorized current route tuple drifted.'}
 $c4=@($program.items|Where-Object id -eq C4);$c5=@($program.items|Where-Object id -eq C5);$c6=@($program.items|Where-Object id -eq C6)
 if($c4.Count-ne1-or$c5.Count-ne1-or$c6.Count-ne1){throw 'C4-C6 program items are missing or ambiguous.'}
 if($c4[0].state-ne'verified'-or$c4[0].status-ne'complete'-or$c5[0].state-ne'verified'-or$c5[0].status-ne'complete'){throw 'C6 exact prerequisites are not verified and complete.'}

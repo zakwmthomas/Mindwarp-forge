@@ -73,6 +73,21 @@ function Test-G1C6EcologicalNicheSemanticsSchemaGapRoute {
         $Checkpoint.authority_lane -eq $expectedAuthority
 }
 
+function Test-G1C6EcologicalNicheSemanticsDesignReadinessRoute {
+    [CmdletBinding()]
+    param([Parameter(Mandatory = $true)]$Checkpoint)
+
+    $expectedAuthority = 'Owner-routed code-free C6 package-4 ecological-niche semantics authored-hypothesis design and implementation-readiness only. Authorizes one mathematical-design audit, one capability-free strict contract candidate, one implementation-readiness record, disposable document/route hostile fixtures, verifier and canonical governance reconciliation for provenance-bound prospective habitat, resource, hazard, trophic, competition, ecotone and occupancy candidate assertions with typed necessary-evidence-supported, unavailable, contradictory and budget-indeterminate validation outcomes. No production crate or source, Cargo member or dependency, consumer implementation, ecological truth, habitat suitability, resource accessibility/yield/replenishment, organism-specific harm, trophic flow, competition fact, production ecotone, realized occupancy, species or population membership, physiology, viability, senses, locomotion, behavior, reproduction, heredity, development, evolution, sex or dimorphism applicability, comparison, culture, representation, runtime, filesystem, network, process, database, UI, renderer, Companion, Greenfield, C7, broad G1 closure, promotion authority or Kernel mutation.'
+    foreach ($field in @('batch_id', 'master_program_item', 'state', 'substage_id', 'authority_lane')) {
+        if ($Checkpoint.$field -isnot [string]) { return $false }
+    }
+    return $Checkpoint.batch_id -eq 'G1-C6-ECOLOGICAL-NICHE-SEMANTICS-DESIGN-READINESS-V1' -and
+        $Checkpoint.master_program_item -eq 'C6' -and
+        $Checkpoint.state -eq 'executing' -and
+        $Checkpoint.substage_id -eq 'c6-ecological-niche-semantics-design-readiness' -and
+        $Checkpoint.authority_lane -eq $expectedAuthority
+}
+
 function Test-G1C6AuthorizedCurrentRoute {
     [CmdletBinding()]
     param([Parameter(Mandatory = $true)]$Checkpoint)
@@ -80,5 +95,6 @@ function Test-G1C6AuthorizedCurrentRoute {
         (Test-G1C6BodyPlanStructureImplementationRoute -Checkpoint $Checkpoint) -or
         (Test-G1C6OrganismIdentityReadinessRoute -Checkpoint $Checkpoint) -or
         (Test-G1C6OrganismSubjectIdentityImplementationRoute -Checkpoint $Checkpoint) -or
-        (Test-G1C6EcologicalNicheSemanticsSchemaGapRoute -Checkpoint $Checkpoint)
+        (Test-G1C6EcologicalNicheSemanticsSchemaGapRoute -Checkpoint $Checkpoint) -or
+        (Test-G1C6EcologicalNicheSemanticsDesignReadinessRoute -Checkpoint $Checkpoint)
 }

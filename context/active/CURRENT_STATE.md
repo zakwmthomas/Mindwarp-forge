@@ -5,12 +5,12 @@
 
 ## Active checkpoint
 
-- Package: **G1-C6-ECOLOGICAL-NICHE-SEMANTICS-SCHEMA-GAP-AUDIT-V1**
+- Package: **G1-C6-ECOLOGICAL-NICHE-SEMANTICS-DESIGN-READINESS-V1**
 - Master item / milestone: **C6 / G1**
-- State / substage: **executing / c6-ecological-niche-semantics-schema-gap-audit**
+- State / substage: **executing / c6-ecological-niche-semantics-design-readiness**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Objective: Record the verified source-negative C6 package-4 ecological-niche semantics schema-gap audit from exact physical opportunity and organism-subject evidence, without fabricating habitat, resource, hazard, trophic, competition, ecotone or occupancy truth.
-- Context health: C4, C5, body-plan V1, package-3 organism subject identity V1 and the package-4 source-negative schema-gap audit are verified and recorded. The separate package-4 design/readiness candidate, implementation, later C6 packages and C7 remain gated.
+- Objective: Design and prove readiness for a capability-free C6 package-4 ecological-niche authored-hypothesis contract that preserves exact provenance and typed indeterminacy without claiming ecological truth or implementing production source.
+- Context health: C4, C5, body-plan V1, package-3 organism subject identity V1 and the package-4 source-negative schema-gap audit are verified and recorded. The ecological-niche semantics design/readiness successor is the sole active bounded item; implementation, later C6 packages and C7 remain gated.
 
 ## Durable evidence
 
@@ -25,11 +25,11 @@
 
 ## Authority boundary
 
-Owner-routed code-free C6 package-4 ecological-niche semantics schema-gap audit only. Authorizes canonical status reconciliation, exact upstream field and authority inventory, claim classification, adversarial source-negative fixtures, verifier and governance records for habitat, resource, hazard, trophic, competition, ecotone and prospective-occupancy prerequisites. No ecological contract schema or production crate/source; no habitat suitability, resource yield, organism hazard, trophic or competition fact, realized occupancy, species or population membership, physiology, viability, senses, locomotion, behavior, reproduction, heredity, development, evolution, dimorphism applicability, comparison, culture, representation, runtime, filesystem, network, process, Companion, Greenfield, C7, broad G1 closure, promotion authority or Kernel mutation.
+Owner-routed code-free C6 package-4 ecological-niche semantics authored-hypothesis design and implementation-readiness only. Authorizes one mathematical-design audit, one capability-free strict contract candidate, one implementation-readiness record, disposable document/route hostile fixtures, verifier and canonical governance reconciliation for provenance-bound prospective habitat, resource, hazard, trophic, competition, ecotone and occupancy candidate assertions with typed necessary-evidence-supported, unavailable, contradictory and budget-indeterminate validation outcomes. No production crate or source, Cargo member or dependency, consumer implementation, ecological truth, habitat suitability, resource accessibility/yield/replenishment, organism-specific harm, trophic flow, competition fact, production ecotone, realized occupancy, species or population membership, physiology, viability, senses, locomotion, behavior, reproduction, heredity, development, evolution, sex or dimorphism applicability, comparison, culture, representation, runtime, filesystem, network, process, database, UI, renderer, Companion, Greenfield, C7, broad G1 closure, promotion authority or Kernel mutation.
 
 ## Exact next action
 
-Stop at the verified package-4 schema-gap boundary. A separate owner-routed, code-free authored-hypothesis mathematical/contract design and implementation-readiness package is the next candidate; it is not active or authorized.
+Freeze the exact authored-hypothesis mathematical model, strict contract candidate, deterministic disposable fixtures, cumulative resource limits, one-consumer boundary, hostiles, portability and deletion-only rollback; stop before production source implementation.
 
 ## Unresolved risks
 
@@ -43,4 +43,4 @@ Stop at the verified package-4 schema-gap boundary. A separate owner-routed, cod
 
 ## Resume after this package
 
-The source-negative package-4 schema-gap audit is verified and recorded. Do not activate its separate authored-hypothesis design/readiness candidate or implement source without a new exact owner route; do not activate physiology, reproduction, heredity, development, realized occupancy, dimorphism, population semantics, comparison or C7.
+Stop after the package-4 authored-hypothesis design/readiness evidence is verified and recorded. Do not create production source, implement its consumer, or activate physiology, reproduction, heredity, development, realized occupancy, dimorphism, population semantics, comparison or C7 without a separate exact owner route.

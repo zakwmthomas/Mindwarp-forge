@@ -51,6 +51,14 @@ Gameplay recovery and development proposal:
 - `G1_C6_ECOLOGICAL_NICHE_SEMANTICS_SCHEMA_GAP_AUDIT.md` - source-negative
   package-4 authority inventory: automatic ecological truth is blocked while
   a provenance-bound authored-hypothesis seam is routed to separate design.
+- `G1_C6_ECOLOGICAL_NICHE_SEMANTICS_MATHEMATICAL_DESIGN_AUDIT.md` - selects
+  one atomic authored hypothesis, exact necessary-evidence relations and a
+  permanently unresolved ecological-truth ceiling.
+- `ecological-niche-semantics-contract.md` - freezes the code-free strict V1
+  records, codecs, identity domains, resource envelope and one-consumer design.
+- `G1_C6_ECOLOGICAL_NICHE_SEMANTICS_IMPLEMENTATION_READINESS.md` - freezes the
+  hostile, portability, rollback and future test-first implementation boundary
+  without creating production source.
 
 6. `MACRO_GAP_CLOSURE_AUDIT.md` - per-system contracts, risks,
    observability requirements, smallest proofs, and F5 package ordering.

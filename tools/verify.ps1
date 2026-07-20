@@ -39,6 +39,10 @@ Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-c6-ecologi
 if (!$?) { throw 'G1 C6 ecological-niche schema-gap verification failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-g1-c6-ecological-niche-schema-gap.ps1'
 if (!$?) { throw 'G1 C6 ecological-niche schema-gap hostile fixtures failed.' }
+Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-c6-ecological-niche-design-readiness.ps1'
+if (!$?) { throw 'G1 C6 ecological-niche design/readiness verification failed.' }
+Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-g1-c6-ecological-niche-design-readiness.ps1'
+if (!$?) { throw 'G1 C6 ecological-niche design/readiness hostile fixtures failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'verify-g1-c6-organism-subject-identity-readiness.ps1'
 if (!$?) { throw 'G1 C6 organism-subject identity implementation readiness verification failed.' }
 Invoke-ForgeVerifier -ScriptRoot $PSScriptRoot -ScriptName 'test-g1-c6-organism-subject-identity-readiness.ps1'

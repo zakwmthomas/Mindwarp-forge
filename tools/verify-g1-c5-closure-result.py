@@ -11,6 +11,7 @@ C6_BODY_PLAN_AUTHORITY = "Owner-authorized capability-free C6 body-plan family/t
 C6_IDENTITY_READINESS_AUTHORITY = "Owner-routed code-free C6 package-3 identity readiness only. Authorizes reconciliation of stale body-plan projections and design, adversarial review, fixtures, verifier and governance records for distinct lineage, organism-form, species-candidate, individual and population identity envelopes plus exact C4 lifecycle/history consumption. No production crate or source implementation; no asserted species membership, population members/count/distribution, ancestry/evolution inference, ecology, physiology, reproduction, heredity, development, sex, dimorphism, culture, representation, runtime, Companion, Greenfield, C7, promotion authority or Kernel mutation."
 C6_IDENTITY_IMPLEMENTATION_AUTHORITY = "Owner-authorized capability-free C6 organism subject identity V1 test-first implementation only. Exact dependencies verified C4, C5 and body-plan V1. Authorizes the organism-subject-identity crate, one additive person-form-eligibility bound-subject evaluator, exact 33-group implementation matrix, module/governance projections and verification. No asserted species membership, population members/count/distribution, ancestry/evolution inference, ecology, physiology, reproduction, heredity, development, sex, dimorphism, caste, culture, capacity truth, comparison, representation, runtime, filesystem, network, process, Companion, Greenfield, C7, broad G1 closure, promotion authority or Kernel mutation."
 C6_ECOLOGY_SCHEMA_GAP_AUTHORITY = "Owner-routed code-free C6 package-4 ecological-niche semantics schema-gap audit only. Authorizes canonical status reconciliation, exact upstream field and authority inventory, claim classification, adversarial source-negative fixtures, verifier and governance records for habitat, resource, hazard, trophic, competition, ecotone and prospective-occupancy prerequisites. No ecological contract schema or production crate/source; no habitat suitability, resource yield, organism hazard, trophic or competition fact, realized occupancy, species or population membership, physiology, viability, senses, locomotion, behavior, reproduction, heredity, development, evolution, dimorphism applicability, comparison, culture, representation, runtime, filesystem, network, process, Companion, Greenfield, C7, broad G1 closure, promotion authority or Kernel mutation."
+C6_ECOLOGY_DESIGN_READINESS_AUTHORITY = "Owner-routed code-free C6 package-4 ecological-niche semantics authored-hypothesis design and implementation-readiness only. Authorizes one mathematical-design audit, one capability-free strict contract candidate, one implementation-readiness record, disposable document/route hostile fixtures, verifier and canonical governance reconciliation for provenance-bound prospective habitat, resource, hazard, trophic, competition, ecotone and occupancy candidate assertions with typed necessary-evidence-supported, unavailable, contradictory and budget-indeterminate validation outcomes. No production crate or source, Cargo member or dependency, consumer implementation, ecological truth, habitat suitability, resource accessibility/yield/replenishment, organism-specific harm, trophic flow, competition fact, production ecotone, realized occupancy, species or population membership, physiology, viability, senses, locomotion, behavior, reproduction, heredity, development, evolution, sex or dimorphism applicability, comparison, culture, representation, runtime, filesystem, network, process, database, UI, renderer, Companion, Greenfield, C7, broad G1 closure, promotion authority or Kernel mutation."
 SOURCE = "9e48dd117c2b22b62bd31dba15c10c3a9bf4b100"
 TREE = "cfc58943f96fed768f77ac2a6e3256aa13d59d6c0edbe24f13cd967315038636"
 BOUNDED = "9430bc530ba39403803a05fd99a9bc5c257472c2f320921ca242b51344947ecb"
@@ -52,7 +53,8 @@ def verify(root: Path) -> None:
     c6_identity_readiness = checkpoint.get("batch_id") == "G1-C6-ORGANISM-IDENTITY-READINESS-V1"
     c6_identity_implementation = checkpoint.get("batch_id") == "G1-C6-ORGANISM-SUBJECT-IDENTITY-IMPLEMENTATION-V1"
     c6_ecology_schema_gap = checkpoint.get("batch_id") == "G1-C6-ECOLOGICAL-NICHE-SEMANTICS-SCHEMA-GAP-AUDIT-V1"
-    successor = c6_readiness or c6_body_plan or c6_identity_readiness or c6_identity_implementation or c6_ecology_schema_gap
+    c6_ecology_design_readiness = checkpoint.get("batch_id") == "G1-C6-ECOLOGICAL-NICHE-SEMANTICS-DESIGN-READINESS-V1"
+    successor = c6_readiness or c6_body_plan or c6_identity_readiness or c6_identity_implementation or c6_ecology_schema_gap or c6_ecology_design_readiness
     expected = ({
         "batch_id":"G1-C6-SEMANTIC-CONSTRUCTION-ORGANISM-ECOLOGY-READINESS-V1", "master_program_item":"C6",
         "state":"executing", "previous_state":"ready", "substage_id":"c6-reconciliation-readiness",
@@ -74,6 +76,10 @@ def verify(root: Path) -> None:
         "state":"executing", "previous_state":"ready", "substage_id":"c6-ecological-niche-semantics-schema-gap-audit",
         "authority_lane":C6_ECOLOGY_SCHEMA_GAP_AUTHORITY,
     } if c6_ecology_schema_gap else {
+        "batch_id":"G1-C6-ECOLOGICAL-NICHE-SEMANTICS-DESIGN-READINESS-V1", "master_program_item":"C6",
+        "state":"executing", "previous_state":"ready", "substage_id":"c6-ecological-niche-semantics-design-readiness",
+        "authority_lane":C6_ECOLOGY_DESIGN_READINESS_AUTHORITY,
+    } if c6_ecology_design_readiness else {
         "batch_id":"G1-C5-SIGNIFICANCE-SCHEDULER-CLOSURE-V1", "master_program_item":"C5",
         "state":"recorded", "previous_state":"verifying", "substage_id":"c5-registered-closure-recorded",
         "authority_lane":AUTHORITY,
@@ -96,6 +102,9 @@ def verify(root: Path) -> None:
     if c6_ecology_schema_gap:
         for receipt in ("receipt:G1-C6-ORGANISM-SUBJECT-IDENTITY-V1:recorded", "owner-route:c6-ecological-niche-semantics-schema-gap-audit:authorized"):
             if receipt not in receipts: raise ValueError(f"missing ecology schema-gap receipt: {receipt}")
+    if c6_ecology_design_readiness:
+        for receipt in ("receipt:G1-C6-ECOLOGICAL-NICHE-SCHEMA-GAP-AUDIT-V1:recorded", "owner-route:c6-ecological-niche-semantics-design-readiness:authorized"):
+            if receipt not in receipts: raise ValueError(f"missing ecology design/readiness receipt: {receipt}")
     criteria = checkpoint.get("exit_criteria")
     if type(criteria) is not list or any(type(x) is not dict for x in criteria): raise ValueError("checkpoint exit criteria are malformed")
     if not successor and any(x.get("status") != "verified" for x in criteria): raise ValueError("C5 exit criteria are not all verified")
