@@ -95,10 +95,12 @@ The ranges above contain exactly 82 IDs, not 68. The following registry freezes 
 16. Close one exact end-to-end chain, exact C4 history and bounded C5 scheduling consumption, fidelity/cancellation/fallback/stale-epoch nonmutation, hostile portability/resource/scale evidence, read-only desktop integration, rollback, independent review and a registered full gate without activating C7.
 
 Packages 2 and 3 are now verified and recorded as body-plan structure V1 and
-organism-subject identity V1. Package 4 is the current successor. Its
-source-negative schema-gap audit rejects automatic derivation of ecological
-truth from physical opportunity, while selecting only a provenance-bound
-authored-hypothesis seam for separate design/readiness. No ecological contract
+organism-subject identity V1. Package 4's source-negative schema-gap audit is
+verified and recorded after registered gate
+`run-c0712471f015435abbaa71ac001ef975`. It rejects automatic derivation of
+ecological truth from physical opportunity, while selecting only a
+provenance-bound authored-hypothesis seam for a separate owner-routed,
+code-free design/readiness package. No ecological contract
 or source is authorized. The recorded body-plan proof retains the third
 structurally withheld morphology as a negative-transfer control. The later
 variation package must still positively

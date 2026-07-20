@@ -36,8 +36,9 @@
   `run-e923d74fb96743e5864b303faf27acfc` and
   `run-500f816d66e94a359e9cf8617982bf49`. The identity package supplies seven
   strict typed records and exact C4 subject replay while retaining unresolved
-  species/population membership. Package-4 ecological-niche semantics is active
-  at a source-negative schema-gap audit: current physical opportunity evidence
+  species/population membership. The package-4 ecological-niche source-negative
+  schema-gap audit is verified and recorded after registered gate
+  `run-c0712471f015435abbaa71ac001ef975`: current physical opportunity evidence
   cannot automatically prove ecological truth. The recorded slices still do
   not prove population membership or distributions, ecological niches,
   physiology/viability, reproduction/heredity/development, evolution, grounded

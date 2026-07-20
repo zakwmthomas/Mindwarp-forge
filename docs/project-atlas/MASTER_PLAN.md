@@ -64,7 +64,7 @@ Planning doctrine: `docs/canonical-system/MASTER_PLAN_V2.md`.
 - **C5** - verified; gate: recorded; depends on: C4.
   Next: Retain the verified capability-free C5 reference as an immutable exact dependency for active C6 readiness; do not infer product policy, cache, runtime or later-system authority.
 - **C6** - executing; gate: design; depends on: C4, C5.
-  Next: Complete and verify the source-negative package-4 ecological-niche semantics schema-gap audit. Reject automatic ecological truth from physical opportunity; select only a provenance-bound authored-hypothesis seam for separate design/readiness, then stop before contract or source.
+  Next: Stop at the verified package-4 source-negative schema-gap boundary. A separate owner-routed, code-free provenance-bound authored-hypothesis mathematical/contract design and implementation-readiness package is the next candidate; do not activate it or implement source automatically.
 - **C7** - proposed; gate: design; depends on: C5, C6.
   Next: Promote representation contracts and prove asset, animation, aesthetic, visual-fitness and phone-to-high-end fidelity recipes from the same canonical organism/world state.
 - **G1-CLOSEOUT** - proposed; gate: owner; depends on: C3A, C4, C5, C6, C7, GP4.

@@ -5,11 +5,11 @@
 ## Active route
 
 - Work package: **G1-C6-ECOLOGICAL-NICHE-SEMANTICS-SCHEMA-GAP-AUDIT-V1**
-- Objective: Reconcile the recorded package-3 result and complete a source-negative C6 package-4 ecological-niche semantics schema-gap audit from exact physical opportunity and organism-subject evidence, without fabricating habitat, resource, hazard, trophic, competition, ecotone or occupancy truth.
+- Objective: Record the verified source-negative C6 package-4 ecological-niche semantics schema-gap audit from exact physical opportunity and organism-subject evidence, without fabricating habitat, resource, hazard, trophic, competition, ecotone or occupancy truth.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **source-negative-c6-ecological-niche-semantics-schema-gap-audit / Body-plan V1 and package-3 organism subject identity V1 are verified and recorded. Three successor audits select dependency-ordered package 4, but current C3 evidence is known to prove only physical opportunity and coavailability, so every ecological claim must be traced to exact upstream authority before a source candidate can be frozen.**
-- Exact next action: Classify exact upstream authority for every package-4 ecological claim, reject automatic truth derivation, and decide whether a provenance-bound authored-hypothesis contract is design-ready before any implementation-readiness work.
+- Risk/research gate: **source-negative-c6-ecological-niche-semantics-schema-gap-audit / Body-plan V1, package-3 organism subject identity V1 and the package-4 source-negative schema-gap audit are verified and recorded. Current C3 evidence proves only physical opportunity and coavailability; the separate provenance-bound authored-hypothesis design/readiness candidate remains owner-gated before any contract or source can be frozen.**
+- Exact next action: Stop at the verified package-4 schema-gap boundary. A separate owner-routed, code-free authored-hypothesis mathematical/contract design and implementation-readiness package is the next candidate; it is not active or authorized.
 
 ## Approved operating policies
 

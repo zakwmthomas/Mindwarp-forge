@@ -5,25 +5,25 @@
     "master_program_item":  "C6",
     "state":  "executing",
     "previous_state":  "ready",
-    "objective":  "Reconcile the recorded package-3 result and complete a source-negative C6 package-4 ecological-niche semantics schema-gap audit from exact physical opportunity and organism-subject evidence, without fabricating habitat, resource, hazard, trophic, competition, ecotone or occupancy truth.",
-    "next_action":  "Classify exact upstream authority for every package-4 ecological claim, reject automatic truth derivation, and decide whether a provenance-bound authored-hypothesis contract is design-ready before any implementation-readiness work.",
+    "objective":  "Record the verified source-negative C6 package-4 ecological-niche semantics schema-gap audit from exact physical opportunity and organism-subject evidence, without fabricating habitat, resource, hazard, trophic, competition, ecotone or occupancy truth.",
+    "next_action":  "Stop at the verified package-4 schema-gap boundary. A separate owner-routed, code-free authored-hypothesis mathematical/contract design and implementation-readiness package is the next candidate; it is not active or authorized.",
     "substage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
     "handoff_section_receipts":  {
                                      "objective":  {
                                                        "stage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
-                                                       "content_sha256":  "a22be45b02a81972c0cf1b2278ffb62f21526eb026fd5a428ee7b156bf542f4b",
+                                                       "content_sha256":  "626f69673318053bbd36be63caad28cf8dc3f9b982729498c15f0d70b31793c2",
                                                        "review_disposition":  "revised",
                                                        "review_note":  "Reviewed all handoff sections against the active substage."
                                                    },
                                      "next_action":  {
                                                          "stage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
-                                                         "content_sha256":  "a3bc25573f03b78b4fb4f1076a0cfe923bca2b9a29264d9cc0425da0beb4213b",
+                                                         "content_sha256":  "9ae9323e628d8c2b0638ebc4de5f13755db8a827bf0d190e737d20bec9f6cc72",
                                                          "review_disposition":  "revised",
                                                          "review_note":  "Reviewed all handoff sections against the active substage."
                                                      },
                                      "stage_context":  {
                                                            "stage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
-                                                           "content_sha256":  "272959b575a8f3f0d4523fa5fca82349a101ced28c9931aaef0e1e8a8d402a7c",
+                                                           "content_sha256":  "66cae1946498c004e4a0829573ce9751fb9b6dd6e8521d1083ebd8584130b821",
                                                            "review_disposition":  "revised",
                                                            "review_note":  "Reviewed all handoff sections against the active substage."
                                                        },
@@ -59,7 +59,7 @@
                                                            },
                                      "resume_after":  {
                                                           "stage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
-                                                          "content_sha256":  "6601dcc8fccbfef0e912d1a2ed40267f6428282511b5b40c06d3d03043b4d48b",
+                                                          "content_sha256":  "8d426398521ff611ced0b3335abada072ce3f4d54295195b141361ee0fae1ece",
                                                           "review_disposition":  "revised",
                                                           "review_note":  "Reviewed all handoff sections against the active substage."
                                                       },
@@ -71,13 +71,13 @@
                                                   },
                                      "verification_receipts":  {
                                                                    "stage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
-                                                                   "content_sha256":  "6f28df92cde9f6f10a0834aa3e3dfc2f884da4a5793428632115e45639fbf0ab",
+                                                                   "content_sha256":  "27a13ac540052abba4522d89b634fa95ecc69ab0b9f6cbd3c18b7e30bdd14f07",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "transition":  {
                                                         "stage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
-                                                        "content_sha256":  "b7898b192e3844e800644fd25d73070e335e030d47621409dacdb5b7f2554981",
+                                                        "content_sha256":  "aec2a577a634c2dd794bdeb5dfdac5bb527ab50f7d59865e33a40e66fb770885",
                                                         "review_disposition":  "revised",
                                                         "review_note":  "Reviewed all handoff sections against the active substage."
                                                     }
@@ -93,9 +93,9 @@
                                     ]
                     },
     "risk_level":  "source-negative-c6-ecological-niche-semantics-schema-gap-audit",
-    "research_gate":  "Body-plan V1 and package-3 organism subject identity V1 are verified and recorded. Three successor audits select dependency-ordered package 4, but current C3 evidence is known to prove only physical opportunity and coavailability, so every ecological claim must be traced to exact upstream authority before a source candidate can be frozen.",
+    "research_gate":  "Body-plan V1, package-3 organism subject identity V1 and the package-4 source-negative schema-gap audit are verified and recorded. Current C3 evidence proves only physical opportunity and coavailability; the separate provenance-bound authored-hypothesis design/readiness candidate remains owner-gated before any contract or source can be frozen.",
     "authority_lane":  "Owner-routed code-free C6 package-4 ecological-niche semantics schema-gap audit only. Authorizes canonical status reconciliation, exact upstream field and authority inventory, claim classification, adversarial source-negative fixtures, verifier and governance records for habitat, resource, hazard, trophic, competition, ecotone and prospective-occupancy prerequisites. No ecological contract schema or production crate/source; no habitat suitability, resource yield, organism hazard, trophic or competition fact, realized occupancy, species or population membership, physiology, viability, senses, locomotion, behavior, reproduction, heredity, development, evolution, dimorphism applicability, comparison, culture, representation, runtime, filesystem, network, process, Companion, Greenfield, C7, broad G1 closure, promotion authority or Kernel mutation.",
-    "context_health":  "C4, C5, body-plan V1 and package-3 organism subject identity V1 are verified and recorded. Package 4 is now active at a source-negative schema-gap audit; implementation readiness, later C6 packages and C7 remain gated.",
+    "context_health":  "C4, C5, body-plan V1, package-3 organism subject identity V1 and the package-4 source-negative schema-gap audit are verified and recorded. The separate package-4 design/readiness candidate, implementation, later C6 packages and C7 remain gated.",
     "stage_context":  {
                           "stage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
                           "macro_sources":  [
@@ -112,11 +112,11 @@
                                             ],
                           "macro_findings":  [
                                                  "The owner retained the canonical broad route C4 then C5 then C6 then C7 then G1-CLOSEOUT then R1.",
-                                                 "C4 and C5 are verified and complete; body-plan V1 and package-3 organism subject identity V1 are verified and recorded; C6 package 4 ecological-niche semantics schema-gap audit is the sole active bounded item. C7, broad G1-CLOSEOUT and R1 remain gated.",
+                                                 "C4 and C5 are verified and complete; body-plan V1, package-3 organism subject identity V1 and the C6 package-4 ecological-niche source-negative schema-gap audit are verified and recorded. The separate package-4 design/readiness candidate, C7, broad G1-CLOSEOUT and R1 remain gated.",
                                                  "The five current C6 prototype seams pass 38 focused tests but prove only generic semantic construction, physical opportunity, hypothetical lineage binding and structural evidence completeness.",
                                                  "Physical opportunity is owned by C3 and is not an ecological niche; representation, geometry, animation and visual quality remain C7-owned.",
                                                  "Body-plan family/topology V1 is verified and recorded after the exact 17+1 matrix and registered gate run-e923d74fb96743e5864b303faf27acfc.",
-                                                 "The owner continuation releases code-free package-4 ecological-niche readiness only; implementation and every later C6 package remain separately gated."
+                                                 "The completed owner route released only the code-free package-4 ecological-niche schema-gap audit; its separate authored-hypothesis design/readiness candidate, implementation and every later C6 package remain gated."
                                              ],
                           "micro_sources":  [
                                                 "apps/forge-desktop/src-tauri/MODULE.md",
@@ -306,9 +306,10 @@
                           {
                               "id":  "c6-ecological-niche-semantics-schema-gap-audit",
                               "label":  "Exact upstream authority, non-cyclic ownership, claim classifications and source-negative hostiles are recorded, with automatic ecological truth blocked and any hypothesis-only design seam bounded.",
-                              "status":  "completed",
+                              "status":  "verified",
                               "evidence_ids":  [
-                                                   "docs/canonical-system/G1_C6_ECOLOGICAL_NICHE_SEMANTICS_SCHEMA_GAP_AUDIT.md"
+                                                   "docs/canonical-system/G1_C6_ECOLOGICAL_NICHE_SEMANTICS_SCHEMA_GAP_AUDIT.md",
+                                                   "registered-full-gate:run-c0712471f015435abbaa71ac001ef975:passed"
                                                ]
                           }
                       ],
@@ -335,7 +336,7 @@
                               "obtain independent biology, schema/security and integration/governance reviews and repair every blocker",
                               "verify Atlas, operating-system, module context, record roles and retained C4/C5/C6 routes, then pass one complete measured Forge gate before recording readiness"
                           ],
-    "resume_after":  "Stop after recording whether a provenance-bound authored-hypothesis contract may advance to separate design/readiness; do not implement source or activate physiology, reproduction, heredity, development, realized occupancy, dimorphism, population semantics, comparison or C7.",
+    "resume_after":  "The source-negative package-4 schema-gap audit is verified and recorded. Do not activate its separate authored-hypothesis design/readiness candidate or implement source without a new exact owner route; do not activate physiology, reproduction, heredity, development, realized occupancy, dimorphism, population semantics, comparison or C7.",
     "evidence":  [
                      "GP3 closed cleanly in commit 7f29f6b and registered run-50a8c78043eb46c483f1f655d3793f9b.",
                      "C4V closed cleanly in commit 34f2213 and registered run-fa6334a300e04d409dd5cddb4f22542e.",
@@ -499,7 +500,9 @@
                                   "hostile:c6-ecological-niche-schema-gap:source-negative-and-gated-crossings:passed",
                                   "independent-review:c6-ecological-niche-schema-gap:biology-engineering-schema:accepted",
                                   "retained:c4-c5-successor-routes:ecology-schema-gap:passed",
-                                  "registered-full-gate:run-42bdea3a8d584d86be5ea21b67ca7ef1:failed:stale-c5-current-successor-route"
+                                  "registered-full-gate:run-42bdea3a8d584d86be5ea21b67ca7ef1:failed:stale-c5-current-successor-route",
+                                  "registered-full-gate:run-c0712471f015435abbaa71ac001ef975:passed",
+                                  "receipt:G1-C6-ECOLOGICAL-NICHE-SCHEMA-GAP-AUDIT-V1:recorded"
                               ],
     "metrics":  {
                     "token_cost":  {
@@ -508,9 +511,9 @@
                                    },
                     "elapsed_time":  {
                                          "status":  "measured",
-                                         "value":  "853579 ms",
-                                         "receipt":  "registered-full-gate:run-500f816d66e94a359e9cf8617982bf49:passed"
+                                         "value":  "927436 ms",
+                                         "receipt":  "registered-full-gate:run-c0712471f015435abbaa71ac001ef975:passed"
                                      }
                 },
-    "transition":  "C4 verified and recorded -\u003e C5 verified and recorded -\u003e body-plan V1 verified and recorded -\u003e package-3 identity readiness verified and recorded -\u003e package-3 organism subject identity V1 verified and recorded -\u003e owner-routed package-4 ecological-niche semantics schema-gap audit active"
+    "transition":  "C4 verified and recorded -\u003e C5 verified and recorded -\u003e body-plan V1 verified and recorded -\u003e package-3 identity readiness verified and recorded -\u003e package-3 organism subject identity V1 verified and recorded -\u003e package-4 ecological-niche schema-gap audit verified and recorded -\u003e stop boundary retained"
 }

@@ -9,8 +9,8 @@
 - Master item / milestone: **C6 / G1**
 - State / substage: **executing / c6-ecological-niche-semantics-schema-gap-audit**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Objective: Reconcile the recorded package-3 result and complete a source-negative C6 package-4 ecological-niche semantics schema-gap audit from exact physical opportunity and organism-subject evidence, without fabricating habitat, resource, hazard, trophic, competition, ecotone or occupancy truth.
-- Context health: C4, C5, body-plan V1 and package-3 organism subject identity V1 are verified and recorded. Package 4 is now active at a source-negative schema-gap audit; implementation readiness, later C6 packages and C7 remain gated.
+- Objective: Record the verified source-negative C6 package-4 ecological-niche semantics schema-gap audit from exact physical opportunity and organism-subject evidence, without fabricating habitat, resource, hazard, trophic, competition, ecotone or occupancy truth.
+- Context health: C4, C5, body-plan V1, package-3 organism subject identity V1 and the package-4 source-negative schema-gap audit are verified and recorded. The separate package-4 design/readiness candidate, implementation, later C6 packages and C7 remain gated.
 
 ## Durable evidence
 
@@ -29,7 +29,7 @@ Owner-routed code-free C6 package-4 ecological-niche semantics schema-gap audit 
 
 ## Exact next action
 
-Classify exact upstream authority for every package-4 ecological claim, reject automatic truth derivation, and decide whether a provenance-bound authored-hypothesis contract is design-ready before any implementation-readiness work.
+Stop at the verified package-4 schema-gap boundary. A separate owner-routed, code-free authored-hypothesis mathematical/contract design and implementation-readiness package is the next candidate; it is not active or authorized.
 
 ## Unresolved risks
 
@@ -43,4 +43,4 @@ Classify exact upstream authority for every package-4 ecological claim, reject a
 
 ## Resume after this package
 
-Stop after recording whether a provenance-bound authored-hypothesis contract may advance to separate design/readiness; do not implement source or activate physiology, reproduction, heredity, development, realized occupancy, dimorphism, population semantics, comparison or C7.
+The source-negative package-4 schema-gap audit is verified and recorded. Do not activate its separate authored-hypothesis design/readiness candidate or implement source without a new exact owner route; do not activate physiology, reproduction, heredity, development, realized occupancy, dimorphism, population semantics, comparison or C7.
