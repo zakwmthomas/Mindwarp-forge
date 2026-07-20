@@ -2,7 +2,7 @@
 
 ```mermaid
 flowchart LR
-  F1["F1 Kernel\nverified"] --> F2["F2 Continuity\nverified"] --> F3["F3 Atlas\nverified"] --> F4["F4 Canonical registry\nverified"] --> F5["F5 Reference proof studio\nverified"] --> C3A["C3A causal-world seam\npromoted"] --> C4["C4 hierarchy/history\nverified"] --> C5["C5 significance/scheduler\nverified"] --> C6["C6 organisms/ecology\nbody-plan V1 + package 3 readiness verified"] --> C7["C7 representation\ngated"] --> G1C["Broad G1 closeout\ngated"] --> R1["R1 Runtime adapter\ngated"]
+  F1["F1 Kernel\nverified"] --> F2["F2 Continuity\nverified"] --> F3["F3 Atlas\nverified"] --> F4["F4 Canonical registry\nverified"] --> F5["F5 Reference proof studio\nverified"] --> C3A["C3A causal-world seam\npromoted"] --> C4["C4 hierarchy/history\nverified"] --> C5["C5 significance/scheduler\nverified"] --> C6["C6 organisms/ecology\nbody-plan + identity V1 verified; ecology gap active"] --> C7["C7 representation\ngated"] --> G1C["Broad G1 closeout\ngated"] --> R1["R1 Runtime adapter\ngated"]
   C3A --> GP0["GP0 player promise\npromoted"] --> GP1["GP1 fixed base loop\npromoted"] --> GP2["GP2 typed progression\npromoted"] --> GP3["GP3 encounter grammar\npromoted"] --> GP4["GP4 Signal Anchor\nverified"] --> VC["Bounded vertical closeout\nverified"]
   GP4 --> G1C
   C3A --> C4V["C4V vertical persistence\nverified"] --> GP4
@@ -14,7 +14,7 @@ structurally complete, GP2 typed progression is promoted after its registered
 full-gate proof, and C4V is recorded after registered gate
 `run-fa6334a300e04d409dd5cddb4f22542e`, closed with no C4V work remaining
 active. Owner-authorized GP3 is promoted and
-closed after registered gate `run-50a8c78043eb46c483f1f655d3793f9b`. GP4 is verified after registered gate `run-7e5c44dc8f48424a8cec42da756e3127`, and its exact typed bounded vertical-closeout receipt is complete immutable evidence. The owner retained the broad G1-first route: C4 and the capability-free C5 reference are verified and complete; coordinate-free body-plan V1 and code-free C6 package-3 identity readiness are verified and recorded after registered gates `run-e923d74fb96743e5864b303faf27acfc` and `run-a25fd6473dc7401fa9b24df5d4e5cb27`. Package-3 source, later C6 packages, C7, broad G1-CLOSEOUT and R1 remain gated. C3A exposes the exact validated causal-world seam needed downstream;
+closed after registered gate `run-50a8c78043eb46c483f1f655d3793f9b`. GP4 is verified after registered gate `run-7e5c44dc8f48424a8cec42da756e3127`, and its exact typed bounded vertical-closeout receipt is complete immutable evidence. The owner retained the broad G1-first route: C4 and the capability-free C5 reference are verified and complete; coordinate-free body-plan V1 and organism-subject identity V1 are verified and recorded after registered gates `run-e923d74fb96743e5864b303faf27acfc` and `run-500f816d66e94a359e9cf8617982bf49`. Package-4 ecological-niche semantics is active at a source-negative schema-gap audit; implementation, later C6 packages, C7, broad G1-CLOSEOUT and R1 remain gated. C3A exposes the exact validated causal-world seam needed downstream;
 C3B remains visibly blocked and does not prevent the first fixed-content
 vertical. Runtime selection remains at R1. The F5 engine-neutral proof
 milestone is verified. ProofReceipt P1, bounded

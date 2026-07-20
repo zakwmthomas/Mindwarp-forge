@@ -4,12 +4,12 @@
 
 ## Active route
 
-- Work package: **G1-C6-ORGANISM-SUBJECT-IDENTITY-IMPLEMENTATION-V1**
-- Objective: Implement and verify only the frozen capability-free package-3 organism subject identity V1 contract: seven typed identity/binding records, exact C4 lifecycle/history subject replay and one additive person-form structural-completeness consumer.
+- Work package: **G1-C6-ECOLOGICAL-NICHE-SEMANTICS-SCHEMA-GAP-AUDIT-V1**
+- Objective: Reconcile the recorded package-3 result and complete a source-negative C6 package-4 ecological-niche semantics schema-gap audit from exact physical opportunity and organism-subject evidence, without fabricating habitat, resource, hazard, trophic, competition, ecotone or occupancy truth.
 - Atlas milestone: **G1 - Canonical Mind Warp production system**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Risk/research gate: **capability-free-c6-organism-subject-identity-implementation / The frozen readiness package passed registered gate run-a25fd6473dc7401fa9b24df5d4e5cb27 and three independent schema, adversarial and integration reviews. The owner then explicitly continued from the named implementation gate, releasing only the bounded test-first candidate.**
-- Exact next action: Stop at the verified and recorded package-3 organism subject identity V1 boundary; do not activate any later C6 biology, dimorphism, population, comparison, C7 or runtime package without a separate owner route.
+- Risk/research gate: **source-negative-c6-ecological-niche-semantics-schema-gap-audit / Body-plan V1 and package-3 organism subject identity V1 are verified and recorded. Three successor audits select dependency-ordered package 4, but current C3 evidence is known to prove only physical opportunity and coavailability, so every ecological claim must be traced to exact upstream authority before a source candidate can be frozen.**
+- Exact next action: Classify exact upstream authority for every package-4 ecological claim, reject automatic truth derivation, and decide whether a provenance-bound authored-hypothesis contract is design-ready before any implementation-readiness work.
 
 ## Approved operating policies
 

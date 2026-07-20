@@ -94,7 +94,20 @@ The ranges above contain exactly 82 IDs, not 68. The following registry freezes 
 15. Add data-only nonvisual aesthetic intent with a strict C7 boundary and no universal beauty score.
 16. Close one exact end-to-end chain, exact C4 history and bounded C5 scheduling consumption, fidelity/cancellation/fallback/stale-epoch nonmutation, hostile portability/resource/scale evidence, read-only desktop integration, rollback, independent review and a registered full gate without activating C7.
 
-The smallest prospective implementation is package 2 only: a data-only synthetic body-plan family/topology contract bound to the existing lineage reference. Acceptance requires declared homology; typed relations; cardinality/repetition; optional/conditional regions; explicit none/bilateral/radial/serial or other declared symmetry; order-stable identity; one humanoid design control; one radically nonhuman design control; two lawful expressions of one shared family proving a future variation seam; and a third structurally withheld morphology used only for negative-transfer validation. It includes no sex labels, biological applicability decision, geometry, proportions, pose, representation, physiology, solver, content generation or runtime. The later variation package must positively prove the approved paired humanoid model and nonhuman countermodels. This readiness record does not authorize source; a separate exact owner-authorized transition remains required.
+Packages 2 and 3 are now verified and recorded as body-plan structure V1 and
+organism-subject identity V1. Package 4 is the current successor. Its
+source-negative schema-gap audit rejects automatic derivation of ecological
+truth from physical opportunity, while selecting only a provenance-bound
+authored-hypothesis seam for separate design/readiness. No ecological contract
+or source is authorized. The recorded body-plan proof retains the third
+structurally withheld morphology as a negative-transfer control. The later
+variation package must still positively
+prove the approved paired humanoid model and nonhuman countermodels after its
+ecology, physiology, reproduction, heredity, development and
+species/ecomorph prerequisites.
+
+This readiness record does not authorize source; each successor retains its
+separate exact owner route.
 
 ## Exit gate
 

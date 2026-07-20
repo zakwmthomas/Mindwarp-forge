@@ -2,7 +2,7 @@ $ErrorActionPreference='Stop'
 $root=Split-Path -Parent $PSScriptRoot
 . (Join-Path $PSScriptRoot 'g1-c6-successor-route.ps1')
 $checkpoint=Get-Content -Raw (Join-Path $root 'context\active\WORKER_BATCH_STATE.json')|ConvertFrom-Json
-if(!(Test-G1C6OrganismSubjectIdentityImplementationRoute -Checkpoint $checkpoint)){throw 'C6 organism-subject identity implementation route is not exact.'}
+if(!(Test-G1C6OrganismSubjectIdentityImplementationRoute -Checkpoint $checkpoint)-and!(Test-G1C6EcologicalNicheSemanticsSchemaGapRoute -Checkpoint $checkpoint)){throw 'C6 organism-subject identity implementation or exact recorded successor route is not exact.'}
 foreach($receipt in @('receipt:G1-C6-BODY-PLAN-STRUCTURE-V1:recorded','owner-authorization:c6-organism-subject-identity-v1:released')){if(@($checkpoint.verification_receipts)-notcontains$receipt){throw "C6 identity implementation receipt missing: $receipt"}}
 
 $sourcePath=Join-Path $root 'crates\organism-subject-identity\src\lib.rs'

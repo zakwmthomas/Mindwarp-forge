@@ -459,7 +459,7 @@
                                            "construction-language"
                                        ],
                         "purpose":  "Compile niche roles, macro-lineages, ecomorphs, sensory channels, person-form eligibility, applicable dimorphism and species-authored aging presentation from exact validated C3A evidence plus C4 canonical lifecycle state, without claiming C3B physical applicability.",
-                        "proof":  "Causal niche coverage, related-but-diverse ecomorphs, unusual-sense and no-eye cases, grotesque-form rejection, applicable paired dimorphism plus non-binary/non-paired controls, reproduction/development/heredity, stable lifecycle state, reversible post-adult presentation lock, replay and no-old-age-death tests remain required. C4 owns canonical cohort/lifecycle state and deterministic state assignment; C6 owns species distributions, population semantics and presentation rules. A 2026-07-15 logical audit invalidated earlier organism-capability, body-part-as-niche and world-evidence-as-lineage claims. Bounded C6 components cover environmental support, macro-lineage identity/hypothetical occupancy/body-plan-reference binding and structural person-form binding completeness. Code-free C6 readiness is active with 82 exact hostile IDs; full niche roles and occupancy, body-plan anatomy, sensory physiology, reproduction/heredity, species/ecomorphs, comparative eligibility, applicable variation and population semantics remain unimplemented and source-gated.",
+                        "proof":  "Causal niche coverage, related-but-diverse ecomorphs, unusual-sense and no-eye cases, grotesque-form rejection, applicable paired dimorphism plus non-binary/non-paired controls, reproduction/development/heredity, stable lifecycle state, reversible post-adult presentation lock, replay and no-old-age-death tests remain required. C4 owns canonical cohort/lifecycle state and deterministic state assignment; C6 owns species distributions, population semantics and presentation rules. A 2026-07-15 logical audit invalidated earlier organism-capability, body-part-as-niche and world-evidence-as-lineage claims. Body-plan structure V1 and organism-subject identity V1 are verified and recorded with exact family/expression, typed subject, identity/binding and C4 replay evidence. Package-4 ecological-niche semantics is active at a source-negative schema-gap audit because physical opportunity/coavailability cannot automatically prove habitat, resource, hazard, trophic, competition, ecotone or occupancy truth. Full niche roles and occupancy, sensory physiology, reproduction/heredity, species/ecomorphs, comparative eligibility, applicable variation and population semantics remain unimplemented and source-gated.",
                         "references":  [
                                            "docs/canonical-system/ORGANISM_GROWTH_AND_SCALABLE_FIDELITY_REQUIREMENTS.md",
                                            "docs/canonical-system/SELECTIVE_LIVING_ENTITY_AGING_DESIGN.md",
@@ -476,7 +476,12 @@
                                            "docs/canonical-system/G1_C6_DISTANCE_SENSING_NICHE_BINDING_RESULT.md",
                                            "docs/canonical-system/G1_C6_NICHE_GRAPH_BINDING_RESULT.md",
                                            "docs/canonical-system/G1_C6_MACRO_LINEAGE_BINDING_RESULT.md",
-                                           "docs/canonical-system/G1_C6_PERSON_FORM_ELIGIBILITY_RESULT.md"
+                       "docs/canonical-system/G1_C6_PERSON_FORM_ELIGIBILITY_RESULT.md",
+                       "contracts/body-plan-structure-contract.md",
+                       "docs/canonical-system/G1_C6_BODY_PLAN_STRUCTURE_IMPLEMENTATION_RESULT.md",
+                       "contracts/organism-subject-identity-contract.md",
+                       "docs/canonical-system/G1_C6_ORGANISM_SUBJECT_IDENTITY_IMPLEMENTATION_RESULT.md",
+                       "docs/canonical-system/G1_C6_ECOLOGICAL_NICHE_SEMANTICS_SCHEMA_GAP_AUDIT.md"
                                        ]
                     },
                     {

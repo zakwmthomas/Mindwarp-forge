@@ -31,13 +31,15 @@
   recorded as a capability-free reference after hosted Linux execution,
   read-only ProofReceipt integration and registered gate
   `run-87b9301f9bb54b2d9b72767643c7ed9b`. C5 grants no broader C6 authority.
-  Coordinate-free body-plan structure V1 is verified and recorded after
-  registered gate `run-e923d74fb96743e5864b303faf27acfc`. Code-free C6
-  package-3 identity readiness is independently accepted, verified and recorded
-  after `run-a25fd6473dc7401fa9b24df5d4e5cb27`; package-3 source remains gated.
-  The inherited prototypes, verified body-plan slice and readiness record still
-  do not implement the typed identity envelopes or exact C4 consumption source,
-  nor prove population membership or distributions, ecological niches,
+  Coordinate-free body-plan structure V1 and organism-subject identity V1 are
+  verified and recorded after registered gates
+  `run-e923d74fb96743e5864b303faf27acfc` and
+  `run-500f816d66e94a359e9cf8617982bf49`. The identity package supplies seven
+  strict typed records and exact C4 subject replay while retaining unresolved
+  species/population membership. Package-4 ecological-niche semantics is active
+  at a source-negative schema-gap audit: current physical opportunity evidence
+  cannot automatically prove ecological truth. The recorded slices still do
+  not prove population membership or distributions, ecological niches,
   physiology/viability, reproduction/heredity/development, evolution, grounded
   capacities, comparative person-form, applicable variation, population aging,
   a real C5 consumption seam, or an exact end-to-end organism chain. C7 remains

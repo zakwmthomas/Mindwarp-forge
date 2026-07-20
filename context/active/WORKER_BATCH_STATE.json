@@ -1,83 +1,83 @@
 ﻿{
     "schema_version":  3,
     "canonical_role":  "sole-active-work-checkpoint",
-    "batch_id":  "G1-C6-ORGANISM-SUBJECT-IDENTITY-IMPLEMENTATION-V1",
+    "batch_id":  "G1-C6-ECOLOGICAL-NICHE-SEMANTICS-SCHEMA-GAP-AUDIT-V1",
     "master_program_item":  "C6",
     "state":  "executing",
     "previous_state":  "ready",
-    "objective":  "Implement and verify only the frozen capability-free package-3 organism subject identity V1 contract: seven typed identity/binding records, exact C4 lifecycle/history subject replay and one additive person-form structural-completeness consumer.",
-    "next_action":  "Stop at the verified and recorded package-3 organism subject identity V1 boundary; do not activate any later C6 biology, dimorphism, population, comparison, C7 or runtime package without a separate owner route.",
-    "substage_id":  "c6-organism-subject-identity-test-first-implementation",
+    "objective":  "Reconcile the recorded package-3 result and complete a source-negative C6 package-4 ecological-niche semantics schema-gap audit from exact physical opportunity and organism-subject evidence, without fabricating habitat, resource, hazard, trophic, competition, ecotone or occupancy truth.",
+    "next_action":  "Classify exact upstream authority for every package-4 ecological claim, reject automatic truth derivation, and decide whether a provenance-bound authored-hypothesis contract is design-ready before any implementation-readiness work.",
+    "substage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
     "handoff_section_receipts":  {
                                      "objective":  {
-                                                       "stage_id":  "c6-organism-subject-identity-test-first-implementation",
-                                                       "content_sha256":  "4ddf62c930397690a312b1a435ee13aa9a8a872eebff1f8cb5c37884f9b89029",
+                                                       "stage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
+                                                       "content_sha256":  "a22be45b02a81972c0cf1b2278ffb62f21526eb026fd5a428ee7b156bf542f4b",
                                                        "review_disposition":  "revised",
                                                        "review_note":  "Reviewed all handoff sections against the active substage."
                                                    },
                                      "next_action":  {
-                                                         "stage_id":  "c6-organism-subject-identity-test-first-implementation",
-                                                         "content_sha256":  "8ab12e4bb8675b3ea3732a3f562cd03c28ca5d76833f12df5722b8b00d774c1b",
+                                                         "stage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
+                                                         "content_sha256":  "a3bc25573f03b78b4fb4f1076a0cfe923bca2b9a29264d9cc0425da0beb4213b",
                                                          "review_disposition":  "revised",
                                                          "review_note":  "Reviewed all handoff sections against the active substage."
                                                      },
                                      "stage_context":  {
-                                                           "stage_id":  "c6-organism-subject-identity-test-first-implementation",
-                                                           "content_sha256":  "b4408b956b1f690febf3a1caafe3cc368e38b41ebac6573535147fbd96d77a6d",
+                                                           "stage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
+                                                           "content_sha256":  "272959b575a8f3f0d4523fa5fca82349a101ced28c9931aaef0e1e8a8d402a7c",
                                                            "review_disposition":  "revised",
                                                            "review_note":  "Reviewed all handoff sections against the active substage."
                                                        },
                                      "visual_quality_gate":  {
-                                                                 "stage_id":  "c6-organism-subject-identity-test-first-implementation",
-                                                                 "content_sha256":  "714f74f1c91e7749f149d4b0cb884bf6dd511d97ea820c2870839755f49c4596",
+                                                                 "stage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
+                                                                 "content_sha256":  "d9899a81904dc6545aa1467ada120bd621442883b81115dae3e223dcf2ab202b",
                                                                  "review_disposition":  "revised",
                                                                  "review_note":  "Reviewed all handoff sections against the active substage."
                                                              },
                                      "simulation_ladder":  {
-                                                               "stage_id":  "c6-organism-subject-identity-test-first-implementation",
-                                                               "content_sha256":  "de89a9b3aa83f411ff936708e0c29bcf8fe07d65794f9969050cbede3e75ebe1",
+                                                               "stage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
+                                                               "content_sha256":  "913ab85a7aa14ff73619b26cb8ef1d983244c5516ae5cbd423f5b50661601d85",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "unresolved_risks":  {
-                                                              "stage_id":  "c6-organism-subject-identity-test-first-implementation",
-                                                              "content_sha256":  "ec7ab682576e72becf91faa672444db93d4c25be36aba554e025f6d20e9adfee",
+                                                              "stage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
+                                                              "content_sha256":  "fff32e4f3a1f46f34240ac03eb1ea5369640fd81aea620c9cf2d8422fa3970b3",
                                                               "review_disposition":  "revised",
                                                               "review_note":  "Reviewed all handoff sections against the active substage."
                                                           },
                                      "evidence_requirements":  {
-                                                                   "stage_id":  "c6-organism-subject-identity-test-first-implementation",
-                                                                   "content_sha256":  "4d598d20655601fa285b5e4cab91478abeb9dc38afbab23cfdbf88bc092762ff",
+                                                                   "stage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
+                                                                   "content_sha256":  "0773e57cffa8d96f86cc6139922d156745750c61b3e1d7207c2652984e08f7b3",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "verification_plan":  {
-                                                               "stage_id":  "c6-organism-subject-identity-test-first-implementation",
-                                                               "content_sha256":  "9e068d536c151c3277dbf0192017170590616b054a3f6ae3652c977cc9713312",
+                                                               "stage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
+                                                               "content_sha256":  "a8071ce01083c670787ef3aaa99f3383c53ac090fdab648fc750c8d51c77da0d",
                                                                "review_disposition":  "revised",
                                                                "review_note":  "Reviewed all handoff sections against the active substage."
                                                            },
                                      "resume_after":  {
-                                                          "stage_id":  "c6-organism-subject-identity-test-first-implementation",
-                                                          "content_sha256":  "ad409d30ee30fe0c02a8cc7fff282a70eae89a1e0b41b6f2b09de0dd42b37dbe",
+                                                          "stage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
+                                                          "content_sha256":  "6601dcc8fccbfef0e912d1a2ed40267f6428282511b5b40c06d3d03043b4d48b",
                                                           "review_disposition":  "revised",
                                                           "review_note":  "Reviewed all handoff sections against the active substage."
                                                       },
                                      "evidence":  {
-                                                      "stage_id":  "c6-organism-subject-identity-test-first-implementation",
+                                                      "stage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
                                                       "content_sha256":  "c5e5bf1cad0e360860027cdf58c0a1ea2dad16bd68ca800000f2fc8169eaeb48",
                                                       "review_disposition":  "revised",
                                                       "review_note":  "Reviewed all handoff sections against the active substage."
                                                   },
                                      "verification_receipts":  {
-                                                                   "stage_id":  "c6-organism-subject-identity-test-first-implementation",
-                                                                   "content_sha256":  "47a795cd3b09d54e7afa9d1a8055b06f92905a48835d4e0426812e8cf27cabdd",
+                                                                   "stage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
+                                                                   "content_sha256":  "f76259c419cef4d1c760f52c124742e20d79daafaebb677038d5a459a96ef642",
                                                                    "review_disposition":  "revised",
                                                                    "review_note":  "Reviewed all handoff sections against the active substage."
                                                                },
                                      "transition":  {
-                                                        "stage_id":  "c6-organism-subject-identity-test-first-implementation",
-                                                        "content_sha256":  "c8e9f7c496fb9d1be876f065f9a16345bd8b4341a2a33e37f92e808476033f3e",
+                                                        "stage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
+                                                        "content_sha256":  "b7898b192e3844e800644fd25d73070e335e030d47621409dacdb5b7f2554981",
                                                         "review_disposition":  "revised",
                                                         "review_note":  "Reviewed all handoff sections against the active substage."
                                                     }
@@ -92,12 +92,12 @@
                                         "domain-creative-suites"
                                     ]
                     },
-    "risk_level":  "capability-free-c6-organism-subject-identity-implementation",
-    "research_gate":  "The frozen readiness package passed registered gate run-a25fd6473dc7401fa9b24df5d4e5cb27 and three independent schema, adversarial and integration reviews. The owner then explicitly continued from the named implementation gate, releasing only the bounded test-first candidate.",
-    "authority_lane":  "Owner-authorized capability-free C6 organism subject identity V1 test-first implementation only. Exact dependencies verified C4, C5 and body-plan V1. Authorizes the organism-subject-identity crate, one additive person-form-eligibility bound-subject evaluator, exact 33-group implementation matrix, module/governance projections and verification. No asserted species membership, population members/count/distribution, ancestry/evolution inference, ecology, physiology, reproduction, heredity, development, sex, dimorphism, caste, culture, capacity truth, comparison, representation, runtime, filesystem, network, process, Companion, Greenfield, C7, broad G1 closure, promotion authority or Kernel mutation.",
-    "context_health":  "C4, C5, body-plan V1 and package-3 organism subject identity V1 are verified and recorded. Broad C6 remains active while every later C6 package and C7 remain gated.",
+    "risk_level":  "source-negative-c6-ecological-niche-semantics-schema-gap-audit",
+    "research_gate":  "Body-plan V1 and package-3 organism subject identity V1 are verified and recorded. Three successor audits select dependency-ordered package 4, but current C3 evidence is known to prove only physical opportunity and coavailability, so every ecological claim must be traced to exact upstream authority before a source candidate can be frozen.",
+    "authority_lane":  "Owner-routed code-free C6 package-4 ecological-niche semantics schema-gap audit only. Authorizes canonical status reconciliation, exact upstream field and authority inventory, claim classification, adversarial source-negative fixtures, verifier and governance records for habitat, resource, hazard, trophic, competition, ecotone and prospective-occupancy prerequisites. No ecological contract schema or production crate/source; no habitat suitability, resource yield, organism hazard, trophic or competition fact, realized occupancy, species or population membership, physiology, viability, senses, locomotion, behavior, reproduction, heredity, development, evolution, dimorphism applicability, comparison, culture, representation, runtime, filesystem, network, process, Companion, Greenfield, C7, broad G1 closure, promotion authority or Kernel mutation.",
+    "context_health":  "C4, C5, body-plan V1 and package-3 organism subject identity V1 are verified and recorded. Package 4 is now active at a source-negative schema-gap audit; implementation readiness, later C6 packages and C7 remain gated.",
     "stage_context":  {
-                          "stage_id":  "c6-organism-subject-identity-test-first-implementation",
+                          "stage_id":  "c6-ecological-niche-semantics-schema-gap-audit",
                           "macro_sources":  [
                                                 "docs/canonical-system/MASTER_PROGRAM.json",
                                                 "docs/canonical-system/MASTER_CLOSURE_REGISTER.md",
@@ -112,11 +112,11 @@
                                             ],
                           "macro_findings":  [
                                                  "The owner retained the canonical broad route C4 then C5 then C6 then C7 then G1-CLOSEOUT then R1.",
-                                                 "C4 and C5 are verified and complete; body-plan V1 and package-3 readiness are verified and recorded; C6 package 3 is the sole active bounded implementation item. C7, broad G1-CLOSEOUT and R1 remain gated.",
+                                                 "C4 and C5 are verified and complete; body-plan V1 and package-3 organism subject identity V1 are verified and recorded; C6 package 4 ecological-niche semantics schema-gap audit is the sole active bounded item. C7, broad G1-CLOSEOUT and R1 remain gated.",
                                                  "The five current C6 prototype seams pass 38 focused tests but prove only generic semantic construction, physical opportunity, hypothetical lineage binding and structural evidence completeness.",
                                                  "Physical opportunity is owned by C3 and is not an ecological niche; representation, geometry, animation and visual quality remain C7-owned.",
                                                  "Body-plan family/topology V1 is verified and recorded after the exact 17+1 matrix and registered gate run-e923d74fb96743e5864b303faf27acfc.",
-                                                 "The owner continuation releases only the exact capability-free package-3 identity implementation; every later C6 package remains gated."
+                                                 "The owner continuation releases code-free package-4 ecological-niche readiness only; implementation and every later C6 package remain separately gated."
                                              ],
                           "micro_sources":  [
                                                 "apps/forge-desktop/src-tauri/MODULE.md",
@@ -137,7 +137,15 @@
                                                 "contracts/organism-subject-identity-contract.md",
                                                 "docs/canonical-system/G1_C6_ORGANISM_SUBJECT_IDENTITY_IMPLEMENTATION_READINESS.md",
                                                 "tools/verify-g1-c6-organism-subject-identity-readiness.ps1",
-                                                "tools/test-g1-c6-organism-subject-identity-readiness.ps1"
+                                                "tools/test-g1-c6-organism-subject-identity-readiness.ps1",
+                                                "docs/canonical-system/G1_C6_ORGANISM_SUBJECT_IDENTITY_IMPLEMENTATION_RESULT.md",
+                                                "crates/spatial-domain/MODULE.md",
+                                                "crates/regional-environment-state/MODULE.md",
+                                                "crates/physical-region-partition/MODULE.md",
+                                                "docs/canonical-system/G1_C3_CROSS_BOUNDARY_ECOTONE_ORACLE_RESULT.md",
+                                                "docs/canonical-system/G1_C6_ECOLOGICAL_NICHE_SEMANTICS_SCHEMA_GAP_AUDIT.md",
+                                                "tools/verify-g1-c6-ecological-niche-schema-gap.ps1",
+                                                "tools/test-g1-c6-ecological-niche-schema-gap.ps1"
                                             ],
                           "micro_findings":  [
                                                  "Focused counts are exact: semantic-construction 14, organism-niche-binding 5, niche-graph-binding 7, macro-lineage-binding 6 and person-form-eligibility 6.",
@@ -146,21 +154,24 @@
                                                  "Eighty-two exact hostile IDs cover evidence, ecology, anatomy, physiology, identity, evolution, ecomorphs, capacities, comparative eligibility, applicable variation, aging, end-to-end authority and reproduction/development/heredity.",
                                                  "Three independent reviews froze family versus expression identity, a graph rather than universal tree, exact homology/presence/cardinality/symmetry semantics, 18 test groups, engineering resource bounds and one macro-lineage consumer.",
                                                  "Registered run-e923d74fb96743e5864b303faf27acfc passed the complete Forge gate in 874785 ms and the body-plan result is recorded.",
-                                                 "Three independent audits agree that package 3 must distinguish lineage, form template, species candidate, individual and population identity before ecology, physiology, reproduction or dimorphism.",
-                                                 "The package-3 implementation must realize the frozen seven typed identity/binding records, exact C4 subject replay, 33 test groups, resource ceilings and one person-form consumer without importing later biology or authority."
+                                                 "Package 3 now supplies strict lineage, form-template, species-candidate, individual and population identity without membership or biology claims.",
+                                                 "Dependency order selects package 4 ecological-niche semantics before physiology, reproduction, heredity, development or applicable dimorphism.",
+                                                 "Current niche-graph evidence proves physical opportunity and coavailability only; habitat suitability, resource yield, organism hazard, trophic flow, competition and ecological ecotone truth are evidence-blocked.",
+                                                 "Exact finite sample topology, physical component adjacency and subject identity are bounded prerequisites, not ecological truth.",
+                                                 "A provenance-bound authored-hypothesis seam is design-ready for separate code-free design/readiness with one non-cyclic organism-niche consumer; no contract or source is authorized."
                                              ]
                       },
     "visual_quality_gate":  {
                                 "asset_use_intent":  false,
                                 "status":  "not_applicable",
-                                "rationale":  "C6 readiness is code-free and data-contract-only; geometry, assets, animation, renderer and visual-quality claims remain C7-owned and excluded.",
+                                "rationale":  "Package-4 readiness is code-free and data-contract-only; geometry, assets, animation, renderer and visual-quality claims remain C7-owned and excluded.",
                                 "dependent_implementation_blocked":  false,
                                 "receipts":  [
 
                                              ]
                             },
     "simulation_ladder":  {
-                              "cheapest_sufficient_tier":  "bounded_integrated_pc",
+                              "cheapest_sufficient_tier":  "static_reasoning",
                               "tiers_completed":  [
                                                       {
                                                           "tier":  "static_reasoning",
@@ -206,15 +217,20 @@
                                                           "tier":  "bounded_integrated_pc",
                                                           "result":  "The exact implementation route and first deliberately failing Rust test are established before production source.",
                                                           "evidence":  "context/active/WORKER_BATCH_STATE.json"
+                                                      },
+                                                      {
+                                                          "tier":  "static_reasoning",
+                                                          "result":  "Three independent successor audits and an exact upstream field inventory reject automatic ecological truth while selecting only a provenance-bound authored-hypothesis seam for separate design/readiness.",
+                                                          "evidence":  "docs/canonical-system/G1_C6_ECOLOGICAL_NICHE_SEMANTICS_SCHEMA_GAP_AUDIT.md"
                                                       }
                                                   ],
-                              "expensive_execution_planned":  true,
-                              "unresolved_risk":  "An identity envelope could still collapse template, species, individual or population namespaces, launder optional lineage parentage into ancestry, or treat C4 age state as biological development unless the 33 groups fail closed.",
-                              "expected_information_gain":  "Static and disposable hostile fixtures will show whether one bounded identity contract can bind exact macro-lineage, body-plan and C4 subjects without importing later membership, reproduction or dimorphism semantics.",
-                              "estimated_cost":  "One additive crate, one additive consumer, 33 focused groups, retained regressions, native and i686 execution, Android compile-only evidence, independent review and one complete measured Forge gate.",
-                              "regression_guard":  "No later C6 biology, C7 source, broad G1 closure, runtime controller, product permission, Companion, Greenfield, visual asset or Forge-port mutation.",
-                              "stop_condition":  "Stop after the bounded package-3 implementation result is independently accepted, recorded and passes one registered full gate; do not activate any later C6 package.",
-                              "final_integration_gate":  "The implementation verifier and hostile harness must pass focused native and portable checks and the complete measured Forge gate before the candidate is recorded."
+                              "expensive_execution_planned":  false,
+                              "unresolved_risk":  "Aggregate physical opportunities could be laundered into local habitat suitability, resource yield, organism-specific harm, trophic flow, competition, ecotones or occupancy without exact spatial, subject and causal evidence.",
+                              "expected_information_gain":  "A source-negative authority audit will identify which ecological semantics are derivable from current canonical evidence, which require new upstream inputs, and whether one bounded package-4 schema can be honestly frozen.",
+                              "estimated_cost":  "One code-free schema-gap and readiness record, exact hostile fixtures, route and canonical consistency shields, independent review and one complete measured Forge gate only after focused checks pass.",
+                              "regression_guard":  "No mutation of C3, body-plan or identity owners; no implementation source; no realized occupancy, physiology, reproduction, heredity, development, dimorphism, C7, runtime, Companion, Greenfield or Forge authority.",
+                              "stop_condition":  "Stop at a separately named ecological-niche implementation decision if and only if exact source authority, schema, resources, hostiles, consumer and rollback boundaries are frozen; otherwise record the precise evidence blocker.",
+                              "final_integration_gate":  "The source-negative readiness verifier, hostile route tests, canonical projections and complete measured Forge gate must pass before readiness is recorded."
                           },
     "exit_criteria":  [
                           {
@@ -286,30 +302,40 @@
                                                    "tools/verify-g1-c6-organism-subject-identity-implementation.ps1",
                                                    "registered-full-gate:run-500f816d66e94a359e9cf8617982bf49:passed"
                                                ]
+                          },
+                          {
+                              "id":  "c6-ecological-niche-semantics-schema-gap-audit",
+                              "label":  "Exact upstream authority, non-cyclic ownership, claim classifications and source-negative hostiles are recorded, with automatic ecological truth blocked and any hypothesis-only design seam bounded.",
+                              "status":  "planned",
+                              "evidence_ids":  [
+                                                   "docs/canonical-system/G1_C6_ECOLOGICAL_NICHE_SEMANTICS_SCHEMA_GAP_AUDIT.md"
+                                               ]
                           }
                       ],
     "unresolved_risks":  [
-                             "A shared 32-byte representation could collapse lineage, form-template, species-candidate, individual or population namespaces.",
-                             "An unresolved species or population identity could be mistaken for a membership policy, member list, count or distribution.",
-                             "Optional macro-lineage parentage, opportunity occupancy or structural homology could be laundered into ancestry or evolution.",
-                             "C4 lifecycle age/cohort state could be mislabeled as biological development, reproductive maturity or species distribution.",
-                             "Sex, dimorphism, reproduction, heredity, ecology, physiology or representation authority could leak into the identity layer."
+                             "Aggregate or regional C3 values may be insufficient to prove local habitat suitability, resource accessibility or ecotone continuity.",
+                             "A physical exposure may be mislabeled as an organism-specific hazard without physiology and tolerance evidence.",
+                             "Trophic flow or competition could be fabricated without exact subjects, conserved resource flow and limiting-demand evidence.",
+                             "Prospective occupancy could be confused with realized occupancy, species membership, viability, evolution or population distribution.",
+                             "Making identity or macro-lineage consume downstream ecology would create a dependency cycle and silently change completed owners.",
+                             "Dimorphism could be pulled forward before reproduction, heredity, development, ecomorph and species-authored applicability prerequisites exist.",
+                             "Species membership policy must be explicitly assigned before package-9 variation can apply a species-authored dimorphism rule to an individual; population distributions may remain later."
                          ],
     "evidence_requirements":  [
-                                  "freeze seven typed identity/binding records with distinct domains and strict canonical codecs",
-                                  "bind exact macro-lineage, family/expression and individual-targeted C4 lifecycle/history evidence",
-                                  "pass all 33 readiness groups and disposable hostiles including H400-H405, authority-negative H500-H505 and the applicable H1100 slice",
-                                  "freeze one additive person-form structural-completeness consumer without changing legacy bytes",
-                                  "preserve unresolved membership and the no-later-C6, no-C7, no-runtime and no-Forge-authority boundary"
+                                  "trace every habitat, resource, hazard, trophic, competition, ecotone and prospective-occupancy field to exact canonical upstream evidence or mark it unavailable",
+                                  "freeze a standalone non-cyclic package-4 owner that consumes physical opportunity and strict subject identity without mutating completed owners",
+                                  "map C6-H100 through H105 plus applicable H1100, H1101, H1102, H1103, H1105, H1106 and H1108 to executable source-negative fixtures",
+                                  "freeze exact codecs, resource classifications, atomic no-partial-output behavior, one-consumer scope, portability classifications and deletion-only rollback before source",
+                                  "preserve indeterminate evidence gaps and the no-physiology, no-realized-occupancy, no-dimorphism, no-C7, no-runtime and no-Forge-authority boundary"
                               ],
     "verification_plan":  [
-                              "verify package-3 identity contract/readiness hashes, exact implementation route and source dependency boundary",
-                              "run all 33 implementation groups and disposable mutations for type, label, membership, world, ancestry, C4 target, resource and authority drift",
-                              "obtain independent schema, test, dependency and dimorphism-boundary source review",
-                              "verify Atlas, operating-system, module context, record roles and retained C4/C5/C6 routes",
-                              "register implementation verification, pass affected native and portable checks, then pass one complete measured Forge gate before recording the result"
+                              "reconcile every stale canonical claim about the recorded package-3 source result",
+                              "audit exact upstream fields and authority for each package-4 ecological claim before freezing any schema",
+                              "run source-negative hostile fixtures for evidence substitution, category laundering, cycles, partial output, resource ambiguity and authority drift",
+                              "obtain independent biology, schema/security and integration/governance reviews and repair every blocker",
+                              "verify Atlas, operating-system, module context, record roles and retained C4/C5/C6 routes, then pass one complete measured Forge gate before recording readiness"
                           ],
-    "resume_after":  "Stop after the bounded identity implementation result is verified and recorded; do not activate ecology, physiology, reproduction, heredity, development, dimorphism applicability, population semantics or C7.",
+    "resume_after":  "Stop after recording whether a provenance-bound authored-hypothesis contract may advance to separate design/readiness; do not implement source or activate physiology, reproduction, heredity, development, realized occupancy, dimorphism, population semantics, comparison or C7.",
     "evidence":  [
                      "GP3 closed cleanly in commit 7f29f6b and registered run-50a8c78043eb46c483f1f655d3793f9b.",
                      "C4V closed cleanly in commit 34f2213 and registered run-fa6334a300e04d409dd5cddb4f22542e.",
@@ -467,7 +493,8 @@
                                   "platform:c6-organism-subject-identity-android-aarch64:compile-only:passed",
                                   "independent-review:c6-organism-subject-identity-source-security-test-integration:accepted",
                                   "registered-full-gate:run-500f816d66e94a359e9cf8617982bf49:passed",
-                                  "receipt:G1-C6-ORGANISM-SUBJECT-IDENTITY-V1:recorded"
+                                  "receipt:G1-C6-ORGANISM-SUBJECT-IDENTITY-V1:recorded",
+                                  "owner-route:c6-ecological-niche-semantics-schema-gap-audit:authorized"
                               ],
     "metrics":  {
                     "token_cost":  {
@@ -480,5 +507,5 @@
                                          "receipt":  "registered-full-gate:run-500f816d66e94a359e9cf8617982bf49:passed"
                                      }
                 },
-    "transition":  "C4 verified and recorded -\u003e C5 verified and recorded -\u003e body-plan V1 verified and recorded -\u003e package-3 identity readiness verified and recorded -\u003e package-3 organism subject identity V1 verified and recorded -\u003e stop boundary retained"
+    "transition":  "C4 verified and recorded -\u003e C5 verified and recorded -\u003e body-plan V1 verified and recorded -\u003e package-3 identity readiness verified and recorded -\u003e package-3 organism subject identity V1 verified and recorded -\u003e owner-routed package-4 ecological-niche semantics schema-gap audit active"
 }

@@ -39,6 +39,18 @@ Gameplay recovery and development proposal:
 - `G1_C5_CLOSURE_RESULT.md` - verified capability-free C5 closure binding the
   eight-domain proof, hosted Linux receipt, read-only integration and decisive
   registered full-gate receipt without C6 or runtime authority.
+- `G1_C6_CLOSURE_READINESS.md` - frozen dependency order and 82-hostile C6
+  boundary, including explicit reproduction, heredity, development and
+  species-authored variation/dimorphism prerequisites.
+- `G1_C6_BODY_PLAN_STRUCTURE_IMPLEMENTATION_RESULT.md` - verified
+  coordinate-free family/expression substrate and one retained consumer.
+- `G1_C6_ORGANISM_SUBJECT_IDENTITY_IMPLEMENTATION_READINESS.md` - frozen
+  seven-record identity, C4 replay, resource and one-consumer boundary.
+- `G1_C6_ORGANISM_SUBJECT_IDENTITY_IMPLEMENTATION_RESULT.md` - verified
+  package-3 identity source, exact 33-group matrix and registered gate.
+- `G1_C6_ECOLOGICAL_NICHE_SEMANTICS_SCHEMA_GAP_AUDIT.md` - source-negative
+  package-4 authority inventory: automatic ecological truth is blocked while
+  a provenance-bound authored-hypothesis seam is routed to separate design.
 
 6. `MACRO_GAP_CLOSURE_AUDIT.md` - per-system contracts, risks,
    observability requirements, smallest proofs, and F5 package ordering.

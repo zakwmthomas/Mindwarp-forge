@@ -72,7 +72,16 @@ try {
     $savedC5State = $c5.state; $savedC5Status = $c5.status
     Assert-Rejected 'Extra active item' { $c5.state = 'executing'; $c5.status = 'active' } { $c5.state = $savedC5State; $c5.status = $savedC5Status }
     $savedC6Gate = $c6.gate
-    Assert-Rejected 'C6 implementation gate downgraded' { $c6.gate = 'design' } { $c6.gate = $savedC6Gate }
+    Assert-Rejected 'C6 schema-gap design gate escalated' { $c6.gate = 'implementation' } { $c6.gate = $savedC6Gate }
+
+    $savedBatch=$checkpoint.batch_id;$savedSubstage=$checkpoint.substage_id;$savedAuthority=$checkpoint.authority_lane
+    $checkpoint.batch_id='G1-C6-ORGANISM-SUBJECT-IDENTITY-IMPLEMENTATION-V1'
+    $checkpoint.substage_id='c6-organism-subject-identity-test-first-implementation'
+    $checkpoint.authority_lane='Owner-authorized capability-free C6 organism subject identity V1 test-first implementation only. Exact dependencies verified C4, C5 and body-plan V1. Authorizes the organism-subject-identity crate, one additive person-form-eligibility bound-subject evaluator, exact 33-group implementation matrix, module/governance projections and verification. No asserted species membership, population members/count/distribution, ancestry/evolution inference, ecology, physiology, reproduction, heredity, development, sex, dimorphism, caste, culture, capacity truth, comparison, representation, runtime, filesystem, network, process, Companion, Greenfield, C7, broad G1 closure, promotion authority or Kernel mutation.'
+    $c6.gate='implementation';Save-Fixture
+    if ((Invoke-Adapter $checkpointPath $programPath) -ne 0) { throw 'Historical C6 implementation successor fixture was rejected.' }
+    Assert-Rejected 'Historical C6 implementation gate downgraded' { $c6.gate='design' } { $c6.gate='implementation' }
+    $checkpoint.batch_id=$savedBatch;$checkpoint.substage_id=$savedSubstage;$checkpoint.authority_lane=$savedAuthority;$c6.gate=$savedC6Gate
 
     Save-Fixture
     $duplicateProgram = Get-Content -LiteralPath $programPath -Raw | ConvertFrom-Json

@@ -58,11 +58,27 @@ function Test-G1C6OrganismSubjectIdentityImplementationRoute {
         $Checkpoint.authority_lane -eq $expectedAuthority
 }
 
+function Test-G1C6EcologicalNicheSemanticsSchemaGapRoute {
+    [CmdletBinding()]
+    param([Parameter(Mandatory = $true)]$Checkpoint)
+
+    $expectedAuthority = 'Owner-routed code-free C6 package-4 ecological-niche semantics schema-gap audit only. Authorizes canonical status reconciliation, exact upstream field and authority inventory, claim classification, adversarial source-negative fixtures, verifier and governance records for habitat, resource, hazard, trophic, competition, ecotone and prospective-occupancy prerequisites. No ecological contract schema or production crate/source; no habitat suitability, resource yield, organism hazard, trophic or competition fact, realized occupancy, species or population membership, physiology, viability, senses, locomotion, behavior, reproduction, heredity, development, evolution, dimorphism applicability, comparison, culture, representation, runtime, filesystem, network, process, Companion, Greenfield, C7, broad G1 closure, promotion authority or Kernel mutation.'
+    foreach ($field in @('batch_id', 'master_program_item', 'state', 'substage_id', 'authority_lane')) {
+        if ($Checkpoint.$field -isnot [string]) { return $false }
+    }
+    return $Checkpoint.batch_id -eq 'G1-C6-ECOLOGICAL-NICHE-SEMANTICS-SCHEMA-GAP-AUDIT-V1' -and
+        $Checkpoint.master_program_item -eq 'C6' -and
+        $Checkpoint.state -eq 'executing' -and
+        $Checkpoint.substage_id -eq 'c6-ecological-niche-semantics-schema-gap-audit' -and
+        $Checkpoint.authority_lane -eq $expectedAuthority
+}
+
 function Test-G1C6AuthorizedCurrentRoute {
     [CmdletBinding()]
     param([Parameter(Mandatory = $true)]$Checkpoint)
     return (Test-G1C6ReconciliationReadinessRoute -Checkpoint $Checkpoint) -or
         (Test-G1C6BodyPlanStructureImplementationRoute -Checkpoint $Checkpoint) -or
         (Test-G1C6OrganismIdentityReadinessRoute -Checkpoint $Checkpoint) -or
-        (Test-G1C6OrganismSubjectIdentityImplementationRoute -Checkpoint $Checkpoint)
+        (Test-G1C6OrganismSubjectIdentityImplementationRoute -Checkpoint $Checkpoint) -or
+        (Test-G1C6EcologicalNicheSemanticsSchemaGapRoute -Checkpoint $Checkpoint)
 }

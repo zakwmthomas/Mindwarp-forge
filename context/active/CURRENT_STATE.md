@@ -5,12 +5,12 @@
 
 ## Active checkpoint
 
-- Package: **G1-C6-ORGANISM-SUBJECT-IDENTITY-IMPLEMENTATION-V1**
+- Package: **G1-C6-ECOLOGICAL-NICHE-SEMANTICS-SCHEMA-GAP-AUDIT-V1**
 - Master item / milestone: **C6 / G1**
-- State / substage: **executing / c6-organism-subject-identity-test-first-implementation**
+- State / substage: **executing / c6-ecological-niche-semantics-schema-gap-audit**
 - Related systems: canonical-production-system, mindwarp-game, reusable-capabilities, domain-creative-suites
-- Objective: Implement and verify only the frozen capability-free package-3 organism subject identity V1 contract: seven typed identity/binding records, exact C4 lifecycle/history subject replay and one additive person-form structural-completeness consumer.
-- Context health: C4, C5, body-plan V1 and package-3 organism subject identity V1 are verified and recorded. Broad C6 remains active while every later C6 package and C7 remain gated.
+- Objective: Reconcile the recorded package-3 result and complete a source-negative C6 package-4 ecological-niche semantics schema-gap audit from exact physical opportunity and organism-subject evidence, without fabricating habitat, resource, hazard, trophic, competition, ecotone or occupancy truth.
+- Context health: C4, C5, body-plan V1 and package-3 organism subject identity V1 are verified and recorded. Package 4 is now active at a source-negative schema-gap audit; implementation readiness, later C6 packages and C7 remain gated.
 
 ## Durable evidence
 
@@ -25,20 +25,22 @@
 
 ## Authority boundary
 
-Owner-authorized capability-free C6 organism subject identity V1 test-first implementation only. Exact dependencies verified C4, C5 and body-plan V1. Authorizes the organism-subject-identity crate, one additive person-form-eligibility bound-subject evaluator, exact 33-group implementation matrix, module/governance projections and verification. No asserted species membership, population members/count/distribution, ancestry/evolution inference, ecology, physiology, reproduction, heredity, development, sex, dimorphism, caste, culture, capacity truth, comparison, representation, runtime, filesystem, network, process, Companion, Greenfield, C7, broad G1 closure, promotion authority or Kernel mutation.
+Owner-routed code-free C6 package-4 ecological-niche semantics schema-gap audit only. Authorizes canonical status reconciliation, exact upstream field and authority inventory, claim classification, adversarial source-negative fixtures, verifier and governance records for habitat, resource, hazard, trophic, competition, ecotone and prospective-occupancy prerequisites. No ecological contract schema or production crate/source; no habitat suitability, resource yield, organism hazard, trophic or competition fact, realized occupancy, species or population membership, physiology, viability, senses, locomotion, behavior, reproduction, heredity, development, evolution, dimorphism applicability, comparison, culture, representation, runtime, filesystem, network, process, Companion, Greenfield, C7, broad G1 closure, promotion authority or Kernel mutation.
 
 ## Exact next action
 
-Stop at the verified and recorded package-3 organism subject identity V1 boundary; do not activate any later C6 biology, dimorphism, population, comparison, C7 or runtime package without a separate owner route.
+Classify exact upstream authority for every package-4 ecological claim, reject automatic truth derivation, and decide whether a provenance-bound authored-hypothesis contract is design-ready before any implementation-readiness work.
 
 ## Unresolved risks
 
-- A shared 32-byte representation could collapse lineage, form-template, species-candidate, individual or population namespaces.
-- An unresolved species or population identity could be mistaken for a membership policy, member list, count or distribution.
-- Optional macro-lineage parentage, opportunity occupancy or structural homology could be laundered into ancestry or evolution.
-- C4 lifecycle age/cohort state could be mislabeled as biological development, reproductive maturity or species distribution.
-- Sex, dimorphism, reproduction, heredity, ecology, physiology or representation authority could leak into the identity layer.
+- Aggregate or regional C3 values may be insufficient to prove local habitat suitability, resource accessibility or ecotone continuity.
+- A physical exposure may be mislabeled as an organism-specific hazard without physiology and tolerance evidence.
+- Trophic flow or competition could be fabricated without exact subjects, conserved resource flow and limiting-demand evidence.
+- Prospective occupancy could be confused with realized occupancy, species membership, viability, evolution or population distribution.
+- Making identity or macro-lineage consume downstream ecology would create a dependency cycle and silently change completed owners.
+- Dimorphism could be pulled forward before reproduction, heredity, development, ecomorph and species-authored applicability prerequisites exist.
+- Species membership policy must be explicitly assigned before package-9 variation can apply a species-authored dimorphism rule to an individual; population distributions may remain later.
 
 ## Resume after this package
 
-Stop after the bounded identity implementation result is verified and recorded; do not activate ecology, physiology, reproduction, heredity, development, dimorphism applicability, population semantics or C7.
+Stop after recording whether a provenance-bound authored-hypothesis contract may advance to separate design/readiness; do not implement source or activate physiology, reproduction, heredity, development, realized occupancy, dimorphism, population semantics, comparison or C7.
